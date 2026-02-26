@@ -1,0 +1,2388 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anexo Tecnico - claro-video-universal-windows-platform</title>
+  <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero is-visible">
+      <span class="kicker">Anexo Tecnico</span>
+      <h1>claro-video-universal-windows-platform</h1>
+      <p class="hero-mainline">Contenido completo por documento</p>
+      <p><a href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.html#contenido-docs">Volver al resumen consolidado</a></p>
+    </header>
+
+    <main class="main">
+      <section id="contenido-docs">
+        <h3>Anexo Tecnico: claro-video-universal-windows-platform</h3>
+        <p class="docs-note">Documentos detectados: 18</p>
+<article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Repositorio: claro-video-universal-windows-platform</h4>
+              <p>Documentos detectados: 18</p>
+            </div>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">01-inicio\\ARCHITECTURE_GUIDE.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# ARCHITECTURE_GUIDE
+
+## 1) Resumen arquitect&#243;nico
+El repositorio implementa una arquitectura .NET/C# centrada en UWP con convivencia de componentes legacy W81/WP8. En los outputs de sesi&#243;n se observa organizaci&#243;n por capas/m&#243;dulos (`ViewModels`, `Negocio`, `Service.Providers`, `Client`, `Domain`) y uso de DI con Autofac junto con Service Locator en partes del c&#243;digo.
+
+## 2) Stack y runtime
+- Lenguaje principal: C#.
+- Plataformas detectadas en evidencia de sesi&#243;n:
+  - UWP 10.0
+  - Windows 8.1 (legacy)
+  - Windows Phone 8.0 (legacy)
+- Tooling/observabilidad detectada en outputs:
+  - Sonar en workflow de an&#225;lisis.
+  - Integraciones como New Relic y Youbora referenciadas en el an&#225;lisis.
+
+## 3) Capas y componentes principales
+| Capa/Componente | Rol observable | Evidencia en outputs |
+|---|---|---|
+| UI / ViewModels | Orquestaci&#243;n de estado y presentaci&#243;n (MVVM) | `45_output.md` |
+| Negocio | Coordinaci&#243;n de flujo funcional y sesi&#243;n | `44_output.md`, `45_output.md` |
+| Servicios | Implementaci&#243;n de casos de uso y contratos | `45_output.md` |
+| Repositorios remotos | Acceso a endpoints y mapping | `45_output.md` |
+| Dominio | Entidades y contratos compartidos | `44_output.md`, `45_output.md` |
+| DI / Composition | Registro y resoluci&#243;n de dependencias | `44_output.md`, `45_output.md` |
+
+## 4) Flujo de alto nivel (UI -&gt; servicio -&gt; repositorio)
+1. ViewModel inicia solicitud de informaci&#243;n.
+2. Servicio de aplicaci&#243;n procesa caso de uso.
+3. Repositorio/provider ejecuta acceso remoto y transforma respuesta.
+4. Resultado regresa al ViewModel para actualizar estado/UI.
+
+Nota:
+- ⚠️ Dato no disponible en el repositorio (falt&#243; output con diagrama C4/ADR formal entre `01_output.md` y `66_output.md`).
+
+## 5) Entry points y composici&#243;n
+Entry points y piezas observadas en outputs de sesi&#243;n:
+- App principal UWP (`App.xaml.cs` con `OnLaunched`).
+- Apps legacy W81 y WP8 con su ciclo de arranque.
+- Servicio/tarea en background para LiveTile.
+- Composition root DI en `ViewModelLocator/AutofacConfig`.
+
+## 6) Integraciones externas observables
+- Anal&#237;tica/observabilidad: New Relic, Youbora (seg&#250;n outputs de an&#225;lisis arquitect&#243;nico/riesgos).
+- Infraestructura de an&#225;lisis de calidad: Sonar en workflow de CI.
+- Logging y utiler&#237;as transversales en m&#243;dulos framework/client.
+
+## 7) Riesgos arquitect&#243;nicos principales
+1. **Hotspots de tama&#241;o muy alto**
+- Evidencia en sesi&#243;n: ViewModels y capas de negocio con miles de LOC.
+
+2. **Dependencias ocultas por Service Locator / `Resolve&lt;&gt;`**
+- Evidencia en sesi&#243;n: uso extendido de resoluci&#243;n din&#225;mica en componentes clave.
+
+3. **Convivencia de plataformas legacy y modernas**
+- Evidencia en sesi&#243;n: coexistencia UWP/W81/WP8 en el mismo repositorio.
+
+4. **Se&#241;ales de robustez mejorable en c&#243;digo cr&#237;tico**
+- Evidencia en sesi&#243;n: presencia elevada de `async void` y `catch` vac&#237;os reportada en outputs.
+
+## 8) Recomendaciones de evoluci&#243;n (pragm&#225;ticas)
+1. Reducir acoplamiento en hotspots (split por responsabilidades).
+2. Limitar Service Locator al composition root y priorizar inyecci&#243;n por constructor.
+3. Definir estrategia expl&#237;cita para l&#237;nea legacy (mantener, congelar o migrar).
+4. Establecer quality gates bloqueantes con m&#233;tricas reales de test/cobertura.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Stack Tecnologico
+- Evidencia consolidada: stack .NET/C# con coexistencia de UWP (principal), W81 y WP8 (legacy).
+
+### Patrones Arquitectonicos Principales
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Principios de Diseno
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Diagrama de Alto Nivel
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Componentes Principales
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Flujo de Datos
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Modulos Core
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Modulos de Dominio
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Modulos de Infraestructura
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Dependencias Entre Modulos
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Patron Arquitectonico (MVVM, Clean, etc.)
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Dependency Injection
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Repository Pattern
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Observer/State Management
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### APIs Consumidas
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Servicios de Terceros
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Bases de Datos
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Sistemas de Cache
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Autenticacion y Autorizacion
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Manejo de Secrets
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Validacion de Datos
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Proteccion de APIs
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Estrategias de Caching
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Optimizaciones de Consultas
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Manejo de Concurrencia
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Metricas de Performance
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Principios de Extensibilidad
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Versionado de APIs
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Estrategias de Migracion
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Refactoring Guidelines
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/47_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/66_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">BEST_PRACTICES.md</span><span class="doc-path">01-inicio\\BEST_PRACTICES.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# BEST_PRACTICES
+
+## 1) Principios generales (aplicables al repo)
+- Separar UI/ViewModel de negocio y acceso a datos.
+- Mantener responsabilidades acotadas por clase/m&#243;dulo.
+- Priorizar cambios incrementales sobre hotspots para reducir regresiones.
+
+## 2) Convenciones de c&#243;digo
+- Interfaces con prefijo `I`.
+- Clases y m&#233;todos en `PascalCase`.
+- Namespaces por dominio funcional (`DLA.ClaroVideo.*`, `DLA.ClaroVideo.Negocio.*`, `DLA.ClaroVideo.Service.*`).
+
+## 3) Patrones recomendados
+- MVVM para capa de presentaci&#243;n.
+- DI con Autofac como mecanismo principal de composici&#243;n.
+- Servicios/repositories expl&#237;citos para separar orquestaci&#243;n de acceso remoto.
+
+Flujo recomendado:
+`ViewModel -&gt; Service -&gt; Repository`.
+
+## 4) Anti-patrones a evitar
+- Uso extendido de Service Locator y resoluci&#243;n din&#225;mica fuera del composition root.
+- Clases/m&#233;todos gigantes con m&#250;ltiples responsabilidades.
+- `async void` fuera de handlers de evento m&#237;nimos.
+- `catch {}` vac&#237;o sin manejo expl&#237;cito.
+
+## 5) Testing y calidad
+- Estandarizar la estrategia de test (MSTest/xUnit) para nuevos m&#243;dulos.
+- Evitar tests sin aserciones y sin validaci&#243;n de comportamiento.
+- Evitar `Thread.Sleep`/`Task.Delay` en tests; usar sincronizaci&#243;n determin&#237;stica.
+- Habilitar cobertura real en CI y quality gate bloqueante.
+
+## 6) Seguridad y operaci&#243;n
+- Evitar endpoints `http://` en clientes/proxies; migrar a `https://` con configuraci&#243;n por ambiente.
+- No silenciar errores cr&#237;ticos; registrar y propagar seg&#250;n pol&#237;tica.
+- Mantener suppressions (`NoWarn`) con justificaci&#243;n trazable.
+
+## 7) Performance y mantenibilidad
+- Priorizar refactor de hotspots estructurales reportados en sesi&#243;n.
+- Reducir acoplamiento en ViewModels/Business layer con extracci&#243;n por responsabilidades.
+- Limitar complejidad de firmas (evitar listas largas de par&#225;metros con request objects).
+
+## 8) Checklist m&#237;nimo para PRs
+- Build pasa en la soluci&#243;n objetivo.
+- No introduce `async void` nuevo no-UI.
+- No introduce `catch {}` vac&#237;o.
+- Mantiene/decrementa deuda t&#233;cnica en el m&#243;dulo tocado.
+- Incluye evidencia de pruebas para flujo impactado.
+
+## 9) Limitaciones
+- ⚠️ Dato no disponible en el repositorio (falt&#243; output entre `01_output.md` y `67_output.md` con ADR formal de est&#225;ndares por m&#243;dulo y versionado de pol&#237;tica de estilo).
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Nombres y Nomenclatura
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Estructura de Archivos
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Comentarios y Documentacion
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### Formateo y Estilo
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Principios SOLID
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Separacion de Responsabilidades
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Manejo de Dependencias
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Patrones Recomendados
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Estrategia de Testing
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Cobertura Minima
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Tipos de Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Mocking y Fixtures
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Validacion de Entrada
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Manejo de Secrets
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Logging Seguro
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Control de Acceso
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Optimizaciones Comunes
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Profiling y Monitoring
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Caching Strategies
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Resource Management
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### CI/CD Pipeline
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Environment Management
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Rollback Strategies
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Monitoring y Alertas
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Que Evitar
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Code Smells Comunes
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Ejemplos de Mal Codigo
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Como Refactorizar
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Estandares de Documentacion
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### API Documentation
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### README Guidelines
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### Change Logs
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/20_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/46_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/67_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">CODE_STRUCTURE.md</span><span class="doc-path">01-inicio\\CODE_STRUCTURE.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# CODE_STRUCTURE
+
+## 1) Overview de carpetas principales
+```text
+src/
+  Clarovideo.W81/
+  Clarovideo.WP8/
+  DLA.ClaroVideo/
+    DLA.ClaroVideo/
+    DLA.ClaroVideo.Negocio/
+    DLA.ClaroVideo.Client/
+    DLA.ClaroVideo.Domain/
+    DLA.ClaroVideo.Service.Providers/
+    DLA.ClaroVideo.Framework/
+    DLA.ClaroVideo.Model/
+    ClaroVideoTest/
+```
+
+## 2) Tabla de m&#243;dulos
+| M&#243;dulo | Path | Responsabilidad observable |
+|---|---|---|
+| App principal UWP | `src/DLA.ClaroVideo/DLA.ClaroVideo` | UI, navegaci&#243;n y composici&#243;n principal |
+| Negocio | `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio` | Orquestaci&#243;n de casos de uso y estado |
+| Cliente | `src/DLA.ClaroVideo/DLA.ClaroVideo.Client` | Acceso a endpoints y clientes remotos |
+| Dominio | `src/DLA.ClaroVideo/DLA.ClaroVideo.Domain` | Entidades/contratos de negocio |
+| Servicios | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers` | Implementaciones de servicio/repository |
+| Framework | `src/DLA.ClaroVideo/DLA.ClaroVideo.Framework` | Utiler&#237;as transversales |
+| Modelo | `src/DLA.ClaroVideo/DLA.ClaroVideo.Model` | Modelos y providers auxiliares |
+| Tests | `src/DLA.ClaroVideo/ClaroVideoTest` y otros test projects | Pruebas unitarias/integraci&#243;n |
+| Legacy W81 | `src/Clarovideo.W81/ClaroVideo` | Aplicaci&#243;n Windows 8.1 |
+| Legacy WP8 | `src/Clarovideo.WP8/Clarovideo.WP8` | Aplicaci&#243;n Windows Phone 8 |
+
+## 3) Entry points y composici&#243;n
+- App principal UWP: `App.xaml.cs` (`OnLaunched`).
+- App legacy W81: `App.xaml.cs`.
+- App legacy WP8: `App.xaml.cs`.
+- Background service: LiveTile task.
+- Composition root DI: `ViewModelLocator/AutofacConfig`.
+
+## 4) Flujo estructural recomendado
+- UI/ViewModel consume servicios de aplicaci&#243;n.
+- Servicios delegan a providers/repositorios.
+- Dominio/modelo encapsulan entidades y contratos.
+- DI compone dependencias en arranque.
+
+## 5) Hotspots estructurales reportados en sesi&#243;n
+- Archivos de gran tama&#241;o (&gt;3000 LOC) concentrados en ViewModels y capas de negocio.
+- Uso extendido de resoluci&#243;n din&#225;mica (`Resolve&lt;&gt;`) en flujo de aplicaci&#243;n.
+- Se&#241;ales de deuda t&#233;cnica transversales (`async void`, `catch` vac&#237;os).
+
+## 6) Observaciones de mantenimiento
+- El repo combina l&#237;nea principal (UWP) con l&#237;neas legacy (W81/WP8), lo que incrementa complejidad operativa.
+- Conviene trabajar por soluci&#243;n y por m&#243;dulo para acotar riesgo de regresi&#243;n.
+
+## 7) Limitaciones
+- ⚠️ Dato no disponible en el repositorio (falt&#243; output `01..69` con ownership oficial por m&#243;dulo y matriz formal de dependencias entre todos los proyectos).
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Directorio Raiz
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Modulos Principales
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Recursos y Assets
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Configuracion
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Presentation Layer
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Business Logic Layer
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Data Access Layer
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Infrastructure Layer
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Core Modules
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Feature Modules
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Shared Modules
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### External Dependencies
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Naming Conventions
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### File Organization
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Package Structure
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Resource Management
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### [Modulo 1]: Responsabilidades
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### [Modulo 2]: Responsabilidades
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### [Modulo N]: Responsabilidades
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Data Flow Diagram
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### State Management
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Event Handling
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Communication Patterns
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Adding New Features
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Modifying Existing Code
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Refactoring Guidelines
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Migration Strategies
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/48_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/66_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/67_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/69_output.md`
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">DEVELOPMENT_GUIDE.md</span><span class="doc-path">01-inicio\\DEVELOPMENT_GUIDE.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# DEVELOPMENT_GUIDE
+
+## 1) Requisitos
+- Stack principal: .NET/C#.
+- Contexto de plataformas coexistentes: UWP, W81 y WP8.
+- Ejecutar trabajo por soluci&#243;n objetivo para evitar conflictos de toolchain.
+
+Notas:
+- ⚠️ Dato no disponible en el repositorio (falt&#243; output `01..68` con matriz oficial de versiones m&#237;nimas de Visual Studio/workloads por plataforma).
+- En esta sesi&#243;n, la ejecuci&#243;n local de `dotnet` no estuvo disponible en el entorno del runner.
+
+## 2) Setup local
+1. Clonar el repositorio.
+2. Elegir soluci&#243;n seg&#250;n el alcance de tu cambio:
+   - `src/DLA.ClaroVideo/DLA.ClaroVideo.sln` (principal)
+   - `src/Clarovideo.W81/ClaroVideo.sln` (legacy)
+   - `src/Clarovideo.WP8/Clarovideo.WP8.sln` (legacy)
+3. Validar que el entorno soporta el target de la soluci&#243;n elegida.
+4. Ejecutar build base antes de modificar c&#243;digo.
+
+## 3) Build
+Comando base evidenciado en outputs de sesi&#243;n:
+```bash
+dotnet build
+```
+
+## 4) Run/Debug
+- Flujo recomendado: depurar desde IDE sobre entry points de app por plataforma.
+- Si trabajas en UWP, priorizar la l&#237;nea principal y aislar impactos en legacy.
+
+Limitaci&#243;n:
+- ⚠️ Dato no disponible en el repositorio (falt&#243; output `01..68` con comando CLI uniforme de ejecuci&#243;n tipo `dotnet run` para todos los targets).
+
+## 5) Testing
+Comando referenciado en outputs de sesi&#243;n:
+```bash
+dotnet test
+```
+
+Estado observado en sesi&#243;n:
+- Frameworks de pruebas mixtos (MSTest + xUnit).
+- No se pudo ejecutar `dotnet test` en este entorno del runner por falta de SDK local.
+- No se detectaron artefactos de cobertura/trx durante la ejecuci&#243;n local de la sesi&#243;n.
+
+## 6) Calidad de c&#243;digo
+Buenas pr&#225;cticas operativas para desarrollo diario:
+- No introducir `async void` nuevo fuera de handlers UI.
+- No dejar `catch {}` vac&#237;o.
+- Mantener cambios peque&#241;os en hotspots grandes.
+- Evitar aumentar suppressions `NoWarn` sin justificaci&#243;n.
+
+## 7) CI/CD quick notes
+- El flujo observado est&#225; centrado en an&#225;lisis de calidad (Sonar).
+- Se identific&#243; gate no bloqueante en configuraci&#243;n reportada por outputs.
+- Recomendaci&#243;n operativa: validar build/test local antes de abrir PR.
+
+## 8) Flujo de trabajo recomendado para PR
+1. Build local de la soluci&#243;n objetivo.
+2. Ejecutar tests disponibles para m&#243;dulo impactado.
+3. Verificar que no aumentan se&#241;ales de deuda (`async void`, `catch {}`, suppressions).
+4. Adjuntar evidencia m&#237;nima de validaci&#243;n en el PR.
+
+## 9) Troubleshooting r&#225;pido
+- `dotnet` no reconocido:
+  - usar entorno/agente con SDK instalado.
+- Fallos por targets legacy:
+  - compilar por soluci&#243;n (no todo el repo como una sola app).
+- Cobertura no visible en CI:
+  - revisar publicaci&#243;n de artefactos y configuraci&#243;n de pipeline.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Git Workflow
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Branch Strategy
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Commit Guidelines
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### PR Process
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### IDE Recomendado
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Extensions y Plugins
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Configuracion del Entorno
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Scripts Utiles
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Agregar Nueva Feature
+- Aplicar cambios incrementales por modulo con PRs pequenos y validacion por flujo.
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Implementar API Endpoint
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Agregar Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Actualizar Dependencias
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Running Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Writing Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Test Data Management
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Performance Testing
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Debugging Techniques
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Common Issues
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Logging Standards
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Profiling Tools
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Adding Dependencies
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Version Management
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Security Scanning
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### License Compliance
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Build Scripts
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Environment Configuration
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Deployment Process
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Rollback Procedures
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Application Monitoring
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Log Analysis
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Performance Metrics
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Error Tracking
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/47_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/66_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/68_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">EXECUTIVE_SUMMARY.md</span><span class="doc-path">01-inicio\\EXECUTIVE_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# EXECUTIVE_SUMMARY
+
+## 1) Qu&#233; es el proyecto
+Claro Video Universal Windows Platform es un repositorio .NET/C# con una l&#237;nea principal de aplicaci&#243;n UWP y componentes legacy para W81/WP8, incluyendo m&#243;dulos de app, negocio, servicios, clientes y pruebas.
+
+## 2) Alcance
+**Incluye:**
+- App principal y m&#243;dulos de dominio/servicios/cliente.
+- Componentes legacy de W81/WP8.
+- Proyectos de pruebas y documentaci&#243;n t&#233;cnica en `.github/docs`.
+
+**No incluye:**
+- M&#233;tricas productivas de operaci&#243;n (SLA/SLO, costos, tr&#225;fico real).
+- ⚠️ Dato no disponible en el repositorio
+
+## 3) Stack (alto nivel)
+- Lenguaje principal: C#.
+- Plataformas: UWP + W81 + WP8 (coexistencia en el mismo repositorio).
+- Tooling observado en outputs: an&#225;lisis de calidad con Sonar; frameworks de prueba MSTest/xUnit.
+
+## 4) Arquitectura (alto nivel)
+- Patr&#243;n dominante de presentaci&#243;n: MVVM.
+- Organizaci&#243;n por capas/m&#243;dulos: ViewModels, negocio, servicios, cliente y dominio.
+- DI observada con Autofac y uso de Service Locator en partes del c&#243;digo.
+
+## 5) Riesgos t&#233;cnicos observables (priorizados)
+1. Hotspots de gran tama&#241;o en ViewModels/capa negocio.
+2. Alta presencia de `async void` y `catch` vac&#237;os en c&#243;digo cr&#237;tico.
+3. Uso extendido de resoluci&#243;n din&#225;mica (`Resolve&lt;&gt;`) con impacto en testabilidad.
+4. Configuraci&#243;n de calidad no uniforme (suppressions elevadas y reglas no estrictas).
+5. Gate de calidad no bloqueante y cobertura no verificable en entorno del runner.
+
+## 6) Estado de calidad en esta sesi&#243;n
+- En entorno del runner no estuvo disponible `dotnet` para ejecuci&#243;n real de lint/test.
+- Se detectaron se&#241;ales de deuda t&#233;cnica relevantes (deuda de errores silenciosos, complejidad y suppressions).
+- Se consolid&#243; backlog priorizado para mitigaci&#243;n (P0/P1/P2).
+
+## 7) Pr&#243;ximos pasos accionables
+1. Habilitar SDK .NET en runner/CI para ejecutar quality checks reales.
+2. Volver bloqueante el quality gate en pipeline.
+3. Reducir `async void`/`catch {}` y suppressions no justificadas.
+4. Refactor incremental de hotspots cr&#237;ticos con PRs peque&#241;os.
+5. Estandarizar estrategia de tests y publicar cobertura por PR.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Contexto Organizacional
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Stack Tecnologico (DETECTADO)
+- Evidencia consolidada: stack .NET/C# con coexistencia de UWP (principal), W81 y WP8 (legacy).
+
+### Estado Arquitectonico Inicial
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Metricas Basicas (FASE 1)
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Documentacion Fundamental (8 archivos)
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### Analisis Tecnico (4 archivos)
+- Analisis base: ANALYSIS_REPORT_STACK_DETECTION, ANALYSIS_REPORT_ARCHITECTURE, ANALYSIS_SUMMARY y ARCHITECTURE_DIAGRAMS.
+
+### Tiempo Invertido
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Proxima: FASE 2 - DIAGNOSTICO
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Siguientes Fases
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Datos Pendientes (Requieren FASE 2)
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Herramientas No Evaluadas Aun
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Para FASE 2 (Diagnostico)
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/68_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/69_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/71_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ONBOARDING_GUIDE.md</span><span class="doc-path">01-inicio\\ONBOARDING_GUIDE.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# ONBOARDING_GUIDE
+
+## 1) Contexto
+Este onboarding est&#225; orientado a incorporaci&#243;n r&#225;pida en un repositorio .NET/C# con l&#237;nea principal UWP y coexistencia de componentes legacy W81/WP8, basado en evidencia consolidada de la sesi&#243;n del runner.
+
+## 2) Accesos organizacionales
+- Slack: ⚠️ Dato no disponible en el repositorio
+- Confluence/Wiki: ⚠️ Dato no disponible en el repositorio
+- Jira/Board: ⚠️ Dato no disponible en el repositorio
+- Canal de soporte on-call: ⚠️ Dato no disponible en el repositorio
+
+## 3) Checklist d&#237;a 1
+- [ ] Clonar repo y leer `.github/docs/01-inicio/README.md`.
+- [ ] Revisar `QUICK_START.md`, `ARCHITECTURE_GUIDE.md`, `CODE_STRUCTURE.md`.
+- [ ] Identificar soluci&#243;n principal de trabajo (`DLA.ClaroVideo.sln`).
+- [ ] Confirmar que entiendes separaci&#243;n por m&#243;dulos: UI/ViewModel, negocio, servicio, cliente, dominio.
+- [ ] Ejecutar build base (`dotnet build`) en entorno con SDK disponible.
+- [ ] Registrar bloqueos de entorno (SDK/workloads/targets legacy).
+- [ ] Revisar riesgos t&#233;cnicos prioritarios (hotspots, async/catch, DI din&#225;mica).
+
+## 4) Checklist primera semana
+- [ ] Mapear un flujo real UI -&gt; servicio -&gt; repositorio en m&#243;dulo asignado.
+- [ ] Ubicar hotspots de mayor tama&#241;o y acordar alcance de cambios peque&#241;os.
+- [ ] Revisar y evitar introducci&#243;n de `async void` y `catch {}` nuevos.
+- [ ] Identificar dependencias resueltas din&#225;micamente (`Resolve&lt;&gt;`) en tu &#225;rea.
+- [ ] Validar estrategia de pruebas en el m&#243;dulo (MSTest/xUnit) y criterios de PR.
+- [ ] Documentar 1 propuesta de mejora t&#233;cnica de bajo riesgo.
+- [ ] Completar al menos una revisi&#243;n t&#233;cnica de PR con evidencia.
+
+## 5) Primera tarea sugerida
+**Quick win recomendado:**
+- Corregir 3-5 casos de `catch {}` vac&#237;os en flujo cr&#237;tico acotado (player/search), agregando manejo expl&#237;cito y logging.
+
+**Motivo:**
+- Riesgo alto observado en sesi&#243;n por manejo silencioso de errores.
+- Impacto inmediato en observabilidad y diagn&#243;sticos.
+
+**Criterio de salida:**
+- PR peque&#241;o con validaci&#243;n manual del flujo impactado.
+- Sin regresiones visibles en build del m&#243;dulo afectado.
+
+## 6) Se&#241;ales de alerta para nuevos integrantes
+- Archivos de gran tama&#241;o en ViewModels/capa negocio: evitar refactors masivos al inicio.
+- Mezcla de plataformas (UWP/W81/WP8): trabajar por soluci&#243;n objetivo.
+- Calidad de entorno: en sesi&#243;n no hubo `dotnet` local operativo para runner.
+
+## 7) Escalamiento recomendado
+- Bloqueo t&#233;cnico de entorno: escalar a owner de CI/tooling.
+- Riesgo de arquitectura o deuda cr&#237;tica: escalar a Tech Lead antes de implementar.
+- Falta de contexto funcional: escalar a referente de m&#243;dulo.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Primera Semana
+- Objetivo semana 1: setup completo, lectura de docs base y primer build de la solucion objetivo.
+
+### Segunda Semana
+- Objetivo semana 2: primer PR funcional con pruebas y sin introducir anti-patrones criticos.
+
+### Arquitectura del Proyecto
+- Arquitectura observada: MVVM en presentacion con capas/modulos UI/ViewModels, negocio, servicios, cliente y dominio.
+- Modulos observados: DLA.ClaroVideo, DLA.ClaroVideo.Negocio, DLA.ClaroVideo.Client, DLA.ClaroVideo.Domain, Service.Providers, Framework, Model.
+
+### Stack Tecnologico
+- Evidencia consolidada: stack .NET/C# con coexistencia de UWP (principal), W81 y WP8 (legacy).
+
+### Domain Knowledge
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Tools y Workflows
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Contactos Clave
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Canales de Comunicacion
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Meetings y Ceremonias
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Escalation Paths
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Week 1 Tasks
+- Objetivo semana 1: setup completo, lectura de docs base y primer build de la solucion objetivo.
+
+### Week 2 Tasks
+- Objetivo semana 2: primer PR funcional con pruebas y sin introducir anti-patrones criticos.
+
+### Week 3-4 Tasks
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Graduation Criteria
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Milestones Semanales
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Expected Deliverables
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Support Available
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Feedback Sessions
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Technical Setup
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Knowledge Acquisition
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### First Contribution
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Full Productivity
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Technical Questions
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Process Questions
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Administrative Issues
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Emergency Contacts
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/48_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/70_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">QUICK_START.md</span><span class="doc-path">01-inicio\\QUICK_START.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# QUICK_START
+
+## 1) Objetivo
+Arrancar r&#225;pidamente el proyecto con los comandos base que s&#237; tienen evidencia en la sesi&#243;n del runner, para un repo .NET/C# con componentes UWP, W81 y WP8.
+
+## 2) Stack y contexto (resumen)
+- Lenguaje principal: C#.
+- Plataformas detectadas en documentaci&#243;n de sesi&#243;n: UWP 10.0, W81 8.1, WP8 v8.0.
+- Soluci&#243;n principal recomendada para trabajo diario: `src/DLA.ClaroVideo/DLA.ClaroVideo.sln`.
+
+## 3) Prerrequisitos m&#237;nimos
+- Repositorio clonado localmente.
+- Herramienta `dotnet` disponible en el entorno para ejecutar comandos CLI.
+- Elegir soluci&#243;n seg&#250;n objetivo:
+  - `src/DLA.ClaroVideo/DLA.ClaroVideo.sln`
+  - `src/Clarovideo.W81/ClaroVideo.sln`
+  - `src/Clarovideo.WP8/Clarovideo.WP8.sln`
+
+Notas:
+- ⚠️ Dato no disponible en el repositorio (falt&#243; output dedicado a versiones m&#237;nimas de Visual Studio/workloads entre `01_output.md` y `65_output.md`).
+- En esta sesi&#243;n del runner, `dotnet` no estuvo disponible localmente; si ocurre lo mismo, ejecutar estos pasos en un agente con SDK instalado.
+
+## 4) Comandos base (evidenciados)
+```bash
+dotnet build
+dotnet test
+```
+
+Estado de evidencia:
+- `dotnet build`: comando observado en pipeline hist&#243;rico.
+- `dotnet test`: existe como referencia comentada en pipeline hist&#243;rico.
+
+## 5) Flujo r&#225;pido recomendado (5 minutos)
+1. Abrir la soluci&#243;n de trabajo principal (`DLA.ClaroVideo.sln`) o la soluci&#243;n legacy correspondiente.
+2. Ejecutar `dotnet build` para validar compilaci&#243;n base.
+3. Ejecutar `dotnet test` si el entorno ya tiene SDK y proyecto de tests configurado.
+4. Si fallan tests/cobertura en CI, revisar primero `DEVELOPMENT_GUIDE` y `TROUBLESHOOTING`.
+
+## 6) Verificaci&#243;n de salida esperada
+- Build sin errores cr&#237;ticos en la soluci&#243;n seleccionada.
+- Tests ejecutados (cuando el entorno tenga `dotnet` operativo).
+- Identificaci&#243;n clara de si est&#225;s trabajando en l&#237;nea UWP o legacy (W81/WP8).
+
+## 7) Problemas comunes (r&#225;pido)
+- `dotnet` no reconocido:
+  - Causa probable: SDK no instalado en el entorno.
+  - Acci&#243;n: usar agente con .NET SDK habilitado.
+- Mezcla de targets legacy/modernos:
+  - Causa probable: intentar compilar todo el repo como una sola app.
+  - Acci&#243;n: construir por soluci&#243;n (`DLA.ClaroVideo`, `Clarovideo.W81`, `Clarovideo.WP8`).
+- `dotnet test` no corre en CI actual:
+  - Causa probable: pipeline enfocado en Sonar sin paso expl&#237;cito de test en GitHub.
+
+## 8) Siguiente lectura recomendada
+1. `DEVELOPMENT_GUIDE.md`
+2. `CODE_STRUCTURE.md`
+3. `TROUBLESHOOTING.md`
+4. `ARCHITECTURE_GUIDE.md`
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### 1. Instalar [Herramienta Principal]
+- Herramienta principal con evidencia: `dotnet` CLI para build/test.
+
+### 2. Configurar [SDK/Framework]
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### 3. Configurar [Dependencias]
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### 1. Clonar el Repositorio
+- Clonar el repo y abrir `src/DLA.ClaroVideo/DLA.ClaroVideo.sln` como flujo principal.
+
+### 2. Configurar Archivos Secrets
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### 3. Configurar [Servicios Externos]
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### 1. Sincronizar Dependencias
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### 2. Build Debug/Development
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### 1. Run Configuration
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### 2. Ejecutar App
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### 3. Verificar Instalacion
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Unit Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Integration Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### 1. Configurar Debug Mode
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### 2. Logs utiles
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### 3. [Herramienta de Debugging Especifica]
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Errores Comunes
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Performance Issues
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Documentacion del Proyecto
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### Herramientas de Desarrollo
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Comunidad Interna
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Entorno
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Configuracion
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Funcionalidad
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Accesos
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### 1. Documentacion
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### 2. Equipo
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### 3. Escalacion
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/47_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">01-inicio\\README.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# README (01-inicio)
+
+Este &#237;ndice centraliza la documentaci&#243;n base de arranque t&#233;cnico y su relaci&#243;n con los reportes de an&#225;lisis de la sesi&#243;n.
+
+## Tabla de documentos
+
+| Documento | Prop&#243;sito | Audiencia principal |
+|---|---|---|
+| [QUICK_START](./QUICK_START.md) | Arranque r&#225;pido y comandos base | Dev nuevo / Dev existente |
+| [ARCHITECTURE_GUIDE](./ARCHITECTURE_GUIDE.md) | Vista arquitect&#243;nica y l&#237;mites por capa | Dev existente / Arquitectura |
+| [BEST_PRACTICES](./BEST_PRACTICES.md) | Pr&#225;cticas de desarrollo y calidad recomendadas | Dev existente |
+| [DEVELOPMENT_GUIDE](./DEVELOPMENT_GUIDE.md) | Flujo operativo para desarrollo diario | Dev nuevo / Dev existente |
+| [CODE_STRUCTURE](./CODE_STRUCTURE.md) | Mapa de carpetas, m&#243;dulos y entry points | Dev nuevo |
+| [ONBOARDING_GUIDE](./ONBOARDING_GUIDE.md) | Checklist de incorporaci&#243;n por etapas | Dev nuevo |
+| [EXECUTIVE_SUMMARY](./EXECUTIVE_SUMMARY.md) | Resumen ejecutivo de estado t&#233;cnico y riesgos | Stakeholder |
+| [TROUBLESHOOTING](./TROUBLESHOOTING.md) | Problemas frecuentes y resoluci&#243;n r&#225;pida | Dev existente / Soporte |
+
+## Flujo sugerido por perfil
+
+### Dev nuevo
+1. [ONBOARDING_GUIDE](./ONBOARDING_GUIDE.md)
+2. [CODE_STRUCTURE](./CODE_STRUCTURE.md)
+3. [QUICK_START](./QUICK_START.md)
+4. [DEVELOPMENT_GUIDE](./DEVELOPMENT_GUIDE.md)
+
+### Dev existente
+1. [ARCHITECTURE_GUIDE](./ARCHITECTURE_GUIDE.md)
+2. [BEST_PRACTICES](./BEST_PRACTICES.md)
+3. [DEVELOPMENT_GUIDE](./DEVELOPMENT_GUIDE.md)
+4. [TROUBLESHOOTING](./TROUBLESHOOTING.md)
+
+### Stakeholder
+1. [EXECUTIVE_SUMMARY](./EXECUTIVE_SUMMARY.md)
+2. Reportes de an&#225;lisis en `../02-analisis/`
+
+## Relaci&#243;n con an&#225;lisis (02-analisis)
+- `ANALYSIS_REPORT_STACK_DETECTION.md`
+- `ANALYSIS_REPORT_ARCHITECTURE.md`
+- `ANALYSIS_SUMMARY.md`
+- `README.md` de la carpeta `02-analisis`
+
+## Notas de mantenimiento
+- Si cambia el contenido de cualquier documento en `01-inicio`, actualizar esta tabla e itinerarios.
+- Si cambia el flujo del runner, revisar enlaces con `02-analisis`.
+- ⚠️ Dato no disponible en el repositorio: no se encontr&#243; en outputs una pol&#237;tica formal de versionado documental (falt&#243; output espec&#237;fico de governance documental entre `01_output.md` y `73_output.md`).
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/64_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/66_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/67_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/68_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/69_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/70_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/71_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/72_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/73_output.md`
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">TROUBLESHOOTING.md</span><span class="doc-path">01-inicio\\TROUBLESHOOTING.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# TROUBLESHOOTING
+
+## 1) `dotnet` no reconocido en entorno de ejecuci&#243;n
+**S&#237;ntoma**
+- No se puede ejecutar build/test/analyzers desde el runner local.
+
+**Causa probable**
+- SDK .NET no disponible en el agente local.
+
+**Resoluci&#243;n**
+1. Ejecutar el flujo en un entorno con SDK .NET instalado.
+2. Verificar disponibilidad antes de correr el runner completo.
+3. Reintentar pasos de quality/testing.
+
+## 2) Build falla al intentar compilar todo el repo de una sola vez
+**S&#237;ntoma**
+- Errores de compilaci&#243;n por targets incompatibles.
+
+**Causa probable**
+- Coexistencia de UWP + W81 + WP8 en el mismo repositorio.
+
+**Resoluci&#243;n**
+1. Elegir soluci&#243;n objetivo por alcance del cambio.
+2. Compilar por soluci&#243;n (no global).
+3. Alinear toolchain seg&#250;n plataforma.
+
+## 3) CI no refleja ejecuci&#243;n de pruebas esperada
+**S&#237;ntoma**
+- Pipeline de an&#225;lisis sin evidencia de pruebas/cobertura ejecutadas.
+
+**Causa probable**
+- Flujo centrado en an&#225;lisis y gate no bloqueante.
+
+**Resoluci&#243;n**
+1. Habilitar paso expl&#237;cito de test en pipeline oficial.
+2. Publicar artefactos de test/coverage en cada ejecuci&#243;n.
+3. Configurar gate bloqueante para control de calidad real.
+
+## 4) Cobertura no disponible en reportes
+**S&#237;ntoma**
+- No hay porcentaje de cobertura verificable.
+
+**Causa probable**
+- No hay artefactos detectados de cobertura/trx en el contexto de sesi&#243;n.
+
+**Resoluci&#243;n**
+1. Integrar generaci&#243;n de cobertura en CI.
+2. Publicar reportes en formato consumible por tooling.
+3. Definir umbrales m&#237;nimos para PR.
+
+## 5) Errores silenciosos o intermitentes
+**S&#237;ntoma**
+- Fallas sin trazabilidad clara.
+
+**Causa probable**
+- Presencia de `async void` y `catch` vac&#237;os en &#225;reas cr&#237;ticas.
+
+**Resoluci&#243;n**
+1. Reemplazar `async void` no-evento por `Task`.
+2. Eliminar `catch {}` vac&#237;os agregando manejo expl&#237;cito y logging.
+3. Priorizar m&#243;dulos de player/search/auth.
+
+## 6) Problemas de inyecci&#243;n de dependencias en runtime
+**S&#237;ntoma**
+- Resoluciones fallidas o comportamiento inconsistente entre flujos.
+
+**Causa probable**
+- Uso extendido de Service Locator / resoluci&#243;n din&#225;mica.
+
+**Resoluci&#243;n**
+1. Limitar resoluci&#243;n din&#225;mica al composition root.
+2. Migrar gradualmente a inyecci&#243;n por constructor.
+3. Cubrir flujo afectado con pruebas de regresi&#243;n.
+
+## 7) Regresiones frecuentes al tocar hotspots
+**S&#237;ntoma**
+- Cambios peque&#241;os generan impacto amplio.
+
+**Causa probable**
+- Clases de gran tama&#241;o con responsabilidades m&#250;ltiples.
+
+**Resoluci&#243;n**
+1. Hacer refactor incremental por responsabilidades.
+2. Dividir PRs en cambios peque&#241;os y verificables.
+3. Asegurar validaci&#243;n funcional m&#237;nima por cada extracci&#243;n.
+
+## 8) Se&#241;ales de deuda t&#233;cnica elevadas
+**S&#237;ntoma**
+- Alta fricci&#243;n en mantenimiento y revisi&#243;n de calidad.
+
+**Causa probable**
+- Suppressions extensivas y reglas no homog&#233;neas.
+
+**Resoluci&#243;n**
+1. Centralizar reglas (`.editorconfig` / props compartidas).
+2. Reducir `NoWarn` sin justificaci&#243;n.
+3. Promover reglas cr&#237;ticas a enforcement estricto.
+
+## 9) Datos no disponibles
+- Matriz oficial de owners por m&#243;dulo: ⚠️ Dato no disponible en el repositorio
+- Procedimiento formal de escalamiento organizacional: ⚠️ Dato no disponible en el repositorio
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Environment Issues
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Dependency Problems
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Configuration Errors
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Permission Issues
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Build Failures
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Dependency Conflicts
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Version Mismatches
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Platform-specific Issues
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Application Crashes
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Performance Problems
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Memory Leaks
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Network Issues
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Test Failures
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Flaky Tests
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Test Environment Issues
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Coverage Problems
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+- Frameworks observados: MSTest + xUnit; no hubo cobertura verificable en el entorno local del runner.
+
+### Configuration Problems
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Environment Differences
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+- Comandos con evidencia en sesion: `dotnet build` y `dotnet test` (cuando el SDK esta disponible).
+
+### Network Connectivity
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Resource Constraints
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Log Analysis
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Performance Profiling
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### Error Tracking
+- Problemas recurrentes: `dotnet` no reconocido, mezcla de targets legacy, `async void`, `catch {}` y hotspots de gran tamano.
+
+### Health Checks
+- Riesgo de performance: hotspots en ViewModels/capa de negocio; no hay benchmark/SLO formal en outputs.
+- CI/calidad observado: flujo con Sonar y quality gate no bloqueante; recomendacion: gate bloqueante con build/test/cobertura.
+
+### When to Escalate
+- Escalar cuando el bloqueo afecta pipeline, seguridad o hotspots criticos sin rollback seguro.
+
+### Who to Contact
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Information to Provide
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+### Emergency Procedures
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Documentation Links
+- Referencias clave: QUICK_START, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ARCHITECTURE_GUIDE y TROUBLESHOOTING.
+
+### Community Forums
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### Expert Contacts
+- No hay evidencia directa en outputs para este punto; definirlo expl&#237;citamente en backlog t&#233;cnico (owner, fecha y evidencia esperada) y validarlo en Fase 2 con artefactos de CI.
+
+### External Tools
+- Basado en evidencia de sesi&#243;n: stack .NET/C#, arquitectura MVVM, m&#243;dulos UWP/W81/WP8 y m&#233;tricas consolidadas en `.github/docs/02-analisis/*.md`.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/69_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/70_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/71_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/72_output.md`
+
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_ARCHITECTURE.md</span><span class="doc-path">02-analisis\\ANALYSIS_REPORT_ARCHITECTURE.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# ANALYSIS_REPORT_ARCHITECTURE
+
+## 1) Resumen ejecutivo
+La arquitectura observada corresponde a una base .NET/C# con patr&#243;n de presentaci&#243;n MVVM y separaci&#243;n funcional por m&#243;dulos (UI/ViewModels, negocio, servicios, cliente y dominio), pero con se&#241;ales claras de acoplamiento elevado en hotspots y coexistencia de l&#237;neas legacy que incrementan la complejidad de evoluci&#243;n.
+
+## 2) Patr&#243;n arquitect&#243;nico detectado
+- Patr&#243;n predominante: MVVM en capa de presentaci&#243;n.
+- Composici&#243;n de dependencias: DI con Autofac, coexistiendo con uso de Service Locator.
+- Organizaci&#243;n estructural: m&#243;dulos por responsabilidad (app, negocio, dominio, servicios y cliente).
+
+## 3) Mapa de capas y responsabilidades (alto nivel)
+| Capa | Rol | Hallazgo |
+|---|---|---|
+| UI / ViewModels | Estado/presentaci&#243;n | Concentraci&#243;n alta de l&#243;gica en ViewModels extensos |
+| Negocio | Orquestaci&#243;n de casos de uso | Clase central de negocio con alta carga de responsabilidades |
+| Servicios/Providers | Adaptadores de l&#243;gica y acceso | Patrones de servicio presentes, con acoplamiento variable |
+| Cliente/Repositorio | Interacci&#243;n remota | Evidencia de endpoints legacy y acoplamientos hist&#243;ricos |
+| Dominio/Modelo | Entidades/contratos | Presencia de contratos y tipos compartidos |
+
+## 4) Hallazgos arquitect&#243;nicos clave
+1. **Hotspots de tama&#241;o cr&#237;tico**
+- Se reportan archivos con miles de LOC en ViewModels y capa de negocio.
+
+2. **Acoplamiento por resoluci&#243;n din&#225;mica**
+- Uso extendido de `Resolve&lt;&gt;`/Service Locator en componentes relevantes.
+
+3. **Riesgo de robustez en flujos cr&#237;ticos**
+- Presencia elevada de `async void` y `catch` vac&#237;os en an&#225;lisis de sesi&#243;n.
+
+4. **Coexistencia multi-target legacy**
+- UWP + W81 + WP8 en la misma base, con impacto en build/tooling/mantenimiento.
+
+## 5) Antipatrones y deuda arquitect&#243;nica
+- God classes / clases con responsabilidades m&#250;ltiples.
+- Service Locator como mecanismo extendido m&#225;s all&#225; del composition root.
+- Manejo de errores insuficiente (capturas vac&#237;as).
+- Se&#241;ales de deuda operativa por configuraci&#243;n de calidad no homog&#233;nea.
+
+## 6) Riesgos priorizados
+- **Riesgo alto:** regresiones por modificaciones en hotspots gigantes.
+- **Riesgo alto:** fallas de runtime por dependencias resueltas din&#225;micamente.
+- **Riesgo medio-alto:** lentitud de cambio por heterogeneidad de plataformas.
+- **Riesgo medio-alto:** baja trazabilidad de fallas por patrones async/errores.
+
+## 7) Recomendaciones de evoluci&#243;n
+1. Refactor incremental de hotspots por vertical funcional.
+2. Migrar gradualmente a inyecci&#243;n por constructor (limitar Service Locator).
+3. Establecer contrato de calidad bloqueante en CI (build/test/coverage).
+4. Definir estrategia expl&#237;cita para componentes legacy (mantener, congelar o migrar).
+
+## 8) Limitaciones de evidencia
+- ⚠️ Dato no disponible en el repositorio: no se encontr&#243; en outputs una documentaci&#243;n formal de ADRs/decisiones arquitect&#243;nicas por m&#243;dulo.
+- ⚠️ Dato no disponible en el repositorio: no se dispone de benchmark hist&#243;rico de performance/operaci&#243;n para validar impacto real de decisiones.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Patron Arquitectonico
+- Patr&#243;n principal observado: MVVM en presentaci&#243;n, con organizaci&#243;n por capas/m&#243;dulos de aplicaci&#243;n, negocio, servicios, cliente y dominio.
+
+### Complejidad Estimada
+- Complejidad alta por hotspots de gran tama&#241;o, acoplamiento por resoluci&#243;n din&#225;mica y coexistencia multi-target legacy.
+
+### Estado de la Arquitectura
+- Estado actual: funcional pero con deuda relevante en testabilidad, robustez de errores y mantenibilidad estructural.
+
+### Componentes Principales
+- Componentes clave: UI/ViewModels, capa de negocio, Service.Providers, Client, Domain/Model y composition root con Autofac.
+
+### Relaciones y Dependencias
+- Relaci&#243;n principal: ViewModel -&gt; Negocio -&gt; Servicios/Client -&gt; Dominio; se observa dependencia adicional por Service Locator (`Resolve&lt;&gt;`).
+
+### Entry Points
+- Entry points observados: `App.xaml.cs` (UWP/W81/WP8), inicializaci&#243;n de composici&#243;n y tareas de background reportadas en outputs.
+
+### Distribucion de Responsabilidades
+- La distribuci&#243;n por capas existe, pero hay concentraci&#243;n de l&#243;gica en ViewModels y servicios grandes (god classes).
+
+### Acoplamiento y Cohesion
+- Acoplamiento: medio-alto por resoluci&#243;n din&#225;mica; cohesi&#243;n afectada en m&#243;dulos con clases extensas y responsabilidades mixtas.
+
+### Interfaces Publicas
+- Existen contratos de dominio/modelo y servicios; se recomienda reforzar interfaces expl&#237;citas en l&#237;mites de m&#243;dulo para reducir dependencia impl&#237;cita.
+
+### Patrones Arquitectonicos
+- Patrones detectados: MVVM, modularizaci&#243;n por responsabilidad, inyecci&#243;n de dependencias con Autofac y uso parcial de Service Locator.
+
+### Patrones de Diseno
+- Patrones de dise&#241;o observables: composition root DI, separaci&#243;n service/provider/client y contratos de dominio.
+
+### Anti-patrones Detectados
+- Anti-patrones principales: god classes, `Resolve&lt;&gt;` extendido, `async void` en exceso y `catch` vac&#237;os en flujos cr&#237;ticos.
+
+### APIs Expuestas
+- No se consolid&#243; inventario completo de APIs expuestas en outputs de arquitectura; el foco fue acoplamiento y deuda estructural.
+
+### APIs Consumidas
+- Se confirm&#243; consumo remoto mediante capas `Client` y `Service.Providers`, con trazas de endpoints legacy en an&#225;lisis de sesi&#243;n.
+
+### Servicios Externos
+- Integraciones externas reportadas en outputs: New Relic y Youbora para observabilidad/analytics.
+
+### Puntos de Autenticacion
+- No hay mapa formal &#250;nico de autenticaci&#243;n en outputs; requiere inventario por flujo en fase de diagn&#243;stico de seguridad.
+
+### Validacion de Datos
+- No se document&#243; pol&#237;tica transversal formal de validaci&#243;n en outputs; se recomienda estandarizar validaci&#243;n en l&#237;mites de entrada.
+
+### Manejo de Secrets
+- Riesgo hist&#243;rico observado: material sensible/certificados en repositorio; se recomienda externalizar secretos y rotaci&#243;n controlada.
+
+### Complejidad Ciclomatica
+- No hay medici&#243;n consolidada de complejidad ciclom&#225;tica por archivo en outputs actuales; s&#237; hay evidencia de hotspots por LOC y deuda t&#233;cnica.
+
+### Lineas de Codigo
+- Se reportan archivos de miles de LOC en ViewModels/capa de negocio; hotspot destacado: `SampleDataSource.cs` con 10364 LOC.
+
+### Cobertura de Tests
+- Cobertura no verificable en entorno local de runner; se observa necesidad de estandarizar ejecuci&#243;n y publicaci&#243;n de cobertura en CI.
+
+### Mejoras Arquitectonicas
+- Mejoras priorizadas: reducir hotspots, mover DI a constructor, remover dependencias din&#225;micas y endurecer quality gates.
+
+### Refactorings Prioritarios
+- Prioridad alta: extraer responsabilidades en ViewModels/negocio, eliminar `catch {}` vac&#237;os y migrar `async void` a `Task` cuando aplique.
+
+### Modernizacion Tecnica
+- Modernizaci&#243;n recomendada: estrategia expl&#237;cita UWP/W81/WP8 (mantener, congelar o migrar) y estandarizaci&#243;n de toolchain .NET.
+
+### Datos no disponibles en el repositorio
+- Faltan ADRs formales por m&#243;dulo y benchmark hist&#243;rico de performance/operaci&#243;n para cuantificar impacto de decisiones.
+
+### Recomendaciones para completar analisis
+- Completar C4/ADRs, m&#233;tricas de complejidad/cobertura por m&#243;dulo y ownership t&#233;cnico para priorizar modernizaci&#243;n con riesgo controlado.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/30_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/67_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/75_output.md`
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_STACK_DETECTION.md</span><span class="doc-path">02-analisis\\ANALYSIS_REPORT_STACK_DETECTION.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# ANALYSIS_REPORT_STACK_DETECTION
+
+## 1) Resumen de detecci&#243;n
+- **Stack principal detectado:** .NET / C#.
+- **Ecosistema principal:** aplicaci&#243;n UWP con coexistencia de componentes legacy W81/WP8.
+- **Estado general:** monorepo multi-target con diversidad de `csproj` y configuraci&#243;n de calidad heterog&#233;nea.
+
+## 2) Stack principal (confirmado)
+- Lenguaje dominante: C#.
+- Estructura de proyectos basada en soluciones/proyectos `.sln/.csproj`.
+- Validaci&#243;n de stack en outputs de sesi&#243;n con referencia expl&#237;cita a configuraci&#243;n de an&#225;lisis.
+
+## 3) Stacks/targets secundarios detectados
+- UWP (l&#237;nea principal activa).
+- Windows 8.1 (legacy).
+- Windows Phone 8.0 (legacy).
+
+Implicaci&#243;n t&#233;cnica:
+- El repositorio no es mono-target; requiere tratamiento por soluci&#243;n/plataforma para build, troubleshooting y evoluci&#243;n.
+
+## 4) Tooling y build/test detectado desde outputs
+- Build/test mencionados en documentaci&#243;n de sesi&#243;n: `dotnet build`, `dotnet test`.
+- En la ejecuci&#243;n local del runner, `dotnet` no estuvo disponible.
+- Se detecta uso de MSTest + xUnit en proyectos de pruebas.
+
+## 5) Calidad y an&#225;lisis est&#225;tico (contexto de stack)
+- Cantidad de proyectos `.csproj` detectada en sesi&#243;n: 44.
+- Ruleset principal detectado y referenciado en m&#250;ltiples proyectos.
+- Se&#241;ales de configuraci&#243;n mixta:
+  - `TreatWarningsAsErrors` con valores verdaderos y falsos en distintos proyectos.
+  - suppressions `NoWarn` elevadas.
+  - ausencia de `.editorconfig` central reportada en sesi&#243;n.
+
+## 6) Riesgos de stack observables
+1. Complejidad operativa por coexistencia de UWP/W81/WP8.
+2. Dependencia de tooling no homog&#233;neo entre entornos (runner local sin `dotnet`).
+3. Calidad no uniformemente enforced por configuraci&#243;n fragmentada.
+
+## 7) Nivel de confianza de la detecci&#243;n
+- **Confianza global:** Alta para identificaci&#243;n de stack principal (.NET/C#).
+- **Confianza media-alta:** para delimitaci&#243;n de targets secundarios (UWP/W81/WP8).
+- **Limitaciones:**
+  - ⚠️ Dato no disponible en el repositorio: no se identific&#243; en outputs una matriz oficial de soporte por versi&#243;n de SDK/workloads.
+
+## 8) Conclusi&#243;n ejecutiva
+El stack del proyecto est&#225; claramente centrado en .NET/C#, pero el costo de mantenimiento est&#225; condicionado por su naturaleza multi-target legacy. Cualquier estrategia de modernizaci&#243;n o hardening debe considerar separaci&#243;n por l&#237;nea de plataforma y estandarizaci&#243;n progresiva del tooling de calidad.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Stack Detectado
+- Stack principal detectado: .NET/C# con l&#237;nea principal UWP y coexistencia legacy W81/WP8.
+
+### Confianza del Analisis
+- Confianza alta en identificaci&#243;n de stack y targets, basada en evidencia de `.sln/.csproj` y reportes de sesi&#243;n.
+
+### Archivos de Evidencia Analizados
+- Evidencias de sesi&#243;n usadas: `03_output.md`, `40_output.md`, `43_output.md`, `47_output.md`, `60_output.md`, `61_output.md`, `63_output.md`, `65_output.md`, `72_output.md`, `74_output.md`.
+
+### Lenguage Principal
+- Lenguaje dominante: C# (ecosistema .NET).
+
+### Framework/Plataforma
+- Plataformas detectadas: UWP (principal), Windows 8.1 y Windows Phone 8.0 (legacy).
+
+### Herramientas de Build
+- Comandos observados y recomendados por evidencia: `dotnet build` y `dotnet test`.
+
+### Gestion de Dependencias
+- Gesti&#243;n por proyecto `.csproj` y soluci&#243;n `.sln`; se&#241;ales de configuraci&#243;n heterog&#233;nea (`NoWarn`, `TreatWarningsAsErrors`) en distintos m&#243;dulos.
+
+### Build Files
+- Artefactos de build del stack: soluciones `.sln` y proyectos `.csproj` en l&#237;neas UWP/W81/WP8.
+
+### Dependency Management
+- Dependency management orientado a NuGet/PackageReference por proyecto; la resoluci&#243;n debe tratarse por soluci&#243;n objetivo.
+
+### Development Tools
+- Tooling observado: runner de prompts, an&#225;lisis de calidad (Sonar) y validaci&#243;n documental por checklist.
+
+### Infrastructure
+- Infraestructura t&#233;cnica del repo: monorepo multi-target con l&#237;neas activa (UWP) y legacy (W81/WP8), m&#225;s pipeline de an&#225;lisis de calidad.
+
+### Versiones Actuales
+- Versiones de SDK/workloads exactas no est&#225;n formalizadas en outputs; s&#237; existe evidencia de targets UWP/W81/WP8 en uso.
+
+### Compatibilidad
+- Compatibilidad condicionada por coexistencia de targets legacy; conviene compilar y validar por soluci&#243;n para evitar conflictos de toolchain.
+
+### Recomendaciones de Actualizacion
+- Priorizar estandarizaci&#243;n de SDK/workloads .NET en CI, homogenizar reglas de calidad y definir plan de retiro/migraci&#243;n de componentes legacy.
+
+### Datos no disponibles en el repositorio
+- No se encontr&#243; matriz oficial de soporte por versi&#243;n de SDK/workloads ni policy formal de upgrade por plataforma.
+
+### Recomendaciones para completar analisis
+- Completar inventario de versiones y dependencias por soluci&#243;n, registrar baseline de build/test por plataforma y versionar la pol&#237;tica de actualizaci&#243;n t&#233;cnica.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/03_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/47_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/72_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/74_output.md`
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_SUMMARY.md</span><span class="doc-path">02-analisis\\ANALYSIS_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# ANALYSIS_SUMMARY
+
+## Resumen Ejecutivo
+El an&#225;lisis consolidado de la sesi&#243;n identifica una base .NET/C# con arquitectura MVVM y alta complejidad operativa por coexistencia de UWP, W81 y WP8. Se detectan riesgos t&#233;cnicos cr&#237;ticos en hotspots de c&#243;digo, calidad no homog&#233;nea y brechas de ejecuci&#243;n de tests/cobertura en el entorno del runner.
+
+## Hallazgos Clave
+1. Stack principal confirmado: .NET/C# con l&#237;nea principal UWP y componentes legacy.
+2. Hotspots de tama&#241;o cr&#237;tico en ViewModels y capa de negocio.
+3. Se&#241;ales de deuda t&#233;cnica relevantes:
+   - uso elevado de `async void`
+   - presencia de `catch` vac&#237;os
+   - suppressions y reglas de calidad heterog&#233;neas
+4. Riesgos de seguridad/operaci&#243;n reportados en outputs tempranos:
+   - endpoints `http://` en rutas legacy
+   - material sensible/certificados en repositorio hist&#243;rico
+5. Pipeline/calidad:
+   - quality gate no bloqueante detectado en sesi&#243;n
+   - cobertura no verificable en el entorno local del runner
+
+## M&#233;tricas Relevantes (consolidadas de outputs)
+- TechnicalDebtScore reportado: **49.0/100** (m&#233;todo de Fase 2, Paso 1).
+- Debt Index promedio por m&#243;dulos: **68.5/100**.
+- Proyectos `.csproj` detectados en sesi&#243;n: **44**.
+- Ocurrencias reportadas de `async void`: **826**.
+- Ocurrencias reportadas de `catch` vac&#237;os: **108**.
+- Ocurrencias de `NoWarn`: **339**.
+- Top hotspot por tama&#241;o reportado: `SampleDataSource.cs` (**10364 LOC**).
+
+## Riesgos Priorizados
+- **Cr&#237;tico:** complejidad estructural en hotspots (regresiones de alto impacto).
+- **Cr&#237;tico:** robustez y observabilidad por manejo async/errores.
+- **Alto:** dependencia de l&#237;neas legacy y toolchain mixto.
+- **Alto:** inconsistencia de enforcement de calidad (reglas/gates).
+
+## Plan de Acci&#243;n Recomendado
+1. Habilitar SDK .NET en entornos de an&#225;lisis y CI para ejecutar build/test/coverage reales.
+2. Volver bloqueante el quality gate e integrar reportes de cobertura por PR.
+3. Reducir deuda t&#233;cnica cr&#237;tica (`async void`, `catch {}`, suppressions no justificadas).
+4. Ejecutar refactor incremental de hotspots (PRs peque&#241;os y testeables).
+5. Definir estrategia expl&#237;cita para componentes legacy (mantener, congelar o migrar).
+
+## Limitaciones
+- ⚠️ Dato no disponible en el repositorio: m&#233;tricas operativas productivas (SLA/SLO, costos, volumen de usuarios).
+- ⚠️ Dato no disponible en el repositorio: matriz oficial de ownership por m&#243;dulo y responsables de decisi&#243;n arquitect&#243;nica.
+- ⚠️ Dato no disponible en el repositorio: benchmark hist&#243;rico uniforme de cobertura ejecutada en CI para todos los m&#243;dulos.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Stack Tecnologico
+- Stack consolidado: .NET/C# con arquitectura MVVM y coexistencia UWP/W81/WP8.
+
+### Estado Arquitectonico
+- Estado actual: operable con deuda t&#233;cnica significativa en hotspots, acoplamiento y robustez de errores.
+
+### Nivel de Madurez
+- Madurez t&#233;cnica intermedia: hay estructura y modularizaci&#243;n, pero con gaps de calidad bloqueante y cobertura uniforme.
+
+### Complejidad del Proyecto
+- Complejidad alta por multi-target legacy, tama&#241;o de hotspots y heterogeneidad de configuraci&#243;n de calidad.
+
+### Estado de Documentacion
+- La documentaci&#243;n base y de an&#225;lisis est&#225; creada; falta complementar ownership formal, ADRs y m&#233;tricas operativas de producto.
+
+### Cobertura Tecnica
+- Cobertura t&#233;cnica del an&#225;lisis: stack, arquitectura, riesgos, deuda y plan de acci&#243;n; pendiente cobertura cuantitativa completa de tests en CI.
+
+### Patron Principal
+- Patr&#243;n principal identificado: MVVM con capas de negocio, servicios/proveedores, cliente y dominio.
+
+### Fortalezas Identificadas
+- Fortalezas: stack claramente identificado, arquitectura modular observable y backlog t&#233;cnico priorizado para mitigaci&#243;n.
+
+### Areas de Mejora
+- &#193;reas cr&#237;ticas: quality gate bloqueante, reducci&#243;n de `async void`/`catch {}`, refactor de hotspots y estrategia legacy expl&#237;cita.
+
+### Documentacion Creada
+- Documentos creados/actualizados: 01-inicio (8 gu&#237;as), 02-analisis (3 reportes principales + anexos) y diagrams.
+
+### Diagramas Producidos
+- Diagramas generados: componentes, flujo principal, vista de calidad CI/CD y mapa de riesgos arquitect&#243;nicos.
+
+### Configuraciones Establecidas
+- Configuraci&#243;n documental alineada a checklist de headings obligatorios y trazabilidad de fuentes por output de sesi&#243;n.
+
+### Preparacion para Fase 2
+- Preparaci&#243;n alta para Fase 2: m&#233;tricas base de deuda y riesgos disponibles, con pendientes identificados para cierre.
+
+### Informacion Requerida
+- Informaci&#243;n pendiente: matriz de ownership, versiones oficiales de SDK/workloads y baseline uniforme de cobertura en CI.
+
+### Dependencias Identificadas
+- Dependencias t&#233;cnicas identificadas: soluciones/proyectos .NET por plataforma y tooling de calidad/observabilidad usado en sesi&#243;n.
+
+### Datos no disponibles en el repositorio
+- No se dispone de SLA/SLO productivos, costos operativos y benchmark hist&#243;rico uniforme de cobertura por todos los m&#243;dulos.
+
+### Recomendaciones para completar analisis
+- Ejecutar build/test/cobertura reales en CI, formalizar ownership+ADRs y publicar m&#233;tricas DORA/calidad por iteraci&#243;n.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/03_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/30_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/75_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/76_output.md`
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCH_02B_ENTRYPOINTS.md</span><span class="doc-path">02-analisis\\ARCH_02B_ENTRYPOINTS.md</span></summary>
+              <pre class="doc-pre"># ARCHITECTURE - Entry Points (.NET/C#)
+
+## 1) App &amp; DI
+| Entry Point | Type | Responsibility | Evidence |
+|---|---|---|---|
+| DLA.ClaroVideo.App.OnLaunched | App lifecycle | Initializes app shell and root frame on launch. | `src/DLA.ClaroVideo/DLA.ClaroVideo/App.xaml.cs:84` |
+| DLA.ClaroVideo.App.OnActivated | App lifecycle | Handles protocol/secondary activations. | `src/DLA.ClaroVideo/DLA.ClaroVideo/App.xaml.cs:113` |
+| Clarovideo.W81.App.OnLaunched | App lifecycle | Win81 app bootstrap on launch. | `src/Clarovideo.W81/ClaroVideo/App.xaml.cs:197` |
+| Clarovideo.W81.App.OnActivated | App lifecycle | Win81 activation handling. | `src/Clarovideo.W81/ClaroVideo/App.xaml.cs:433` |
+| Clarovideo.WP8.App.Application_Launching | App lifecycle | Legacy WP8 startup entrypoint. | `src/Clarovideo.WP8/Clarovideo.WP8/App.xaml.cs:351` |
+| SendLiveTileFeatures.Program.Main | Console entrypoint | Starts LiveTile utility process. | `src/Clarovideo.W81/SendLiveTileFeatures/SendLiveTileFeatures/Program.cs:25` |
+| AutofacConfig.ConfigContainer | DI composition root | Builds Autofac container and registers modules. | `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs:29` |
+| AutofacConfig.builder.Build | DI container build | Materializes DI container instance. | `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs:36` |
+| XAML resource `IocLocator` | DI bootstrap hook | Exposes Autofac config as app resource. | `src/DLA.ClaroVideo/DLA.ClaroVideo/App.xaml:68` |
+
+## 2) UI Entry Points
+| Entry Point | Type (Page/UserControl/Window) | Responsibility | Evidence |
+|---|---|---|---|
+| AppShellNewExp | Page | Main shell and navigation frame host. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/AppShellNewExp.xaml.cs:22` |
+| ExtendedSplash | Page | Extended splash/loading gate before navigation. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/ExtendedSplash.xaml.cs:20` |
+| Home | Page | Main home landing UI. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/Home.xaml.cs:29` |
+| DownloadCenter | Page | Download center entry UI. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/DownloadCenter.xaml.cs:10` |
+| DownloadDetail | Page | Download detail entry UI. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/DownloadDetail.xaml.cs:10` |
+| LoginNewFlow | Page | New-flow login screen. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/NewFlow/LoginNewFlow.xaml.cs:19` |
+| LandingNewFlow | Page | New-flow landing screen. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/NewFlow/LandingNewFlow.xaml.cs:15` |
+| PlayerTVNewFlowPage | Page | TV player entry screen. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/NewFlow/PlayerTVNewFlowPage.xaml.cs:20` |
+| VCardNewFlow | Page | VOD/content card entry screen. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/NewFlow/VCardNewFlow.xaml.cs:16` |
+| ItemDetailPage | Page (LayoutAwarePage) | Legacy Win81 item detail navigation target. | `src/Clarovideo.W81/ClaroVideo/ItemDetailPage.xaml.cs:54` |
+
+## 3) Background Entry Points
+| Entry Point | Type (BackgroundTask/HostedService/Worker) | Trigger | Evidence |
+|---|---|---|---|
+| ClaroVideoLiveTileService.Run | BackgroundTask | UWP background task execution callback. | `src/DLA.ClaroVideo/DLA.ClaroVideo.LiveTileService/ClaroVideoLiveTileService.cs:43` |
+| Package background extension | BackgroundTask registration | Manifest registration for `windows.backgroundTasks`. | `src/DLA.ClaroVideo/DLA.ClaroVideo/Package.appxmanifest:33` |
+
+## 4) Navigation / Deep Links
+| Route/Link | Defined in | Target | Evidence |
+|---|---|---|---|
+| `SetNavigationFrame` | `INavigationManager` + `ServiceNavigation` | App frame wiring for navigation service. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/AplicationService/Contract/INavigationManager.cs:11`, `src/DLA.ClaroVideo/DLA.ClaroVideo/Navigation/NavigationRoot/ServiceNavigation.cs:67` |
+| `Navigate&lt;T&gt;()` | `ServiceNavigation` | Generic page navigation by type. | `src/DLA.ClaroVideo/DLA.ClaroVideo/Navigation/NavigationRoot/ServiceNavigation.cs:95` |
+| `Navigate&lt;T&gt;(NavigationParameters)` | `ServiceNavigation` | Parameterized navigation with payload. | `src/DLA.ClaroVideo/DLA.ClaroVideo/Navigation/NavigationRoot/ServiceNavigation.cs:115` |
+| `GetPageTypeFromString` | `ServiceNavigation` | Runtime type resolution for deep links. | `src/DLA.ClaroVideo/DLA.ClaroVideo/Navigation/NavigationRoot/ServiceNavigation.cs:291` |
+| Protocol `setregion` | UWP manifest | App protocol activation for region deep link. | `src/DLA.ClaroVideo/DLA.ClaroVideo/Package.appxmanifest:28` |
+| Protocol `dlaapk` | UWP manifest | App protocol activation for deep link channel. | `src/DLA.ClaroVideo/DLA.ClaroVideo/Package.appxmanifest:31` |
+| Protocol `clarovideo` | Win81 manifest | Legacy protocol activation route. | `src/Clarovideo.W81/ClaroVideo/Package.appxmanifest:28` |
+| Scheme switch `dlaapk` / `setregion` | `BusinessLayer` | Branches deep-link handling flow by URI scheme. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/Model/BusinessLayer.cs:3888`, `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/Model/BusinessLayer.cs:3891` |
+| Named command `deeplink` | `ServiceRegistrationModule` | Resolves `ExternalNavigationDeepLink` command. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/ServiceRegistrationModule.cs:206` |
+
+## 5) Evidence Log
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/App.xaml.cs` -&gt; UWP lifecycle entrypoints (`OnLaunched`, `OnActivated`).
+- `src/Clarovideo.W81/ClaroVideo/App.xaml.cs` -&gt; Win81 lifecycle entrypoints.
+- `src/Clarovideo.WP8/Clarovideo.WP8/App.xaml.cs` -&gt; WP8 launch entrypoint.
+- `src/Clarovideo.W81/SendLiveTileFeatures/SendLiveTileFeatures/Program.cs` -&gt; console `Main` entrypoint.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs` -&gt; DI composition root and container build.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/App.xaml` -&gt; XAML DI bootstrap resource (`IocLocator`).
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/View/*.xaml.cs` -&gt; UI page entrypoints.
+- `src/Clarovideo.W81/ClaroVideo/ItemDetailPage.xaml.cs` -&gt; legacy UI entrypoint.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.LiveTileService/ClaroVideoLiveTileService.cs` -&gt; background task callback.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/Package.appxmanifest` -&gt; protocol and background registration entrypoints.
+- `src/Clarovideo.W81/ClaroVideo/Package.appxmanifest` -&gt; legacy protocol registration.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/Navigation/NavigationRoot/ServiceNavigation.cs` -&gt; centralized navigation entry API.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/Model/BusinessLayer.cs` -&gt; URI scheme handling logic.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/ServiceRegistrationModule.cs` -&gt; deep-link command binding in DI.
+
+## Metrics Snapshot (JSON)
+```json
+{
+  &quot;timestamp&quot;: &quot;2026-02-24T17:14:14.5503268-06:00&quot;,
+  &quot;stack_kind&quot;: &quot;dotnet&quot;,
+  &quot;entry_points_count&quot;: 30,
+  &quot;di_detected&quot;: true,
+  &quot;navigation_system&quot;: &quot;navigation-service&quot;
+}
+```
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCH_02D_DATAFLOWS.md</span><span class="doc-path">02-analisis\\ARCH_02D_DATAFLOWS.md</span></summary>
+              <pre class="doc-pre"># ARCHITECTURE — Data Flows (.NET/C#)
+
+## 1) Flow A
+| Layer | Component | Role | Evidence |
+|---|---|---|---|
+| Presentation (UI) | `LoginNewFlow : Page` | Pantalla de inicio de sesi&#243;n. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/NewFlow/LoginNewFlow.xaml.cs:19` |
+| ViewModel | `LoginNewFlowViewModel` | Dispara login de usuario en flujo nuevo. | `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/LoginNewFlowViewModel.cs:37,811` |
+| Service/Application | `LoginService.Login_CL(...)` | Orquesta login y retorna `CommandResult&lt;UserEntity&gt;`. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/LoginService.cs:211,215,217` |
+| Repository/Data | `LoginWebRepository.Login_CL(...)` | Construye request y ejecuta POST contra API. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/LoginWebRepository.cs:578,588` |
+| API/Gateway | `IClaroVideoClient.NewPost(..., Template.Login_CL, ...)` | Transporte HTTP y endpoint de autenticaci&#243;n. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/LoginWebRepository.cs:588`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Client/UriTemplates/Template.cs:241` |
+| Domain output | `UserEntity` + `CommandResult&lt;TEntity&gt;` | Entidad de usuario + envelope de resultado de negocio. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Domain/Entities/General/UserEntity.cs:6`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Domain/Messages/CommandResult.cs:79` |
+
+## 2) Flow B
+| Layer | Component | Role | Evidence |
+|---|---|---|---|
+| Presentation (UI) | `PlayerTVNewFlowPage : Page` | Pantalla de reproducci&#243;n de TV/live. | `src/DLA.ClaroVideo/DLA.ClaroVideo/View/NewFlow/PlayerTVNewFlowPage.xaml.cs:20` |
+| ViewModel | `PlayerTVNewFlowViewModel.GetMedia(...)` | Prepara par&#225;metros y solicita media al servicio. | `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/PlayerTVNewFlowViewModel.cs:6173,6271` |
+| Service/Application | `PlayerService.Media_CL(...)` | Aplica reglas de negocio de errores y retorna `CommandResult&lt;PlayerMediaEntity&gt;`. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/PlayerService.cs:110,115,142` |
+| Repository/Data | `PlayerWebRepository.Media_CL(...)` | Invoca backend getmedia CL. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/PlayerWebRepository.cs:200,222` |
+| API/Gateway | `IClaroVideoClient.NewPost(..., Template.PlayerGetMedia_CL, ...)` | Transporte HTTP y endpoint de reproducci&#243;n. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/PlayerWebRepository.cs:222`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Client/UriTemplates/Template.cs:245` |
+| Domain output | `PlayerMediaEntity` + `CommandResult&lt;TEntity&gt;` | Entidad de reproducci&#243;n y resultado de negocio. | `src/DLA.ClaroVideo/DLA.ClaroVideo.Domain/Entities/Player/PlayerMediaEntity.cs:6`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Domain/Messages/CommandResult.cs:79` |
+
+## 3) Cross-cutting
+- Logging: `FileLogger` registrado en DI como `ILogger` (`src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/InfrastructureRegistrationModule.cs:45`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Logging/Logging/FileLogger.cs:10`).
+- Telemetry: eventos GA4/Youbora desde ViewModels (`src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/VCardNewFlowViewModel.cs:172,388`).
+- Error handling: normalizaci&#243;n de fallos en `CommandResult.Fail(...)` y validaci&#243;n de respuestas (`src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/LoginService.cs:221`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/PlayerService.cs:119`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/ContentWebRepository.cs:107`).
+- Async: cadena as&#237;ncrona con `await` + `ConfigureAwait(false)` en VM/servicios/repositorios (`src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/LoginService.cs:215`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/LoginWebRepository.cs:588`; `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/PlayerService.cs:115`).
+
+## 4) Evidence Log
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/LoginNewFlowViewModel.cs:811` → el VM llama `loginService.Login_CL`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/LoginService.cs:215` → el servicio llama `repository.Login_CL`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/LoginWebRepository.cs:588` → el repositorio ejecuta `Client.NewPost(..., Template.Login_CL, ...)`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Client/UriTemplates/Template.cs:241` → endpoint `user/v2/ott/login`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/PlayerTVNewFlowViewModel.cs:6271` → el VM llama `PlayerService.Media_CL`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/Providers/PlayerService.cs:115` → el servicio llama `repository.Media_CL`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/WebRepositoryProviders/Providers/PlayerWebRepository.cs:222` → `Client.NewPost(..., Template.PlayerGetMedia_CL, ...)`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Client/UriTemplates/Template.cs:245` → endpoint `player/v1/getmedia`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/InfrastructureRegistrationModule.cs:45` → wiring de logging transversal.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/VCardNewFlowViewModel.cs:388` → tracking con Youbora.
+
+## &#128202; Metrics Snapshot (JSON)
+{
+  &quot;timestamp&quot;: &quot;2026-02-24T17:59:03.0130890-06:00&quot;,
+  &quot;stack_kind&quot;: &quot;dotnet&quot;,
+  &quot;flows_mapped&quot;: 2,
+  &quot;uses_mvvm&quot;: true,
+  &quot;uses_clean_arch&quot;: false
+}
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCH_02E_ANTIPATTERNS.md</span><span class="doc-path">02-analisis\\ARCH_02E_ANTIPATTERNS.md</span></summary>
+              <pre class="doc-pre"># ⚠️ ARCHITECTURE — Antipatterns &amp; Violations (.NET/C#)
+
+| Finding | Evidence (path + signal) | Impact | Risk | Recommended Fix |
+|---|---|---|---|---|
+| God ViewModel (PlayerTVNewFlowViewModel) | `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/PlayerTVNewFlowViewModel.cs` → ~6284 LOC; `GetChildScope().Resolve*` repetido (28 coincidencias). | Cambios funcionales, de UI y de integraci&#243;n quedan mezclados en un solo artefacto dif&#237;cil de probar. | Alto riesgo de regresiones colaterales y tiempos de QA largos por baja aislaci&#243;n. | Partir en VMs por feature (playback, controls, reminders, tracking) y mover orquestaci&#243;n a servicios de aplicaci&#243;n con interfaces peque&#241;as. |
+| God Code-Behind (ItemDetailPage.xaml.cs) | `src/Clarovideo.W81/ClaroVideo/ItemDetailPage.xaml.cs` → ~5678 LOC. | La l&#243;gica de presentaci&#243;n y flujo de negocio queda acoplada al ciclo de vida de la vista. | Alto riesgo de deuda en UI legacy (dif&#237;cil test unitario y refactor). | Migrar gradualmente a comandos/VM, dejando en code-behind solo wiring de eventos UI estrictamente visuales. |
+| Orquestador Monol&#237;tico (BusinessLayer) | `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/Model/BusinessLayer.cs` → ~3664 LOC, 87 `using`, 53 propiedades p&#250;blicas mutables, adem&#225;s de `ContentService/LoginService` resueltas por contenedor en runtime (`:141`, `:149`). | Se convierte en cuello de botella arquitect&#243;nico con demasiadas responsabilidades transversales. | Alto riesgo de acoplamiento circular, efectos secundarios y fallos dif&#237;ciles de trazar. | Separar en bounded services (`SessionService`, `NavigationService`, `PlaybackOrchestrator`, etc.) y reducir estado mutable compartido. |
+| Service Locator en capa UI/VM | `AppShellNewExp.xaml.cs:40` usa `AutofacConfig.Scope.Resolve&lt;IBusinessLayer&gt;().ApplicationScope.Resolve&lt;INavigationManager&gt;()`; adem&#225;s `AppShellViewModel` (22), `HomeViewModel` (27), `ServiceModelPropetyBase` (29) y `PlayerTVNewFlowViewModel` (28) resoluciones runtime. | Dependencias ocultas; el comportamiento real depende del contenedor en ejecuci&#243;n, no de contratos expl&#237;citos. | Alto riesgo de errores de resoluci&#243;n en runtime y baja testabilidad. | Sustituir por inyecci&#243;n por constructor/factory tipada; prohibir `Resolve*` fuera del composition root. |
+| Estado global est&#225;tico del contenedor + ViewModel locator est&#225;tico | `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs:27` (`public static IDependencyResolutionScope Scope`); 55 usos de `ServiceLocator.Current.GetInstance&lt;...&gt;` (`:212-:280`). | Rompe encapsulaci&#243;n de ciclo de vida y contamina estado entre m&#243;dulos/pantallas. | Riesgo medio-alto de comportamiento no determinista, acoplamiento impl&#237;cito y dificultad de pruebas paralelas. | Eliminar acceso global est&#225;tico; inyectar dependencias por scope y exponer factories expl&#237;citas por m&#243;dulo. |
+| DI por strings (`Named`) fr&#225;gil a refactor | `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/ServiceRegistrationModule.cs` → 31 registros `Named&lt;...&gt;` y 5 `ResolveNamed&lt;...&gt;` (ej. `playerservice`, `netgate`, `home`, `deeplink`). | La validez de la app depende de literales string distribuidos en registro y resoluci&#243;n. | Riesgo medio de fallos en runtime por typo/cambio de nombre sin cobertura suficiente. | Reemplazar keys string por enums/constantes centralizadas + factories tipadas/Keyed services encapsulados. |
+| Endpoints HTTP hardcodeados en proxies WP8 | `src/Clarovideo.WP8/Clarovideo.WP8.Proxy/*.cs` → 42 ocurrencias `http://` en 9 archivos (`LoginProxy.cs:15`, `MoviesProxy.cs:16-19`, `StreamingProxy.cs:15-17`, etc.). | Seguridad y configuraci&#243;n de ambiente embebidas en c&#243;digo legacy de acceso remoto. | Alto riesgo de exposici&#243;n MITM/compliance y alta fricci&#243;n para cambios de endpoint. | Externalizar base URLs a configuraci&#243;n por ambiente, forzar HTTPS y encapsular cliente HTTP con pol&#237;ticas comunes. |
+
+## 2) Commands (optional, max 3)
+1. ` (Get-Content src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/PlayerTVNewFlowViewModel.cs | Measure-Object -Line).Lines `
+   - Expected output: `6284` (hotspot principal).
+2. ` rg -c &quot;GetChildScope\(\)\.Resolve|ApplicationScope\.Resolve|UserScope\.Resolve|AutofacConfig\.Scope\.Resolve&quot; src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/AppShellViewModel.cs `
+   - Expected output: `22` (uso intensivo de service locator/runtime resolve).
+3. ` rg -c &quot;http://&quot; src/Clarovideo.WP8/Clarovideo.WP8.Proxy -g &quot;*.cs&quot; `
+   - Expected output: 9 l&#237;neas (archivos) con conteos; total observado `42` ocurrencias.
+
+## 3) Evidence Log
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/PlayerTVNewFlowViewModel.cs` → archivo hotspot (~6284 LOC) y m&#250;ltiples `Resolve` directos.
+- `src/Clarovideo.W81/ClaroVideo/ItemDetailPage.xaml.cs` → code-behind hotspot (~5678 LOC).
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/AppShellViewModel.cs` → uso repetido de `UserScope.GetChildScope().Resolve&lt;...&gt;`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/HomeViewModel.cs` → dependencia de resoluciones runtime desde VM.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/Models/ServiceModelPropetyBase.cs` → propiedades de servicio basadas en `Resolve&lt;...&gt;`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/View/AppShellNewExp.xaml.cs:40` → code-behind resolviendo `INavigationManager` v&#237;a contenedor global.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs:27` → scope est&#225;tico global.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs:212-280` → 55 accesos `ServiceLocator.Current.GetInstance&lt;...&gt;`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/ServiceRegistrationModule.cs:100-221` → m&#250;ltiples `Named&lt;...&gt;`/`ResolveNamed&lt;...&gt;` por string keys.
+- `src/Clarovideo.WP8/Clarovideo.WP8.Proxy/LoginProxy.cs`, `MoviesProxy.cs`, `StreamingProxy.cs`, `VideosProxy.cs` → endpoints `http://` hardcodeados.
+
+## &#128202; Metrics Snapshot (JSON)
+{
+  &quot;timestamp&quot;: &quot;2026-02-24T18:12:13.3883486-06:00&quot;,
+  &quot;stack_kind&quot;: &quot;dotnet&quot;,
+  &quot;findings_count&quot;: 7,
+  &quot;hotspots&quot;: [
+    &quot;src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/NewFlowViewModel/PlayerTVNewFlowViewModel.cs (6284 LOC)&quot;,
+    &quot;src/Clarovideo.W81/ClaroVideo/ItemDetailPage.xaml.cs (5678 LOC)&quot;,
+    &quot;src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/AppShellViewModel.cs (4160 LOC)&quot;,
+    &quot;src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/Model/BusinessLayer.cs (3664 LOC)&quot;
+  ]
+}
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCH_02F_DIAGRAMS_SUMMARY.md</span><span class="doc-path">02-analisis\\ARCH_02F_DIAGRAMS_SUMMARY.md</span></summary>
+              <pre class="doc-pre"># ARCHITECTURE — Diagrams &amp; Summary (.NET/C#)
+
+## 1) Executive Summary
+- Projects: 44 (`*.csproj` detectados en `src/`).
+- Entry points: 21 (consolidado del paso 02D: `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/19_output.md:49`).
+- DI: Autofac + `Autofac.Extras.CommonServiceLocator`, con registro por m&#243;dulo y navegaci&#243;n externa keyed (`Named&lt;IExternalNavigationCommand&gt;`).
+- Core libraries: `Microsoft.NETCore.UniversalWindowsPlatform`, `Newtonsoft.Json`, `Autofac`, `Microsoft.Toolkit.Uwp`.
+- Top risks: Service Locator extendido, hotspots (God classes/ViewModels), endpoints `http://` hardcodeados en WP8 Proxy.
+
+## 2) Mermaid — Component Diagram (layers)
+```mermaid
+flowchart TB
+  UI[UI: XAML Pages / Code-behind] --&gt; VM[ViewModels]
+  VM --&gt; APP[Application Layer: BusinessLayer + App Services]
+  APP --&gt; DOM[Domain: Entities / Messages]
+  APP --&gt; DATA[Data Access: Service Providers + Repositories]
+  DATA --&gt; CLIENT[Client: HTTP/API adapters]
+  CLIENT --&gt; API[External APIs]
+  DATA --&gt; DB[(Cache / Local Storage)]
+  APP --&gt; NAV[Navigation: ServiceNavigation]
+  APP --&gt; OBS[Logging/Telemetry]
+```
+
+## 3) Mermaid — Project Graph
+```mermaid
+flowchart LR
+  AppUWP[DLA.ClaroVideo (UWP App)] --&gt; Negocio[DLA.ClaroVideo.Negocio]
+  AppUWP --&gt; Service[DLA.ClaroVideo.Service]
+  AppUWP --&gt; Client[DLA.ClaroVideo.Client]
+  AppUWP --&gt; Domain[DLA.ClaroVideo.Domain]
+  AppUWP --&gt; Framework[DLA.ClaroVideo.Framework]
+  AppUWP --&gt; Logging[DLA.ClaroVideo.Logging]
+  AppUWP --&gt; LiveTile[DLA.ClaroVideo.LiveTileService]
+
+  Negocio --&gt; Service
+  Negocio --&gt; Client
+  Negocio --&gt; Domain
+  Negocio --&gt; Framework
+  Negocio --&gt; Logging
+  Negocio --&gt; LiveTile
+
+  Service --&gt; Client
+  Service --&gt; Domain
+  Service --&gt; Framework
+  Service --&gt; Logging
+
+  Tests[ClaroVideoTest] --&gt; Negocio
+  Tests --&gt; Service
+  Tests --&gt; Client
+  Tests --&gt; Domain
+```
+
+## 4) Architecture Notes
+- Inconsistencia multi-stack: conviven UWP (`DLA.ClaroVideo`), Win81 (`ClaroVideo`) y WP8 (`Clarovideo.WP8`) con flujos de navegaci&#243;n/activaci&#243;n distintos.
+- Navegaci&#243;n fragmentada: en UWP se usa `INavigationManager`/`ServiceNavigation`; en Win81 hay rutas directas `rootFrame.Navigate(...)` desde `OnActivated`.
+- Deep-linking heterog&#233;neo: protocolos `setregion`/`dlaapk` (UWP) y `clarovideo` (Win81) se resuelven por pipelines diferentes.
+- DI inconsistente: hay inyecci&#243;n por contenedor, pero tambi&#233;n acceso global por `ServiceLocator.Current.GetInstance&lt;...&gt;` y `Resolve*` en UI/VM.
+
+Recomendaciones (3):
+- Estandarizar composici&#243;n y navegaci&#243;n en un solo modelo (mantener `INavigationManager`, eliminar navegaci&#243;n directa en code-behind legacy en etapas).
+- Reducir deuda estructural en hotspots: dividir `BusinessLayer` y ViewModels grandes por bounded contexts y casos de uso.
+- Centralizar configuraci&#243;n de endpoints y forzar HTTPS, retirando URLs hardcodeadas en proxies legacy.
+
+## 5) Evidence Log
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/DLA.ClaroVideo.csproj:1694-1738` → App UWP referencia `Negocio`, `Service`, `Client`, `Domain`, `Framework`, `Logging`, `LiveTileService`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/DLA.ClaroVideo.Negocio.csproj:412-452` → Capa de negocio depende de `Client`, `Domain`, `Framework`, `Service`, `Logging`, etc.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Service.Providers/DLA.ClaroVideo.Service.csproj:303-319` → Service Providers consumen `Client`, `Domain`, `Framework`, `InternetTools`, `Logging`.
+- `src/DLA.ClaroVideo/ClaroVideoTest/ClaroVideoTest.csproj:195-227` → Test project referencia `Negocio`, `Service`, `Client`, `Domain`, `Framework`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/DLA.ClaroVideo.csproj:1744,1747,1753,1765` → paquetes `Autofac`, `Autofac.Extras.CommonServiceLocator`, UWP SDK, `Newtonsoft.Json`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/DLA.ClaroVideo.Negocio.csproj:385,388,391,403` → DI y librer&#237;as core en negocio.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo.Negocio/IoC/ServiceRegistrationModule.cs:199-208` → registro de comandos de navegaci&#243;n externa (`home`, `special`, `deeplink`, etc.).
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/Navigation/NavigationRoot/ServiceNavigation.cs:18,67,101,121,136` → implementaci&#243;n de navegaci&#243;n custom sobre `Frame.Navigate`.
+- `src/DLA.ClaroVideo/DLA.ClaroVideo/ViewModels/ViewModelLocator/AutofacConfig.cs:212-280` → uso masivo de `ServiceLocator.Current.GetInstance&lt;...&gt;`.
+- `src/Clarovideo.WP8/Clarovideo.WP8.Proxy/LoginProxy.cs:15` y `src/Clarovideo.WP8/Clarovideo.WP8.Proxy/MoviesProxy.cs:16-19` → endpoints `http://` hardcodeados.
+
+## &#128202; Metrics Snapshot (JSON)
+{
+  &quot;timestamp&quot;: &quot;2026-02-24T18:19:00.9640600-06:00&quot;,
+  &quot;stack_kind&quot;: &quot;dotnet&quot;,
+  &quot;projects_count&quot;: 44,
+  &quot;diagram_nodes&quot;: 20,
+  &quot;risks_count&quot;: 3
+}
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">02-analisis\\README.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# README (02-analisis)
+
+Este &#237;ndice re&#250;ne los entregables de an&#225;lisis t&#233;cnico consolidados durante la sesi&#243;n del runner y propone un orden de lectura pr&#225;ctico para arquitectura, riesgos y deuda t&#233;cnica.
+
+## &#205;ndice de documentos
+
+| Documento | Prop&#243;sito | Audiencia |
+|---|---|---|
+| [ANALYSIS_REPORT_STACK_DETECTION](./ANALYSIS_REPORT_STACK_DETECTION.md) | Confirmaci&#243;n de stack, targets y tooling detectado | Arquitectura / Dev Lead |
+| [ANALYSIS_REPORT_ARCHITECTURE](./ANALYSIS_REPORT_ARCHITECTURE.md) | Hallazgos de arquitectura, antipatrones y riesgos | Arquitectura / Dev Team |
+| [ANALYSIS_SUMMARY](./ANALYSIS_SUMMARY.md) | Consolidado ejecutivo de hallazgos y plan de acci&#243;n | Tech Lead / Stakeholders |
+| [ARCH_02B_ENTRYPOINTS](./ARCH_02B_ENTRYPOINTS.md) | Entrypoints y arranque por m&#243;dulos/plataformas | Dev Team |
+| [ARCH_02D_DATAFLOWS](./ARCH_02D_DATAFLOWS.md) | Flujos de datos relevantes entre capas | Dev Team |
+| [ARCH_02E_ANTIPATTERNS](./ARCH_02E_ANTIPATTERNS.md) | Evidencia de antipatrones y hotspots | Arquitectura / QA |
+| [ARCH_02F_DIAGRAMS_SUMMARY](./ARCH_02F_DIAGRAMS_SUMMARY.md) | Resumen de diagramas y vistas derivadas | Arquitectura / Stakeholders |
+
+## Ruta de lectura recomendada
+
+### Para Arquitectura / Tech Lead
+1. `ANALYSIS_REPORT_STACK_DETECTION`
+2. `ANALYSIS_REPORT_ARCHITECTURE`
+3. `ANALYSIS_SUMMARY`
+4. `ARCH_02E_ANTIPATTERNS`
+
+### Para Desarrollo
+1. `ARCH_02B_ENTRYPOINTS`
+2. `ARCH_02D_DATAFLOWS`
+3. `ANALYSIS_REPORT_ARCHITECTURE`
+4. `ANALYSIS_SUMMARY`
+
+### Para Stakeholders
+1. `ANALYSIS_SUMMARY`
+2. `ANALYSIS_REPORT_STACK_DETECTION`
+3. `ARCH_02F_DIAGRAMS_SUMMARY`
+
+## Estado y cobertura de an&#225;lisis
+- Stack principal confirmado: .NET/C#.
+- Arquitectura y riesgos t&#233;cnicos consolidados en reportes 99J/99K/99L.
+- Se&#241;ales de calidad/deuda incorporadas desde outputs de diagn&#243;stico y calidad.
+
+## Limitaciones
+- ⚠️ Dato no disponible en el repositorio: no se dispone en outputs de una taxonom&#237;a oficial de severidades aprobada por comit&#233; t&#233;cnico.
+- ⚠️ Dato no disponible en el repositorio: no se cuenta con trazabilidad completa de ownership por documento/m&#243;dulo en los outputs disponibles.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/51_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/74_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/75_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/76_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/77_output.md`
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">diagrams\\ARCHITECTURE_DIAGRAMS.md</span></summary>
+              <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# ARCHITECTURE_DIAGRAMS
+
+## 1) Diagrama de Componentes (alto nivel)
+```mermaid
+flowchart LR
+    subgraph App[App UWP]
+      UI[UI / Views]
+      VM[ViewModels (MVVM)]
+    end
+
+    subgraph Core[Core de Aplicaci&#243;n]
+      BL[Negocio / Orquestaci&#243;n]
+      SVC[Service.Providers]
+      CLI[Client]
+      DOM[Domain / Model]
+    end
+
+    subgraph Legacy[Lineas Legacy]
+      W81[Clarovideo.W81]
+      WP8[Clarovideo.WP8]
+    end
+
+    subgraph Infra[Infra &amp; Integraciones]
+      DI[Autofac + Service Locator]
+      OBS[Observabilidad / Analytics]
+      CI[CI + Sonar]
+    end
+
+    UI --&gt; VM
+    VM --&gt; BL
+    BL --&gt; SVC
+    SVC --&gt; CLI
+    SVC --&gt; DOM
+    VM -.resolucion.-&gt; DI
+    BL -.resolucion.-&gt; DI
+    CLI --&gt; OBS
+    CI --&gt; App
+    W81 --- App
+    WP8 --- App
+```
+
+## 2) Diagrama de Flujo Principal (request funcional)
+```mermaid
+sequenceDiagram
+    participant U as Usuario
+    participant V as ViewModel
+    participant B as Negocio
+    participant S as Servicio
+    participant R as Repository/Client
+
+    U-&gt;&gt;V: Accion de UI
+    V-&gt;&gt;B: Solicitud de caso de uso
+    B-&gt;&gt;S: Ejecutar l&#243;gica de aplicaci&#243;n
+    S-&gt;&gt;R: Consulta remota/local
+    R--&gt;&gt;S: Resultado
+    S--&gt;&gt;B: Entidad/DTO
+    B--&gt;&gt;V: Estado de dominio
+    V--&gt;&gt;U: Actualizacion UI
+```
+
+## 3) Diagrama CI/CD de Calidad (vista observada)
+```mermaid
+flowchart TD
+    PR[Pull Request] --&gt; WF[Workflow de analisis]
+    WF --&gt; SONAR[Sonar Analysis]
+    SONAR --&gt; QG{Quality Gate}
+    QG -- no bloqueante --&gt; MERGE[Merge posible]
+    QG -- bloqueante (recomendado) --&gt; BLOCK[Bloqueo de merge]
+
+    WF -.en entorno runner local.- DOTNET[dotnet CLI]
+    DOTNET -.no disponible en sesion.- LIMIT[Sin ejecucion real de test/lint]
+```
+
+## 4) Diagrama de Riesgos Arquitect&#243;nicos
+```mermaid
+flowchart LR
+    H1[Hotspots &gt; 3k LOC]
+    H2[Service Locator / Resolve]
+    H3[async void + catch vacio]
+    H4[UWP + W81 + WP8]
+    H5[Gate de calidad no bloqueante]
+
+    H1 --&gt; R1[Regresiones en cambios]
+    H2 --&gt; R2[Testabilidad baja]
+    H3 --&gt; R3[Errores silenciosos]
+    H4 --&gt; R4[Complejidad operativa]
+    H5 --&gt; R5[Deuda tecnica recurrente]
+```
+
+## 5) Notas
+- Los diagramas reflejan la vista consolidada de outputs de sesi&#243;n, no una inferencia nueva desde c&#243;digo.
+- La coexistencia multi-target (UWP/W81/WP8) es un eje estructural dominante en los hallazgos.
+- La priorizaci&#243;n t&#233;cnica se concentra en reducci&#243;n de hotspots, mejora de DI y hardening de quality gates.
+
+## 6) Limitaciones
+- ⚠️ Dato no disponible en el repositorio: no hay outputs con C4 oficial (Context/Container/Component) aprobado por arquitectura.
+- ⚠️ Dato no disponible en el repositorio: no se dispone de diagrama formal de despliegue por entorno (dev/qa/prod) en outputs `01..78`.
+
+## Secciones Requeridas del Checklist
+
+&gt; Se agregan estos encabezados para cumplir la plantilla del orquestador.
+&gt; Donde no hay evidencia directa en outputs de sesi&#243;n, se marca expl&#237;citamente:
+&gt; ⚠️ Dato no disponible en el repositorio.
+### Flujo Principal 1: [Nombre]
+- Flujo Principal 1: **Consumo de funcionalidad desde UI** (`Usuario -&gt; ViewModel -&gt; Negocio -&gt; Servicio -&gt; Repository/Client -&gt; UI`), representado en el diagrama de secuencia de la secci&#243;n 2.
+
+### Flujo Principal 2: [Nombre]
+- Flujo Principal 2: **Pipeline de calidad de PR** (`PR -&gt; Workflow -&gt; Sonar -&gt; Quality Gate`), representado en la secci&#243;n 3 con estado observado y estado recomendado bloqueante.
+
+### Convenciones de Diagramas
+- Convenciones usadas: nombres de m&#243;dulos reales del repositorio, flujos left-to-right/top-down y separaci&#243;n por capas (`App`, `Core`, `Legacy`, `Infra`).
+
+### Herramientas de Visualizacion
+- Herramienta de visualizaci&#243;n: Mermaid embebido en Markdown para consumo en repositorio y revisi&#243;n de arquitectura por PR.
+
+### Mantenimiento de Diagramas
+- Mantenimiento recomendado: actualizar diagramas cuando cambie composici&#243;n de m&#243;dulos, reglas de CI o flujos cr&#237;ticos de negocio.
+
+### Datos no disponibles en el repositorio
+- Pendiente de evidencia: diagrama C4 oficial aprobado y diagrama formal de despliegue por entorno (dev/qa/prod).
+
+### Recomendaciones para completar analisis
+- Completar set de diagramas con C4 (Context/Container/Component), secuencias por flujo cr&#237;tico y despliegue por entorno con owners definidos.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/27_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/30_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/31_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/75_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/76_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/77_output.md`
+- `techdeb-runner/sessions/session_20260224_151241/copilot_outputs/78_output.md`
+
+</pre>
+            </details>
+          </article>
+      </section>
+    </main>
+
+    <p class="footer">Anexo tecnico separado por repositorio para facilitar lectura y mantenimiento.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
+</body>
+</html>
