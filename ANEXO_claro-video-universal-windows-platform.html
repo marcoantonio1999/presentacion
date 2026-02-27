@@ -2975,14 +2975,16 @@ graph LR
 ## D05) Topologia DI y resolucion de dependencias
 ```mermaid
 graph TB
-    Config[AutofacConfig.ConfigContainer]
-    Scope[AutofacConfig.Scope (static)]
-    Locator[ServiceLocator.Current.GetInstance]
-    AppScope[ApplicationScope]
-    UserScope[UserScope.GetChildScope]
-    VMs[ViewModels]
-    CodeBehind[AppShellNewExp.xaml.cs]
-    Named[Named/ResolveNamed services]
+    Config["AutofacConfig.ConfigContainer"]
+    Scope["AutofacConfig.Scope static"]
+    Locator["ServiceLocator.Current.GetInstance"]
+    AppScope["ApplicationScope"]
+    UserScope["UserScope.GetChildScope"]
+    VMs["ViewModels"]
+    CodeBehind["AppShellNewExp.xaml.cs"]
+    Named["Named ResolveNamed services"]
+    ExtNav["ExternalNavigationCommand home special deeplink"]
+    PlayerNamed["IPlayerService playerservice"]
 
     Config --&gt; Scope
     Scope --&gt; AppScope
@@ -2994,8 +2996,8 @@ graph TB
     UserScope --&gt; Named
     Scope --&gt; CodeBehind
 
-    Named --&gt; ExtNav[ExternalNavigationCommand (home/special/deeplink)]
-    Named --&gt; PlayerNamed[IPlayerService &quot;playerservice&quot;]
+    Named --&gt; ExtNav
+    Named --&gt; PlayerNamed
 ```
 
 **Evidencia D05**
@@ -3012,15 +3014,15 @@ graph TB
 ## D06) Dependencias de modulos principales
 ```mermaid
 graph LR
-    AppUWP[DLA.ClaroVideo (UWP)]
-    Negocio[DLA.ClaroVideo.Negocio]
-    Service[DLA.ClaroVideo.Service.Providers]
-    Client[DLA.ClaroVideo.Client]
-    Domain[DLA.ClaroVideo.Domain]
-    Framework[DLA.ClaroVideo.Framework]
-    Logging[DLA.ClaroVideo.Logging]
-    LiveTile[DLA.ClaroVideo.LiveTileService]
-    Tests[ClaroVideoTest]
+    AppUWP["DLA.ClaroVideo UWP"]
+    Negocio["DLA.ClaroVideo.Negocio"]
+    Service["DLA.ClaroVideo.Service.Providers"]
+    Client["DLA.ClaroVideo.Client"]
+    Domain["DLA.ClaroVideo.Domain"]
+    Framework["DLA.ClaroVideo.Framework"]
+    Logging["DLA.ClaroVideo.Logging"]
+    LiveTile["DLA.ClaroVideo.LiveTileService"]
+    Tests["ClaroVideoTest"]
 
     AppUWP --&gt; Negocio
     AppUWP --&gt; Service
