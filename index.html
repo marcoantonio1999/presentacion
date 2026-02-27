@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documento Consolidado | 16 Repositorios</title>
+  <title>Documento Consolidado | 19 Repositorios</title>
     <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         </a>
       </div>
       <h1>🎯 Proceso integral de remediacion tecnologica</h1>
-      <p class="hero-subtitle">Claro Video - 16 Repositorios Prioritarios</p>
+      <p class="hero-subtitle">Claro Video - 19 Repositorios Prioritarios</p>
       <p class="hero-mainline">Analisis FASE 1 - Generacion de documentacion tecnica</p>
       <div class="meta">
         <span class="chip">Fecha: 2026-02-25</span>
@@ -27,7 +27,7 @@
         <tbody>
           <tr>
             <td>Plataformas analizadas</td>
-            <td>Android TV STB - Android Smart TV - Android TV - Roku TV - Android Coship - iOS/tvOS - iOS/tvOS Legacy - iOS Player SDK - iOS Services SDK - iOS Analytics SDK - Android Request Manager - Claro Video Web - Web Chromecast Receiver - AAF LG Nativa (WebOS) - AAF Samsung Nativa (Tizen) - UWP (Windows/Xbox)</td>
+            <td>Android TV STB - Android Smart TV - Android TV - Roku TV - Android Coship - iOS/tvOS - iOS/tvOS Legacy - iOS Player SDK - iOS Services SDK - iOS Analytics SDK - Android Request Manager - Claro Video Web - Web Chromecast Receiver - AAF LG Nativa (WebOS) - AAF Samsung Nativa (Tizen) - AAF OTT - AAF IPTV - Middleware Claro Musica - UWP (Windows/Xbox)</td>
           </tr>
           <tr>
             <td>Metodologia</td>
@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <td>Artefactos generados</td>
-            <td>273+ documentos tecnicos verificados</td>
+            <td>343+ documentos tecnicos verificados</td>
           </tr>
         </tbody>
       </table>
@@ -62,7 +62,7 @@
       <main>
         <section id="resumen" class="reveal">
           <h3>1. Resumen General</h3>
-          <p>Este portafolio consolida la documentacion clave de dieciseis repositorios con una misma estructura estandar.</p>
+          <p>Este portafolio consolida la documentacion clave de diecinueve repositorios con una misma estructura estandar.</p>
           <p>El objetivo es garantizar que cualquier audiencia (tecnica y funcional) pueda:</p>
           <div class="card-grid">
             <article class="mini-card">
@@ -184,6 +184,21 @@
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td>Dependencias críticas en estado legacy/EOL: <code>React 15.6.1</code>, <code>Webpack 3.5.1</code>, <code>Jest 20.0.4</code>, <code>Node 10.24.1</code> y <code>node-sass 4.5.3</code> deprecado.</td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td>Dependencias críticas en estado legacy/EOL: <code>React 15.6.1</code>, <code>Webpack 3.5.1</code>, <code>Jest 20.0.4</code> y coexistencia <code>Babel 6.25.0 + Babel 7.12.9</code> (migración incompleta).</td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td>Dependencias con riesgo/vulnerabilidades conocidas: <code>axios 0.19.2</code> (SSRF), <code>jsonwebtoken 8.4.0</code>; stack legacy en Express/Jest/Babel con modernización pendiente.</td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
                 <td><code>claro-video-android-tv-stb</code></td>
                 <td><code>jcenter()</code> deprecated; <code>ExoPlayer 2.16.1</code> muy atrasado; coexistencia <code>RxJava2 + RxJava3</code> (legacy/híbrido).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
@@ -283,6 +298,24 @@
                 <td><code>claro-video-aaf-samsung-nativa</code></td>
                 <td>Patrón AAF Shell estable, separación clara en 7 módulos JS (IIFE) y manejo robusto de errores con New Relic.</td>
                 <td>Sin testing automatizado/CI-CD, globals implícitas y API key de New Relic hardcodeada en <code>cnts.js</code>.</td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td>Arquitectura modular AAF (13 módulos), separación UI/estado/dominio y 7 workflows CI/CD con análisis SonarQube.</td>
+                <td>Stack desactualizado (React/Webpack/Jest/Node en EOL), cobertura no medible (<code>coverage.xml</code> ausente) y migración TypeScript parcial (~8%).</td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td>Arquitectura modular (18 módulos), reducers centralizados y abstracción multi-plataforma en <code>src/devices/</code> para 20+ dispositivos.</td>
+                <td>God Component en <code>src/containers/App/index.jsx</code> (2371 LOC), stack legacy/EOL (React/Webpack/Jest) y cobertura real no publicada.</td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td>BFF modular sólido (routes/controller/task/transformer), versionado de rutas y CI/CD activo con SonarQube.</td>
+                <td>Riesgo de seguridad por dependencias vulnerables (<code>axios</code>/<code>jsonwebtoken</code>), CORS abierto y ausencia de rate limiting/request validation.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
@@ -396,6 +429,24 @@
                 <td>Agregar gestión de tooling/dependencias, habilitar Jest + CI/CD y externalizar <code>NR_API_KEY</code>.</td>
               </tr>
               <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td><code>React 15.6.1</code>, <code>Redux 3.7.2</code>, <code>Webpack 3.5.1</code>, <code>Bitmovin 8.165.0</code>, <code>Shaka 3.0.1</code>, <code>Jest 20.0.4</code>, <code>TypeScript 3.9.5</code>.</td>
+                <td>Riesgo alto por obsolescencia (4 dependencias críticas EOL), sin <code>coverage.xml</code> y deuda de modernización acumulada.</td>
+                <td>Ejecutar plan de migración de stack (React/Webpack/Node/Jest), reemplazar <code>node-sass</code> y establecer baseline de cobertura en CI.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td><code>React 15.6.1</code>, <code>Redux 3.7.2</code>, <code>Webpack 3.5.1</code>, <code>Jest 20.0.4</code>, <code>Shaka 3.0.1</code> y coexistencia <code>Babel 6 + Babel 7</code> (47 dependencias totales).</td>
+                <td>Riesgo alto por obsolescencia/EOL y compatibilidad limitada de runtime (<code>Node v14-v16</code>; v17+ incompatible por Webpack 3).</td>
+                <td>Plan de migración React/Webpack/Jest/Babel, fijar runtime y publicar baseline de cobertura/quality gate bloqueante.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><code>Node.js v22</code>, <code>Express 4.16.4</code>, <code>Babel 7.x</code>, <code>Jest 23.x</code>, <code>axios 0.19.2</code>, <code>jsonwebtoken 8.4.0</code>, PM2 y New Relic.</td>
+                <td>Riesgo alto por CVEs/dependencias legacy y controles de seguridad incompletos (CORS abierto, sin rate limiting/validación de request).</td>
+                <td>Actualizar dependencias críticas, endurecer seguridad de entrada (CORS/rate limiting/validación) y publicar cobertura real de pruebas en CI.</td>
+              </tr>
+              <tr>
                 <td><code>claro-video-android-tv-stb</code></td>
                 <td><code>Retrofit 2.9.0</code>, <code>OkHttp 4.11.0</code>, <code>ExoPlayer 2.16.1</code>, <code>RxJava2/3</code>, Hilt, Room.</td>
                 <td>Dependencias parcialmente desactualizadas; ExoPlayer y jcenter con mayor urgencia.</td>
@@ -446,7 +497,7 @@
             </tbody>
           </table>
 
-          <p class="quote">Las tres tablas anteriores se construyeron únicamente con evidencia documental de los 16 repositorios solicitados y sus reportes de FASE 1.</p>
+          <p class="quote">Las tres tablas anteriores se construyeron únicamente con evidencia documental de los 19 repositorios solicitados y sus reportes de FASE 1.</p>
         </section>
 
         <section id="arquitectura" class="reveal">
@@ -714,6 +765,36 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td>🔴 <strong>CRITICO</strong></td>
+                <td>🟡 SPA React + Redux con modularidad AAF, pero con legado alto</td>
+                <td>🔴 Sin baseline de cobertura (<code>coverage.xml</code> ausente)</td>
+                <td>🔴 Riesgo alto por dependencias EOL y CVEs reportados en auditoría base</td>
+                <td>🟡 7 workflows presentes (CI/SonarQube), con madurez parcial y flujos manuales</td>
+                <td>🔴 React/Webpack/Jest/Node en EOL + <code>node-sass</code> deprecado</td>
+                <td><strong>Dependencias</strong></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td>🔴 <strong>CRITICO</strong></td>
+                <td>🟡 SPA React + Redux con módulos de dominio claros, pero con alto legado estructural</td>
+                <td>🔴 Sin baseline de cobertura real publicada y framework legacy (<code>Jest 20</code> + <code>Enzyme 2</code>)</td>
+                <td>🟡 Sin hardcoded crítico reportado en FASE 1; riesgo elevado por dependencias EOL</td>
+                <td>🟡 8 workflows activos con SonarQube, pero quality gate no bloqueante y flujos manuales</td>
+                <td>🔴 React/Webpack/Jest/Babel en legado/EOL y restricción de Node por compatibilidad</td>
+                <td><strong>Dependencias</strong></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td>🔴 <strong>CRITICO</strong></td>
+                <td>🟢 BFF modular (routes/controller/task/transformer) con versionado de rutas</td>
+                <td>🟡 Threshold 80% configurado, sin cobertura actual versionada en evidencia</td>
+                <td>🔴 Dependencias vulnerables (<code>axios</code>/<code>jsonwebtoken</code>) + CORS abierto y sin rate limiting/validación</td>
+                <td>🟢 CI/CD activo con GitHub Actions + SonarQube y monitoreo New Relic</td>
+                <td>🔴 Deuda en stack/dependencias (Express/Jest/Babel legacy con CVEs conocidos)</td>
+                <td><strong>Seguridad</strong></td>
+              </tr>
+              <tr>
                 <td><code>claro-video-universal-windows-platform</code></td>
                 <td>🟡 <strong>ATENCION</strong></td>
                 <td>🟡 Base MVVM operable con carga legacy (UWP/W81/WP8)</td>
@@ -726,7 +807,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Fuentes de Evidencia (16 repositorios exactos)</strong></p>
+          <p><strong>Fuentes de Evidencia (19 repositorios exactos)</strong></p>
           <table>
             <thead>
               <tr>
@@ -781,6 +862,18 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
@@ -906,6 +999,24 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><code>ARCHITECTURE_DIAGRAMS.md</code> + <code>README.md</code></td>
               </tr>
               <tr>
+                <td><strong>AAF OTT</strong></td>
+                <td>24 documentos</td>
+                <td>~5,302 LOC docs</td>
+                <td>0 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
+              </tr>
+              <tr>
+                <td><strong>AAF IPTV</strong></td>
+                <td>19 documentos</td>
+                <td>~7,430 LOC docs</td>
+                <td>0 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
+              </tr>
+              <tr>
+                <td><strong>Middleware Claro Musica</strong></td>
+                <td>27 documentos</td>
+                <td>~5,410 LOC docs</td>
+                <td>0 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
+              </tr>
+              <tr>
                 <td><strong>UWP (Windows/Xbox)</strong></td>
                 <td>18 documentos</td>
                 <td>~2,400 LOC docs</td>
@@ -940,7 +1051,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </table>
           <p class="quote">Total: 9 documentos de referencia.</p>
 
-          <p><strong>Verificacion en los 16 repositorios solicitados</strong></p>
+          <p><strong>Verificacion en los 19 repositorios solicitados</strong></p>
           <table>
             <thead>
               <tr>
@@ -1026,6 +1137,21 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>9/9 ✅</td>
               </tr>
               <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td><code>docs/01-inicio/</code></td>
+                <td>9/9 ✅</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td><code>docs/01-inicio/</code></td>
+                <td>9/9 ✅</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><code>docs/01-inicio/</code></td>
+                <td>9/9 ✅</td>
+              </tr>
+              <tr>
                 <td><code>claro-video-universal-windows-platform</code></td>
                 <td><code>01-inicio/</code></td>
                 <td>9/9 ✅</td>
@@ -1066,6 +1192,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-web-chromecast</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>4/4 ✅</td></tr>
+              <tr><td><code>claro-video-aaf-ott</code></td><td>4/4 ✅</td></tr>
+              <tr><td><code>claro-video-aaf-iptv</code></td><td>4/4 ✅</td></tr>
+              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-universal-windows-platform</code></td><td>4/4 ✅</td></tr>
             </tbody>
           </table>
@@ -1098,6 +1227,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-web-chromecast</code></td><td>1/1 ✅</td><td>0</td></tr>
               <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>1/1 ✅</td><td>0</td></tr>
               <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><code>claro-video-aaf-ott</code></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><code>claro-video-aaf-iptv</code></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>1/1 ✅</td><td>0</td></tr>
               <tr><td><code>claro-video-universal-windows-platform</code></td><td>1/1 ✅</td><td>0</td></tr>
             </tbody>
           </table>
@@ -1130,6 +1262,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-web-chromecast</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>2/2 ✅</td></tr>
+              <tr><td><code>claro-video-aaf-ott</code></td><td>2/2 ✅</td></tr>
+              <tr><td><code>claro-video-aaf-iptv</code></td><td>2/2 ✅</td></tr>
+              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-universal-windows-platform</code></td><td>0/2 ⚠️</td></tr>
             </tbody>
           </table>
@@ -1161,11 +1296,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-web-chromecast</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>1/1 ✅</td></tr>
+              <tr><td><code>claro-video-aaf-ott</code></td><td>1/1 ✅</td></tr>
+              <tr><td><code>claro-video-aaf-iptv</code></td><td>1/1 ✅</td></tr>
+              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-universal-windows-platform</code></td><td>0/1 ⚠️</td></tr>
             </tbody>
           </table>
 
-          <p class="quote">Total verificable por plataforma: 17 artefactos obligatorios (9 Grupo A + 8 Grupos B-E). En estos 16 repos: 269/272 artefactos obligatorios detectados (brecha concentrada en UWP para Grupo D y E).</p>
+          <p class="quote">Total verificable por plataforma: 17 artefactos obligatorios (9 Grupo A + 8 Grupos B-E). En estos 19 repos: 320/323 artefactos obligatorios detectados (brecha concentrada en UWP para Grupo D y E).</p>
         </section>
 
         <section id="narrativa" class="reveal">
@@ -1287,6 +1425,27 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Issues criticos:</strong> <code>NR_API_KEY</code> embebida en <code>cnts.js</code> y ausencia de CI/CD/testing automatizado.</li>
             <li><strong>Deuda tecnica:</strong> globals implícitas, dependencia crítica del app hosteado externo y gestión manual de tooling/dependencias.</li>
           </ul>
+          <p><strong>🔴 AAF OTT - Accion Urgente</strong></p>
+          <ul>
+            <li><strong>Stack:</strong> React 15.6.1 · Redux 3.7.2 · Webpack 3.5.1 · Bitmovin 8.165.0 · TypeScript 3.9.5 (~8%).</li>
+            <li><strong>Fortalezas:</strong> arquitectura AAF modular (13 módulos), separación clara de capas y 7 workflows de CI/CD con SonarQube.</li>
+            <li><strong>Issues criticos:</strong> dependencias críticas en EOL (React/Webpack/Jest/Node), sin baseline de cobertura (<code>coverage.xml</code> ausente).</li>
+            <li><strong>Deuda tecnica:</strong> modernización de stack pendiente y migración TypeScript parcial sin estrategia formal por dominio.</li>
+          </ul>
+          <p><strong>🔴 AAF IPTV - Accion Urgente</strong></p>
+          <ul>
+            <li><strong>Stack:</strong> React 15.6.1 · Redux 3.7.2 · Webpack 3.5.1 · Jest 20.0.4 · TypeScript 3.9.5 (uso parcial).</li>
+            <li><strong>Fortalezas:</strong> arquitectura modular (18 módulos), abstracción para 20+ plataformas y 8 workflows de CI/CD con SonarQube.</li>
+            <li><strong>Issues criticos:</strong> God Component en <code>src/containers/App/index.jsx</code> (2371 LOC), quality gate no bloqueante y cobertura real no publicada.</li>
+            <li><strong>Deuda tecnica:</strong> stack legacy en EOL (React/Webpack/Jest/Babel) y compatibilidad Node limitada a v14-v16.</li>
+          </ul>
+          <p><strong>🔴 Middleware Claro Musica - Accion Urgente</strong></p>
+          <ul>
+            <li><strong>Stack:</strong> Node.js v22 · Express 4.16.4 · Babel 7.x · Jest 23.x · PM2 + New Relic.</li>
+            <li><strong>Fortalezas:</strong> BFF modular robusto con versionado de rutas, clase base Requester y CI/CD activo con SonarQube.</li>
+            <li><strong>Issues criticos:</strong> <code>axios 0.19.2</code> (SSRF), <code>jsonwebtoken 8.4.0</code>, CORS abierto y ausencia de rate limiting/request validation.</li>
+            <li><strong>Deuda tecnica:</strong> dependencias legacy, cobertura actual no publicada y controles de hardening API por reforzar.</li>
+          </ul>
           <p><strong>🟡 UWP (Windows/Xbox) - Requiere Atencion</strong></p>
           <ul>
             <li><strong>Stack:</strong> .NET/C# · MVVM · 44 proyectos <code>.csproj</code> · coexistencia UWP/W81/WP8.</li>
@@ -1295,12 +1454,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Seguridad/operacion:</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en historico.</li>
           </ul>
 
-          <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 16 repositorios solicitados.</p>
+          <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 19 repositorios solicitados.</p>
         </section>
 
         <section id="riesgos" class="reveal">
-          <h3>8. ⚠️ Issues Sistemicos - Aplican a los 16 Repositorios</h3>
-          <p>Estos problemas no son de una sola plataforma; se observan de manera transversal en los 16 repositorios analizados.</p>
+          <h3>8. ⚠️ Issues Sistemicos - Aplican a los 19 Repositorios</h3>
+          <p>Estos problemas no son de una sola plataforma; se observan de manera transversal en los 19 repositorios analizados.</p>
           <table>
             <thead>
               <tr>
@@ -1320,6 +1479,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <th>Web Chromecast</th>
                 <th>AAF LG Nativa</th>
                 <th>AAF Samsung Nativa</th>
+                <th>AAF OTT</th>
+                <th>AAF IPTV</th>
+                <th>Middleware Claro Musica</th>
                 <th>UWP (Windows/Xbox)</th>
                 <th>Impacto</th>
               </tr>
@@ -1342,6 +1504,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🔴 (sin pipeline CI/CD y proceso de build/deploy manual)</td>
                 <td>🔴 (sin workflow CI/CD; empaquetado y despliegue manual con scripts locales)</td>
                 <td>🔴 (sin workflows CI/CD activos; build/release manual con scripts <code>package_*.sh</code>)</td>
+                <td>⚠️ (7 workflows presentes, con quality gate parcial y varios flujos manuales <code>workflow_dispatch</code>)</td>
+                <td>⚠️ (8 workflows activos, con quality gate no bloqueante y flujos manuales <code>workflow_dispatch</code>)</td>
+                <td>🟢 (CI/CD activo con GitHub Actions + SonarQube en PR)</td>
                 <td>⚠️ (quality gate no bloqueante en sesion y sin pipeline homologado)</td>
                 <td>Calidad y velocidad de entrega</td>
               </tr>
@@ -1362,6 +1527,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>0% coverage; sin framework de tests configurado</td>
                 <td>0% coverage; sin Jest/Vitest ni suite automatizada</td>
                 <td>0% coverage; sin framework automatizado (solo pruebas manuales en dispositivo)</td>
+                <td>Sin <code>coverage.xml</code> versionado; Jest/Enzyme legacy sin baseline consolidado en CI</td>
+                <td>Sin cobertura real publicada; <code>Jest 20</code> + <code>Enzyme 2</code> legacy sin baseline consolidado</td>
+                <td>⚠️ threshold de 80% configurado, pero sin reporte <code>coverage</code> versionado en evidencia</td>
                 <td>Cobertura no verificable en runner local; requiere baseline en CI</td>
                 <td>Confiabilidad y riesgo de regresion</td>
               </tr>
@@ -1382,6 +1550,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>⚠️ sin monitoreo operativo estandarizado en producción</td>
                 <td>🟡 parcial (New Relic integrado, sin dashboard transversal homologado)</td>
                 <td>🟡 parcial (New Relic para startup/error, sin dashboard transversal homologado)</td>
+                <td>🟡 parcial (observabilidad en reportes, sin dashboard transversal homologado)</td>
+                <td>🟡 parcial (SonarQube/New Relic referenciado, sin dashboard transversal homologado)</td>
+                <td>🟡 parcial (New Relic APM activo, sin dashboard transversal homologado)</td>
                 <td>⚠️ sin evidencia de monitoreo operativo estandar</td>
                 <td>Visibilidad operativa</td>
               </tr>
@@ -1403,10 +1574,16 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>❓ sin KPI homologado de estabilidad para app shell LG en FASE 1</td>
                 <td>❓ sin KPI homologado de estabilidad para app shell Samsung en FASE 1</td>
                 <td>❓ sin KPI homologado consolidado en FASE 1</td>
+                <td>❓ sin KPI homologado consolidado en FASE 1</td>
+                <td>❓ sin KPI homologado consolidado en FASE 1</td>
+                <td>❓ sin KPI homologado consolidado en FASE 1</td>
                 <td>UX y estabilidad no comparables</td>
               </tr>
               <tr>
                 <td>Sin dashboard unificado de calidad tecnica</td>
+                <td>⚠️</td>
+                <td>⚠️</td>
+                <td>⚠️</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
@@ -1431,7 +1608,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>💡 Dato Clave</strong></p>
           <p class="quote">La plataforma referente (condicional) en arquitectura es <strong>Android TV STB</strong>; la plataforma referente en madurez de automatizacion es <strong>Claro Video Web</strong> (workflows CI/CD activos). Ambas pueden servir como base para estandarizar quality gates en el resto.</p>
 
-          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
         </section>
 
         <section id="anexo" class="reveal">
@@ -1454,6 +1631,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Web Chromecast Receiver:</strong> <code>appKey</code>/<code>HKS_token_base</code> hardcoded y bandera <code>isProd = true</code> en código fuente (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>AAF LG Nativa:</strong> API key de New Relic hardcodeada en <code>cnts.js</code> y gestión de secrets sin pipeline ni rotación automática (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>AAF Samsung Nativa:</strong> <code>NR_API_KEY</code> y account de New Relic embebidos en <code>cnts.js</code>, con exposición potencial del secreto en el bundle WGT (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
+            <li><strong>AAF OTT:</strong> sin secretos hardcoded detectados en rutas auditadas, pero con alto riesgo por dependencias EOL y CVEs reportados en la auditoría base (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
+            <li><strong>AAF IPTV:</strong> no se reportan secretos hardcoded críticos en FASE 1, pero mantiene riesgo alto por dependencias EOL (React/Webpack/Jest/Babel) y quality gate no bloqueante (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_STACK_DETECTION.md</code>).</li>
+            <li><strong>Middleware Claro Musica:</strong> <code>axios 0.19.2</code> (SSRF), <code>jsonwebtoken 8.4.0</code> vulnerable y configuración <code>cors()</code> abierta sin rate limiting/validación de esquema (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>UWP (Windows/Xbox):</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en historico del repositorio (<code>ANALYSIS_SUMMARY.md</code>).</li>
           </ul>
           <p class="quote">Posible consecuencia: exposicion de datos, riesgo MITM y mayor superficie de ataque por dependencias vulnerables en produccion.</p>
@@ -1475,6 +1655,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Web Chromecast Receiver:</strong> sin framework de pruebas (<code>npm test</code> falla por definición) y cobertura 0% en el receiver.</li>
             <li><strong>AAF LG Nativa:</strong> sin framework de testing (0% cobertura), lo que incrementa riesgo de regresión en flujo de verificación/redirect.</li>
             <li><strong>AAF Samsung Nativa:</strong> sin framework de testing (0% cobertura) y validación principalmente manual en dispositivo físico.</li>
+            <li><strong>AAF OTT:</strong> sin <code>coverage.xml</code> versionado y framework de pruebas legacy (<code>Jest 20</code> + <code>Enzyme 2</code>) sin baseline consolidado.</li>
+            <li><strong>AAF IPTV:</strong> sin cobertura real publicada; <code>Jest 20</code> + <code>Enzyme 2</code> legacy y baseline pendiente en CI (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_STACK_DETECTION.md</code>).</li>
+            <li><strong>Middleware Claro Musica:</strong> threshold de cobertura configurado (80%) pero sin reporte versionado, por lo que la línea base real no es verificable en FASE 1.</li>
             <li><strong>UWP (Windows/Xbox):</strong> uso elevado de <code>async void</code> y <code>catch {}</code> en hallazgos de sesion compromete robustez y observabilidad.</li>
           </ul>
           <p class="quote">Posible consecuencia: regresiones en releases, mayor frecuencia de incidentes y ciclos de correccion mas largos.</p>
@@ -1496,11 +1679,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Web Chromecast Receiver:</strong> deuda severa por God Object en <code>player.js</code> y 15/16 dependencias desactualizadas del stack frontend.</li>
             <li><strong>AAF LG Nativa:</strong> deuda estructural por globals implícitas y acoplamiento por orden de scripts sin contratos formales de módulo.</li>
             <li><strong>AAF Samsung Nativa:</strong> deuda estructural por globals implícitas, stack ES5 legacy y dependencia crítica del app hosteado externo.</li>
+            <li><strong>AAF OTT:</strong> deuda de modernización por stack React/Webpack/Node/Jest en EOL y migración TypeScript parcial (~8%) sin estrategia integral.</li>
+            <li><strong>AAF IPTV:</strong> deuda de modernización por stack React/Webpack/Jest/Babel legacy y God Component de 2371 LOC en <code>src/containers/App/index.jsx</code>.</li>
+            <li><strong>Middleware Claro Musica:</strong> deuda de evolución por dependencias legacy en capa HTTP/seguridad y falta de hardening integral (rate limiting + validación de requests).</li>
             <li><strong>UWP (Windows/Xbox):</strong> complejidad por coexistencia UWP/W81/WP8 y hotspots de gran tamano que incrementan costo de cambio.</li>
           </ul>
           <p class="quote">Posible consecuencia: cada cambio toma mas tiempo, aumenta el riesgo en upgrades y baja la velocidad de entrega del equipo.</p>
 
-          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
         </section>
         <section id="proximos" class="reveal">
           <h3>10. 🚀 Proximos Pasos Recomendados</h3>
@@ -1532,7 +1718,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Aterrizaje a los 16 repositorios actuales</strong></p>
+          <p><strong>Aterrizaje a los 19 repositorios actuales</strong></p>
           <table>
             <thead>
               <tr>
@@ -1634,6 +1820,24 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>KPIs: cobertura real, errores de startup/preflight, hallazgos de seguridad abiertos/cerrados y éxito de empaquetado/despliegue.</td>
               </tr>
               <tr>
+                <td><code>claro-video-aaf-ott</code></td>
+                <td>Cuantificar riesgo de seguridad/dependencias legacy (React/Webpack/Jest/Node EOL) y establecer baseline de cobertura/quality gate.</td>
+                <td>Ejecutar migración por fases de stack frontend, reemplazar <code>node-sass</code> por <code>sass</code> y formalizar estrategia TypeScript por dominio.</td>
+                <td>KPIs: CVEs por severidad, cobertura real publicada, tiempo de build y cumplimiento de quality gate bloqueante en CI.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-aaf-iptv</code></td>
+                <td>Cuantificar deuda del God Component (2371 LOC), riesgo de dependencias EOL y baseline real de cobertura.</td>
+                <td>Ejecutar migración por fases (React/Webpack/Jest/Babel), activar quality gate bloqueante y formalizar estrategia de runtime Node/CI.</td>
+                <td>KPIs: cobertura real publicada, CVEs por severidad, tiempo de build y cumplimiento de quality gate bloqueante en PR.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td>Remediar riesgo de seguridad API (axios/jsonwebtoken/CORS), validar cobertura real y formalizar controles de entrada.</td>
+                <td>Actualizar dependencias críticas, implementar rate limiting + validación de esquemas y asegurar hardening por entorno.</td>
+                <td>KPIs: CVEs por severidad, latencia/errores por endpoint, cobertura real publicada y cumplimiento de quality gates en PR.</td>
+              </tr>
+              <tr>
                 <td><code>claro-video-universal-windows-platform</code></td>
                 <td>Cuantificar deuda en hotspots, validar riesgos de seguridad legacy (<code>http://</code>, certificados historicos) y homologar calidad por solucion.</td>
                 <td>Reducir <code>async void</code>/<code>catch {}</code>, refactor incremental de hotspots y estrategia explicita para lineas UWP/W81/WP8.</td>
@@ -1680,7 +1884,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
           <p class="quote">Recomendacion: ejecutar <strong>FASE 2: Analisis de codigo y diagnostico</strong> para obtener el analisis completo con datos cuantificables.</p>
-          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 16 repositorios solicitados.</p>
+          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 19 repositorios solicitados.</p>
         </section>
         <section id="inversion" class="reveal">
           <h3>11. 💼 Inversion vs Valor Obtenido</h3>
@@ -1692,7 +1896,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li>Trazabilidad de hallazgos con evidencia directa desde codigo y reportes de analisis.</li>
           </ul>
 
-          <p><strong>Valor Entregado (evidencia consolidada de los 16 repositorios)</strong></p>
+          <p><strong>Valor Entregado (evidencia consolidada de los 19 repositorios)</strong></p>
           <ul>
             <li>📚 Documentacion tecnica verificada y organizada para onboarding, operacion y toma de decisiones.</li>
             <li>✅ Cumplimiento documental validado por repositorio con criterios uniformes.</li>
@@ -1700,7 +1904,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li>🔍 Hallazgos priorizados con evidencia trazable en codigo (archivo + linea) en los reportes de analisis.</li>
             <li>🗺️ Roadmap de accion por repositorio desde <code>ANALYSIS_SUMMARY.md</code>.</li>
             <li>⚙️ Configuracion de Copilot por repositorio cuando aplica (<code>.copilotrc</code> + <code>copilot-instructions.md</code>).</li>
-            <li>✅ Gate de calidad documental cumplido en 15 de 16 repositorios; UWP mantiene brecha en configuracion/README raiz.</li>
+            <li>✅ Gate de calidad documental cumplido en 18 de 19 repositorios; UWP mantiene brecha en configuracion/README raiz.</li>
           </ul>
           <p class="quote">Esta seccion se presenta en formato cualitativo para comunicacion de alto nivel, evitando comparativas de tiempo y porcentajes.</p>
         </section>
@@ -1824,6 +2028,27 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>Externalizar secretos, activar testing/CI para WGT y reducir acoplamiento global</td>
               </tr>
               <tr>
+                <td>AAF OTT</td>
+                <td>🟡 Funcional (SPA React + Redux con modularidad AAF y flujos operativos estables)</td>
+                <td>🔴 Alta (stack crítico en EOL: React/Webpack/Jest/Node + migración TS parcial)</td>
+                <td>🔴 Crítica (riesgo por CVEs/dependencias legacy y ausencia de baseline de seguridad/cobertura)</td>
+                <td>Modernizar stack por fases, cerrar deuda de dependencias y establecer quality gates bloqueantes en CI</td>
+              </tr>
+              <tr>
+                <td>AAF IPTV</td>
+                <td>🟡 Funcional (SPA React + Redux con modularidad por dominios)</td>
+                <td>🔴 Alta (God Component 2371 LOC + stack legacy React/Webpack/Jest/Babel)</td>
+                <td>🟡 Atención-Alta (sin hardcoded crítico reportado, pero con riesgo por dependencias EOL y quality gate no bloqueante)</td>
+                <td>Modernizar stack por fases, activar quality gate bloqueante y publicar cobertura real en CI</td>
+              </tr>
+              <tr>
+                <td>Middleware Claro Musica</td>
+                <td>🟢 Sólida (BFF modular con versionado de rutas y separación clara por dominio)</td>
+                <td>🟡 Moderada-Alta (dependencias legacy y cobertura real no publicada en evidencia)</td>
+                <td>🔴 Crítica (axios/jsonwebtoken vulnerables + CORS abierto y controles de entrada incompletos)</td>
+                <td>Actualizar dependencias críticas, endurecer seguridad API y publicar baseline de cobertura/quality gate</td>
+              </tr>
+              <tr>
                 <td>UWP (Windows/Xbox)</td>
                 <td>🟡 Sólida (MVVM en base .NET/C# multi-target)</td>
                 <td>🔴 Alta (hotspots, <code>async void</code>, <code>catch {}</code>, deuda legacy)</td>
@@ -1865,6 +2090,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-web-chromecast</code></td><td>24</td><td><a href="ANEXO_claro-video-web-chromecast.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>32</td><td><a href="ANEXO_claro-video-aaf-lg-nativa.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>27</td><td><a href="ANEXO_claro-video-aaf-samsung-nativa.html">Abrir anexo</a></td></tr>
+              <tr><td><code>claro-video-aaf-ott</code></td><td>24</td><td><a href="ANEXO_claro-video-aaf-ott.html">Abrir anexo</a></td></tr>
+              <tr><td><code>claro-video-aaf-iptv</code></td><td>19</td><td><a href="ANEXO_claro-video-aaf-iptv.html">Abrir anexo</a></td></tr>
+              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>27</td><td><a href="ANEXO_claro-video-middleware-claro-musica.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-universal-windows-platform</code></td><td>18</td><td><a href="ANEXO_claro-video-universal-windows-platform.html">Abrir anexo</a></td></tr>
             </tbody>
           </table>
@@ -1881,4 +2109,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
     <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
 </body>
 </html>
+
+
+
 
