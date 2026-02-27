@@ -486,7 +486,8 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    #riesgos .table-slide table {
+    #riesgos .table-slide table,
+    #riesgos .issues-table {
       margin-top: 0;
       width: max-content;
       min-width: 100%;
@@ -494,40 +495,54 @@
       border-radius: 0;
     }
 
-    #riesgos .table-slide thead th,
-    #riesgos .table-slide tbody td {
-      min-width: 170px;
-      white-space: normal;
-      word-break: normal;
-      overflow-wrap: break-word;
+    #riesgos .issues-table thead th,
+    #riesgos .issues-table tbody td {
+      min-width: 210px;
+      max-width: 260px;
     }
 
-    #riesgos .table-slide thead th:first-child,
-    #riesgos .table-slide tbody td:first-child {
-      min-width: 220px;
+    #riesgos .issues-table thead th {
+      white-space: nowrap !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    #riesgos .issues-table tbody td {
+      white-space: normal !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      hyphens: none !important;
+      line-height: 1.38;
+    }
+
+    #riesgos .issues-table thead th:first-child,
+    #riesgos .issues-table tbody td:first-child {
+      min-width: 260px;
+      max-width: 260px;
       position: sticky;
       left: 0;
     }
 
-    #riesgos .table-slide thead th:first-child {
+    #riesgos .issues-table thead th:first-child {
       z-index: 4;
     }
 
-    #riesgos .table-slide tbody td:first-child {
+    #riesgos .issues-table tbody td:first-child {
       z-index: 2;
       background: #f5f9ff;
       font-weight: 600;
     }
 
-    #riesgos .table-slide thead th:last-child,
-    #riesgos .table-slide tbody td:last-child {
-      min-width: 220px;
+    #riesgos .issues-table thead th:last-child,
+    #riesgos .issues-table tbody td:last-child {
+      min-width: 280px;
+      max-width: 320px;
     }
 
-    #riesgos .table-slide code {
-      white-space: normal;
-      word-break: normal;
-      overflow-wrap: break-word;
+    #riesgos .issues-table code {
+      white-space: normal !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
     }
 
     code,
