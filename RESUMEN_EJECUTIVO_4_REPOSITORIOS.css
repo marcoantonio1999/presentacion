@@ -470,6 +470,66 @@
       background: #fbfdff;
     }
 
+    #riesgos .slide-note {
+      margin: 0.5rem 0 0.25rem;
+      font-size: 0.84rem;
+      color: #486581;
+    }
+
+    #riesgos .table-slide {
+      margin-top: 0.45rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      border: 1px solid rgba(16, 42, 67, 0.14);
+      border-radius: 12px;
+      background: #ffffff;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #riesgos .table-slide table {
+      margin-top: 0;
+      width: max-content;
+      min-width: 100%;
+      table-layout: auto;
+      border-radius: 0;
+    }
+
+    #riesgos .table-slide thead th,
+    #riesgos .table-slide tbody td {
+      min-width: 170px;
+      white-space: normal;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    #riesgos .table-slide thead th:first-child,
+    #riesgos .table-slide tbody td:first-child {
+      min-width: 220px;
+      position: sticky;
+      left: 0;
+    }
+
+    #riesgos .table-slide thead th:first-child {
+      z-index: 4;
+    }
+
+    #riesgos .table-slide tbody td:first-child {
+      z-index: 2;
+      background: #f5f9ff;
+      font-weight: 600;
+    }
+
+    #riesgos .table-slide thead th:last-child,
+    #riesgos .table-slide tbody td:last-child {
+      min-width: 220px;
+    }
+
+    #riesgos .table-slide code {
+      white-space: normal;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
     code,
     pre {
       font-family: "Consolas", "Cascadia Mono", "Courier New", monospace;
