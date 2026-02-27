@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documento Consolidado | 19 Repositorios</title>
+  <title>Documento Consolidado | 20 Repositorios</title>
     <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         </a>
       </div>
       <h1>🎯 Proceso integral de remediacion tecnologica</h1>
-      <p class="hero-subtitle">Claro Video - 19 Repositorios Prioritarios</p>
+      <p class="hero-subtitle">Claro Video - 20 Repositorios Prioritarios</p>
       <p class="hero-mainline">Analisis FASE 1 - Generacion de documentacion tecnica</p>
       <div class="meta">
         <span class="chip">Fecha: 2026-02-25</span>
@@ -27,7 +27,7 @@
         <tbody>
           <tr>
             <td>Plataformas analizadas</td>
-            <td>Android TV STB - Android Smart TV - Android TV - Roku TV - Android Coship - iOS/tvOS - iOS/tvOS Legacy - iOS Player SDK - iOS Services SDK - iOS Analytics SDK - Android Request Manager - Claro Video Web - Web Chromecast Receiver - AAF LG Nativa (WebOS) - AAF Samsung Nativa (Tizen) - AAF OTT - AAF IPTV - Middleware Claro Musica - UWP (Windows/Xbox)</td>
+            <td>Android TV STB - Android Smart TV - Android TV - Roku TV - Android Coship - Android Mobile - iOS/tvOS - iOS/tvOS Legacy - iOS Player SDK - iOS Services SDK - iOS Analytics SDK - Android Request Manager - Claro Video Web - Web Chromecast Receiver - AAF LG Nativa (WebOS) - AAF Samsung Nativa (Tizen) - AAF OTT - AAF IPTV - Middleware Claro Musica - UWP (Windows/Xbox)</td>
           </tr>
           <tr>
             <td>Metodologia</td>
@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <td>Artefactos generados</td>
-            <td>343+ documentos tecnicos verificados</td>
+            <td>358+ documentos tecnicos verificados</td>
           </tr>
         </tbody>
       </table>
@@ -62,7 +62,7 @@
       <main>
         <section id="resumen" class="reveal">
           <h3>1. Resumen General</h3>
-          <p>Este portafolio consolida la documentacion clave de diecinueve repositorios con una misma estructura estandar.</p>
+          <p>Este portafolio consolida la documentacion clave de veinte repositorios con una misma estructura estandar.</p>
           <p>El objetivo es garantizar que cualquier audiencia (tecnica y funcional) pueda:</p>
           <div class="card-grid">
             <article class="mini-card">
@@ -224,6 +224,11 @@
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
+                <td><code>claro-video-android</code></td>
+                <td>No se detectan dependencias EOL críticas en FASE 1; stack moderno (<code>Kotlin 2.1.0</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>, <code>Hilt 2.44</code>) con deuda en Java legacy y hardening de build.</td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
                 <td><code>claro-video-android-request-manager</code></td>
                 <td><code>android.support.v4</code> deprecated (sin AndroidX), <code>jcenter()</code> deprecated, <code>android-maven-gradle-plugin 1.5</code> obsoleto, <code>OkHttp 3.10.0</code> desactualizado.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
@@ -347,6 +352,12 @@
                 <td>Evidencia de flujos modernos (<code>ViewModel -> UseCase -> Repository -> DataSource</code>) y documentación técnica consolidada.</td>
                 <td>Arquitectura híbrida con alto acoplamiento en módulo único, secretos de signing en texto plano y quality gates permisivos.</td>
                 <td><code>ANALYSIS_REPORT_ARCHITECTURE.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-android</code></td>
+                <td>Stack moderno de producción (<code>Kotlin 2.1</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>) con MVVM + Clean Architecture y observabilidad activa (Firebase/NewRelic).</td>
+                <td>~40-50% de código Java legacy, baseline de cobertura no publicado y hardening de secretos de signing pendiente.</td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-request-manager</code></td>
@@ -477,6 +488,12 @@
                 <td>Actualizar AGP/Gradle/Kotlin, endurecer quality gates en CI y versionar reportes de <code>coverage.xml</code>/<code>jacoco.xml</code>.</td>
               </tr>
               <tr>
+                <td><code>claro-video-android</code></td>
+                <td><code>Kotlin 2.1.0</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>, <code>Hilt 2.44</code>, <code>Detekt 1.23.7</code>, CI con GitHub Actions.</td>
+                <td>Cobertura baseline no publicada y riesgo por gestión de secretos de signing en configuración de build.</td>
+                <td>Publicar baseline JaCoCo en CI, endurecer quality gate y externalizar secretos a variables seguras por entorno.</td>
+              </tr>
+              <tr>
                 <td><code>claro-video-android-request-manager</code></td>
                 <td><code>Volley 1.2.1</code>, <code>Picasso 2.71828</code>, <code>OkHttp 3.10.0</code>, <code>android.support.v4</code>.</td>
                 <td>Toolchain y dependencias con obsolescencia alta.</td>
@@ -497,7 +514,7 @@
             </tbody>
           </table>
 
-          <p class="quote">Las tres tablas anteriores se construyeron únicamente con evidencia documental de los 19 repositorios solicitados y sus reportes de FASE 1.</p>
+          <p class="quote">Las tres tablas anteriores se construyeron únicamente con evidencia documental de los 20 repositorios solicitados y sus reportes de FASE 1.</p>
         </section>
 
         <section id="arquitectura" class="reveal">
@@ -715,6 +732,16 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Seguridad</strong></td>
               </tr>
               <tr>
+                <td><code>claro-video-android</code></td>
+                <td>🟡 <strong>ATENCION</strong></td>
+                <td>🟢 MVVM + Clean Architecture con separación de capas y stack moderno</td>
+                <td>🔴 Cobertura baseline desconocida; JaCoCo pendiente de ejecución/publicación en CI</td>
+                <td>🟡 Hardening pendiente de secretos en signing/configuración de build</td>
+                <td>🟡 GitHub Actions detectado, con quality gate integral por homologar</td>
+                <td>🟢 Stack actualizado (<code>Kotlin 2.1</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>, <code>Hilt 2.44</code>)</td>
+                <td><strong>Testing</strong></td>
+              </tr>
+              <tr>
                 <td><code>claro-video-android-request-manager</code></td>
                 <td>🔴 <strong>CRITICO</strong></td>
                 <td>🟡 Patrones correctos con implementación legacy</td>
@@ -807,7 +834,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Fuentes de Evidencia (19 repositorios exactos)</strong></p>
+          <p><strong>Fuentes de Evidencia (20 repositorios exactos)</strong></p>
           <table>
             <thead>
               <tr>
@@ -842,6 +869,10 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><code>claro-video-android-coship</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-android</code></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
@@ -937,6 +968,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>14 documentos</td>
                 <td>~1,476 LOC docs</td>
                 <td>5 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
+              </tr>
+              <tr>
+                <td><strong>Android (Mobile)</strong></td>
+                <td>15 documentos</td>
+                <td>~10,896 LOC docs</td>
+                <td>0 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
               </tr>
               <tr>
                 <td><strong>iOS / tvOS</strong></td>
@@ -1051,7 +1088,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </table>
           <p class="quote">Total: 9 documentos de referencia.</p>
 
-          <p><strong>Verificacion en los 19 repositorios solicitados</strong></p>
+          <p><strong>Verificacion en los 20 repositorios solicitados</strong></p>
           <table>
             <thead>
               <tr>
@@ -1093,6 +1130,11 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><code>claro-video-android-coship</code></td>
+                <td><code>.github/docs/01-inicio/</code></td>
+                <td>9/9 ✅</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-android</code></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
@@ -1184,6 +1226,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-android-tv</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-roku-tv</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-android-coship</code></td><td>4/4 ✅</td></tr>
+              <tr><td><code>claro-video-android</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-ios-services</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-ios-analytics</code></td><td>4/4 ✅</td></tr>
@@ -1219,6 +1262,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-android-tv</code></td><td>1/1 ✅</td><td>5</td></tr>
               <tr><td><code>claro-video-roku-tv</code></td><td>1/1 ✅</td><td>5</td></tr>
               <tr><td><code>claro-video-android-coship</code></td><td>1/1 ✅</td><td>5</td></tr>
+              <tr><td><code>claro-video-android</code></td><td>1/1 ✅</td><td>0</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>1/1 ✅</td><td>5</td></tr>
               <tr><td><code>claro-video-ios-services</code></td><td>1/1 ✅</td><td>9</td></tr>
               <tr><td><code>claro-video-ios-analytics</code></td><td>1/1 ✅</td><td>7</td></tr>
@@ -1254,6 +1298,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-android-tv</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-roku-tv</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-android-coship</code></td><td>2/2 ✅</td></tr>
+              <tr><td><code>claro-video-android</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-ios-services</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-ios-analytics</code></td><td>2/2 ✅</td></tr>
@@ -1288,6 +1333,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-android-tv</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-roku-tv</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-android-coship</code></td><td>1/1 ✅</td></tr>
+              <tr><td><code>claro-video-android</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-ios-services</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-ios-analytics</code></td><td>1/1 ✅</td></tr>
@@ -1303,7 +1349,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p class="quote">Total verificable por plataforma: 17 artefactos obligatorios (9 Grupo A + 8 Grupos B-E). En estos 19 repos: 320/323 artefactos obligatorios detectados (brecha concentrada en UWP para Grupo D y E).</p>
+          <p class="quote">Total verificable por plataforma: 17 artefactos obligatorios (9 Grupo A + 8 Grupos B-E). En estos 20 repos: 337/340 artefactos obligatorios detectados (brecha concentrada en UWP para Grupo D y E).</p>
         </section>
 
         <section id="narrativa" class="reveal">
@@ -1347,6 +1393,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Fortalezas:</strong> evidencia de flujos modernos por feature y documentación técnica estructurada en FASE 1.</li>
             <li><strong>Issues criticos:</strong> credenciales de signing en texto plano y configuración de lint/permisividad que reduce la efectividad del quality gate.</li>
             <li><strong>Deuda técnica:</strong> arquitectura híbrida (moderno + legacy), alto acoplamiento y ausencia de cobertura consolidada versionada.</li>
+          </ul>
+
+          <p><strong>🟡 Android (Mobile) - Requiere Atencion</strong></p>
+          <ul>
+            <li><strong>Stack:</strong> Kotlin 2.1.0 · Jetpack Compose 1.6.8 · Media3 1.3.1 · Hilt 2.44 · MVVM + Clean Architecture.</li>
+            <li><strong>Fortalezas:</strong> arquitectura empresarial sólida, soporte DRM con Media3 y observabilidad activa con Firebase + NewRelic.</li>
+            <li><strong>Issues criticos:</strong> baseline de cobertura no publicada en CI y riesgo de hardcoded en configuración de signing/build.</li>
+            <li><strong>Deuda técnica:</strong> ~40-50% de código Java legacy con plan de migración gradual a Kotlin.</li>
           </ul>
 
           <p><strong>🟡 iOS / tvOS - Requiere Atencion</strong></p>
@@ -1454,12 +1508,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Seguridad/operacion:</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en historico.</li>
           </ul>
 
-          <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 19 repositorios solicitados.</p>
+          <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 20 repositorios solicitados.</p>
         </section>
 
         <section id="riesgos" class="reveal">
-          <h3>8. ⚠️ Issues Sistemicos - Aplican a los 19 Repositorios</h3>
-          <p>Estos problemas no son de una sola plataforma; se observan de manera transversal en los 19 repositorios analizados.</p>
+          <h3>8. ⚠️ Issues Sistemicos - Aplican a los 20 Repositorios</h3>
+          <p>Estos problemas no son de una sola plataforma; se observan de manera transversal en los 20 repositorios analizados.</p>
           <table>
             <thead>
               <tr>
@@ -1469,6 +1523,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <th>Android TV</th>
                 <th>Roku TV</th>
                 <th>Android Coship</th>
+                <th>Android (Mobile)</th>
                 <th>iOS / tvOS</th>
                 <th>iOS / tvOS Legacy</th>
                 <th>iOS Player SDK</th>
@@ -1494,6 +1549,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🟢 (GitHub Actions + Azure Pipelines activos por variante)</td>
                 <td>⚠️ (workflow de build documentado, con controles de calidad parciales/no bloqueantes)</td>
                 <td>⚠️ (workflow de build/publish presente, con quality gates no bloqueantes en lint/tests)</td>
+                <td>⚠️ (CI Workflows detectados en GitHub Actions; quality gate integral de cobertura/seguridad pendiente de homologar)</td>
                 <td>⚠️ (build/analysis existe, pero sin pipeline de tests/deploy)</td>
                 <td>⚠️ (CI dual Azure/GitHub, sin quality gates persistidos de coverage/security)</td>
                 <td>⚠️ (workflows presentes, sin artefactos de coverage/security persistidos)</td>
@@ -1517,6 +1573,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>0% coverage; sin <code>app/src/test/</code> ni dependencias <code>testImplementation</code></td>
                 <td>Cobertura no consolidada en reportes versionados (dato no disponible en evidencia del repositorio)</td>
                 <td>Sin cobertura consolidada versionada (<code>coverage.xml</code>/<code>jacoco.xml</code> no disponible)</td>
+                <td>Cobertura baseline desconocida; JaCoCo pendiente de ejecución/publicación en CI</td>
                 <td>Ratio estimado muy bajo; sin coverage real en CI</td>
                 <td>Cobertura baja/no cuantificada y sin baseline verificable en CI</td>
                 <td>Sin <code>coverage.xml</code>; baseline cuantitativo pendiente</td>
@@ -1540,6 +1597,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🟡 parcial (Firebase + New Relic + Youbora presentes, sin dashboard transversal unificado)</td>
                 <td>🟡 parcial (monitoreo reportado, sin dashboard transversal homologado en evidencia)</td>
                 <td>🟡 parcial (Firebase/NewRelic detectados, sin dashboard unificado)</td>
+                <td>🟡 parcial (Firebase + NewRelic integrados, sin dashboard transversal homologado)</td>
                 <td>🟡 parcial (Firebase/NewRelic/Youbora, sin tablero unificado)</td>
                 <td>🟡 parcial (Firebase/NewRelic/Youbora, sin tablero unificado)</td>
                 <td>🟡 parcial (Bitmovin/NPAW, sin dashboard unificado)</td>
@@ -1559,6 +1617,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td>Crash rate sin instrumentacion comparable entre plataformas</td>
                 <td>❓ no homologado en FASE 1</td>
+                <td>⚠️ sin KPI consolidado en FASE 1</td>
                 <td>⚠️ sin KPI consolidado en FASE 1</td>
                 <td>⚠️ sin KPI consolidado en FASE 1</td>
                 <td>⚠️ sin KPI consolidado en FASE 1</td>
@@ -1600,6 +1659,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>⚠️</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
+                <td>⚠️</td>
                 <td>Gobernanza tecnica y priorizacion</td>
               </tr>
             </tbody>
@@ -1608,7 +1668,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>💡 Dato Clave</strong></p>
           <p class="quote">La plataforma referente (condicional) en arquitectura es <strong>Android TV STB</strong>; la plataforma referente en madurez de automatizacion es <strong>Claro Video Web</strong> (workflows CI/CD activos). Ambas pueden servir como base para estandarizar quality gates en el resto.</p>
 
-          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android</code>, <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
         </section>
 
         <section id="anexo" class="reveal">
@@ -1620,6 +1680,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Android TV:</strong> credenciales hardcodeadas en <code>app/build.gradle</code> (keystore), <code>WebServicesConstants.kt</code> y <code>DisclaimerKeys.kt</code>, con <code>abortOnError false</code> en lint (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>Roku TV:</strong> en <code>documentacionroku_v1</code> se reportan secrets de signing en texto plano y configuración de lint permisiva en la base analizada (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
             <li><strong>Android Coship:</strong> credenciales de signing en texto plano y configuración de lint permisiva en <code>app/build.gradle</code> (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
+            <li><strong>Android (mobile):</strong> riesgo de exposición de secretos de signing en configuración Gradle y hardening de seguridad pendiente en pipeline (<code>ANALYSIS_REPORT_STACK_DETECTION.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
             <li><strong>iOS / tvOS:</strong> secrets hardcoded y ATS deshabilitado globalmente (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>iOS / tvOS Legacy:</strong> token de NewRelic hardcoded y ATS global deshabilitado (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>iOS Player SDK:</strong> sin secretos hardcoded en rutas auditadas; riesgo principal por ausencia de reportes SAST/DAST persistidos como artefacto (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
@@ -1644,6 +1705,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Android TV:</strong> cobertura 0% confirmada (sin <code>app/src/test/</code>) y cinco componentes críticos con tamaño &gt;1000 LOC.</li>
             <li><strong>Roku TV:</strong> cobertura y métricas de complejidad no consolidadas en artefactos versionados de la evidencia disponible.</li>
             <li><strong>Android Coship:</strong> cobertura consolidada no disponible y métricas de complejidad/cobertura fuera de artefactos versionados.</li>
+            <li><strong>Android (mobile):</strong> baseline de cobertura desconocida; requiere publicar JaCoCo en CI para evitar regresiones sin trazabilidad.</li>
             <li><strong>iOS / tvOS:</strong> cobertura de tests extremadamente baja y sin coverage real ejecutada en CI.</li>
             <li><strong>iOS / tvOS Legacy:</strong> cobertura baja/no cuantificada y sin baseline de pruebas verificable en CI.</li>
             <li><strong>iOS Player SDK:</strong> no se encontró <code>coverage.xml</code> ni baseline cuantitativo de pruebas en artefactos de FASE 1.</li>
@@ -1668,6 +1730,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Android TV:</strong> deuda por doble paradigma UI (Compose + Leanback), coexistencia Coroutines + RxJava3 y hotspots de alto acoplamiento.</li>
             <li><strong>Roku TV:</strong> deuda por arquitectura híbrida/legacy reportada en la documentación base, con alto acoplamiento en módulo único.</li>
             <li><strong>Android Coship:</strong> arquitectura híbrida en módulo único con acoplamiento alto y deuda de actualización de toolchain (<code>AGP 4.1.1</code>, <code>Kotlin 1.5.30</code>).</li>
+            <li><strong>Android (mobile):</strong> deuda de evolución por coexistencia Java/Kotlin (~40-50% Java legacy) y migración gradual pendiente a Kotlin total.</li>
             <li><strong>iOS / tvOS:</strong> 30+ singletons y ~940+ referencias (tight coupling alto).</li>
             <li><strong>iOS / tvOS Legacy:</strong> coexistencia <code>Dynamic&lt;T&gt;</code> + Combine y deuda de trazabilidad por <code>Package.resolved</code> no commitado.</li>
             <li><strong>iOS Player SDK:</strong> DI global centralizada que reduce configurabilidad por instancia y hace más rígida la evolución del SDK.</li>
@@ -1686,7 +1749,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </ul>
           <p class="quote">Posible consecuencia: cada cambio toma mas tiempo, aumenta el riesgo en upgrades y baja la velocidad de entrega del equipo.</p>
 
-          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
         </section>
         <section id="proximos" class="reveal">
           <h3>10. 🚀 Proximos Pasos Recomendados</h3>
@@ -1718,7 +1781,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Aterrizaje a los 19 repositorios actuales</strong></p>
+          <p><strong>Aterrizaje a los 20 repositorios actuales</strong></p>
           <table>
             <thead>
               <tr>
@@ -1770,6 +1833,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>Eliminar secretos de signing, cerrar brecha de cobertura/métricas y formalizar arquitectura objetivo por feature.</td>
                 <td>Migrar secretos a variables seguras de CI, endurecer quality gates de lint/tests y ejecutar plan incremental de desacoplamiento.</td>
                 <td>KPIs: cobertura consolidada, defectos por release, hallazgos de seguridad y avance de reducción de acoplamiento.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-android</code></td>
+                <td>Establecer baseline de cobertura real, auditar hardcoded de signing y cuantificar deuda Java legacy por módulo.</td>
+                <td>Publicar JaCoCo en CI, externalizar secretos a variables seguras y ejecutar plan incremental Java -> Kotlin priorizado por riesgo.</td>
+                <td>KPIs: cobertura real por módulo, hallazgos de seguridad abiertos/cerrados y avance de migración Java->Kotlin.</td>
               </tr>
               <tr>
                 <td><code>claro-video-ios-player</code></td>
@@ -1884,7 +1953,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
           <p class="quote">Recomendacion: ejecutar <strong>FASE 2: Analisis de codigo y diagnostico</strong> para obtener el analisis completo con datos cuantificables.</p>
-          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 19 repositorios solicitados.</p>
+          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 20 repositorios solicitados.</p>
         </section>
         <section id="inversion" class="reveal">
           <h3>11. 💼 Inversion vs Valor Obtenido</h3>
@@ -1896,7 +1965,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li>Trazabilidad de hallazgos con evidencia directa desde codigo y reportes de analisis.</li>
           </ul>
 
-          <p><strong>Valor Entregado (evidencia consolidada de los 19 repositorios)</strong></p>
+          <p><strong>Valor Entregado (evidencia consolidada de los 20 repositorios)</strong></p>
           <ul>
             <li>📚 Documentacion tecnica verificada y organizada para onboarding, operacion y toma de decisiones.</li>
             <li>✅ Cumplimiento documental validado por repositorio con criterios uniformes.</li>
@@ -1904,7 +1973,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li>🔍 Hallazgos priorizados con evidencia trazable en codigo (archivo + linea) en los reportes de analisis.</li>
             <li>🗺️ Roadmap de accion por repositorio desde <code>ANALYSIS_SUMMARY.md</code>.</li>
             <li>⚙️ Configuracion de Copilot por repositorio cuando aplica (<code>.copilotrc</code> + <code>copilot-instructions.md</code>).</li>
-            <li>✅ Gate de calidad documental cumplido en 18 de 19 repositorios; UWP mantiene brecha en configuracion/README raiz.</li>
+            <li>✅ Gate de calidad documental cumplido en 19 de 20 repositorios; UWP mantiene brecha en configuracion/README raiz.</li>
           </ul>
           <p class="quote">Esta seccion se presenta en formato cualitativo para comunicacion de alto nivel, evitando comparativas de tiempo y porcentajes.</p>
         </section>
@@ -1956,6 +2025,13 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🔴 Alta (acoplamiento elevado y métricas de calidad no consolidadas)</td>
                 <td>🔴 Crítica (secrets de signing en texto plano + quality gates permisivos)</td>
                 <td>Remediar secretos, endurecer lint/tests en CI y ejecutar plan de modernización de toolchain/arquitectura</td>
+              </tr>
+              <tr>
+                <td>Android (Mobile)</td>
+                <td>🟢 Sólida (MVVM + Clean Architecture con stack moderno Google)</td>
+                <td>🟡 Moderada (Java legacy ~40-50% y cobertura baseline no publicada)</td>
+                <td>🟡 Atención (hardening pendiente de secretos en signing/build)</td>
+                <td>Publicar JaCoCo en CI, externalizar secretos y acelerar migración Java->Kotlin por riesgo</td>
               </tr>
               <tr>
                 <td>iOS / tvOS</td>
@@ -2081,6 +2157,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr><td><code>claro-video-android-tv</code></td><td>14</td><td><a href="ANEXO_claro-video-android-tv.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-roku-tv</code></td><td>14</td><td><a href="ANEXO_claro-video-roku-tv.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-android-coship</code></td><td>14</td><td><a href="ANEXO_claro-video-android-coship.html">Abrir anexo</a></td></tr>
+              <tr><td><code>claro-video-android</code></td><td>15</td><td><a href="ANEXO_claro-video-android.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-ios-tvos</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-tvos.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-player.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-ios-services</code></td><td>15</td><td><a href="ANEXO_claro-video-ios-services.html">Abrir anexo</a></td></tr>
