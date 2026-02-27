@@ -23339,39 +23339,57 @@ erDiagram
     CHANNEL ||--o{ TIME_SLOT : has
     TIME_SLOT ||--|| PROGRAM : schedules
     
-    USER : string user_id PK
-    USER : string email
-    USER : string encrypted_password
-    USER : timestamp created_at
-    USER : timestamp last_login
+    USER {
+        string user_id PK
+        string email
+        string encrypted_password
+        timestamp created_at
+        timestamp last_login
+    }
     
-    CHANNEL : long channel_id PK
-    CHANNEL : string name
-    CHANNEL : string logo_url
-    CHANNEL : int position
-    CHANNEL : boolean favorite
+    CHANNEL {
+        long channel_id PK
+        string name
+        string logo_url
+        int position
+        boolean favorite
+    }
     
-    PROGRAM : long program_id PK
-    PROGRAM : long channel_id FK
-    PROGRAM : string title
-    PROGRAM : string description
-    PROGRAM : timestamp start_time
-    PROGRAM : timestamp end_time
-    PROGRAM : string content_rating
+    PROGRAM {
+        long program_id PK
+        long channel_id FK
+        string title
+        string description
+        timestamp start_time
+        timestamp end_time
+        string content_rating
+    }
     
-    PLAYBACK_SESSION : long session_id PK
-    PLAYBACK_SESSION : string user_id FK
-    PLAYBACK_SESSION : long program_id FK
-    PLAYBACK_SESSION : long position_ms
-    PLAYBACK_SESSION : timestamp created_at
-    PLAYBACK_SESSION : string stream_url
+    PLAYBACK_SESSION {
+        long session_id PK
+        string user_id FK
+        long program_id FK
+        long position_ms
+        timestamp created_at
+        string stream_url
+    }
     
-    QUALITY_METRIC : long metric_id PK
-    QUALITY_METRIC : long session_id FK
-    QUALITY_METRIC : float bitrate_mbps
-    QUALITY_METRIC : int fps
-    QUALITY_METRIC : int buffer_duration_ms
-    QUALITY_METRIC : float video_quality_score
+    QUALITY_METRIC {
+        long metric_id PK
+        long session_id FK
+        float bitrate_mbps
+        int fps
+        int buffer_duration_ms
+        float video_quality_score
+    }
+
+    TIME_SLOT {
+        long time_slot_id PK
+        long channel_id FK
+        long program_id FK
+        timestamp start_time
+        timestamp end_time
+    }
 ```
 
 ### Schema Room Database
