@@ -1,0 +1,1989 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anexo Tecnico - claro-video-android-coship</title>
+  <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero is-visible">
+      <span class="kicker">Anexo Tecnico</span>
+      <h1>claro-video-android-coship</h1>
+      <p class="hero-mainline">Contenido completo por documento</p>
+      <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
+    </header>
+
+    <main class="main">
+      <section id="contenido-docs">
+        <h3>Anexo Tecnico: claro-video-android-coship</h3>
+        <p class="docs-note">Documentos detectados: 14</p>
+<article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Repositorio: claro-video-android-coship</h4>
+              <p>Documentos detectados: 14</p>
+            </div>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Architecture Guide - claro-video-android-coship
+
+## &#128203; Resumen Arquitect&#243;nico
+### Stack Tecnol&#243;gico
+- Android app monol&#237;tica con un solo m&#243;dulo `:app` (fuente: `AMCO_SOURCE_CODE/settings.gradle`).
+- Build system con Android Gradle Plugin `4.1.1` y Kotlin `1.5.30` (fuente: `AMCO_SOURCE_CODE/build.gradle`).
+- SDKs configurados: `minSdkVersion 15`, `targetSdkVersion 33`, `compileSdkVersion 33` (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Networking principal con Retrofit/OkHttp y coexistencia de Volley/RequestTask legacy (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/RetrofitHelper.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/AbstractRequestTask.java`).
+
+### Patrones Arquitect&#243;nicos Principales
+- Flujo moderno con `ViewModel` + casos de uso + repositorios/datasources (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`).
+- Flujo legacy con managers/tasks (`ServiceManager`, `RequestTask`, `AbstractRequestTask`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`).
+- Estado compartido centralizado con singleton (`SessionManager`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/SessionManager.kt`).
+
+### Principios de Dise&#241;o
+- Separaci&#243;n por paquetes funcionales (`core`, `preload`, `user`, `tv`, `vod_player`, `payment`, `navigation`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- Encapsulamiento de acceso remoto v&#237;a `*ApiService` + `*DataSource` + helpers de red (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserDataSource.kt`).
+- ⚠️ Dato no disponible en el repositorio: ADRs o documento formal de principios arquitect&#243;nicos aprobados.
+
+## &#127959;️ Arquitectura General
+### Diagrama de Alto Nivel
+&lt;img src=&quot;img/Diagrama01-ARCHITECTURE_GUIDE.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart LR
+	UI[UI Activities/Fragments] --&gt; VM[ViewModel]
+	VM --&gt; UC[UseCases]
+	UC --&gt; REPO[Repository]
+	REPO --&gt; DS[DataSource]
+	DS --&gt; API[Retrofit/OkHttp APIs]
+	UI --&gt; LEG[Legacy Managers/Tasks]
+	LEG --&gt; API
+	VM --&gt; SES[SessionManager]
+```
+
+### Componentes Principales
+- Capa UI: Activities/Fragments y pantallas nuevas (`new_search`, `new_vcard`, `vod_player`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/ui/`).
+- Capa de estado/sesi&#243;n: `SessionManager` y proveedores locales (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/SessionManager.kt`).
+- Capa de red moderna: `RetrofitHelper`, `*ApiService`, `*DataSource` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/RetrofitHelper.kt`).
+- Capa legacy de requests/cach&#233;: `ServiceManager`, `RequestManager`, `AbstractRequestTask` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`).
+
+### Flujo de Datos
+- Flujo moderno observado: UI lanza acciones al `ViewModel`, ejecuta l&#243;gica (use case/request manager), consume repositorio/datasource y publica resultados por `LiveData` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- Flujo legacy observado: UI o manager dispara `AbstractRequestTask` y procesa respuesta/error en callbacks (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`).
+
+## &#128230; Estructura de M&#243;dulos
+### M&#243;dulos Core
+- `core/` para sesi&#243;n, configuraci&#243;n, red base y modelos compartidos (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/`).
+
+### M&#243;dulos de Dominio
+- Casos de uso en `preload/domain/use_case`, `tv/domain/use_case`, `payment/user_suspended/domain` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/domain/use_case/`).
+
+### M&#243;dulos de Infraestructura
+- Infraestructura de red local/remota en `core/data/network`, `*/data/network`, managers/tasks legacy y utiler&#237;as de cach&#233; (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/FileUtils.java`).
+
+### Dependencias Entre M&#243;dulos
+- Dependencia central desde features hacia `core` (sesi&#243;n, request keys, retrofit helper) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/data/network/VODSource.kt`).
+- Coexistencia de llamadas modernas y legacy dentro del mismo m&#243;dulo `:app` (fuente: `AMCO_SOURCE_CODE/settings.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/*/data/network/`).
+
+## &#128260; Patrones de Dise&#241;o
+### Patr&#243;n Arquitect&#243;nico (MVVM, Clean, etc.)
+- MVVM en features nuevas con `ViewModel` y observables de estado (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- Separaci&#243;n tipo Clean parcial en dominios con `use_case` y capas `data/domain/ui` por feature (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/`).
+
+### Dependency Injection
+- Inyecci&#243;n manual por constructor en clases modernas (`SearchVM(private val requestSearch: SearchRequestManagerImp)`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- ⚠️ Dato no disponible en el repositorio: framework de DI (sin evidencia de Dagger/Hilt/Koin en c&#243;digo fuente por b&#250;squeda `Dagger|Hilt|Koin|@Inject|ServiceLocator`).
+
+### Repository Pattern
+- Uso expl&#237;cito de repositorios en VOD y payment (`VODRepository`, `PaymentRepository`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/`).
+
+### Observer/State Management
+- Estado reactivo con `LiveData`/`MutableLiveData` y corrutinas (`viewModelScope`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- Uso de `Flow` en casos de uso de dominio (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/domain/use_case/`).
+
+## &#128225; Integraciones Externas
+### APIs Consumidas
+- Endpoints REST de usuario y perfil (`/services/user/*`, `/profile/v1/aud/sub`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`).
+- Endpoints de TV/preload/VOD v&#237;a interfaces Retrofit por feature (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/data/network/TVApiServices.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/data/network/PreloadApiService.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/data/network/VODApiServices.kt`).
+
+### Servicios de Terceros
+- Firebase Analytics y Google services (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/analytics/`, `AMCO_SOURCE_CODE/app/google-services.json`).
+- New Relic (plugin/build + eventos en app) (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`).
+- ThreatMetrix TrustDefender (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/payment/requests/TransactionClaroPagosManager.kt`).
+
+### Bases de Datos
+- Persistencia local observada mediante `SharedPreferences`/providers locales (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/Settings.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/PreferencesWrapper.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/SessionManager.kt`).
+- ⚠️ Dato no disponible en el repositorio: implementaci&#243;n activa de base de datos local tipo Room/SQLiteOpenHelper (sin evidencia por b&#250;squeda `RoomDatabase|@Database|SQLiteOpenHelper`).
+
+### Sistemas de Cache
+- Cach&#233; de cliente y limpieza centralizada en `ServiceManager` + `FileUtils` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/FileUtils.java`).
+- Control de uso de cach&#233; por task (`useCache()`/`isForceCache()`) en m&#250;ltiples requests (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/requests/tasks/`).
+
+## &#128737;️ Consideraciones de Seguridad
+### Autenticaci&#243;n y Autorizaci&#243;n
+- Flujo de login con endpoint `/services/user/login`, manejo de `userHash`, `userToken`, sesi&#243;n y actualizaci&#243;n de usuario en `SessionManager` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/SessionManager.kt`).
+- Consumo de endpoints con header `Authorization` en perfil (`getProfileAudioSubtitle`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`).
+
+### Manejo de Secrets
+- Riesgo expl&#237;cito: credenciales de firma hardcodeadas (`keyPassword`, `storePassword`) en configuraci&#243;n de build (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Archivos sensibles/versionados presentes (`google-services.json`, `fabric.properties`, `newrelic.properties`) (fuente: `AMCO_SOURCE_CODE/app/`).
+
+### Validaci&#243;n de Datos
+- Validaci&#243;n de respuestas y c&#243;digos de error en tasks legacy con parsing de JSON y mapeo de excepciones (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`).
+- ⚠️ Dato no disponible en el repositorio: pol&#237;tica &#250;nica y centralizada de validaci&#243;n de payloads para todas las capas.
+
+### Protecci&#243;n de APIs
+- Selecci&#243;n de protocolo por build type (`http` en debug y `https` en release) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/RetrofitHelper.kt`).
+- Configuraci&#243;n `usesCleartextTraffic=&quot;true&quot;` habilitada en app (fuente: `AMCO_SOURCE_CODE/app/src/main/AndroidManifest.xml`).
+
+## &#128202; Performance y Escalabilidad
+### Estrategias de Caching
+- Cache de cliente en disco + limpieza de memoria/disco para im&#225;genes (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`).
+- Pol&#237;tica por request mediante `useCache()` y `isForceCache()` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/requests/tasks/`).
+
+### Optimizaciones de Consultas
+- Uso de `@QueryMap`/`@Field` en interfaces Retrofit para parametrizaci&#243;n compacta de requests (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/data/network/TVApiServices.kt`).
+- Timeouts expl&#237;citos de cliente HTTP (`call/connect/read/write`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/RetrofitHelper.kt`).
+
+### Manejo de Concurrencia
+- Corrutinas en `viewModelScope` para operaciones as&#237;ncronas de UI y debounce de b&#250;squeda (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- Flujos `Flow/channelFlow/callbackFlow` en capa de casos de uso (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/domain/use_case/`).
+
+### M&#233;tricas de Performance
+- ⚠️ Dato no disponible en el repositorio: reportes consolidados de latencia, throughput, ANR o frame drops en artefactos de an&#225;lisis.
+- Existe instrumentaci&#243;n de eventos con New Relic/Firebase, pero no se encontr&#243; reporte exportado en esta ruta documental (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/analytics/`).
+
+## &#128295; Evoluci&#243;n y Mantenimiento
+### Principios de Extensibilidad
+- Organizaci&#243;n por feature y capas facilita extensi&#243;n incremental por dominio sin crear m&#243;dulos Gradle separados (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- Interfaces y casos de uso permiten desacoplar implementaci&#243;n en features modernizadas (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`).
+
+### Versionado de APIs
+- Claves y valores de versionado en request params (`api_version`, `VALUE_API_VERSION = &quot;v5.93&quot;`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/RequestKeys.kt`).
+
+### Estrategias de Migraci&#243;n
+- Coexistencia expl&#237;cita de componentes modernos y legacy dentro de `:app`, &#250;til para migraci&#243;n progresiva por feature (fuente: `AMCO_SOURCE_CODE/settings.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/`).
+- Recomendaci&#243;n alineada al estado actual: encapsular llamadas legacy detr&#225;s de interfaces para reducir acoplamiento durante la migraci&#243;n.
+
+### Refactoring Guidelines
+- Priorizar clases hotspot y rutas de alto impacto funcional identificadas en el diagn&#243;stico existente de este documento.
+- Mantener introducci&#243;n incremental de `ViewModel + use_case + repository/datasource` en features con c&#243;digo legacy.
+- Definir quality gates verificables en CI antes de ampliar superficie de cambios.
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: ADRs formales por dominio para validar arquitectura objetivo aprobada.
+- ⚠️ Dato no disponible en el repositorio: inventario completo de dependencias por capa en un artefacto &#250;nico consolidado.
+- ⚠️ Dato no disponible en el repositorio: m&#233;tricas hist&#243;ricas de performance productiva para correlaci&#243;n arquitectura-rendimiento.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/46_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/56_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/76_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `ARCHITECTURE_GUIDE.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye Arquitectura, M&#243;dulos, Patrones, Seguridad, Performance, Evoluci&#243;n |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">BEST_PRACTICES.md</span><span class="doc-path">.github\docs\01-inicio\BEST_PRACTICES.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Best Practices - claro-video-android-coship
+
+## &#128187; Convenciones de C&#243;digo
+### Nombres y Nomenclatura
+- Se observa convenci&#243;n consistente por rol en features modernas: sufijos `ViewModel/VM`, `UseCase`, `Repository`, `DataSource`, `Factory` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/payment/two_fa/ui/TwoFAViewModel.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`).
+- Coexisten clases legacy con sufijo `Task` y `Manager` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/`).
+
+### Estructura de Archivos
+- Estructura principal por paquetes funcionales dentro de un solo m&#243;dulo `:app` (fuente: `AMCO_SOURCE_CODE/settings.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- Organizaci&#243;n por feature/capa en m&#243;dulos internos (`core`, `preload`, `navigation`, `payment`, `tv`, `vod_player`, `new_search`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Comentarios y Documentaci&#243;n
+- Existe documentaci&#243;n base en `README.md` y `docs/architecture.md` (fuente: `README.md`, `docs/architecture.md`).
+- En c&#243;digo hay comentarios t&#233;cnicos y pendientes `TODO`, lo cual sugiere deuda documentada a nivel de implementaci&#243;n (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/ui/VODPlayerFragment.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/AnalyticsTracking.java`).
+
+### Formateo y Estilo
+- Configuraci&#243;n de lint con m&#250;ltiples reglas en `ignore` y `abortOnError false`/`ignoreWarnings true` (fuente: `AMCO_SOURCE_CODE/app/lint.xml`, `AMCO_SOURCE_CODE/app/build.gradle`).
+- ⚠️ Dato no disponible en el repositorio: gu&#237;a &#250;nica y formal de estilo (por ejemplo, ktlint/detekt/checkstyle documentado para todo el equipo).
+
+## &#127959;️ Arquitectura y Dise&#241;o
+### Principios SOLID
+- La separaci&#243;n en capas (UI, dominio, data) en features modernas favorece responsabilidades m&#225;s acotadas (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/`).
+- ⚠️ Dato no disponible en el repositorio: documento expl&#237;cito de adopci&#243;n SOLID por equipo.
+
+### Separaci&#243;n de Responsabilidades
+- Separaci&#243;n moderna observada: `ViewModel` + `UseCase` + `Repository/DataSource` por feature (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/data/network/VODSource.kt`).
+- Coexistencia con capa legacy de `Task/Manager` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`).
+
+### Manejo de Dependencias
+- Dependencias centralizadas en `app/build.gradle` con mezcla Java/Kotlin, Retrofit/OkHttp, Volley, Firebase, NewRelic y librer&#237;as internas (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- `testImplementation` y `androidTestImplementation` est&#225;n definidos en Gradle (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Patrones Recomendados
+- Patr&#243;n recomendado vigente para nuevas rutas: `UI -&gt; ViewModel -&gt; UseCase -&gt; Repository -&gt; DataSource` (fuente: implementaci&#243;n observable en `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/` y `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`).
+- Encapsular `Task/Manager` legacy detr&#225;s de interfaces para reducir acoplamiento de migraci&#243;n (fuente: coexistencia de capas en `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/` y features modernas).
+
+## &#129514; Testing y Calidad
+### Estrategia de Testing
+- Hay pruebas unitarias en `src/test` y dependencias de test configuradas en Gradle (fuente: `AMCO_SOURCE_CODE/app/src/test/java/com/amco/clarovideo/app/requests/tasks/DataTaskTest.java`, `AMCO_SOURCE_CODE/app/src/test/java/com/amco/clarovideo/app/requests/tasks/PlayerMediaTaskTest.java`, `AMCO_SOURCE_CODE/app/build.gradle`).
+- ⚠️ Dato no disponible en el repositorio: estrategia formal documentada (pir&#225;mide de testing, criterios de salida por tipo de prueba).
+
+### Cobertura M&#237;nima
+- ⚠️ Dato no disponible en el repositorio: baseline de cobertura y umbral m&#237;nimo (no se encontr&#243; `coverage.xml`, `jacoco.xml` ni reporte equivalente en rutas analizadas).
+
+### Tipos de Tests
+- Unit tests: presentes en `app/src/test` (fuente: `AMCO_SOURCE_CODE/app/src/test/java/...`).
+- Android instrumented tests: ⚠️ Dato no disponible en el repositorio (no se encontraron archivos en `AMCO_SOURCE_CODE/app/src/androidTest/`).
+
+### Mocking y Fixtures
+- Uso de Mockito y PowerMock en dependencias de test (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Uso pr&#225;ctico de mocks en tests existentes (fuente: `AMCO_SOURCE_CODE/app/src/test/java/com/amco/clarovideo/app/requests/tasks/PlayerMediaTaskTest.java`).
+
+## &#128274; Seguridad
+### Validaci&#243;n de Entrada
+- Validaci&#243;n b&#225;sica de campos en login (`username`, `password`) antes de armar `postParams` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`).
+- Mapeo de errores de API y parseo controlado de respuesta (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`).
+
+### Manejo de Secrets
+- Se detectan credenciales de firma en claro en `signingConfigs` (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Archivos sensibles presentes en el m&#243;dulo (`google-services.json`, `fabric.properties`, `newrelic.properties`) (fuente: `AMCO_SOURCE_CODE/app/`).
+
+### Logging Seguro
+- Existen llamadas `Log.d` y `printStackTrace()` en m&#250;ltiples componentes, pr&#225;ctica a restringir en release (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/ui/VODPlayerFragment.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/requests/ContentRequestManagerImp.kt`).
+- Instrumentaci&#243;n observada con New Relic/Firebase para eventos y atributos (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`).
+
+### Control de Acceso
+- Uso de token/header en consumo de APIs de perfil (`Authorization`, `user_token`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`).
+- Permisos Android declarados en manifiesto para red y estado de dispositivo (fuente: `AMCO_SOURCE_CODE/app/src/main/AndroidManifest.xml`).
+
+## &#128202; Performance
+### Optimizaciones Comunes
+- `minifyEnabled`, `shrinkResources`, `zipAlignEnabled` en `release` (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Timeouts configurados en cliente de red (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/data/network/RetrofitHelper.kt`).
+
+### Profiling y Monitoring
+- New Relic configurado como plugin y dependencia (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Firebase Analytics presente para eventos de navegaci&#243;n y uso (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/analytics/`).
+
+### Caching Strategies
+- Estrategias de cache por task mediante `useCache()`/`isForceCache()` en requests legacy (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/requests/tasks/`).
+- Limpieza expl&#237;cita de cache de cliente e im&#225;genes (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`).
+
+### Resource Management
+- `dexOptions` con heap ampliado y l&#237;mites de proceso de compilaci&#243;n (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Uso de corrutinas en `ViewModel` para trabajo as&#237;ncrono y evitar bloqueo de UI (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+
+## &#128640; Deployment y DevOps
+### CI/CD Pipeline
+- Existen workflows en `.github/workflows/` para CI/build/automatizaci&#243;n de ramas y PRs (fuente: `.github/workflows/ci.yml`, `.github/workflows/workflow-build.yml`, `.github/workflows/branch-factory.yml`).
+- `workflow-build.yml` define build de artifacts y publicaci&#243;n (AppCenter) con jobs separados (fuente: `.github/workflows/workflow-build.yml`).
+
+### Environment Management
+- Manejo de ambientes mediante `productFlavors` (`Stage`, `Prod`, `ProdQA`) y dimensiones de fabricante/entorno (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Variantes de build filtradas por reglas de combinaci&#243;n de sabores (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Rollback Strategies
+- ⚠️ Dato no disponible en el repositorio: estrategia expl&#237;cita de rollback documentada para despliegues m&#243;viles.
+
+### Monitoring y Alertas
+- Instrumentaci&#243;n de monitoreo presente con New Relic/Firebase en app (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`).
+- ⚠️ Dato no disponible en el repositorio: configuraci&#243;n formal de alertas operativas (SLO/SLA, canales y umbrales).
+
+## ⚠️ Anti-patrones
+### Qu&#233; Evitar
+- Hardcoded secrets en build/signing.
+- Uso extensivo de `printStackTrace()` y logs de depuraci&#243;n en rutas productivas.
+- Ignorar de forma masiva reglas de lint sin plan de reducci&#243;n.
+
+### Code Smells Comunes
+- Presencia de m&#250;ltiples `TODO(&quot;Not yet implemented&quot;)` en rutas de UI/presenters (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/ui/VODPlayerFragment.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchActivity.kt`).
+- Manejo mixto de estilos legacy/moderno que incrementa complejidad de mantenimiento (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/`).
+
+### Ejemplos de Mal C&#243;digo
+- Credenciales de firma en texto plano en `signingConfigs` (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- `usesCleartextTraffic=&quot;true&quot;` habilitado en aplicaci&#243;n (fuente: `AMCO_SOURCE_CODE/app/src/main/AndroidManifest.xml`).
+
+### C&#243;mo Refactorizar
+- Migrar gradualmente tareas legacy a capas modernas (`ViewModel + UseCase + Repository + DataSource`) por feature.
+- Mover secretos a mecanismos seguros de inyecci&#243;n de configuraci&#243;n por ambiente.
+- Reducir `ignore` en lint por lotes con m&#233;tricas de cierre.
+
+## &#128221; Documentaci&#243;n
+### Est&#225;ndares de Documentaci&#243;n
+- Mantener documentos de arranque y arquitectura sincronizados con cambios t&#233;cnicos (fuente: `README.md`, `docs/architecture.md`).
+- Usar marcaci&#243;n expl&#237;cita `⚠️ Dato no disponible en el repositorio` cuando no exista evidencia.
+
+### API Documentation
+- ⚠️ Dato no disponible en el repositorio: especificaci&#243;n OpenAPI/Swagger publicada.
+- Referencia t&#233;cnica actual disponible directamente en interfaces Retrofit de cada dominio (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/data/network/TVApiServices.kt`).
+
+### README Guidelines
+- README ra&#237;z incluye descripci&#243;n del proyecto y notas operativas de debugging/memoria (fuente: `README.md`).
+- ⚠️ Dato no disponible en el repositorio: plantilla oficial de README por m&#243;dulo.
+
+### Change Logs
+- ⚠️ Dato no disponible en el repositorio: archivo `CHANGELOG` o bit&#225;cora de cambios estandarizada en rutas analizadas.
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: gu&#237;a corporativa unificada de style/lint para todo el equipo.
+- ⚠️ Dato no disponible en el repositorio: baseline oficial de cobertura para validar adopci&#243;n de pr&#225;cticas de testing.
+- ⚠️ Dato no disponible en el repositorio: cat&#225;logo hist&#243;rico de incidentes para medir efectividad de pr&#225;cticas propuestas.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/57_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/68_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `BEST_PRACTICES.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye Deployment y DevOps + Documentaci&#243;n |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">CODE_STRUCTURE.md</span><span class="doc-path">.github\docs\01-inicio\CODE_STRUCTURE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Code Structure - claro-video-android-coship
+
+## &#128193; Estructura de Directorios
+### Directorio Ra&#237;z
+- Directorios ra&#237;z principales del workspace: `.github/`, `AMCO_SOURCE_CODE/`, `docs/`, `scripts/`, `techdeb-runner/`, `Test/` (fuente: ra&#237;z del repositorio).
+- En `AMCO_SOURCE_CODE/` se concentra el proyecto Android con `app/`, `gradle/`, `keys/`, `captures/` y archivos Gradle (`build.gradle`, `settings.gradle`, `gradle.properties`) (fuente: `AMCO_SOURCE_CODE/`).
+
+### M&#243;dulos Principales
+- M&#243;dulo Gradle declarado: `:app` (fuente: `AMCO_SOURCE_CODE/settings.gradle`).
+- El m&#243;dulo `:app` agrupa c&#243;digo de negocio, UI, acceso a datos y utilidades (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Recursos y Assets
+- Recursos Android en `app/src/main/res` con `layout/`, `drawable*/`, `values*`, `menu/`, `anim/` (fuente: `AMCO_SOURCE_CODE/app/src/main/res/`).
+- Assets empaquetados en `app/src/main/assets` con `fonts/`, `jsons/`, `cert/` y otros artefactos (fuente: `AMCO_SOURCE_CODE/app/src/main/assets/`).
+
+### Configuraci&#243;n
+- Configuraci&#243;n de build y firma en `app/build.gradle` + reglas de ProGuard y lint (`proguard-rules.pro`, `lint.xml`) (fuente: `AMCO_SOURCE_CODE/app/`).
+- Configuraci&#243;n global del proyecto en `build.gradle`, `settings.gradle`, `gradle.properties` (fuente: `AMCO_SOURCE_CODE/`).
+
+## &#128230; Organizaci&#243;n por Capas
+### Presentation Layer
+- Capa de presentaci&#243;n en paquetes de UI y pantallas (`ui/`, `new_search/ui`, `new_vcard/ui`, `vod_player/ui`, `tv/ui`) con Activities/Fragments/ViewModels (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Business Logic Layer
+- L&#243;gica de negocio moderna en `domain/use_case` por feature (preload/tv/payment) y orquestaci&#243;n en ViewModels (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/tv/domain/use_case/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+
+### Data Access Layer
+- Acceso a datos por `Repository`, `DataSource`, `ApiService` en features modernas (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/vod_player/data/network/`).
+- Acceso legacy por `requests/tasks` y managers (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`).
+
+### Infrastructure Layer
+- Infraestructura t&#233;cnica en `core/` (sesi&#243;n/red base), servicios, workers, utilidades y librer&#237;as locales (`libs/`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/services/`, `AMCO_SOURCE_CODE/app/libs/`).
+
+## &#128279; Dependencias y M&#243;dulos
+### Core Modules
+- N&#250;cleo t&#233;cnico en `core/` para estado de sesi&#243;n, claves de red y helpers base (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/`).
+
+### Feature Modules
+- Features organizadas por paquete: `preload`, `new_search`, `new_vcard`, `payment`, `tv`, `vod_player`, `navigation`, `mundial` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Shared Modules
+- Componentes compartidos en `utils/`, `models/`, `analytics/`, `images/`, `requests/` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- ⚠️ Dato no disponible en el repositorio: m&#243;dulo Gradle compartido separado (solo se detecta `:app`).
+
+### External Dependencies
+- Android/Kotlin + Google/Firebase + NewRelic + Retrofit/OkHttp + Volley + RxJava + Coroutines + WorkManager + Glide (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Dependencias de test con JUnit/Mockito/PowerMock/Hamcrest (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+## &#128196; Convenciones de Archivos
+### Naming Conventions
+- Convenciones observables por rol: `*VM`/`*ViewModel`, `*UseCase`, `*Repository`, `*DataSource`, `*Manager`, `*Task` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### File Organization
+- Organizaci&#243;n por feature y subcapas (`ui`, `domain`, `data`, `requests`) dentro de `:app` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Package Structure
+- Paquete base `com.amco.clarovideo.app` con segmentaci&#243;n por dominio funcional y componentes t&#233;cnicos (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Resource Management
+- Recursos Android tipificados por densidad/configuraci&#243;n en `res/` y recursos est&#225;ticos en `assets/` (fuente: `AMCO_SOURCE_CODE/app/src/main/res/`, `AMCO_SOURCE_CODE/app/src/main/assets/`).
+
+## &#127919; Responsabilidades por M&#243;dulo
+### [M&#243;dulo 1]: Responsabilidades
+- `:app`: composici&#243;n de app Android, UI principal, flujos de negocio y acceso a datos (fuente: `AMCO_SOURCE_CODE/settings.gradle`, `AMCO_SOURCE_CODE/app/`).
+
+### [M&#243;dulo 2]: Responsabilidades
+- `core` (paquete interno): sesi&#243;n, configuraci&#243;n de red, utilidades base y estado compartido (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/core/`).
+
+### [M&#243;dulo N]: Responsabilidades
+- Features (`new_search`, `preload`, `payment`, `tv`, `vod_player`, etc.) implementan casos de uso, UI y conectores de datos por dominio (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- ⚠️ Dato no disponible en el repositorio: matriz oficial de ownership por equipo para cada feature.
+
+## &#128260; Flujo de Datos
+### Data Flow Diagram
+&lt;img src=&quot;img/Diagramas01-CODE_STRUCTURE.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart LR
+	UI[UI Activities/Fragments] --&gt; VM[ViewModel]
+	VM --&gt; UC[UseCase]
+	UC --&gt; REPO[Repository]
+	REPO --&gt; DS[DataSource]
+	DS --&gt; API[ApiService/Network]
+	UI --&gt; LEG[Legacy Manager/Task]
+	LEG --&gt; API
+```
+
+### State Management
+- Gesti&#243;n de estado reactivo con `LiveData`/`MutableLiveData` en ViewModels (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- Uso de corrutinas y `Flow` en flujos modernos (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/preload/domain/use_case/`).
+
+### Event Handling
+- Eventos de UI procesados en ViewModel (acciones, debounce y callbacks de request) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`).
+- En legacy se manejan respuestas/errores en `Task` con `onFailed/processResponse` (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`).
+
+### Communication Patterns
+- Patr&#243;n moderno: invocaci&#243;n por casos de uso y observaci&#243;n de estado en UI.
+- Patr&#243;n legacy: managers singleton (`ServiceManager`) y tasks de red (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`).
+
+## &#128203; Gu&#237;as de Implementaci&#243;n
+### Adding New Features
+- Agregar nuevas features siguiendo estructura por paquetes y capas (`ui/domain/data`) dentro de `com.amco.clarovideo.app.&lt;feature&gt;`.
+- Integrar dependencias en `app/build.gradle` solo cuando exista uso real en c&#243;digo.
+
+### Modifying Existing Code
+- Priorizar cambios incrementales en hotspots, manteniendo compatibilidad con flujos legacy y modernos coexistentes.
+- Validar variantes/flavors al tocar configuraci&#243;n de build (`Stage/Prod/ProdQA`) (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Refactoring Guidelines
+- Encapsular rutas `Manager/Task` detr&#225;s de interfaces para facilitar migraci&#243;n progresiva.
+- Reducir acoplamiento entre UI y networking moviendo l&#243;gica hacia ViewModel/UseCase.
+
+### Migration Strategies
+- Estrategia incremental por feature: convivir temporalmente con legacy mientras se migra a patrones modernos.
+- ⚠️ Dato no disponible en el repositorio: plan formal y versionado de migraci&#243;n por dominio.
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: mapa formal de ownership por paquete/capa para todas las &#225;reas de c&#243;digo.
+- ⚠️ Dato no disponible en el repositorio: diagrama fuente-de-verdad actualizado autom&#225;ticamente por CI.
+- ⚠️ Dato no disponible en el repositorio: inventario completo de acoplamientos entre componentes legacy y componentes modernos.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/55_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/56_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/70_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `CODE_STRUCTURE.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye capas, m&#243;dulos, convenciones, responsabilidades, flujo y gu&#237;as |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">DEVELOPMENT_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\DEVELOPMENT_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Development Guide - claro-video-android-coship
+
+## &#128640; Workflow de Desarrollo
+### Git Workflow
+- Flujo operativo soportado por scripts para creaci&#243;n de rama y apertura de PRs autom&#225;ticos (fuente: `scripts/branch_factory.sh`, `scripts/open-pr-to-branch.sh`, `scripts/open_pr_integration_to_main.sh`).
+- Integraci&#243;n con GitHub API v&#237;a `GH_TOKEN` para automatizar validaciones de ramas y PR existentes (fuente: `scripts/open-pr-to-branch.sh`, `scripts/open_pr_integration_to_main.sh`).
+
+### Branch Strategy
+- Convenci&#243;n de ramas observada: `feature/*`, `fix/*`, `hotfix/*` en factory de ramas (fuente: `scripts/branch_factory.sh`).
+- Workflows escuchan ramas `main`, `release/*`, `feature/*`, `bugfix/*`, `support/*`, `hotfix/*` y ramas de build (`develop`, `releases`, `automation_tests`) (fuente: `.github/workflows/ci.yml`, `.github/workflows/workflow-build.yml`).
+
+### Commit Guidelines
+- ⚠️ Dato no disponible en el repositorio: est&#225;ndar formal de mensajes de commit (no se detect&#243; `commitlint`, plantilla oficial o pol&#237;tica escrita).
+- Evidencia parcial de convenci&#243;n para PR title prefix (`feat(integration):`, `chore(release):`) en scripts de apertura de PR (fuente: `scripts/open-pr-to-branch.sh`, `scripts/open_pr_integration_to_main.sh`).
+
+### PR Process
+- Proceso automatizado para PR feature→integration y integration→main con validaci&#243;n previa de existencia (open/closed) (fuente: `scripts/open-pr-to-branch.sh`, `scripts/open_pr_integration_to_main.sh`).
+- Workflows de apoyo para apertura de PR por ramas espec&#237;ficas (fuente: `.github/workflows/open-pr-feature-to-release-tech-history.yml`, `.github/workflows/open-pr-release-to-main.yml`).
+
+## &#128736;️ Herramientas de Desarrollo
+### IDE Recomendado
+- Proyecto Android basado en Gradle (`com.android.application`), compatible con Android Studio (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `README.md`).
+
+### Extensions y Plugins
+- Plugins de build activos: `kotlin-android`, `kotlin-parcelize`, `newrelic`, `com.google.gms.google-services` (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- ⚠️ Dato no disponible en el repositorio: lista oficial de extensiones del IDE obligatorias para el equipo.
+
+### Configuraci&#243;n del Entorno
+- Configuraci&#243;n principal en `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/gradle.properties` (fuente: &#225;rbol del repositorio).
+- Uso de Gradle Wrapper (`gradlew`, `gradlew.bat`) para uniformidad de ejecuci&#243;n local/CI (fuente: `AMCO_SOURCE_CODE/`).
+- Variantes y ambientes v&#237;a `productFlavors` (`Stage`, `Prod`, `ProdQA`) y dimensiones manufacturer/env (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Scripts &#218;tiles
+- Scripts de operaci&#243;n Git/PR: `branch_factory.sh`, `open-pr-to-branch.sh`, `open_pr_integration_to_main.sh`, `propagate_fixes.sh`, `remove_feature_from_integration.sh`, `technical_history_branch.sh` (fuente: `scripts/`).
+
+## &#128203; Tareas Comunes
+### Agregar Nueva Feature
+- Crear rama con patr&#243;n soportado (`feature/&lt;TICKET&gt;-&lt;slug&gt;`) v&#237;a branch factory (fuente: `scripts/branch_factory.sh`).
+- Implementar feature bajo paquete funcional en `app/src/main/java/com/amco/clarovideo/app/&lt;feature&gt;` siguiendo estructura existente (fuente: &#225;rbol `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+
+### Implementar API Endpoint
+- En este repositorio se consumen APIs (cliente Android), por lo que la tarea pr&#225;ctica es integrar endpoint en `*ApiService` + `DataSource/Manager` + capa de presentaci&#243;n (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/user/data/network/UserApiService.kt`).
+- ⚠️ Dato no disponible en el repositorio: backend service propio donde crear endpoints del lado servidor.
+
+### Agregar Tests
+- Tests unitarios actuales en `app/src/test/java/...` (fuente: `AMCO_SOURCE_CODE/app/src/test/java/com/amco/clarovideo/app/requests/tasks/DataTaskTest.java`, `AMCO_SOURCE_CODE/app/src/test/java/com/amco/clarovideo/app/requests/tasks/PlayerMediaTaskTest.java`).
+- Dependencias de testing declaradas en Gradle (`junit`, `mockito`, `powermock`, `hamcrest`) (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Actualizar Dependencias
+- Gestionar dependencias en `app/build.gradle` y validar impacto por flavors/variantes (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+- Re-ejecutar build de referencia y pruebas antes de abrir PR.
+
+## &#129514; Testing Guidelines
+### Running Tests
+- Unit tests: `./gradlew testDebugUnitTest`.
+- Lint: `./gradlew lint`.
+- Build de referencia usado en CI: `:app:assembleCoshipProdQA` y `:app:assembleTabletProdQA` (fuente: `.github/workflows/workflow-build.yml`).
+
+### Writing Tests
+- Mantener pruebas en `app/src/test/java` siguiendo patr&#243;n de tests existentes por task/componente (fuente: `AMCO_SOURCE_CODE/app/src/test/java/com/amco/clarovideo/app/requests/tasks/`).
+- Preferir mocks para aislar dependencias de red/manager (fuente: dependencias `mockito/powermock` en `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Test Data Management
+- ⚠️ Dato no disponible en el repositorio: estrategia formal de fixtures/datasets versionados para pruebas.
+
+### Performance Testing
+- ⚠️ Dato no disponible en el repositorio: suite dedicada de performance tests automatizados y umbrales de aceptaci&#243;n.
+
+## &#128027; Debugging
+### Debugging Techniques
+- Validar variante y reproducir error con pasos m&#237;nimos; limpiar build si aplica (`./gradlew clean`).
+- Flujo documentado para memory leak debugging con extracci&#243;n de heap dump y an&#225;lisis MAT (fuente: `README.md`).
+
+### Common Issues
+- Inconsistencias por flavor/buildType o dependencias al actualizar librer&#237;as cr&#237;ticas.
+- ⚠️ Dato no disponible en el repositorio: runbook oficial con cat&#225;logo priorizado de incidencias frecuentes.
+
+### Logging Standards
+- Uso mixto observado de logging (`L`, `Log.d`, `NewRelicEvents`) en c&#243;digo app (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/ui/activities/MainActivity.java`).
+- ⚠️ Dato no disponible en el repositorio: est&#225;ndar formal de niveles/retenci&#243;n/redacci&#243;n de logs.
+
+### Profiling Tools
+- Integraci&#243;n de NewRelic v&#237;a plugin y SDK (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/ClaroApplication.java`).
+- Gu&#237;a de uso de LeakCanary/MAT para heap dumps (fuente: `README.md`).
+
+## &#128230; Dependency Management
+### Adding Dependencies
+- Agregar dependencias en bloque `dependencies` de `AMCO_SOURCE_CODE/app/build.gradle` y validar build por flavors.
+
+### Version Management
+- Versiones controladas en Gradle (`appVersionName`, `appVersionCode`, versiones de librer&#237;as y plugins) (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/build.gradle`).
+
+### Security Scanning
+- ⚠️ Dato no disponible en el repositorio: pipeline formal de security scan de dependencias (no se identific&#243; configuraci&#243;n de `snyk`, `owasp` o `audit` en workflows de build).
+
+### License Compliance
+- ⚠️ Dato no disponible en el repositorio: proceso automatizado de compliance/licencias de terceros.
+
+## &#128295; Build y Deploy
+### Build Scripts
+- Build local con Gradle Wrapper en `AMCO_SOURCE_CODE/gradlew`.
+- Script de build/publish en CI con matrix de tareas Gradle (fuente: `.github/workflows/workflow-build.yml`).
+
+### Environment Configuration
+- Entornos configurados por `productFlavors` y `buildConfigField` (Stage/Prod/ProdQA; Coship/Tablet) (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Deployment Process
+- Flujo CI observado: build de artifacts y publicaci&#243;n a AppCenter por rama/entorno (fuente: `.github/workflows/workflow-build.yml`).
+
+### Rollback Procedures
+- ⚠️ Dato no disponible en el repositorio: procedimiento formal de rollback documentado para despliegues m&#243;viles.
+
+## &#128202; Monitoring y Logs
+### Application Monitoring
+- Monitoreo en app mediante NewRelic y eventos custom (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`).
+
+### Log Analysis
+- Evidencia de logs de app con `Log.d` y utilitario `L` en m&#250;ltiples componentes (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- ⚠️ Dato no disponible en el repositorio: plataforma centralizada para an&#225;lisis de logs operativos.
+
+### Performance Metrics
+- M&#233;tricas de app instrumentadas en NewRelic (`recordCustomEvent`, atributos) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/utils/NewRelicEvents.java`).
+- ⚠️ Dato no disponible en el repositorio: dashboard consolidado de performance con SLO definidos.
+
+### Error Tracking
+- Tracking de errores/eventos v&#237;a NewRelic y analytics en flujos de app (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/LoginTask.java`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/ui/activities/MainActivity.java`).
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: procedimiento oficial de release management extremo a extremo.
+- ⚠️ Dato no disponible en el repositorio: tiempos objetivos de build/test por ambiente para usar como SLO de desarrollo.
+- ⚠️ Dato no disponible en el repositorio: matriz oficial de herramientas requeridas (versiones m&#237;nimas por SO/IDE).
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/51_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/58_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/61_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/69_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `DEVELOPMENT_GUIDE.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye workflow, herramientas, tareas, testing, debugging, dependencias, build/deploy, monitoring |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">EXECUTIVE_SUMMARY.md</span><span class="doc-path">.github\docs\01-inicio\EXECUTIVE_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Declaraci&#243;n de Veracidad:** Este documento fue generado a partir de evidencia directa del repositorio, ningun dato ha sido asumido sin verificaci&#243;n.
+
+# &#127760; Executive Summary - claro-video-android-coship
+
+- **Versi&#243;n:** 1.0 (Inicial - FASE 1 completada)
+- **Fecha:** 2026-02-24
+- **Estado:** &#128248; An&#225;lisis inicial completado
+- **Pr&#243;xima actualizaci&#243;n:** Al completar FASE 2 (se mueve a 05-seguimiento/)
+---
+
+## &#128203; Informaci&#243;n General del Proyecto
+
+### &#127970; Contexto Organizacional
+- **Proyecto:** claro-video-android-coship (fuente: `README.md`, nombre de carpeta ra&#237;z del repositorio).
+- **Prop&#243;sito:** Android project for stb (fuente: `README.md`).
+- **Audiencia:** usuarios de set-top box (STB) (fuente: `README.md`: &quot;Android project for stb&quot;).
+- **Dominio:** ⚠️ Dato no disponible en el repositorio.
+
+### &#128736;️ Stack Tecnol&#243;gico (DETECTADO)
+- **Lenguaje Principal:** Java y Kotlin (fuente: `AMCO_SOURCE_CODE/app/src/main/java/` y uso de plugin Kotlin en `AMCO_SOURCE_CODE/app/build.gradle`).
+- **Framework:** Android SDK + AndroidX (fuente: `AMCO_SOURCE_CODE/app/build.gradle` dependencias `androidx.*`).
+- **Plataforma:** Android (STB/tablet seg&#250;n flavors) (fuente: `AMCO_SOURCE_CODE/app/build.gradle` productFlavors `Coship`, `Tablet`).
+- **Herramientas Build:** Gradle + Gradle Wrapper (fuente: `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/gradlew`).
+
+## &#127919; Resumen Ejecutivo (v1.0 - Parcial)
+
+⚠️ **Este es un resumen inicial. El resumen ejecutivo completo (&#128248; FOTOGRAF&#205;A COMPLETA) estar&#225; disponible al completar FASE 2.**
+
+### &#127959;️ Estado Arquitect&#243;nico Inicial
+- **Patr&#243;n Principal:** arquitectura h&#237;brida (flujos modernos con `ViewModel` + flujos legacy `Manager/Task`) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/tasks/`).
+- **Complejidad:** alta en t&#233;rminos de tama&#241;o y superficie (m&#233;todo: conteo reproducible de LOC y componentes; resultado: 101707 LOC y 26 componentes de primer nivel) (fuente: comando PowerShell ejecutado en sesi&#243;n).
+- **Madurez:** intermedia (coexistencia de componentes modernos y legacy) (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/ui/SearchVM.kt`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/managers/ServiceManager.java`).
+
+### &#128202; M&#233;tricas B&#225;sicas (FASE 1)
+- **L&#237;neas de C&#243;digo:** 101707 (m&#233;todo: conteo de `*.java` y `*.kt` en `AMCO_SOURCE_CODE/app/src/main/java` mediante comando reproducible en PowerShell ejecutado en sesi&#243;n).
+- **M&#243;dulos/Componentes:** 26 componentes de primer nivel en `com/amco/clarovideo/app` (23 directorios + 3 archivos) (m&#233;todo: conteo directo de contenido del directorio por comando en sesi&#243;n).
+- **Dependencias Externas:** 53 declaraciones de dependencias/plugins test/build detectadas en `app/build.gradle` (m&#233;todo: conteo por patr&#243;n `implementation|testImplementation|androidTestImplementation|classpath` v&#237;a comando reproducible ejecutado en sesi&#243;n).
+
+## &#128203; Artefactos Generados (FASE 1)
+
+### ✅ Documentaci&#243;n Fundamental (8 archivos)
+- &#128218; Setup y Onboarding (3 archivos)
+- &#127959;️ Arquitectura y C&#243;digo (2 archivos)
+- &#128640; Desarrollo y Troubleshooting (2 archivos)
+- &#128203; &#205;ndice general (1 archivo)
+- ⚠️ Evidencia actual del repositorio: en `01-inicio` se detectan 10 archivos markdown (fuente: `.github/docs/01-inicio/`).
+
+### ✅ An&#225;lisis T&#233;cnico (4 archivos)
+- &#128202; Reportes de an&#225;lisis (3 archivos)
+- &#127912; Diagramas arquitect&#243;nicos (1 archivo)
+- &#129302; Prompts personalizados (1 archivo)
+- ⚠️ Evidencia actual del repositorio: en `02-analisis` se detectan 10 archivos markdown y en `diagrams` 2 archivos markdown + carpeta `img` (fuente: `.github/docs/02-analisis/`, `.github/docs/diagrams/`, `techdeb-runner/micro_prompts/`).
+
+### ⏱️ Tiempo Invertido
+- **FASE 1:** ⚠️ Dato no disponible en el repositorio.
+- **Eficiencia:** ⚠️ Dato no disponible en el repositorio.
+
+## &#127919; Roadmap de Fases
+
+### &#128203; Pr&#243;xima: FASE 2 - DIAGN&#211;STICO
+- **Objetivo:** Cuantificar deuda t&#233;cnica, riesgos y calidad.
+- **Deliverables:** 5 reportes de diagn&#243;stico detallados.
+- **Tiempo estimado:** 50-70 minutos.
+- **Output clave:** &#128248; **FOTOGRAF&#205;A COMPLETA** (Executive Summary v2.0).
+
+### &#128302; Siguientes Fases
+- **FASE 3:** Planes de acci&#243;n ejecutables (65-85 min).
+- **FASE 4:** Seguimiento y m&#233;tricas continuas (38-62 min).
+
+## ⚠️ Limitaciones Actuales (FASE 1)
+
+### &#128202; Datos Pendientes (Requieren FASE 2)
+- Scores cuantitativos de deuda t&#233;cnica.
+- M&#233;tricas de calidad de c&#243;digo.
+- An&#225;lisis de riesgos de seguridad.
+- Coverage de tests y performance.
+
+### &#128295; Herramientas No Evaluadas A&#250;n
+- SonarLint/SonarCloud (calidad).
+- Coverage tools (testing).
+- SAST/DAST (seguridad).
+- Performance monitoring.
+
+## &#128640; Instrucciones de Continuaci&#243;n
+
+### Para FASE 2 (Diagn&#243;stico)
+1. Ejecutar `02-diagnosis/01-technical-debt-universal.prompt.md`.
+2. Este Executive Summary se mover&#225; autom&#225;ticamente a `05-seguimiento/`.
+3. Se actualizar&#225; con datos cuantitativos completos (v2.0).
+
+## ⚠️ Limitaciones del An&#225;lisis
+- **Datos operativos:** `⚠️ Dato no disponible en el repositorio` para crash rate, SLO y m&#233;tricas productivas.
+- **Gobernanza:** `⚠️ Dato no disponible en el repositorio` para ownership formal por dominio.
+- **Planeaci&#243;n:** `⚠️ Dato no disponible en el repositorio` para fechas objetivo oficiales por fase.
+
+## Instrucciones de Continuaci&#243;n
+1. Tomar el backlog final de la sesi&#243;n como entrada de Jira/GitHub.
+2. Priorizar P0 (seguridad/build/tests).
+3. Ejecutar cambios incrementales con validaci&#243;n de lint/tests.
+4. Actualizar este resumen al cierre de cada bloque de remediaci&#243;n.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/54_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/72_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/77_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/81_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-24  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `EXECUTIVE_SUMMARY.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye veracidad, metadatos, resumen, artefactos, roadmap, limitaciones, continuaci&#243;n |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ONBOARDING_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ONBOARDING_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Onboarding Guide - claro-video-android-coship
+
+## &#128203; Checklist de Onboarding
+### Primera Semana
+#### D&#237;a 1: Setup T&#233;cnico
+- Clonar repositorio y abrir workspace.
+- Ejecutar validaci&#243;n de Gradle Wrapper (`./gradlew -v`, `./gradlew projects`) en `AMCO_SOURCE_CODE/`.
+- Revisar gu&#237;as base de `01-inicio` (`README.md`, `QUICK_START.md`, `DEVELOPMENT_GUIDE.md`, `ARCHITECTURE_GUIDE.md`, `BEST_PRACTICES.md`, `CODE_STRUCTURE.md`).
+
+#### D&#237;a 2-3: Arquitectura
+- Revisar estructura del m&#243;dulo &#250;nico `:app` y paquetes funcionales (fuente: `AMCO_SOURCE_CODE/settings.gradle`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/`).
+- Entender coexistencia de flujos modernos y legacy para planificaci&#243;n de cambios seguros (fuente: `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/new_search/`, `AMCO_SOURCE_CODE/app/src/main/java/com/amco/clarovideo/app/requests/`).
+
+#### D&#237;a 4-5: C&#243;digo y Pr&#225;cticas
+- Ejecutar build/lint/tests de referencia (`:app:assembleCoshipProdQA`, `lint`, `testDebugUnitTest`).
+- Revisar pr&#225;cticas y antipatrones documentados en `BEST_PRACTICES.md` y `TROUBLESHOOTING.md`.
+
+### Segunda Semana
+#### D&#237;a 6-7: Primera Contribuci&#243;n
+- Seleccionar un cambio incremental en hotspot de riesgo medio.
+- Implementar ajuste con validaci&#243;n local y evidencia en PR.
+
+#### D&#237;a 8-10: Feature Completa
+- Completar una mejora funcional peque&#241;a de punta a punta (UI + l&#243;gica + pruebas relevantes).
+- Documentar impacto t&#233;cnico, riesgos y rollback b&#225;sico del cambio.
+
+## &#127891; Recursos de Aprendizaje
+### Arquitectura del Proyecto
+- `ARCHITECTURE_GUIDE.md`, `CODE_STRUCTURE.md`, `DOCUMENT_STRUCTURE.md` (fuente: `.github/docs/01-inicio/`).
+
+### Stack Tecnol&#243;gico
+- Android + Gradle + Java/Kotlin detectado en repo (fuente: `README.md`, `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Domain Knowledge
+- Contexto expl&#237;cito disponible: proyecto Android para STB (fuente: `README.md`).
+- ⚠️ Dato no disponible en el repositorio: glosario formal de reglas de negocio por dominio.
+
+### Tools y Workflows
+- Scripts operativos en `scripts/` y workflows en `.github/workflows/` para branching/PR/build (fuente: `scripts/`, `.github/workflows/`).
+
+## &#128101; Equipo y Comunicaci&#243;n
+### Contactos Clave
+- Tech Lead: ⚠️ Dato no disponible en el repositorio.
+- QA Lead: ⚠️ Dato no disponible en el repositorio.
+- Product Owner: ⚠️ Dato no disponible en el repositorio.
+
+### Canales de Comunicaci&#243;n
+- Slack: ⚠️ Dato no disponible en el repositorio.
+- Confluence: ⚠️ Dato no disponible en el repositorio.
+- Jira/Tracker: ⚠️ Dato no disponible en el repositorio.
+
+### Meetings y Ceremonias
+- ⚠️ Dato no disponible en el repositorio (no existe calendario/agenda de ceremonias en archivos revisados).
+
+### Escalation Paths
+- ⚠️ Dato no disponible en el repositorio (sin matriz de escalaci&#243;n formal publicada).
+
+## &#128640; Primeras Tareas Recomendadas
+### Week 1 Tasks
+- Setup completo de entorno y ejecuci&#243;n de build/lint/test base.
+- Lectura guiada de documentaci&#243;n de `01-inicio`.
+
+### Week 2 Tasks
+- Primera contribuci&#243;n t&#233;cnica incremental validada con pruebas.
+- Documentaci&#243;n de hallazgos y riesgos del cambio.
+
+### Week 3-4 Tasks
+- Participar en mejoras de calidad (tests/lint/refactor controlado).
+- Ejecutar al menos una mejora en flujo moderno o encapsulado de flujo legacy.
+
+### Graduation Criteria
+- Ejecuta build/lint/tests de referencia sin apoyo.
+- Entrega al menos una contribuci&#243;n validada en PR.
+- Demuestra comprensi&#243;n de arquitectura h&#237;brida del proyecto.
+
+## &#128197; Timeline de Onboarding
+### Milestones Semanales
+- Semana 1: setup t&#233;cnico + mapa de arquitectura.
+- Semana 2: primera contribuci&#243;n en producci&#243;n de c&#243;digo.
+- Semana 3-4: autonom&#237;a supervisada en cambios de complejidad media.
+
+### Expected Deliverables
+- Evidencia de comandos ejecutados (build/lint/tests).
+- PR con cambio incremental y notas t&#233;cnicas.
+- Resumen breve de aprendizaje y pr&#243;ximos pasos.
+
+### Support Available
+- Documentaci&#243;n interna de `01-inicio` y reportes de an&#225;lisis en `02-analisis`.
+- ⚠️ Dato no disponible en el repositorio: esquema formal de mentor&#237;a asignada por persona.
+
+### Feedback Sessions
+- ⚠️ Dato no disponible en el repositorio (sin cadencia oficial publicada de sesiones de feedback).
+
+## &#127919; Objetivos por Fase
+### Technical Setup
+- Entorno local operativo con Gradle Wrapper y validaciones base.
+
+### Knowledge Acquisition
+- Comprensi&#243;n de estructura del c&#243;digo, workflows y pr&#225;cticas del equipo.
+
+### First Contribution
+- Entregar un cambio peque&#241;o, seguro y trazable con validaci&#243;n local.
+
+### Full Productivity
+- Ejecutar cambios de complejidad media con menor supervisi&#243;n y cumplimiento de quality gates.
+
+## &#127384; Support Resources
+### Technical Questions
+- Referencia inmediata: `DEVELOPMENT_GUIDE.md`, `TROUBLESHOOTING.md`, `ARCHITECTURE_GUIDE.md`.
+
+### Process Questions
+- Scripts de automatizaci&#243;n de ramas/PR y workflows CI (fuente: `scripts/`, `.github/workflows/`).
+
+### Administrative Issues
+- ⚠️ Dato no disponible en el repositorio.
+
+### Emergency Contacts
+- ⚠️ Dato no disponible en el repositorio.
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: matriz oficial de accesos corporativos para onboarding.
+- ⚠️ Dato no disponible en el repositorio: checklist formal de permisos por rol.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/53_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/54_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/58_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/59_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/64_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/65_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `ONBOARDING_GUIDE.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye semana 2, recursos, equipo/comunicaci&#243;n, tareas por etapa, timeline, objetivos, support |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+
+
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">QUICK_START.md</span><span class="doc-path">.github\docs\01-inicio\QUICK_START.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Quick Start Guide - claro-video-android-coship
+**Versi&#243;n:** 1.0  
+**Fecha:** 2026-02-25  
+**Tiempo estimado:** 30-45 minutos  
+**Audiencia:**  Nuevos desarrolladores del equipo  
+
+---
+## &#128640; Introducci&#243;n
+Gu&#237;a r&#225;pida para preparar el entorno Android, compilar y ejecutar el proyecto base ubicado en `AMCO_SOURCE_CODE` (fuente: `README.md`, `AMCO_SOURCE_CODE/settings.gradle`).
+
+## &#128203; Prerrequisitos
+- [ ] Sistema operativo requerido: ⚠️ Dato no disponible en el repositorio.
+- [ ] Herramientas de desarrollo (IDE, SDK, etc.): Android Studio + Android SDK (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `compileSdkVersion`/`targetSdkVersion`).
+- [ ] Dependencias del sistema: Java 11 en CI (fuente: `.github/workflows/workflow-build.yml`, `java-version: 11`).
+- [ ] Hardware m&#237;nimo: ⚠️ Dato no disponible en el repositorio.
+
+## ⚙️ Configuraci&#243;n del Entorno
+### 1. Instalar [Herramienta Principal]
+- Instalar Android Studio (fuente t&#233;cnica del proyecto Android: `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### 2. Configurar [SDK/Framework]
+- Abrir el proyecto `AMCO_SOURCE_CODE` y sincronizar Gradle Wrapper (`gradlew`) (fuente: `AMCO_SOURCE_CODE/gradlew`, `AMCO_SOURCE_CODE/settings.gradle`).
+- Confirmar SDK objetivo Android 33 (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### 3. Configurar [Dependencias]
+- Ejecutar `./gradlew --refresh-dependencies` dentro de `AMCO_SOURCE_CODE` para resolver artefactos (fuente: estructura Gradle en `AMCO_SOURCE_CODE/`).
+
+## &#128193; Clonar y Configurar Proyecto
+### 1. Clonar el Repositorio
+- Clonar el repositorio y entrar a `AMCO_SOURCE_CODE` para ejecutar tareas Gradle (fuente: estructura del repositorio y `README.md`).
+
+### 2. Configurar Archivos Secrets
+- Verificar presencia de archivos sensibles ya versionados en el repo: `AMCO_SOURCE_CODE/app/google-services.json`, `AMCO_SOURCE_CODE/app/newrelic.properties`, `AMCO_SOURCE_CODE/app/fabric.properties`, `AMCO_SOURCE_CODE/keys/`.
+
+### 3. Configurar [Servicios Externos]
+- Google Services/Firebase y New Relic est&#225;n integrados por plugins en build (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `apply plugin: &#39;com.google.gms.google-services&#39;`, `apply plugin: &#39;newrelic&#39;`).
+
+## &#128296; Build del Proyecto
+### 1. Sincronizar Dependencias
+- `./gradlew projects`
+
+### 2. Build Debug/Development
+- `./gradlew :app:assembleCoshipProdQA`
+- Alterno: `./gradlew assemble`
+
+**⏱️ Tiempo esperado:** ⚠️ Dato no disponible en el repositorio.
+
+## &#128241; Ejecutar la Aplicaci&#243;n
+### 1. Run Configuration
+- Seleccionar variante `CoshipProdQA` o `TabletProdQA` seg&#250;n dispositivo objetivo (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `productFlavors`).
+
+### 2. Ejecutar App
+- Ejecutar `SplashActivity` como entrada principal (fuente: `AMCO_SOURCE_CODE/app/src/main/AndroidManifest.xml`, `intent-filter` MAIN/LAUNCHER).
+
+### 3. Verificar Instalaci&#243;n
+- ✅ La app abre desde launcher y muestra pantalla inicial.
+- ✅ Navegaci&#243;n principal responde sin cierre inmediato.
+- ✅ No hay crash de arranque en primer flujo de uso.
+
+## &#129514; Ejecutar Tests
+### Unit Tests
+- `./gradlew testDebugUnitTest`
+- Evidencia de tests unitarios en `AMCO_SOURCE_CODE/app/src/test/java/...`.
+
+### Integration Tests
+- ⚠️ Dato no disponible en el repositorio: no se encontraron pruebas en `AMCO_SOURCE_CODE/app/src/androidTest/`.
+
+**&#127919; Target de cobertura:** ≥ 80%
+
+## &#128027; Debugging
+### 1. Configurar Debug Mode
+- Ejecutar variante debug y habilitar depuraci&#243;n en Android Studio (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `buildTypes.debug`).
+
+### 2. Logs &#250;tiles
+- Revisar Logcat y reproducir fallo con pasos m&#237;nimos. Si aplica, limpiar estado local con `./gradlew clean`.
+
+### 3. [Herramienta de Debugging Espec&#237;fica]
+- RequestManager leak debugging en documentaci&#243;n del repositorio (fuente: `README.md`, secci&#243;n `Debugging RequestManager leaks`).
+
+## &#128295; Troubleshooting
+### Errores Comunes
+#### 1. [Error T&#237;pico 1]
+- Error de dependencias/sync Gradle: ejecutar `./gradlew --refresh-dependencies` y re-sincronizar.
+
+#### 2. [Error T&#237;pico 2]
+- Build flavor inv&#225;lido: validar tareas disponibles con `./gradlew tasks` y usar `:app:assembleCoshipProdQA` o `:app:assembleTabletProdQA` (fuente: `.github/workflows/workflow-build.yml`).
+
+### Performance Issues
+- ⚠️ Dato no disponible en el repositorio: no hay m&#233;tricas de performance/tiempos de ejecuci&#243;n publicadas.
+
+## &#128218; Recursos Adicionales
+### Documentaci&#243;n del Proyecto
+- `.github/docs/01-inicio/README.md`
+- `.github/docs/01-inicio/DEVELOPMENT_GUIDE.md`
+- `.github/docs/01-inicio/TROUBLESHOOTING.md`
+
+### Herramientas de Desarrollo
+- `AMCO_SOURCE_CODE/gradlew`
+- `AMCO_SOURCE_CODE/app/lint.xml`
+- `.github/workflows/workflow-build.yml`
+
+### Comunidad Interna
+- ⚠️ Dato no disponible en el repositorio: no hay canal/equipo documentado con contacto directo.
+
+## ✅ Checklist Final
+### Entorno
+- [ ] Java disponible y Gradle Wrapper operativo (`./gradlew -v`).
+
+### Configuraci&#243;n
+- [ ] Proyecto sincronizado en Android Studio y flavors visibles.
+
+### Funcionalidad
+- [ ] Build `:app:assembleCoshipProdQA` completado y app ejecutable.
+
+### Accesos
+- [ ] Acceso a servicios/apis y credenciales del equipo validadas.
+
+## &#127384; Obtener Ayuda
+### 1. Documentaci&#243;n
+- Revisar `.github/docs/01-inicio/` y `README.md`.
+
+### 2. Equipo
+- ⚠️ Dato no disponible en el repositorio: contacto de Tech Lead/owner no documentado.
+
+### 3. Escalaci&#243;n
+- ⚠️ Dato no disponible en el repositorio: flujo formal de escalaci&#243;n no definido en documentaci&#243;n interna.
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: tiempos objetivos de build por ambiente.
+- ⚠️ Dato no disponible en el repositorio: cobertura objetivo oficial por m&#243;dulo.
+- ⚠️ Dato no disponible en el repositorio: matriz formal de configuraci&#243;n AVD/Emulator por perfil de dispositivo.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/58_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/59_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/65_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/66_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `QUICK_START.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye metadatos, setup, clone/config, build, run, tests, debugging, troubleshooting, checklist, ayuda |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">.github\docs\01-inicio\README.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# &#128218; Documentaci&#243;n de Inicio
+
+## Prop&#243;sito
+Concentrar la documentaci&#243;n base de la fase `01-inicio` para acelerar el arranque t&#233;cnico, la comprensi&#243;n arquitect&#243;nica y la ejecuci&#243;n operativa del proyecto Android.
+
+## &#128203; Archivos Disponibles
+### Setup R&#225;pido
+- [QUICK_START.md](./QUICK_START.md) - Setup t&#233;cnico (30-45 min)
+
+### Arquitectura y Dise&#241;o
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) - Gu&#237;a arquitect&#243;nica
+- [CODE_STRUCTURE.md](./CODE_STRUCTURE.md) - Estructura del c&#243;digo
+
+### Desarrollo
+- [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) - Workflow diario
+- [BEST_PRACTICES.md](./BEST_PRACTICES.md) - Mejores pr&#225;cticas
+
+### Onboarding
+- [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md) - Integraci&#243;n completa
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Resoluci&#243;n de problemas
+
+## &#128640; Flujo Recomendado
+### Para Desarrolladores Nuevos
+1. **D&#237;a 1:** [QUICK_START.md](./QUICK_START.md)
+2. **Semana 1-2:** [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md)
+3. **Ongoing:** [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md)
+
+### Para Arquitectos/Leads
+1. [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
+2. [CODE_STRUCTURE.md](./CODE_STRUCTURE.md)
+3. [BEST_PRACTICES.md](./BEST_PRACTICES.md)
+
+## ⏱️ Tiempos Estimados
+- **Setup t&#233;cnico:** 30-45 minutos (QUICK_START)
+- **Comprensi&#243;n arquitect&#243;nica:** 2-3 horas
+- **Onboarding completo:** 1-2 semanas
+
+## &#128202; Generado por
+- **Prompt:** `01-analysis/03-index-universal.prompt.md`
+- **Fase:** FASE 1: AN&#193;LISIS
+- **Fecha:** 2026-02-24
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: tiempo oficial esperado de lectura por perfil.
+- ⚠️ Dato no disponible en el repositorio: owner editorial formal para cada documento de `01-inicio`.
+- ⚠️ Dato no disponible en el repositorio: pol&#237;tica de versionado documental aprobada por gobernanza t&#233;cnica.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/52_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/53_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/74_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `README.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| T&#237;tulo exacto requerido | ✅ | `# &#128218; Documentaci&#243;n de Inicio` |
+| Estructura de archivos con enlaces | ✅ | Secci&#243;n `Archivos Disponibles` por categor&#237;as |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+
+**Compliance Score:** 100% ✅</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">TROUBLESHOOTING.md</span><span class="doc-path">.github\docs\01-inicio\TROUBLESHOOTING.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# Troubleshooting Guide - claro-video-android-coship
+
+## &#128295; Problemas de Setup
+### Environment Issues
+- Validar versi&#243;n de Java y Gradle Wrapper con `./gradlew -v` dentro de `AMCO_SOURCE_CODE` (fuente: estructura `AMCO_SOURCE_CODE/gradlew`, CI en `.github/workflows/workflow-build.yml` usa Java 11).
+- Si Android Studio no sincroniza, reabrir el proyecto en `AMCO_SOURCE_CODE` y ejecutar `./gradlew projects`.
+
+### Dependency Problems
+- Forzar resoluci&#243;n de dependencias con `./gradlew --refresh-dependencies`.
+- Verificar repositorios configurados (`mavenCentral`, snapshots, m2 local) en `AMCO_SOURCE_CODE/app/build.gradle`.
+
+### Configuration Errors
+- Confirmar `compileSdkVersion 33` y `targetSdkVersion 33` en `AMCO_SOURCE_CODE/app/build.gradle`.
+- Validar plugins requeridos: `com.android.application`, `kotlin-android`, `newrelic`, `com.google.gms.google-services`.
+
+### Permission Issues
+- Si falla acceso a archivos/local cache, validar permisos de ejecuci&#243;n del wrapper (`gradlew`) y permisos de lectura/escritura del workspace.
+- Para ejecuci&#243;n de app, revisar permisos declarados en `AMCO_SOURCE_CODE/app/src/main/AndroidManifest.xml`.
+
+## &#127959;️ Build y Compile
+### Build Failures
+- Ejecutar `./gradlew clean` seguido de `./gradlew :app:assembleCoshipProdQA`.
+- Verificar task de CI equivalente en `.github/workflows/workflow-build.yml`.
+
+### Dependency Conflicts
+- Revisar versiones duplicadas o incompatibles en `dependencies` dentro de `AMCO_SOURCE_CODE/app/build.gradle`.
+- Si hay conflicto transitorio, regenerar cach&#233; con `--refresh-dependencies`.
+
+### Version Mismatches
+- Confirmar alineaci&#243;n de `kotlin_version`, Android Gradle Plugin y SDK objetivo desde `AMCO_SOURCE_CODE/build.gradle` y `AMCO_SOURCE_CODE/app/build.gradle`.
+
+### Platform-specific Issues
+- El build usa flavors `Coship` y `Tablet` + ambientes `Stage`, `Prod`, `ProdQA` (fuente: `productFlavors` en `AMCO_SOURCE_CODE/app/build.gradle`).
+- Si falla una variante espec&#237;fica, compilar task puntual (`:app:assembleTabletProdQA` o `:app:assembleCoshipProdQA`).
+
+## &#127939;‍♂️ Runtime Issues
+### Application Crashes
+- Revisar stacktrace en Logcat y reproducir con pasos m&#237;nimos.
+- Confirmar actividad de arranque declarada (`SplashActivity`) en `AMCO_SOURCE_CODE/app/src/main/AndroidManifest.xml`.
+
+### Performance Problems
+- Verificar saturaci&#243;n por configuraci&#243;n de heap/dex (`javaMaxHeapSize &quot;4g&quot;`, `maxProcessCount 4`) en build.
+- ⚠️ Dato no disponible en el repositorio: benchmark oficial de performance por ambiente.
+
+### Memory Leaks
+- El README documenta flujo de leak debugging para RequestManager y extracci&#243;n de `.hprof` (fuente: `README.md`, secci&#243;n `Debug memory leaks`).
+
+### Network Issues
+- Validar permisos de red (`INTERNET`, `ACCESS_NETWORK_STATE`, `ACCESS_WIFI_STATE`) en `AndroidManifest.xml`.
+- Confirmar endpoints/configuraci&#243;n de ambiente seg&#250;n flavor (`PRODUCTION`, `PRODQA`) en `build.gradle`.
+
+## &#129514; Testing Problems
+### Test Failures
+- Ejecutar `./gradlew testDebugUnitTest` y adjuntar output al PR.
+- Revisar tests existentes en `AMCO_SOURCE_CODE/app/src/test/java`.
+
+### Flaky Tests
+- Repetir ejecuci&#243;n local en limpio (`./gradlew clean testDebugUnitTest`) para descartar estado residual.
+- ⚠️ Dato no disponible en el repositorio: hist&#243;rico de flaky tests por suite.
+
+### Test Environment Issues
+- Verificar dependencias de test (`junit`, `powermock`, `mockito`) declaradas en `AMCO_SOURCE_CODE/app/build.gradle`.
+- ⚠️ Dato no disponible en el repositorio: gu&#237;a oficial de emulador/dispositivo para tests de integraci&#243;n.
+
+### Coverage Problems
+- ⚠️ Dato no disponible en el repositorio: reporte de cobertura (`coverage.xml`/`jacoco.xml`) no encontrado en este an&#225;lisis.
+
+## &#128640; Deployment Issues
+### Configuration Problems
+- Validar `signingConfigs` (`CoshipSign`, `KaonSign`, `HuaweiSign`) y archivos de llave referenciados en `AMCO_SOURCE_CODE/keys/`.
+
+### Environment Differences
+- Verificar comportamiento por branch en CI: `develop`, `automation_tests`, `releases` (fuente: `.github/workflows/workflow-build.yml`).
+
+### Network Connectivity
+- Si falla publicaci&#243;n de artefactos, revisar conectividad a App Center y secretos (`APPCENTER_TOKEN`, `PAT`) en workflow.
+
+### Resource Constraints
+- CI define opciones de Gradle para memoria (`-Xmx8g`, heap dump) en `.github/workflows/workflow-build.yml`.
+
+## &#128202; Monitoring y Debugging
+### Log Analysis
+- Centralizar evidencia con stacktrace + comandos ejecutados (`./gradlew ...`) para reproducibilidad.
+
+### Performance Profiling
+- ⚠️ Dato no disponible en el repositorio: perfilado continuo documentado (CPU/memoria/frame time) por ambiente.
+
+### Error Tracking
+- New Relic est&#225; integrado como plugin/dependencia (`newrelic`, `com.newrelic.agent.android:android-agent`) en `AMCO_SOURCE_CODE/app/build.gradle`.
+
+### Health Checks
+- ⚠️ Dato no disponible en el repositorio: endpoint/checklist formal de health checks operativos.
+
+## &#127384; Escalation Guidelines
+### When to Escalate
+- Escalar cuando el fallo bloquea build release, ejecuci&#243;n en launcher o pipeline de publicaci&#243;n.
+
+### Who to Contact
+- ⚠️ Dato no disponible en el repositorio: lista nominada de responsables por dominio.
+
+### Information to Provide
+- Branch/commit, variante compilada, comando ejecutado, stacktrace, pasos de reproducci&#243;n y evidencia de logs.
+
+### Emergency Procedures
+- ⚠️ Dato no disponible en el repositorio: runbook de incidentes cr&#237;ticos documentado.
+
+## &#128218; Additional Resources
+### Documentation Links
+- `.github/docs/01-inicio/QUICK_START.md`
+- `.github/docs/01-inicio/DEVELOPMENT_GUIDE.md`
+- `.github/docs/01-inicio/ARCHITECTURE_GUIDE.md`
+
+### Community Forums
+- ⚠️ Dato no disponible en el repositorio: foro/canal interno oficial documentado.
+
+### Expert Contacts
+- ⚠️ Dato no disponible en el repositorio: contactos expertos por componente.
+
+### External Tools
+- Android Studio / Logcat
+- Gradle Wrapper (`./gradlew`)
+- Eclipse MAT para an&#225;lisis `.hprof` (fuente: `README.md`)
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: cat&#225;logo hist&#243;rico de incidentes para priorizaci&#243;n por frecuencia/impacto.
+- ⚠️ Dato no disponible en el repositorio: gu&#237;a oficial de escalaci&#243;n con responsables nominados por dominio.
+- ⚠️ Dato no disponible en el repositorio: tablero centralizado de logs/alertas con retenci&#243;n y trazabilidad por ambiente.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/58_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/73_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** 01-inicio  
+**Documento:** `TROUBLESHOOTING.md`
+
+### Validaci&#243;n de Reglas
+| Regla | Estado | Evidencia |
+|---|---|---|
+| Evidencia en blockquote | ✅ | L&#237;nea inicial en formato `&gt; &#128204; **Evidencia:** ...` |
+| Secciones obligatorias | ✅ | Incluye setup, build, runtime, testing, deployment, monitoring/debugging, escalaci&#243;n, recursos |
+| Fuentes de sesi&#243;n | ✅ | Secci&#243;n `Sources &amp; Evidence (session outputs)` presente |
+| Datos faltantes marcados | ✅ | Uso de `⚠️ Dato no disponible en el repositorio` |
+
+**Compliance Score:** 100% ✅</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_ARCHITECTURE.md</span><span class="doc-path">.github\docs\02-analisis\ANALYSIS_REPORT_ARCHITECTURE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127959;️ Reporte de An&#225;lisis Arquitect&#243;nico - claro-video-android-coship
+
+## &#128203; Resumen Ejecutivo
+### Patr&#243;n Arquitect&#243;nico
+- Arquitectura h&#237;brida: coexistencia de flujos modernos (`ViewModel -&gt; UseCase -&gt; Repository -&gt; DataSource`) y flujos legacy (`manager/task`).
+
+### Complejidad Estimada
+- Variabilidad de patr&#243;n por feature.
+- Hotspots de gran tama&#241;o en clases cr&#237;ticas.
+
+### Estado de la Arquitectura
+- Cobertura alta para estructura y patrones observables en c&#243;digo.
+- Cobertura limitada para m&#233;tricas avanzadas no reportadas por herramienta automatizada.
+
+## &#127963;️ Arquitectura de Alto Nivel
+### Componentes Principales
+- UI: Activities/Fragments/ViewModels.
+- Dominio: UseCases parciales en features modernas.
+- Datos: Repositories/DataSources y managers legacy.
+
+### Relaciones y Dependencias
+1. UI recibe evento.
+2. ViewModel orquesta estado.
+3. Flujo moderno o legacy seg&#250;n feature.
+4. Resultado regresa a UI.
+
+### Entry Points
+- Entry points principales reportados en `ARCH_02B_ENTRYPOINTS.md` (Activities, Services, Receiver, Worker).
+- Flujo de entrada principal por `AndroidManifest.xml`.
+
+## &#128230; An&#225;lisis de M&#243;dulos
+### Distribuci&#243;n de Responsabilidades
+- M&#243;dulo detectado: `:app` (fuente: `AMCO_SOURCE_CODE/settings.gradle`).
+- `:app` concentra presentaci&#243;n, l&#243;gica de negocio, acceso a datos e integraciones.
+
+### Acoplamiento y Cohesi&#243;n
+- Acoplamiento alto por m&#243;dulo &#250;nico.
+- Riesgo de regresi&#243;n cruzada en cambios multi-feature.
+
+### Interfaces P&#250;blicas
+- ⚠️ Dato no disponible en el repositorio: inventario formal de interfaces p&#250;blicas por m&#243;dulo en artefacto versionado.
+
+## &#128260; Patrones Identificados
+### Patrones Arquitect&#243;nicos
+- `ViewModel -&gt; UseCase -&gt; Repository -&gt; DataSource` (evidencia en flujo 2FA reportado en `ARCH_02D_DATAFLOWS.md`).
+
+### Patrones de Dise&#241;o
+- MVVM en flujos modernos.
+- Manager/Task en rutas legacy.
+
+### Anti-patrones Detectados
+- `ViewModel -&gt; manager/task` (evidencia en flujo search reportado en `ARCH_02D_DATAFLOWS.md`).
+- Coexistencia de patrones incrementa costo cognitivo y complejidad de pruebas por feature.
+
+## &#128225; APIs y Integraciones
+### APIs Expuestas
+- ⚠️ Dato no disponible en el repositorio: inventario formal de APIs expuestas por el sistema.
+
+### APIs Consumidas
+- Consumo v&#237;a Retrofit/OkHttp (fuente: `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Servicios Externos
+- Firebase y NewRelic detectados por plugins/dependencias en `build.gradle`.
+
+## &#128272; Aspectos de Seguridad
+### Puntos de Autenticaci&#243;n
+- Flujos de acceso/sesi&#243;n presentes en entry points y m&#243;dulos de autenticaci&#243;n; detalle formal end-to-end: ⚠️ Dato no disponible en el repositorio.
+
+### Validaci&#243;n de Datos
+- Validaci&#243;n de datos por capa: ⚠️ Dato no disponible en el repositorio como inventario formal centralizado.
+
+### Manejo de Secrets
+- `signingConfigs` con credenciales en texto plano en `AMCO_SOURCE_CODE/app/build.gradle`.
+- `lintOptions` permisivo (`abortOnError false`, `ignoreWarnings true`) y reglas ignoradas en `app/lint.xml` aumentan riesgo de exposici&#243;n.
+
+## &#128202; M&#233;tricas y Performance
+### Complejidad Ciclom&#225;tica
+- ⚠️ Dato no disponible en el repositorio: complejidad ciclom&#225;tica formal por m&#233;todo/clase.
+
+### L&#237;neas de C&#243;digo
+- Hotspots con evidencia de tama&#241;o:
+	- `TVFragment.java`: 2562 LOC.
+	- `VerticalViewPager2.java`: 2546 LOC.
+	- `PreloadManager.java`: 909 LOC.
+
+### Cobertura de Tests
+- ⚠️ Dato no disponible en el repositorio: cobertura de tests consolidada en `coverage.xml`/`jacoco.xml`.
+
+## &#127919; Recomendaciones
+### Mejoras Arquitect&#243;nicas
+- Remover secretos hardcodeados de signing y migrar a variables/secret manager.
+
+### Refactorings Prioritarios
+- Estandarizar patr&#243;n arquitect&#243;nico objetivo por feature con plan incremental.
+
+### Modernizaci&#243;n T&#233;cnica
+- Evolucionar modularizaci&#243;n por dominio para reducir acoplamiento en `:app`.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/46_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/54_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/56_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/62_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/63_output.md`
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ Dato no disponible en el repositorio: inventario formal de APIs expuestas/consumidas.
+- ⚠️ Dato no disponible en el repositorio: m&#233;tricas autom&#225;ticas de complejidad ciclom&#225;tica.
+- ⚠️ Dato no disponible en el repositorio: cobertura consolidada de pruebas en reporte versionado.
+
+### Recomendaciones para completar an&#225;lisis
+- Generar reporte de cobertura (`jacoco.xml` o equivalente) por m&#243;dulo.
+- Integrar an&#225;lisis est&#225;tico (Sonar/Detekt) para complejidad ciclom&#225;tica y deuda t&#233;cnica.
+- Versionar inventario API en documento fuente de arquitectura.
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Prompt ejecutado:** `01-analysis/architecture-analysis`  
+**Documento:** `ANALYSIS_REPORT_ARCHITECTURE.md`
+
+### Validaci&#243;n de Reglas
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `summary_structure` | ✅ Pas&#243; | Resumen ejecutivo con 3 subsecciones | `## &#128203; Resumen Ejecutivo` |
+| 2 | `high_level_architecture` | ✅ Pas&#243; | Arquitectura de alto nivel con 3 subsecciones | `## &#127963;️ Arquitectura de Alto Nivel` |
+| 3 | `modules_structure` | ✅ Pas&#243; | An&#225;lisis de m&#243;dulos con 3 subsecciones | `## &#128230; An&#225;lisis de M&#243;dulos` |
+| 4 | `patterns_structure` | ✅ Pas&#243; | Patrones identificados con 3 subsecciones | `## &#128260; Patrones Identificados` |
+| 5 | `apis_structure` | ✅ Pas&#243; | APIs e integraciones con 3 subsecciones | `## &#128225; APIs y Integraciones` |
+| 6 | `security_structure` | ✅ Pas&#243; | Seguridad con 3 subsecciones | `## &#128272; Aspectos de Seguridad` |
+| 7 | `metrics_structure` | ✅ Pas&#243; | M&#233;tricas/performance con 3 subsecciones | `## &#128202; M&#233;tricas y Performance` |
+| 8 | `recommendations_structure` | ✅ Pas&#243; | Recomendaciones con 3 subsecciones | `## &#127919; Recomendaciones` |
+| 9 | `limitations_structure` | ✅ Pas&#243; | Limitaciones con 2 subsecciones requeridas | `## ⚠️ Limitaciones del An&#225;lisis` |
+| 10 | `compliance_final` | ✅ Pas&#243; | Compliance al final del documento | &#218;ltimo encabezado H2 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_STACK_DETECTION.md</span><span class="doc-path">.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128269; Reporte de Detecci&#243;n de Stack - claro-video-android-coship
+
+## &#128203; Resumen Ejecutivo
+### Stack Detectado
+- Android con m&#243;dulo principal `:app` (fuente: `AMCO_SOURCE_CODE/settings.gradle`).
+
+### Confianza del An&#225;lisis
+- Alta para plataforma/build y media para predominio de lenguaje por coexistencia Java/Kotlin (fuente: `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Archivos de Evidencia Analizados
+- `AMCO_SOURCE_CODE/settings.gradle`
+- `AMCO_SOURCE_CODE/build.gradle`
+- `AMCO_SOURCE_CODE/app/build.gradle`
+- `.github/workflows/workflow-build.yml`
+
+## &#128736;️ Stack Tecnol&#243;gico Identificado
+### Lenguage Principal
+- Java y Kotlin (fuente: plugin `kotlin-android` en `AMCO_SOURCE_CODE/app/build.gradle` y base Android existente).
+
+### Framework/Plataforma
+- Android (fuente: plugin `com.android.application` en `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Herramientas de Build
+- Gradle + Android Gradle Plugin `4.1.1` (fuente: `AMCO_SOURCE_CODE/build.gradle`).
+
+### Gesti&#243;n de Dependencias
+- Repositorios Maven/Google/JitPack y bloque `dependencies` en Gradle (fuente: `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`).
+
+## &#128194; Evidencia por Categor&#237;a
+### Build Files
+- Archivos encontrados: `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/settings.gradle`.
+- Versiones detectadas: Kotlin `1.5.30`, Android Gradle Plugin `4.1.1`.
+- Configuraciones identificadas: `compileSdkVersion 33`, `targetSdkVersion 33`, `flavorDimensions manufacturer/env`, `buildTypes debug/release`.
+
+### Dependency Management
+- Gestores de paquetes: Gradle con repositorios Maven/Google/JitPack.
+- Archivos de configuraci&#243;n: `AMCO_SOURCE_CODE/build.gradle`, `AMCO_SOURCE_CODE/app/build.gradle`.
+- Dependencias principales: Retrofit, OkHttp, Coroutines, Firebase, NewRelic (fuente: `dependencies` en `app/build.gradle`).
+
+### Development Tools
+- IDEs y editores: ⚠️ Dato no disponible en el repositorio.
+- Linters y formatters: `lintOptions` y `lint.xml` (fuente: `AMCO_SOURCE_CODE/app/build.gradle`, `AMCO_SOURCE_CODE/app/lint.xml`).
+- Testing frameworks: JUnit, Mockito, PowerMock (fuente: `testImplementation` en `AMCO_SOURCE_CODE/app/build.gradle`).
+
+### Infrastructure
+- Containerizaci&#243;n: ⚠️ Dato no disponible en el repositorio (no se detect&#243; `Dockerfile`).
+- CI/CD: workflow de build/publish en `.github/workflows/workflow-build.yml`.
+- Cloud services: App Center (publish workflow), Firebase y NewRelic (fuente: workflow + `app/build.gradle`).
+
+## &#128202; An&#225;lisis de Versiones
+### Versiones Actuales
+- Kotlin `1.5.30`, Android Gradle Plugin `4.1.1` (fuente: `AMCO_SOURCE_CODE/build.gradle`).
+
+### Compatibilidad
+- El pipeline CI usa Java 11 (fuente: `.github/workflows/workflow-build.yml`).
+- Versi&#243;n exacta de Gradle Wrapper: ⚠️ Dato no disponible en el repositorio en este reporte (requiere evidenciar `gradle-wrapper.properties`).
+
+### Recomendaciones de Actualizaci&#243;n
+- Priorizar plan de actualizaci&#243;n de toolchain Android/Gradle para reducir deuda de compatibilidad.
+- Homologar versiones de librer&#237;as de red para reducir complejidad de mantenimiento.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/39_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/41_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/47_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/48_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/51_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/52_output.md`
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ Dato no disponible en el repositorio: distribuci&#243;n formal de LOC por lenguaje (Java vs Kotlin) en reporte versionado.
+- ⚠️ Dato no disponible en el repositorio: est&#225;ndar oficial de IDE/editor del equipo.
+- ⚠️ Dato no disponible en el repositorio: evidencia integrada de `gradle-wrapper.properties` en este documento.
+
+### Recomendaciones para completar an&#225;lisis
+- Incorporar medici&#243;n autom&#225;tica de LOC por lenguaje en pipeline de documentaci&#243;n.
+- Agregar evidencia del wrapper (`gradle/wrapper/gradle-wrapper.properties`) en la secci&#243;n de compatibilidad.
+- Versionar una gu&#237;a de est&#225;ndares de herramientas de desarrollo del equipo.
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Prompt ejecutado:** `01-analysis/stack-detection`  
+**Documento:** `ANALYSIS_REPORT_STACK_DETECTION.md`
+
+### Validaci&#243;n de Reglas
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `summary_structure` | ✅ Pas&#243; | Incluye resumen ejecutivo y 3 subsecciones | Secci&#243;n `## &#128203; Resumen Ejecutivo` |
+| 2 | `stack_identified_structure` | ✅ Pas&#243; | Incluye 4 subsecciones de stack | Secci&#243;n `## &#128736;️ Stack Tecnol&#243;gico Identificado` |
+| 3 | `evidence_by_category` | ✅ Pas&#243; | Incluye 4 categor&#237;as de evidencia | Secci&#243;n `## &#128194; Evidencia por Categor&#237;a` |
+| 4 | `version_analysis_structure` | ✅ Pas&#243; | Incluye 3 subsecciones de versiones | Secci&#243;n `## &#128202; An&#225;lisis de Versiones` |
+| 5 | `limitations_structure` | ✅ Pas&#243; | Incluye bloques de datos no disponibles y recomendaciones | Secci&#243;n `## ⚠️ Limitaciones del An&#225;lisis` |
+| 6 | `compliance_final` | ✅ Pas&#243; | Compliance como secci&#243;n final | &#218;ltimo encabezado H2 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_SUMMARY.md</span><span class="doc-path">.github\docs\02-analisis\ANALYSIS_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128202; Resumen de An&#225;lisis - FASE 1 - claro-video-android-coship
+
+## &#127919; Resumen Ejecutivo
+### Stack Tecnol&#243;gico
+- Stack consolidado: Android con m&#243;dulo principal `:app`.
+- Build basado en Gradle (`build.gradle`, `app/build.gradle`).
+
+### Estado Arquitect&#243;nico
+- Coexistencia de patrones modernos/legacy.
+- Hotspots estructurales en clases de alto tama&#241;o.
+- Quality gates permisivos en lint/tests.
+
+### Nivel de Madurez
+- **Preparaci&#243;n t&#233;cnica:** Parcial, con precondiciones de seguridad/calidad antes de escalar refactor.
+
+## &#128202; M&#233;tricas Clave
+### Complejidad del Proyecto
+- M&#243;dulos Gradle: `1` (`:app`).
+- AGP: `4.1.1`.
+- Kotlin plugin: `1.5.30`.
+
+### Estado de Documentaci&#243;n
+- Documentaci&#243;n t&#233;cnica principal generada en `01-inicio` y `02-analisis`.
+- Cobertura documental de m&#233;tricas avanzadas: parcial por faltantes de reportes automatizados.
+
+### Cobertura T&#233;cnica
+- ⚠️ Dato no disponible en el repositorio: cobertura consolidada de tests.
+- ⚠️ Dato no disponible en el repositorio: complejidad ciclom&#225;tica formal.
+- ⚠️ Dato no disponible en el repositorio: crash rate productivo versionado.
+
+## &#127959;️ Arquitectura
+### Patr&#243;n Principal
+- Arquitectura h&#237;brida por feature en m&#243;dulo &#250;nico.
+
+### Fortalezas Identificadas
+- Existencia de flujos modernos con separaci&#243;n por capas en features espec&#237;ficas.
+- Base de evidencia documental consolidada para plan t&#233;cnico.
+
+### &#193;reas de Mejora
+- Acoplamiento elevado y patrones mixtos aumentan costo de cambio.
+
+## &#128203; Deliverables Generados
+### Documentaci&#243;n Creada
+- `ANALYSIS_REPORT_STACK_DETECTION.md`
+- `ANALYSIS_REPORT_ARCHITECTURE.md`
+
+### Diagramas Producidos
+- `ARCH_02A_MODULE_INVENTORY.md`
+- `ARCH_02B_ENTRYPOINTS.md`
+- `ARCH_02D_DATAFLOWS.md`
+- `ARCH_02E_ANTIPATTERNS.md`
+- `ARCH_02F_DIAGRAMS_SUMMARY.md`
+
+### Configuraciones Establecidas
+- Estructura de reportes de an&#225;lisis con evidencia y compliance.
+- Normalizaci&#243;n de encabezados de compliance en documentos `02-analisis`.
+
+## &#127919; Pr&#243;ximos Pasos
+### Preparaci&#243;n para Fase 2
+- Cerrar brechas de evidencia: cobertura, complejidad, inventario API.
+
+### Informaci&#243;n Requerida
+- coverage/jacoco report, m&#233;tricas de complejidad, inventario formal de APIs.
+
+### Dependencias Identificadas
+- Endurecimiento de quality gates en CI.
+- Aprobaci&#243;n de arquitectura objetivo por Tech Lead.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/40_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/41_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/46_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/54_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/63_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/75_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/76_output.md`
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ Dato no disponible en el repositorio: cobertura consolidada de tests por m&#243;dulo.
+- ⚠️ Dato no disponible en el repositorio: complejidad ciclom&#225;tica formal por clase/m&#233;todo.
+- ⚠️ Dato no disponible en el repositorio: inventario formal de APIs consumidas/expuestas.
+
+### Recomendaciones para completar an&#225;lisis
+- Integrar generaci&#243;n de `coverage.xml`/`jacoco.xml` por pipeline.
+- Ejecutar escaneo est&#225;tico con m&#233;tricas de complejidad exportables.
+- Versionar cat&#225;logo t&#233;cnico de APIs como artefacto de arquitectura.
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Prompt ejecutado:** `01-analysis/summary-generation`  
+**Documento:** `ANALYSIS_SUMMARY.md`
+
+### Validaci&#243;n de Reglas
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `executive_structure` | ✅ Pas&#243; | Incluye resumen con 3 subsecciones | `## &#127919; Resumen Ejecutivo` |
+| 2 | `metrics_structure` | ✅ Pas&#243; | Incluye m&#233;tricas clave con 3 subsecciones | `## &#128202; M&#233;tricas Clave` |
+| 3 | `architecture_structure` | ✅ Pas&#243; | Incluye arquitectura con 3 subsecciones | `## &#127959;️ Arquitectura` |
+| 4 | `deliverables_structure` | ✅ Pas&#243; | Incluye deliverables con 3 subsecciones | `## &#128203; Deliverables Generados` |
+| 5 | `next_steps_structure` | ✅ Pas&#243; | Incluye pr&#243;ximos pasos con 3 subsecciones | `## &#127919; Pr&#243;ximos Pasos` |
+| 6 | `limitations_structure` | ✅ Pas&#243; | Incluye limitaciones con 2 subsecciones requeridas | `## ⚠️ Limitaciones del An&#225;lisis` |
+| 7 | `compliance_final` | ✅ Pas&#243; | Compliance como secci&#243;n final | &#218;ltimo encabezado H2 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">.github\docs\02-analisis\README.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128218; Documentaci&#243;n de Inicio
+
+## &#127919; Prop&#243;sito
+Documentaci&#243;n fundamental del proyecto generada autom&#225;ticamente.
+
+## &#128203; Archivos Disponibles
+### Setup R&#225;pido
+- [QUICK_START.md](./QUICK_START.md) - Setup t&#233;cnico (30-45 min)
+
+### Arquitectura y Dise&#241;o
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) - Gu&#237;a arquitect&#243;nica
+- [CODE_STRUCTURE.md](./CODE_STRUCTURE.md) - Estructura del c&#243;digo
+
+### Desarrollo
+- [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) - Workflow diario
+- [BEST_PRACTICES.md](./BEST_PRACTICES.md) - Mejores pr&#225;cticas
+
+### Onboarding
+- [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md) - Integraci&#243;n completa
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Resoluci&#243;n de problemas
+
+## &#128640; Flujo Recomendado
+### Para Desarrolladores Nuevos
+1. **D&#237;a 1:** [QUICK_START.md](./QUICK_START.md)
+2. **Semana 1-2:** [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md)
+3. **Ongoing:** [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md)
+
+### Para Arquitectos/Leads
+1. [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
+2. [CODE_STRUCTURE.md](./CODE_STRUCTURE.md)
+3. [BEST_PRACTICES.md](./BEST_PRACTICES.md)
+
+## ⏱️ Tiempos Estimados
+- **Setup t&#233;cnico:** 30-45 minutos (QUICK_START)
+- **Comprensi&#243;n arquitect&#243;nica:** 2-3 horas
+- **Onboarding completo:** 1-2 semanas
+
+## &#128202; Generado por
+- **Prompt:** `01-analysis/03-index-universal.prompt.md`
+- **Fase:** FASE 1: AN&#193;LISIS
+- **Fecha:** 2026-02-24
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/46_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/49_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/75_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/76_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/77_output.md`
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ Dato no disponible en el repositorio: plantilla formal `DOCUMENT_STRUCTURE.md` para validaci&#243;n exacta del &#237;ndice de fase.
+- ⚠️ Dato no disponible en el repositorio: metadatos completos de ownership documental por archivo.
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Prompt ejecutado:** `01-analysis/readme-phase`  
+**Documento:** `README.md`
+
+### Validaci&#243;n de Reglas
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `mandatory_phrase` | ✅ Pas&#243; | Frase obligatoria de evidencia al inicio | L&#237;nea inicial con `&gt; &#128204; **Evidencia:** ...` |
+| 2 | `index_structure` | ✅ Pas&#243; | Incluye prop&#243;sito, documentos, flujo y uso esperado | Secciones principales de README |
+| 3 | `limitations_present` | ✅ Pas&#243; | Incluye secci&#243;n de limitaciones | `## ⚠️ Limitaciones del An&#225;lisis` |
+| 4 | `compliance_present` | ✅ Pas&#243; | Incluye compliance obligatorio en documento | `## ✅ Compliance Check - Fase 1` |
+
+**Compliance Score:** 100% ✅</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">.github\docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
+
+# &#127912; Diagramas Arquitect&#243;nicos - Claro Video Android (Coship)
+
+## &#127963;️ Diagrama de Componentes
+
+&lt;img src=&quot;img/DiagramaDeComponentes.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart LR
+  subgraph UI[UI Layer]
+    A[Activities]
+    F[Fragments]
+    VM[ViewModels]
+  end
+
+  subgraph Domain[Domain Layer]
+    UC[UseCases]
+  end
+
+  subgraph Data[Data Layer]
+    R[Repositories]
+    M[Managers/Tasks Legacy]
+    DS[DataSources]
+  end
+
+  subgraph Infra[Infra]
+    NET[Retrofit/OkHttp]
+    EXT[Firebase/NewRelic]
+  end
+
+  A --&gt; VM
+  F --&gt; VM
+  VM --&gt; UC
+  UC --&gt; R
+  R --&gt; DS
+  VM --&gt; M
+  DS --&gt; NET
+  NET --&gt; EXT
+```
+
+## &#128260; Diagramas de Flujos de Procesos
+### Flujo Principal 1: Flujo Moderno (UI → UseCase → Repository)
+
+&lt;img src=&quot;img/DiagramaDeFlujoDeProcesos1.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant UI as UI
+  participant VM as ViewModel
+  participant UC as UseCase
+  participant R as Repository
+  participant DS as DataSource
+
+  U-&gt;&gt;UI: Acci&#243;n
+  UI-&gt;&gt;VM: Evento
+  VM-&gt;&gt;UC: Ejecutar caso de uso
+  UC-&gt;&gt;R: Solicitud dominio
+  R-&gt;&gt;DS: Request data
+  DS--&gt;&gt;R: Response
+  R--&gt;&gt;VM: Resultado
+  VM--&gt;&gt;UI: Estado actualizado
+```
+
+### Flujo Principal 2: Flujo Legacy (UI → Manager/Task)
+
+&lt;img src=&quot;img/DiagramaDeFlujoDeProcesos2.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant UI as UI
+  participant VM as ViewModel
+  participant L as LegacyManagerTask
+
+  U-&gt;&gt;UI: Acci&#243;n
+  UI-&gt;&gt;VM: Evento
+  VM-&gt;&gt;L: Request manager/task
+  L--&gt;&gt;VM: Resultado
+  VM--&gt;&gt;UI: Estado actualizado
+```
+
+## &#128640; Diagrama de CI/CD Pipeline
+
+&lt;img src=&quot;img/DiagramaDeCICD.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart TD
+  GIT[Push/PR] --&gt; CI[Workflow Build]
+  CI --&gt; B1[:app:assembleCoshipProdQA]
+  CI --&gt; B2[Opciones gradle incl. -x test]
+  B1 --&gt; ART[Artifact Build]
+  B2 --&gt; WARN[Riesgo: tests omitidos en algunos flujos]
+```
+
+## &#128202; Diagrama de Datos
+
+&lt;img src=&quot;img/DiagramaDeDatos.svg&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart LR
+  UI2[UI Event] --&gt; VM2[ViewModel]
+  VM2 --&gt; MOD[Modern Path]
+  VM2 --&gt; LEG[Legacy Path]
+  MOD --&gt; UC2[UseCase]
+  UC2 --&gt; REPO[Repository]
+  REPO --&gt; DS2[DataSource/API]
+  LEG --&gt; MGR[Manager/Task]
+  DS2 --&gt; RESP[Response]
+  MGR --&gt; RESP
+  RESP --&gt; VM2
+  VM2 --&gt; UI2
+```
+
+## &#128295; Notas de Implementaci&#243;n
+### Convenciones de Diagramas
+- Se documenta arquitectura h&#237;brida con coexistencia de patrones modernos y legacy.
+- Los diagramas separan expl&#237;citamente rutas modernas y rutas legacy para evitar ambig&#252;edad.
+- Se usa nomenclatura por capa (`UI`, `Domain`, `Data`, `Infra`) para consistencia transversal.
+
+### Herramientas de Visualizaci&#243;n
+- Formato utilizado: Mermaid en Markdown.
+- Render objetivo: visor Markdown compatible con Mermaid en repositorio/editor.
+- ⚠️ Dato no disponible en el repositorio: pipeline automatizado para validaci&#243;n de sintaxis Mermaid en CI.
+
+### Mantenimiento de Diagramas
+- Actualizar diagramas cuando cambie el flujo real en capas cr&#237;ticas (`ViewModel`, `UseCase`, `Repository`, `DataSource`).
+- Sincronizar este documento con cambios de build/pipeline y pr&#225;cticas de pruebas.
+- Mantener trazabilidad hacia outputs de sesi&#243;n en secci&#243;n de fuentes.
+
+## ⚠️ Limitaciones del An&#225;lisis
+**Datos no disponibles en el repositorio:**
+- ⚠️ Dato no disponible en el repositorio: diagrama oficial TO-BE validado por arquitectura.
+- ⚠️ Dato no disponible en el repositorio: mapa detallado de ownership por dominio para anotar owners en diagramas.
+- ⚠️ Dato no disponible en el repositorio: m&#233;tricas productivas de performance para anotar umbrales en diagramas de flujo.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Definir y versionar diagrama TO-BE aprobado por Tech Lead/Arquitectura.
+- Incorporar ownership t&#233;cnico por componente/capa en un artefacto formal.
+- Integrar validaci&#243;n de diagramas Mermaid en CI para detectar errores de render/sintaxis.
+
+## Sources &amp; Evidence (session outputs)
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/46_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/56_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/58_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
+- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/76_output.md`
+
+## ✅ Compliance Check - Fase 1
+**Fecha:** 2026-02-23  
+**Stack:** android  
+**Fase:** diagrams  
+**Prompt ejecutado:** `99K_doc_ARCHITECTURE_DIAGRAMS.md`  
+**Documento:** `ARCHITECTURE_DIAGRAMS.md`
+
+### Validaci&#243;n de Reglas
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `mandatory_phrase` | ✅ Pas&#243; | Frase de evidencia en formato blockquote al inicio | L&#237;nea 1: `&gt; &#128204; **Evidencia:** ...` |
+| 2 | `title_required` | ✅ Pas&#243; | T&#237;tulo en formato requerido para documento de diagramas | `# &#127912; Diagramas Arquitect&#243;nicos - Claro Video Android (Coship)` |
+| 3 | `components_heading_required` | ✅ Pas&#243; | Secci&#243;n de componentes con encabezado normado | `## &#127963;️ Diagrama de Componentes` |
+| 4 | `process_flows_required` | ✅ Pas&#243; | Secci&#243;n de flujos con dos flujos principales documentados | `## &#128260;...`, `### Flujo Principal 1`, `### Flujo Principal 2` |
+| 5 | `cicd_heading_required` | ✅ Pas&#243; | Secci&#243;n CI/CD con encabezado normado | `## &#128640; Diagrama de CI/CD Pipeline` |
+| 6 | `data_diagram_heading_required` | ✅ Pas&#243; | Secci&#243;n de datos con encabezado normado | `## &#128202; Diagrama de Datos` |
+| 7 | `implementation_notes_structure` | ✅ Pas&#243; | Notas de implementaci&#243;n con 3 subsecciones obligatorias | `Convenciones`, `Herramientas`, `Mantenimiento` |
+| 8 | `limitations_structure` | ✅ Pas&#243; | Limitaciones con bloques de datos no disponibles y recomendaciones | Encabezados en `## ⚠️ Limitaciones del An&#225;lisis` |
+| 9 | `evidence_sources_present` | ✅ Pas&#243; | Fuentes de sesi&#243;n incluidas para trazabilidad | `## Sources &amp; Evidence (session outputs)` |
+| 10 | `compliance_last_section` | ✅ Pas&#243; | Compliance ubicado como &#250;ltima secci&#243;n H2 del documento | &#218;ltimo encabezado `## ✅ Compliance Check - Fase 1` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+          </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

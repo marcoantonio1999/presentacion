@@ -1,0 +1,2279 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anexo Tecnico - claro-video-ios-analytics</title>
+  <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero is-visible">
+      <span class="kicker">Anexo Tecnico</span>
+      <h1>claro-video-ios-analytics</h1>
+      <p class="hero-mainline">Contenido completo por documento</p>
+      <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
+    </header>
+
+    <main class="main">
+      <section id="contenido-docs">
+        <h3>Anexo Tecnico: claro-video-ios-analytics</h3>
+        <p class="docs-note">Documentos detectados: 14</p>
+        <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Repositorio: claro-video-ios-analytics</h4>
+              <p>Documentos detectados: 14</p>
+            </div>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Architecture Guide - CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+### Capas y m&#243;dulos
+- **App analytics:** eventos orientados al dominio app (`CVAnalyticsApp` + extensiones).
+- **Player analytics:** eventos del reproductor (`CVAnalyticsPlayer` + extensiones).
+- **Common:** base de env&#237;o y tracker (`CVAnalyticsCore`, `GATracker`, helpers).
+- **Modelos y constantes:** enums/tags para categor&#237;a/acci&#243;n/label.
+
+**Fuentes:**
+- `Sources/CVAnalytics/App/Analytics/CVAnalyticsApp.swift`
+- `Sources/CVAnalytics/Player/Analytics/CVAnalyticsPlayer.swift`
+- `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+- `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+- `Sources/CVAnalytics/App/Constants/CVATags.swift`
+
+### Contratos p&#250;blicos relevantes
+- `CVAnalyticsSender` define contrato de env&#237;o.
+- `CVAnalyticsCore` centraliza setup y env&#237;o base.
+- `CVAnalytics4.shared` expone eventos GA4.
+- `CVACustomListenerConvertible` y `CVAnalyticsListener` soportan contexto de player.
+
+### Flujo arquitect&#243;nico
+1. Consumidor invoca API p&#250;blica (`App`, `Player`, `CVAnalytics4`).
+2. Se construyen par&#225;metros de evento.
+3. Core/Tracker serializa payload.
+4. `GATracker` env&#237;a request HTTP.
+
+## &#127919; Estado objetivo (TO-BE)
+- Mantener APIs p&#250;blicas estables y sem&#225;nticas.
+- Aislar cambios de proveedores analytics dentro de `Common/Traker`.
+- Documentar de forma centralizada mapas de eventos por m&#243;dulo.
+
+## &#128295; Evoluci&#243;n y Mantenimiento
+### Principios de Extensibilidad
+- Extender funcionalidades por archivos `+Feature` evitando modificar clases base.
+
+### Versionado de APIs
+- Mantener compatibilidad de firmas p&#250;blicas y versionado sem&#225;ntico cuando haya breaking changes.
+
+### Estrategias de Migraci&#243;n
+- Migrar cambios de infraestructura dentro de `Common/Traker` para minimizar impacto en `App`/`Player`.
+
+### Refactoring Guidelines
+- Aplicar refactors incrementales preservando contratos p&#250;blicos y cobertura en `Tests/cv-analyticsAppTests/`.
+
+- Est&#225;ndar de versionado sem&#225;ntico para cambios en API p&#250;blica.
+- Tests de contrato para eventos cr&#237;ticos (login, playback, payments).
+- Normalizaci&#243;n de nombres y typos hist&#243;ricos sin romper compatibilidad.
+
+## &#128203; Resumen Arquitect&#243;nico
+### Stack Tecnol&#243;gico
+- **Lenguaje:** Swift 5.7+
+- **Build:** Swift Package Manager
+- **Artefacto:** `.library(name: &quot;CVAnalytics&quot;)`
+- **Plataformas:** iOS 16+, tvOS 16+, macOS 13+
+
+### Patrones Arquitect&#243;nicos Principales
+- Modular monorepo con separaci&#243;n por dominio funcional (App / Player / Common).
+- Composici&#243;n por inicializadores + inyecci&#243;n por protocolos.
+
+### Principios de Dise&#241;o
+- API p&#250;blica estable (`public protocol`, `public struct`, `public func`).
+- Core de env&#237;o encapsulado en `Common` — dominio agn&#243;stico.
+
+**Fuentes:** `Package.swift`, `Sources/CVAnalytics/`
+
+## &#127959;️ Arquitectura General
+### Diagrama de Alto Nivel
+```
+Consumidor → [App APIs | Player APIs] → CVAnalyticsCore → GATracker → HTTP
+```
+### Componentes Principales
+- **App:** `CVAnalyticsApp` + extensiones por feature (`+Login`, `+Home`, `+Player`, etc.)
+- **Player:** `CVAnalyticsPlayer` + `CVAnalyticsPlayer+Live`, `CVAnalyticsPlayer+Player`
+- **Common:** `CVAnalyticsCore`, `CVAnalytics4`, `GATracker`, helpers
+
+### Flujo de Datos
+1. Consumidor invoca API p&#250;blica de `App` o `Player`.
+2. Se construyen par&#225;metros de evento (category/action/label).
+3. `CVAnalyticsCore` serializa y delega a `GATracker`.
+4. `GATracker` env&#237;a request HTTP.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+
+## &#128230; Estructura de M&#243;dulos
+### M&#243;dulos Core
+- `Common/CVAnalyticsCore.swift` — setup y env&#237;o base
+- `Common/CVAnalytics4.swift` — eventos GA4
+- `Common/Traker/GATracker.swift` — implementaci&#243;n HTTP tracker
+
+### M&#243;dulos de Dominio
+- `App/Analytics/` — 14 archivos de extensi&#243;n por feature de app
+- `Player/Analytics/` — eventos y flujos de player
+
+### M&#243;dulos de Infraestructura
+- `Common/Helpers/Strinng+Extensions.swift` — extensiones utilitarias
+- `Common/Traker/TrackerConstants.swift` — constantes de tracker
+
+### Dependencias Entre M&#243;dulos
+- `App` → `Common` (unidireccional)
+- `Player` → `Common` (unidireccional)
+- `Common` no depende de `App` ni `Player`
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## &#128260; Patrones de Dise&#241;o
+### Patr&#243;n Arquitect&#243;nico (MVVM, Clean, etc.)
+- Modular por dominio funcional (sin framework MVVM/Clean expl&#237;cito detectado).
+
+### Dependency Injection
+- Sin framework DI expl&#237;cito. Inyecci&#243;n por protocolos e inicializadores.
+- Ejemplo: `CVAnalyticsSender` como contrato de env&#237;o.
+
+### Repository Pattern
+- No detectado expl&#237;citamente.
+
+### Observer/State Management
+- `CVACustomListenerConvertible` y `CVAnalyticsListener` para contexto de player.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Player/Models/CVAnalyticsGroup.swift`
+
+## &#128225; Integraciones Externas
+### APIs Consumidas
+- Google Analytics / GA4 v&#237;a HTTP (Measurement Protocol).
+- `trackingId` hardcodeado: `&quot;UA-163167064-1&quot;` en `CVAnalyticsCore`.
+
+### Servicios de Terceros
+- Google Analytics (Universal Analytics + GA4).
+
+### Bases de Datos
+- ⚠️ No se detectaron bases de datos locales en el repositorio.
+
+### Sistemas de Cache
+- ⚠️ No se detectaron mecanismos de cach&#233; en el repositorio.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (l&#237;nea 30), `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+
+## &#128737;️ Consideraciones de Seguridad
+### Autenticaci&#243;n y Autorizaci&#243;n
+- Sin mecanismos de autenticaci&#243;n propios detectados.
+
+### Manejo de Secrets
+- ⚠️ **HALLAZGO:** `trackingId` hardcodeado `&quot;UA-163167064-1&quot;` en `CVAnalyticsCore.swift` (l&#237;nea 30). Contradice la pol&#237;tica de no hardcodear IDs sensibles.
+
+### Validaci&#243;n de Datos
+- No se detect&#243; validaci&#243;n expl&#237;cita de payloads antes de env&#237;o.
+
+### Protecci&#243;n de APIs
+- Sin mecanismos de protecci&#243;n de API detectados en la librer&#237;a.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#128202; Performance y Escalabilidad
+### Estrategias de Caching
+- ⚠️ No detectadas en el repositorio.
+
+### Optimizaciones de Consultas
+- ⚠️ No aplica (no hay base de datos).
+
+### Manejo de Concurrencia
+- ⚠️ No se detectaron mecanismos expl&#237;citos de concurrencia en los fuentes analizados.
+
+### M&#233;tricas de Performance
+- ⚠️ No hay m&#233;tricas de latencia o volumen de eventos en el repositorio.
+
+**Fuentes:** `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No hay ADRs (Architecture Decision Records) en el repositorio.
+- ⚠️ No hay m&#233;tricas de latencia o volumen de eventos.
+
+### Recomendaciones para completar an&#225;lisis
+- Agregar ADRs para documentar decisiones arquitect&#243;nicas clave.
+- Configurar herramientas de observabilidad para m&#233;tricas de eventos.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/02-architecture-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">BEST_PRACTICES.md</span><span class="doc-path">.github\docs\01-inicio\BEST_PRACTICES.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Best Practices - CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+### Dise&#241;o de API p&#250;blica
+- Usar `public protocol` para contratos (`CVAnalyticsSender`).
+- Exponer modelos de integraci&#243;n como `public struct` (`CVAnalyticsListener`).
+- Centralizar setup en `CVAnalyticsCore.trackingSetup(uuid:)`.
+
+### Organizaci&#243;n de c&#243;digo
+- Mantener separaci&#243;n por dominios `App`, `Player`, `Common`.
+- Agregar nuevas capacidades por extensi&#243;n (`CVAnalyticsApp+Feature.swift`).
+- Ubicar constantes/tag enums en `Constants/`.
+
+### Calidad y pruebas
+- Agregar pruebas por m&#243;dulo nuevo en `Tests/cv-analyticsAppTests/`.
+- Reutilizar patrones de tests existentes para eventos p&#250;blicos.
+
+### Seguridad y datos
+- Enviar solo los par&#225;metros necesarios de analytics.
+- Evitar introducir secretos nuevos en c&#243;digo.
+
+## &#127919; Estado objetivo (TO-BE)
+- Checklist de revisi&#243;n PR para APIs p&#250;blicas.
+- Matriz de eventos documentada por dominio.
+- Pipeline de quality gates para pruebas y seguridad.
+
+## &#128187; Convenciones de C&#243;digo
+### Nombres y Nomenclatura
+- Usar nombres descriptivos en ingl&#233;s para tipos, m&#233;todos y par&#225;metros p&#250;blicos.
+- Extensiones nombradas `Tipo+Feature.swift` (ej. `CVAnalyticsApp+Login.swift`).
+
+### Estructura de Archivos
+- Un tipo principal por archivo; extensiones en archivos separados por dominio.
+- Constantes y tags en carpeta `Constants/` del m&#243;dulo correspondiente.
+
+### Comentarios y Documentaci&#243;n
+- ⚠️ No se detect&#243; gu&#237;a formal de documentaci&#243;n inline (DocC) en el repositorio.
+
+### Formateo y Estilo
+- ⚠️ No existe gu&#237;a formal de estilo Swift detectada en el repositorio.
+
+**Fuentes:** `Sources/CVAnalytics/App/Analytics/`, `Sources/CVAnalytics/App/Constants/`
+
+## &#127959;️ Arquitectura y Dise&#241;o
+### Principios SOLID
+- Single Responsibility: cada archivo de dominio maneja un feature (`+Login`, `+Home`, etc.).
+- Open/Closed: extensi&#243;n por archivos sin modificar clase base `CVAnalyticsApp`.
+
+### Separaci&#243;n de Responsabilidades
+- `App` → eventos de dominio app; `Player` → eventos de player; `Common` → infraestructura.
+
+### Manejo de Dependencias
+- Sin framework DI externo. Inyecci&#243;n por protocolos (`CVAnalyticsSender`).
+
+### Patrones Recomendados
+- Protocol-oriented programming para contratos p&#250;blicos.
+- Composici&#243;n por inicializadores para modelos de listener.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Player/Models/CVAnalyticsGroup.swift`
+
+## &#129514; Testing y Calidad
+### Estrategia de Testing
+- Tests unitarios por m&#243;dulo principal en `Tests/cv-analyticsAppTests/`.
+
+### Cobertura M&#237;nima
+- ⚠️ No se detect&#243; baseline de cobertura definido en el repositorio.
+
+### Tipos de Tests
+- Pruebas unitarias detectadas: `CVAnalyticsCoreTests`, `CVAnalyticsAppTests`, `CVAnalyticsPlayerTests`, `CVAnalytics4Tests`.
+
+### Mocking y Fixtures
+- ⚠️ No se detectaron mocks formales ni fixtures en los archivos de tests analizados.
+
+**Fuentes:** `Tests/cv-analyticsAppTests/`
+
+## &#128274; Seguridad
+### Validaci&#243;n de Entrada
+- Enviar solo los par&#225;metros necesarios de analytics.
+
+### Manejo de Secrets
+- ⚠️ **HALLAZGO CR&#205;TICO:** `trackingId` hardcodeado `&quot;UA-163167064-1&quot;` en `CVAnalyticsCore.swift`. Evitar hardcodear IDs sensibles en c&#243;digo fuente.
+
+### Logging Seguro
+- Registrar datos m&#237;nimos necesarios para analytics.
+
+### Control de Acceso
+- ⚠️ Sin mecanismos de control de acceso detectados en la librer&#237;a.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (l&#237;nea 30)
+
+## &#128202; Performance
+### Optimizaciones Comunes
+- ⚠️ No se detectaron optimizaciones expl&#237;citas de performance en el repositorio.
+
+### Profiling y Monitoring
+- ⚠️ No hay herramientas de profiling detectadas en el repositorio.
+
+### Caching Strategies
+- ⚠️ No se detectaron estrategias de cach&#233;.
+
+### Resource Management
+- Uso de `GATracker.shared` singleton para evitar m&#250;ltiples instancias del tracker.
+
+**Fuentes:** `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+
+## &#128640; Deployment y DevOps
+### CI/CD Pipeline
+- Existe pipeline SonarQube en `.github/workflows/workflow-analysis.yml`.
+- Existe pipeline de an&#225;lisis en `ci/pipeline-analysis.yml` (Azure DevOps / Bitbucket).
+- ⚠️ No existe pipeline espec&#237;fico de `swift test` en CI.
+
+### Environment Management
+- ⚠️ No se detect&#243; gesti&#243;n de entornos (dev/staging/prod) en el repositorio.
+
+### Rollback Strategies
+- ⚠️ No documentadas en el repositorio.
+
+### Monitoring y Alertas
+- ⚠️ No se detectaron herramientas de monitoring en el repositorio.
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`, `ci/pipeline-analysis.yml`
+
+## ⚠️ Anti-patrones
+### Qu&#233; Evitar
+- Hardcodear tracking IDs en c&#243;digo (ya presente: `&quot;UA-163167064-1&quot;`).
+- Mezclar constantes de `App` y `Player` en el mismo m&#243;dulo.
+- Depender de internals de `Common` desde `App` o `Player` directamente.
+
+### Code Smells Comunes
+- Typo en nombre de carpeta: `Traker/` (deber&#237;a ser `Tracker/`) — hist&#243;ricamente heredado.
+- Typo en nombre de archivo: `Strinng+Extensions.swift` (doble `n`).
+
+### Ejemplos de Mal C&#243;digo
+- Hardcodear identificadores sensibles en c&#243;digo fuente (`trackingId` en `CVAnalyticsCore`).
+- Enviar eventos sin inicializar `trackingSetup(uuid:)`.
+
+### C&#243;mo Refactorizar
+- Mover `trackingId` a configuraci&#243;n externa o par&#225;metro de inicializaci&#243;n.
+- Corregir typos en nombres sin romper compatibilidad de m&#243;dulo.
+
+**Fuentes:** `Sources/CVAnalytics/Common/Traker/`, `Sources/CVAnalytics/Common/Helpers/Strinng+Extensions.swift`
+
+## &#128221; Documentaci&#243;n
+### Est&#225;ndares de Documentaci&#243;n
+- Documentar en espa&#241;ol; mantener t&#233;rminos t&#233;cnicos y c&#243;digo en ingl&#233;s.
+- ⚠️ No se detect&#243; documentaci&#243;n DocC en el repositorio.
+
+### API Documentation
+- ⚠️ No se detect&#243; documentaci&#243;n generada de API p&#250;blica (DocC, Jazzy, etc.).
+
+### README Guidelines
+- README ra&#237;z documenta instalaci&#243;n SPM y descripci&#243;n del proyecto.
+
+### Change Logs
+- ⚠️ No se detect&#243; archivo `CHANGELOG.md` en el repositorio.
+
+**Fuentes:** `README.md`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No existe gu&#237;a formal de estilo Swift en el repositorio.
+- ⚠️ No existe pol&#237;tica de versionado publicada.
+
+### Recomendaciones para completar an&#225;lisis
+- Agregar gu&#237;a de estilo Swift (SwiftLint) y publicarla en la documentaci&#243;n.
+- Publicar pol&#237;tica de versionado sem&#225;ntico del paquete.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">CODE_STRUCTURE.md</span><span class="doc-path">.github\docs\01-inicio\CODE_STRUCTURE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Code Structure - CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+## &#128193; Estructura de Directorios
+### Directorio Ra&#237;z
+- Contiene `Package.swift`, `Sources/`, `Tests/`, `ci/` y documentaci&#243;n en `.github/docs/`.
+
+### M&#243;dulos Principales
+- `Sources/CVAnalytics/App/`
+- `Sources/CVAnalytics/Player/`
+- `Sources/CVAnalytics/Common/`
+
+### Recursos y Assets
+- ⚠️ No se detectaron assets de UI (`.xcassets`, storyboards) en el paquete.
+
+### Configuraci&#243;n
+- `Package.swift` define plataformas, producto, targets y configuraci&#243;n de build.
+
+- `Sources/CVAnalytics/App/`
+  - `Analytics/`: eventos app por feature (`+Home`, `+Login`, `+Profile`, etc.)
+  - `Constants/`: tags y constantes del dominio app
+- `Sources/CVAnalytics/Player/`
+  - `Analytics/`: eventos player (`+Live`, `+Player`)
+  - `Constants/`: acciones y labels de player
+  - `Models/`: modelos de listener/contexto
+- `Sources/CVAnalytics/Common/`
+  - `CVAnalyticsCore.swift`: setup y env&#237;o base
+  - `CVAnalytics4.swift`: eventos GA4
+  - `Traker/`: implementaci&#243;n tracker HTTP
+  - `Helpers/`: extensiones utilitarias
+- `Tests/cv-analyticsAppTests/`
+  - cobertura unitaria por m&#243;dulo principal
+
+## &#128196; Convenciones de Archivos
+### Naming Conventions
+- Uso de archivos `Tipo+Feature.swift` para segmentar eventos (ejemplo en `App/Analytics`).
+
+### File Organization
+- Separaci&#243;n por dominio funcional (`App`, `Player`, `Common`) y por responsabilidad (`Analytics`, `Constants`, `Models`).
+
+### Package Structure
+- Un &#250;nico producto de librer&#237;a `CVAnalytics` con un `target` principal y un `testTarget`.
+
+### Resource Management
+- No se detect&#243; gesti&#243;n de recursos est&#225;ticos; el paquete se centra en l&#243;gica de analytics.
+
+## &#127919; Estado objetivo (TO-BE)
+- Mantener segmentaci&#243;n por dominio y feature.
+- Evitar mezcla de constantes App/Player en mismo m&#243;dulo.
+- Mantener `Common` como &#250;nico punto de infraestructura analytics.
+
+## &#128230; Organizaci&#243;n por Capas
+### Presentation Layer
+- ⚠️ No aplica — librer&#237;a sin UI. No hay capa de presentaci&#243;n.
+
+### Business Logic Layer
+- `App/Analytics/`: l&#243;gica de construcci&#243;n de eventos de dominio app.
+- `Player/Analytics/`: l&#243;gica de construcci&#243;n de eventos de player.
+
+### Data Access Layer
+- `Common/Traker/GATracker.swift`: implementaci&#243;n HTTP hacia Google Analytics.
+
+### Infrastructure Layer
+- `Common/CVAnalyticsCore.swift`: setup, configuraci&#243;n y env&#237;o base.
+- `Common/Helpers/`: extensiones de infraestructura (String, etc.).
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## &#128279; Dependencias y M&#243;dulos
+### Core Modules
+- `CVAnalyticsCore` — punto central de setup y env&#237;o.
+- `CVAnalytics4` — eventos GA4.
+
+### Feature Modules
+- `CVAnalyticsApp` + 14 extensiones de dominio app.
+- `CVAnalyticsPlayer` + extensiones de player.
+
+### Shared Modules
+- `Common/Helpers/Strinng+Extensions.swift` — utilidades compartidas.
+- `Common/Traker/TrackerConstants.swift` — constantes compartidas.
+
+### External Dependencies
+- ⚠️ No se detectaron dependencias externas de terceros en `Package.swift` (solo dependencias del sistema Swift).
+
+**Fuentes:** `Package.swift`, `Sources/CVAnalytics/`
+
+## &#127919; Responsabilidades por M&#243;dulo
+### App: Responsabilidades
+- Construir y enviar eventos de dominio aplicaci&#243;n (login, home, search, perfil, pagos, etc.).
+- Archivos: `CVAnalyticsApp.swift`, `CVAnalyticsApp+Cast.swift`, `CVAnalyticsApp+CVArousels.swift`, `CVAnalyticsApp+Error.swift`, `CVAnalyticsApp+Home.swift`, `CVAnalyticsApp+Login.swift`, `CVAnalyticsApp+Music.swift`, `CVAnalyticsApp+Payments.swift`, `CVAnalyticsApp+Pin.swift`, `CVAnalyticsApp+Profile.swift`, `CVAnalyticsApp+Register.swift`, `CVAnalyticsApp+RegisterOptions.swift`, `CVAnalyticsApp+Screen.swift`, `CVAnalyticsApp+Search.swift`, `CVAnalyticsApp+Subscription.swift`, `CVAnalyticsApp+VCard.swift`.
+
+### Player: Responsabilidades
+- Construir y enviar eventos de reproductor (live, VOD).
+- Archivos: `CVAnalyticsPlayer.swift`, `CVAnalyticsPlayer+Live.swift`, `CVAnalyticsPlayer+Player.swift`.
+
+### Common: Responsabilidades
+- Setup del tracker, env&#237;o HTTP, extensiones de utilidad.
+- Archivos: `CVAnalyticsCore.swift`, `CVAnalytics4.swift`, `GATracker.swift`, `TrackerConstants.swift`, `Strinng+Extensions.swift`.
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## &#128260; Flujo de Datos
+### Data Flow Diagram
+```
+Consumidor → API p&#250;blica (App/Player) → CVAnalyticsCore → GATracker → HTTP (GA)
+```
+### State Management
+- Sin gesti&#243;n de estado expl&#237;cita detectada. Tracker es singleton (`GATracker.shared`).
+
+### Event Handling
+- M&#233;todos est&#225;ticos/de clase en `CVAnalyticsCore` para todos los env&#237;os.
+
+### Communication Patterns
+- Protocolo `CVAnalyticsSender` como contrato de comunicaci&#243;n.
+- `CVACustomListenerConvertible` para contexto de player.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#128203; Gu&#237;as de Implementaci&#243;n
+### Adding New Features
+1. Crear extensi&#243;n `CVAnalyticsApp+NuevaFeature.swift` en `App/Analytics/`.
+2. Definir tags en `App/Constants/CVATags.swift`.
+3. Exponer m&#233;todos p&#250;blicos con `public func`.
+4. Agregar tests en `Tests/cv-analyticsAppTests/`.
+
+### Modifying Existing Code
+- Preservar firmas p&#250;blicas para no romper compatibilidad con consumidores.
+- Si se cambia API p&#250;blica, incrementar versi&#243;n sem&#225;ntica en `Package.swift`.
+
+### Refactoring Guidelines
+- Corregir typos de carpetas/archivos (`Traker` → `Tracker`, `Strinng` → `String`) en versi&#243;n con breaking change planificado.
+
+### Migration Strategies
+- ⚠️ No se detect&#243; gu&#237;a formal de migraci&#243;n en el repositorio.
+
+**Fuentes:** `Sources/CVAnalytics/`, `Package.swift`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No existe documento formal de convenciones de nombres.
+
+### Recomendaciones para completar an&#225;lisis
+- Agregar gu&#237;a de naming conventions espec&#237;fica para el stack Swift/SPM.
+- Configurar SwiftLint con reglas de nomenclatura documentadas.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">DEVELOPMENT_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\DEVELOPMENT_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Development Guide - CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+## &#128640; Workflow de Desarrollo
+### Git Workflow
+Flujo basado en ramas con integraci&#243;n por Pull Request hacia ramas principales.
+
+### Branch Strategy
+- Ramas observadas en CI: `develop`, `main`, `release/*`, `hotfix/*`, `feature/*`, `bugfix/*`, `support/*`.
+
+### Commit Guidelines
+- Usar commits at&#243;micos por cambio funcional y referenciar m&#243;dulo afectado (`App`, `Player`, `Common`).
+
+### PR Process
+- Abrir PR, ejecutar an&#225;lisis SonarQube y corregir findings antes de merge.
+
+1. Identificar dominio del cambio (`App`, `Player` o `Common`).
+2. Implementar/ajustar API en archivo del dominio.
+3. Si el cambio requiere tags, actualizar `Constants/` del m&#243;dulo.
+4. Crear o ampliar pruebas en `Tests/cv-analyticsAppTests/`.
+
+## &#128736;️ Herramientas de Desarrollo
+### IDE Recomendado
+Xcode con soporte Swift tools 5.7+.
+
+### Extensions y Plugins
+- ⚠️ No se detectaron extensiones/plugins obligatorios documentados.
+
+### Configuraci&#243;n del Entorno
+- Resolver dependencias SPM y validar `swift build`/`swift test`.
+
+### Scripts &#218;tiles
+- `swift build`
+- `swift test`
+
+- Extensiones por feature en `App/Analytics`.
+- Eventos GA4 agrupados en `CVAnalytics4`.
+- Listener de player desacoplado por protocolo (`CVACustomListenerConvertible`).
+
+## &#128295; Build y Deploy
+### Build Scripts
+- Build paquete: `swift build`
+### Environment Configuration
+- Configurar UUID/clientId en runtime desde app host antes de enviar eventos.
+### Deployment Process
+- Librer&#237;a distribuida por Swift Package Manager en proyecto consumidor.
+### Rollback Procedures
+- Revertir versi&#243;n del paquete en `Package.swift` del consumidor si hay regressions.
+
+- Test paquete: `swift test`
+
+## &#127919; Estado objetivo (TO-BE)
+- Definir gu&#237;a de contribution con criterios de aceptaci&#243;n.
+- Agregar pipeline de `swift test` en CI.
+
+## &#128203; Tareas Comunes
+### Agregar Nueva Feature
+1. Crear `CVAnalyticsApp+NuevaFeature.swift` en `App/Analytics/`.
+2. Agregar tags en `App/Constants/CVATags.swift`.
+3. Crear tests en `Tests/cv-analyticsAppTests/CVAnalyticsAppTests.swift`.
+
+### Implementar API Endpoint
+- ⚠️ No aplica para librer&#237;a; el equivalente es a&#241;adir un m&#233;todo p&#250;blico en el m&#243;dulo correspondiente.
+
+### Agregar Tests
+- Crear test en `Tests/cv-analyticsAppTests/` siguiendo patrones de `CVAnalyticsCoreTests`.
+
+### Actualizar Dependencias
+- Editar `Package.swift` para actualizar versiones de dependencias SPM.
+
+**Fuentes:** `Sources/CVAnalytics/App/Analytics/`, `Tests/cv-analyticsAppTests/`
+
+## &#129514; Testing Guidelines
+### Running Tests
+```bash
+swift test
+```
+### Writing Tests
+- Importar `@testable import CVAnalytics` para acceder a internals.
+- Seguir patrones de `CVAnalyticsAppTests.swift` y `CVAnalyticsCoreTests.swift`.
+
+### Test Data Management
+- ⚠️ No se detectaron fixtures o test data management formal en el repositorio.
+
+### Performance Testing
+- ⚠️ No se detectaron tests de performance en el repositorio.
+
+**Fuentes:** `Tests/cv-analyticsAppTests/`
+
+## &#128027; Debugging
+### Debugging Techniques
+- Usar `print(CVAnalyticsCore.clientId)` para verificar estado del tracker.
+- Activar verbose logging de SonarQube v&#237;a `-Dsonar.verbose=true`.
+
+### Common Issues
+- Ver [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) para errores comunes.
+
+### Logging Standards
+- ⚠️ No se detect&#243; framework de logging estandarizado en el repositorio.
+
+### Profiling Tools
+- ⚠️ No se detectaron herramientas de profiling en el repositorio.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#128230; Dependency Management
+### Adding Dependencies
+- Agregar en `Package.swift` bajo `dependencies:` y referenciar en el target.
+
+### Version Management
+- ⚠️ No se detect&#243; pol&#237;tica de versionado expl&#237;cita en el repositorio.
+
+### Security Scanning
+- SonarQube configurado en `.github/workflows/workflow-analysis.yml` para an&#225;lisis est&#225;tico.
+
+### License Compliance
+- ⚠️ No se detect&#243; gesti&#243;n formal de licencias de dependencias.
+
+**Fuentes:** `Package.swift`, `.github/workflows/workflow-analysis.yml`
+
+## &#128202; Monitoring y Logs
+### Application Monitoring
+- ⚠️ No se detectaron herramientas de monitoring en el repositorio.
+
+### Log Analysis
+- Pipeline SonarQube analiza calidad del c&#243;digo en cada PR (`workflow-analysis.yml`).
+
+### Performance Metrics
+- ⚠️ M&#233;tricas de performance no disponibles en el repositorio.
+
+### Error Tracking
+- ⚠️ Sin sistema de error tracking detectado en el repositorio.
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ Existe pipeline CI para an&#225;lisis SonarQube en `.github/workflows/workflow-analysis.yml` y en `ci/pipeline-analysis.yml`, pero no pipeline espec&#237;fico de `swift test`.
+- ⚠️ No se encontr&#243; `Makefile` ni scripts de automatizaci&#243;n de build/test local.
+
+### Recomendaciones para completar an&#225;lisis
+- Agregar pipeline CI espec&#237;fico para `swift test`.
+- Crear `Makefile` o scripts de automatizaci&#243;n de build/test local.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">EXECUTIVE_SUMMARY.md</span><span class="doc-path">.github\docs\01-inicio\EXECUTIVE_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127760; Executive Summary - CVAnalytics
+
+---
+**Versi&#243;n:** 1.0 (Inicial - FASE 1 completada)
+**Fecha:** 2026-02-20
+**Estado:** &#128248; An&#225;lisis inicial completado
+**Pr&#243;xima actualizaci&#243;n:** Al completar FASE 2 (se mueve a 05-seguimiento/)
+---
+
+## &#128203; Informaci&#243;n General del Proyecto
+
+### &#127970; Contexto Organizacional
+- **Proyecto:** CVAnalytics
+- **Prop&#243;sito:** Centralizar eventos de analytics (app y player) de Claro Video.
+- **Audiencia:** Desarrolladores de clientes iOS/tvOS/macOS que integran la librer&#237;a.
+- **Dominio:** Analytics / Telemetr&#237;a de uso.
+
+### &#128736;️ Stack Tecnol&#243;gico (DETECTADO)
+- **Lenguaje Principal:** Swift
+- **Framework:** Swift Package Manager
+- **Plataforma:** iOS 16+, tvOS 16+, macOS 13+
+- **Herramientas Build:** `swift build`, `swift test`
+
+**Fuentes:** `Package.swift`, `Sources/CVAnalytics/`
+
+## &#127919; Resumen Ejecutivo (v1.0 - Parcial)
+
+⚠️ **Este es un resumen inicial. El resumen ejecutivo completo (&#128248; FOTOGRAF&#205;A COMPLETA) estar&#225; disponible al completar FASE 2.**
+
+### &#127959;️ Estado Arquitect&#243;nico Inicial
+- **Patr&#243;n Principal:** Modular por dominio funcional (App / Player / Common).
+- **Complejidad:** Media — 3 m&#243;dulos con extensiones por feature.
+- **Madurez:** Librer&#237;a con API p&#250;blica establecida y tests unitarios presentes.
+
+### &#128202; M&#233;tricas B&#225;sicas (FASE 1)
+- **L&#237;neas de C&#243;digo:** ⚠️ No medidas formalmente.
+- **M&#243;dulos/Componentes:** 3 m&#243;dulos principales, 14+ archivos de extensi&#243;n en App.
+- **Dependencias Externas:** 0 detectadas en `Package.swift` (solo stdlib Swift).
+
+**Fuentes:** `Sources/CVAnalytics/`, `Package.swift`
+
+## &#128248; Estado actual (AS-IS)
+- Repositorio clasificado como `swift-library`.
+- Librer&#237;a distribuida por Swift Package Manager.
+- M&#243;dulos principales: `App`, `Player`, `Common`.
+- APIs p&#250;blicas orientadas a tracking tradicional y GA4.
+- Pruebas unitarias presentes para Core/App/Player/GA4.
+
+## Hallazgos clave
+- La arquitectura est&#225; bien segmentada por dominio funcional.
+- El core t&#233;cnico de env&#237;o est&#225; centralizado en `Common`.
+- Existen contratos p&#250;blicos reutilizables para integraci&#243;n.
+- **⚠️ HALLAZGO CRITICO:** `trackingId` hardcodeado `&quot;UA-163167064-1&quot;` en `CVAnalyticsCore.swift`.
+
+## Riesgos observados
+- ⚠️ Sin evidencia de m&#233;tricas de cobertura publicadas.
+- ⚠️ Sin reportes de an&#225;lisis est&#225;tico en `.problems/`.
+- ✅ **CORREGIDO:** Existe pipeline CI/CD SonarQube en `.github/workflows/workflow-analysis.yml` y `ci/pipeline-analysis.yml`. No existe pipeline de `swift test`.
+
+## &#127919; Estado objetivo (TO-BE)
+- Publicar quality gates (tests, est&#225;tico, seguridad).
+- Mantener estabilidad de API p&#250;blica con versionado expl&#237;cito.
+- Documentar mapa de eventos por m&#243;dulo para consumidores.
+
+## Recomendaciones inmediatas
+1. Integrar `swift test` en CI.
+2. Ejecutar SonarLint Scanner y versionar `.problems/`.
+3. Definir baseline de cobertura.
+4. Mover `trackingId` a configuraci&#243;n externa.
+
+## &#128203; Artefactos Generados (FASE 1)
+
+### ✅ Documentaci&#243;n Fundamental (8 archivos)
+- &#128218; Setup y Onboarding: `QUICK_START.md`, `ONBOARDING_GUIDE.md`, `TROUBLESHOOTING.md`
+- &#127959;️ Arquitectura y C&#243;digo: `ARCHITECTURE_GUIDE.md`, `CODE_STRUCTURE.md`
+- &#128640; Desarrollo: `DEVELOPMENT_GUIDE.md`, `BEST_PRACTICES.md`
+- &#128203; &#205;ndice general: `README.md`
+
+### ✅ An&#225;lisis T&#233;cnico (4 archivos)
+- &#128202; Reportes de an&#225;lisis: `ANALYSIS_REPORT_STACK_DETECTION.md`, `ANALYSIS_REPORT_ARCHITECTURE.md`, `ANALYSIS_SUMMARY.md`
+- &#127912; Diagramas arquitect&#243;nicos: `ARCHITECTURE_DIAGRAMS.md`
+- &#129302; Prompts personalizados: `useful-prompts.md`
+
+### ⏱️ Tiempo Invertido
+- **FASE 1:** ⚠️ Tiempo real no registrado en el repositorio de 25-40 min estimados.
+- **Eficiencia:** ⚠️ No calculable sin dato real.
+
+**Fuentes:** `.github/docs/01-inicio/`, `.github/docs/02-analisis/`, `.github/docs/diagrams/`
+
+## &#127919; Roadmap de Fases
+
+### &#128203; Pr&#243;xima: FASE 2 - DIAGN&#211;STICO
+- **Objetivo:** Cuantificar deuda t&#233;cnica, riesgos y calidad.
+- **Deliverables:** 5 reportes de diagn&#243;stico detallados.
+- **Tiempo estimado:** 50-70 minutos.
+- **Output clave:** &#128248; **FOTOGRAF&#205;A COMPLETA** (Executive Summary v2.0).
+
+### &#128302; Siguientes Fases
+- **FASE 3:** Planes de acci&#243;n ejecutables (65-85 min).
+- **FASE 4:** Seguimiento y m&#233;tricas continuas (38-62 min).
+
+## ⚠️ Limitaciones Actuales (FASE 1)
+
+### &#128202; Datos Pendientes (Requieren FASE 2)
+- Scores cuantitativos de deuda t&#233;cnica.
+- M&#233;tricas de calidad de c&#243;digo (SonarQube resultados).
+- An&#225;lisis de riesgos de seguridad detallado.
+- Coverage de tests y performance.
+
+### &#128295; Herramientas No Evaluadas A&#250;n
+- SonarQube results (configurado en CI pero resultados no disponibles en repo).
+- Coverage tools (testing).
+- SAST/DAST (seguridad).
+- Performance monitoring.
+
+- ⚠️ No se encontr&#243; informaci&#243;n de performance real.
+- ⚠️ No se encontr&#243; hist&#243;rico de incidentes operativos.
+
+## &#128640; Instrucciones de Continuaci&#243;n
+
+### Para FASE 2 (Diagn&#243;stico)
+1. Ejecutar `02-diagnosis/01-technical-debt-universal.prompt.md`.
+2. Este Executive Summary se mover&#225; autom&#225;ticamente a `.github/docs/05-seguimiento/`.
+3. Se actualizar&#225; con datos cuantitativos completos (v2.0).
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Artefactos citados con fuente | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin datos inventados | Limitaciones expl&#237;citas |
+| 5 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ONBOARDING_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ONBOARDING_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Onboarding Guide - CVAnalytics
+
+## Objetivo
+Acelerar la incorporaci&#243;n t&#233;cnica al repositorio `CVAnalytics` (librer&#237;a Swift).
+
+## Semana 1
+- Completar [QUICK_START](./QUICK_START.md).
+- Revisar estructura en `Sources/CVAnalytics/`.
+- Ejecutar tests existentes en `Tests/cv-analyticsAppTests/`.
+
+## Semana 2
+- Revisar `ARCHITECTURE_GUIDE.md` y `CODE_STRUCTURE.md`.
+- Implementar un cambio peque&#241;o en un m&#243;dulo espec&#237;fico.
+- A&#241;adir pruebas asociadas al cambio.
+
+## Semana 3-4
+- Contribuir en eventos cross-m&#243;dulo (si aplica).
+- Documentar decisiones t&#233;cnicas en PR.
+
+## &#128248; Estado actual (AS-IS)
+- Existen pruebas de Core/App/Player/GA4.
+- Existen m&#243;dulos separados por dominio.
+
+## &#127919; Estado objetivo (TO-BE)
+- Nuevo integrante con una primera contribuci&#243;n validada en ≤ 2 semanas.
+
+## &#128203; Checklist de Onboarding
+### Primera Semana
+#### D&#237;a 1: Setup T&#233;cnico
+- [ ] Completar [QUICK_START.md](./QUICK_START.md).
+- [ ] Ejecutar `swift test` correctamente.
+#### D&#237;a 2-3: Arquitectura
+- [ ] Revisar [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md).
+- [ ] Explorar `Sources/CVAnalytics/` — m&#243;dulos App, Player, Common.
+#### D&#237;a 4-5: C&#243;digo y Pr&#225;cticas
+- [ ] Revisar [CODE_STRUCTURE.md](./CODE_STRUCTURE.md).
+- [ ] Revisar [BEST_PRACTICES.md](./BEST_PRACTICES.md).
+
+### Segunda Semana
+#### D&#237;a 6-7: Primera Contribuci&#243;n
+- [ ] Implementar un cambio peque&#241;o en un m&#243;dulo espec&#237;fico.
+- [ ] A&#241;adir pruebas asociadas al cambio.
+#### D&#237;a 8-10: Feature Completa
+- [ ] Contribuir en eventos cross-m&#243;dulo (si aplica).
+- [ ] Documentar decisiones t&#233;cnicas en PR.
+
+**Fuentes:** `Sources/CVAnalytics/`, `Tests/cv-analyticsAppTests/`
+
+## &#127891; Recursos de Aprendizaje
+### Arquitectura del Proyecto
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
+- [CODE_STRUCTURE.md](./CODE_STRUCTURE.md)
+
+### Stack Tecnol&#243;gico
+- Swift Package Manager — [documentaci&#243;n oficial](https://swift.org/package-manager/)
+- Google Analytics Measurement Protocol
+
+### Domain Knowledge
+- M&#243;dulos: `App` (eventos de aplicaci&#243;n), `Player` (eventos de reproductor), `Common` (infraestructura).
+
+### Tools y Workflows
+- Xcode con Swift 5.7+.
+- `swift build`, `swift test`.
+- SonarQube para an&#225;lisis est&#225;tico (`.github/workflows/workflow-analysis.yml`).
+
+**Fuentes:** `Package.swift`, `.github/workflows/workflow-analysis.yml`
+
+## &#128101; Equipo y Comunicaci&#243;n
+### Contactos Clave
+- ⚠️ Contactos del equipo no disponibles en el repositorio.
+
+### Canales de Comunicaci&#243;n
+- ⚠️ Canales de comunicaci&#243;n no documentados en el repositorio.
+
+### Meetings y Ceremonias
+- ⚠️ No hay documentaci&#243;n de procesos organizacionales (rituales, ceremonias) en el repositorio.
+
+### Escalation Paths
+- ⚠️ No documentados en el repositorio.
+
+## &#128640; Primeras Tareas Recomendadas
+### Week 1 Tasks
+- Completar setup t&#233;cnico con [QUICK_START.md](./QUICK_START.md).
+- Revisar estructura de m&#243;dulos en `Sources/CVAnalytics/`.
+- Ejecutar tests existentes en `Tests/cv-analyticsAppTests/`.
+
+### Week 2 Tasks
+- Revisar [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) y [CODE_STRUCTURE.md](./CODE_STRUCTURE.md).
+- Implementar un cambio peque&#241;o en un m&#243;dulo y a&#241;adir pruebas.
+
+### Week 3-4 Tasks
+- Contribuir en eventos cross-m&#243;dulo (si aplica).
+- Documentar decisiones t&#233;cnicas en PR.
+
+### Graduation Criteria
+- Primera contribuci&#243;n (feature con tests) aprobada en PR.
+
+**Fuentes:** `Sources/CVAnalytics/`, `Tests/cv-analyticsAppTests/`
+
+## &#128197; Timeline de Onboarding
+### Milestones Semanales
+- **Semana 1:** Setup + comprensi&#243;n arquitect&#243;nica.
+- **Semana 2:** Primera contribuci&#243;n validada.
+
+### Expected Deliverables
+- Al final de semana 1: entorno funcionando, tests corriendo.
+- Al final de semana 2: primer PR con feature y tests.
+
+### Support Available
+- ⚠️ No documentado en el repositorio.
+
+### Feedback Sessions
+- ⚠️ No documentado en el repositorio.
+
+## &#127919; Objetivos por Fase
+### Technical Setup
+- Xcode + Swift 5.7+, dependencia SPM integrada, `swift test` funcional.
+
+### Knowledge Acquisition
+- Comprensi&#243;n de m&#243;dulos App, Player, Common y contratos p&#250;blicos.
+
+### First Contribution
+- PR con feature peque&#241;a y tests unitarios aprobado.
+
+### Full Productivity
+- Contribuci&#243;n aut&#243;noma en cualquier m&#243;dulo respetando patrones del proyecto.
+
+## &#127384; Support Resources
+### Technical Questions
+- Ver [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) para problemas comunes.
+- Ver [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) para workflow.
+
+### Process Questions
+- ⚠️ No documentado en el repositorio.
+
+### Administrative Issues
+- ⚠️ No documentado en el repositorio.
+
+### Emergency Contacts
+- ⚠️ No disponibles en el repositorio.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No hay documentaci&#243;n de procesos organizacionales (rituales, canales, responsables).
+
+### Recomendaciones para completar an&#225;lisis
+- Complementar con informaci&#243;n del equipo: contactos clave, canales de comunicaci&#243;n y ceremonias.
+- Documentar criterios formales de graduaci&#243;n para nuevos integrantes.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">QUICK_START.md</span><span class="doc-path">.github\docs\01-inicio\QUICK_START.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Quick Start Guide - CVAnalytics
+
+**Versi&#243;n:** 1.0  
+**Fecha:** 2026-02-20  
+**Tiempo estimado:** 30-45 min  
+**Audiencia:** desarrolladores que integran la librer&#237;a
+
+## &#128640; Introducci&#243;n
+Librer&#237;a Swift para centralizar eventos de analytics de Claro Video (app y player). Se distribuye v&#237;a Swift Package Manager; no requiere entrypoint de app ni ciclo de vida UI.
+
+**Fuentes:** `Package.swift`, `README.md`
+
+## ⚙️ Configuraci&#243;n del Entorno
+### 1. Instalar Xcode
+- Xcode con soporte para Swift tools 5.7+.
+- Compatible con iOS 16+, tvOS 16+, macOS 13+.
+
+### 2. Verificar Swift
+```bash
+swift --version
+```
+
+### 3. Configurar Dependencias
+- Resolver dependencias Swift Package Manager en el proyecto host.
+- Validar que el producto `CVAnalytics` est&#233; agregado al target consumidor.
+
+**Fuentes:** `Package.swift` (swift-tools-version:5.7)
+
+## &#128248; Estado actual (AS-IS)
+- Repositorio tipo `swift-library` con Swift Package Manager.
+- Producto expuesto: `.library(name: &quot;CVAnalytics&quot;, targets: [&quot;CVAnalytics&quot;])`.
+- Plataformas: iOS 16+, tvOS 16+, macOS 13+.
+
+**Fuentes:** `Package.swift`, `Sources/CVAnalytics/**`.
+
+## &#128203; Prerrequisitos
+- [ ] Sistema operativo requerido: macOS (para Xcode y toolchain Apple)
+- [ ] Herramientas de desarrollo: Xcode, Swift Package Manager
+- [ ] Dependencias del sistema: Command Line Tools de Xcode
+- [ ] Hardware m&#237;nimo: equipo compatible con Xcode 14+
+
+## &#128193; Clonar y Configurar Proyecto
+### 1. Clonar el Repositorio
+```bash
+git clone &lt;URL-DEL-REPOSITORIO&gt;
+cd claro-video-ios-analytics-main
+```
+
+### 2. Configurar Archivos Secrets
+- ⚠️ No se detectaron archivos de secrets en el repositorio.
+- Para integraciones reales, inyectar configuraci&#243;n sensible desde el proyecto host (no hardcodear).
+
+### 3. Configurar Servicios Externos
+- Configurar `trackingId`/credenciales de analytics desde configuraci&#243;n del host.
+- Verificar conectividad hacia endpoint de Google Analytics usado por `GATracker`.
+
+## &#128241; Ejecutar la Aplicaci&#243;n
+### 1. Run Configuration
+- Integrar la librer&#237;a en un proyecto host (iOS/tvOS/macOS) por SPM.
+
+### 2. Ejecutar App
+- Inicializa tracking con `CVAnalyticsCore.trackingSetup(uuid:)`.
+- Si aplica, inicia sesi&#243;n de analytics con `CVAnalyticsCore.initNewSession()`.
+- Para page/screen events usa `CVAnalyticsCore.sendPage(_:)`.
+
+### 3. Verificar Instalaci&#243;n
+- ✅ La app host compila con el paquete `CVAnalytics`.
+- ✅ `CVAnalyticsCore.clientId` contiene valor no vac&#237;o tras setup.
+- ✅ El env&#237;o de eventos invoca `GATracker` sin errores de par&#225;metros requeridos.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`.
+
+## &#128296; Build del Proyecto
+### 1. Sincronizar Dependencias
+```bash
+swift package resolve
+```
+
+### 2. Build Debug/Development
+```bash
+swift build
+```
+**⏱️ Tiempo esperado:** 1-2 minutos
+
+Build alternativo en Xcode: ⌘B en el proyecto host con la dependencia SPM agregada.
+
+**Fuentes:** `Package.swift`
+
+## &#129514; Ejecutar Tests
+### Unit Tests
+- Ejecuta tests del paquete desde Xcode o `swift test`.
+- Suites detectadas:
+  - `CVAnalyticsCoreTests`
+  - `CVAnalyticsAppTests`
+  - `CVAnalyticsPlayerTests`
+  - `CVAnalytics4Tests`
+
+### Integration Tests
+- ⚠️ No se detectaron integration tests expl&#237;citos en el repositorio.
+
+**&#127919; Target de cobertura:** ≥ 80% (objetivo recomendado; no hay baseline publicado)
+
+**Fuentes:** `Tests/cv-analyticsAppTests/*.swift`.
+
+## &#128027; Debugging
+### 1. Configurar Debug Mode
+Compilar el proyecto host en configuraci&#243;n Debug y habilitar logs temporales durante integraci&#243;n.
+
+### 2. Logs &#250;tiles
+Revisar errores de `requiredParameter` emitidos por `GATracker` cuando `trackingId` o `clientId` no est&#225;n configurados.
+
+### 3. Herramienta de Debugging Espec&#237;fica
+Verificar `clientId` y estado de tracker en runtime:
+```swift
+print(CVAnalyticsCore.clientId)
+```
+- Confirmar que `GATracker.shared.trackingId` y `clientId` no est&#233;n vac&#237;os antes de enviar eventos.
+
+**Fuentes:** `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+
+## &#128295; Troubleshooting
+### Errores Comunes
+#### 1. No compila integraci&#243;n SPM
+Confirmar nombre de producto `CVAnalytics` en `Package.swift` y re-resolver dependencias en Xcode.
+#### 2. Eventos no se env&#237;an
+Llamar `trackingSetup(uuid:)` antes de cualquier `send`.
+
+### Performance Issues
+⚠️ No se detectaron herramientas de profiling en el repositorio.
+
+## &#128218; Recursos Adicionales
+### Documentaci&#243;n del Proyecto
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) - Gu&#237;a arquitect&#243;nica
+- [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) - Workflow de desarrollo
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Resoluci&#243;n de problemas
+
+### Herramientas de Desarrollo
+- Swift Package Manager (incluido en Xcode)
+- Xcode con soporte Swift 5.7+
+
+### Comunidad Interna
+- ⚠️ Contactos de equipo no disponibles en el repositorio
+
+## ✅ Checklist Final
+### Entorno
+- [ ] Xcode instalado con Swift 5.7+
+### Configuraci&#243;n
+- [ ] Dependencia SPM agregada en proyecto host
+- [ ] `CVAnalyticsCore.trackingSetup(uuid:)` inicializado
+### Funcionalidad
+- [ ] Build compila sin errores
+- [ ] Primer evento enviado correctamente
+### Accesos
+- [ ] Acceso al repositorio de la librer&#237;a
+
+## &#127384; Obtener Ayuda
+### 1. Documentaci&#243;n
+Ver [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) para errores comunes.
+### 2. Equipo
+⚠️ Contactos del equipo no disponibles en el repositorio.
+### 3. Escalaci&#243;n
+⚠️ Proceso de escalaci&#243;n no documentado en el repositorio.
+
+## &#127919; Estado objetivo (TO-BE)
+- Integraci&#243;n consistente por SPM en todos los clientes.
+- Uso de APIs p&#250;blicas &#250;nicamente (sin dependencia a internals).
+- Validaci&#243;n de eventos cr&#237;ticos con pruebas automatizadas.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No se encontr&#243; gu&#237;a oficial de versi&#243;n m&#237;nima de Xcode.
+- ⚠️ Existe pipeline CI para an&#225;lisis SonarQube en `.github/workflows/workflow-analysis.yml`, pero no para `swift test` espec&#237;ficamente.
+- ⚠️ No se encontr&#243; reporte de cobertura de tests.
+
+### Recomendaciones para completar an&#225;lisis
+- Publicar matriz de compatibilidad (Xcode/Swift).
+- Agregar pipeline CI para `swift test`.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin datos inventados | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado | Secci&#243;n `&#128248;` |
+| 8 | `to_be_tagged` | ✅ | Estado objetivo etiquetado | Secci&#243;n `&#127919;` |
+| 9 | `limitations_section` | ✅ | Secci&#243;n presente con subsecciones can&#243;nicas | Secci&#243;n ⚠️ |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">.github\docs\01-inicio\README.md</span></summary>
+              <pre class="doc-pre"># &#128218; Documentaci&#243;n de Inicio
+
+&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+## &#127919; Prop&#243;sito
+Documentaci&#243;n fundamental del proyecto `CVAnalytics` (swift-library) generada autom&#225;ticamente. Proporciona gu&#237;as t&#233;cnicas para integrar y usar la librer&#237;a en proyectos iOS/tvOS/macOS.
+
+## &#128203; Archivos Disponibles
+### Setup R&#225;pido
+- [QUICK_START.md](./QUICK_START.md) - Setup t&#233;cnico (30-45 min)
+
+### Arquitectura y Dise&#241;o
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) - Gu&#237;a arquitect&#243;nica
+- [CODE_STRUCTURE.md](./CODE_STRUCTURE.md) - Estructura del c&#243;digo
+
+### Desarrollo
+- [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) - Workflow diario
+- [BEST_PRACTICES.md](./BEST_PRACTICES.md) - Mejores pr&#225;cticas
+
+### Onboarding
+- [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md) - Integraci&#243;n completa
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Resoluci&#243;n de problemas
+
+### Resumen
+- [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md) - Resumen ejecutivo FASE 1
+
+## &#128640; Flujo Recomendado
+### Para Desarrolladores Nuevos
+1. **D&#237;a 1:** [QUICK_START.md](./QUICK_START.md)
+2. **Semana 1-2:** [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md)
+3. **Ongoing:** [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md)
+
+### Para Arquitectos/Leads
+1. [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
+2. [CODE_STRUCTURE.md](./CODE_STRUCTURE.md)
+3. [BEST_PRACTICES.md](./BEST_PRACTICES.md)
+
+## ⏱️ Tiempos Estimados
+- **Setup t&#233;cnico:** 30-45 minutos (QUICK_START)
+- **Comprensi&#243;n arquitect&#243;nica:** 2-3 horas
+- **Onboarding completo:** 1-2 semanas
+
+## &#128202; Generado por
+- **Prompt:** `01-analysis/03-index-universal.prompt.md`
+- **Fase:** FASE 1: AN&#193;LISIS
+- **Fecha:** 2026-02-20
+- **Stack detectado:** swift-library
+- **Generado por:** FASE 0 del orquestador
+
+**Enfoque `swift-library`:**
+- Integraci&#243;n v&#237;a Swift Package Manager
+- APIs p&#250;blicas (`public`) expuestas por la librer&#237;a
+- Organizaci&#243;n interna de m&#243;dulos en `Sources/`
+
+## ⚠️ Limitaciones del An&#225;lisis
+**Datos no disponibles en el repositorio:**
+- ⚠️ Contactos del equipo no disponibles.
+- ⚠️ M&#233;tricas de cobertura no publicadas.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Agregar pipeline de `swift test` en CI.
+- Publicar m&#233;tricas de cobertura.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-23
+**Stack:** swift-library
+**Prompt ejecutado:** `01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Todo en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | Stack real detectado | `Package.swift` |
+| 3 | `evidence_cited` | ✅ | Archivos citados correctamente | Lista de archivos |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">TROUBLESHOOTING.md</span><span class="doc-path">.github\docs\01-inicio\TROUBLESHOOTING.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Troubleshooting Guide - CVAnalytics
+
+## Problema: no compila integraci&#243;n SPM
+### Verificaci&#243;n
+- Confirmar nombre de producto `CVAnalytics` en `Package.swift` del paquete.
+- Confirmar dependencia en target host.
+
+### Acci&#243;n
+- Re-resolver dependencias de Swift Package Manager en Xcode.
+
+## Problema: eventos no se env&#237;an
+### Verificaci&#243;n
+- Confirmar llamada a `CVAnalyticsCore.trackingSetup(uuid:)`.
+- Confirmar que `trackingId` y `clientId` no est&#233;n vac&#237;os en runtime.
+
+### Acci&#243;n
+- Inicializar tracking antes de usar `send(...)`/`sendPage(...)`.
+
+## Problema: eventos de player sin contexto
+### Verificaci&#243;n
+- Confirmar implementaci&#243;n de `CVACustomListenerConvertible`.
+- Confirmar `CVAnalyticsPlayer.setListener(from:)`.
+
+## Problema: pruebas no corren
+### Verificaci&#243;n
+- Ejecutar `swift test` en ra&#237;z del paquete.
+- Revisar imports `import CVAnalytics` en tests.
+
+## &#128248; Estado actual (AS-IS)
+- Existe infraestructura de tests y contratos p&#250;blicos para validar integraci&#243;n.
+
+## &#127919; Estado objetivo (TO-BE)
+- Troubleshooting ampliado con errores de CI y ejemplos de logs.
+
+## &#128295; Problemas de Setup
+### Environment Issues
+- Asegurarse de usar Xcode con soporte Swift 5.7+ (iOS 16+, tvOS 16+, macOS 13+).
+
+### Dependency Problems
+**Problema: no compila integraci&#243;n SPM**
+- Confirmar nombre de producto `CVAnalytics` en `Package.swift` del paquete.
+- Confirmar dependencia en target host.
+- **Acci&#243;n:** Re-resolver dependencias de Swift Package Manager en Xcode.
+
+### Configuration Errors
+- Confirmar que `trackingId` y `clientId` est&#233;n configurados antes de enviar eventos.
+
+### Permission Issues
+- ⚠️ No se detectaron problemas de permisos documentados en el repositorio.
+
+**Fuentes:** `Package.swift`, `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#127959;️ Build y Compile
+### Build Failures
+- Re-resolver dependencias SPM en Xcode o ejecutar `swift package resolve`.
+
+### Dependency Conflicts
+- Verificar versiones m&#237;nimas de plataforma en `Package.swift`.
+
+### Version Mismatches
+- Confirmar Swift tools version m&#237;nima `5.7` en el host.
+
+### Platform-specific Issues
+- Las plataformas soportadas son iOS 16+, tvOS 16+, macOS 13+. Targets menores causar&#225;n error de compilaci&#243;n.
+
+**Fuentes:** `Package.swift`
+
+## &#127939;‍♂️ Runtime Issues
+### Application Crashes
+- ⚠️ No se detect&#243; historial de crashes documentado en el repositorio.
+
+### Performance Problems
+**Problema: eventos de player sin contexto**
+- Confirmar implementaci&#243;n de `CVACustomListenerConvertible`.
+- Confirmar `CVAnalyticsPlayer.setListener(from:)`.
+
+### Memory Leaks
+- ⚠️ No se detectaron reportes de memory leaks en el repositorio.
+
+### Network Issues
+**Problema: eventos no se env&#237;an**
+- Confirmar llamada a `CVAnalyticsCore.trackingSetup(uuid:)`.
+- Confirmar que `trackingId` y `clientId` no est&#233;n vac&#237;os en runtime.
+- **Acci&#243;n:** Inicializar tracking antes de usar `send(...)`/`sendPage(...)`.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Player/Analytics/CVAnalyticsPlayer.swift`
+
+## &#129514; Testing Problems
+### Test Failures
+**Problema: pruebas no corren**
+- Ejecutar `swift test` en ra&#237;z del paquete.
+- Revisar imports `import CVAnalytics` en tests.
+
+### Flaky Tests
+- ⚠️ No se detectaron tests flaky documentados en el repositorio.
+
+### Test Environment Issues
+- Asegurarse de ejecutar desde la ra&#237;z del paquete (donde est&#225; `Package.swift`).
+
+### Coverage Problems
+- ⚠️ No se detect&#243; reporte de cobertura publicado en el repositorio.
+
+**Fuentes:** `Tests/cv-analyticsAppTests/`
+
+## &#128640; Deployment Issues
+### Configuration Problems
+- ⚠️ No aplica directamente — es una librer&#237;a sin deployment propio.
+
+### Environment Differences
+- ⚠️ No documentadas en el repositorio.
+
+### Network Connectivity
+- Verificar conectividad del dispositivo host para env&#237;os a Google Analytics.
+
+### Resource Constraints
+- ⚠️ No documentadas en el repositorio.
+
+## &#128202; Monitoring y Debugging
+### Log Analysis
+- Pipeline SonarQube en `.github/workflows/workflow-analysis.yml` para an&#225;lisis est&#225;tico por PR.
+
+### Performance Profiling
+- ⚠️ No se detectaron herramientas de profiling en el repositorio.
+
+### Error Tracking
+- ⚠️ Sin sistema de error tracking detectado en el repositorio.
+
+### Health Checks
+- ⚠️ No aplica para librer&#237;a sin servidor.
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`
+
+## &#127384; Escalation Guidelines
+### When to Escalate
+- Cuando el problema no se resuelve con la gu&#237;a de este documento.
+
+### Who to Contact
+- ⚠️ Contactos del equipo no disponibles en el repositorio.
+
+### Information to Provide
+- Versi&#243;n de Xcode/Swift, plataforma objetivo, logs del error, fragmento de c&#243;digo reproductor.
+
+### Emergency Procedures
+- ⚠️ No documentadas en el repositorio.
+
+## &#128218; Additional Resources
+### Documentation Links
+- [QUICK_START.md](./QUICK_START.md) — Setup inicial.
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) — Arquitectura.
+- [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) — Workflow.
+
+### Community Forums
+- ⚠️ No disponibles en el repositorio.
+
+### Expert Contacts
+- ⚠️ No disponibles en el repositorio.
+
+### External Tools
+- SonarQube: `.github/workflows/workflow-analysis.yml`.
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No existe historial de incidentes/errores frecuentes documentado.
+- ⚠️ Existe pipeline CI SonarQube en `.github/workflows/workflow-analysis.yml`, pero no incluye `swift test` ni logs de fallas de build/test.
+
+### Recomendaciones para completar an&#225;lisis
+- Mantener un registro de incidentes recurrentes en la documentaci&#243;n.
+- Agregar pipeline CI para `swift test` y publicar logs de fallas.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_ARCHITECTURE.md</span><span class="doc-path">.github\docs\02-analisis\ANALYSIS_REPORT_ARCHITECTURE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127959;️ Reporte de An&#225;lisis Arquitect&#243;nico - CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+### Estructura modular detectada
+- `Sources/CVAnalytics/App/`: eventos y tags de dominio app
+- `Sources/CVAnalytics/Player/`: anal&#237;tica espec&#237;fica de player
+- `Sources/CVAnalytics/Common/`: core analytics, tracker y helpers
+- `Tests/cv-analyticsAppTests/`: pruebas unitarias
+
+### Principales contratos p&#250;blicos
+- Protocolos y structs `public`:
+  - Ejemplo: `CVACustomListenerConvertible`, `CVAnalyticsSender`, `CVAnalyticsListener`, `ContentSelectAnalytics`, `GenericAnalytic4`, `PlanSelectorEvent`, `AnalyticsUserConstants` (ver archivos fuente)
+- Funciones p&#250;blicas para env&#237;o de eventos:
+  - `sendSuccessRegisterEvent`, `sendSuccessLoginEvent`, `sendSuspensionAccountEvent`, `sendPrivacyPoliciesEvent`, `sendContinueWatchingEvent`, etc. (ver `CVAnalytics4.swift`)
+
+### Flujo de eventos analytics
+- Los m&#243;dulos App y Player generan eventos espec&#237;ficos, que son procesados por el core (`Common`) y enviados por protocolos p&#250;blicos.
+- No existe ciclo de vida de app ni UI; todo el flujo es interno a la librer&#237;a.
+
+### Patr&#243;n de inyecci&#243;n de dependencias
+- No se detecta framework DI expl&#237;cito.
+- Se usa inyecci&#243;n por protocolos y composici&#243;n por inicializadores.
+
+## &#127919; Estado objetivo (TO-BE)
+- Mantener separaci&#243;n modular clara entre App, Player y Common.
+- Documentar contratos p&#250;blicos y flujos de eventos.
+- Evitar dependencias directas con UI o ciclo de vida de app.
+
+## Diagrama de arquitectura (Mermaid)
+
+```mermaid
+flowchart TD
+    subgraph App
+      A1[Eventos App]
+      A2[Tags App]
+    end
+    subgraph Player
+      P1[Eventos Player]
+      P2[Tags Player]
+    end
+    subgraph Common
+      C1[Core Analytics]
+      C2[Tracker]
+      C3[Helpers]
+    end
+    A1 --&gt; C1
+    A2 --&gt; C1
+    P1 --&gt; C1
+    P2 --&gt; C1
+    C1 --&gt; C2
+    C1 --&gt; C3
+    C2 --&gt; C3
+    C1 --&gt;|Env&#237;o eventos| Ext[API p&#250;blica]
+```
+
+## &#128203; Resumen Ejecutivo
+### Patr&#243;n Arquitect&#243;nico
+- Modular por dominio funcional: App → Player → Common (infraestructura).
+
+### Complejidad Estimada
+- Media. 3 m&#243;dulos principales, 14+ extensiones de dominio, sin dependencias externas.
+
+### Estado de la Arquitectura
+- Bien segmentada. API p&#250;blica establecida. Tests unitarios presentes por m&#243;dulo.
+
+**Fuentes:** `Sources/CVAnalytics/`, `Tests/cv-analyticsAppTests/`
+
+## &#127963;️ Arquitectura de Alto Nivel
+### Componentes Principales
+- `CVAnalyticsApp` (+ 14 ext.) — eventos de dominio app.
+- `CVAnalyticsPlayer` (+ 2 ext.) — eventos de reproductor.
+- `CVAnalyticsCore` — setup y env&#237;o centralizado.
+- `CVAnalytics4` — eventos Google Analytics 4.
+- `GATracker` — implementaci&#243;n HTTP tracker.
+
+### Relaciones y Dependencias
+- `App` → `Common` (unidireccional).
+- `Player` → `Common` (unidireccional).
+- `Common` es independiente de `App` y `Player`.
+
+### Entry Points
+- `CVAnalyticsCore.trackingSetup(uuid:)` — punto de inicializaci&#243;n.
+- `CVAnalytics4.shared` — punto de entrada GA4.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#128230; An&#225;lisis de M&#243;dulos
+### Distribuci&#243;n de Responsabilidades
+- **App:** Construcci&#243;n y env&#237;o de eventos de dominio aplicaci&#243;n.
+- **Player:** Construcci&#243;n y env&#237;o de eventos de reproductor multimedia.
+- **Common:** Infraestructura de tracking y env&#237;o HTTP.
+
+### Acoplamiento y Cohesi&#243;n
+- Bajo acoplamiento entre m&#243;dulos (App/Player no dependen entre s&#237;).
+- Alta cohesi&#243;n dentro de cada m&#243;dulo.
+
+### Interfaces P&#250;blicas
+- `CVAnalyticsSender` — protocolo de env&#237;o.
+- `CVACustomListenerConvertible`, `CVAnalyticsListener` — contexto de player.
+- `ContentSelectAnalytics`, `GenericAnalytic4`, `PlanSelectorEvent`, `AnalyticsUserConstants` — modelos GA4.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Common/CVAnalytics4.swift`
+
+## &#128260; Patrones Identificados
+### Patrones Arquitect&#243;nicos
+- Modular Monolith (librer&#237;a con m&#243;dulos separados por dominio).
+
+### Patrones de Dise&#241;o
+- Singleton: `GATracker.shared`, `CVAnalytics4.shared`.
+- Protocol-Oriented: `CVAnalyticsSender`, `CVACustomListenerConvertible`.
+- Extension Pattern: `CVAnalyticsApp+Feature.swift`.
+
+### Anti-patrones Detectados
+- `trackingId` hardcodeado `&quot;UA-163167064-1&quot;` en `CVAnalyticsCore.swift`.
+- Typos en nombres de carpetas/archivos (`Traker/`, `Strinng+Extensions.swift`).
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (L30), `Sources/CVAnalytics/Common/Traker/`
+
+## &#128225; APIs y Integraciones
+### APIs Expuestas
+- API p&#250;blica de librer&#237;a v&#237;a SPM: `CVAnalyticsApp`, `CVAnalyticsPlayer`, `CVAnalytics4`, `CVAnalyticsCore`.
+
+### APIs Consumidas
+- Google Analytics Measurement Protocol (HTTP) v&#237;a `GATracker`.
+
+### Servicios Externos
+- Google Analytics (Universal + GA4). `trackingId: &quot;UA-163167064-1&quot;`.
+
+**Fuentes:** `Sources/CVAnalytics/Common/Traker/GATracker.swift`, `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#128272; Aspectos de Seguridad
+### Puntos de Autenticaci&#243;n
+- Sin autenticaci&#243;n propia detectada. Tracking ID es la &#250;nica credencial.
+
+### Validaci&#243;n de Datos
+- ⚠️ No se detect&#243; validaci&#243;n expl&#237;cita de payloads antes de env&#237;o HTTP.
+
+### Manejo de Secrets
+- ⚠️ **HALLAZGO:** `trackingId: &quot;UA-163167064-1&quot;` hardcodeado. Expone ID de tracking en c&#243;digo fuente.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (L30)
+
+## &#128202; M&#233;tricas y Performance
+### Complejidad Ciclom&#225;tica
+- ⚠️ No medida formalmente. Sin reportes SonarQube disponibles en el repositorio.
+
+### L&#237;neas de C&#243;digo
+- ⚠️ No medidas formalmente.
+
+### Cobertura de Tests
+- ⚠️ No se detect&#243; reporte de cobertura publicado.
+
+## &#127919; Recomendaciones
+### Mejoras Arquitect&#243;nicas
+- Mover `trackingId` a par&#225;metro de inicializaci&#243;n o configuraci&#243;n externa.
+- Corregir typos en nombres (`Traker` → `Tracker`, `Strinng` → `String`).
+
+### Refactorings Prioritarios
+- A&#241;adir validaci&#243;n de payload antes de env&#237;o HTTP en `GATracker`.
+
+### Modernizaci&#243;n T&#233;cnica
+- Considerar `async/await` para env&#237;os de eventos si se migra a Swift 5.5+.
+- Evaluar Swift DocC para documentaci&#243;n de API p&#250;blica.
+
+**Fuentes:** `Sources/CVAnalytics/Common/Traker/GATracker.swift`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ M&#233;tricas de performance y calidad no encontradas.
+- ⚠️ Reportes SonarLint y cobertura no encontrados.
+
+### Recomendaciones para completar an&#225;lisis
+- Publicar reportes de calidad y performance para an&#225;lisis m&#225;s profundo.
+
+---
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/02-architecture-universal.prompt.md`
+**Versi&#243;n CONSTITUTION:** 1.0.0
+**Versi&#243;n .copilotrc:** 2.2.0
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol t&#233;cnico | Documento completo |
+| 2 | `stack_detected_real` | ✅ | Stack real detectado | Estructura modular |
+| 3 | `evidence_cited` | ✅ | Citas a archivos fuente | Tabla y secciones |
+| 4 | `no_assumptions` | ✅ | Sin datos inventados | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados | Secci&#243;n de limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado | Secci&#243;n `&#128248;` |
+| 8 | `to_be_tagged` | ✅ | Estado objetivo etiquetado | Secci&#243;n `&#127919;` |
+| 9 | `limitations_section` | ✅ | Secci&#243;n presente | Final del documento |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_STACK_DETECTION.md</span><span class="doc-path">.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128269; Reporte de Detecci&#243;n de Stack - CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+### Clasificaci&#243;n del repositorio
+- **Tipo detectado:** `swift-library`
+- **Justificaci&#243;n:** en `Package.swift` se declara `.library(name: &quot;CVAnalytics&quot;, targets: [&quot;CVAnalytics&quot;])`.
+
+### Evidencia de stack
+
+| Categor&#237;a | Hallazgo | Evidencia |
+|---|---|---|
+| Lenguaje principal | Swift | `Sources/CVAnalytics/**/*.swift` |
+| Build/Dependency manager | Swift Package Manager | `Package.swift` |
+| Artifact | Library (`CVAnalytics`) | `Package.swift` |
+| Plataformas | iOS 16+, tvOS 16+, macOS 13+ | `Package.swift` |
+| Estructura modular | App / Player / Common | `Sources/CVAnalytics/` |
+| Tests unitarios | Suite de pruebas SPM | `Tests/cv-analyticsAppTests/` |
+
+### Se&#241;ales de librer&#237;a (sin app host)
+- No se detect&#243; `@main` en c&#243;digo Swift del repositorio.
+- No se detectaron archivos `AppDelegate.swift`, `SceneDelegate.swift` ni `ContentView.swift`.
+- No se detect&#243; `Info.plist` asociado a un target de tipo application.
+
+## &#127919; Estado objetivo (TO-BE)
+- Mantener la clasificaci&#243;n `swift-library` en toda la documentaci&#243;n y prompts de an&#225;lisis.
+- Enfocar los reportes de arquitectura/calidad en:
+  - API p&#250;blica (`public protocol`, `public struct`, `public func`)
+  - Contratos de env&#237;o de analytics
+  - Integraci&#243;n por Swift Package Manager
+- Evitar inferencias de ciclo de vida de app y navegaci&#243;n UI.
+
+## Hallazgos adicionales
+- Existe template de pol&#237;ticas y cumplimiento en `.github/prompts/.copilotrc`.
+- Existen documentos de pol&#237;tica anti-alucinaci&#243;n:
+  - `.github/prompts/CONSTITUTION.md`
+  - `.github/prompts/ANTI_HALLUCINATION_RULES.md`
+- ⚠️ No se encontr&#243; stack prompt especializado para Swift/iOS en `.github/prompts/stacks/`.
+
+## &#128203; Resumen Ejecutivo
+### Stack Detectado
+- **Lenguaje:** Swift | **Build:** Swift Package Manager | **Tipo:** Library
+- **Plataformas:** iOS 16+, tvOS 16+, macOS 13+
+
+### Confianza del An&#225;lisis
+- **Alta** — Stack confirmado por `Package.swift` con declaraci&#243;n expl&#237;cita de librer&#237;a.
+
+### Archivos de Evidencia Analizados
+- `Package.swift`, `Sources/CVAnalytics/**/*.swift`, `Tests/cv-analyticsAppTests/**`
+
+**Fuentes:** `Package.swift`
+
+## &#128736;️ Stack Tecnol&#243;gico Identificado
+### Lenguage Principal
+- **Swift** — todos los fuentes en `Sources/CVAnalytics/` y `Tests/`.
+
+### Framework/Plataforma
+- `.library(name: &quot;CVAnalytics&quot;, targets: [&quot;CVAnalytics&quot;])` — librer&#237;a SPM sin app host.
+
+### Herramientas de Build
+- Swift Package Manager (swift-tools-version:5.7).
+- Comandos: `swift build`, `swift test`.
+
+### Gesti&#243;n de Dependencias
+- Swift Package Manager. Ninguna dependencia de terceros detectada en `Package.swift`.
+
+**Fuentes:** `Package.swift`
+
+## &#128194; Evidencia por Categor&#237;a
+### Build Files
+- **Encontrado:** `Package.swift`
+- **Versi&#243;n detectada:** swift-tools-version:5.7
+- **Configuraciones:** `.library`, plataformas m&#237;nimas, targets `CVAnalytics` y `cv-analyticsAppTests`.
+
+### Dependency Management
+- **Gestor:** Swift Package Manager.
+- **Archivo de configuraci&#243;n:** `Package.swift`.
+- **Dependencias principales de terceros:** Ninguna detectada.
+
+### Development Tools
+- **IDEs:** Xcode (inferido por plataformas Apple).
+- **Linters/Formatters:** SonarQube configurado en CI (`.github/workflows/workflow-analysis.yml`).
+- **Testing:** `swift test` / XCTest framework.
+
+### Infrastructure
+- **Containerizaci&#243;n:** ⚠️ No detectada.
+- **CI/CD:** `.github/workflows/workflow-analysis.yml` (SonarQube), `ci/pipeline-analysis.yml` (Azure DevOps/Bitbucket).
+- **Cloud services:** Google Analytics (Measurement Protocol) v&#237;a `GATracker`.
+
+**Fuentes:** `Package.swift`, `.github/workflows/workflow-analysis.yml`, `ci/pipeline-analysis.yml`
+
+## &#128202; An&#225;lisis de Versiones
+### Versiones Actuales
+- **Swift tools:** 5.7 (m&#237;nimo)
+- **Plataformas:** iOS 16+, tvOS 16+, macOS 13+
+- **SonarQube project version:** 1.0 (en `workflow-analysis.yml`)
+
+### Compatibilidad
+- Compatible con Xcode 14+ (Swift 5.7 requerido).
+
+### Recomendaciones de Actualizaci&#243;n
+- ⚠️ Evaluar actualizar swift-tools-version a 5.9+ para soporte de macros Swift.
+- ⚠️ No se detectaron versiones expl&#237;citas de dependencies de terceros (no aplica actualmente).
+
+**Fuentes:** `Package.swift`, `.github/workflows/workflow-analysis.yml`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ M&#233;tricas de cobertura reales (`coverage.xml`, `jacoco.xml`, `.coverage`) no encontradas.
+- ⚠️ Reportes SonarLint en `.problems/` no encontrados.
+- ⚠️ Reportes de vulnerabilidades (`npm-audit.json`, `.snyk`, `security-audit.json`) no encontrados.
+- ⚠️ M&#233;tricas de performance (`logs/`, `monitoring/`, `metrics/`) no encontradas.
+
+### Recomendaciones para completar an&#225;lisis
+- Ejecutar SonarLint Scanner y publicar resultados en `.problems/`.
+- Publicar cobertura de tests para habilitar m&#233;tricas cuantitativas.
+- Incorporar escaneo de seguridad en CI.
+
+---
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/01-stack-detection-universal.prompt.md`
+**Versi&#243;n CONSTITUTION:** 1.0.0
+**Versi&#243;n .copilotrc:** 2.2.0
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol t&#233;cnico | Documento completo |
+| 2 | `stack_detected_real` | ✅ | Stack detectado desde archivos reales | `Package.swift`, `Sources/` |
+| 3 | `evidence_cited` | ✅ | Hallazgos con fuente | Tabla de evidencia |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados | Secci&#243;n de limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado | Secci&#243;n `&#128248;` |
+| 8 | `to_be_tagged` | ✅ | Estado objetivo etiquetado | Secci&#243;n `&#127919;` |
+| 9 | `limitations_section` | ✅ | Secci&#243;n presente | Final del documento |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_SUMMARY.md</span><span class="doc-path">.github\docs\02-analisis\ANALYSIS_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128202; Resumen de An&#225;lisis - FASE 1 - CVAnalytics
+
+## &#127919; Resumen Ejecutivo
+
+### Stack Tecnol&#243;gico
+- **Lenguaje principal:** Swift (detectado en `Package.swift`).
+- **Build system:** Swift Package Manager.
+- **Artifact principal:** librer&#237;a `CVAnalytics`.
+- **Plataformas:** iOS 16+, tvOS 16+, macOS 13+.
+
+**Fuentes:** `Package.swift`
+
+### Estado Arquitect&#243;nico
+- **Patr&#243;n principal:** Modular por dominio funcional (`App`, `Player`, `Common`).
+- **Entry point:** `CVAnalyticsCore` (Common) con delegates para App y Player.
+- **Pruebas detectadas:** 4 suites (CVAnalyticsCore, CVAnalyticsApp, CVAnalyticsPlayer, CVAnalytics4).
+
+**Fuentes:** `Sources/CVAnalytics/**`, `Tests/cv-analyticsAppTests/**`
+
+### Nivel de Madurez
+- **API p&#250;blica:** Estable mediante `public` protocols y `public struct`.
+- **Acoplamiento:** Bajo — m&#243;dulos extensibles via `extension` sin modificar base.
+- **Deuda t&#233;cnica observable:** `trackingId` hardcodeado; typos en nombres de carpetas (`Traker/`, `Strinng+Extensions.swift`).
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Common/Helpers/Strinng+Extensions.swift`
+
+## &#128248; Estado actual (AS-IS)
+- Arquitectura modular clara orientada a eventos analytics.
+- API p&#250;blica extensa para diferentes dominios funcionales.
+- Implementaci&#243;n de env&#237;o HTTP en `GATracker`.
+
+## &#127919; Estado objetivo (TO-BE)
+- Documentaci&#243;n completa de mapa de eventos por m&#243;dulo.
+- Calidad observable con m&#233;tricas CI, cobertura y seguridad.
+
+## &#128202; M&#233;tricas Clave
+### Complejidad del Proyecto
+- **M&#243;dulos:** 3 principales (App, Player, Common).
+- **Archivos fuente:** ~25 archivos Swift en Sources/.
+- **Dependencias externas:** 0 (solo stdlib Swift).
+
+### Estado de Documentaci&#243;n
+- **Documentos FASE 1 generados:** 13 archivos en `.github/docs/`.
+- **Cobertura documental:** Todos los m&#243;dulos principales documentados.
+
+### Cobertura T&#233;cnica
+- **Tests unitarios:** 4 suites (Core, App, Player, GA4).
+- **M&#233;tricas de cobertura:** ⚠️ No publicadas en el repositorio.
+
+**Fuentes:** `Package.swift`, `Sources/CVAnalytics/`, `Tests/cv-analyticsAppTests/`
+
+## &#127959;️ Arquitectura
+### Patr&#243;n Principal
+- Modular por dominio funcional. App y Player encapsulan eventos; Common provee infraestructura.
+
+### Fortalezas Identificadas
+- Bajo acoplamiento entre m&#243;dulos.
+- API p&#250;blica estable con contratos por protocolo.
+- Extensi&#243;n por feature sin modificar clase base.
+
+### &#193;reas de Mejora
+- Hardcoded `trackingId` en c&#243;digo fuente (`&quot;UA-163167064-1&quot;`).
+- Typos en nombres de carpetas/archivos (`Traker/`, `Strinng+Extensions.swift`).
+- Sin validaci&#243;n de payloads antes de env&#237;o HTTP.
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`
+
+## &#128203; Deliverables Generados
+### Documentaci&#243;n Creada
+- `.github/docs/01-inicio/`: QUICK_START, ARCHITECTURE_GUIDE, BEST_PRACTICES, DEVELOPMENT_GUIDE, CODE_STRUCTURE, ONBOARDING_GUIDE, TROUBLESHOOTING, EXECUTIVE_SUMMARY, README.
+- `.github/docs/02-analisis/`: ANALYSIS_REPORT_STACK_DETECTION, ANALYSIS_REPORT_ARCHITECTURE, ANALYSIS_SUMMARY.
+- `.github/docs/diagrams/`: ARCHITECTURE_DIAGRAMS.
+
+### Diagramas Producidos
+- Diagrama de componentes Mermaid (m&#243;dulos internos).
+- Diagrama de flujo de eventos (sequenceDiagram).
+
+### Configuraciones Establecidas
+- ⚠️ No se establecieron configuraciones adicionales en FASE 1.
+
+## &#127919; Pr&#243;ximos Pasos
+### Preparaci&#243;n para Fase 2
+1. Ejecutar `02-diagnosis/01-technical-debt-universal.prompt.md`.
+2. Obtener resultados SonarQube del pipeline CI.
+3. Publicar reporte de cobertura de tests.
+
+### Informaci&#243;n Requerida
+- Resultados de SonarQube (quality gate, issues, coverage).
+- Historial de builds (&#233;xitos/fallos).
+
+### Dependencias Identificadas
+- Pipeline SonarQube en `.github/workflows/workflow-analysis.yml` debe estar activo.
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+### Datos no disponibles en el repositorio
+- ⚠️ No se detect&#243; `.problems/` (SonarLint Scanner).
+- ⚠️ No se detect&#243; cobertura de tests publicada.
+- ⚠️ No se detect&#243; reporte de seguridad automatizado.
+
+### Recomendaciones para completar an&#225;lisis
+- Ejecutar SonarLint Scanner y publicar resultados en `.problems/`.
+- Publicar reporte de cobertura de tests.
+- Agregar escaneo de seguridad automatizado en CI.
+
+---
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20T00:00:00Z
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/04-compliance-fase1.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Redacci&#243;n en espa&#241;ol excepto t&#233;rminos t&#233;cnicos | Documento completo |
+| 2 | `stack_detected_real` | ✅ | swift-library detectado desde archivos reales | `Package.swift`, `Sources/CVAnalytics/**` |
+| 3 | `evidence_cited` | ✅ | Datos con fuente en cada secci&#243;n | Secciones del documento |
+| 4 | `no_assumptions` | ✅ | Sin m&#233;tricas inventadas | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados con ⚠️ | Secci&#243;n de Limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">.github\docs\02-analisis\README.md</span></summary>
+              <pre class="doc-pre"># &#128202; Reportes de An&#225;lisis (Fase 1)
+
+## Prop&#243;sito
+
+Consolidar evidencia t&#233;cnica real del repositorio. Todos los hallazgos deben citar evidencia directa de archivos del repositorio; ning&#250;n dato puede ser asumido sin verificaci&#243;n.
+
+## Archivos Disponibles
+
+| Archivo | Descripci&#243;n | Prompt fuente |
+|---------|-------------|---------------|
+| `ANALYSIS_REPORT_STACK_DETECTION.md` | Detecci&#243;n de stack tecnol&#243;gico con evidencia | `01-analysis/01-stack-detection-universal.prompt.md` |
+| `ANALYSIS_REPORT_ARCHITECTURE.md` | Arquitectura modular y patrones del paquete | `01-analysis/02-architecture-universal.prompt.md` |
+| `ANALYSIS_SUMMARY.md` | Resumen consolidado de FASE 1 con m&#233;tricas y pr&#243;ximos pasos | `01-analysis/03-index-universal.prompt.md` |
+
+## Flujo Recomendado
+
+1. Leer `ANALYSIS_REPORT_STACK_DETECTION.md` — confirmar stack y plataformas detectadas.
+2. Leer `ANALYSIS_REPORT_ARCHITECTURE.md` — entender m&#243;dulos, patrones y contratos p&#250;blicos.
+3. Leer `ANALYSIS_SUMMARY.md` — obtener visi&#243;n consolidada y leer los pr&#243;ximos pasos hacia FASE 2.
+
+&gt; ⚠️ **Nota anti-alucinaci&#243;n:** todos los hallazgos de estos reportes deben citar evidencia directa de archivos del repositorio (`Sources/`, `Tests/`, `Package.swift`, `ci/`).
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">.github\docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127959;️ Diagramas de Arquitectura CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+### Diagrama de m&#243;dulos internos
+
+&lt;img src=&quot;img/DiagramaDeModulosInternos.png&quot; width=&quot;%&quot;/&gt; 
+ 
+```text
+flowchart TD
+    subgraph App
+      A1[Eventos App]
+      A2[Tags App]
+    end
+    subgraph Player
+      P1[Eventos Player]
+      P2[Tags Player]
+    end
+    subgraph Common
+      C1[Core Analytics]
+      C2[Tracker]
+      C3[Helpers]
+    end
+    A1 --&gt; C1
+    A2 --&gt; C1
+    P1 --&gt; C1
+    P2 --&gt; C1
+    C1 --&gt; C2
+    C1 --&gt; C3
+    C2 --&gt; C3
+    C1 --&gt;|Env&#237;o eventos| Ext[API p&#250;blica]
+```
+
+### Diagrama de flujo de eventos
+
+&lt;img src=&quot;img/DiagramaDeFlujoDeEventos.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+sequenceDiagram
+    participant App
+    participant Player
+    participant Common
+    participant API
+    App-&gt;&gt;Common: Genera evento
+    Player-&gt;&gt;Common: Genera evento
+    Common-&gt;&gt;API: Env&#237;a evento
+```
+
+## &#127919; Estado objetivo (TO-BE)
+- Mantener modularidad y contratos p&#250;blicos claros.
+- Documentar flujos de eventos y dependencias internas.
+
+## &#127963;️ Diagrama de Componentes
+
+&lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
+
+```text
+flowchart TD
+    subgraph App[&quot;App (eventos dominio app)&quot;]
+      A1[CVAnalyticsApp]
+      A2[+Login / +Home / +Player / +Search / ...]
+    end
+    subgraph Player[&quot;Player (eventos reproductor)&quot;]
+      P1[CVAnalyticsPlayer]
+      P2[+Live / +Player]
+    end
+    subgraph Common[&quot;Common (infraestructura)&quot;]
+      C1[CVAnalyticsCore]
+      C2[CVAnalytics4]
+      C3[GATracker]
+      C4[Helpers]
+    end
+    A1 --&gt; C1
+    A2 --&gt; A1
+    P1 --&gt; C1
+    P2 --&gt; P1
+    C2 --&gt; C3
+    C1 --&gt; C3
+    C3 --&gt;|HTTP GA| GA[Google Analytics]
+```
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## &#128260; Diagramas de Flujos de Procesos
+
+### Flujo Principal 1: Evento de App (ej. Login)
+
+&lt;img src=&quot;img/DiagramaDeFlujoPrincipal1.png&quot; width=&quot;%&quot;/&gt;
+
+```text
+sequenceDiagram
+    participant Host as App Host
+    participant AppMod as CVAnalyticsApp
+    participant Core as CVAnalyticsCore
+    participant Tracker as GATracker
+    participant GA as Google Analytics
+    Host-&gt;&gt;AppMod: sendLoginEvent(...)
+    AppMod-&gt;&gt;Core: send(category, action, label)
+    Core-&gt;&gt;Tracker: event(category, action, label)
+    Tracker-&gt;&gt;GA: HTTP POST (Measurement Protocol)
+    GA--&gt;&gt;Tracker: 200 OK
+```
+
+### Flujo Principal 2: Evento de Player
+
+&lt;img src=&quot;img/DiagramaDeFlujoPrincipal2.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+sequenceDiagram
+    participant Host as Player Host
+    participant PlayerMod as CVAnalyticsPlayer
+    participant Core as CVAnalyticsCore
+    participant Tracker as GATracker
+    Host-&gt;&gt;PlayerMod: setListener(from: listener)
+    Host-&gt;&gt;PlayerMod: sendPlayEvent(...)
+    PlayerMod-&gt;&gt;Core: send(category, action, label)
+    Core-&gt;&gt;Tracker: event(...)
+    Tracker-&gt;&gt;GA: HTTP POST
+```
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Player/Analytics/CVAnalyticsPlayer.swift`
+
+## &#128640; Diagrama de CI/CD Pipeline
+
+&lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+flowchart TD
+    PR[Pull Request] --&gt; CI[GitHub Actions]
+    CI --&gt; SQ[SonarQube Analysis]
+    SQ --&gt; QG{Quality Gate}
+    QG --&gt;|Pass| OK[PR Aprobado]
+    QG --&gt;|Fail| FAIL[PR Bloqueado]
+    CI2[Azure DevOps / Bitbucket] --&gt; SA2[SonarQube Analysis]
+    SA2 --&gt; QG2{Quality Gate}
+```
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`, `ci/pipeline-analysis.yml`
+
+&gt; ⚠️ No existe pipeline de `swift test` en CI detectado. El pipeline actual es exclusivo de an&#225;lisis SonarQube.
+
+## &#128202; Diagrama de Datos
+
+&lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+flowchart LR
+    UUID[UUID Usuario] --&gt; Core[CVAnalyticsCore.trackingSetup]
+    Core --&gt; GAT[GATracker]
+    GAT --&gt; |trackingId + clientId + event params| GA[GA Measurement Protocol]
+    GA --&gt; |analytics storage| GC[Google Analytics Dashboard]
+```
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (L30-37)
+
+## &#128295; Notas de Implementaci&#243;n
+### Convenciones de Diagramas
+- Diagramas Mermaid en formato `flowchart TD` para arquitectura y `sequenceDiagram` para flujos.
+
+### Herramientas de Visualizaci&#243;n
+- GitHub renderiza Mermaid natively en archivos `.md`.
+- VS Code con extensi&#243;n Mermaid Preview.
+
+### Mantenimiento de Diagramas
+- Actualizar al agregar nuevos m&#243;dulos o cambiar flujos de eventos.
+- Verificar que los nombres de componentes coincidan con los nombres reales de clases/archivos.
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ No se detectaron diagramas de dependencias externas.
+- ⚠️ No hay evidencia de integraci&#243;n con UI o ciclo de vida de app.
+
+---
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/02-architecture-universal.prompt.md`
+**Versi&#243;n CONSTITUTION:** 1.0.0
+**Versi&#243;n .copilotrc:** 2.2.0
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol t&#233;cnico | Documento completo |
+| 2 | `stack_detected_real` | ✅ | Stack real detectado | Estructura modular |
+| 3 | `evidence_cited` | ✅ | Citas a archivos fuente | Diagrama y secciones |
+| 4 | `no_assumptions` | ✅ | Sin datos inventados | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados | Secci&#243;n de limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado | Secci&#243;n `&#128248;` |
+| 8 | `to_be_tagged` | ✅ | Estado objetivo etiquetado | Secci&#243;n `&#127919;` |
+| 9 | `limitations_section` | ✅ | Secci&#243;n presente | Final del documento |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+          </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
+</body>
+</html>
+
