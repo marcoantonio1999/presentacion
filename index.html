@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documento Consolidado | 6 Repositorios</title>
+  <title>Documento Consolidado | 7 Repositorios</title>
     <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         </a>
       </div>
       <h1>🎯 Proceso integral de remediacion tecnologica</h1>
-      <p class="hero-subtitle">Claro Video - 6 Repositorios Prioritarios</p>
+      <p class="hero-subtitle">Claro Video - 7 Repositorios Prioritarios</p>
       <p class="hero-mainline">Analisis FASE 1 - Generacion de documentacion tecnica</p>
       <div class="meta">
         <span class="chip">Fecha: 2026-02-25</span>
@@ -27,7 +27,7 @@
         <tbody>
           <tr>
             <td>Plataformas analizadas</td>
-            <td>Android TV STB - iOS/tvOS - iOS Player SDK - Android Request Manager - Claro Video Web - UWP (Windows/Xbox)</td>
+            <td>Android TV STB - iOS/tvOS - iOS/tvOS Legacy - iOS Player SDK - Android Request Manager - Claro Video Web - UWP (Windows/Xbox)</td>
           </tr>
           <tr>
             <td>Metodologia</td>
@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <td>Artefactos generados</td>
-            <td>108+ documentos tecnicos verificados</td>
+            <td>122+ documentos tecnicos verificados</td>
           </tr>
         </tbody>
       </table>
@@ -62,7 +62,7 @@
       <main>
         <section id="resumen" class="reveal">
           <h3>1. Resumen General</h3>
-          <p>Este portafolio consolida la documentacion clave de seis repositorios con una misma estructura estandar.</p>
+          <p>Este portafolio consolida la documentacion clave de siete repositorios con una misma estructura estandar.</p>
           <p>El objetivo es garantizar que cualquier audiencia (tecnica y funcional) pueda:</p>
           <div class="card-grid">
             <article class="mini-card">
@@ -146,32 +146,37 @@
               <tr>
                 <td><code>claro-video-ios</code></td>
                 <td>No se reporta dependencia formalmente <em>deprecated</em> en FASE 1; se reporta falta de <code>Package.resolved</code> para versionado exacto de dependencias externas.</td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-ios\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-ios-tvos</code></td>
+                <td>Coexistencia legacy <code>Dynamic&lt;T&gt;</code> + Combine, <code>Package.resolved</code> no commitado y frameworks Youbora sin versión trazable.</td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-ios-player</code></td>
                 <td>No se reportan dependencias formalmente <em>deprecated</em> en FASE 1; usa versionado exacto en SPM (<code>Bitmovin 3.83.0</code>, <code>Analytics 3.11.1</code>, <code>NPAW 1.1.6</code>).</td>
-                <td><code>C:\Users\ordunama\Documents\Hitss\verify_docs\claro-video-ios-player\claro-video-ios-player\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-tv-stb</code></td>
                 <td><code>jcenter()</code> deprecated; <code>ExoPlayer 2.16.1</code> muy atrasado; coexistencia <code>RxJava2 + RxJava3</code> (legacy/híbrido).</td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-android-tv-stb\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-request-manager</code></td>
                 <td><code>android.support.v4</code> deprecated (sin AndroidX), <code>jcenter()</code> deprecated, <code>android-maven-gradle-plugin 1.5</code> obsoleto, <code>OkHttp 3.10.0</code> desactualizado.</td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-android-request-manager\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-universal-windows-platform</code></td>
                 <td>Coexistencia de targets legacy <code>W81/WP8</code> y rutas <code>http://</code> en componentes legacy (riesgo técnico acumulado).</td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-universal-windows-platform\02-analisis\ANALYSIS_SUMMARY.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-web</code></td>
                 <td><code>axios ^0.15.2</code> (antigua, con CVEs activos) y coexistencia de <code>react-router v3 + v6</code> (legado + moderno).</td>
-                <td><code>C:\Users\ordunama\Downloads\claro-video-web\claro-video-web\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
             </tbody>
           </table>
@@ -191,37 +196,43 @@
                 <td><code>claro-video-ios</code></td>
                 <td>Service Managers encapsulados y uso de SPM interno modular.</td>
                 <td>30+ singletons (~940+ refs), secretos hardcoded y deuda legacy activa.</td>
-                <td><code>...\claro-video-ios\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-ios-tvos</code></td>
+                <td>Arquitectura Feature-First (19 módulos) con patrón Coordinator + MVVM + Repository y CI dual (Azure + GitHub Actions).</td>
+                <td>Token NewRelic hardcodeado, ATS deshabilitado globalmente y cobertura de pruebas baja/no cuantificada.</td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-ios-player</code></td>
                 <td>SDK modular por plataforma con núcleo compartido y DI por protocolos.</td>
                 <td>DI global centralizada y ausencia de artefactos cuantitativos de coverage/seguridad en FASE 1.</td>
-                <td><code>...\claro-video-ios-player\.github\docs\02-analisis\ANALYSIS_REPORT_ARCHITECTURE.md</code></td>
+                <td><code>ANALYSIS_REPORT_ARCHITECTURE.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-tv-stb</code></td>
                 <td>Clean Architecture + MVVM sólido, Hilt consistente y modularización en 7 módulos.</td>
                 <td>ExoPlayer muy atrasado, <code>jcenter()</code> deprecated y deuda reactiva (RxJava legacy).</td>
-                <td><code>...\claro-video-android-tv-stb\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-request-manager</code></td>
                 <td>Buen encapsulamiento de Picasso/OkHttp detrás de contratos y patrón Template Method.</td>
                 <td>SSL bypass crítico, <code>AsyncTask</code> deprecado y toolchain obsoleto.</td>
-                <td><code>...\claro-video-android-request-manager\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-universal-windows-platform</code></td>
                 <td>Stack .NET/C# claramente identificado y arquitectura MVVM observable.</td>
                 <td>Alta complejidad por multi-target legacy (UWP/W81/WP8), <code>async void</code> y <code>catch {}</code>.</td>
-                <td><code>...\claro-video-universal-windows-platform\02-analisis\ANALYSIS_SUMMARY.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-web</code></td>
                 <td>Modularidad por dominios (ESPN/HBO), Redux/Saga estructurado y CI activo.</td>
                 <td>Axios legacy con CVEs y deuda de migración en routing (v3 + v6).</td>
-                <td><code>...\claro-video-web\docs\02-analisis\ANALYSIS_SUMMARY.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
             </tbody>
           </table>
@@ -242,6 +253,12 @@
                 <td>SPM interno (<code>CVModel</code>, <code>CVServices</code>, <code>CVAnalytics</code>) + Firebase/NewRelic/GoogleCast/Bitmovin/Youbora.</td>
                 <td>Versiones exactas no verificables sin <code>Package.resolved</code>.</td>
                 <td>Versionar <code>Package.resolved</code> y formalizar auditoría de dependencias.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-ios-tvos</code></td>
+                <td><code>Alamofire 5.8.1</code>, <code>SnapKit 5.6.0</code>, <code>firebase-ios-sdk 10.22.1</code>, <code>newrelic-ios-agent 7.4.7</code>, IMA <code>4.10.0</code> + paquetes AMCO (<code>CVAnalytics</code>, <code>CVServices</code>, <code>CVPlayerTVOS</code>).</td>
+                <td>SPM en <code>.xcodeproj</code> sin <code>Package.resolved</code>; frameworks Youbora sin versión visible y deuda legacy activa.</td>
+                <td>Commit de <code>Package.resolved</code>, versionado explícito de binarios y hardening de seguridad en CI.</td>
               </tr>
               <tr>
                 <td><code>claro-video-ios-player</code></td>
@@ -276,7 +293,7 @@
             </tbody>
           </table>
 
-          <p class="quote">Las tres tablas anteriores se construyeron únicamente con evidencia documental de los 6 repositorios solicitados y sus reportes de FASE 1.</p>
+          <p class="quote">Las tres tablas anteriores se construyeron únicamente con evidencia documental de los 7 repositorios solicitados y sus reportes de FASE 1.</p>
         </section>
 
         <section id="arquitectura" class="reveal">
@@ -404,6 +421,16 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Seguridad</strong></td>
               </tr>
               <tr>
+                <td><code>claro-video-ios-tvos</code></td>
+                <td>🔴 <strong>CRITICO</strong></td>
+                <td>🟢 Feature-First (19 modulos) con Coordinator + MVVM + Repository</td>
+                <td>🔴 Cobertura baja/no cuantificada y sin baseline confiable en CI</td>
+                <td>🔴 Token NewRelic hardcoded + ATS global deshabilitado</td>
+                <td>🟡 CI dual (Azure DevOps + GitHub Actions), sin quality gates persistidos de cobertura/seguridad</td>
+                <td>🟡 SPM definido, pero sin <code>Package.resolved</code> commitado y binarios sin version trazable</td>
+                <td><strong>Seguridad</strong></td>
+              </tr>
+              <tr>
                 <td><code>claro-video-ios-player</code></td>
                 <td>🟡 <strong>ATENCION</strong></td>
                 <td>🟢 SDK modular por plataforma con core compartido (SPM)</td>
@@ -456,7 +483,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Fuentes de Evidencia (6 repositorios exactos)</strong></p>
+          <p><strong>Fuentes de Evidencia (7 repositorios exactos)</strong></p>
           <table>
             <thead>
               <tr>
@@ -467,27 +494,31 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <tbody>
               <tr>
                 <td><code>claro-video-ios</code></td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-ios\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code><br><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-ios\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+              </tr>
+              <tr>
+                <td><code>claro-video-ios-tvos</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-tv-stb</code></td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-android-tv-stb\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code><br><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-android-tv-stb\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-android-request-manager</code></td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-android-request-manager\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code><br><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-android-request-manager\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-ios-player</code></td>
-                <td><code>C:\Users\ordunama\Documents\Hitss\verify_docs\claro-video-ios-player\claro-video-ios-player\.github\docs\02-analisis\ANALYSIS_SUMMARY.md</code><br><code>C:\Users\ordunama\Documents\Hitss\verify_docs\claro-video-ios-player\claro-video-ios-player\.github\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-universal-windows-platform</code></td>
-                <td><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-universal-windows-platform\02-analisis\ANALYSIS_SUMMARY.md</code><br><code>C:\Users\ordunama\Downloads\OneDrive_1_2-24-2026\claro-video-universal-windows-platform\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
                 <td><code>claro-video-web</code></td>
-                <td><code>C:\Users\ordunama\Downloads\claro-video-web\claro-video-web\docs\02-analisis\ANALYSIS_SUMMARY.md</code><br><code>C:\Users\ordunama\Downloads\claro-video-web\claro-video-web\docs\02-analisis\ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
+                <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
             </tbody>
           </table>
@@ -516,6 +547,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>17 documentos</td>
                 <td>~6,639 LOC docs</td>
                 <td>10 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
+              </tr>
+              <tr>
+                <td><strong>iOS / tvOS Legacy</strong></td>
+                <td>14 documentos</td>
+                <td>~5,438 LOC docs</td>
+                <td>6 assets + <code>ARCHITECTURE_DIAGRAMS.md</code></td>
               </tr>
               <tr>
                 <td><strong>iOS Player SDK</strong></td>
@@ -570,7 +607,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </table>
           <p class="quote">Total: 9 documentos de referencia.</p>
 
-          <p><strong>Verificacion en los 6 repositorios solicitados</strong></p>
+          <p><strong>Verificacion en los 7 repositorios solicitados</strong></p>
           <table>
             <thead>
               <tr>
@@ -582,6 +619,11 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <tbody>
               <tr>
                 <td><code>claro-video-ios</code></td>
+                <td><code>.github/docs/01-inicio/</code></td>
+                <td>9/9 ✅</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-ios-tvos</code></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
@@ -632,6 +674,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr><td><code>claro-video-ios</code></td><td>4/4 ✅</td></tr>
+              <tr><td><code>claro-video-ios-tvos</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-android-tv-stb</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>4/4 ✅</td></tr>
               <tr><td><code>claro-video-android-request-manager</code></td><td>4/4 ✅</td></tr>
@@ -654,6 +697,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr><td><code>claro-video-ios</code></td><td>1/1 ✅</td><td>10</td></tr>
+              <tr><td><code>claro-video-ios-tvos</code></td><td>1/1 ✅</td><td>6</td></tr>
               <tr><td><code>claro-video-android-tv-stb</code></td><td>1/1 ✅</td><td>11</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>1/1 ✅</td><td>5</td></tr>
               <tr><td><code>claro-video-android-request-manager</code></td><td>1/1 ✅</td><td>6</td></tr>
@@ -676,6 +720,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr><td><code>claro-video-ios</code></td><td>2/2 ✅</td></tr>
+              <tr><td><code>claro-video-ios-tvos</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-android-tv-stb</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>2/2 ✅</td></tr>
               <tr><td><code>claro-video-android-request-manager</code></td><td>2/2 ✅</td></tr>
@@ -697,6 +742,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr><td><code>claro-video-ios</code></td><td>1/1 ✅</td></tr>
+              <tr><td><code>claro-video-ios-tvos</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-android-tv-stb</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>1/1 ✅</td></tr>
               <tr><td><code>claro-video-android-request-manager</code></td><td>1/1 ✅</td></tr>
@@ -705,7 +751,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p class="quote">Total verificable por plataforma: 17 artefactos obligatorios (9 Grupo A + 8 Grupos B-E). En estos 6 repos: 99/102 artefactos obligatorios detectados (brecha concentrada en UWP para Grupo D y E).</p>
+          <p class="quote">Total verificable por plataforma: 17 artefactos obligatorios (9 Grupo A + 8 Grupos B-E). En estos 7 repos: 116/119 artefactos obligatorios detectados (brecha concentrada en UWP para Grupo D y E).</p>
         </section>
 
         <section id="narrativa" class="reveal">
@@ -725,6 +771,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Deuda tecnica:</strong> hallazgos criticos en acoplamiento (30+ singletons con ~940+ referencias).</li>
             <li><strong>Issues criticos:</strong> secrets hardcoded y cobertura de tests extremadamente baja (coverage real no medido en CI).</li>
             <li><strong>Seguridad:</strong> nivel reportado basico/intermedio por hardcoded secrets y configuraciones permissivas (ATS global).</li>
+          </ul>
+
+          <p><strong>🔴 iOS / tvOS Legacy - Accion Urgente</strong></p>
+          <ul>
+            <li><strong>Stack:</strong> Swift 5.0 · iOS 16 + tvOS 15/16 · arquitectura Feature-First con 19 modulos.</li>
+            <li><strong>Fortalezas:</strong> Coordinator + MVVM + Repository consistentes, CI dual (Azure + GitHub Actions).</li>
+            <li><strong>Issues criticos:</strong> token de NewRelic hardcoded y ATS global deshabilitado.</li>
+            <li><strong>Dependencias/testing:</strong> <code>Package.resolved</code> no commitado, binarios sin version trazable y cobertura baja/no cuantificada.</li>
           </ul>
 
           <p><strong>🟡 iOS Player SDK - Requiere Atencion</strong></p>
@@ -758,18 +812,19 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Seguridad/operacion:</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en historico.</li>
           </ul>
 
-          <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 6 repositorios solicitados.</p>
+          <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 7 repositorios solicitados.</p>
         </section>
 
         <section id="riesgos" class="reveal">
-          <h3>8. ⚠️ Issues Sistemicos - Aplican a los 6 Repositorios</h3>
-          <p>Estos problemas no son de una sola plataforma; se observan de manera transversal en los 6 repositorios analizados.</p>
+          <h3>8. ⚠️ Issues Sistemicos - Aplican a los 7 Repositorios</h3>
+          <p>Estos problemas no son de una sola plataforma; se observan de manera transversal en los 7 repositorios analizados.</p>
           <table>
             <thead>
               <tr>
                 <th>Issue</th>
                 <th>Android TV STB</th>
                 <th>iOS / tvOS</th>
+                <th>iOS / tvOS Legacy</th>
                 <th>iOS Player SDK</th>
                 <th>Android Request Manager</th>
                 <th>Web App</th>
@@ -782,6 +837,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>Sin CI/CD automatizado end-to-end</td>
                 <td>⚠️ (pipeline pendiente en plan de accion)</td>
                 <td>⚠️ (build/analysis existe, pero sin pipeline de tests/deploy)</td>
+                <td>⚠️ (CI dual Azure/GitHub, sin quality gates persistidos de coverage/security)</td>
                 <td>⚠️ (workflows presentes, sin artefactos de coverage/security persistidos)</td>
                 <td>⚠️ (sin pipeline configurado)</td>
                 <td>🟢 (7 workflows activos en GitHub Actions)</td>
@@ -792,6 +848,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>Testing sin objetivo unificado</td>
                 <td>Baseline definido con objetivo de mejora</td>
                 <td>Ratio estimado muy bajo; sin coverage real en CI</td>
+                <td>Cobertura baja/no cuantificada y sin baseline verificable en CI</td>
                 <td>Sin <code>coverage.xml</code>; baseline cuantitativo pendiente</td>
                 <td>JaCoCo no configurado; cobertura no disponible</td>
                 <td>Coverage no disponible en repo; baseline pendiente en CI</td>
@@ -802,6 +859,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>Monitoring de produccion no estandarizado</td>
                 <td>🟡 parcial (observabilidad mencionada, sin baseline unificado)</td>
                 <td>🟡 parcial (Firebase/NewRelic/Youbora, sin tablero unificado)</td>
+                <td>🟡 parcial (Firebase/NewRelic/Youbora, sin tablero unificado)</td>
                 <td>🟡 parcial (Bitmovin/NPAW, sin dashboard unificado)</td>
                 <td>⚠️ sin evidencia de monitoreo operativo</td>
                 <td>🟡 parcial (analytics presente, sin dashboard unificado)</td>
@@ -811,6 +869,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td>Crash rate sin instrumentacion comparable entre plataformas</td>
                 <td>❓ no homologado en FASE 1</td>
+                <td>⚠️ sin KPI consolidado en FASE 1</td>
                 <td>⚠️ sin KPI consolidado en FASE 1</td>
                 <td>❓ sin KPI homologado en FASE 1</td>
                 <td>N/A (SDK/libreria)</td>
@@ -826,6 +885,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>⚠️</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
+                <td>⚠️</td>
                 <td>Gobernanza tecnica y priorizacion</td>
               </tr>
             </tbody>
@@ -834,7 +894,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>💡 Dato Clave</strong></p>
           <p class="quote">La plataforma referente (condicional) en arquitectura es <strong>Android TV STB</strong>; la plataforma referente en madurez de automatizacion es <strong>Claro Video Web</strong> (workflows CI/CD activos). Ambas pueden servir como base para estandarizar quality gates en el resto.</p>
 
-          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-ios</code>, <code>claro-video-ios-player</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code> y <code>claro-video-universal-windows-platform</code>.</p>
         </section>
 
         <section id="anexo" class="reveal">
@@ -843,6 +903,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>🔴 Riesgo 1 - Seguridad (Impacto: ALTO)</strong></p>
           <ul>
             <li><strong>iOS / tvOS:</strong> secrets hardcoded y ATS deshabilitado globalmente (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
+            <li><strong>iOS / tvOS Legacy:</strong> token de NewRelic hardcoded y ATS global deshabilitado (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
             <li><strong>iOS Player SDK:</strong> sin secretos hardcoded en rutas auditadas; riesgo principal por ausencia de reportes SAST/DAST persistidos como artefacto (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
             <li><strong>Android Request Manager:</strong> SSL bypass activo en <code>ImageManager.java</code> y <code>OkHttp 3.10.0</code> con CVEs conocidos (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_REPORT_STACK_DETECTION.md</code>).</li>
             <li><strong>Android TV STB:</strong> ExoPlayer 2.16.1 desactualizado y <code>jcenter()</code> deprecated (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_STACK_DETECTION.md</code>).</li>
@@ -854,6 +915,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>🟡 Riesgo 2 - Estabilidad y Calidad (Impacto: ALTO · Probabilidad: MEDIA/ALTA)</strong></p>
           <ul>
             <li><strong>iOS / tvOS:</strong> cobertura de tests extremadamente baja y sin coverage real ejecutada en CI.</li>
+            <li><strong>iOS / tvOS Legacy:</strong> cobertura baja/no cuantificada y sin baseline de pruebas verificable en CI.</li>
             <li><strong>iOS Player SDK:</strong> no se encontró <code>coverage.xml</code> ni baseline cuantitativo de pruebas en artefactos de FASE 1.</li>
             <li><strong>Android TV STB:</strong> cobertura base con objetivo de mejora, coexistencia Coroutines + RxJava (complejidad operativa).</li>
             <li><strong>Android Request Manager:</strong> sin reportes de coverage (JaCoCo no configurado) y uso de <code>AsyncTask</code> deprecado/removido en API 33.</li>
@@ -865,6 +927,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>🟡 Riesgo 3 - Mantenibilidad y Evolucion (Impacto: MEDIO/ALTO · Probabilidad: ALTA)</strong></p>
           <ul>
             <li><strong>iOS / tvOS:</strong> 30+ singletons y ~940+ referencias (tight coupling alto).</li>
+            <li><strong>iOS / tvOS Legacy:</strong> coexistencia <code>Dynamic&lt;T&gt;</code> + Combine y deuda de trazabilidad por <code>Package.resolved</code> no commitado.</li>
             <li><strong>iOS Player SDK:</strong> DI global centralizada que reduce configurabilidad por instancia y hace más rígida la evolución del SDK.</li>
             <li><strong>Android TV STB:</strong> deuda legacy (RxJava2 + RxJava3 + Coroutines, ExoPlayer atrasado, jcenter en retiro).</li>
             <li><strong>Android Request Manager:</strong> toolchain obsoleto (AGP 4.2.2, Gradle 6.7.1, soporte legacy no migrado por completo a AndroidX).</li>
@@ -873,7 +936,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </ul>
           <p class="quote">Posible consecuencia: cada cambio toma mas tiempo, aumenta el riesgo en upgrades y baja la velocidad de entrega del equipo.</p>
 
-          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-player</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code> y <code>claro-video-universal-windows-platform</code>.</p>
         </section>
         <section id="proximos" class="reveal">
           <h3>10. 🚀 Proximos Pasos Recomendados</h3>
@@ -905,7 +968,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Aterrizaje a los 6 repositorios actuales</strong></p>
+          <p><strong>Aterrizaje a los 7 repositorios actuales</strong></p>
           <table>
             <thead>
               <tr>
@@ -921,6 +984,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>Cuantificar deuda por acoplamiento (30+ singletons), seguridad de secretos y coverage real.</td>
                 <td>Refactor gradual de singletons criticos + pipeline de tests automatizados en Azure DevOps.</td>
                 <td>KPIs: cobertura real, defectos por release, lead time y incidentes de seguridad.</td>
+              </tr>
+              <tr>
+                <td><code>claro-video-ios-tvos</code></td>
+                <td>Cuantificar deuda de seguridad (token hardcoded, ATS), cobertura real y trazabilidad de dependencias.</td>
+                <td>Remediar secretos/ATS, publicar quality gates de coverage/seguridad y versionar <code>Package.resolved</code>.</td>
+                <td>KPIs: cobertura real por target, hallazgos de seguridad abiertos/cerrados y cumplimiento de hardening.</td>
               </tr>
               <tr>
                 <td><code>claro-video-android-tv-stb</code></td>
@@ -993,7 +1062,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
           <p class="quote">Recomendacion: ejecutar <strong>FASE 2: Analisis de codigo y diagnostico</strong> para obtener el analisis completo con datos cuantificables.</p>
-          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 6 repositorios solicitados.</p>
+          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 7 repositorios solicitados.</p>
         </section>
         <section id="inversion" class="reveal">
           <h3>11. 💼 Inversion vs Valor Obtenido</h3>
@@ -1005,7 +1074,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li>Trazabilidad de hallazgos con evidencia directa desde codigo y reportes de analisis.</li>
           </ul>
 
-          <p><strong>Valor Entregado (evidencia consolidada de los seis repositorios)</strong></p>
+          <p><strong>Valor Entregado (evidencia consolidada de los siete repositorios)</strong></p>
           <ul>
             <li>📚 Documentacion tecnica verificada y organizada para onboarding, operacion y toma de decisiones.</li>
             <li>✅ Cumplimiento documental validado por repositorio con criterios uniformes.</li>
@@ -1013,7 +1082,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li>🔍 Hallazgos priorizados con evidencia trazable en codigo (archivo + linea) en los reportes de analisis.</li>
             <li>🗺️ Roadmap de accion por repositorio desde <code>ANALYSIS_SUMMARY.md</code>.</li>
             <li>⚙️ Configuracion de Copilot por repositorio cuando aplica (<code>.copilotrc</code> + <code>copilot-instructions.md</code>).</li>
-            <li>✅ Gate de calidad documental cumplido en 5 de 6 repositorios; UWP mantiene brecha en configuracion/README raiz.</li>
+            <li>✅ Gate de calidad documental cumplido en 6 de 7 repositorios; UWP mantiene brecha en configuracion/README raiz.</li>
           </ul>
           <p class="quote">Esta seccion se presenta en formato cualitativo para comunicacion de alto nivel, evitando comparativas de tiempo y porcentajes.</p>
         </section>
@@ -1044,6 +1113,13 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🟡 Moderada-Alta (30+ singletons, cobertura minima)</td>
                 <td>🔴 Crítica (secrets hardcoded + ATS global deshabilitado)</td>
                 <td>Remediar secretos/ATS y activar pipeline de tests con coverage real</td>
+              </tr>
+              <tr>
+                <td>iOS / tvOS Legacy</td>
+                <td>🟢 Sólida (Feature-First + Coordinator/MVVM/Repository)</td>
+                <td>🟡 Moderada-Alta (deuda de trazabilidad y baseline de calidad insuficiente)</td>
+                <td>🔴 Crítica (token NewRelic hardcoded + ATS global deshabilitado)</td>
+                <td>Remediar hardcoded/ATS, versionar dependencias y endurecer quality gates en CI</td>
               </tr>
               <tr>
                 <td>iOS Player SDK</td>
@@ -1095,6 +1171,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <tbody>
               <tr><td><code>claro-video-ios</code></td><td>15</td><td><a href="ANEXO_claro-video-ios.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-android-tv-stb</code></td><td>15</td><td><a href="ANEXO_claro-video-android-tv-stb.html">Abrir anexo</a></td></tr>
+              <tr><td><code>claro-video-ios-tvos</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-tvos.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-ios-player</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-player.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-android-request-manager</code></td><td>14</td><td><a href="ANEXO_claro-video-android-request-manager.html">Abrir anexo</a></td></tr>
               <tr><td><code>claro-video-web</code></td><td>15</td><td><a href="ANEXO_claro-video-web.html">Abrir anexo</a></td></tr>
