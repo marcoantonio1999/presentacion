@@ -2077,7 +2077,7 @@ Consolidar evidencia t&#233;cnica real del repositorio. Todos los hallazgos debe
 
 &lt;img src=&quot;img/DiagramaDeModulosInternos.png&quot; width=&quot;%&quot;/&gt; 
  
-```text
+```mermaid
 flowchart TD
     subgraph App
       A1[Eventos App]
@@ -2106,7 +2106,7 @@ flowchart TD
 
 &lt;img src=&quot;img/DiagramaDeFlujoDeEventos.png&quot; width=&quot;%&quot;/&gt; 
 
-```text
+```mermaid
 sequenceDiagram
     participant App
     participant Player
@@ -2125,7 +2125,7 @@ sequenceDiagram
 
 &lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 flowchart TD
     subgraph App[&quot;App (eventos dominio app)&quot;]
       A1[CVAnalyticsApp]
@@ -2158,7 +2158,7 @@ flowchart TD
 
 &lt;img src=&quot;img/DiagramaDeFlujoPrincipal1.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 sequenceDiagram
     participant Host as App Host
     participant AppMod as CVAnalyticsApp
@@ -2176,7 +2176,7 @@ sequenceDiagram
 
 &lt;img src=&quot;img/DiagramaDeFlujoPrincipal2.png&quot; width=&quot;%&quot;/&gt; 
 
-```text
+```mermaid
 sequenceDiagram
     participant Host as Player Host
     participant PlayerMod as CVAnalyticsPlayer
@@ -2195,7 +2195,7 @@ sequenceDiagram
 
 &lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt; 
 
-```text
+```mermaid
 flowchart TD
     PR[Pull Request] --&gt; CI[GitHub Actions]
     CI --&gt; SQ[SonarQube Analysis]
@@ -2214,7 +2214,7 @@ flowchart TD
 
 &lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt; 
 
-```text
+```mermaid
 flowchart LR
     UUID[UUID Usuario] --&gt; Core[CVAnalyticsCore.trackingSetup]
     Core --&gt; GAT[GATracker]

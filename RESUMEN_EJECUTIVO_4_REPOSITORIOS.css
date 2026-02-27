@@ -771,6 +771,46 @@
       height: auto;
       background: transparent;
       border-radius: 8px;
+      color: #0f2740;
+    }
+
+    .diagram-mermaid svg text,
+    .diagram-mermaid svg tspan,
+    .diagram-mermaid svg .label,
+    .diagram-mermaid svg .nodeLabel,
+    .diagram-mermaid svg .edgeLabel {
+      fill: #0f2740 !important;
+      color: #0f2740 !important;
+      font-weight: 600;
+    }
+
+    .diagram-mermaid svg foreignObject div,
+    .diagram-mermaid svg foreignObject span,
+    .diagram-mermaid svg foreignObject p {
+      color: #0f2740 !important;
+    }
+
+    .diagram-mermaid svg .label,
+    .diagram-mermaid svg .nodeLabel,
+    .diagram-mermaid svg .edgeLabel {
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.92);
+      stroke-width: 1.1px;
+    }
+
+    .diagram-mermaid svg .edgeLabel rect,
+    .diagram-mermaid svg .labelBkg {
+      fill: rgba(255, 255, 255, 0.96) !important;
+    }
+
+    .diagram-mermaid svg .node rect,
+    .diagram-mermaid svg .node polygon,
+    .diagram-mermaid svg .node ellipse,
+    .diagram-mermaid svg .node circle,
+    .diagram-mermaid svg .node path,
+    .diagram-mermaid svg .cluster rect {
+      stroke: #4f7fb2 !important;
+      stroke-width: 1.3px !important;
     }
 
     .diagram-toolbar {

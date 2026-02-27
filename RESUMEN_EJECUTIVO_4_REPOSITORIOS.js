@@ -41,16 +41,20 @@
           securityLevel: "loose",
           theme: "base",
           themeVariables: {
-            background: "#0a111b",
-            primaryColor: "#112033",
-            primaryTextColor: "#f6f9ff",
-            primaryBorderColor: "#e31d1a",
-            lineColor: "#8fb7e0",
-            secondaryColor: "#13253a",
-            tertiaryColor: "#0f1b2d",
-            clusterBkg: "#0b1625",
-            clusterBorder: "#fd4632",
-            edgeLabelBackground: "#0a111b",
+            background: "#f7fbff",
+            primaryColor: "#dbeafe",
+            primaryTextColor: "#0f2740",
+            primaryBorderColor: "#4f7fb2",
+            lineColor: "#355b84",
+            secondaryColor: "#e7f1ff",
+            secondaryTextColor: "#0f2740",
+            secondaryBorderColor: "#5b88b8",
+            tertiaryColor: "#eef5ff",
+            tertiaryTextColor: "#0f2740",
+            tertiaryBorderColor: "#6d97c3",
+            clusterBkg: "#edf4ff",
+            clusterBorder: "#6f9ac6",
+            edgeLabelBackground: "#ffffff",
             fontFamily: "Aptos, Segoe UI, sans-serif"
           }
         });
@@ -58,10 +62,12 @@
 
       function extractMermaidBlocks(rawText) {
         const blocks = [];
-        const re = /```mermaid\s*([\s\S]*?)```/gi;
+        // Match only proper fenced Mermaid blocks that start on their own line.
+        // This avoids false positives like inline text containing ````mermaid`.
+        const re = /(^|\r?\n)```mermaid[ \t]*\r?\n([\s\S]*?)\r?\n```(?=\r?\n|$)/gim;
         let match;
         while ((match = re.exec(rawText)) !== null) {
-          const code = (match[1] || "").trim();
+          const code = (match[2] || "").trim();
           if (code) blocks.push(code);
         }
         return blocks;

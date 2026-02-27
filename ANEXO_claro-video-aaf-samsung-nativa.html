@@ -8317,7 +8317,7 @@ flowchart TD
     CHK_AAF --&gt;|&quot;200 OK&quot;| CHK_HASH{&#191;Hash JS en HTML?}
     CHK_HASH --&gt;|No| ERR_HASH[&quot;showAppError()\nnr.sendErrorMetric(TYPE=3)\nHash no en index.html&quot;]
 
-    CHK_HASH --&gt;|S&#237;| CHK_JS{GET react.[hash].js}
+    CHK_HASH --&gt;|S&#237;| CHK_JS{&quot;GET react.[hash].js&quot;}
     CHK_JS --&gt;|&quot;Error&quot;| ERR_JS[&quot;showAppError()\nnr.sendErrorMetric(TYPE=4)\nJS no disponible&quot;]
 
     CHK_JS --&gt;|&quot;200 OK&quot;| REDIRECT[&quot;redirectAAF()\nwindow.location.replace(AAF_url) ✅&quot;]

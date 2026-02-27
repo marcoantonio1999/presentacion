@@ -18,12 +18,73 @@
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Tecnico: claro-video-universal-windows-platform</h3>
-        <p class="docs-note">Documentos detectados: 18</p>
+        <p class="docs-note">Documentos detectados: 21</p>
           <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-universal-windows-platform</h4>
-              <p>Documentos detectados: 18</p>
+              <p>Documentos detectados: 21</p>
             </div>
+            <details class="doc-item">
+              <summary><span class="doc-name">.copilotrc</span><span class="doc-path">.copilotrc</span></summary>
+              <pre class="doc-pre">{
+  "version": "2.2.0",
+  "language": "es-MX",
+  "project": {
+    "name": "Claro Video Universal Windows Platform",
+    "detected_stack": "dotnet-csharp-uwp",
+    "platforms": ["UWP", "Windows 8.1", "Windows Phone 8.1"],
+    "entry_solutions": [
+      "src/DLA.ClaroVideo/DLA.ClaroVideo.sln",
+      "src/Clarovideo.W81/ClaroVideo.sln",
+      "src/Clarovideo.WP8/Clarovideo.WP8.sln"
+    ]
+  },
+  "quality_gates": {
+    "build_required": true,
+    "test_required_when_applicable": true
+  }
+}
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">copilot-instructions.md</span><span class="doc-path">.github\copilot-instructions.md</span></summary>
+              <pre class="doc-pre"># GitHub Copilot Instructions - Claro Video UWP
+
+📌 Evidencia: Este archivo fue generado con evidencia directa del repositorio UWP y sus lineas legacy.
+
+Contexto base:
+- src/DLA.ClaroVideo/DLA.ClaroVideo.sln
+- src/Clarovideo.W81/ClaroVideo.sln
+- src/Clarovideo.WP8/Clarovideo.WP8.sln
+
+Reglas clave:
+- Mantener MVVM por modulo.
+- Evitar async void fuera de eventos UI.
+- Evitar catch vacio.
+- No hardcodear secretos en codigo/logs.
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">README.md</span></summary>
+              <pre class="doc-pre"># Clarovideo for Windows
+
+Welcome to the Clarovideo for Windows repository.
+
+This repository contains the source code of the Clarovideo applications for the Windows platform (Windows and Windows Phone).
+
+## First time setup
+1. Enable NuGet source in Visual Studio.
+2. Install required Visual Studio extensions (Player Framework, PlayReady, Smooth Streaming, SQLite runtimes).
+3. Ensure Hyper-V is enabled.
+
+Then open:
+- src/DLA.ClaroVideo/DLA.ClaroVideo.sln
+
+## Documentation
+- Use Cases and technical definitions (Confluence)
+- Data Provider Manual (Confluence)
+</pre>
+            </details>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
               <pre class="doc-pre">&#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio (`src/`) y consolidado con analisis en `../02-analisis/`.
@@ -3209,7 +3270,7 @@ graph LR
       </section>
     </main>
 
-    <p class="footer">Anexo tecnico separado por repositorio para facilitar lectura y mantenimiento.</p>
+    
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>

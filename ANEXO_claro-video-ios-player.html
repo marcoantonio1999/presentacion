@@ -1471,7 +1471,7 @@ Almacenar an&#225;lisis de stack y arquitectura del proyecto.
 
 &lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 flowchart LR
     A[CVPlayer iOS] --&gt; C[CVPlayerCommon]
     B[CVPlayerTVOS] --&gt; C
@@ -1490,7 +1490,7 @@ flowchart LR
 
 &lt;img src=&quot;img/DiagramaDeFlujosInit.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 sequenceDiagram
     participant App as App
     participant Builder as Builder
@@ -1508,7 +1508,7 @@ sequenceDiagram
 
 &lt;img src=&quot;img/DiagramaDeFlujosPlayback.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 sequenceDiagram
     participant Engine as BitmovinPlayer
     participant Obs as Observers
@@ -1523,7 +1523,7 @@ sequenceDiagram
 
 &lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 flowchart TD
     PR[Push/PR] --&gt; CI[ci.yml]
     CI --&gt; Build[Build]
@@ -1539,7 +1539,7 @@ flowchart TD
 
 &lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt;
 
-```text
+```mermaid
 flowchart LR
     Config[Playback Config] --&gt; Builder
     Builder --&gt; Core
@@ -1586,7 +1586,7 @@ flowchart LR
       </section>
     </main>
 
-    <p class="footer">Anexo tecnico separado por repositorio para facilitar lectura y mantenimiento.</p>
+    
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
