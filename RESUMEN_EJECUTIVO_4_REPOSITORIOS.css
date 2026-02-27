@@ -10,7 +10,7 @@
       --card-shadow: 0 16px 40px rgba(22, 35, 52, 0.12);
       --radius-lg: 20px;
       --radius-md: 14px;
-      --container: 1180px;
+      --container: 1360px;
       --sans: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
       --display: "Bahnschrift", "Aptos Display", "Franklin Gothic Medium", sans-serif;
     }
@@ -253,7 +253,7 @@
     .layout {
       margin-top: 1rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 248px minmax(0, 1fr);
       gap: 1rem;
       align-items: start;
     }
@@ -305,6 +305,7 @@
     main {
       display: grid;
       gap: 1rem;
+      min-width: 0;
     }
 
     section {
@@ -314,6 +315,7 @@
       box-shadow: 0 10px 24px rgba(22, 35, 52, 0.08);
       padding: 1.2rem;
       scroll-margin-top: 0.9rem;
+      min-width: 0;
     }
 
     section h3 {
@@ -437,6 +439,7 @@
 
     table {
       width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
       margin-top: 0.55rem;
       border-radius: 10px;
@@ -459,6 +462,8 @@
       color: #243b53;
       vertical-align: top;
       background: #fff;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     tbody tr:nth-child(even) td {
@@ -726,6 +731,18 @@
       color: #174a98;
       font-size: 0.8rem;
     }
+    @media (max-width: 1360px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: relative;
+        top: 0;
+        max-height: none;
+      }
+    }
+
     @media (max-width: 1024px) {
       .kpi-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
