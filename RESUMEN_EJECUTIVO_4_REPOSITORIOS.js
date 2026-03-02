@@ -62,14 +62,56 @@
 
       function extractMermaidBlocks(rawText) {
         const blocks = [];
-        // Match only proper fenced Mermaid blocks that start on their own line.
-        // This avoids false positives like inline text containing ````mermaid`.
-        const re = /(^|\r?\n)```mermaid[ \t]*\r?\n([\s\S]*?)\r?\n```(?=\r?\n|$)/gim;
-        let match;
-        while ((match = re.exec(rawText)) !== null) {
-          const code = (match[2] || "").trim();
-          if (code) blocks.push(code);
-        }
+        const lines = String(rawText || "").replace(/\r\n?/g, "\n").split("\n");
+        let activeFence = null;
+        let buffer = [];
+        let lastHeading = "";
+        let currentTitle = "";
+
+        lines.forEach((line) => {
+          const trimmed = line.trim();
+
+          if (!activeFence) {
+            const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/);
+            if (headingMatch) {
+              lastHeading = headingMatch[2].trim();
+              return;
+            }
+
+            if (/^```/i.test(trimmed)) {
+              const lang = trimmed.slice(3).trim().toLowerCase();
+              if (lang === "mermaid") {
+                activeFence = "mermaid";
+                buffer = [];
+                currentTitle = lastHeading;
+              } else {
+                activeFence = "other";
+              }
+            }
+            return;
+          }
+
+          if (/^```/.test(trimmed)) {
+            if (activeFence === "mermaid") {
+              const code = buffer.join("\n").trim();
+              if (code) {
+                blocks.push({
+                  code,
+                  title: currentTitle || ("Diagrama " + (blocks.length + 1))
+                });
+              }
+            }
+            activeFence = null;
+            buffer = [];
+            currentTitle = "";
+            return;
+          }
+
+          if (activeFence === "mermaid") {
+            buffer.push(line);
+          }
+        });
+
         return blocks;
       }
 
@@ -96,7 +138,7 @@
             item.dataset.diagramRendered = "true";
           })
           .catch(() => {
-            addStatus(item, "No se pudo renderizar Mermaid en este navegador. Puedes ver el codigo fuente del diagrama.");
+            addStatus(item, "No se pudo renderizar Mermaid en este navegador. Puedes ver el código fuente del diagrama.");
             const pre = item.querySelector(".doc-pre");
             if (pre) pre.classList.remove("diagram-raw-hidden");
           })
@@ -120,17 +162,17 @@
           const gallery = document.createElement("div");
           gallery.className = "diagram-gallery";
 
-          blocks.forEach((code, idx) => {
+          blocks.forEach((block, idx) => {
             const card = document.createElement("article");
             card.className = "diagram-card";
 
             const title = document.createElement("div");
             title.className = "diagram-title";
-            title.textContent = "Diagrama " + (idx + 1);
+            title.textContent = block.title || ("Diagrama " + (idx + 1));
 
             const mer = document.createElement("div");
             mer.className = "mermaid diagram-mermaid";
-            mer.textContent = code;
+            mer.textContent = block.code;
 
             card.appendChild(title);
             card.appendChild(mer);
@@ -149,8 +191,8 @@
 
             const refreshLabel = () => {
               btn.textContent = pre.classList.contains("diagram-raw-hidden")
-                ? "Ver codigo fuente (Markdown)"
-                : "Ocultar codigo fuente";
+                ? "Ver código fuente (Markdown)"
+                : "Ocultar código fuente";
             };
 
             btn.addEventListener("click", () => {
@@ -162,7 +204,7 @@
             toolbar.appendChild(btn);
             item.insertBefore(toolbar, pre);
           } else {
-            addStatus(item, "Mermaid no esta disponible en este navegador. Se mantiene el markdown original.");
+            addStatus(item, "Mermaid no está disponible en este navegador. Se mantiene el markdown original.");
           }
 
           item.addEventListener("toggle", () => {
