@@ -2470,8 +2470,9 @@
     .diagram-workspace-page .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: auto auto;
       align-items: start;
-      gap: 0.16rem 0.8rem;
+      gap: 0.22rem 0.8rem;
       padding: 0.5rem 0.75rem;
       min-height: 0;
     }
@@ -2486,6 +2487,7 @@
 
     .diagram-workspace-page .kicker {
       grid-column: 1;
+      grid-row: 1;
       justify-self: start;
       margin: 0;
       padding: 0.18rem 0.48rem;
@@ -2494,6 +2496,7 @@
 
     .diagram-workspace-page .hero h1 {
       grid-column: 1;
+      grid-row: 2;
       margin: 0;
       font-size: clamp(1rem, 1.45vw, 1.28rem);
       line-height: 1.04;
@@ -2523,8 +2526,8 @@
 
     .diagram-workspace-page .diagram-hero-links {
       grid-column: 2;
-      grid-row: 1 / span 2;
-      align-self: center;
+      grid-row: 2;
+      align-self: end;
       justify-self: end;
       margin: 0;
       max-width: 380px;

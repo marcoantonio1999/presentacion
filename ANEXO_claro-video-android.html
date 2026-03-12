@@ -11,18 +11,152 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-android</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-android</h3>
-        <p class="docs-note">Documentos detectados: 15</p>
+        <p class="docs-note">Documentos detectados: 15 (FASE 1) + Value Strem Spect (VSS) integrado desde la version mas reciente disponible del paquete: <code>analysis_v2</code>.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la entrega mas reciente ubicada en <code>analysis_v2</code>, elegida sobre <code>analysis_v1</code> para evitar mezclar variantes intermedias del mismo paquete.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: <code>analysis_v2</code> - version mas reciente detectada en el paquete</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>10</strong>
+              <span>dominios cubiertos</span>
+            </article>
+            <article class="vss-stat">
+              <strong>249</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>1,295</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>22</strong>
+              <span>diagramas Value Strem Spect base</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>ACNTMGMT, AUTH, CARROUSEL, LIVESTREAMING, MUSIC, RECORDED, SEARCH, SUBSCRIPTION, TIMESHIFT y VOD tienen SPEC, summary y diagramas por dominio dentro de <code>analysis_v2</code>.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>AUTH</code> concentra 294 relaciones; <code>ACNTMGMT</code> suma 85 impactos acumulados; <code>SUBSCRIPTION</code> y <code>CARROUSEL</code> comparten 168 relaciones cada uno.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Uso en presentacion</h4>
+              <p>La lectura ejecutiva queda en este anexo y los diagramas completos viven en una pagina dedicada con indice, zoom y navegacion para no cargar la vista principal.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Todos los <code>summary.json</code> por dominio reportan <code>validation_status: ok</code>. Este paquete no incluye un <code>VSS_COMPLIANCE_REPORT.md</code> consolidado; el resumen se reconstruyo desde <code>repo_summary.json</code>, <code>summary.json</code> y <code>SPEC_*.md</code>.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva la entrega completa de <code>analysis_v2</code>: diagrama global, impacto global, 20 diagramas por dominio y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-android-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-android-diagramas-vss-viewer.html#diagrama-global-claro-video-android">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-android-diagramas-vss-viewer.html#impacto-global-claro-video-android">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos generados en <code>analysis_v2</code> y agrega una seccion 23 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">10 dominios - alcance funcional + volumen de impacto</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Alcance validado</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Cuenta, perfiles, control parental e integracion Telcel</td><td>140</td><td>28 / 57</td></tr>
+                    <tr><td>AUTH</td><td>Login OTT, APA, registro, refresh y logout</td><td>294</td><td>22 / 28</td></tr>
+                    <tr><td>CARROUSEL</td><td>Navegacion home CMS-driven, ribbons y banners</td><td>168</td><td>15 / 0</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>TV en vivo, EPG y canales lineales</td><td>105</td><td>9 / 6</td></tr>
+                    <tr><td>MUSIC</td><td>Catalogo y reproduccion de ClaroMusica</td><td>105</td><td>12 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>DVR, descargas offline y recordatorios</td><td>42</td><td>6 / 0</td></tr>
+                    <tr><td>SEARCH</td><td>Busqueda, autocompletado y recomendaciones</td><td>147</td><td>10 / 12</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>Planes, compra y cancelacion de suscripciones</td><td>168</td><td>15 / 10</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Replay, catch-up TV y pausa de vivo</td><td>42</td><td>3 / 0</td></tr>
+                    <tr><td>VOD</td><td>Reproduccion on-demand con DRM y offline</td><td>84</td><td>6 / 4</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">hotspots + lectura funcional + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> es el dominio mas denso: 294 relaciones y 50 impactos acumulados.</li>
+                    <li><code>ACNTMGMT</code> tiene la mayor cascada indirecta: 57 impactos indirectos y 85 impactos totales.</li>
+                    <li><code>SUBSCRIPTION</code> combina peso tecnico y peso de negocio: 168 relaciones sobre el flujo de monetizacion.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Lectura funcional</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> y <code>SUBSCRIPTION</code> sostienen acceso y conversion.</li>
+                    <li><code>LIVESTREAMING</code>, <code>TIMESHIFT</code> y <code>RECORDED</code> cubren la parte de TV lineal, replay y DVR.</li>
+                    <li><code>SEARCH</code>, <code>CARROUSEL</code>, <code>VOD</code> y <code>MUSIC</code> concentran descubrimiento y consumo.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Usar el diagrama global y el impacto global para priorizar FASE 2 sobre <code>AUTH</code>, <code>ACNTMGMT</code> y <code>SUBSCRIPTION</code>.</li>
+                    <li>Tomar <code>repo_graph.graphml</code> como fuente estructural de respaldo para revisiones tecnicas mas profundas.</li>
+                    <li>Pedir al equipo una proxima exportacion con <code>VSS_COMPLIANCE_REPORT.md</code> para homologar el paquete con <code>coship</code>.</li>
+                    <li>Conservar <code>analysis_v2</code> como baseline hasta que aparezca una version superior del mismo paquete.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>analysis_v2/analysis/repo_summary.json</code>, <code>analysis_v2/analysis/repo_graph.graphml</code>, <code>analysis_v2/analysis/repo_evidence_map.json</code>, <code>analysis_v2/VSS/GENERATED/*/analysis/summary.json</code> y <code>analysis_v2/VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
         <article class="repo-content-block">
           <div class="repo-content-head">
             <h4>Repositorio: claro-video-android</h4>
-            <p>Documentos detectados: 15</p>
+            <p>Documentos detectados: 15 (FASE 1)</p>
           </div>
           <details class="doc-item">
             <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>

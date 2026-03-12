@@ -11,18 +11,152 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-android-tv-stb</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-android-tv-stb</h3>
-        <p class="docs-note">Documentos detectados: 15</p>
+        <p class="docs-note">Documentos detectados: 15 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-android-tv-stb new.zip</code>. Al no existir carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, la raiz del paquete se considera la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · evidencia VSS generada 2026-03-11</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>10 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>374</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>495</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>151</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>ACNTMGMT, AUTH, CARROUSEL, LIVESTREAMING, MUSIC, RECORDED, SEARCH, SUBSCRIPTION, TIMESHIFT y VOD quedaron presentes en <code>VSS/GENERATED</code> y los 10 <code>summary.json</code> por dominio reportan <code>validation_status: ok</code>.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>CARROUSEL</code> es la mayor superficie funcional con 76 nodos y 80 relaciones; <code>AUTH</code> es el flujo mas denso con 61 nodos y 90 relaciones; <code>RECORDED</code> arrastra 49 impactos indirectos y <code>TIMESHIFT</code> deja 12 nodos aislados.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>La evidencia cruza friccion de Home sobre STB de gama baja, dependencia de <code>ExoPlayer 2.16.1</code> para timeshift y consumo de una IP interna <code>10.20.28.46</code> en el flujo de musica.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Este paquete no incluye un consolidado tipo <code>VSS_COMPLIANCE_REPORT.md</code> o <code>RESUMEN_VSS_GENERADOS.md</code>. La lectura ejecutiva se reconstruyo desde <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>. Los SPEC revisados repiten un catalogo MCP pre-flight de 247 APIs, 581 operaciones y 1 spec invalida excluida.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, 20 diagramas por dominio y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-android-tv-stb-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-android-tv-stb-diagramas-vss-viewer.html#diagrama-global-docs">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-android-tv-stb-diagramas-vss-viewer.html#impacto-global-docs">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos del paquete y agrega una seccion 23 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 369 nodos unicos, 495 relaciones y 5 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">10 dominios - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Cuenta, perfiles, hub de usuario y vinculacion de dispositivos</td><td>34</td><td>16 / 6</td></tr>
+                    <tr><td>AUTH</td><td>Login OTT, onboarding, aceptacion de terminos y refresh de sesion</td><td>90</td><td>41 / 43</td></tr>
+                    <tr><td>CARROUSEL</td><td>Home, superhighlight, CMS Rotation, NAVDATA y D-pad navigation</td><td>80</td><td>43 / 10</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>TV en vivo, lineup, EPG, playback y tracking de canal</td><td>50</td><td>29 / 2</td></tr>
+                    <tr><td>MUSIC</td><td>Claro Musica, artistas, playback de audio y miniplayer persistente</td><td>50</td><td>33 / 5</td></tr>
+                    <tr><td>RECORDED</td><td>DVR cloud, seenlast, series delete y reproduccion de grabaciones</td><td>54</td><td>32 / 49</td></tr>
+                    <tr><td>SEARCH</td><td>Busqueda, predictive, acceso a contenido y discovery</td><td>24</td><td>11 / 0</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>Planes, upsell, downsell, compra, cancelacion y reactivacion</td><td>37</td><td>20 / 0</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Playback diferido, versionado EPG y control temporal del stream</td><td>46</td><td>28 / 6</td></tr>
+                    <tr><td>VOD</td><td>Catalogo, metadata, PPV y playback protegido bajo demanda</td><td>30</td><td>15 / 1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">hotspots + riesgo operativo + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> y <code>CARROUSEL</code> concentran la mayor superficie del paquete y cargan los flujos de acceso y descubrimiento.</li>
+                    <li><code>RECORDED</code> es el dominio con mayor cascada indirecta: 49 impactos indirectos sobre un flujo ya acoplado a playback y seenlast.</li>
+                    <li><code>TIMESHIFT</code> y <code>MUSIC</code> dejan el mayor volumen de nodos aislados, lo que apunta a dependencias externas o evidencia fragmentada.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>CARROUSEL</code> cruza CMS, rotacion, NAVDATA y D-pad sobre STB de gama baja; la propia evidencia marca jank y muchas requests al Home.</li>
+                    <li>La spec de <code>TIMESHIFT</code> marca como riesgo critico que <code>ExoPlayer 2.16.1</code> no cubre bien seek sobre HLS live y recomienda migracion a Media3.</li>
+                    <li><code>MUSIC</code> consume <code>POST /artist</code> sobre la IP interna <code>10.20.28.46</code>; <code>RECORDED</code> y <code>VOD</code> ya documentan errores <code>410 Gone</code> y <code>403</code> en playback.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>AUTH</code>, <code>CARROUSEL</code> y <code>TIMESHIFT</code>, porque combinan densidad, dependencia de infraestructura y friccion visible para usuario final.</li>
+                    <li>Validar y abstraer la IP de musica hacia un endpoint controlado por entorno antes de ampliar el alcance del flujo musical.</li>
+                    <li>Usar la seccion 23 del <code>repo_graph.graphml</code> como respaldo estructural; el render ya normaliza 5 IDs duplicados del archivo fuente.</li>
+                    <li>Conservar la raiz del paquete como baseline hasta que aparezca una exportacion mas reciente del mismo repositorio.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_docs.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
 <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-android-tv-stb</h4>
-              <p>Documentos detectados: 15</p>
+              <p>Documentos detectados: 15 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>

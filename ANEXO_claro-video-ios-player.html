@@ -11,18 +11,149 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-ios-player</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-ios-player</h3>
-        <p class="docs-note">Documentos detectados: 14</p>
+        <p class="docs-note">Documentos detectados: 14 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-ios-player new.zip</code>. Dentro del paquete no existen carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, asi que la raiz del zip se toma como la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · VALIDATION_REPORT generado 2026-03-11</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>6 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>144</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>99</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>36</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>El paquete cubre la superficie real del player en <code>VOD</code>, <code>LIVESTREAMING</code>, <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>MUSIC</code> y <code>SUBSCRIPTION</code>. El <code>VALIDATION_REPORT.md</code> consolida 22 value streams internos agrupados en 6 dominios y cierra la busqueda MCP con <code>27/27</code> APIs encontradas.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>VOD</code> es el flujo mas cargado con 41 nodos y 24 relaciones. <code>SUBSCRIPTION</code> y <code>LIVESTREAMING</code> quedan inmediatamente detras con 44 nodos y 22/17 relaciones, mientras <code>TIMESHIFT</code> y <code>MUSIC</code> se apoyan en componentes compartidos del player y FairPlay.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>La propia evidencia marca deuda tecnica directa: URL hardcodeada del certificado FairPlay de musica en <code>ProviderAMCOMusic.swift</code>, licencias de <code>Bitmovin</code> hardcodeadas en <code>BitmovinConstants.swift</code>, estado global mutable en <code>SharedInfo.swift</code> y enums/flags con semantica ambigua para live, purchase y timeshift.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Este paquete no incluye un <code>VSS_COMPLIANCE_REPORT.md</code> formal ni un <code>RESUMEN_VSS_GENERADOS.md</code>, pero si trae un <code>VSS/GENERATED/VALIDATION_REPORT.md</code> como consolidado ejecutivo. La lectura se reconstruyo desde ese reporte, <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 12 diagramas por dominio del paquete y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-ios-player-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-ios-player-diagramas-vss-viewer.html#diagrama-global-claro-video-ios-player">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-ios-player-diagramas-vss-viewer.html#impacto-global-claro-video-ios-player">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 14 entregables completos del paquete y agrega una seccion 15 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 142 nodos unicos, 99 relaciones y 2 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">6 dominios del player - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>LIVESTREAMING</td><td>Canales live, swipe channel, favoritos, recordatorios y mini-EPG</td><td>17</td><td>14 / 0</td></tr>
+                    <tr><td>MUSIC</td><td>Audio playback, album-artista, remote controls y lock screen</td><td>13</td><td>11 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>NPVR, boton de grabacion, opciones evento/serie y playback de grabados</td><td>11</td><td>10 / 0</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>FinPlayer, compra/renta/suscripcion, siguiente episodio y recomendaciones</td><td>22</td><td>18 / 0</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Seek en live, replay de evento pasado y slider temporal compartido</td><td>12</td><td>11 / 0</td></tr>
+                    <tr><td>VOD</td><td>Playback on demand, DRM FairPlay, offline, analytics y cierre FinPlayer</td><td>24</td><td>17 / 0</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">scope real + deuda del player + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>VOD</code>, <code>SUBSCRIPTION</code> y <code>LIVESTREAMING</code> concentran la mayor carga funcional del paquete y sostienen el camino critico del reproductor.</li>
+                    <li>El alcance de 6 dominios es intencional: este paquete representa el SDK/player, no el mapa funcional completo de la app iOS principal.</li>
+                    <li><code>TIMESHIFT</code>, <code>RECORDED</code> y <code>MUSIC</code> son mas pequenos en volumen, pero dependen del mismo stack compartido de player, DRM y estado global.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>MUSIC-001</code>: <code>ProviderAMCOMusic.swift</code> deja hardcodeada la URL del certificado FairPlay de musica.</li>
+                    <li><code>VOD-003</code>: <code>BitmovinConstants.swift</code> mantiene licencias de Bitmovin Player y Analytics hardcodeadas.</li>
+                    <li><code>VOD-004</code> y <code>TIMESHIFT-001</code>: <code>SharedInfo.swift</code> mezcla estado global mutable y el flag <code>isNoInLiveWithTimeShift</code>.</li>
+                    <li><code>LIVESTREAMING-001</code> y <code>SUBSCRIPTION-001</code>: enums y contratos con semantica ambigua como <code>OptionLive</code> y el typo <code>purchaseSeasson</code>.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>VOD</code>, <code>LIVESTREAMING</code> y <code>SUBSCRIPTION</code>, porque concentran playback, DRM y monetizacion.</li>
+                    <li>Externalizar certificados y licencias, y reducir el estado global mutable antes de seguir ampliando features del player.</li>
+                    <li>Usar <code>VALIDATION_REPORT.md</code> como consolidado funcional inicial y la seccion 15 del <code>repo_graph.graphml</code> como respaldo estructural.</li>
+                    <li>Documentar dependencias que hoy quedan fuera del repo, como Apple IAP e infraestructura backend de music/timeshift/NPVR.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>VSS/GENERATED/VALIDATION_REPORT.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_claro-video-ios-player.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
 <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-ios-player</h4>
-              <p>Documentos detectados: 14</p>
+              <p>Documentos detectados: 14 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>

@@ -187,6 +187,8 @@
           startOnLoad: false,
           securityLevel: "loose",
           theme: "base",
+          maxTextSize: 2000000,
+          maxEdges: 5000,
           flowchart: {
             useMaxWidth: false,
             htmlLabels: true,

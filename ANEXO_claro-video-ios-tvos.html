@@ -11,18 +11,154 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-ios-tvos</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-ios-tvos</h3>
-        <p class="docs-note">Documentos detectados: 14</p>
+        <p class="docs-note">Documentos detectados: 14 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-ios-tvos new.zip</code>. Al no existir carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, la raiz del paquete se considera la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · resumen VSS actualizado 2026-03-11</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>10 / 10</strong>
+              <span>dominios completos</span>
+            </article>
+            <article class="vss-stat">
+              <strong>150</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>71</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>60</strong>
+              <span>archivos VSS base</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>AUTH, SEARCH, VOD, LIVESTREAMING, TIMESHIFT, RECORDED, CARROUSEL, SUBSCRIPTION, ACNTMGMT y MUSIC quedaron marcados como <code>COMPLETO</code> en <code>RESUMEN_VSS_GENERADOS.md</code>.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo transversal</h4>
+              <p>El paquete marca como críticos el token de NewRelic hardcodeado, valores fijos en <code>Modules/Purchase/</code>, una IP interna en <code>artist</code> y la configuración ATS relajada en <code>Info.plist</code>.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Uso en presentacion</h4>
+              <p>La lectura ejecutiva queda en este anexo y los diagramas completos viven en una pagina dedicada con indice, zoom y navegacion para no saturar la vista principal.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">El resumen consolidado del paquete confirma 247 APIs catalogadas, 581 operaciones MCP y 1 spec invalida excluida. Tambien deja trazados 17 faltantes iniciales, de los cuales 15 fueron recuperados y 2 quedaron pendientes de verificacion externa.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva la entrega completa del paquete: diagrama global, impacto global, 20 diagramas por dominio y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-ios-tvos-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-ios-tvos-diagramas-vss-viewer.html#diagrama-global-claro-video-ios-tvos">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-ios-tvos-diagramas-vss-viewer.html#impacto-global-claro-video-ios-tvos">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos del paquete y agrega una seccion 23 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">10 dominios - foco funcional + impacto directo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>AUTH</td><td>Autenticacion OTT, sesion, QR login y T&amp;C</td><td>11</td><td>10 / 0</td></tr>
+                    <tr><td>SEARCH</td><td>Busqueda, discovery y variantes verticales</td><td>10</td><td>10 / 0</td></tr>
+                    <tr><td>VOD</td><td>Catalogo, detalle y reproduccion on demand</td><td>9</td><td>8 / 0</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Catch-up TV y reproduccion diferida desde EPG</td><td>9</td><td>5 / 1</td></tr>
+                    <tr><td>MUSIC</td><td>Streaming musical y reproduccion de artistas</td><td>11</td><td>6 / 2</td></tr>
+                    <tr><td>ACNTMGMT</td><td>Cuenta, perfiles, avatar y control parental</td><td>7</td><td>4 / 1</td></tr>
+                    <tr><td>CARROUSEL</td><td>Home, navegacion principal y carruseles</td><td>6</td><td>4 / 0</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>Planes, compras, cancelacion y reactivacion</td><td>4</td><td>2 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>NPVR y contenidos grabados</td><td>3</td><td>2 / 1</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>TV en vivo, EPG y tracking de canal</td><td>1</td><td>1 / 0</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">riesgos criticos + deuda tecnica + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hallazgos criticos</h4>
+                  <ul class="vss-list">
+                    <li>Token de NewRelic hardcodeado en <code>AppDelegate.swift</code>.</li>
+                    <li><code>Modules/Purchase/</code> mantiene valores fijos y requiere mover configuración a endpoints y <code>Info.plist</code>.</li>
+                    <li>La API <code>artist</code> apunta a la IP interna <code>10.20.28.46</code> en la spec MCP.</li>
+                    <li><code>LayoutTableViewController</code> fue marcado como God Class de 1,153 lineas.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Deuda y brechas</h4>
+                  <ul class="vss-list">
+                    <li>ATS deshabilitado en <code>Info.plist</code>.</li>
+                    <li>Dos APIs siguen pendientes de verificación externa: <code>content-playback</code> y <code>ContentpublicityV1_purchasebuttoninfo</code>.</li>
+                    <li>Existe duplicación de endpoints legacy en navegación y modificación de usuario.</li>
+                    <li>La cobertura de tests sigue limitada a módulos puntuales.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Sacar secretos y valores fijos de código fuente antes de ampliar FASE 2.</li>
+                    <li>Refactorizar <code>LayoutTableViewController</code> y revisar el TODO pendiente en <code>Modules/Music/</code>.</li>
+                    <li>Validar en SwaggerHub las 2 APIs faltantes para cerrar los huecos del VOD.</li>
+                    <li>Revisar configuración ATS y normalizar endpoints internos contra entornos productivos.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>VSS/GENERATED/RESUMEN_VSS_GENERADOS.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_evidence_map.json</code> y <code>VSS/GENERATED/*/analysis/summary.json</code>.</p>
+            </div>
+          </details>
+        </div>
 <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-ios-tvos</h4>
-              <p>Documentos detectados: 14</p>
+              <p>Documentos detectados: 14 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>

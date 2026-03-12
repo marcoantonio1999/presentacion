@@ -11,18 +11,153 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-ios-services</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-ios-services</h3>
-        <p class="docs-note">Documentos detectados: 15</p>
+        <p class="docs-note">Documentos detectados: 15 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-ios-services new.zip</code>. Dentro del paquete no existen carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, asi que la raiz del zip se toma como la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · raiz del paquete tomada como baseline vigente</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>9 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>152</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>206</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>90</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>La entrega cubre <code>ACNTMGMT</code>, <code>AUTH</code>, <code>CARROUSEL</code>, <code>LIVESTREAMING</code>, <code>MUSIC</code>, <code>RECORDED</code>, <code>SEARCH</code>, <code>SUBSCRIPTION</code> y <code>VOD</code>. El paquete no trae un dominio <code>TIMESHIFT</code> dentro de <code>VSS/GENERATED</code>, asi que la lectura se considera 9 / 10 sobre el mapa funcional objetivo.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>AUTH</code> es el dominio mas grande del paquete con 52 nodos y 27 relaciones. <code>SUBSCRIPTION</code> arrastra 67 relaciones y 10 impactos indirectos, el mayor cruce del repositorio. <code>RECORDED</code> mantiene 40 relaciones con solo 18 nodos, senal de acoplamiento fuerte con contratos y servicios compartidos.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>La evidencia repetida marca riesgos claros: retries recursivos sin limite en <code>AUTH</code> y <code>SEARCH</code>, endpoints <code>http://*.clarovideo.net</code> todavia visibles en autenticacion y busqueda, <code>QueryBuilder.shared</code> como God Object de 893 LOC, flags globales mutables como <code>isRecentlyLogout</code> y <code>Metadata.isAdvertisingEnable</code>, y poca evidencia de pruebas para managers criticos.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Este paquete no incluye <code>VSS_COMPLIANCE_REPORT.md</code>, <code>RESUMEN_VSS_GENERADOS.md</code>, <code>INDEX.md</code> ni <code>VALIDATION_REPORT.md</code>. La lectura ejecutiva se reconstruyo desde <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 18 diagramas por dominio y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-ios-services-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-ios-services-diagramas-vss-viewer.html#diagrama-global-docs">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-ios-services-diagramas-vss-viewer.html#impacto-global-docs">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 20 entregables completos del paquete y agrega una seccion 21 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 151 nodos unicos, 206 relaciones y 1 ID duplicado detectado en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">9 dominios del SDK de servicios - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Perfiles, PIN parental, account suspended, notice privacy y dispositivos</td><td>14</td><td>11 / 1</td></tr>
+                    <tr><td>AUTH</td><td>Login, logout, refresh token, registro, accepted terms y sesion activa</td><td>27</td><td>20 / 0</td></tr>
+                    <tr><td>CARROUSEL</td><td>Header inicial, CMS, metadata global y carga temprana de home</td><td>7</td><td>7 / 1</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>Lineup, EPG, canales en vivo y soporte de playback live</td><td>8</td><td>8 / 1</td></tr>
+                    <tr><td>MUSIC</td><td>Servicios del modulo musical y contratos compartidos con provider backend</td><td>21</td><td>7 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>Grabaciones, listados NPVR y operacion sobre contenido grabado</td><td>40</td><td>13 / 0</td></tr>
+                    <tr><td>SEARCH</td><td>Busqueda predictiva, ranking editorial y vertical search por facetas</td><td>12</td><td>11 / 1</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>Checkout, planes, pagos, renovacion y contratos de suscripcion</td><td>67</td><td>22 / 10</td></tr>
+                    <tr><td>VOD</td><td>Playback on demand, detalle de contenido y contratos de consumo premium</td><td>10</td><td>9 / 1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">scope real + deuda transversal del SDK + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> sostiene el mayor volumen estructural del paquete y concentra login, logout, refresh, accepted terms y sesion activa.</li>
+                    <li><code>SUBSCRIPTION</code> es el mayor foco de relacion e impacto indirecto, por lo que cualquier cambio ahi arrastra pagos, planes y entitlement checks.</li>
+                    <li><code>RECORDED</code> aparece pequeno en nodos pero alto en relaciones, lo que sugiere dependencia transversal con modelos y contratos compartidos.</li>
+                    <li>La ausencia de <code>TIMESHIFT</code> en <code>VSS/GENERATED</code> debe quedar explicita como gap o fuera de alcance antes de pasar a FASE 2.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> y <code>SEARCH</code> reintentan de forma recursiva sin tope cuando <code>validateIfNeedCallAgain()</code> devuelve verdadero.</li>
+                    <li><code>QueryBuilder.shared</code> concentra construccion de servicios, parametros base y configuracion global en un bloque de 893 LOC.</li>
+                    <li>Los specs de <code>AUTH</code> y <code>SEARCH</code> muestran endpoints <code>http://*.clarovideo.net</code>, lo que exige validar transporte real y endurecer configuracion.</li>
+                    <li>Persisten flags globales y acoplamiento oculto en <code>isRecentlyLogout</code>, <code>Metadata.isAdvertisingEnable</code> y managers sin cobertura de pruebas clara.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>AUTH</code>, <code>SUBSCRIPTION</code>, <code>SEARCH</code> y <code>RECORDED</code>, porque concentran sesion, cobro, descubrimiento y alto acoplamiento.</li>
+                    <li>Eliminar retries recursivos, meter backoff controlado y separar las responsabilidades de <code>QueryBuilder.shared</code>.</li>
+                    <li>Revisar configuracion de endpoints y forzar contratos seguros en autenticacion, busqueda y checkout.</li>
+                    <li>Definir si <code>TIMESHIFT</code> es un gap de generacion o realmente no aplica al alcance del SDK para que el corte de FASE 1.5 quede consistente.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>analysis/repo_summary.json</code>, <code>analysis/diagrama_global_docs.md</code>, <code>analysis/impacto_global_docs.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
 <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-ios-services</h4>
-              <p>Documentos detectados: 15</p>
+              <p>Documentos detectados: 15 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>

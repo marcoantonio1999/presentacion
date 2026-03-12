@@ -11,18 +11,147 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-middleware-claro-musica</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-middleware-claro-musica</h3>
-        <p class="docs-note">Documentos detectados: 27</p>
+        <p class="docs-note">Documentos detectados: 27 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-middleware-claro-musica new.zip</code>. Dentro del paquete no existen carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, asi que la raiz del zip se toma como la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · raiz del paquete tomada como baseline vigente</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>4 / 10</strong>
+              <span>dominios en scope</span>
+            </article>
+            <article class="vss-stat">
+              <strong>140</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>135</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>61</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p><code>AUTH</code>, <code>MUSIC</code>, <code>CARROUSEL</code> y <code>ACNTMGMT</code> son el alcance real del middleware. <code>OUT_OF_SCOPE_DOMAINS.md</code> documenta fuera de alcance a <code>SEARCH</code>, <code>VOD</code>, <code>LIVESTREAMING</code>, <code>TIMESHIFT</code>, <code>RECORDED</code> y <code>SUBSCRIPTION</code>. La busqueda in-scope cierra con <code>21/22</code> APIs encontradas y solo <code>LinkDevice</code> queda fuera del catalogo MCP.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>CARROUSEL</code> abre la mayor superficie con 62 nodos y 38 relaciones; <code>ACNTMGMT</code> queda muy cerca con 56 nodos y 31 relaciones. <code>MUSIC</code> concentra el mayor arrastre indirecto del paquete con 9 impactos indirectos y <code>AUTH</code> condensa el acceso con 46 nodos y 29 relaciones.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>La evidencia ya marca tres focos: secreto JWT hardcodeado como <code>'token'</code>, fallback expuesto de <code>MOBZILLA_PARTNER_TOKEN</code> a <code>'2464144396'</code> y fan-out de Home con <code>Promise.all</code> sobre 7 operaciones. Ademas, la spec de <code>MUSIC</code> deja un <code>POST /artist</code> apoyado en la IP interna <code>10.20.28.46</code>.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Este paquete no incluye un consolidado tipo <code>VSS_COMPLIANCE_REPORT.md</code> o <code>RESUMEN_VSS_GENERADOS.md</code>. La lectura ejecutiva se reconstruyo desde <code>VSS/GENERATED/OUT_OF_SCOPE_DOMAINS.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 8 diagramas de dominio del paquete y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-middleware-claro-musica-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-middleware-claro-musica-diagramas-vss-viewer.html#diagrama-global-claro-video-middleware-claro-musica">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-middleware-claro-musica-diagramas-vss-viewer.html#impacto-global-claro-video-middleware-claro-musica">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 10 entregables completos del paquete y agrega una seccion 11 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 138 nodos unicos, 135 relaciones y 2 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">4 dominios en scope - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Estado de sesion, favoritos, nivel de cuenta y hub de usuario</td><td>31</td><td>25 / 0</td></tr>
+                    <tr><td>AUTH</td><td>Login OTT, accepted terms, refresh, register y logout</td><td>29</td><td>24 / 0</td></tr>
+                    <tr><td>CARROUSEL</td><td>Home, ribbons, CMS rotation, superhighlight y NAVDATA</td><td>38</td><td>28 / 0</td></tr>
+                    <tr><td>MUSIC</td><td>Album, artist, playlist, radios, favoritos y tracking musical</td><td>37</td><td>24 / 9</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">scope real + hotspots + riesgo operativo</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>CARROUSEL</code> es la mayor superficie del BFF y concentra el flujo de Home con fan-out hacia tops, radios, APA y favoritos.</li>
+                    <li><code>MUSIC</code> es el dominio con mayor propagacion indirecta del paquete y concentra los journeys de album, playlists, artistas y radio.</li>
+                    <li>El scope de 4 dominios es intencional: el propio VSS documenta 6 dominios fuera de alcance, por lo que aqui no hay falta de cobertura sino especializacion del middleware.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> mantiene un secreto JWT hardcodeado como <code>'token'</code>; la propia evidencia pide moverlo a <code>process.env.JWT_SECRET</code>.</li>
+                    <li><code>CARROUSEL</code> deja un fallback hardcodeado de <code>MOBZILLA_PARTNER_TOKEN</code> y ejecuta <code>Promise.all</code> con 7 operaciones simultaneas.</li>
+                    <li><code>MUSIC</code> depende de un endpoint interno <code>http://10.20.28.46:4000/v1/cm/artist</code> y la spec remarca respuesta minima en MCP para ese contrato.</li>
+                    <li><code>LinkDevice</code> aparece como la unica API in-scope no encontrada, pero la evidencia la marca como no relevante para este music BFF.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>AUTH</code>, <code>CARROUSEL</code> y <code>MUSIC</code>, porque concentran acceso, home y dependencia de terceros.</li>
+                    <li>Externalizar secretos y tokens a variables de entorno antes de ampliar alcance o reutilizar este middleware en otro canal.</li>
+                    <li>Conservar <code>OUT_OF_SCOPE_DOMAINS.md</code> como documento de frontera funcional; es la referencia que evita pedir cobertura de dominios que no pertenecen a este BFF.</li>
+                    <li>Usar la seccion 11 del <code>repo_graph.graphml</code> como respaldo estructural cuando se requiera revisar el mapa tecnico sin el resumen narrativo.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>VSS/GENERATED/OUT_OF_SCOPE_DOMAINS.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_claro-video-middleware-claro-musica.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
         <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-middleware-claro-musica</h4>
-              <p>Documentos detectados: 27</p>
+              <p>Documentos detectados: 27 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
