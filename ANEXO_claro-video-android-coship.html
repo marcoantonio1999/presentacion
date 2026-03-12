@@ -11,18 +11,155 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-android-coship</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + resumen VSS</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-android-coship</h3>
-        <p class="docs-note">Documentos detectados: 14</p>
-<article class="repo-content-block">
+        <p class="docs-note">Documentos detectados: 14 (FASE 1) + resumen VSS integrado desde la version mas reciente disponible del 11 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - VSS</span>
+              <h4>Resumen ejecutivo VSS integrado en el anexo</h4>
+              <p>Se tomo como referencia la entrega mas reciente ubicada en <code>new_vss</code>, actualizada el 11 de marzo de 2026, para evitar mezclar variantes intermedias del mismo paquete.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: <code>new_vss</code> - 2026-03-11</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas VSS">
+            <article class="vss-stat">
+              <strong>10</strong>
+              <span>dominios cubiertos</span>
+            </article>
+            <article class="vss-stat">
+              <strong>100%</strong>
+              <span>compliance global</span>
+            </article>
+            <article class="vss-stat">
+              <strong>30</strong>
+              <span>artefactos VSS base</span>
+            </article>
+            <article class="vss-stat">
+              <strong>7</strong>
+              <span>gaps globales detectados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>AUTH, SEARCH, VOD, LIVESTREAMING, TIMESHIFT, RECORDED, SUBSCRIPTION, MUSIC, ACNTMGMT y CARROUSEL ya tienen SPEC, componentes y contracts.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo transversal</h4>
+              <p>El mayor foco sigue en <code>build.gradle</code>, la mezcla MVP/MVVM y dependencias legacy sin una ruta de migracion visible.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Uso en presentacion</h4>
+              <p>La lectura ejecutiva queda en este anexo y los diagramas completos viven en una pagina dedicada con indice para evitar saturar la vista.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Los diagramas completos generados en <code>new_vss</code> se mantienen intactos en una pagina dedicada. Cada vista conserva trazabilidad al archivo <code>.md</code> renderizable y a su par <code>.mmd</code> cuando existe.</p>
+          <!-- VSS_DIAGRAMS_START -->
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas VSS</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>Se conserva la referencia a la entrega mas reciente en <code>new_vss</code>. Usa la pagina dedicada para ir directo al diagrama global, al impacto global o al dominio que corresponda.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-android-coship-diagramas-vss-viewer.html">Abrir pagina de diagramas VSS</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-android-coship-diagramas-vss-viewer.html#diagrama-global-docs">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-android-coship-diagramas-vss-viewer.html#impacto-global-docs">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos generados en <code>new_vss</code>, incluyendo archivos <code>.md</code> y pares <code>.mmd</code> cuando existen.</p>
+            </div>
+          </article>
+          <!-- VSS_DIAGRAMS_END -->
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa VSS por dominio</span><span class="doc-path">10 dominios - patron dominante + deuda critica</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Patron dominante</th>
+                      <th>Deuda critica</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>AUTH</td><td>MVVM/MVP hibrido</td><td>Credenciales en <code>build.gradle</code></td></tr>
+                    <tr><td>SEARCH</td><td>MVVM (<code>new_search</code>)</td><td>Implementacion dual <code>search/new_search</code></td></tr>
+                    <tr><td>VOD</td><td>MVVM</td><td><code>TrustDefender</code> como AAR local</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>MVVM + Domain</td><td><code>ReminderWorker</code> sin metricas</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Legacy (Tasks Java + <code>TVFragment</code>)</td><td>Sin OpenAPI para stream timeshift/NPVR</td></tr>
+                    <tr><td>RECORDED</td><td>Legacy Tasks (Kotlin)</td><td>Sin <code>ViewModel</code>/<code>UseCase</code> dedicado</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>MVP (legacy)</td><td>Presenters Java en modulo financiero</td></tr>
+                    <tr><td>MUSIC</td><td>MVP (Java)</td><td>Desalineado del patron MVVM del proyecto</td></tr>
+                    <tr><td>ACNTMGMT</td><td>MVVM (redesign)</td><td>Coexistencia <code>user/</code> + <code>redesign_profiles/</code></td></tr>
+                    <tr><td>CARROUSEL</td><td>MVVM</td><td><code>SpecialFragment</code> sin documentar</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del VSS</span><span class="doc-path">gaps globales + deuda transversal + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Gaps globales</h4>
+                  <ul class="vss-list">
+                    <li>Varios endpoints backend siguen sin OpenAPI publicado en SwaggerHub.</li>
+                    <li>No hay SLOs definidos por dominio ni especificacion formal de analytics.</li>
+                    <li>Persisten JSON mocks usados en codigo real sin una frontera clara de entorno.</li>
+                    <li>TIMESHIFT y RECORDED conservan faltantes de contrato en APIs clave.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Deuda tecnica transversal</h4>
+                  <ul class="vss-list">
+                    <li>Credenciales de firma en texto plano dentro de <code>app/build.gradle</code>.</li>
+                    <li>Coexistencia de MVP en Java y MVVM en Kotlin dentro de los mismos flujos de negocio.</li>
+                    <li>Retrofit 1.x y OkHttp 2.x siguen presentes sin roadmap visible de migracion.</li>
+                    <li><code>TrustDefender-5.0-96.aar</code> depende de actualizacion manual.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Sacar <code>signingConfigs</code> del repositorio y proteger el build.</li>
+                    <li>Publicar specs faltantes en SwaggerHub, empezando por TIMESHIFT, RECORDED y ACNTMGMT.</li>
+                    <li>Definir SLOs y analytics por dominio antes de ampliar FASE 2.</li>
+                    <li>Confirmar con producto si MUSIC sigue activo antes de invertir mas esfuerzo documental.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuente integrada: <code>new_vss/VSS/GENERATED/VSS_COMPLIANCE_REPORT.md</code> (actualizado: 2026-03-11 FASE 1 PASO 4).</p>
+            </div>
+          </details>
+        </div>
+        <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-android-coship</h4>
-              <p>Documentos detectados: 14</p>
+              <p>Documentos detectados: 14 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
@@ -1989,4 +2126,7 @@ flowchart LR
   <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
 </body>
 </html>
+
+
+
 

@@ -631,6 +631,150 @@
       font-size: 0.92rem;
     }
 
+    .vss-overview {
+      margin: 0 0 0.95rem;
+      border: 1px solid rgba(59, 130, 246, 0.14);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(8, 14, 32, 0.98), rgba(10, 18, 40, 0.96)),
+        linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 118, 110, 0.08));
+      overflow: hidden;
+    }
+
+    .vss-overview-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.75rem;
+      align-items: start;
+      padding: 0.95rem 1rem 0.85rem;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+    }
+
+    .vss-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #dbeafe;
+      background: rgba(37, 99, 235, 0.18);
+      border: 1px solid rgba(96, 165, 250, 0.24);
+    }
+
+    .vss-overview h4 {
+      margin: 0.32rem 0 0;
+      font-size: 1rem;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+    }
+
+    .vss-overview p {
+      margin: 0.38rem 0 0;
+      color: #afc4e8;
+      font-size: 0.82rem;
+    }
+
+    .vss-source-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.68rem;
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      background: rgba(15, 23, 42, 0.45);
+      color: #dbe7ff;
+      font-size: 0.76rem;
+      line-height: 1.25;
+    }
+
+    .vss-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 0 1rem 1rem;
+    }
+
+    .vss-stat {
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      border-radius: 14px;
+      padding: 0.78rem 0.85rem;
+      background: rgba(14, 26, 58, 0.7);
+    }
+
+    .vss-stat strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.45rem;
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .vss-stat span {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.78rem;
+      color: #9fb6e7;
+    }
+
+    .vss-card-grid {
+      margin: 0 1rem 1rem;
+    }
+
+    .vss-overview details.doc-item {
+      margin: 0 1rem 1rem;
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(12, 22, 51, 0.96);
+    }
+
+    .vss-overview details.doc-item:first-of-type {
+      border-top: 1px solid rgba(59, 130, 246, 0.12);
+    }
+
+    .vss-overview details.doc-item summary {
+      padding: 0.72rem 0.85rem;
+    }
+
+    .vss-overview details.doc-item[open] summary {
+      background: rgba(30, 64, 175, 0.14);
+    }
+
+    .vss-detail-body {
+      padding: 0 0.85rem 0.9rem;
+    }
+
+    .vss-table-scroll {
+      margin: 0.7rem 0 0;
+    }
+
+    .vss-table-scroll > table {
+      min-width: 760px;
+    }
+
+    .vss-domain-table td:first-child {
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .vss-list {
+      margin: 0.55rem 0 0;
+      padding-left: 1.05rem;
+    }
+
+    .vss-list li {
+      margin: 0.34rem 0;
+      color: #d8e6ff;
+    }
+
+    .vss-footnote {
+      margin: 0.8rem 0 0;
+      font-size: 0.76rem;
+      color: #8ea6d3;
+    }
+
     .repo-content-block {
       margin-top: 0.9rem;
       border: 1px solid rgba(217, 225, 232, 0.95);
@@ -774,6 +918,16 @@
       color: #0f2740;
     }
 
+    details.doc-item[data-render-diagrams="true"] .diagram-mermaid {
+      max-height: 78vh;
+      overflow: auto;
+    }
+
+    details.doc-item[data-render-diagrams="true"] .diagram-mermaid svg {
+      max-width: none;
+      height: auto;
+    }
+
     .diagram-mermaid svg text,
     .diagram-mermaid svg tspan,
     .diagram-mermaid svg .label,
@@ -861,6 +1015,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .vss-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .layout {
         grid-template-columns: 1fr;
       }
@@ -905,6 +1063,11 @@
       }
 
       .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vss-overview-head,
+      .vss-metrics {
         grid-template-columns: 1fr;
       }
 
@@ -1531,6 +1694,10 @@
       box-shadow: none;
     }
 
+    .dashboard-page .vss-table-scroll > table {
+      min-width: 760px;
+    }
+
     .dashboard-page table th {
       position: sticky;
       top: 0;
@@ -2133,6 +2300,55 @@
         linear-gradient(90deg, rgba(219, 234, 254, 0.86), rgba(239, 246, 255, 0.9));
     }
 
+    .dashboard-page.theme-light.annex-page .vss-overview {
+      border-color: rgba(148, 163, 184, 0.22);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 247, 255, 0.96)),
+        linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(15, 118, 110, 0.05));
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-overview-head {
+      border-bottom-color: rgba(148, 163, 184, 0.18);
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-badge {
+      color: #123b6d;
+      background: rgba(37, 99, 235, 0.12);
+      border-color: rgba(37, 99, 235, 0.18);
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-overview h4,
+    .dashboard-page.theme-light.annex-page .vss-domain-table td:first-child {
+      color: #102a43;
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-overview p,
+    .dashboard-page.theme-light.annex-page .vss-source-chip,
+    .dashboard-page.theme-light.annex-page .vss-stat span,
+    .dashboard-page.theme-light.annex-page .vss-list li,
+    .dashboard-page.theme-light.annex-page .vss-footnote {
+      color: #486581;
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-source-chip {
+      border-color: rgba(148, 163, 184, 0.22);
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-stat {
+      border-color: rgba(148, 163, 184, 0.18);
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-stat strong {
+      color: #123b6d;
+    }
+
+    .dashboard-page.theme-light.annex-page .vss-overview details.doc-item {
+      border-color: rgba(148, 163, 184, 0.18);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
     .dashboard-page.theme-light details.doc-item {
       border-top-color: rgba(217, 225, 232, 0.95);
       background: rgba(255, 255, 255, 0.9);
@@ -2241,6 +2457,584 @@
       border-color: rgba(226, 232, 240, 0.9);
     }
 
+    .diagram-workspace-page .shell {
+      width: min(1980px, calc(100% - 0.5rem));
+      height: calc(100vh - 0.5rem);
+      min-height: 0;
+      margin: 0.25rem auto;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    .diagram-workspace-page .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 0.16rem 0.8rem;
+      padding: 0.5rem 0.75rem;
+      min-height: 0;
+    }
+
+    .diagram-workspace-page .hero::after {
+      display: none;
+    }
+
+    .diagram-workspace-page .hero > * {
+      min-width: 0;
+    }
+
+    .diagram-workspace-page .kicker {
+      grid-column: 1;
+      justify-self: start;
+      margin: 0;
+      padding: 0.18rem 0.48rem;
+      font-size: 0.62rem;
+    }
+
+    .diagram-workspace-page .hero h1 {
+      grid-column: 1;
+      margin: 0;
+      font-size: clamp(1rem, 1.45vw, 1.28rem);
+      line-height: 1.04;
+      max-width: none;
+    }
+
+    .diagram-workspace-page .hero p {
+      max-width: none;
+    }
+
+    .diagram-workspace-page .hero-mainline {
+      display: none;
+    }
+
+    .diagram-workspace-page .diagram-hero-summary {
+      display: none;
+    }
+
+    .diagram-workspace-page .meta {
+      display: none;
+    }
+
+    .diagram-workspace-page .meta .chip {
+      padding: 0.22rem 0.5rem;
+      font-size: 0.74rem;
+    }
+
+    .diagram-workspace-page .diagram-hero-links {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+      justify-self: end;
+      margin: 0;
+      max-width: 380px;
+      font-size: 0.76rem;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    .diagram-workspace-page .dashboard-theme-toggle.is-hero-toggle {
+      position: static;
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      align-self: start;
+      margin: 0;
+      transform: translateY(-0.02rem);
+    }
+
+    .diagram-workspace-page .layout {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      align-items: stretch;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .diagram-workspace-page .toc {
+      position: relative;
+      top: 0;
+      z-index: 40;
+      min-height: 0;
+      max-height: none;
+      padding: 0.35rem 0.45rem;
+      backdrop-filter: blur(16px);
+    }
+
+    .diagram-workspace-page .toc h2 {
+      display: none;
+    }
+
+    .diagram-workspace-page .diagram-index-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      border: 1px solid rgba(59, 130, 246, 0.18);
+      border-radius: 14px;
+      padding: 0.55rem 0.8rem;
+      background: linear-gradient(90deg, rgba(8, 18, 43, 0.98), rgba(16, 31, 67, 0.96));
+      color: #eef4ff;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      box-shadow: 0 14px 28px rgba(3, 9, 24, 0.28);
+    }
+
+    .diagram-workspace-page .diagram-index-toggle::after {
+      content: "+";
+      flex: 0 0 auto;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #93c5fd;
+    }
+
+    .diagram-workspace-page .toc.is-open .diagram-index-toggle::after {
+      content: "-";
+    }
+
+    .diagram-workspace-page .diagram-index-toggle-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #93c5fd;
+    }
+
+    .diagram-workspace-page .diagram-index-toggle strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #f8fbff;
+    }
+
+    .diagram-workspace-page .toc .docs-note,
+    .diagram-workspace-page .toc a {
+      display: none;
+    }
+
+    .diagram-workspace-page .toc.is-open .docs-note {
+      display: block;
+      margin: 0.65rem 0 0.35rem;
+    }
+
+    .diagram-workspace-page .toc.is-open a {
+      display: inline-flex;
+      width: min(100%, 320px);
+      min-height: 48px;
+      align-items: center;
+      margin: 0.28rem 0.28rem 0 0;
+      vertical-align: top;
+    }
+
+    .diagram-workspace-page main {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      gap: 0;
+      height: 100%;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .diagram-workspace-page section {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 0;
+      padding: 0.3rem;
+      overflow: hidden;
+    }
+
+    .diagram-workspace-page section[hidden] {
+      display: none !important;
+    }
+
+    .diagram-workspace-page main > section > h3,
+    .diagram-workspace-page main > section > .docs-note {
+      display: none;
+    }
+
+    .diagram-workspace-page .repo-content-block {
+      margin-top: 0;
+      border-radius: 22px;
+      border: 1px solid rgba(59, 130, 246, 0.16);
+      height: 100%;
+      max-height: calc(100vh - 7.1rem);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      background:
+        linear-gradient(180deg, rgba(10, 18, 38, 0.98), rgba(7, 12, 27, 0.98));
+      box-shadow:
+        0 28px 60px rgba(3, 9, 24, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .diagram-workspace-page .repo-content-head {
+      background:
+        linear-gradient(90deg, rgba(16, 33, 73, 0.96), rgba(23, 48, 98, 0.94));
+      border-bottom-color: rgba(59, 130, 246, 0.12);
+    }
+
+    .diagram-workspace-page .repo-content-head h4,
+    .diagram-workspace-page .doc-name,
+    .diagram-workspace-page section h3 {
+      color: #f8fbff;
+    }
+
+    .diagram-workspace-page .repo-content-head p,
+    .diagram-workspace-page .doc-path,
+    .diagram-workspace-page section p {
+      color: #b8ccee;
+    }
+
+    .diagram-workspace-page .docs-note {
+      border-left-width: 3px;
+      background: rgba(14, 27, 57, 0.94);
+      border-color: rgba(96, 165, 250, 0.48);
+      color: #dbeafe;
+    }
+
+    .diagram-workspace-page details.doc-item {
+      border-top: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .diagram-workspace-page details.doc-item[open] {
+      background: transparent;
+    }
+
+    .diagram-workspace-page details.doc-item summary {
+      flex: 0 0 auto;
+      padding: 0.52rem 0.72rem;
+      border-left: 0;
+      background: linear-gradient(90deg, rgba(13, 29, 65, 0.92), rgba(17, 39, 83, 0.88));
+      border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+    }
+
+    .diagram-workspace-page details.doc-item[open] summary {
+      background: linear-gradient(90deg, rgba(18, 41, 88, 0.96), rgba(29, 56, 115, 0.9));
+    }
+
+    .diagram-workspace-page .diagram-workspace-nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      flex: 0 0 auto;
+      padding: 0.45rem 0.65rem;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+      background: linear-gradient(180deg, rgba(7, 16, 36, 0.98), rgba(8, 17, 37, 0.94));
+    }
+
+    .diagram-workspace-page .diagram-workspace-nav-btn {
+      min-height: 38px;
+      padding: 0.5rem 0.8rem;
+      border-radius: 12px;
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      background: rgba(14, 30, 60, 0.96);
+      color: #eef4ff;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+    }
+
+    .diagram-workspace-page .diagram-workspace-nav-btn.is-primary {
+      background: rgba(29, 78, 216, 0.18);
+      border-color: rgba(125, 211, 252, 0.34);
+      color: #dbeafe;
+    }
+
+    .diagram-workspace-page .diagram-workspace-nav-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      background: rgba(28, 50, 103, 0.96);
+      border-color: rgba(125, 211, 252, 0.34);
+    }
+
+    .diagram-workspace-page .diagram-workspace-nav-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .diagram-workspace-page .diagram-workspace-nav-state {
+      margin-left: auto;
+      padding: 0.38rem 0.68rem;
+      border-radius: 999px;
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      background: rgba(5, 12, 27, 0.9);
+      color: #dbeafe;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .diagram-workspace-page .diagram-gallery {
+      margin: 0;
+      gap: 0;
+      display: flex;
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .diagram-workspace-page .diagram-card {
+      border: 0;
+      border-radius: 0 0 24px 24px;
+      background: transparent;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .diagram-workspace-page .diagram-title {
+      display: none;
+    }
+
+    .diagram-workspace-page .diagram-workspace {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr);
+      height: clamp(440px, calc(100vh - 15.5rem), 82vh);
+      min-height: 0;
+      max-height: none;
+      flex: 1 1 auto;
+    }
+
+    .diagram-workspace-page .diagram-toolrail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.72rem 0.45rem;
+      background: linear-gradient(180deg, rgba(5, 10, 24, 0.98), rgba(8, 16, 33, 0.98));
+      border-right: 1px solid rgba(59, 130, 246, 0.12);
+      max-height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .diagram-workspace-page .diagram-tool-btn {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      background: rgba(16, 31, 63, 0.96);
+      color: #eff6ff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+    }
+
+    .diagram-workspace-page .diagram-tool-btn:hover,
+    .diagram-workspace-page .diagram-tool-btn.is-active {
+      transform: translateY(-1px);
+      background: rgba(28, 50, 103, 0.96);
+      border-color: rgba(125, 211, 252, 0.34);
+    }
+
+    .diagram-workspace-page .diagram-tool-btn.is-code-btn {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+    }
+
+    .diagram-workspace-page .diagram-scale-readout {
+      min-width: 42px;
+      padding: 0.4rem 0.28rem;
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      background: rgba(7, 12, 27, 0.92);
+      color: #dbeafe;
+      font-size: 0.72rem;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .diagram-workspace-page .diagram-stage {
+      position: relative;
+      height: 100%;
+      min-height: 0;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(59, 130, 246, 0.12), transparent 32%),
+        radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(3, 10, 25, 0.98), rgba(2, 8, 20, 0.99));
+      overflow: hidden;
+    }
+
+    .diagram-workspace-page .diagram-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(96, 165, 250, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 165, 250, 0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.42;
+      pointer-events: none;
+    }
+
+    .diagram-workspace-page .diagram-stage-scroll {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      overflow: auto;
+      cursor: grab;
+    }
+
+    .diagram-workspace-page .diagram-stage-scroll.is-dragging {
+      cursor: grabbing;
+    }
+
+    .diagram-workspace-page .diagram-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: max-content;
+      min-width: 100%;
+      min-height: 100%;
+      padding: 0.7rem 0.9rem 0.95rem;
+    }
+
+    .diagram-workspace-page .diagram-mermaid {
+      width: max-content;
+      min-width: max-content;
+      min-height: max-content;
+      padding: 0;
+      background: transparent;
+    }
+
+    .diagram-workspace-page details.doc-item[data-render-diagrams="true"] .diagram-mermaid {
+      max-height: none;
+      overflow: visible;
+    }
+
+    .diagram-workspace-page details.doc-item[data-render-diagrams="true"] .diagram-mermaid svg {
+      max-width: none;
+      flex: 0 0 auto;
+      will-change: width, height;
+    }
+
+    .diagram-workspace-page .diagram-toolbar {
+      display: none;
+    }
+
+    .diagram-workspace-page .doc-pre {
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: none;
+      border-top: 1px solid rgba(59, 130, 246, 0.12);
+    }
+
+    .diagram-workspace-page .diagram-status {
+      margin: 0.7rem 1rem 0.8rem;
+    }
+
+    .diagram-workspace-page.theme-light .diagram-index-toggle {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 255, 0.96));
+      color: #102a43;
+      border-color: rgba(148, 163, 184, 0.32);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-index-toggle strong {
+      color: #102a43;
+    }
+
+    .diagram-workspace-page.theme-light .diagram-index-toggle-label,
+    .diagram-workspace-page.theme-light .diagram-index-toggle::after {
+      color: #1d4ed8;
+    }
+
+    .diagram-workspace-page.theme-light .repo-content-block {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 255, 0.98));
+      border-color: rgba(148, 163, 184, 0.26);
+      box-shadow: 0 26px 56px rgba(148, 163, 184, 0.24);
+    }
+
+    .diagram-workspace-page.theme-light .repo-content-head,
+    .diagram-workspace-page.theme-light details.doc-item summary,
+    .diagram-workspace-page.theme-light details.doc-item[open] summary {
+      background: linear-gradient(90deg, rgba(219, 234, 254, 0.96), rgba(224, 242, 254, 0.92));
+      border-bottom-color: rgba(148, 163, 184, 0.24);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-workspace-nav {
+      background: linear-gradient(180deg, rgba(247, 250, 255, 0.98), rgba(239, 246, 255, 0.96));
+      border-bottom-color: rgba(148, 163, 184, 0.2);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-workspace-nav-btn {
+      background: rgba(255, 255, 255, 0.96);
+      color: #17345f;
+      border-color: rgba(148, 163, 184, 0.28);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-workspace-nav-btn.is-primary {
+      background: rgba(219, 234, 254, 0.98);
+      color: #1d4ed8;
+      border-color: rgba(96, 165, 250, 0.4);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-workspace-nav-state {
+      background: rgba(255, 255, 255, 0.96);
+      color: #17345f;
+      border-color: rgba(148, 163, 184, 0.26);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-toolrail {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 245, 249, 0.98));
+      border-right-color: rgba(148, 163, 184, 0.22);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-tool-btn,
+    .diagram-workspace-page.theme-light .diagram-scale-readout {
+      background: rgba(255, 255, 255, 0.96);
+      color: #17345f;
+      border-color: rgba(148, 163, 184, 0.28);
+    }
+
+    .diagram-workspace-page.theme-light .diagram-stage {
+      background:
+        radial-gradient(circle at 18% 14%, rgba(59, 130, 246, 0.12), transparent 32%),
+        radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(241, 245, 255, 0.98), rgba(232, 240, 252, 0.98));
+    }
+
+    .diagram-workspace-page.theme-light .diagram-stage::before {
+      background-image:
+        linear-gradient(rgba(96, 165, 250, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 165, 250, 0.08) 1px, transparent 1px);
+      opacity: 0.46;
+    }
+
+    .diagram-workspace-page.theme-light .docs-note {
+      background: rgba(239, 246, 255, 0.96);
+      color: #17345f;
+      border-color: rgba(37, 99, 235, 0.36);
+    }
+
     @keyframes spaPanelIn {
       from {
         opacity: 0;
@@ -2300,5 +3094,91 @@
         min-height: auto;
         height: auto;
         max-height: none;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .diagram-workspace-page .shell {
+        width: calc(100% - 0.5rem);
+        height: auto;
+        margin: 0.25rem auto 0.6rem;
+        display: block;
+        overflow: visible;
+      }
+
+      .diagram-workspace-page .hero {
+        display: block;
+        padding: 0.85rem 0.9rem;
+      }
+
+      .diagram-workspace-page .diagram-hero-summary,
+      .diagram-workspace-page .meta {
+        display: block;
+      }
+
+      .diagram-workspace-page .diagram-hero-links {
+        max-width: none;
+        margin-top: 0.45rem;
+        text-align: left;
+      }
+
+      .diagram-workspace-page .layout,
+      .diagram-workspace-page main,
+      .diagram-workspace-page section,
+      .diagram-workspace-page .repo-content-block,
+      .diagram-workspace-page details.doc-item,
+      .diagram-workspace-page .diagram-gallery,
+      .diagram-workspace-page .diagram-card {
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+      }
+
+      .diagram-workspace-page .diagram-workspace {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .diagram-workspace-page .diagram-toolrail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 0.75rem;
+        border-right: 0;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+      }
+
+      .diagram-workspace-page .diagram-scale-readout {
+        order: -1;
+      }
+
+      .diagram-workspace-page .diagram-stage,
+      .diagram-workspace-page .diagram-stage-scroll,
+      .diagram-workspace-page .diagram-workspace,
+      .diagram-workspace-page section {
+        min-height: auto;
+      }
+
+      .diagram-workspace-page .diagram-stage {
+        height: 62vh;
+        min-height: 420px;
+        max-height: none;
+      }
+
+      .diagram-workspace-page .doc-pre {
+        max-height: 28vh;
+      }
+
+      .diagram-workspace-page .diagram-workspace-nav {
+        flex-wrap: wrap;
+      }
+
+      .diagram-workspace-page .diagram-workspace-nav-state {
+        margin-left: 0;
+      }
+
+      .diagram-workspace-page .toc.is-open a {
+        width: 100%;
+        margin-right: 0;
       }
     }

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td>Artefactos generados</td>
-            <td>358+ documentos técnicos verificados</td>
+            <td>361 documentos técnicos verificados (20 repositorios)</td>
           </tr>
         </tbody>
       </table>
@@ -64,7 +64,7 @@
         <a href="#inversion">11. 💼 Inversión vs. Valor Obtenido</a>
         <a href="#conclusion">12. ✅ Conclusión y Próxima Acción</a>
         <a href="#prompts-universales">13. 🧠 Prompts Universales Utilizados</a>
-        <a href="#contenido-docs">Anexo Técnico (Opcional)</a>
+        <a href="#contenido-docs">Anexo Técnico (Por repositorio)</a>
         <div class="toc-footer">
           <span>20 repositorios</span>
           <span>14 vistas</span>
@@ -168,102 +168,102 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td>No se reporta dependencia formalmente <em>deprecated</em> en FASE 1; se reporta falta de <code>Package.resolved</code> para versionado exacto de dependencias externas.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td>Coexistencia legacy <code>Dynamic&lt;T&gt;</code> + Combine, <code>Package.resolved</code> no commitado y frameworks Youbora sin versión trazable.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td>No se reportan dependencias formalmente <em>deprecated</em> en FASE 1; usa versionado exacto en SPM (<code>Bitmovin 3.83.0</code>, <code>Analytics 3.11.1</code>, <code>NPAW 1.1.6</code>).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td>No se detectan dependencias externas en SPM (<code>dependencies: []</code>); deuda principal en toolchain legacy (<code>Swift 5.7</code>) y falta de artefactos de cobertura versionados.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td>Sin dependencias de terceros en <code>Package.swift</code> (<code>dependencies</code> vacio); deuda en toolchain (<code>swift-tools-version:5.7</code>) y ausencia de reporte de cobertura versionado.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td>Stack legacy con alta obsolescencia: <code>Webpack 1.x</code>, <code>Babel 6.x</code>, <code>Shaka 2.x</code> y runtime objetivo <code>Chrome 38+</code> (EOL).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td>Stack AAF/WebOS con dependencia fija <code>webOSTV.js 1.2.10</code>, sin <code>package.json</code> ni gestión automatizada de dependencias.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td>Stack AAF/Tizen SDK <code>3.0</code> en JavaScript ES5 legacy, sin <code>package.json</code>/<em>lockfile</em> y con dependencia crítica del app hosteado externo.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td>Dependencias críticas en estado legacy/EOL: <code>React 15.6.1</code>, <code>Webpack 3.5.1</code>, <code>Jest 20.0.4</code>, <code>Node 10.24.1</code> y <code>node-sass 4.5.3</code> deprecado.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td>Dependencias críticas en estado legacy/EOL: <code>React 15.6.1</code>, <code>Webpack 3.5.1</code>, <code>Jest 20.0.4</code> y coexistencia <code>Babel 6.25.0 + Babel 7.12.9</code> (migración incompleta).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td>Dependencias con riesgo/vulnerabilidades conocidas: <code>axios 0.19.2</code> (SSRF), <code>jsonwebtoken 8.4.0</code>; stack legacy en Express/Jest/Babel con modernización pendiente.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td><code>jcenter()</code> deprecated; <code>ExoPlayer 2.16.1</code> muy atrasado; coexistencia <code>RxJava2 + RxJava3</code> (legacy/híbrido).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td><code>Leanback 1.2.0-alpha04</code> en versión alpha, async mixto <code>Coroutines + RxJava3</code> y coexistencia de múltiples serializadores JSON (deuda legacy).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td><code>Compose 1.1.1</code>, <code>Hilt 2.44</code>, <code>Coroutines 1.5.2</code> y <code>Firebase BoM 31.0.2</code> desactualizados; coexistencia con <code>Leanback 1.0.0</code> en proceso de deprecación.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td>En <code>documentacionroku_v1</code> los reportes de stack señalan toolchain Android legacy (<code>AGP 4.1.1</code>, <code>Kotlin 1.5.30</code>) y dependencias mixtas modernas/legacy.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td>Toolchain legacy en Android (<code>AGP 4.1.1</code> + <code>Kotlin 1.5.30</code>) y coexistencia Java/Kotlin con deuda de compatibilidad.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td>No se detectan dependencias EOL críticas en FASE 1; stack moderno (<code>Kotlin 2.1.0</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>, <code>Hilt 2.44</code>) con deuda en Java legacy y hardening de build.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td><code>android.support.v4</code> deprecated (sin AndroidX), <code>jcenter()</code> deprecated, <code>android-maven-gradle-plugin 1.5</code> obsoleto, <code>OkHttp 3.10.0</code> desactualizado.</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td>Coexistencia de targets legacy <code>W81/WP8</code> y rutas <code>http://</code> en componentes legacy (riesgo técnico acumulado).</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td><code>axios ^0.15.2</code> (antigua, con CVEs activos) y coexistencia de <code>react-router v3 + v6</code> (legado + moderno).</td>
                 <td><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
@@ -282,121 +282,121 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td>Service Managers encapsulados y uso de SPM interno modular.</td>
                 <td>30+ singletons (~940+ refs), secretos hardcoded y deuda legacy activa.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td>Arquitectura Feature-First (19 módulos) con patrón Coordinator + MVVM + Repository y CI dual (Azure + GitHub Actions).</td>
                 <td>Token NewRelic hardcodeado, ATS deshabilitado globalmente y cobertura de pruebas baja/no cuantificada.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td>SDK modular por plataforma con núcleo compartido y DI por protocolos.</td>
                 <td>DI global centralizada y ausencia de artefactos cuantitativos de coverage/seguridad en FASE 1.</td>
                 <td><code>ANALYSIS_REPORT_ARCHITECTURE.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td>Arquitectura por capas con 5 módulos SPM, cero dependencias externas y manejo dinámico de tokens sin secrets hardcodeados.</td>
                 <td>Testabilidad baja (Service Locator/`QueryBuilder.shared`), cobertura real no consolidada y doc coverage muy bajo.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td>Arquitectura modular por dominio (<code>App</code>, <code>Player</code>, <code>Common</code>) con API pública estable y 4 suites de pruebas detectadas.</td>
                 <td><code>trackingId</code> hardcodeado, typos en nombres (<code>Traker</code>, <code>Strinng</code>) y sin cobertura/seguridad publicada en artefactos.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td>Capacidades funcionales completas en reproducción VOD/Live con soporte Cast SDK + DRM.</td>
                 <td><code>player.js</code> monolítico (2431 LOC), credenciales hardcoded, sin framework de tests y sin CI/CD.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td>Patrón AAF Shell estable, módulos IIFE con responsabilidades claras e integración nativa con New Relic.</td>
                 <td>Sin testing automatizado/CI-CD, variables globales implícitas y API key de New Relic hardcodeada.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td>Patrón AAF Shell estable, separación clara en 7 módulos JS (IIFE) y manejo robusto de errores con New Relic.</td>
                 <td>Sin testing automatizado/CI-CD, globals implícitas y API key de New Relic hardcodeada en <code>cnts.js</code>.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td>Arquitectura modular AAF (13 módulos), separación UI/estado/dominio y 7 workflows CI/CD con análisis SonarQube.</td>
                 <td>Stack desactualizado (React/Webpack/Jest/Node en EOL), cobertura no medible (<code>coverage.xml</code> ausente) y migración TypeScript parcial (~8%).</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td>Arquitectura modular (18 módulos), reducers centralizados y abstracción multi-plataforma en <code>src/devices/</code> para 20+ dispositivos.</td>
                 <td>God Component en <code>src/containers/App/index.jsx</code> (2371 LOC), stack legacy/EOL (React/Webpack/Jest) y cobertura real no publicada.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td>BFF modular sólido (routes/controller/task/transformer), versionado de rutas y CI/CD activo con SonarQube.</td>
                 <td>Riesgo de seguridad por dependencias vulnerables (<code>axios</code>/<code>jsonwebtoken</code>), CORS abierto y ausencia de rate limiting/request validation.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td>Clean Architecture + MVVM sólido, Hilt consistente y modularización en 7 módulos.</td>
                 <td>ExoPlayer muy atrasado, <code>jcenter()</code> deprecated y deuda reactiva (RxJava legacy).</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td>Clean Architecture + MVVM con Hilt 2.52, 5 módulos y baseline de rendimiento/cobertura configurado.</td>
                 <td>Credenciales hardcodeadas, CI/CD manual en PR y tests comentados (cobertura real no disponible).</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td>MVVM + Clean Architecture con DI Hilt y pipelines activos (GitHub Actions + Azure) para variantes AndroidTV/FireTV.</td>
                 <td>Credenciales hardcodeadas, cobertura 0% (sin <code>app/src/test/</code>) y hotspots de alta complejidad (5 God Classes &gt; 1000 LOC).</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td>Repositorio con estructura documental FASE 1 completa (A/B/C + configuración), evidencia trazable y compliance al 100%.</td>
                 <td>Los reportes internos de <code>documentacionroku_v1</code> describen arquitectura híbrida Android/Coship, con deuda de seguridad/calidad pendiente.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td>Evidencia de flujos modernos (<code>ViewModel -> UseCase -> Repository -> DataSource</code>) y documentación técnica consolidada.</td>
                 <td>Arquitectura híbrida con alto acoplamiento en módulo único, secretos de signing en texto plano y quality gates permisivos.</td>
                 <td><code>ANALYSIS_REPORT_ARCHITECTURE.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td>Stack moderno de producción (<code>Kotlin 2.1</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>) con MVVM + Clean Architecture y observabilidad activa (Firebase/NewRelic).</td>
                 <td>~40-50% de código Java legacy, baseline de cobertura no publicado y hardening de secretos de signing pendiente.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td>Buen encapsulamiento de Picasso/OkHttp detrás de contratos y patrón Template Method.</td>
                 <td>SSL bypass crítico, <code>AsyncTask</code> deprecado y toolchain obsoleto.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td>Stack .NET/C# claramente identificado y arquitectura MVVM observable.</td>
                 <td>Alta complejidad por multi-target legacy (UWP/W81/WP8), <code>async void</code> y <code>catch {}</code>.</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td>Modularidad por dominios (ESPN/HBO), Redux/Saga estructurado y CI activo.</td>
                 <td>Axios legacy con CVEs y deuda de migración en routing (v3 + v6).</td>
                 <td><code>ANALYSIS_SUMMARY.md</code></td>
@@ -416,121 +416,121 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td>SPM interno (<code>CVModel</code>, <code>CVServices</code>, <code>CVAnalytics</code>) + Firebase/NewRelic/GoogleCast/Bitmovin/Youbora.</td>
                 <td>Versiones exactas no verificables sin <code>Package.resolved</code>.</td>
                 <td>Versionar <code>Package.resolved</code> y formalizar auditoría de dependencias.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td><code>Alamofire 5.8.1</code>, <code>SnapKit 5.6.0</code>, <code>firebase-ios-sdk 10.22.1</code>, <code>newrelic-ios-agent 7.4.7</code>, IMA <code>4.10.0</code> + paquetes AMCO (<code>CVAnalytics</code>, <code>CVServices</code>, <code>CVPlayerTVOS</code>).</td>
                 <td>SPM en <code>.xcodeproj</code> sin <code>Package.resolved</code>; frameworks Youbora sin versión visible y deuda legacy activa.</td>
                 <td>Commit de <code>Package.resolved</code>, versionado explícito de binarios y hardening de seguridad en CI.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td><code>bitmovin/player-ios 3.83.0</code>, <code>bitmovin-analytics-collector-ios 3.11.1</code>, <code>plugin-ios-bitmovin 1.1.6</code> (versiones exactas en SPM).</td>
                 <td>Dependencias con trazabilidad alta por versionado exacto; faltan artefactos de seguridad/cobertura persistidos en CI.</td>
                 <td>Publicar reportes de coverage y security scan en CI, con revisión periódica de actualizaciones de dependencias.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td>SPM interno sin terceros: <code>CVServices</code>, <code>CVModel</code>, <code>CVExtension</code>, <code>CVLocalizable</code>, <code>CVCommonViews</code>.</td>
                 <td>Bajo riesgo por terceros, pero con deuda de calidad: cobertura baja (~3.75%), sin SwiftLint y sin baseline cuantitativo en CI.</td>
                 <td>Integrar <code>swift test --enable-code-coverage</code>, agregar SwiftLint y plan de evolución a async/await + Swift 6.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td>Swift Package Manager sin terceros (<code>CVAnalytics</code> propio; <code>dependencies</code> vacio en <code>Package.swift</code>).</td>
                 <td>Bajo riesgo por terceros, con deuda en calidad/seguridad: <code>trackingId</code> hardcodeado y sin baseline de cobertura publicado.</td>
                 <td>Externalizar <code>trackingId</code>, publicar cobertura en CI y habilitar escaneo de seguridad/quality gate persistido.</td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td><code>Google Cast SDK v3</code>, <code>Shaka Player 2.x</code>, <code>Webpack 1.x</code>, <code>Babel 6.x</code> y 16 dependencias declaradas.</td>
                 <td>94% de dependencias obsoletas (15/16), restricción a Chrome 38+ y riesgo operativo por stack legacy.</td>
                 <td>Migrar bundler/toolchain moderno, actualizar player/deps críticas y remover hardcoded con <code>process.env.*</code>.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td><code>webOSTV.js 1.2.10</code>, integración con New Relic Insights y scripts de empaquetado <code>ares-package</code> por entorno.</td>
                 <td>Gestión de dependencias manual (sin npm), cobertura 0% y deuda operativa por ausencia de CI/CD.</td>
                 <td>Incorporar <code>package.json</code> para tooling, habilitar Jest/Vitest + CI y mover secretos a configuración externa.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td>Samsung WebAPI (<code>webapis.js</code>), New Relic Insights API, Google Fonts y app AAF hosteada; build con Tizen CLI/WGT.</td>
                 <td>Gestión manual sin <code>package.json</code>/<em>lockfile</em>, cobertura 0% y dependencia crítica del app hosteado externo.</td>
                 <td>Agregar gestión de tooling/dependencias, habilitar Jest + CI/CD y externalizar <code>NR_API_KEY</code>.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td><code>React 15.6.1</code>, <code>Redux 3.7.2</code>, <code>Webpack 3.5.1</code>, <code>Bitmovin 8.165.0</code>, <code>Shaka 3.0.1</code>, <code>Jest 20.0.4</code>, <code>TypeScript 3.9.5</code>.</td>
                 <td>Riesgo alto por obsolescencia (4 dependencias críticas EOL), sin <code>coverage.xml</code> y deuda de modernización acumulada.</td>
                 <td>Ejecutar plan de migración de stack (React/Webpack/Node/Jest), reemplazar <code>node-sass</code> y establecer baseline de cobertura en CI.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td><code>React 15.6.1</code>, <code>Redux 3.7.2</code>, <code>Webpack 3.5.1</code>, <code>Jest 20.0.4</code>, <code>Shaka 3.0.1</code> y coexistencia <code>Babel 6 + Babel 7</code> (47 dependencias totales).</td>
                 <td>Riesgo alto por obsolescencia/EOL y compatibilidad limitada de runtime (<code>Node v14-v16</code>; v17+ incompatible por Webpack 3).</td>
                 <td>Plan de migración React/Webpack/Jest/Babel, fijar runtime y publicar baseline de cobertura/quality gate bloqueante.</td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td><code>Node.js v22</code>, <code>Express 4.16.4</code>, <code>Babel 7.x</code>, <code>Jest 23.x</code>, <code>axios 0.19.2</code>, <code>jsonwebtoken 8.4.0</code>, PM2 y New Relic.</td>
                 <td>Riesgo alto por CVEs/dependencias legacy y controles de seguridad incompletos (CORS abierto, sin rate limiting/validación de request).</td>
                 <td>Actualizar dependencias críticas, endurecer seguridad de entrada (CORS/rate limiting/validación) y publicar cobertura real de pruebas en CI.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td><code>Retrofit 2.9.0</code>, <code>OkHttp 4.11.0</code>, <code>ExoPlayer 2.16.1</code>, <code>RxJava2/3</code>, Hilt, Room.</td>
                 <td>Dependencias parcialmente desactualizadas; ExoPlayer y jcenter con mayor urgencia.</td>
                 <td>Actualizar ExoPlayer, retirar jcenter y consolidar modelo async.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td><code>Kotlin 2.0.10</code>, <code>Hilt 2.52</code>, <code>Retrofit 2.11.0</code>, <code>OkHttp 4.12.0</code>, <code>Bitmovin 3.96.0</code>, <code>Media3/ExoPlayer 1.5.1</code>, <code>Coroutines 1.8.1</code>, <code>RxJava3 3.1.9</code>.</td>
                 <td>Credenciales hardcodeadas y deuda técnica por coexistencia de 3 librerías de imágenes + 3 serializadores JSON.</td>
                 <td>Migrar secretos a BuildConfig/CI, consolidar librerías duplicadas y automatizar auditoría de dependencias en PR.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td><code>Kotlin 1.8.10</code>, <code>Compose 1.1.1</code>, <code>Leanback 1.0.0</code>, <code>Media3 1.3.1</code>, <code>Hilt 2.44</code>, <code>Retrofit 2.9.0</code>, <code>Firebase BoM 31.0.2</code>.</td>
                 <td>Dependencias parcialmente desactualizadas, doble paradigma UI (Compose+Leanback) y secretos hardcodeados en build/código.</td>
                 <td>Actualizar stack UI/DI/async, mover secretos a variables seguras de CI y habilitar auditoría continua de dependencias.</td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td>El reporte de stack en <code>documentacionroku_v1</code> referencia dependencias Android (Retrofit/OkHttp/Coroutines/Firebase/NewRelic) y pipeline <code>workflow-build.yml</code>.</td>
                 <td>Riesgo alto por deuda técnica/seguridad reportada (secrets y quality gates permisivos) y posible desalineación de metadatos del repositorio.</td>
                 <td>Alinear evidencia técnica con código fuente objetivo Roku, endurecer quality gates y cerrar hallazgos de seguridad priorizados.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td>Retrofit, OkHttp, Coroutines, Firebase y NewRelic sobre stack Android con Java/Kotlin mixto.</td>
                 <td>Toolchain desactualizado (<code>AGP 4.1.1</code>, <code>Kotlin 1.5.30</code>) y falta de cobertura/métricas automatizadas versionadas.</td>
                 <td>Actualizar AGP/Gradle/Kotlin, endurecer quality gates en CI y versionar reportes de <code>coverage.xml</code>/<code>jacoco.xml</code>.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td><code>Kotlin 2.1.0</code>, <code>Compose 1.6.8</code>, <code>Media3 1.3.1</code>, <code>Hilt 2.44</code>, <code>Detekt 1.23.7</code>, CI con GitHub Actions.</td>
                 <td>Cobertura baseline no publicada y riesgo por gestión de secretos de signing en configuración de build.</td>
                 <td>Publicar baseline JaCoCo en CI, endurecer quality gate y externalizar secretos a variables seguras por entorno.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td><code>Volley 1.2.1</code>, <code>Picasso 2.71828</code>, <code>OkHttp 3.10.0</code>, <code>android.support.v4</code>.</td>
                 <td>Toolchain y dependencias con obsolescencia alta.</td>
                 <td>Migrar a AndroidX, actualizar OkHttp/AGP/Gradle y reemplazar publicación legacy.</td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td>Gestión por solución/proyecto .NET (NuGet/PackageReference por <code>.csproj</code>) en entorno multi-target.</td>
                 <td>Dependencia operativa de líneas legacy y tooling no homogéneo.</td>
                 <td>Inventario de dependencias por solución + baseline de build/test/cobertura en CI.</td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td><code>React 17</code>, <code>Redux 3.x</code>, <code>Webpack 5</code>, <code>axios ^0.15.2</code>, <code>react-router v3 + v6</code>.</td>
                 <td>Dependencias con deuda técnica y riesgo de seguridad en HTTP client.</td>
                 <td>Actualizar Axios, cerrar migración total a Router v6 y ejecutar <code>npm audit</code> continuo.</td>
@@ -663,7 +663,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td>🟡 <strong>ATENCIÓN ALTA</strong></td>
                 <td>🟡 MVVM modular con deuda de acoplamiento</td>
                 <td>🔴 Cobertura minima (~1.25%) y sin tests en CI</td>
@@ -674,7 +674,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟢 Feature-First (19 módulos) con Coordinator + MVVM + Repository</td>
                 <td>🔴 Cobertura baja/no cuantificada y sin baseline confiable en CI</td>
@@ -685,7 +685,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟢 SDK modular por plataforma con core compartido (SPM)</td>
                 <td>🟡 Sin <code>coverage.xml</code> ni baseline cuantitativo de pruebas en FASE 1</td>
@@ -696,7 +696,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟢 Arquitectura por capas con 5 módulos SPM y separación clara de responsabilidades</td>
                 <td>🔴 Cobertura cuantitativa insuficiente (ratio ~3.75%) y sin baseline consolidado versionado</td>
@@ -707,7 +707,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟢 Modular por dominio (App/Player/Common) con API pública estable</td>
                 <td>🔴 4 suites detectadas, sin cobertura publicada ni baseline verificable en CI</td>
@@ -718,7 +718,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟢 Clean Architecture + MVVM consistente</td>
                 <td>🟡 Framework de pruebas listo, cobertura a reforzar</td>
@@ -729,7 +729,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Dependencias</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 Clean Architecture + MVVM con deuda por lógica de negocio en Fragment</td>
                 <td>🔴 Jacoco configurado, pero sin baseline de cobertura confiable y tests comentados masivamente</td>
@@ -740,7 +740,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 MVVM + Clean Architecture presentes, con hotspots grandes y cobertura técnica parcial</td>
                 <td>🔴 0% cobertura confirmada (sin <code>app/src/test/</code> ni infraestructura de testing)</td>
@@ -751,7 +751,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 Reportes en <code>documentacionroku_v1</code> describen arquitectura híbrida con alto acoplamiento</td>
                 <td>🔴 Cobertura consolidada no disponible en evidencia versionada</td>
@@ -762,7 +762,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 Arquitectura híbrida (moderno + legacy) en módulo único <code>:app</code></td>
                 <td>🔴 Sin <code>coverage.xml</code>/<code>jacoco.xml</code> consolidados y métricas de testing no versionadas</td>
@@ -773,7 +773,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟢 MVVM + Clean Architecture con separación de capas y stack moderno</td>
                 <td>🔴 Cobertura baseline desconocida; JaCoCo pendiente de ejecución/publicación en CI</td>
@@ -784,7 +784,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 Patrones correctos con implementación legacy</td>
                 <td>🔴 JaCoCo no configurado y cobertura no verificable</td>
@@ -795,7 +795,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td>🟡 <strong>ATENCIÓN ALTA</strong></td>
                 <td>🟡 Estructura modular activa, con deuda de routing dual</td>
                 <td>🟡 Testing configurado, sin baseline de cobertura publicada</td>
@@ -806,7 +806,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Dependencias</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🔴 God Object central (<code>player.js</code>, 2431 LOC) con alto acoplamiento</td>
                 <td>🔴 Sin framework de pruebas y cobertura 0%</td>
@@ -817,7 +817,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td>🟡 <strong>ATENCIÓN ALTA</strong></td>
                 <td>🟢 AAF Shell coherente con módulos IIFE y responsabilidades bien delimitadas</td>
                 <td>🔴 Sin framework de pruebas ni cobertura automatizada (0%)</td>
@@ -828,7 +828,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td>🟡 <strong>ATENCIÓN ALTA</strong></td>
                 <td>🟢 AAF Shell estable con 7 módulos JS y responsabilidades claras</td>
                 <td>🔴 Sin framework de pruebas ni cobertura automatizada (0%)</td>
@@ -839,7 +839,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 SPA React + Redux con modularidad AAF, pero con legado alto</td>
                 <td>🔴 Sin baseline de cobertura (<code>coverage.xml</code> ausente)</td>
@@ -850,7 +850,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟡 SPA React + Redux con módulos de dominio claros, pero con alto legado estructural</td>
                 <td>🔴 Sin baseline de cobertura real publicada y framework legacy (<code>Jest 20</code> + <code>Enzyme 2</code>)</td>
@@ -861,7 +861,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td>🔴 <strong>CRÍTICO</strong></td>
                 <td>🟢 BFF modular (routes/controller/task/transformer) con versionado de rutas</td>
                 <td>🟡 Threshold 80% configurado, sin cobertura actual versionada en evidencia</td>
@@ -872,7 +872,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Dependencias</strong></td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟡 Base MVVM operable con carga legacy (UWP/W81/WP8)</td>
                 <td>🔴 Cobertura no verificable en runner y sin baseline uniforme</td>
@@ -953,83 +953,83 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td><code>ANALYSIS_SUMMARY.md</code><br><code>ANALYSIS_REPORT_STACK_DETECTION.md</code></td>
               </tr>
             </tbody>
@@ -1208,102 +1208,102 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td><code>.github/docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td><code>docs/01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td><code>01-inicio/</code></td>
                 <td>9/9 ✅</td>
               </tr>
@@ -1328,26 +1328,26 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>claro-video-ios</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-ios-tvos</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-android-tv-stb</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-android-smart-tv</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-android-tv</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-roku-tv</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-android-coship</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-android</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-ios-player</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-ios-services</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-ios-analytics</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-android-request-manager</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-web</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-web-chromecast</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-ott</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-iptv</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>4/4 ✅</td></tr>
-              <tr><td><code>claro-video-universal-windows-platform</code></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>4/4 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>4/4 ✅</td></tr>
             </tbody>
           </table>
 
@@ -1364,26 +1364,26 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>claro-video-ios</code></td><td>1/1 ✅</td><td>10</td></tr>
-              <tr><td><code>claro-video-ios-tvos</code></td><td>1/1 ✅</td><td>6</td></tr>
-              <tr><td><code>claro-video-android-tv-stb</code></td><td>1/1 ✅</td><td>11</td></tr>
-              <tr><td><code>claro-video-android-smart-tv</code></td><td>1/1 ✅</td><td>5</td></tr>
-              <tr><td><code>claro-video-android-tv</code></td><td>1/1 ✅</td><td>5</td></tr>
-              <tr><td><code>claro-video-roku-tv</code></td><td>1/1 ✅</td><td>5</td></tr>
-              <tr><td><code>claro-video-android-coship</code></td><td>1/1 ✅</td><td>5</td></tr>
-              <tr><td><code>claro-video-android</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-ios-player</code></td><td>1/1 ✅</td><td>5</td></tr>
-              <tr><td><code>claro-video-ios-services</code></td><td>1/1 ✅</td><td>9</td></tr>
-              <tr><td><code>claro-video-ios-analytics</code></td><td>1/1 ✅</td><td>7</td></tr>
-              <tr><td><code>claro-video-android-request-manager</code></td><td>1/1 ✅</td><td>6</td></tr>
-              <tr><td><code>claro-video-web</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-web-chromecast</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-aaf-ott</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-aaf-iptv</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>1/1 ✅</td><td>0</td></tr>
-              <tr><td><code>claro-video-universal-windows-platform</code></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>1/1 ✅</td><td>10</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>1/1 ✅</td><td>6</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>1/1 ✅</td><td>11</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>1/1 ✅</td><td>5</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>1/1 ✅</td><td>5</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>1/1 ✅</td><td>5</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>1/1 ✅</td><td>5</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>1/1 ✅</td><td>5</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>1/1 ✅</td><td>9</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>1/1 ✅</td><td>7</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>1/1 ✅</td><td>6</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>1/1 ✅</td><td>0</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>1/1 ✅</td><td>0</td></tr>
             </tbody>
           </table>
 
@@ -1400,26 +1400,26 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>claro-video-ios</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-ios-tvos</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-android-tv-stb</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-android-smart-tv</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-android-tv</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-roku-tv</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-android-coship</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-android</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-ios-player</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-ios-services</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-ios-analytics</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-android-request-manager</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-web</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-web-chromecast</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-ott</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-iptv</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>2/2 ✅</td></tr>
-              <tr><td><code>claro-video-universal-windows-platform</code></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>2/2 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>2/2 ✅</td></tr>
             </tbody>
           </table>
 
@@ -1435,26 +1435,26 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>claro-video-ios</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-ios-tvos</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-android-tv-stb</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-android-smart-tv</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-android-tv</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-roku-tv</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-android-coship</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-android</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-ios-player</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-ios-services</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-ios-analytics</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-android-request-manager</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-web</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-web-chromecast</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-ott</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-aaf-iptv</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>1/1 ✅</td></tr>
-              <tr><td><code>claro-video-universal-windows-platform</code></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>1/1 ✅</td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>1/1 ✅</td></tr>
             </tbody>
           </table>
 
@@ -1780,7 +1780,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><strong>💡 Dato Clave</strong></p>
           <p class="quote">La plataforma referente (condicional) en arquitectura es <strong>Android TV STB</strong>; la plataforma referente en madurez de automatizacion es <strong>Claro Video Web</strong> (workflows CI/CD activos). Ambas pueden servir como base para estandarizar quality gates en el resto.</p>
 
-          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android</code>, <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia</strong>: <code>ANALYSIS_SUMMARY.md</code> de <a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a> y <a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a>.</p>
         </section>
 
         <section id="anexo" class="reveal">
@@ -1861,7 +1861,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </ul>
           <p class="quote">Posible consecuencia: cada cambio toma mas tiempo, aumenta el riesgo en upgrades y baja la velocidad de entrega del equipo.</p>
 
-          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <code>claro-video-ios</code>, <code>claro-video-ios-tvos</code>, <code>claro-video-ios-player</code>, <code>claro-video-ios-services</code>, <code>claro-video-ios-analytics</code>, <code>claro-video-android-tv-stb</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-tv</code>, <code>claro-video-roku-tv</code>, <code>claro-video-android-coship</code>, <code>claro-video-android</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-web</code>, <code>claro-video-web-chromecast</code>, <code>claro-video-aaf-lg-nativa</code>, <code>claro-video-aaf-samsung-nativa</code>, <code>claro-video-aaf-ott</code>, <code>claro-video-aaf-iptv</code>, <code>claro-video-middleware-claro-musica</code> y <code>claro-video-universal-windows-platform</code>.</p>
+          <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a> y <a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a>.</p>
         </section>
         <section id="próximos" class="reveal">
           <h3>10. 🚀 Próximos Pasos Recomendados</h3>
@@ -1905,121 +1905,121 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr>
-                <td><code>claro-video-ios</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td>
                 <td>Cuantificar deuda por acoplamiento (30+ singletons), seguridad de secretos y coverage real.</td>
                 <td>Refactor gradual de singletons críticos + pipeline de tests automatizados en Azure DevOps.</td>
                 <td>KPIs: cobertura real, defectos por release, lead time y incidentes de seguridad.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-tvos</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td>
                 <td>Cuantificar deuda de seguridad (token hardcoded, ATS), cobertura real y trazabilidad de dependencias.</td>
                 <td>Remediar secretos/ATS, publicar quality gates de coverage/seguridad y versionar <code>Package.resolved</code>.</td>
                 <td>KPIs: cobertura real por target, hallazgos de seguridad abiertos/cerrados y cumplimiento de hardening.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv-stb</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
                 <td>Validar riesgos P0/P1 (ExoPlayer 2.16.1, jcenter, credenciales/configuracion) y baseline de calidad.</td>
                 <td>Actualizar dependencias criticas, consolidar async model (RxJava -> Coroutines) y habilitar CI/CD con quality gates.</td>
                 <td>KPIs: score de calidad, evolucion de cobertura, vulnerabilidades abiertas/cerradas y tasa de regresion.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-smart-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td>
                 <td>Remediar credenciales hardcodeadas, restaurar cobertura real y validar deuda por librerías/serialización duplicada.</td>
                 <td>Migrar secretos a BuildConfig/CI, automatizar workflows en PR y consolidar dependencias duplicadas (imagen/JSON/async).</td>
                 <td>KPIs: cobertura real por módulo, vulnerabilidades abiertas/cerradas y cumplimiento de quality gate automático en PR.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td>
                 <td>Eliminar hardcoded críticos, habilitar baseline de tests y auditar hotspots de arquitectura (>1000 LOC).</td>
                 <td>Migrar secretos a variables seguras CI, activar JaCoCo + quality gates y ejecutar plan de reducción de God Classes.</td>
                 <td>KPIs: cobertura real, hallazgos de seguridad abiertos/cerrados, reducción de hotspots y estabilidad de pipelines.</td>
               </tr>
               <tr>
-                <td><code>claro-video-roku-tv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td>
                 <td>Validar consistencia de la evidencia técnica en <code>documentacionroku_v1</code>, remediar secretos/lint permisivo y definir baseline real de calidad.</td>
                 <td>Alinear arquitectura objetivo Roku con los reportes base, endurecer quality gates de seguridad/cobertura y actualizar toolchain/dependencias legacy.</td>
                 <td>KPIs: hallazgos de seguridad abiertos/cerrados, cobertura real publicada, cumplimiento de quality gate bloqueante y reducción de acoplamiento.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-coship</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td>
                 <td>Eliminar secretos de signing, cerrar brecha de cobertura/métricas y formalizar arquitectura objetivo por feature.</td>
                 <td>Migrar secretos a variables seguras de CI, endurecer quality gates de lint/tests y ejecutar plan incremental de desacoplamiento.</td>
                 <td>KPIs: cobertura consolidada, defectos por release, hallazgos de seguridad y avance de reducción de acoplamiento.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td>
                 <td>Establecer baseline de cobertura real, auditar hardcoded de signing y cuantificar deuda Java legacy por módulo.</td>
                 <td>Publicar JaCoCo en CI, externalizar secretos a variables seguras y ejecutar plan incremental Java -> Kotlin priorizado por riesgo.</td>
                 <td>KPIs: cobertura real por módulo, hallazgos de seguridad abiertos/cerrados y avance de migración Java->Kotlin.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-player</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td>
                 <td>Cuantificar cobertura real, formalizar security scan persistido y evaluar rigidez de DI global.</td>
                 <td>Publicar artefactos de coverage/seguridad en CI, modularizar configuración por instancia y mantener dependencias SPM al día.</td>
                 <td>KPIs: cobertura real por target, hallazgos de seguridad abiertos/cerrados y tasa de fallos en reproducción.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-services</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td>
                 <td>Cuantificar cobertura real, eliminar deuda de Service Locator y definir hardening técnico para quality gates.</td>
                 <td>Agregar reportes de cobertura en CI, introducir DI por protocolos/async-await incremental y reforzar linting automático.</td>
                 <td>KPIs: cobertura por módulo, complejidad técnica (Sonar/SwiftLint), incidentes de integración y cumplimiento de quality gate.</td>
               </tr>
               <tr>
-                <td><code>claro-video-ios-analytics</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td>
                 <td>Remediar <code>trackingId</code> hardcodeado, cuantificar cobertura real y validar payload/errores de envío analytics.</td>
                 <td>Externalizar configuración de tracking, publicar cobertura/quality gate en CI y corregir deuda estructural (<code>Traker</code>/<code>Strinng</code>).</td>
                 <td>KPIs: cobertura real, defectos en envío de eventos, hallazgos de seguridad abiertos/cerrados y cumplimiento de quality gate Sonar.</td>
               </tr>
               <tr>
-                <td><code>claro-video-android-request-manager</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td>
                 <td>Diagnóstico de seguridad y compatibilidad: SSL bypass, AsyncTask deprecado, CVEs exactos via OWASP Dependency-Check.</td>
                 <td>Remediar SSL pinning, migrar AsyncTask, modernizar toolchain (AGP/Gradle/repositorio Maven) y formalizar pipeline.</td>
                 <td>KPIs: CVEs por severidad, tiempo de build, estabilidad SDK y cumplimiento de controles de seguridad.</td>
               </tr>
               <tr>
-                <td><code>claro-video-web</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td>Cuantificar riesgo en dependencias web (Axios/CVEs), unificar routing y validar hardening de secretos de entorno.</td>
                 <td>Actualizar capa HTTP, completar migracion a Router v6, cerrar deuda de componentes legacy y fortalecer quality gates.</td>
                 <td>KPIs: vulnerabilidades abiertas/cerradas, estabilidad de pipelines, error rate frontend y cumplimiento de quality gates.</td>
               </tr>
               <tr>
-                <td><code>claro-video-web-chromecast</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td>
                 <td>Eliminar hardcoded críticos (<code>appKey</code>, <code>HKS_token_base</code>, <code>isProd</code>) y cuantificar deuda del God Object.</td>
                 <td>Modularizar <code>player.js</code>, modernizar stack (Webpack/Babel/Shaka) e incorporar Jest + pipeline CI con quality gates.</td>
                 <td>KPIs: cobertura real, vulnerabilidades abiertas/cerradas, fallos de reproducción receiver y éxito de build/deploy.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-lg-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td>
                 <td>Eliminar hardcoded de New Relic, habilitar testing de módulos JS y cuantificar deuda de globals implícitas.</td>
                 <td>Agregar Jest/Vitest + ESLint, formalizar pipeline CI para empaquetado <code>ares-package</code> y desacoplar flujo principal en módulos.</td>
                 <td>KPIs: cobertura real, errores de arranque/redirect en LG TV, hallazgos de seguridad abiertos/cerrados y éxito de despliegue.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-samsung-nativa</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td>
                 <td>Externalizar <code>NR_API_KEY</code>, auditar privilegios Tizen y habilitar baseline de testing automatizado.</td>
                 <td>Implementar Jest + mocks de Samsung WebAPI, crear workflow CI para build WGT con Tizen CLI y reducir globals implícitas.</td>
                 <td>KPIs: cobertura real, errores de startup/preflight, hallazgos de seguridad abiertos/cerrados y éxito de empaquetado/despliegue.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-ott</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td>
                 <td>Cuantificar riesgo de seguridad/dependencias legacy (React/Webpack/Jest/Node EOL) y establecer baseline de cobertura/quality gate.</td>
                 <td>Ejecutar migración por fases de stack frontend, reemplazar <code>node-sass</code> por <code>sass</code> y formalizar estrategia TypeScript por dominio.</td>
                 <td>KPIs: CVEs por severidad, cobertura real publicada, tiempo de build y cumplimiento de quality gate bloqueante en CI.</td>
               </tr>
               <tr>
-                <td><code>claro-video-aaf-iptv</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td>
                 <td>Cuantificar deuda del God Component (2371 LOC), riesgo de dependencias EOL y baseline real de cobertura.</td>
                 <td>Ejecutar migración por fases (React/Webpack/Jest/Babel), activar quality gate bloqueante y formalizar estrategia de runtime Node/CI.</td>
                 <td>KPIs: cobertura real publicada, CVEs por severidad, tiempo de build y cumplimiento de quality gate bloqueante en PR.</td>
               </tr>
               <tr>
-                <td><code>claro-video-middleware-claro-musica</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td>
                 <td>Remediar riesgo de seguridad API (axios/jsonwebtoken/CORS), validar cobertura real y formalizar controles de entrada.</td>
                 <td>Actualizar dependencias críticas, implementar rate limiting + validación de esquemas y asegurar hardening por entorno.</td>
                 <td>KPIs: CVEs por severidad, latencia/errores por endpoint, cobertura real publicada y cumplimiento de quality gates en PR.</td>
               </tr>
               <tr>
-                <td><code>claro-video-universal-windows-platform</code></td>
+                <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
                 <td>Cuantificar deuda en hotspots, validar riesgos de seguridad legacy (<code>http://</code>, certificados historicos) y homologar calidad por solucion.</td>
                 <td>Reducir <code>async void</code>/<code>catch {}</code>, refactor incremental de hotspots y estrategia explicita para lineas UWP/W81/WP8.</td>
                 <td>KPIs: deuda tecnica por modulo, defectos por release, cumplimiento de quality gate bloqueante y cobertura real en CI.</td>
@@ -2297,37 +2297,37 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><a href="ANEXO_prompts_universales.html">Abrir anexo de prompts universales</a></p>
         </section>
         <section id="contenido-docs" class="reveal">
-          <h3>Anexo Tecnico: Contenido Completo por Documento</h3>
-          <p class="docs-note">La evidencia por repositorio ahora se separa en archivos HTML independientes para reducir tamano y facilitar mantenimiento.</p>
+          <h3>Anexo Tecnico (Por repositorio): Contenido Completo por Documento</h3>
+          <p class="docs-note">La evidencia por repositorio ahora se separa en archivos HTML independientes para reducir tamano y facilitar mantenimiento. Conteo mostrado: solo entregables obligatorios (17 por repositorio).</p>
           <table>
             <thead>
               <tr>
                 <th>Repositorio</th>
-                <th>Documentos</th>
+                <th>Documentos obligatorios</th>
                 <th>Anexo</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>claro-video-ios</code></td><td>15</td><td><a href="ANEXO_claro-video-ios.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-android-tv-stb</code></td><td>15</td><td><a href="ANEXO_claro-video-android-tv-stb.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-android-smart-tv</code></td><td>14</td><td><a href="ANEXO_claro-video-android-smart-tv.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-android-tv</code></td><td>14</td><td><a href="ANEXO_claro-video-android-tv.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-roku-tv</code></td><td>14</td><td><a href="ANEXO_claro-video-roku-tv.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-android-coship</code></td><td>14</td><td><a href="ANEXO_claro-video-android-coship.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-android</code></td><td>15</td><td><a href="ANEXO_claro-video-android.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-ios-tvos</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-tvos.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-ios-player</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-player.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-ios-services</code></td><td>15</td><td><a href="ANEXO_claro-video-ios-services.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-ios-analytics</code></td><td>14</td><td><a href="ANEXO_claro-video-ios-analytics.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-android-request-manager</code></td><td>14</td><td><a href="ANEXO_claro-video-android-request-manager.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-web</code></td><td>15</td><td><a href="ANEXO_claro-video-web.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-web-chromecast</code></td><td>24</td><td><a href="ANEXO_claro-video-web-chromecast.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-aaf-lg-nativa</code></td><td>32</td><td><a href="ANEXO_claro-video-aaf-lg-nativa.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-aaf-samsung-nativa</code></td><td>27</td><td><a href="ANEXO_claro-video-aaf-samsung-nativa.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-aaf-ott</code></td><td>24</td><td><a href="ANEXO_claro-video-aaf-ott.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-aaf-iptv</code></td><td>19</td><td><a href="ANEXO_claro-video-aaf-iptv.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-middleware-claro-musica</code></td><td>27</td><td><a href="ANEXO_claro-video-middleware-claro-musica.html">Abrir anexo</a></td></tr>
-              <tr><td><code>claro-video-universal-windows-platform</code></td><td>18</td><td><a href="ANEXO_claro-video-universal-windows-platform.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-tv-stb.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-smart-tv.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-tv.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-roku-tv.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-coship.html">Abrir anexo + VSS</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-tvos.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-player.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-services.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-analytics.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-request-manager.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>17</td><td><a href="ANEXO_claro-video-web.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>17</td><td><a href="ANEXO_claro-video-web-chromecast.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-lg-nativa.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-samsung-nativa.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-ott.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-iptv.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>17</td><td><a href="ANEXO_claro-video-middleware-claro-musica.html">Abrir anexo</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>17</td><td><a href="ANEXO_claro-video-universal-windows-platform.html">Abrir anexo</a></td></tr>
             </tbody>
           </table>
           <p class="quote">Tip: abre cada anexo en una pestana distinta para revisar el detalle tecnico sin sobrecargar el documento principal.</p>
@@ -2344,3 +2344,6 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
     <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
 </body>
 </html>
+
+
+
