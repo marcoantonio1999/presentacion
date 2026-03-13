@@ -11,18 +11,154 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-ios-analytics</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-ios-analytics</h3>
-        <p class="docs-note">Documentos detectados: 14</p>
+        <p class="docs-note">Documentos detectados: 14 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-ios-analytics new.zip</code>. Dentro del paquete no existen carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, asi que la raiz del zip se toma como la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · VALIDATION_SUMMARY disponible en VSS/GENERATED</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>10 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>576</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>693</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>132</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>El paquete cubre los 10 dominios objetivo del ecosistema Claro Video: <code>AUTH</code>, <code>SEARCH</code>, <code>VOD</code>, <code>LIVESTREAMING</code>, <code>SUBSCRIPTION</code>, <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>CARROUSEL</code>, <code>ACNTMGMT</code> y <code>MUSIC</code>. El <code>VALIDATION_SUMMARY.md</code> marca resultado exitoso y deja trazadas discrepancias verificadas contra el código real.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>ACNTMGMT</code> es el dominio mas pesado con 124 nodos y 142 relaciones, seguido por <code>VOD</code> con 117/74 y <code>SUBSCRIPTION</code> con 86/81. <code>TIMESHIFT</code> destaca por 45 impactos indirectos, lo que lo vuelve especialmente sensible aunque tenga menor volumen de funciones reales.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>La deuda dominante es transversal: seguimiento dual con <code>GA Universal</code> via <code>HTTP POST</code> a <code>http://www.google-analytics.com/collect</code>, <code>trackingId UA-163167064-1</code> hardcodeado, cierre mutable en <code>CVAnalytics4.shared.completion</code>, y discrepancias entre briefing y código real en <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>CARROUSEL</code> y <code>ACNTMGMT</code>.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">El <code>VALIDATION_SUMMARY.md</code> reporta 41 artefactos base (SPEC + evidencia mínima), pero el paquete completo entregado suma 132 archivos dentro de <code>VSS/GENERATED</code> al incluir diagramas, mapas de impacto, graphml y resúmenes por dominio. La lectura ejecutiva se apoyo en <code>VALIDATION_SUMMARY.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 20 diagramas por dominio y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-ios-analytics-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-ios-analytics-diagramas-vss-viewer.html#diagrama-global-claro-video-ios-analytics">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-ios-analytics-diagramas-vss-viewer.html#impacto-global-claro-video-ios-analytics">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos del paquete y agrega una seccion 23 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 545 nodos unicos, 693 relaciones y 31 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">10 dominios analytics - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Password reminder, suspension account, page views y eventos de cuenta</td><td>142</td><td>100 / 64</td></tr>
+                    <tr><td>AUTH</td><td>Login, register, forgotten password y eventos de autenticacion</td><td>34</td><td>26 / 3</td></tr>
+                    <tr><td>CARROUSEL</td><td>Home, rails, carousel navigation y seleccion de contenido</td><td>73</td><td>47 / 33</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>Live, player live, zapping y flujo de emisiones en vivo</td><td>68</td><td>38 / 7</td></tr>
+                    <tr><td>MUSIC</td><td>Playlists, reproduccion musical y analytics del contexto music/player</td><td>62</td><td>45 / 26</td></tr>
+                    <tr><td>RECORDED</td><td>Recorded, descargas y mi contenido grabado</td><td>37</td><td>29 / 5</td></tr>
+                    <tr><td>SEARCH</td><td>Discovery, search y navegacion a contenido desde resultados</td><td>68</td><td>32 / 3</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>Payments, selector de plan, ecommerce GA4 y conversion</td><td>81</td><td>50 / 11</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Guide TV, EPG y tracking catch-up/startover no resuelto</td><td>54</td><td>40 / 45</td></tr>
+                    <tr><td>VOD</td><td>VCard, player VOD, still watching y seguimiento de reproduccion</td><td>74</td><td>63 / 5</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">tracking legacy, discrepancias verificadas y accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>ACNTMGMT</code>, <code>VOD</code> y <code>SUBSCRIPTION</code> concentran el mayor volumen estructural del paquete y deben ser el foco de lectura prioritaria.</li>
+                    <li><code>TIMESHIFT</code> no es el dominio mas grande, pero si uno de los mas ambiguos por el volumen de impacto indirecto y por los gaps funcionales confirmados.</li>
+                    <li>El paquete no es una app, sino una libreria de tracking; por eso la deuda dominante no esta en UI sino en contratos, taxonomia y transporte de eventos.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>DEBT-AUTH-001</code>, <code>DEBT-TS-001</code> y <code>DEBT-VOD-001</code>: <code>UA-163167064-1</code> sigue hardcodeado y GA Universal esta deprecado desde 2023.</li>
+                    <li><code>DEBT-AUTH-004</code>, <code>DEBT-TS-004</code> y <code>DEBT-MUS-005</code>: el transporte a <code>google-analytics.com/collect</code> sigue por <code>HTTP</code>, no <code>HTTPS</code>.</li>
+                    <li><code>GAP-VOD-001</code>: <code>GATracker</code> no tiene retry ni cola offline, asi que los eventos se pierden si falla la red.</li>
+                    <li><code>DEBT-VOD-004</code>: <code>CVAnalytics4.shared.completion</code> es mutable y puede introducir condiciones de carrera.</li>
+                    <li>Las discrepancias verificadas del <code>VALIDATION_SUMMARY</code> muestran que varias funciones del briefing inicial no existen realmente o cambian de firma, sobre todo en <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>CARROUSEL</code> y <code>ACNTMGMT</code>.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>ACNTMGMT</code>, <code>VOD</code>, <code>SUBSCRIPTION</code> y <code>TIMESHIFT</code> por densidad, impacto indirecto y deuda de contratos.</li>
+                    <li>Migrar completamente de GA Universal a GA4/Firebase y cerrar la ruta legacy por <code>HTTP POST</code>.</li>
+                    <li>Normalizar nombres, eliminar typos como <code>Traker/</code>, <code>LandigRegisterOption</code> y <code>guideTVEventAnalitycs</code>, y alinear la taxonomia real con el briefing operativo.</li>
+                    <li>Agregar retry/queue offline y endurecer el punto de integración del host app para no perder eventos ni mezclar tipos de ecommerce bajo <code>select_content</code>.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>VSS/GENERATED/VALIDATION_SUMMARY.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_claro-video-ios-analytics.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
         <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-ios-analytics</h4>
-              <p>Documentos detectados: 14</p>
+              <p>Documentos detectados: 14 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
