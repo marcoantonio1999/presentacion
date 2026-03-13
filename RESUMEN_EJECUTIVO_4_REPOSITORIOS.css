@@ -368,6 +368,33 @@
       color: #486581;
     }
 
+    .quick-access-card {
+      grid-column: 1 / -1;
+    }
+
+    .quick-access-card p {
+      margin-bottom: 0.5rem;
+    }
+
+    .quick-access-table-scroll {
+      margin: 0.2rem 0 0;
+      border-radius: 14px;
+    }
+
+    .quick-access-table {
+      min-width: 720px;
+    }
+
+    .quick-access-table td:first-child {
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .quick-access-table td:nth-child(2),
+    .quick-access-table td:nth-child(3) {
+      white-space: nowrap;
+    }
+
     .quote {
       margin-top: 0.6rem;
       border-left: 4px solid var(--accent);
@@ -1669,6 +1696,14 @@
 
     .dashboard-page .card-grid {
       gap: 0.65rem;
+    }
+
+    .dashboard-page .quick-access-card {
+      padding-bottom: 0.6rem;
+    }
+
+    .dashboard-page .quick-access-table-scroll > table {
+      min-width: 700px;
     }
 
     .dashboard-page .method-arrow {

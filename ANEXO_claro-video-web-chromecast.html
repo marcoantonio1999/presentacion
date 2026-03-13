@@ -11,18 +11,152 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-web-chromecast</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-web-chromecast</h3>
-        <p class="docs-note">Documentos detectados: 24</p>
+        <p class="docs-note">Documentos detectados: 24 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>El paquete recibido para Chromecast viene en una sola raiz <code>claro-video-chromecast</code>, sin variantes paralelas tipo <code>Version_v2</code>, <code>analysis_v2</code> o <code>new_vss</code>. Por eso se toma la raiz del zip como version vigente para esta presentacion y se mantiene el nombre del anexo <code>claro-video-web-chromecast</code> para no romper la navegacion existente.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete raiz del zip recibido · reconstruido desde analysis + VSS/GENERATED</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>10 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>299</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>297</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>150</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>La entrega cubre los 10 dominios esperados del ecosistema Claro Video: <code>AUTH</code>, <code>SEARCH</code>, <code>VOD</code>, <code>LIVESTREAMING</code>, <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>CARROUSEL</code>, <code>SUBSCRIPTION</code>, <code>ACNTMGMT</code> y <code>MUSIC</code>. Como el paquete no trae consolidado maestro tipo <code>README.md</code> o <code>INDEX.md</code>, el resumen ejecutivo se reconstruye desde <code>repo_summary.json</code>, <code>summary.json</code> por dominio y las <code>SPEC_*.md</code>.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>VOD</code> es el dominio mas grande y sensible con `98` nodos, `63` relaciones y `52` impactos directos. Le siguen <code>LIVESTREAMING</code> (`50` nodos, `41` relaciones) y <code>SEARCH</code> (`46` nodos, `33` relaciones), mientras <code>ACNTMGMT</code> y <code>SUBSCRIPTION</code> quedan empatados con `48` nodos.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>El VSS confirma que el receiver depende de un <code>CastPlayer</code> monolitico en <code>player.js</code> (`2431 LOC`), runtime legacy orientado a <code>Chrome 38</code>, <code>Webpack 1</code>, <code>Shaka Player 2.x</code> y ausencia de validacion runtime / RUM sobre playback, DRM y errores del receiver.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">La lectura ejecutiva se apoyo en <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>. El paquete no incluye <code>VSS_COMPLIANCE_REPORT.md</code>, <code>README.md</code> ni <code>INDEX.md</code> dentro de <code>VSS/GENERATED</code>, por lo que el resumen se recompuso directamente desde la evidencia estructurada.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mantener legible el anexo principal y conservar intactos los entregables generados.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 20 diagramas por dominio del paquete y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-web-chromecast-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-web-chromecast-diagramas-vss-viewer.html#diagrama-global-claro-video-chromecast">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-web-chromecast-diagramas-vss-viewer.html#impacto-global-claro-video-chromecast">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos del paquete y agrega una seccion 23 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 293 nodos unicos, 297 relaciones y 6 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">10 dominios Chromecast Receiver - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Estado de sesion, perfil/cuenta y coordinacion sender → receiver</td><td>24</td><td>18 / 0</td></tr>
+                    <tr><td>AUTH</td><td>Uso pasivo del token <code>HKS</code> y autenticacion delegada al sender</td><td>25</td><td>19 / 0</td></tr>
+                    <tr><td>CARROUSEL</td><td>Navegacion inicial, seleccion de contenido y handoff desde el sender</td><td>22</td><td>17 / 0</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>Live cast, Shaka Player 2.x, tracklivechannel y errores de stream</td><td>41</td><td>27 / 0</td></tr>
+                    <tr><td>MUSIC</td><td>Audio DASH, cambio de tipo de media y reproduccion musical</td><td>31</td><td>21 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>Continuar viendo, bookmarks y rehidratacion de reproduccion</td><td>12</td><td>11 / 0</td></tr>
+                    <tr><td>SEARCH</td><td>Busqueda mayormente sender-side y seleccion de item para cast load</td><td>33</td><td>21 / 0</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td><code>sell_type</code>, purchase button info y acceso premium/ppe</td><td>24</td><td>18 / 0</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Catch-up, live replay y continuidad sobre streams temporales</td><td>22</td><td>16 / 0</td></tr>
+                    <tr><td>VOD</td><td>Playback DRM Widevine, idiomas/subtitulos y binge-watching</td><td>63</td><td>52 / 0</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">god object, runtime legacy y foco de refactor</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>VOD</code> domina el mapa con `98` nodos y `52` impactos directos, por lo que cualquier cambio de playback afecta DRM, tracking, idiomas y continuidad.</li>
+                    <li><code>LIVESTREAMING</code> y <code>SEARCH</code> son los siguientes focos por mezcla de Cast SDK, sender events y Shaka.</li>
+                    <li><code>AUTH</code> y <code>SUBSCRIPTION</code> no ejecutan el flujo completo dentro del receiver, pero sí condicionan acceso y monetizacion por <code>customData.hks</code> y <code>sell_type</code>.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>player.js</code> funciona como god object del receiver y concentra demasiadas responsabilidades en una sola clase.</li>
+                    <li>La compatibilidad forzada con <code>Chrome 38</code>, <code>Webpack 1</code>, <code>Babel 6</code> y <code>Shaka 2.x</code> eleva la deuda de evolucion del producto.</li>
+                    <li>Las specs marcan ausencia de validacion runtime, RUM/APM, BRFRE y ADRs para varios dominios, especialmente <code>VOD</code>, <code>AUTH</code> y <code>SUBSCRIPTION</code>.</li>
+                    <li>El GraphML trae 6 IDs duplicados, por lo que la fuente estructural tambien necesita saneamiento minimo.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>VOD</code>, <code>LIVESTREAMING</code> y <code>SEARCH</code> por tamaño, criticidad y acoplamiento técnico.</li>
+                    <li>Separar <code>CastPlayer</code> en modulos por dominio: carga media, DRM, tracking, estado y callbacks del Cast SDK.</li>
+                    <li>Definir quality gates y observabilidad mínima para playback, errores de Shaka y tasa de exito de <code>getmedia</code>/<code>license</code>.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_claro-video-chromecast.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
         <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-web-chromecast</h4>
-              <p>Documentos detectados: 24</p>
+              <p>Documentos detectados: 24 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>

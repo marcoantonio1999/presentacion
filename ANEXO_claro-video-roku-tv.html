@@ -11,18 +11,151 @@
     <header class="hero is-visible">
       <span class="kicker">Anexo Técnico</span>
       <h1>claro-video-roku-tv</h1>
-      <p class="hero-mainline">Contenido completo por documento</p>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
       <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
     </header>
 
     <main class="main">
       <section id="contenido-docs">
         <h3>Anexo Técnico: claro-video-roku-tv</h3>
-        <p class="docs-note">Documentos detectados: 14</p>
+        <p class="docs-note">Documentos detectados: 14 (FASE 1) + Value Strem Spect (VSS) integrado desde la version mas reciente del paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>El zip de Roku TV trae dos variantes, <code>Version_v1</code> y <code>Version_v2</code>. Para la presentacion se toma <code>Version_v2</code> como referencia vigente por ser la entrega mas reciente y la que contiene el consolidado completo en <code>VSS/GENERATED/README.md</code>.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: Version_v2 · README consolidado generado el 2026-03-12</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>10 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>144</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>53</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>151</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>La entrega cubre los 10 dominios esperados del cliente Roku: <code>AUTH</code>, <code>SEARCH</code>, <code>VOD</code>, <code>LIVESTREAMING</code>, <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>CARROUSEL</code>, <code>SUBSCRIPTION</code>, <code>ACNTMGMT</code> y <code>MUSIC</code>. El <code>README.md</code> reporta cobertura MCP cercana al <code>97%</code> y deja como gap puntual <code>User_oauth_callback_login</code>.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>AUTH</code> es el value stream mas grande (`46` nodos), seguido por <code>SEARCH</code> (`29`) y <code>VOD</code> (`26`). En impacto, <code>AUTH</code> concentra `9` impactos directos, mientras <code>VOD</code> y <code>SUBSCRIPTION</code> absorben la mayor criticidad comercial por playback DRM y compra premium.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>El paquete ya marca tres focos ejecutivos: <code>0% coverage</code> en tests, alto volumen de nodos con <code>&lt;informacion no encontrada&gt;</code> en infraestructura/runtime y un endpoint extra <code>buyconfirmroku</code> que confirma dependencia directa de Roku Pay dentro de <code>SUBSCRIPTION</code>.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">La lectura ejecutiva se apoyo en <code>VSS/GENERATED/README.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>. El paquete no trae <code>VSS_COMPLIANCE_REPORT.md</code>, pero el <code>README.md</code> consolida dominios, cobertura MCP y notas de generacion de forma suficiente para FASE 1.5.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para permitir zoom, navegacion y consulta tecnica sin saturar el anexo principal.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 20 diagramas por dominio de <code>Version_v2</code> y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="ANEXO_claro-video-roku-tv-diagramas-vss-viewer.html">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="ANEXO_claro-video-roku-tv-diagramas-vss-viewer.html#diagrama-global-claro-video-roku-tv">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="ANEXO_claro-video-roku-tv-diagramas-vss-viewer.html#impacto-global-claro-video-roku-tv">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 22 entregables completos del paquete y agrega una seccion 23 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 144 nodos unicos, 53 relaciones y 0 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">10 dominios Roku TV - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ACNTMGMT</td><td>Perfil, datos de cuenta y vinculacion de dispositivos Roku</td><td>5</td><td>4 / 1</td></tr>
+                    <tr><td>AUTH</td><td>Login OTT, refresh token, logout y accepted terms con roRegistry</td><td>11</td><td>9 / 0</td></tr>
+                    <tr><td>CARROUSEL</td><td>Home, CMS y navegacion por carruseles con control remoto</td><td>4</td><td>3 / 0</td></tr>
+                    <tr><td>LIVESTREAMING</td><td>Canales en vivo, lineup, EPG y reproduccion lineal</td><td>8</td><td>4 / 1</td></tr>
+                    <tr><td>MUSIC</td><td>Claro Musica, exploracion de artistas y playback de audio</td><td>4</td><td>3 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>Continuar viendo, grabaciones y recordatorios</td><td>3</td><td>2 / 0</td></tr>
+                    <tr><td>SEARCH</td><td>Busqueda generica, predictiva y vertical por catalogo</td><td>1</td><td>1 / 0</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>Planes, compra premium, cancelacion y <code>buyconfirmroku</code></td><td>9</td><td>5 / 1</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Replay sobre live y reproduccion de programa pasado desde EPG</td><td>2</td><td>2 / 0</td></tr>
+                    <tr><td>VOD</td><td>Playback on demand, DRM Widevine y bloqueo por suscripcion</td><td>6</td><td>5 / 3</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">cobertura MCP, dependencias Roku y gaps runtime</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>AUTH</code> domina el grafo con `46` nodos y `11` relaciones por la mezcla de login, refresh token, accepted terms y logout.</li>
+                    <li><code>SEARCH</code> (`29` nodos) y <code>VOD</code> (`26`) concentran la mayor superficie de UI/Task/API dentro del cliente BrightScript.</li>
+                    <li><code>SUBSCRIPTION</code> incorpora la variante extra <code>buyconfirmroku</code>, lo que lo vuelve un flujo diferenciado frente al resto de clientes.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li>El consolidado VSS marca <code>0% coverage</code> en pruebas como alerta critica del paquete.</li>
+                    <li>Persisten vacios de evidencia en runtime, topologia, CDN, PCI y backend de timeshift, visibles como nodos <code>&lt;informacion no encontrada&gt;</code> dentro de los diagramas.</li>
+                    <li><code>VOD</code> depende de <code>Widevine v1.0</code> y <code>SUBSCRIPTION</code> de Roku Pay / Payway, asi que ambos flujos quedan en la zona mas sensible del repositorio.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>AUTH</code>, <code>VOD</code> y <code>SUBSCRIPTION</code> por criticidad comercial y acoplamiento con plataforma.</li>
+                    <li>Completar evidencia faltante de infraestructura/runtime para reducir nodos ambiguos en <code>SEARCH</code>, <code>TIMESHIFT</code> y <code>LIVESTREAMING</code>.</li>
+                    <li>Establecer una linea base minima de pruebas y monitoreo, porque hoy el paquete solo llega a nivel <code>Observational v1</code>.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>VSS/GENERATED/README.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_claro-video-roku-tv.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
         <article class="repo-content-block">
             <div class="repo-content-head">
               <h4>Repositorio: claro-video-roku-tv</h4>
-              <p>Documentos detectados: 14</p>
+              <p>Documentos detectados: 14 (FASE 1)</p>
             </div>
             <details class="doc-item">
               <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
