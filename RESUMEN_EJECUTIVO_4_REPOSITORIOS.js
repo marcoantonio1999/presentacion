@@ -4,6 +4,7 @@
       const spaMode = dashboardMode && body.dataset.dashboardSpa !== "false";
       const diagramWorkspaceMode = body.classList.contains("diagram-workspace-page");
       const themeStorageKey = "verify_docs_dashboard_theme";
+      const phaseTwoLockedTheme = body.classList.contains("phase-two-dashboard-page");
       const baseTitle = document.title;
       const sections = Array.from(document.querySelectorAll("main section[id]"));
       const links = Array.from(document.querySelectorAll('.toc a[href^="#"]'));
@@ -13,6 +14,7 @@
 
       function readStoredTheme() {
         if (!dashboardMode) return "dark";
+        if (phaseTwoLockedTheme) return "dark";
         try {
           return window.localStorage.getItem(themeStorageKey) === "light" ? "light" : "dark";
         } catch (error) {
@@ -22,6 +24,7 @@
 
       function writeStoredTheme(theme) {
         if (!dashboardMode) return;
+        if (phaseTwoLockedTheme) return;
         try {
           window.localStorage.setItem(themeStorageKey, theme);
         } catch (error) {
@@ -31,7 +34,7 @@
 
       function applyDashboardTheme(theme) {
         if (!dashboardMode) return;
-        const lightMode = theme === "light";
+        const lightMode = phaseTwoLockedTheme ? false : theme === "light";
         body.classList.toggle("theme-light", lightMode);
         body.classList.toggle("theme-dark", !lightMode);
       }
@@ -42,6 +45,7 @@
 
       function mountThemeToggle() {
         if (!dashboardMode) return;
+        if (phaseTwoLockedTheme) return;
 
         const host = document.querySelector(".spa-toolbar-actions") || document.querySelector(".hero");
         if (!host || host.querySelector(".dashboard-theme-toggle")) return;
@@ -129,9 +133,61 @@
       const mermaidAvailable = typeof window.mermaid !== "undefined";
       if (mermaidAvailable) {
         const dashboardLightTheme = dashboardMode && body.classList.contains("theme-light");
-        const mermaidThemeVariables = dashboardMode
-          ? (dashboardLightTheme
-            ? {
+        const mermaidThemeVariables = phaseTwoLockedTheme
+          ? {
+              background: "#071b12",
+              primaryColor: "#0f3b28",
+              primaryTextColor: "#ecfff2",
+              primaryBorderColor: "#54c278",
+              lineColor: "#79de95",
+              secondaryColor: "#12442e",
+              secondaryTextColor: "#ecfff2",
+              secondaryBorderColor: "#62cf88",
+              tertiaryColor: "#0b2c1d",
+              tertiaryTextColor: "#ecfff2",
+              tertiaryBorderColor: "#4fb971",
+              clusterBkg: "#0d301f",
+              clusterBorder: "#56c77e",
+              edgeLabelBackground: "#123726",
+              fontFamily: "Aptos, Segoe UI, sans-serif"
+            }
+          : dashboardMode
+            ? (dashboardLightTheme
+              ? {
+                  background: "#f7fbff",
+                  primaryColor: "#dbeafe",
+                  primaryTextColor: "#0f2740",
+                  primaryBorderColor: "#4f7fb2",
+                  lineColor: "#355b84",
+                  secondaryColor: "#e7f1ff",
+                  secondaryTextColor: "#0f2740",
+                  secondaryBorderColor: "#5b88b8",
+                  tertiaryColor: "#eef5ff",
+                  tertiaryTextColor: "#0f2740",
+                  tertiaryBorderColor: "#6d97c3",
+                  clusterBkg: "#edf4ff",
+                  clusterBorder: "#6f9ac6",
+                  edgeLabelBackground: "#ffffff",
+                  fontFamily: "Aptos, Segoe UI, sans-serif"
+                }
+              : {
+                  background: "#0b1531",
+                  primaryColor: "#162b56",
+                  primaryTextColor: "#eef4ff",
+                  primaryBorderColor: "#6f96d5",
+                  lineColor: "#7fa7eb",
+                  secondaryColor: "#193364",
+                  secondaryTextColor: "#eef4ff",
+                  secondaryBorderColor: "#79a1de",
+                  tertiaryColor: "#112342",
+                  tertiaryTextColor: "#eef4ff",
+                  tertiaryBorderColor: "#6f94cd",
+                  clusterBkg: "#102246",
+                  clusterBorder: "#698fc7",
+                  edgeLabelBackground: "#13274d",
+                  fontFamily: "Aptos, Segoe UI, sans-serif"
+                })
+            : {
                 background: "#f7fbff",
                 primaryColor: "#dbeafe",
                 primaryTextColor: "#0f2740",
@@ -147,41 +203,7 @@
                 clusterBorder: "#6f9ac6",
                 edgeLabelBackground: "#ffffff",
                 fontFamily: "Aptos, Segoe UI, sans-serif"
-              }
-            : {
-                background: "#0b1531",
-                primaryColor: "#162b56",
-                primaryTextColor: "#eef4ff",
-                primaryBorderColor: "#6f96d5",
-                lineColor: "#7fa7eb",
-                secondaryColor: "#193364",
-                secondaryTextColor: "#eef4ff",
-                secondaryBorderColor: "#79a1de",
-                tertiaryColor: "#112342",
-                tertiaryTextColor: "#eef4ff",
-                tertiaryBorderColor: "#6f94cd",
-                clusterBkg: "#102246",
-                clusterBorder: "#698fc7",
-                edgeLabelBackground: "#13274d",
-                fontFamily: "Aptos, Segoe UI, sans-serif"
-              })
-          : {
-              background: "#f7fbff",
-              primaryColor: "#dbeafe",
-              primaryTextColor: "#0f2740",
-              primaryBorderColor: "#4f7fb2",
-              lineColor: "#355b84",
-              secondaryColor: "#e7f1ff",
-              secondaryTextColor: "#0f2740",
-              secondaryBorderColor: "#5b88b8",
-              tertiaryColor: "#eef5ff",
-              tertiaryTextColor: "#0f2740",
-              tertiaryBorderColor: "#6d97c3",
-              clusterBkg: "#edf4ff",
-              clusterBorder: "#6f9ac6",
-              edgeLabelBackground: "#ffffff",
-              fontFamily: "Aptos, Segoe UI, sans-serif"
-            };
+              };
 
         window.mermaid.initialize({
           startOnLoad: false,
@@ -197,6 +219,77 @@
           },
           themeVariables: mermaidThemeVariables
         });
+      }
+
+      function sanitizeMermaidSource(rawCode) {
+        let code = String(rawCode || "").replace(/\r\n?/g, "\n");
+        if (!code.trim()) return code;
+
+        if (phaseTwoLockedTheme) {
+          code = code.replace(/^%%\{init:[\s\S]*?\}%%\s*$/gm, "");
+          code = code
+            .split("\n")
+            .filter((line) => {
+              const trimmed = line.trim();
+              if (!trimmed) return true;
+              if (/^style\s+\S+\s+fill:/i.test(trimmed)) return false;
+              if (/^style\s+\S+\s+stroke:/i.test(trimmed)) return false;
+              if (/^style\s+\S+\s+color:/i.test(trimmed)) return false;
+              if (/^classDef\s+/i.test(trimmed)) return false;
+              if (/^linkStyle\s+\d+\s+/i.test(trimmed)) return false;
+              return true;
+            })
+            .join("\n");
+        }
+
+        if (/^\s*quadrantChart\b/m.test(code)) {
+          return code
+            .split("\n")
+            .map((line) => {
+              const trimmed = line.trim();
+              if (!trimmed || trimmed.startsWith("%%")) {
+                return line;
+              }
+
+              const quadrantMatch = line.match(/^(\s*)(quadrant-\d)\s+(.+?)\s*$/i);
+              if (quadrantMatch) {
+                const indent = quadrantMatch[1] || "";
+                const quadrantId = quadrantMatch[2];
+                let title = String(quadrantMatch[3] || "").trim();
+                if (!/^".*"$/.test(title)) {
+                  title = '"' + title.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+                }
+                return indent + quadrantId + " " + title;
+              }
+
+              if (
+                trimmed.startsWith("title ") ||
+                trimmed.startsWith("x-axis ") ||
+                trimmed.startsWith("y-axis ")
+              ) {
+                return line;
+              }
+
+              const pointMatch = line.match(/^(\s*)(?:"([^"\r\n]+)"|([^:\r\n]+?))\s*:\s*(\[[^\]]+\])\s*$/);
+              if (!pointMatch) return line;
+
+              const indent = pointMatch[1] || "";
+              const label = String(pointMatch[2] || pointMatch[3] || "").trim();
+              const coords = String(pointMatch[4] || "").trim();
+              if (!label) return line;
+              const safeLabel = label.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+              return indent + '"' + safeLabel + '": ' + coords;
+            })
+            .filter((line, index, lines) => {
+              if (line.trim()) return true;
+              const prev = lines[index - 1] || "";
+              const next = lines[index + 1] || "";
+              return !prev.trim() || !next.trim();
+            })
+            .join("\n");
+        }
+
+        return code;
       }
 
       function extractMermaidBlocks(rawText) {
@@ -236,6 +329,7 @@
               if (code) {
                 blocks.push({
                   code,
+                  renderCode: sanitizeMermaidSource(code),
                   title: currentTitle || ("Diagrama " + (blocks.length + 1))
                 });
               }
@@ -265,26 +359,48 @@
         item.insertBefore(msg, pre);
       }
 
-      function renderItemDiagrams(item) {
+      function clearStatus(item) {
+        const prev = item.querySelector(".diagram-status");
+        if (prev) prev.remove();
+      }
+
+      async function renderItemDiagrams(item) {
         if (!mermaidAvailable) return;
         if (item.dataset.diagramRendered === "true") return;
         if (item.dataset.diagramRendering === "true") return;
         const nodes = Array.from(item.querySelectorAll(".diagram-gallery .mermaid"));
         if (!nodes.length) return;
         item.dataset.diagramRendering = "true";
-        window.mermaid.run({ nodes })
-          .then(() => {
-            item.dataset.diagramRendered = "true";
-            scheduleDiagramWorkspaceFit(item);
-          })
-          .catch(() => {
-            addStatus(item, "No se pudo renderizar Mermaid en este navegador. Puedes ver el código fuente del diagrama.");
+        clearStatus(item);
+        let failures = 0;
+
+        try {
+          for (const node of nodes) {
+            try {
+              await window.mermaid.run({ nodes: [node] });
+            } catch (innerError) {
+              failures += 1;
+            }
+          }
+
+          if (failures > 0) {
+            addStatus(
+              item,
+              failures >= nodes.length
+                ? "No se pudo renderizar Mermaid en este navegador. Puedes ver el código fuente del diagrama."
+                : "Algunos diagramas Mermaid no se pudieron renderizar. El resto se mantiene visible y puedes consultar el código fuente."
+            );
             const pre = item.querySelector(".doc-pre");
-            if (pre) pre.classList.remove("diagram-raw-hidden");
-          })
-          .finally(() => {
-            item.dataset.diagramRendering = "false";
-          });
+            if (pre && failures >= nodes.length) {
+              pre.classList.remove("diagram-raw-hidden");
+            }
+          }
+
+          item.dataset.diagramRendered = "true";
+          scheduleDiagramWorkspaceFit(item);
+        } finally {
+          item.dataset.diagramRendering = "false";
+        }
       }
 
       function normalizeWorkspaceSvg(svg) {
@@ -883,7 +999,7 @@
 
             const mer = document.createElement("div");
             mer.className = "mermaid diagram-mermaid";
-            mer.textContent = block.code;
+            mer.textContent = block.renderCode || block.code;
 
             card.appendChild(title);
             card.appendChild(mer);

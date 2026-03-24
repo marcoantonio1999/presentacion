@@ -151,6 +151,10 @@
       border: 1px solid rgba(51, 78, 104, 0.2);
     }
 
+    .meta a.chip {
+      text-decoration: none;
+    }
+
     .kpi-grid {
       margin-top: 1.3rem;
       display: grid;
@@ -248,6 +252,80 @@
       font-weight: 700;
       color: #123b6d;
       background: rgba(37, 99, 235, 0.06);
+    }
+
+    .phase-switcher {
+      margin-top: 0.8rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .phase-link-card {
+      display: grid;
+      gap: 0.22rem;
+      text-decoration: none;
+      padding: 0.92rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(37, 99, 235, 0.16);
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(241, 246, 255, 0.95));
+      box-shadow: 0 10px 24px rgba(22, 35, 52, 0.08);
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .phase-link-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(37, 99, 235, 0.24);
+      box-shadow: 0 14px 30px rgba(22, 35, 52, 0.12);
+    }
+
+    .phase-link-kicker {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.1);
+      color: #1d4ed8;
+      border: 1px solid rgba(37, 99, 235, 0.16);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .phase-link-card strong {
+      font-family: var(--display);
+      font-size: 1.06rem;
+      color: #102a43;
+      letter-spacing: 0.01em;
+    }
+
+    .phase-link-card span:last-child {
+      color: #486581;
+      font-size: 0.9rem;
+    }
+
+    .phase-link-card.is-current {
+      border-color: rgba(37, 99, 235, 0.24);
+      background:
+        linear-gradient(160deg, rgba(239, 246, 255, 0.98), rgba(221, 235, 255, 0.96));
+    }
+
+    .phase-link-card.is-next {
+      border-color: rgba(21, 128, 61, 0.2);
+      background:
+        linear-gradient(160deg, rgba(240, 253, 244, 0.98), rgba(220, 252, 231, 0.96));
+    }
+
+    .phase-link-card.is-next .phase-link-kicker {
+      background: rgba(22, 163, 74, 0.12);
+      color: #166534;
+      border-color: rgba(21, 128, 61, 0.18);
+    }
+
+    .phase-link-card.is-next strong {
+      color: #14532d;
     }
 
     .layout {
@@ -393,6 +471,136 @@
     .quick-access-table td:nth-child(2),
     .quick-access-table td:nth-child(3) {
       white-space: nowrap;
+    }
+
+    .phase-two-section {
+      position: relative;
+      overflow: hidden;
+      border-color: rgba(21, 128, 61, 0.18);
+      background:
+        radial-gradient(circle at 12% 16%, rgba(34, 197, 94, 0.13), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(22, 163, 74, 0.11), transparent 30%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.97), rgba(241, 250, 244, 0.95));
+    }
+
+    .phase-two-section::after {
+      content: "";
+      position: absolute;
+      inset: auto -72px -72px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      border: 24px solid rgba(22, 163, 74, 0.08);
+      pointer-events: none;
+    }
+
+    .phase-two-head {
+      position: relative;
+      z-index: 1;
+    }
+
+    .phase-two-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.36rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid rgba(21, 128, 61, 0.2);
+      background: rgba(22, 163, 74, 0.12);
+      color: #166534;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .phase-two-section h3 {
+      margin-top: 0.7rem;
+      color: #123b2a;
+    }
+
+    .phase-two-kpis {
+      position: relative;
+      z-index: 1;
+      margin-top: 0.8rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .phase-two-kpi {
+      border-radius: 16px;
+      padding: 0.9rem 0.95rem;
+      border: 1px solid rgba(21, 128, 61, 0.16);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(236, 253, 245, 0.9));
+    }
+
+    .phase-two-kpi strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.46rem;
+      line-height: 1;
+      color: #166534;
+    }
+
+    .phase-two-kpi span {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.84rem;
+      color: #335c48;
+    }
+
+    .phase-two-card-grid,
+    .phase-two-map,
+    .phase-two-table-scroll {
+      position: relative;
+      z-index: 1;
+    }
+
+    .phase-two-section .mini-card {
+      border-color: rgba(21, 128, 61, 0.16);
+      background: linear-gradient(170deg, rgba(255, 255, 255, 0.95), rgba(240, 253, 244, 0.94));
+    }
+
+    .phase-two-section .mini-card h4 {
+      color: #123b2a;
+    }
+
+    .phase-two-section .mini-card p {
+      color: #335c48;
+    }
+
+    .phase-two-map {
+      margin-top: 0.8rem;
+    }
+
+    .phase-two-map .node {
+      border-style: solid;
+      border-color: rgba(21, 128, 61, 0.22);
+      background: rgba(22, 163, 74, 0.1);
+      color: #14532d;
+      min-height: 72px;
+    }
+
+    .phase-two-table-scroll {
+      margin-top: 0.85rem;
+      border-color: rgba(21, 128, 61, 0.16);
+      background: rgba(248, 255, 250, 0.8);
+    }
+
+    .phase-two-table td:first-child {
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .phase-two-table td:nth-child(2) strong {
+      color: #166534;
+    }
+
+    .phase-two-section .quote {
+      border-left-color: #15803d;
+      background: rgba(22, 163, 74, 0.1);
+      color: #14532d;
     }
 
     .quote {
@@ -1046,7 +1254,15 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .phase-two-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .phase-switcher {
         grid-template-columns: 1fr;
       }
 
@@ -1095,6 +1311,10 @@
 
       .vss-overview-head,
       .vss-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .phase-two-kpis {
         grid-template-columns: 1fr;
       }
 
@@ -1300,6 +1520,65 @@
       gap: 0.8rem;
       align-items: stretch;
       min-height: 0;
+    }
+
+    .dashboard-page .phase-switcher {
+      margin-top: 0.55rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .dashboard-page .phase-link-card {
+      padding: 0.8rem 0.9rem;
+      border-radius: 22px;
+      border-color: rgba(59, 130, 246, 0.14);
+      background:
+        linear-gradient(180deg, rgba(8, 15, 34, 0.98), rgba(10, 18, 42, 0.95));
+      box-shadow: none;
+    }
+
+    .dashboard-page .phase-link-card:hover {
+      border-color: rgba(59, 130, 246, 0.22);
+      box-shadow: none;
+    }
+
+    .dashboard-page .phase-link-kicker {
+      background: rgba(30, 64, 175, 0.18);
+      color: #cfe0ff;
+      border-color: rgba(59, 130, 246, 0.16);
+      font-size: 0.64rem;
+    }
+
+    .dashboard-page .phase-link-card strong {
+      color: #ffffff;
+      font-size: 0.98rem;
+    }
+
+    .dashboard-page .phase-link-card span:last-child {
+      color: #a9bbde;
+      font-size: 0.78rem;
+    }
+
+    .dashboard-page .phase-link-card.is-current {
+      border-color: rgba(59, 130, 246, 0.22);
+      background:
+        linear-gradient(180deg, rgba(11, 23, 52, 0.98), rgba(12, 24, 56, 0.95));
+    }
+
+    .dashboard-page .phase-link-card.is-next {
+      border-color: rgba(21, 128, 61, 0.24);
+      background:
+        linear-gradient(180deg, rgba(9, 31, 22, 0.98), rgba(8, 24, 19, 0.95));
+    }
+
+    .dashboard-page .phase-link-card.is-next .phase-link-kicker {
+      background: rgba(21, 128, 61, 0.2);
+      color: #d6ffe2;
+      border-color: rgba(34, 197, 94, 0.16);
+    }
+
+    .dashboard-page .phase-link-card.is-next strong {
+      color: #ecfff2;
     }
 
     .dashboard-page .toc {
@@ -1706,6 +1985,88 @@
       min-width: 700px;
     }
 
+    .dashboard-page .phase-two-section {
+      border-color: rgba(34, 197, 94, 0.18);
+      background:
+        radial-gradient(circle at 14% 16%, rgba(34, 197, 94, 0.14), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(21, 128, 61, 0.13), transparent 32%),
+        linear-gradient(180deg, rgba(7, 26, 18, 0.98), rgba(8, 32, 24, 0.96));
+    }
+
+    .dashboard-page .phase-two-section::after {
+      border-color: rgba(74, 222, 128, 0.08);
+    }
+
+    .dashboard-page .phase-two-badge {
+      border-color: rgba(74, 222, 128, 0.24);
+      background: rgba(34, 197, 94, 0.14);
+      color: #c8f8d8;
+    }
+
+    .dashboard-page .phase-two-section h3,
+    .dashboard-page .phase-two-section h4 {
+      color: #eefcf2;
+    }
+
+    .dashboard-page .phase-two-kpi {
+      border-color: rgba(52, 211, 153, 0.18);
+      background: linear-gradient(180deg, rgba(10, 40, 28, 0.96), rgba(8, 30, 23, 0.94));
+    }
+
+    .dashboard-page .phase-two-kpi strong {
+      color: #f0fdf4;
+    }
+
+    .dashboard-page .phase-two-kpi span {
+      color: #b9e7c8;
+    }
+
+    .dashboard-page .phase-two-section .mini-card {
+      background: linear-gradient(180deg, rgba(10, 41, 30, 0.96), rgba(8, 31, 23, 0.94));
+      border-color: rgba(52, 211, 153, 0.18);
+    }
+
+    .dashboard-page .phase-two-section .mini-card h4 {
+      color: #effcf3;
+    }
+
+    .dashboard-page .phase-two-section .mini-card p {
+      color: #c9edd5;
+    }
+
+    .dashboard-page .phase-two-map .node {
+      border-color: rgba(74, 222, 128, 0.24);
+      background: rgba(20, 83, 45, 0.4);
+      color: #dbfce7;
+    }
+
+    .dashboard-page .phase-two-section .table-scroll {
+      border-color: rgba(52, 211, 153, 0.16);
+      background: rgba(6, 24, 18, 0.86);
+    }
+
+    .dashboard-page .phase-two-section table th {
+      background: linear-gradient(90deg, rgba(18, 64, 42, 0.98), rgba(24, 92, 53, 0.96));
+      border-bottom-color: rgba(52, 211, 153, 0.16);
+      color: #f3fff6;
+    }
+
+    .dashboard-page .phase-two-section table td {
+      background: rgba(8, 25, 18, 0.82);
+      border-bottom-color: rgba(52, 211, 153, 0.08);
+      color: #e2f5e9;
+    }
+
+    .dashboard-page .phase-two-section .table-scroll > table tr:nth-child(even) td {
+      background: rgba(10, 30, 22, 0.94);
+    }
+
+    .dashboard-page .phase-two-section .quote {
+      background: rgba(20, 83, 45, 0.34);
+      border-left-color: #4ade80;
+      color: #dcfce7;
+    }
+
     .dashboard-page .method-arrow {
       color: #f87171;
     }
@@ -2056,6 +2417,127 @@
       background: rgba(30, 64, 175, 0.12);
     }
 
+    .phase-two-dashboard-page .kicker {
+      color: #d8ffe5;
+      background: rgba(21, 128, 61, 0.18);
+      border-color: rgba(34, 197, 94, 0.22);
+    }
+
+    .phase-two-dashboard-page.annex-page .repo-content-block {
+      border-color: rgba(34, 197, 94, 0.14);
+      background:
+        linear-gradient(180deg, rgba(6, 20, 14, 0.98), rgba(7, 24, 17, 0.95));
+    }
+
+    .phase-two-dashboard-page.annex-page .repo-content-head {
+      border-bottom-color: rgba(34, 197, 94, 0.12);
+      background:
+        linear-gradient(90deg, rgba(10, 44, 28, 0.96), rgba(8, 31, 20, 0.94));
+    }
+
+    .phase-two-dashboard-page.annex-page .repo-content-head h4,
+    .phase-two-dashboard-page.annex-page .doc-name {
+      color: #ffffff;
+    }
+
+    .phase-two-dashboard-page.annex-page .repo-content-head p,
+    .phase-two-dashboard-page.annex-page .doc-path,
+    .phase-two-dashboard-page.annex-page .docs-note {
+      color: #bfe6cc;
+    }
+
+    .phase-two-dashboard-page.annex-page .docs-note {
+      border-left-color: #16a34a;
+      background: rgba(21, 128, 61, 0.12);
+    }
+
+    .phase-two-dashboard-page.annex-page details.doc-item {
+      border-top-color: rgba(34, 197, 94, 0.08);
+      background: transparent;
+    }
+
+    .phase-two-dashboard-page.annex-page details.doc-item[open] {
+      background: rgba(8, 27, 18, 0.76);
+    }
+
+    .phase-two-dashboard-page.annex-page details.doc-item[open] summary {
+      border-left-color: #22c55e;
+      background: rgba(21, 128, 61, 0.14);
+    }
+
+    .phase-two-dashboard-page.annex-page .doc-pre {
+      background: rgba(5, 20, 13, 0.92);
+      border-color: rgba(34, 197, 94, 0.1);
+      color: #dff7e7;
+    }
+
+    .phase-two-dashboard-page .diagram-card {
+      border-color: rgba(74, 222, 128, 0.18);
+      background:
+        linear-gradient(180deg, rgba(8, 31, 20, 0.98), rgba(6, 24, 16, 0.96));
+    }
+
+    .phase-two-dashboard-page .diagram-title {
+      color: #f2fff5;
+      border-bottom-color: rgba(74, 222, 128, 0.16);
+      background:
+        linear-gradient(90deg, rgba(18, 64, 42, 0.98), rgba(11, 44, 28, 0.96));
+    }
+
+    .phase-two-dashboard-page .diagram-mermaid {
+      background: #071b12;
+    }
+
+    .phase-two-dashboard-page .diagram-mermaid svg text,
+    .phase-two-dashboard-page .diagram-mermaid svg tspan,
+    .phase-two-dashboard-page .diagram-mermaid svg .label,
+    .phase-two-dashboard-page .diagram-mermaid svg .nodeLabel,
+    .phase-two-dashboard-page .diagram-mermaid svg .edgeLabel {
+      fill: #ecfff2 !important;
+      color: #ecfff2 !important;
+      stroke: rgba(7, 27, 18, 0.82);
+    }
+
+    .phase-two-dashboard-page .diagram-mermaid svg foreignObject div,
+    .phase-two-dashboard-page .diagram-mermaid svg foreignObject span,
+    .phase-two-dashboard-page .diagram-mermaid svg foreignObject p {
+      color: #ecfff2 !important;
+    }
+
+    .phase-two-dashboard-page .diagram-mermaid svg .edgeLabel rect,
+    .phase-two-dashboard-page .diagram-mermaid svg .labelBkg {
+      fill: rgba(18, 55, 38, 0.92) !important;
+    }
+
+    .phase-two-dashboard-page .diagram-mermaid svg .node rect,
+    .phase-two-dashboard-page .diagram-mermaid svg .node polygon,
+    .phase-two-dashboard-page .diagram-mermaid svg .node ellipse,
+    .phase-two-dashboard-page .diagram-mermaid svg .node circle,
+    .phase-two-dashboard-page .diagram-mermaid svg .node path,
+    .phase-two-dashboard-page .diagram-mermaid svg .cluster rect {
+      stroke: #56c77e !important;
+    }
+
+    .phase-two-dashboard-page .diagram-toolbar {
+      margin-bottom: 0.65rem;
+    }
+
+    .phase-two-dashboard-page .diagram-toggle-btn {
+      border-color: rgba(74, 222, 128, 0.28);
+      background: rgba(21, 128, 61, 0.16);
+      color: #dff7e7;
+    }
+
+    .phase-two-dashboard-page .diagram-toggle-btn:hover {
+      background: rgba(21, 128, 61, 0.24);
+    }
+
+    .phase-two-dashboard-page .diagram-status {
+      border-color: rgba(250, 204, 21, 0.3);
+      background: rgba(120, 53, 15, 0.28);
+      color: #fef3c7;
+    }
+
     body.dashboard-page.theme-light {
       color-scheme: light;
       background:
@@ -2251,6 +2733,604 @@
       background: rgba(37, 99, 235, 0.06);
       color: #243b53;
       border-left-color: #dc2626;
+    }
+
+    .dashboard-page.theme-light .phase-two-section {
+      border-color: rgba(21, 128, 61, 0.16);
+      background:
+        radial-gradient(circle at 14% 16%, rgba(74, 222, 128, 0.16), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(22, 163, 74, 0.12), transparent 30%),
+        linear-gradient(180deg, rgba(244, 253, 247, 0.98), rgba(236, 253, 245, 0.95));
+    }
+
+    .dashboard-page.theme-light .phase-two-badge {
+      border-color: rgba(21, 128, 61, 0.22);
+      background: rgba(22, 163, 74, 0.1);
+      color: #166534;
+    }
+
+    .dashboard-page.theme-light .phase-two-section h3,
+    .dashboard-page.theme-light .phase-two-section h4,
+    .dashboard-page.theme-light .phase-two-kpi strong {
+      color: #123b2a;
+    }
+
+    .dashboard-page.theme-light .phase-two-kpi {
+      border-color: rgba(21, 128, 61, 0.14);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(240, 253, 244, 0.94));
+    }
+
+    .dashboard-page.theme-light .phase-two-kpi span,
+    .dashboard-page.theme-light .phase-two-section .mini-card p,
+    .dashboard-page.theme-light .phase-two-map .node {
+      color: #335c48;
+    }
+
+    .dashboard-page.theme-light .phase-two-section .mini-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(243, 252, 246, 0.94));
+      border-color: rgba(21, 128, 61, 0.14);
+    }
+
+    .dashboard-page.theme-light .phase-two-map .node {
+      border-color: rgba(21, 128, 61, 0.18);
+      background: rgba(22, 163, 74, 0.08);
+    }
+
+    .dashboard-page.theme-light .phase-two-section .table-scroll {
+      border-color: rgba(21, 128, 61, 0.12);
+      background: rgba(249, 255, 251, 0.95);
+    }
+
+    .dashboard-page.theme-light .phase-two-section table th {
+      background: linear-gradient(90deg, rgba(220, 252, 231, 0.96), rgba(209, 250, 229, 0.98));
+      color: #14532d;
+      border-bottom-color: rgba(21, 128, 61, 0.12);
+    }
+
+    .dashboard-page.theme-light .phase-two-section table td {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom-color: rgba(21, 128, 61, 0.08);
+      color: #243b53;
+    }
+
+    .dashboard-page.theme-light .phase-two-section .table-scroll > table tr:nth-child(even) td {
+      background: rgba(243, 252, 246, 0.98);
+    }
+
+    .dashboard-page.theme-light .phase-two-section .quote {
+      background: rgba(22, 163, 74, 0.08);
+      border-left-color: #15803d;
+      color: #14532d;
+    }
+
+    body.phase-two-dashboard-page {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(21, 128, 61, 0.34), transparent 34%),
+        radial-gradient(circle at 88% 14%, rgba(22, 163, 74, 0.24), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(52, 211, 153, 0.14), transparent 34%),
+        #07160f;
+    }
+
+    .phase-two-dashboard-page .hero {
+      border-color: rgba(34, 197, 94, 0.16);
+      background:
+        linear-gradient(135deg, rgba(7, 31, 20, 0.96), rgba(6, 23, 16, 0.92)),
+        linear-gradient(115deg, rgba(21, 128, 61, 0.16), rgba(52, 211, 153, 0.08));
+    }
+
+    .phase-two-dashboard-page .shell {
+      border-color: rgba(34, 197, 94, 0.18);
+      background:
+        linear-gradient(180deg, rgba(4, 15, 10, 0.98), rgba(6, 21, 14, 0.95)),
+        linear-gradient(135deg, rgba(21, 128, 61, 0.14), rgba(20, 83, 45, 0.08));
+      box-shadow:
+        0 22px 70px rgba(2, 10, 6, 0.58),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    }
+
+    .phase-two-dashboard-page .hero::after {
+      border-color: rgba(74, 222, 128, 0.1);
+    }
+
+    .phase-two-dashboard-page .hero h1,
+    .phase-two-dashboard-page .hero-subtitle,
+    .phase-two-dashboard-page .hero-mainline,
+    .phase-two-dashboard-page .hero p,
+    .phase-two-dashboard-page .hero td,
+    .phase-two-dashboard-page .hero strong {
+      color: #effcf3;
+    }
+
+    .phase-two-dashboard-page .hero-subtitle {
+      color: #cdeed9;
+    }
+
+    .phase-two-dashboard-page .hero-mainline {
+      color: #8de6ad;
+    }
+
+    .phase-two-dashboard-page .meta .chip {
+      background: rgba(10, 43, 27, 0.96);
+      color: #d7f6e2;
+      border-color: rgba(34, 197, 94, 0.18);
+    }
+
+    .phase-two-dashboard-page .hero-table {
+      background: rgba(8, 31, 20, 0.92);
+      border-color: rgba(34, 197, 94, 0.16);
+    }
+
+    .phase-two-dashboard-page .hero-table td {
+      background: rgba(6, 24, 16, 0.82);
+      color: #ddf7e6;
+      border-bottom-color: rgba(34, 197, 94, 0.12);
+    }
+
+    .phase-two-dashboard-page .hero-table td:first-child {
+      color: #ffffff;
+      background:
+        linear-gradient(90deg, rgba(21, 128, 61, 0.3), rgba(20, 83, 45, 0.24));
+    }
+
+    .phase-two-dashboard-page .hero-platforms-list {
+      scrollbar-color: rgba(74, 222, 128, 0.88) rgba(4, 18, 12, 0.96);
+    }
+
+    .phase-two-dashboard-page .hero-platforms-list::-webkit-scrollbar-track {
+      background: rgba(4, 18, 12, 0.96);
+    }
+
+    .phase-two-dashboard-page .hero-platforms-list::-webkit-scrollbar-thumb {
+      background:
+        linear-gradient(180deg, rgba(74, 222, 128, 0.92), rgba(21, 128, 61, 0.84));
+      border-color: rgba(4, 18, 12, 0.96);
+    }
+
+    .phase-two-dashboard-page .toc {
+      background:
+        linear-gradient(180deg, rgba(3, 14, 9, 0.99), rgba(4, 18, 12, 0.98));
+      border-color: rgba(34, 197, 94, 0.14);
+    }
+
+    .phase-two-dashboard-page .toc-brand {
+      border-color: rgba(34, 197, 94, 0.14);
+      background:
+        linear-gradient(145deg, rgba(8, 31, 20, 0.98), rgba(4, 18, 12, 0.96));
+    }
+
+    .phase-two-dashboard-page .toc-badge {
+      color: #bbf7d0;
+      background: rgba(21, 128, 61, 0.14);
+      border-color: rgba(34, 197, 94, 0.18);
+    }
+
+    .phase-two-dashboard-page .toc-brand span:last-child,
+    .phase-two-dashboard-page .spa-active-meta {
+      color: #a9dec0;
+    }
+
+    .phase-two-dashboard-page .toc h2 {
+      color: #dff8e8;
+    }
+
+    .phase-two-dashboard-page .toc a {
+      color: #c8edd6;
+    }
+
+    .phase-two-dashboard-page .toc a::before {
+      background: rgba(134, 239, 172, 0.78);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.08);
+    }
+
+    .phase-two-dashboard-page .toc a:hover {
+      color: #ffffff;
+      background: rgba(9, 38, 24, 0.92);
+      border-color: rgba(34, 197, 94, 0.16);
+    }
+
+    .phase-two-dashboard-page .toc a:hover::before,
+    .phase-two-dashboard-page .toc a.active::before {
+      background: #4ade80;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.12);
+    }
+
+    .phase-two-dashboard-page .toc a.active {
+      border-color: rgba(34, 197, 94, 0.2);
+      background:
+        linear-gradient(90deg, rgba(21, 128, 61, 0.28), rgba(20, 83, 45, 0.2));
+    }
+
+    .phase-two-dashboard-page .toc-footer,
+    .phase-two-dashboard-page .spa-toolbar {
+      border-color: rgba(34, 197, 94, 0.14);
+      background:
+        linear-gradient(180deg, rgba(4, 18, 12, 0.98), rgba(6, 24, 16, 0.95));
+      color: #a9dec0;
+    }
+
+    .phase-two-dashboard-page .spa-kicker {
+      color: #d8ffe4;
+      background: rgba(21, 128, 61, 0.2);
+      border-color: rgba(34, 197, 94, 0.16);
+    }
+
+    .phase-two-dashboard-page .spa-nav-btn,
+    .phase-two-dashboard-page .dashboard-theme-toggle {
+      border-color: rgba(34, 197, 94, 0.16);
+      background:
+        linear-gradient(90deg, rgba(8, 31, 20, 0.96), rgba(6, 24, 16, 0.94));
+      color: #effcf3;
+    }
+
+    .phase-two-dashboard-page .spa-nav-btn:hover:not(:disabled),
+    .phase-two-dashboard-page .dashboard-theme-toggle:hover {
+      border-color: rgba(74, 222, 128, 0.22);
+      background:
+        linear-gradient(90deg, rgba(21, 128, 61, 0.18), rgba(20, 83, 45, 0.16));
+    }
+
+    .phase-two-dashboard-page .dashboard-theme-toggle-track {
+      background: rgba(6, 22, 15, 0.92);
+    }
+
+    .phase-two-dashboard-page .dashboard-theme-toggle-thumb {
+      background: linear-gradient(180deg, #ffffff, #dcfce7);
+    }
+
+    .phase-two-dashboard-page .dashboard-theme-toggle-input:checked + .dashboard-theme-toggle-track {
+      background: linear-gradient(90deg, rgba(21, 128, 61, 0.92), rgba(74, 222, 128, 0.86));
+    }
+
+    .phase-two-dashboard-page .dashboard-theme-toggle-input:checked + .dashboard-theme-toggle-track .dashboard-theme-toggle-thumb {
+      background: linear-gradient(180deg, #ffffff, #f0fdf4);
+    }
+
+    .phase-two-dashboard-page section {
+      border-color: rgba(34, 197, 94, 0.14);
+      background:
+        linear-gradient(180deg, rgba(5, 20, 13, 0.98), rgba(6, 24, 16, 0.95));
+    }
+
+    .phase-two-dashboard-page section h3,
+    .phase-two-dashboard-page section h4,
+    .phase-two-dashboard-page section p,
+    .phase-two-dashboard-page section li,
+    .phase-two-dashboard-page section td,
+    .phase-two-dashboard-page section th {
+      color: #e8f9ee;
+    }
+
+    .phase-two-dashboard-page .mini-card,
+    .phase-two-dashboard-page .method-node,
+    .phase-two-dashboard-page .repo-card,
+    .phase-two-dashboard-page .doc-item,
+    .phase-two-dashboard-page .diagram-card {
+      background:
+        linear-gradient(180deg, rgba(8, 31, 20, 0.96), rgba(6, 24, 16, 0.94));
+      border-color: rgba(34, 197, 94, 0.12);
+    }
+
+    .phase-two-dashboard-page .mini-card p,
+    .phase-two-dashboard-page .method-node span,
+    .phase-two-dashboard-page .doc-path {
+      color: #bfe6cc;
+    }
+
+    .phase-two-dashboard-page .card-grid,
+    .phase-two-dashboard-page .kpi-grid {
+      align-items: stretch;
+    }
+
+    .phase-two-dashboard-page .mini-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 0;
+    }
+
+    .phase-two-dashboard-page .kpi {
+      display: grid;
+      align-content: start;
+      min-height: 96px;
+      background:
+        linear-gradient(180deg, rgba(231, 255, 238, 0.96), rgba(214, 250, 225, 0.93));
+      border-color: rgba(74, 222, 128, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .phase-two-dashboard-page .kpi .n {
+      color: #0f766e;
+    }
+
+    .phase-two-dashboard-page .kpi .l {
+      color: #355b49;
+    }
+
+    .phase-two-dashboard-page code,
+    .phase-two-dashboard-page .hero-table code,
+    .phase-two-dashboard-page .kpi code,
+    .phase-two-dashboard-page .mini-card code,
+    .phase-two-dashboard-page .table-scroll code,
+    .phase-two-dashboard-page .meta .chip code {
+      background: rgba(22, 63, 42, 0.94);
+      color: #e8fff0;
+      border: 1px solid rgba(74, 222, 128, 0.22);
+    }
+
+    .phase-two-dashboard-page .table-scroll {
+      border-color: rgba(34, 197, 94, 0.12);
+      background: rgba(5, 20, 13, 0.84);
+    }
+
+    .phase-two-dashboard-page table th {
+      background:
+        linear-gradient(90deg, rgba(18, 64, 42, 0.98), rgba(21, 94, 58, 0.96));
+      color: #f3fff6;
+      border-bottom-color: rgba(34, 197, 94, 0.12);
+    }
+
+    .phase-two-dashboard-page table td {
+      background: rgba(6, 22, 15, 0.8);
+      border-bottom-color: rgba(34, 197, 94, 0.08);
+      color: #dcf5e4;
+    }
+
+    .phase-two-dashboard-page .table-scroll > table tr:nth-child(even) td {
+      background: rgba(8, 28, 19, 0.92);
+    }
+
+    .phase-two-dashboard-page .quote {
+      background: rgba(20, 83, 45, 0.34);
+      border-left-color: #4ade80;
+      color: #dcfce7;
+    }
+
+    .phase-two-dashboard-page .map .node {
+      border-color: rgba(74, 222, 128, 0.24);
+      background: rgba(20, 83, 45, 0.4);
+      color: #dcfce7;
+    }
+
+    .phase-two-dashboard-page .method-arrow {
+      color: #86efac;
+    }
+
+    .phase-two-dashboard-page a {
+      color: #9ae6b4;
+    }
+
+    .phase-two-dashboard-page a:hover {
+      color: #d1fae5;
+    }
+
+    .phase-two-dashboard-page .phase-link-card {
+      border-color: rgba(34, 197, 94, 0.16);
+      background:
+        linear-gradient(180deg, rgba(7, 28, 19, 0.98), rgba(6, 22, 15, 0.95));
+    }
+
+    .phase-two-dashboard-page .phase-link-card:hover {
+      border-color: rgba(74, 222, 128, 0.24);
+    }
+
+    .phase-two-dashboard-page .phase-link-kicker {
+      background: rgba(21, 128, 61, 0.16);
+      color: #d7fbe3;
+      border-color: rgba(34, 197, 94, 0.16);
+    }
+
+    .phase-two-dashboard-page .phase-link-card strong {
+      color: #f0fdf4;
+    }
+
+    .phase-two-dashboard-page .phase-link-card span:last-child {
+      color: #bfe6cc;
+    }
+
+    .phase-two-dashboard-page .phase-link-card.is-current,
+    .phase-two-dashboard-page .phase-link-card.is-next {
+      border-color: rgba(74, 222, 128, 0.24);
+      background:
+        linear-gradient(180deg, rgba(10, 40, 28, 0.98), rgba(8, 31, 23, 0.95));
+    }
+
+    .phase-two-dashboard-page.theme-light {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(74, 222, 128, 0.26), transparent 34%),
+        radial-gradient(circle at 88% 14%, rgba(21, 128, 61, 0.18), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(52, 211, 153, 0.12), transparent 34%),
+        #eefbf2;
+    }
+
+    .phase-two-dashboard-page.theme-light .hero {
+      border-color: rgba(21, 128, 61, 0.16);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(239, 253, 244, 0.96)),
+        linear-gradient(115deg, rgba(21, 128, 61, 0.08), rgba(52, 211, 153, 0.06));
+    }
+
+    .phase-two-dashboard-page.theme-light .shell {
+      border-color: rgba(21, 128, 61, 0.16);
+      background:
+        linear-gradient(180deg, rgba(248, 255, 250, 0.98), rgba(236, 253, 245, 0.95)),
+        linear-gradient(135deg, rgba(21, 128, 61, 0.06), rgba(52, 211, 153, 0.04));
+      box-shadow:
+        0 18px 52px rgba(15, 34, 22, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .phase-two-dashboard-page.theme-light .hero::after {
+      border-color: rgba(21, 128, 61, 0.08);
+    }
+
+    .phase-two-dashboard-page.theme-light .hero h1,
+    .phase-two-dashboard-page.theme-light .hero p,
+    .phase-two-dashboard-page.theme-light .hero td,
+    .phase-two-dashboard-page.theme-light .hero strong,
+    .phase-two-dashboard-page.theme-light .toc-brand strong,
+    .phase-two-dashboard-page.theme-light .toc h2,
+    .phase-two-dashboard-page.theme-light section h3,
+    .phase-two-dashboard-page.theme-light section h4,
+    .phase-two-dashboard-page.theme-light .spa-active-title {
+      color: #123b2a;
+    }
+
+    .phase-two-dashboard-page.theme-light .hero-subtitle,
+    .phase-two-dashboard-page.theme-light .hero-mainline,
+    .phase-two-dashboard-page.theme-light .toc-brand span:last-child,
+    .phase-two-dashboard-page.theme-light .toc a,
+    .phase-two-dashboard-page.theme-light section p,
+    .phase-two-dashboard-page.theme-light section li,
+    .phase-two-dashboard-page.theme-light section td,
+    .phase-two-dashboard-page.theme-light section th,
+    .phase-two-dashboard-page.theme-light .mini-card p,
+    .phase-two-dashboard-page.theme-light .method-node span,
+    .phase-two-dashboard-page.theme-light .spa-active-meta {
+      color: #335c48;
+    }
+
+    .phase-two-dashboard-page.theme-light .meta .chip,
+    .phase-two-dashboard-page.theme-light .spa-kicker {
+      background: rgba(22, 163, 74, 0.1);
+      color: #166534;
+      border-color: rgba(21, 128, 61, 0.18);
+    }
+
+    .phase-two-dashboard-page.theme-light .hero-table,
+    .phase-two-dashboard-page.theme-light .toc,
+    .phase-two-dashboard-page.theme-light .toc-brand,
+    .phase-two-dashboard-page.theme-light .toc-footer,
+    .phase-two-dashboard-page.theme-light .spa-toolbar,
+    .phase-two-dashboard-page.theme-light section,
+    .phase-two-dashboard-page.theme-light .kpi,
+    .phase-two-dashboard-page.theme-light .mini-card,
+    .phase-two-dashboard-page.theme-light .method-node,
+    .phase-two-dashboard-page.theme-light .repo-card,
+    .phase-two-dashboard-page.theme-light .doc-item,
+    .phase-two-dashboard-page.theme-light .diagram-card,
+    .phase-two-dashboard-page.theme-light .table-scroll {
+      border-color: rgba(21, 128, 61, 0.12);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(243, 252, 246, 0.95));
+    }
+
+    .phase-two-dashboard-page.theme-light .hero-table td:first-child,
+    .phase-two-dashboard-page.theme-light .toc a.active {
+      background:
+        linear-gradient(90deg, rgba(22, 163, 74, 0.12), rgba(187, 247, 208, 0.16));
+    }
+
+    .phase-two-dashboard-page.theme-light .toc-badge {
+      color: #166534;
+      background: rgba(22, 163, 74, 0.1);
+      border-color: rgba(21, 128, 61, 0.16);
+    }
+
+    .phase-two-dashboard-page.theme-light .toc a:hover {
+      color: #14532d;
+      background: rgba(22, 163, 74, 0.08);
+      border-color: rgba(21, 128, 61, 0.16);
+    }
+
+    .phase-two-dashboard-page.theme-light .toc a::before {
+      background: rgba(22, 163, 74, 0.7);
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.1);
+    }
+
+    .phase-two-dashboard-page.theme-light table th {
+      background:
+        linear-gradient(90deg, rgba(220, 252, 231, 0.96), rgba(209, 250, 229, 0.98));
+      color: #14532d;
+      border-bottom-color: rgba(21, 128, 61, 0.12);
+    }
+
+    .phase-two-dashboard-page.theme-light table td {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom-color: rgba(21, 128, 61, 0.08);
+      color: #243b53;
+    }
+
+    .phase-two-dashboard-page.theme-light .kpi .n {
+      color: #0f766e;
+    }
+
+    .phase-two-dashboard-page.theme-light .kpi .l {
+      color: #335c48;
+    }
+
+    .phase-two-dashboard-page.theme-light .table-scroll > table tr:nth-child(even) td {
+      background: rgba(243, 252, 246, 0.98);
+    }
+
+    .phase-two-dashboard-page.theme-light .quote {
+      background: rgba(22, 163, 74, 0.08);
+      border-left-color: #15803d;
+      color: #14532d;
+    }
+
+    .phase-two-dashboard-page.theme-light .map .node {
+      border-color: rgba(21, 128, 61, 0.18);
+      background: rgba(22, 163, 74, 0.08);
+      color: #14532d;
+    }
+
+    .phase-two-dashboard-page.theme-light .spa-nav-btn,
+    .phase-two-dashboard-page.theme-light .dashboard-theme-toggle {
+      border-color: rgba(21, 128, 61, 0.16);
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(241, 253, 244, 0.94));
+      color: #14532d;
+    }
+
+    .phase-two-dashboard-page.theme-light .spa-nav-btn:hover:not(:disabled),
+    .phase-two-dashboard-page.theme-light .dashboard-theme-toggle:hover {
+      background:
+        linear-gradient(90deg, rgba(220, 252, 231, 0.96), rgba(209, 250, 229, 0.94));
+    }
+
+    .phase-two-dashboard-page.theme-light .dashboard-theme-toggle-track {
+      background: rgba(134, 239, 172, 0.34);
+    }
+
+    .phase-two-dashboard-page.theme-light .dashboard-theme-toggle-input:checked + .dashboard-theme-toggle-track {
+      background: linear-gradient(90deg, rgba(21, 128, 61, 0.88), rgba(74, 222, 128, 0.82));
+    }
+
+    .phase-two-dashboard-page.theme-light .phase-link-card {
+      border-color: rgba(21, 128, 61, 0.14);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(243, 252, 246, 0.95));
+    }
+
+    .phase-two-dashboard-page.theme-light .phase-link-kicker {
+      background: rgba(22, 163, 74, 0.1);
+      color: #166534;
+      border-color: rgba(21, 128, 61, 0.16);
+    }
+
+    .phase-two-dashboard-page.theme-light .phase-link-card strong {
+      color: #123b2a;
+    }
+
+    .phase-two-dashboard-page.theme-light .phase-link-card span:last-child {
+      color: #335c48;
+    }
+
+    .phase-two-dashboard-page.theme-light .phase-link-card.is-current,
+    .phase-two-dashboard-page.theme-light .phase-link-card.is-next {
+      background:
+        linear-gradient(180deg, rgba(240, 253, 244, 0.98), rgba(220, 252, 231, 0.95));
+    }
+
+    .phase-two-dashboard-page.theme-light code,
+    .phase-two-dashboard-page.theme-light .hero-table code,
+    .phase-two-dashboard-page.theme-light .kpi code,
+    .phase-two-dashboard-page.theme-light .mini-card code,
+    .phase-two-dashboard-page.theme-light .table-scroll code,
+    .phase-two-dashboard-page.theme-light .meta .chip code {
+      background: rgba(220, 252, 231, 0.96);
+      color: #14532d;
+      border-color: rgba(21, 128, 61, 0.16);
     }
 
     .dashboard-page.theme-light code {

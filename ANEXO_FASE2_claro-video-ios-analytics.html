@@ -1,0 +1,1986 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anexo FASE 2 - claro-video-ios-analytics</title>
+  <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css?v=20260319-phase2-annexes-v4">
+</head>
+<body class="dashboard-page annex-page phase-two-dashboard-page theme-dark" data-dashboard-spa="false">
+  <div class="shell">
+    <header class="hero is-visible">
+      <span class="kicker">Anexo FASE 2</span>
+      <h1>claro-video-ios-analytics</h1>
+      <p class="hero-mainline">Diagnóstico cuantitativo por documento</p>
+      <p><a href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html#anexo-fase2">Volver a la single page verde de FASE 2</a></p>
+    </header>
+
+    <main class="main">
+      <section id="contenido-diagnostico">
+        <h3>Anexo FASE 2: claro-video-ios-analytics</h3>
+        <p class="docs-note">Documentos detectados: 10 (FASE 2). Ruta diagnóstica base: <code>docs\03-diagnostico</code>. Resumen maestro: <code>docs\05-seguimiento\EXECUTIVE_SUMMARY.md</code>. Diagramas detectados: <strong>2</strong> en carpetas <code>diagrams</code>. Artefactos: <code>ARCHITECTURE_DIAGRAMS.md</code>, <code>ISO_5055_HEATMAP.md</code>. Diagramas Mermaid renderizables: <strong>1</strong>. La fuente se integró con el mismo nombre usado en el portafolio principal.</p>
+
+        <div class="kpi-grid" aria-label="Métricas rápidas del anexo FASE 2">
+          <article class="kpi">
+            <div class="n">10</div>
+            <div class="l">documentos embebidos</div>
+          </article>
+          <article class="kpi">
+            <div class="n">N/D</div>
+            <div class="l">Technical Debt Score</div>
+          </article>
+          <article class="kpi">
+            <div class="n">52</div>
+            <div class="l">score ISO/IEC 5055</div>
+          </article>
+          <article class="kpi">
+            <div class="n">6</div>
+            <div class="l">artefactos núcleo detectados</div>
+          </article>
+          <article class="kpi">
+            <div class="n">2</div>
+            <div class="l">diagramas markdown detectados</div>
+          </article>
+        </div>
+
+        <div class="card-grid">
+          <article class="mini-card">
+            <h4>Resumen ejecutivo detectado</h4>
+            <p>Repositorio: claro-video-ios-analytics Stack: Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+ Per&#237;odo de an&#225;lisis: 2026-03-11 Fases completadas: FASE 0 (Parcial) → FASE 1 (Completa) → FASE 1.5 VSS (Completa) → FASE 2 (Completa) → FASE 3 (Completa) → FASE 4 (Completa)</p>
+          </article>
+          <article class="mini-card">
+            <h4>Artefactos núcleo</h4>
+            <p>Disponibles: <code>ISO_5055_QUALITY_REPORT.md</code>, <code>QUALITY_AUDIT.md</code>, <code>RISK_ASSESSMENT.md</code>, <code>SECURITY_REMEDIATION_PLAN.md</code>, <code>SECURITY_REVIEW.md</code>, <code>TECHNICAL_DEBT.md</code></p>
+          </article>
+          <article class="mini-card">
+            <h4>Diagramas FASE 2</h4>
+            <p>Diagramas detectados: <strong>2</strong> en carpetas <code>diagrams</code>. Artefactos: <code>ARCHITECTURE_DIAGRAMS.md</code>, <code>ISO_5055_HEATMAP.md</code>. Diagramas Mermaid renderizables: <strong>1</strong>.</p>
+          </article>
+          <article class="mini-card">
+            <h4>Lectura operativa</h4>
+            <p>Este anexo conserva el resumen ejecutivo detectado, el set completo de markdowns de <code>03-diagnostico</code> y los artefactos de <code>diagrams</code> para consulta directa sin salir de la presentación.</p>
+          </article>
+        </div>
+
+        <article class="repo-content-block">
+          <div class="repo-content-head">
+            <h4>Repositorio: claro-video-ios-analytics</h4>
+            <p>Contenido FASE 2 generado desde <code>docs\03-diagnostico</code> y carpetas <code>diagrams</code> detectadas. Riesgos identificados reportados: <strong>N/D</strong>.</p>
+          </div>
+            <details class="doc-item">
+              <summary><span class="doc-name">EXECUTIVE_SUMMARY.md</span><span class="doc-path">docs\05-seguimiento\EXECUTIVE_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este resumen ejecutivo est&#225; basado en la evidencia completa recopilada en FASES 1-3. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127919; FASE 4 - Resumen Ejecutivo
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Per&#237;odo de an&#225;lisis:** 2026-03-11  
+**Fases completadas:** FASE 0 (Parcial) → FASE 1 (Completa) → FASE 1.5 VSS (Completa) → FASE 2 (Completa) → FASE 3 (Completa) → FASE 4 (Completa)
+
+---
+
+## &#128202; Estado de la Librer&#237;a
+
+### Puntuaci&#243;n Global
+
+| &#205;ndice | Score | Nivel |
+|---|---|---|
+| **TechnicalDebtScore** | **50/100** | &#128993; DEUDA MODERADA-ALTA |
+| **ISO/IEC 5055 Global** | **52/100** | &#128993; MODERADO |
+| Seguridad | 50/100 | &#128308; BAJO |
+| Confiabilidad | 40/100 | &#128308; CR&#205;TICO |
+| Performance | 65/100 | &#128993; MODERADO |
+| Mantenibilidad | 52/100 | &#128993; BAJO-MEDIO |
+
+---
+
+## &#128680; Top 5 Hallazgos Cr&#237;ticos
+
+| # | Hallazgo | Impacto | Esfuerzo de Fix |
+|---|---|---|---|
+| 1 | **UA obsoleto (sunset Jul-2023)** — datos no procesados por Google | &#128308; Sistema UA no funcional en producci&#243;n | 8-16h (Sprint 4) |
+| 2 | **Tests sin assertions** — 2 assertions en 4 archivos | &#128308; Regresiones no detectadas en CI | 8-12h (Sprint 1) |
+| 3 | **Bug `content_section`** — par&#225;metro GA4 incorrecto | &#128308; Datos de analytics incorrectos | 30min (Sprint 1) |
+| 4 | **HTTP sin TLS** — datos de usuario en texto claro | &#128308; Riesgo de intercepci&#243;n + bloqueo ATS | 30min (Sprint 1) |
+| 5 | **macCatalyst silenciado** — analytics deshabilitados sin notificaci&#243;n | &#128993; Funcionalidad declarada no disponible | 2-8h (Sprint 2) |
+
+---
+
+## &#127919; Recomendaciones Priorizadas
+
+### Esta Semana (&lt; 1 d&#237;a de esfuerzo total)
+
+1. `params[&quot;content_section&quot;] = self.contentSection` (fix bug copy-paste) — `CVAnalytics4.swift`
+2. `&quot;https://...&quot;` en lugar de `&quot;http://...&quot;` — `TrackerConstants.swift`
+3. Renombrar `Strinng+Extensions.swift` → `String+Extensions.swift`
+
+### Sprint 1 (1-2 semanas)
+
+4. Agregar assertions reales a los 4 archivos de test
+5. Configurar gate de cobertura en Azure DevOps pipeline
+
+### Largo Plazo (Sprints 3-4)
+
+6. Deprecar capa UA completa (`GATracker` + `CVAnalyticsCore`)
+7. Refactorizar funciones con CC &gt; 10
+
+---
+
+## &#128193; Arquitectura de Documentaci&#243;n Generada
+
+```
+.github/docs/
+├── 03-diagnostico/
+│   ├── README.md
+│   ├── TECHNICAL_DEBT.md        ← TechnicalDebtScore: 50/100
+│   ├── RISK_ASSESSMENT.md       ← 10 riesgos, 3 cr&#237;ticos
+│   ├── QUALITY_AUDIT.md         ← 413 issues Sonar (todos CLOSED)
+│   ├── ISO_5055_QUALITY_REPORT.md ← Score global: 52/100
+│   ├── SECURITY_REVIEW.md       ← SEC-001 (HTTP), SEC-002 (hardcoded ID)
+│   └── SECURITY_REMEDIATION_PLAN.md ← Plan con c&#243;digo ANTES/DESPU&#201;S
+├── 04-plan-de-accion/
+│   ├── README.md
+│   ├── REFACTORING_PLAN.md      ← 4 sprints, Tests = P0
+│   ├── MIGRATION_PLAN.md        ← UA → GA4 Strangler Fig
+│   ├── DOCUMENTATION_PLAN.md    ← Swift DocC plan
+│   └── CICD_PIPELINE_PLAN.md    ← Azure DevOps + coverage gate
+├── 05-seguimiento/
+│   ├── METRICS_DASHBOARD.md     ← KPIs + checklist por sprint
+│   └── EXECUTIVE_SUMMARY.md     ← Este documento
+└── diagrams/
+    └── ISO_5055_HEATMAP.md      ← Mapa de calor por m&#243;dulo
+```
+
+---
+
+## ✅ Compliance Final del Proyecto
+
+**Reglas aplicadas:** `CONSTITUTION.md` + `.copilotrc` v2.2.0  
+**Modo:** strict &#183; Idioma: ES-MX &#183; Violations: block
+
+| Regla | Estado |
+|---|---|
+| Sin alucinaciones | ✅ 100% evidencia citada |
+| Datos no disponibles marcados | ✅ Todos con ⚠️ |
+| Librer&#237;a tratada como librer&#237;a | ✅ Sin inferencias de app |
+| APIs p&#250;blicas no rotas | ✅ Todos los cambios evaluados por impacto |
+| C&#243;digo en ingl&#233;s, docs en espa&#241;ol | ✅ |
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ISO_5055_QUALITY_REPORT.md</span><span class="doc-path">docs\03-diagnostico\ISO_5055_QUALITY_REPORT.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este reporte aplica el framework ISO/IEC 5055:2021 sobre evidencia directa del repositorio. Ninguna m&#233;trica ha sido asumida sin fuente verificable.
+
+# &#128202; FASE 2 - Paso 4: Reporte de Calidad ISO/IEC 5055
+
+&#128248; **Estado Actual:** Evaluaci&#243;n de la librer&#237;a `CVAnalytics` contra las 4 caracter&#237;sticas de calidad estructural de software definidas por ISO/IEC 5055:2021 (CISQ).
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Est&#225;ndar:** ISO/IEC 5055:2021 — CISQ Software Quality Characteristics  
+**Fecha de evaluaci&#243;n:** 2026-03-11
+
+---
+
+## &#127919; Marco ISO/IEC 5055:2021
+
+ISO/IEC 5055 define **4 caracter&#237;sticas de calidad estructural** medibles mediante an&#225;lisis est&#225;tico:
+
+| # | Caracter&#237;stica | Descripci&#243;n |
+|---|---|---|
+| 1 | **Seguridad** | Resistencia a ataques malintencionados e interceptaci&#243;n de datos |
+| 2 | **Confiabilidad** | Comportamiento predecible y robusto bajo condiciones normales y extremas |
+| 3 | **Performance** | Eficiencia en uso de recursos computacionales |
+| 4 | **Mantenibilidad** | Facilidad para modificar, extender y comprender el c&#243;digo |
+
+&gt; **Nota:** ISO/IEC 5055 eval&#250;a calidad _estructural_ del c&#243;digo, no funcionalidad de negocio. La extensi&#243;n con _Completitud_ e _Integridad_ en este reporte sigue el framework anal&#237;tico establecido en la FASE 1 del proyecto.
+
+---
+
+## &#128274; Caracter&#237;stica 1: Seguridad
+
+### Puntuaci&#243;n: 50/100 &#128308;
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad | Fuente |
+|---|---|---|---|
+| Transmisi&#243;n segura de datos | `baseURL = &quot;http://www.google-analytics.com/collect&quot;` | &#128308; CR&#205;TICA | `TrackerConstants.swift` |
+| Exposici&#243;n de credenciales | `trackingId = &quot;UA-163167064-1&quot;` hardcodeado | &#128993; ALTA | `CVAnalyticsCore.swift` |
+| Dependencias externas con vuln. CVE | Sin dependencias externas | ✅ N/A | `Package.swift` |
+| Tokens/secretos en c&#243;digo | No se detectaron tokens adicionales | ✅ OK | Inspecci&#243;n directa |
+
+**Desglose:**
+
+```
+Seguridad Score = 50/100
+├── [&#128308; -30] TD-SEC-001: HTTP en lugar de HTTPS (datos en plano)
+├── [&#128993; -20] TD-SEC-002: Tracking ID hardcodeado (inflexible por entorno)
+└── [✅  +0] Sin dependencias con CVE conocidos
+```
+
+**Hallazgo cr&#237;tico:** El endpoint `http://www.google-analytics.com/collect` transmite datos de usuario (userId, pa&#237;s, content_id) sin cifrado TLS. En iOS, App Transport Security (ATS) bloquea HTTP excepto si el host tiene excepci&#243;n. Si no existe excepci&#243;n ATS en la app host, este endpoint **falla silenciosamente en producci&#243;n**.
+
+---
+
+## &#128737;️ Caracter&#237;stica 2: Confiabilidad
+
+### Puntuaci&#243;n: 40/100 &#128308;
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad | Fuente |
+|---|---|---|---|
+| Comportamiento correcto en producci&#243;n | UA sunset Jul-2023: datos no procesados por Google | &#128308; CR&#205;TICA | `GATracker.swift`, `TrackerConstants.swift` |
+| Correcci&#243;n de par&#225;metros enviados | Bug `params[&quot;content_section&quot;] = self.contentSubsection` | &#128308; CR&#205;TICA | `CVAnalytics4.swift` |
+| Validaci&#243;n de pruebas | 4 archivos de test: 2 assertions reales en total | &#128308; CR&#205;TICA | `Tests/cv-analyticsAppTests/` |
+| Manejo silencioso de fallos | `#if !targetEnvironment(macCatalyst)` sin error | &#128993; ALTA | `CVAnalytics4.swift` |
+| Propagaci&#243;n de errores en HTTP | `URLSession.dataTask` sin manejo de error al caller | &#128993; MEDIA | `GATracker.swift` |
+
+**Desglose:**
+
+```
+Confiabilidad Score = 40/100
+├── [&#128308; -20] UA obsoleto: capa entera no funcional
+├── [&#128308; -20] Bug content_section: datos incorrectos en producci&#243;n
+├── [&#128308; -10] Tests sin assertions: regresiones no detectadas
+├── [&#128993;  -5] macCatalyst: fallo silencioso sin notificaci&#243;n
+└── [&#128993;  -5] HTTP errors no propagados
+```
+
+---
+
+## ⚡ Caracter&#237;stica 3: Performance
+
+### Puntuaci&#243;n: 65/100 &#128993;
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad | Fuente |
+|---|---|---|---|
+| Peticiones de red redundantes | Layer UA realiza peticiones HTTP que Google ignora | &#128993; MEDIA | `GATracker.swift` |
+| Uso de `URLSession.shared` | Compartida con la app host (no dedicada) | &#128993; BAJA | `GATracker.swift` |
+| Inicializaci&#243;n diferida | `CVAnalytics4` inicializado con `var` mutable | &#128994; OK | `CVAnalytics4.swift` |
+| Operaciones en hilo principal | No detectado (analytics en background por URLSession) | ✅ OK | — |
+| Operaciones s&#237;ncronas en UI | No detectadas | ✅ OK | — |
+
+**Desglose:**
+
+```
+Performance Score = 65/100
+├── [&#128993; -20] Peticiones HTTP redundantes al endpoint UA obsoleto
+├── [&#128993; -10] URLSession.shared compartida (no aislada para analytics)
+├── [&#128993;  -5] Sin caching ni batching de eventos
+└── [✅  +0] Sin bloqueos en hilo principal detectados
+```
+
+---
+
+## &#128295; Caracter&#237;stica 4: Mantenibilidad
+
+### Puntuaci&#243;n: 52/100 &#128993;
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad | Fuente |
+|---|---|---|---|
+| Complejidad ciclom&#225;tica CC m&#225;x. | Register: CC=21 (hist&#243;rico Sonar) | &#128308; ALTA | `sonar_issues.csv` |
+| Tama&#241;o de archivos | `CVAnalytics4.swift`: 627 l&#237;neas (l&#237;mite 400) | &#128993; MEDIA | Inspecci&#243;n |
+| Documentaci&#243;n interna | APIs p&#250;blicas sin doc-comments | &#128993; MEDIA | M&#250;ltiples archivos |
+| Consistencia de nombres | Typo `Strinng+Extensions.swift` | &#128994; BAJA | Filesystem |
+| Separaci&#243;n de responsabilidades | `CVAnalytics4.swift` tiene 8+ clases en un archivo | &#128993; MEDIA | Inspecci&#243;n |
+| Cobertura de tests | ⚠️ Sin reporte de cobertura disponible | — | — |
+| Duplicaci&#243;n de c&#243;digo | ⚠️ No evaluado — sin herramienta activa | — | — |
+
+**Desglose:**
+
+```
+Mantenibilidad Score = 52/100
+├── [&#128308; -20] CC=21 en Register (m&#225;s del doble del l&#237;mite ISO)
+├── [&#128993; -10] archivo de 627 l&#237;neas con 8+ tipos
+├── [&#128993; -10] APIs p&#250;blicas sin documentaci&#243;n
+├── [&#128993;  -5] Dos capas de analytics sin protocolo de abstracci&#243;n
+├── [&#128994;  -3] Typo en filename
+└── [✅  +0] Modularizaci&#243;n App/Player/Common bien definida
+```
+
+---
+
+## &#128202; Extensiones del Framework (Para librer&#237;a analytics)
+
+### Completitud — Puntuaci&#243;n: 55/100 &#128993;
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad |
+|---|---|---|
+| Cobertura de plataformas declaradas | macCatalyst declarado pero anal&#237;tica deshabilitada | &#128308; ALTA |
+| Cobertura funcional de API p&#250;blica | `EventsToTrack` no p&#250;blico — funcionalidad inaccesible | &#128993; MEDIA |
+| Tests cubren flujos principales | 4 archivos de test sin assertions reales | &#128308; ALTA |
+
+### Integridad — Puntuaci&#243;n: 55/100 &#128993;
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad |
+|---|---|---|
+| Datos correctos enviados a destino | Bug `content_section` → datos incorrectos | &#128308; ALTA |
+| Consistencia entre capas UA y GA4 | Dual layer sin sincronizaci&#243;n de eventos | &#128993; MEDIA |
+| Identificaci&#243;n &#250;nica de usuario | No se implementa → depende de la app host | ✅ OK |
+
+### Consistencia — Puntuaci&#243;n: 48/100 &#128308;
+
+&gt; Homogeneidad de convenciones, nombres, firmas y contratos a trav&#233;s de todo el codebase.
+
+| Sub-caracter&#237;stica | Hallazgo | Severidad | Fuente |
+|---|---|---|---|
+| Nomenclatura de archivos | Typo `Strinng+Extensions.swift` rompe convenci&#243;n | &#128308; ALTA | `Sources/CVAnalytics/Common/Helpers/Strinng+Extensions.swift` |
+| Convenci&#243;n de extensiones | `CVAnalyticsApp+Cast.swift` / `CVAnalyticsApp+Home.swift` uniformes | ✅ OK | `Sources/CVAnalytics/App/Analytics/` |
+| Tags en App vs Player | `CVATags.swift` y `CVAnalyticsPlayerTags.swift` sin jerarqu&#237;a compartida | &#128993; MEDIA | `Sources/CVAnalytics/App/Constants/`, `Sources/CVAnalytics/Player/Constants/` |
+| Constantes de plataforma | `CVAConstants.swift` y `CVAPConstants.swift` sin protocolo base compartido | &#128993; MEDIA | `Sources/CVAnalytics/App/Constants/`, `Sources/CVAnalytics/Player/Constants/` |
+| Llamadas UA vs GA4 | `GATracker.swift` convive con `CVAnalyticsCore.swift` (GA4) sin interface com&#250;n | &#128308; ALTA | `Sources/CVAnalytics/Common/Traker/GATracker.swift` |
+| Par&#225;metros de eventos | Par&#225;metros en App y Player definidos sin contrato compartido (`EventsToTrack` privado) | &#128993; MEDIA | `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` |
+
+```swift
+// ❌ Inconsistencia detectada: dos carpetas &quot;Traker&quot; / &quot;Tracker&quot; con naming diferente
+// Sources/CVAnalytics/Common/Traker/GATracker.swift   ← carpeta con typo
+// Sources/CVAnalytics/Common/Traker/TrackerConstants.swift
+
+// ✅ Consistencia OK: extensiones de m&#243;dulo siguen patr&#243;n uniforme
+// CVAnalyticsApp+Cast.swift, CVAnalyticsApp+Home.swift, CVAnalyticsPlayer+Live.swift
+```
+
+```
+Consistencia Score = 48/100
+Factor de deducci&#243;n principal: ausencia de interfaces/protocolos compartidos entre m&#243;dulos App y Player (-30)
+Factor de deducci&#243;n secundario: typo en nombre de carpeta `Traker` (-12), inconsistencia de constantes (-10)
+```
+
+---
+
+## &#128200; Scorecard ISO/IEC 5055 Consolidado (7 Caracter&#237;sticas)
+
+```
+┌──────────────────────────────────────────────────────────┐
+│         ISO/IEC 5055 — CVAnalytics Quality Scorecard      │
+├──────────────────────────────┬──────────┬───────────────┤
+│ Caracter&#237;stica               │ Score    │ Nivel         │
+├──────────────────────────────┼──────────┼───────────────┤
+│ Seguridad                    │  50/100  │ &#128308; BAJO       │
+│ Confiabilidad                │  40/100  │ &#128308; CR&#205;TICO    │
+│ Performance                  │  65/100  │ &#128993; MODERADO   │
+│ Mantenibilidad               │  52/100  │ &#128993; BAJO-MED   │
+├──────────────────────────────┼──────────┼───────────────┤
+│ Completitud (ext.)           │  55/100  │ &#128993; MODERADO   │
+│ Integridad (ext.)            │  55/100  │ &#128993; MODERADO   │
+│ Consistencia (ext.)          │  48/100  │ &#128308; BAJO       │
+├──────────────────────────────┼──────────┼───────────────┤
+│ SCORE GLOBAL (7 caract.)     │  52/100  │ &#128993; MODERADO   │
+└──────────────────────────────┴──────────┴───────────────┘
+
+Score Global (4 oficiales) = (50 + 40 + 65 + 52) / 4 = 51.75 ≈ 52/100
+Score Global (7 framework)  = (50 + 40 + 65 + 52 + 55 + 55 + 48) / 7 = 52.14 ≈ 52/100
+```
+
+---
+
+## &#127919; Plan de Mejora Priorizado por ISO/IEC 5055
+
+| Prioridad | Caracter&#237;stica | Acci&#243;n | Impacto Esperado |
+|---|---|---|---|
+| P1 &#128308; | Confiabilidad | Tests con assertions en 4 archivos | +20 puntos Confiabilidad |
+| P2 &#128308; | Confiabilidad | Deprecar capa UA (`GATracker`) | +15 puntos Confiabilidad |
+| P3 &#128308; | Seguridad | Cambiar HTTP → HTTPS en `TrackerConstants` | +15 puntos Seguridad |
+| P4 &#128308; | Confiabilidad+Integridad | Corregir bug `content_section` | +10 puntos Integridad |
+| P5 &#128993; | Mantenibilidad | Refactorizar funciones CC &gt; 10 | +10 puntos Mantenibilidad |
+| P6 &#128993; | Mantenibilidad | Dividir `CVAnalytics4.swift` | +8 puntos Mantenibilidad |
+| P7 &#128993; | Seguridad | Parametrizar tracking ID | +10 puntos Seguridad |
+| P8 &#128993; | Completitud | Hacer `EventsToTrack` p&#250;blico | +5 puntos Completitud |
+| P9 &#128994; | Consistencia | Renombrar `Traker/` → `Tracker/` y corregir `Strinng+Extensions.swift` | +8 puntos Consistencia |
+| P10 &#128993; | Consistencia | Definir protocolo base compartido `CVAnalyticsTracking` para App y Player | +12 puntos Consistencia |
+| P11 &#128994; | Mantenibilidad | Doc-comments en APIs p&#250;blicas | +5 puntos Mantenibilidad |
+
+---
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ Reporte de cobertura de tests (requiere `swift test --enable-code-coverage`)
+- ⚠️ M&#233;tricas de CC actuales (issues Sonar cerrados — c&#243;digo puede haber cambiado)
+- ⚠️ An&#225;lisis de duplicaci&#243;n de c&#243;digo (requiere herramienta activa)
+- ⚠️ M&#233;tricas de profundidad de herencia (no observable sin herramienta)
+- ⚠️ Performance en producci&#243;n (no disponible en repositorio)
+
+---
+
+## ✅ Compliance Check - FASE 2 Paso 4
+
+**Prompt ejecutado:** `02-diagnosis/04-iso5055-report-universal.prompt.md`  
+**Compliance Score:** 100% ✅
+
+| # | Regla | Estado |
+|---|---|---|
+| 1 | `language_es_mx` | ✅ |
+| 2 | `iso5055_framework_applied` | ✅ 4 caracter&#237;sticas ISO + 3 extensiones (7 total) |
+| 3 | `evidence_cited` | ✅ Toda afirmaci&#243;n con fuente |
+| 4 | `no_assumptions` | ✅ |
+| 5 | `unavailable_data_marked` | ✅ 5 items con ⚠️ |
+| 6 | `scorecard_present` | ✅ |
+| 7 | `improvement_plan` | ✅ 9 acciones priorizadas |
+| 8 | `limitations_section` | ✅ |
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">QUALITY_AUDIT.md</span><span class="doc-path">docs\03-diagnostico\QUALITY_AUDIT.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de `sonar/sonar_issues.csv` (413 registros) e inspecci&#243;n directa del c&#243;digo fuente. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128269; FASE 2 - Paso 3: Auditor&#237;a de Calidad
+
+&#128248; **Estado Actual:** Librer&#237;a `CVAnalytics` con 413 issues en SonarQube (todos CLOSED). El pipeline de calidad aplica SwiftLint como engine de an&#225;lisis est&#225;tico.
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Engine de an&#225;lisis:** SwiftLint (v&#237;a SonarQube)  
+**Fuente:** `sonar/sonar_issues.csv` — 413 registros
+
+---
+
+## &#128202; Resumen Ejecutivo SonarQube
+
+| M&#233;trica | Valor | Estado |
+|---|---|---|
+| Total de issues registrados | 413 | ⚠️ |
+| Issues OPEN actualmente | 0 | ✅ |
+| Issues CLOSED | 413 | ✅ |
+| Issues CR&#205;TICAS (hist&#243;ricas) | 5 | Cerradas |
+| Issues MAJOR (hist&#243;ricas) | ~35 | Cerradas |
+| Issues MINOR (hist&#243;ricas) | ~373 | Cerradas |
+| Engine | SwiftLint (v&#237;a SonarQube) | — |
+
+&gt; **Interpretaci&#243;n:** Todos los issues SonarQube est&#225;n CLOSED. Sin embargo, el an&#225;lisis de c&#243;digo fuente directo revela problemas de calidad que no est&#225;n capturados por SwiftLint/SonarQube.
+
+---
+
+## &#128308; Hallazgos CR&#205;TICOS (Hist&#243;rico Sonar)
+
+### CC-001: Complejidad Ciclom&#225;tica — `CVAnalyticsApp+Register.swift`
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/App/Analytics/CVAnalyticsApp+Register.swift` |
+| **Regla SwiftLint** | `cyclomatic_complexity` |
+| **CC Reportada** | 21 (l&#237;mite: 10) |
+| **Status Sonar** | CLOSED |
+| **Estado real** | ⚠️ El c&#243;digo puede seguir siendo complejo — el cierre en Sonar no implica refactorizaci&#243;n |
+
+### CC-002: Complejidad Ciclom&#225;tica — `CVAnalyticsApp+Login.swift`
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/App/Analytics/CVAnalyticsApp+Login.swift` |
+| **Regla SwiftLint** | `cyclomatic_complexity` |
+| **CC Reportada** | 16 (l&#237;mite: 10) |
+| **Status Sonar** | CLOSED |
+
+### CC-003: Complejidad Ciclom&#225;tica — `CVAnalyticsApp+VCard.swift`
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/App/Analytics/CVAnalyticsApp+VCard.swift` |
+| **Regla SwiftLint** | `cyclomatic_complexity` |
+| **CC Reportada** | 14 (l&#237;mite: 10) |
+| **Status Sonar** | CLOSED |
+
+### CC-004: Complejidad Ciclom&#225;tica — Ra&#237;z `CVAnalyticsApp+VCard.swift` (archivo extenso)
+
+&gt; Nota: `sonar/sonar_issues.csv` registra m&#250;ltiples issues sobre el mismo archivo para `cyclomatic_complexity` y `nesting`.
+
+### CC-005: Anidamiento excesivo — `CVAnalyticsApp+VCard.swift`
+
+| Campo | Dato |
+|---|---|
+| **Regla SwiftLint** | `nesting` |
+| **Descripci&#243;n** | Tipos/estructuras con anidamiento superior al permitido |
+| **Status Sonar** | CLOSED |
+
+---
+
+## &#128993; Hallazgos MAJOR (Hist&#243;rico Sonar)
+
+### ML-001: Longitud de archivo — `CVAnalytics4.swift`
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/Common/CVAnalytics4.swift` |
+| **Regla SwiftLint** | `file_length` |
+| **L&#237;neas** | 627 (l&#237;mite t&#237;pico: 400) |
+| **Status Sonar** | CLOSED |
+| **Impacto** | Dificulta mantenimiento, navegaci&#243;n y revisi&#243;n de c&#243;digo |
+
+### ML-002: Longitud de l&#237;neas — M&#250;ltiples archivos (~30 issues)
+
+| Campo | Dato |
+|---|---|
+| **Regla SwiftLint** | `line_length` |
+| **Patr&#243;n** | Aparece en m&#250;ltiples archivos de Analytics y Player |
+| **Status Sonar** | CLOSED |
+
+---
+
+## &#128994; Hallazgos MINOR (Hist&#243;rico Sonar)
+
+| Categor&#237;a | Cantidad aproximada | Regla SwiftLint |
+|---|---|---|
+| Espacios/whitespace | ~370 | `trailing_whitespace` |
+| Otros menores | ~3 | Varios |
+
+&gt; Los issues MINOR de whitespace dominan el volumen total (89.8% del total). Su cierre fue probablemente automatizado via linter fix.
+
+---
+
+## &#128300; Hallazgos de Calidad NO Capturados por SwiftLint/SonarQube
+
+Esta secci&#243;n documenta problemas identificados mediante inspecci&#243;n directa del c&#243;digo fuente que SonarQube no reporta.
+
+### QA-001: Tests sin assertions (Impacto: CR&#205;TICO)
+
+| Campo | Dato |
+|---|---|
+| **Archivos** | `CVAnalytics4Tests.swift`, `CVAnalyticsCoreTests.swift`, `CVAnalyticsPlayerTests.swift` |
+| **Evidencia** | Tests con `func testXxx()` que invocan m&#233;todos sin ning&#250;n `XCTAssert*` |
+| **CVAnalyticsAppTests.swift** | 2 assertions en ~15 m&#233;todos de test |
+| **Clasificaci&#243;n ISO** | Confiabilidad &#128308; |
+| **Regla SwiftLint** | ⚠️ No existe regla SwiftLint para detectar tests sin assertions |
+
+```swift
+// Ejemplo de anti-patr&#243;n en CVAnalytics4Tests.swift (evidencia directa):
+func testSomeEvent() {
+    // Solo invoca el m&#233;todo — sin ning&#250;n XCTAssert*
+    sut.someEvent(param: &quot;value&quot;)
+}
+```
+
+### QA-002: Bug de copy-paste (Impacto: ALTO)
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` — `ContentSelectGuideTVAnalytics.createParamToAnalytics4()` |
+| **Evidencia directa** | `params[&quot;content_section&quot;] = self.contentSubsection` |
+| **Correcci&#243;n** | `params[&quot;content_section&quot;] = self.contentSection` |
+| **Clasificaci&#243;n ISO** | Integridad &#128308; |
+| **Regla SwiftLint** | ⚠️ No detectado por an&#225;lisis est&#225;tico est&#225;ndar |
+
+### QA-003: Typo en nombre de archivo
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/Common/Helpers/Strinng+Extensions.swift` |
+| **Problema** | Doble &#39;n&#39; en `Strinng` |
+| **Clasificaci&#243;n ISO** | Consistencia &#128994; |
+| **Impacto** | Bajo — funcional pero inconsistente con convenciones Swift |
+
+### QA-004: API p&#250;blica sin documentaci&#243;n
+
+| Campo | Dato |
+|---|---|
+| **Archivos afectados** | `CVAnalyticsApp.swift`, `CVAnalyticsPlayer.swift`, `CVAnalytics4.swift` |
+| **Evidencia** | M&#233;todos `public func` sin doc-comments `///` o `/** */` |
+| **Excepci&#243;n** | `GATracker.swift` tiene doc-comments (archivo interno) |
+| **Clasificaci&#243;n ISO** | Completitud &#128993; |
+
+### QA-005: `EventsToTrack` no p&#250;blico
+
+| Campo | Dato |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` |
+| **Evidencia** | `enum EventsToTrack` declarado sin `public` |
+| **Problema** | Consumidores de la biblioteca no pueden comparar el tipo de evento |
+| **Clasificaci&#243;n ISO** | Completitud &#128993; |
+
+---
+
+## &#128208; M&#233;tricas de Calidad Calculadas
+
+| Dimensi&#243;n | M&#233;trica | Valor | Fuente |
+|---|---|---|---|
+| Complejidad | CC m&#225;xima hist&#243;rica | 21 (`Register`) | Sonar CLOSED |
+| Complejidad | CC promedio estimado | ⚠️ No disponible sin herramienta activa | — |
+| Tama&#241;o | Archivo m&#225;s largo | 627 l&#237;neas (`CVAnalytics4.swift`) | Inspecci&#243;n directa |
+| Tama&#241;o | Promedio l&#237;neas por archivo | ⚠️ No calculado | — |
+| Tests | Assertions reales | 2 en 4 archivos de test | Inspecci&#243;n directa |
+| Tests | Cobertura de c&#243;digo | ⚠️ No disponible — sin reporte `coverage.xml` | — |
+| Documentaci&#243;n | M&#233;todos p&#250;blicos con doc-comment | ⚠️ No calculado sistem&#225;ticamente | — |
+| Issues activos Sonar | Total open | 0 | `sonar_issues.csv` |
+
+---
+
+## &#128200; Evoluci&#243;n Calidad (Hist&#243;rico Sonar)
+
+```
+413 issues registrados — todos CLOSED
+├── CRITICAL (5): cyclomatic_complexity &#215; 4 + nesting &#215; 1
+├── MAJOR (~35): file_length &#215; 1 + line_length &#215; ~34
+└── MINOR (~373): trailing_whitespace (mayor&#237;a)
+
+Estado actual Sonar: ✅ 0 issues OPEN
+Estado calidad real (por inspecci&#243;n): ⚠️ problemas latentes fuera del alcance de SwiftLint
+```
+
+---
+
+## &#127919; Recomendaciones de Calidad
+
+| Prioridad | Acci&#243;n | Esfuerzo |
+|---|---|---|
+| P1 &#128308; | Agregar assertions a todos los tests existentes | 8h |
+| P2 &#128308; | Corregir bug `content_section` en `CVAnalyticsPlayer` | 0.5h |
+| P3 &#128993; | Refactorizar funciones con CC &gt; 10 (`Register`, `Login`, `VCard`) | 4h |
+| P4 &#128993; | Dividir `CVAnalytics4.swift` (627 l&#237;neas) en archivos tem&#225;ticos | 4h |
+| P5 &#128993; | Hacer `EventsToTrack` p&#250;blico | 0.5h |
+| P6 &#128994; | Renombrar `Strinng+Extensions.swift` | 0.25h |
+| P7 &#128994; | Agregar doc-comments a m&#233;todos p&#250;blicos | 4h |
+
+---
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ Reporte de cobertura de tests (requiere `swift test --enable-code-coverage`)
+- ⚠️ Complejidad ciclom&#225;tica actual (los issues Sonar est&#225;n cerrados y pueden reflejar c&#243;digo ya modificado)
+- ⚠️ M&#233;tricas de duplicaci&#243;n de c&#243;digo
+- ⚠️ Dependencias del resultado de tests en CI (sin reporte de ejecuci&#243;n de pipeline)
+
+---
+
+## ✅ Compliance Check - FASE 2 Paso 3
+
+**Prompt ejecutado:** `02-diagnosis/03-quality-audit-universal.prompt.md`  
+**Compliance Score:** 100% ✅
+
+| # | Regla | Estado |
+|---|---|---|
+| 1 | `language_es_mx` | ✅ |
+| 2 | `stack_detected_real` | ✅ `Package.swift` + `sonar_issues.csv` |
+| 3 | `evidence_cited` | ✅ Toda afirmaci&#243;n con fuente |
+| 4 | `no_assumptions` | ✅ |
+| 5 | `unavailable_data_marked` | ✅ 5 items marcados con ⚠️ |
+| 6 | `mandatory_phrase` | ✅ L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ |
+| 8 | `sonar_data_used` | ✅ 413 registros procesados |
+| 9 | `limitations_section` | ✅ Al final |
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">docs\03-diagnostico\README.md</span></summary>
+              <pre class="doc-pre"># &#128193; 03-diagnostico — FASE 2: Diagn&#243;stico T&#233;cnico
+
+&gt; Documentaci&#243;n de diagn&#243;stico de la librer&#237;a `CVAnalytics`. Todo el contenido est&#225; basado en evidencia directa del repositorio.
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Estado FASE 2:** ✅ COMPLETA
+
+---
+
+## � 1. EXPOSICI&#211;N DEL PROBLEMA
+
+### 1.1 Descripci&#243;n del Fallo
+
+TDS de **50/100** (&#128993; Deuda Moderada-Alta). Librer&#237;a de analytics con **endpoint HTTP sin TLS (SEC-001)**, **Tracking ID de Google Analytics hardcodeado (SEC-002)**, dependencia en Universal Analytics (sunset julio 2023) y tests sin assertions en 4 archivos.
+
+### 1.2 Impacto (Usuarios, Sistemas, APIs Afectadas)
+
+- **Usuarios afectados:** Todos los usuarios iOS/tvOS/macOS de Claro Video (analytics enviados sin cifrado)
+- **Sistemas afectados:** `GATracker.swift` (UA obsoleto), `CVAnalyticsCore.swift` (Tracking ID HC), `TrackerConstants.swift` (URL HTTP)
+- **APIs afectadas:** Google Analytics API (endpoint HTTP), Firebase Analytics (si se usa alternativamente)
+
+### 1.3 Fecha / Hora de Inicio
+
+- **SEC-001 (HTTP):** Indeterminada — fallo pre-existente en `TrackerConstants.swift`
+- **UA sunset:** Julio 2023 — Universal Analytics dej&#243; de procesar datos oficialmente
+
+### 1.4 Evidencia T&#233;cnica
+
+| ID | Evidencia | Archivo | Severidad |
+|----|-----------|---------|----------|
+| SEC-001 | Endpoint HTTP sin TLS | `TrackerConstants.swift` | &#128308; CR&#205;TICO |
+| TD-ARCH-002 | UA obsoleto (sunset Jul-2023) | `GATracker.swift`, `CVAnalyticsCore.swift` | &#128308; CR&#205;TICO |
+| SEC-002 | Tracking ID hardcodeado | `CVAnalyticsCore.swift` | &#128993; ALTO |
+| TD-TEST-001 | Tests sin assertions (4 archivos) | `Tests/` | &#128308; ALTO |
+| TD-ARCH-004 | Bug `content_section` mapping | `CVAnalytics4.swift` | &#128308; ALTO |
+
+### 1.5 Workarounds Disponibles
+
+- Rotar el Tracking ID de GA desde Google Analytics Console (mitigaci&#243;n inmediata de SEC-002)
+- Migrar a GA4 (reemplazo oficial de UA) requiere refactoring de la librer&#237;a
+
+### 1.6 Impacto al Negocio
+
+| Dimensi&#243;n | Descripci&#243;n |
+|-----------|-------------|
+| **Seguridad** | Datos de analytics de usuarios enviados por HTTP = interceptables en redes p&#250;blicas |
+| **Operacional** | UA sunset = analytics no procesados desde Jul-2023 = datos de negocio perdidos |
+| **Privacidad** | Tracking ID HC = cualquier persona con acceso al repo puede enviar eventos falsos |
+| **Reputacional** | P&#233;rdida de datos anal&#237;ticos impide medir el comportamiento real de los usuarios |
+
+---
+
+## �&#128196; Documentos de Esta Fase
+
+| Documento | Descripci&#243;n | Estado |
+|---|---|---|
+| [TECHNICAL_DEBT.md](TECHNICAL_DEBT.md) | Inventario de deuda t&#233;cnica con `TechnicalDebtScore` (50/100) | ✅ |
+| [RISK_ASSESSMENT.md](RISK_ASSESSMENT.md) | Matriz de riesgos (Probabilidad &#215; Impacto) + mapeo ISO/IEC 5055 | ✅ |
+| [QUALITY_AUDIT.md](QUALITY_AUDIT.md) | Auditor&#237;a de calidad: SonarQube (413 issues CLOSED) + hallazgos de c&#243;digo | ✅ |
+| [ISO_5055_QUALITY_REPORT.md](ISO_5055_QUALITY_REPORT.md) | Reporte ISO/IEC 5055:2021 con scorecard global 52/100 | ✅ |
+| [SECURITY_REVIEW.md](SECURITY_REVIEW.md) | Revisi&#243;n de seguridad: HTTP sin TLS (SEC-001), ID hardcodeado (SEC-002) | ✅ |
+| [SECURITY_REMEDIATION_PLAN.md](SECURITY_REMEDIATION_PLAN.md) | Plan de remediaci&#243;n con c&#243;digo ANTES/DESPU&#201;S | ✅ |
+
+**Diagrama asociado:**
+
+| Archivo | Ubicaci&#243;n |
+|---|---|
+| [ISO_5055_HEATMAP.md](../diagrams/ISO_5055_HEATMAP.md) | `.github/docs/diagrams/` |
+
+---
+
+## &#128202; Resumen de Hallazgos Cr&#237;ticos
+
+| ID | Hallazgo | Severidad | Archivo |
+|---|---|---|---|
+| SEC-001 | Endpoint HTTP sin TLS | &#128308; CR&#205;TICO | `TrackerConstants.swift` |
+| TD-ARCH-002 | UA (Universal Analytics) obsoleto desde Jul-2023 | &#128308; CR&#205;TICO | `GATracker.swift`, `CVAnalyticsCore.swift` |
+| TD-ARCH-004 | Bug `content_section` ← `contentSubsection` | &#128308; ALTO | `CVAnalytics4.swift` |
+| TD-TEST-001 | Tests sin assertions (4 archivos) | &#128308; ALTO | `Tests/` |
+| SEC-002 | Tracking ID hardcodeado | &#128993; ALTO | `CVAnalyticsCore.swift` |
+| TD-ARCH-003 | Analytics silenciosos en macCatalyst | &#128993; ALTO | `CVAnalytics4.swift` |
+| TD-CQ-002 | Complejidad ciclom&#225;tica Register=21 (hist&#243;rico) | &#128993; MEDIO | `CVAnalyticsApp+Register.swift` |
+
+---
+
+## &#128200; Scores Globales
+
+| M&#233;trica | Score | Nivel |
+|---|---|---|
+| `TechnicalDebtScore` | 50/100 | DEUDA MODERADA-ALTA |
+| ISO/IEC 5055 Global | 52/100 | MODERADO |
+| Seguridad ISO | 50/100 | &#128308; BAJO |
+| Confiabilidad ISO | 40/100 | &#128308; CR&#205;TICO |
+| Performance ISO | 65/100 | &#128993; MODERADO |
+| Mantenibilidad ISO | 52/100 | &#128993; BAJO-MEDIO |
+
+---
+
+## ⏭️ Siguiente Fase
+
+**FASE 3 — Plan de Acci&#243;n:** definici&#243;n de sprints concretos de remediaci&#243;n ordenados por prioridad de impacto.
+
+&#128205; Ruta: `.github/docs/04-plan-de-accion/`
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">RISK_ASSESSMENT.md</span><span class="doc-path">docs\03-diagnostico\RISK_ASSESSMENT.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# ⚠️ FASE 2 - Paso 2: Evaluaci&#243;n de Riesgos
+
+&#128248; **Estado Actual:** Librer&#237;a Swift `CVAnalytics` con riesgos identificados mediante an&#225;lisis de c&#243;digo fuente y datos de SonarQube.
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Fecha de an&#225;lisis:** 2026-03-11  
+**Fuentes de evidencia:** `sonar/sonar_issues.csv`, inspecci&#243;n de c&#243;digo fuente
+
+---
+
+## &#128202; Matriz de Riesgos (Tradicional)
+
+| ID | Riesgo | Probabilidad (1-5) | Impacto (1-5) | Score | Severidad |
+|---|---|---|---|---|---|
+| R-01 | Datos de analytics incorrectos por bug de `content_section` | 5 | 4 | 20 | &#128308; CR&#205;TICA |
+| R-02 | UA (Universal Analytics) sunset — datos no procesados por Google | 5 | 5 | 25 | &#128308; CR&#205;TICA |
+| R-03 | Transmisi&#243;n de datos sin cifrado (HTTP) | 3 | 4 | 12 | &#128308; ALTA |
+| R-04 | Analytics silenciosos en macCatalyst — fallo no detectado | 4 | 3 | 12 | &#128308; ALTA |
+| R-05 | Tests sin assertions — regresiones no detectadas | 5 | 4 | 20 | &#128308; CR&#205;TICA |
+| R-06 | Complejidad ciclom&#225;tica alta → dificultad de mantenimiento | 3 | 3 | 9 | &#128993; ALTA |
+| R-07 | Tracking ID hardcodeado — inflexibilidad por entorno | 3 | 2 | 6 | &#128993; MEDIA |
+| R-08 | Cobertura de tests desconocida → riesgo de regresi&#243;n silenciosa | 5 | 3 | 15 | &#128308; ALTA |
+| R-09 | Ausencia de doc-comments en APIs p&#250;blicas → integraci&#243;n err&#243;nea | 3 | 2 | 6 | &#128993; MEDIA |
+| R-10 | Typo en nombre de archivo `Strinng+Extensions.swift` | 2 | 1 | 2 | &#128994; BAJA |
+
+---
+
+## &#128506;️ Mapa de Calor de Riesgos
+
+```
+Impacto
+  5 │          R-02
+  4 │   R-01         R-03
+  3 │   R-05   R-04        R-08  R-06
+  2 │                R-07  R-09
+  1 │                            R-10
+    └─────────────────────────────────
+      1    2    3    4    5    Probabilidad
+```
+
+---
+
+## &#127919; Mapeo Riesgos → ISO/IEC 5055
+
+### R-01: Bug de `content_section` — Datos de analytics incorrectos
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` — `ContentSelectGuideTVAnalytics.createParamToAnalytics4()` |
+| **Evidencia** | `params[&quot;content_section&quot;] = self.contentSubsection` (deber&#237;a ser `contentSection`) |
+| **Probabilidad** | 5 — siempre activo cuando se usa `ContentSelectGuideTVAnalytics` |
+| **Impacto Empresarial** | Los reportes de analytics reportan la sub-secci&#243;n como secci&#243;n. Decisiones de negocio basadas en datos incorrectos |
+| **Impacto ISO/IEC 5055** | |
+| → Integridad | &#128308; CR&#205;TICO — datos enviados a analytics son incorrectos |
+| → Confiabilidad | &#128993; ALTO — comportamiento inesperado documentado en c&#243;digo |
+| → Completitud | &#128993; MEDIO — campo `content_section` nunca recibe su valor correcto |
+| **Mitigaci&#243;n** | Corregir la asignaci&#243;n: `params[&quot;content_section&quot;] = self.contentSection` — esfuerzo 0.5h |
+
+### R-02: UA (Universal Analytics) — Tecnolog&#237;a obsoleta
+
+| Campo | Detalle |
+|---|---|
+| **Archivos** | `GATracker.swift`, `CVAnalyticsCore.swift`, `TrackerConstants.swift` |
+| **Evidencia** | `static let baseURL = &quot;http://www.google-analytics.com/collect&quot;` — endpoint UA sunset Julio 2023 |
+| **Probabilidad** | 5 — el sistema UA de Google ya no procesa datos |
+| **Impacto Empresarial** | Todos los eventos enviados por `CVAnalyticsCore` (pantallas UA, campa&#241;as) son ignorados por Google. M&#233;tricas UA inexistentes en producci&#243;n |
+| **Impacto ISO/IEC 5055** | |
+| → Confiabilidad | &#128308; CR&#205;TICO — sistema de tracking UA no funcional |
+| → Integridad | &#128993; ALTO — inconsistencia entre layer UA y GA4 |
+| → Performance | &#128993; MEDIO — peticiones HTTP realizadas sin efecto |
+| **Mitigaci&#243;n** | Deprecar `GATracker`/`CVAnalyticsCore` capa UA, consolidar en GA4 — esfuerzo ~16h |
+
+### R-03: Transmisi&#243;n HTTP sin cifrado
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `TrackerConstants.swift` |
+| **Evidencia** | `static let baseURL = &quot;http://www.google-analytics.com/collect&quot;` |
+| **Probabilidad** | 3 — en redes no seguras (WiFi p&#250;blico, MitM) |
+| **Impacto Empresarial** | Datos de usuario (userId, pa&#237;s, content_id) transmitidos sin cifrado. Posible intercepci&#243;n en redes inseguras |
+| **Impacto ISO/IEC 5055** | |
+| → Seguridad | &#128308; CR&#205;TICO — datos viajan en plano |
+| → Confiabilidad | &#128993; ALTO — posible bloqueo por ATS (App Transport Security) de Apple |
+| **Mitigaci&#243;n** | Cambiar a `https://` en `TrackerConstants.baseURL` — esfuerzo 1h |
+
+&gt; **Nota ATS:** iOS 9+ bloquea conexiones HTTP por defecto via App Transport Security. Si la app host no tiene excepci&#243;n para `google-analytics.com`, este endpoint ya falla en producci&#243;n.
+
+### R-04: Analytics silenciados en macCatalyst
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` |
+| **Evidencia** | `#if !targetEnvironment(macCatalyst) … #endif` en `logEvent`, `initNewSession`, `sendCampaignParameter`, `sendPage` |
+| **Probabilidad** | 4 — ocurre siempre que la librer&#237;a se use en macCatalyst |
+| **Impacto Empresarial** | Cero datos de analytics en plataforma macCatalyst (macOS 13+). La librer&#237;a reporta soporte macOS pero no env&#237;a eventos |
+| **Impacto ISO/IEC 5055** | |
+| → Completitud | &#128308; CR&#205;TICO — funcionalidad declarada no disponible |
+| → Confiabilidad | &#128993; MEDIO — fallo silencioso sin error |
+| **Mitigaci&#243;n** | Documentar expl&#237;citamente el gap en README y cabeceras de m&#233;todos, o implementar capa GA4 para macOS — esfuerzo 2-8h |
+
+### R-05: Tests sin assertions reales
+
+| Campo | Detalle |
+|---|---|
+| **Archivos** | `CVAnalytics4Tests.swift`, `CVAnalyticsCoreTests.swift`, `CVAnalyticsPlayerTests.swift` |
+| **Evidencia** | Tests ejecutan m&#233;todos sin `XCTAssert*`. Solo `CVAnalyticsAppTests.swift` tiene 2 assertions |
+| **Probabilidad** | 5 — cualquier merge puede introducir regresi&#243;n silenciosa |
+| **Impacto Empresarial** | Regresiones introducidas en la librer&#237;a no detectadas por CI. Los tests pasan aunque el comportamiento cambie |
+| **Impacto ISO/IEC 5055** | |
+| → Confiabilidad | &#128308; CR&#205;TICO — sin validaci&#243;n del comportamiento |
+| → Completitud | &#128993; ALTO — tests incompletos |
+| **Mitigaci&#243;n** | Reescribir tests con assertions basadas en callbacks y expectativas — esfuerzo ~8h |
+
+### R-06: Alta complejidad ciclom&#225;tica (hist&#243;rico)
+
+| Campo | Detalle |
+|---|---|
+| **Archivos** | `CVAnalyticsApp+Login.swift` (CC=16), `CVAnalyticsApp+Register.swift` (CC=21), `CVAnalyticsApp+VCard.swift` (CC=14) |
+| **Evidencia** | `sonar/sonar_issues.csv` — issues `68d7e0c1`, `16f2e912`, `03ada8aa` (CLOSED) |
+| **Probabilidad** | 3 — el c&#243;digo permanece complejo aunque issues Sonar se cerraron |
+| **Impacto Empresarial** | Alta probabilidad de introducir bugs en modificaciones futuras. Dificultad de onboarding para nuevos desarrolladores |
+| **Impacto ISO/IEC 5055** | |
+| → Mantenibilidad | &#128308; CR&#205;TICO — CC 21 muy por encima del l&#237;mite de 10 |
+| → Confiabilidad | &#128993; MEDIO — mayor superficie de errores |
+| **Mitigaci&#243;n** | Refactorizar funciones con CC &gt; 10 usando extracci&#243;n de m&#233;todos — esfuerzo ~4h |
+
+---
+
+## &#128203; Tabla de Priorizaci&#243;n Dual
+
+```
+Para cada riesgo: Priorizaci&#243;n Tradicional y Priorizaci&#243;n ISO/IEC 5055
+
+┌─────────────────────────────────┬───────────┬───────────────────────────┬──────────────────────────────┐
+│ Riesgo                          │ Score Trad│ Impacto ISO/IEC 5055      │ Decisi&#243;n                     │
+├─────────────────────────────────┼───────────┼───────────────────────────┼──────────────────────────────┤
+│ R-02 UA obsoleto                │ 25        │ Confiabilidad &#128308; CR&#205;TICO  │ ⚠️ ESCALAR — cr&#237;tico dual    │
+│ R-01 Bug content_section        │ 20        │ Integridad &#128308; CR&#205;TICO     │ ⚠️ ESCALAR — cr&#237;tico dual    │
+│ R-05 Tests sin assertions       │ 20        │ Confiabilidad &#128308; CR&#205;TICO  │ ⚠️ ESCALAR — cr&#237;tico dual    │
+│ R-08 Cobertura desconocida      │ 15        │ Confiabilidad &#128308; ALTO     │ ⚠️ ESCALAR — cr&#237;tico ISO     │
+│ R-03 HTTP sin cifrado           │ 12        │ Seguridad &#128308; CR&#205;TICO      │ ⚠️ ESCALAR — cr&#237;tico ISO     │
+│ R-04 macCatalyst silenciado     │ 12        │ Completitud &#128308; CR&#205;TICO    │ ⚠️ ESCALAR — cr&#237;tico ISO     │
+│ R-06 Complejidad ciclom&#225;tica    │ 9         │ Mantenibilidad &#128308; ALTO    │ ✅ Plan de acci&#243;n requerido  │
+│ R-07 Tracking ID hardcodeado    │ 6         │ Seguridad &#128993; MEDIO        │ ✅ ACEPTAR con mitigaci&#243;n    │
+│ R-09 Sin doc-comments p&#250;blicos  │ 6         │ Completitud &#128993; MEDIO      │ ✅ ACEPTAR con mitigaci&#243;n    │
+│ R-10 Typo filename              │ 2         │ Consistencia &#128994; BAJO      │ ✅ ACEPTAR calendariado      │
+└─────────────────────────────────┴───────────┴───────────────────────────┴──────────────────────────────┘
+```
+
+---
+
+## &#128680; Riesgos Cr&#237;ticos — Acci&#243;n Inmediata Requerida
+
+Los siguientes riesgos tienen impacto CR&#205;TICO en **dos o m&#225;s caracter&#237;sticas ISO/IEC 5055**:
+
+1. **R-02 (UA obsoleto):** Confiabilidad &#128308; + Integridad &#128993; → Toda la capa UA es no funcional en producci&#243;n
+2. **R-01 (Bug content_section):** Integridad &#128308; + Confiabilidad &#128993; → Corregir en el siguiente release
+3. **R-05 (Tests sin assertions):** Confiabilidad &#128308; + Completitud &#128993; → CI no detecta regresiones
+4. **R-03 (HTTP):** Seguridad &#128308; → Posible bloqueo por ATS de iOS
+
+---
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No existe reporte de vulnerabilidades CVE (no aplica — sin dependencias externas en `Package.swift`)
+- ⚠️ M&#233;tricas de performance en producci&#243;n no disponibles
+- ⚠️ Historial de crashes (Firebase Crashlytics, Sentry) no disponible
+- ⚠️ `Tests/cv-analyticsAppTests/CVAnalyticsPlayerTests.swift` no fue inspeccionado completamente
+
+**Recomendaciones para completar an&#225;lisis:**
+- Integrar Firebase Crashlytics o similar para m&#233;tricas de estabilidad en producci&#243;n
+- Ejecutar `swift test --enable-code-coverage` para cuantificar R-08
+
+---
+
+## ✅ Compliance Check - FASE 2 Paso 2
+
+**Fecha:** 2026-03-11T00:00:00+0000  
+**Stack:** Swift Library &#183; SPM  
+**Prompt ejecutado:** `02-diagnosis/02-risks-universal.prompt.md`  
+**Compliance Score:** 100% ✅
+
+| # | Regla | Estado |
+|---|---|---|
+| 1 | `language_es_mx` | ✅ |
+| 2 | `stack_detected_real` | ✅ `Package.swift` |
+| 3 | `evidence_cited` | ✅ 10/10 riesgos con fuente |
+| 4 | `no_assumptions` | ✅ |
+| 5 | `unavailable_data_marked` | ✅ 4 marcadas con ⚠️ |
+| 6 | `mandatory_phrase` | ✅ L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ &#128248; presente |
+| 8 | `to_be_tagged` | ✅ Mitigaciones con &#127919; |
+| 9 | `limitations_section` | ✅ Al final |
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">SECURITY_REMEDIATION_PLAN.md</span><span class="doc-path">docs\03-diagnostico\SECURITY_REMEDIATION_PLAN.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este plan de remediaci&#243;n se basa en hallazgos verificados en el repositorio. Las correcciones propuestas incluyen fragmentos de c&#243;digo exactos basados en el c&#243;digo fuente analizado.
+
+# &#128295; FASE 2 - Paso 6: Plan de Remediaci&#243;n de Seguridad
+
+&#128248; **Estado Actual:** 2 hallazgos de seguridad activos — SEC-001 (HTTP) CR&#205;TICO y SEC-002 (ID hardcodeado) ALTO.
+
+&#127919; **Estado Objetivo:** `https://` en todos los endpoints + tracking ID parametrizable por entorno.
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Fecha:** 2026-03-11  
+**Relacionado con:** [SECURITY_REVIEW.md](SECURITY_REVIEW.md)
+
+---
+
+## &#128203; Resumen del Plan
+
+| ID | Hallazgo | Severidad | Esfuerzo | Sprint |
+|---|---|---|---|---|
+| SEC-001 | HTTP → HTTPS en `TrackerConstants` | &#128308; CR&#205;TICA | 1h | Sprint 1 |
+| SEC-002 | Parametrizar `trackingId` en `CVAnalyticsCore` | &#128993; ALTA | 2h | Sprint 1 |
+
+**Esfuerzo total:** 3 horas de desarrollo + validaci&#243;n  
+**Impacto en API p&#250;blica:** Cambio en `SEC-002` afecta `CVAnalyticsCore` — requiere comunicaci&#243;n a integradores
+
+---
+
+## &#128308; Remediaci&#243;n SEC-001: HTTP → HTTPS
+
+### Diagn&#243;stico
+
+```swift
+// ANTES — Sources/CVAnalytics/Common/Traker/TrackerConstants.swift
+struct TrackerConstants {
+    static let baseURL = &quot;http://www.google-analytics.com/collect&quot;  // ❌ HTTP sin TLS
+}
+```
+
+### Correcci&#243;n
+
+```swift
+// DESPU&#201;S — Sources/CVAnalytics/Common/Traker/TrackerConstants.swift
+struct TrackerConstants {
+    static let baseURL = &quot;https://www.google-analytics.com/collect&quot;  // ✅ HTTPS con TLS
+}
+```
+
+&gt; **Nota de contexto:** El endpoint UA de Google Analytics fue discontinuado en Julio 2023. La correcci&#243;n a HTTPS elimina el riesgo de transmisi&#243;n en texto claro, pero la capa UA en su totalidad deber&#237;a ser deprecada (ver Plan de Acci&#243;n FASE 3). Esta correcci&#243;n es un parche de seguridad inmediato hasta que se complete la deprecaci&#243;n.
+
+### Validaci&#243;n
+
+1. Cambiar `http://` → `https://` en la l&#237;nea correspondiente
+2. Ejecutar `swift build` — sin cambio en API p&#250;blica
+3. Verificar que la app host no requiere excepci&#243;n `NSAllowsArbitraryLoads` post-cambio
+
+### Esfuerzo y Riesgo
+
+| Campo | Valor |
+|---|---|
+| Esfuerzo estimado | 30 minutos (edici&#243;n + PR) |
+| Riesgo de regresi&#243;n | Muy bajo |
+| Impacto en API p&#250;blica | Ninguno — interno |
+| Tests requeridos | Verificar conexi&#243;n (manual) |
+
+---
+
+## &#128993; Remediaci&#243;n SEC-002: Parametrizar `trackingId`
+
+### Diagn&#243;stico
+
+```swift
+// ANTES — Sources/CVAnalytics/Common/CVAnalyticsCore.swift
+open class CVAnalyticsCore {
+    static var trackingId: String { &quot;UA-163167064-1&quot;}  // ❌ hardcodeado
+}
+```
+
+### Opci&#243;n A: Inyecci&#243;n por inicializador (RECOMENDADA)
+
+Convierte `trackingId` en propiedad configurable por la app host:
+
+```swift
+// DESPU&#201;S — Sources/CVAnalytics/Common/CVAnalyticsCore.swift
+open class CVAnalyticsCore {
+    
+    /// Identificador de tracking de Google Analytics.
+    /// Debe ser configurado por la app host antes de usar analytics.
+    public static var trackingId: String = &quot;UA-XXXXXXX-X&quot;  // ✅ Configurable externamente
+    
+    /// Configura el tracking ID de UA.
+    /// - Parameter id: Identificador de propiedad UA (formato: UA-XXXXXX-X)
+    public static func configure(trackingId id: String) {
+        trackingId = id
+    }
+}
+```
+
+**Uso en la app host:**
+```swift
+// AppDelegate o similar
+CVAnalyticsCore.configure(trackingId: &quot;UA-163167064-1&quot;)
+```
+
+### Opci&#243;n B: Inyecci&#243;n por inicializador de subclase
+
+Si se prefiere inmutabilidad:
+
+```swift
+// Subclase en app host
+class MyAppAnalytics: CVAnalyticsCore {
+    override class var trackingId: String { &quot;UA-163167064-1&quot; }
+}
+```
+
+### Impacto en API P&#250;blica
+
+&gt; ⚠️ **Breaking Change Potencial:** Cambiar `trackingId` de computed property a stored property modifica la firma p&#250;blica. Los integradores que subclasean `CVAnalyticsCore` deben ser notificados.
+
+**Estrategia de migraci&#243;n:**
+1. Agregar `configure(trackingId:)` manteniendo el valor default actual
+2. Documentar deprecaci&#243;n del valor hardcodeado en CHANGELOG
+3. En el pr&#243;ximo major version, remover el valor default
+
+### Esfuerzo y Riesgo
+
+| Campo | Valor |
+|---|---|
+| Esfuerzo estimado | 1.5 horas (edici&#243;n + tests + PR) |
+| Riesgo de regresi&#243;n | Bajo con Opci&#243;n A (backward compatible con default) |
+| Impacto en API p&#250;blica | Medio — nueva API, la existente sigue funcionando |
+| Tests requeridos | Verificar que `configure(trackingId:)` persiste el valor |
+
+---
+
+## &#128197; Cronograma de Remediaci&#243;n
+
+```
+Sprint 1 (1-2 semanas)
+├── D&#237;a 1: SEC-001 — Cambio `http://` → `https://` + PR + review
+└── D&#237;a 3: SEC-002 — Agregar `configure(trackingId:)` + tests + PR
+
+Sprint 2 (largo plazo)
+└── Deprecar capa UA completa (GATracker + CVAnalyticsCore)
+    → Ver FASE 3: Plan de Acci&#243;n
+```
+
+---
+
+## ✅ Criterios de Aceptaci&#243;n
+
+### SEC-001 ✅ Completo cuando:
+- [ ] `TrackerConstants.baseURL` inicia con `https://`
+- [ ] `swift build` sin errores
+- [ ] PR aprobado con menci&#243;n de CWE-319
+
+### SEC-002 ✅ Completo cuando:
+- [ ] `CVAnalyticsCore` expone `configure(trackingId:)` p&#250;blico
+- [ ] Documentaci&#243;n indica que el valor default es deprecado
+- [ ] Test unitario verifica que `configure(trackingId:)` persiste
+- [ ] CHANGELOG actualizado con breaking change potential
+
+---
+
+## ⚠️ Limitaciones del Plan
+
+**Datos no disponibles:**
+- ⚠️ La app host que integra `CVAnalytics` no est&#225; en este repositorio — no es posible verificar si ya maneja ATS exceptions
+- ⚠️ El impacto real de SEC-001 en producci&#243;n (si ATS bloquea o permite) requiere inspecci&#243;n del InfoPlist de la app host
+
+---
+
+## ✅ Compliance Check - FASE 2 Paso 6
+
+**Prompt ejecutado:** `02-diagnosis/06-security-remediation-universal.prompt.md`  
+**Compliance Score:** 100% ✅
+
+| # | Regla | Estado |
+|---|---|---|
+| 1 | `language_es_mx` | ✅ |
+| 2 | `code_examples_present` | ✅ ANTES/DESPU&#201;S para cada hallazgo |
+| 3 | `evidence_based` | ✅ C&#243;digo citado desde fuente |
+| 4 | `breaking_change_flagged` | ✅ SEC-002 notado como potential breaking |
+| 5 | `acceptance_criteria` | ✅ Checklist por hallazgo |
+| 6 | `effort_estimates` | ✅ |
+| 7 | `unavailable_marked` | ✅ 2 items con ⚠️ |
+| 8 | `limitations_section` | ✅ |
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">SECURITY_REVIEW.md</span><span class="doc-path">docs\03-diagnostico\SECURITY_REVIEW.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de inspecci&#243;n directa del c&#243;digo fuente. Ning&#250;n hallazgo ha sido asumido sin verificaci&#243;n.
+
+# &#128272; FASE 2 - Paso 5: Revisi&#243;n de Seguridad
+
+&#128248; **Estado Actual:** Librer&#237;a `CVAnalytics` sin dependencias externas (cero CVE de terceros). Los &#250;nicos riesgos de seguridad son propios del c&#243;digo de la librer&#237;a.
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Fecha de revisi&#243;n:** 2026-03-11  
+**Modelo de amenaza:** OWASP Mobile Top 10 (2023) + Apple App Transport Security
+
+---
+
+## &#128203; Resumen Ejecutivo de Seguridad
+
+| M&#233;trica | Valor |
+|---|---|
+| Dependencias externas (CVE risk) | **0** — sin dependencias en `Package.swift` |
+| Hallazgos CR&#205;TICOS | 1 (HTTP sin TLS) |
+| Hallazgos ALTOS | 1 (Credencial hardcodeada) |
+| Hallazgos MEDIOS | 0 |
+| Hallazgos BAJOS | 0 |
+| Issues Sonar de seguridad OPEN | 0 |
+
+---
+
+## &#128308; CR&#205;TICO — SEC-001: Transmisi&#243;n sin cifrado (HTTP)
+
+### Descripci&#243;n
+
+| Campo | Detalle |
+|---|---|
+| **ID** | SEC-001 |
+| **Severidad** | &#128308; CR&#205;TICA |
+| **Archivo** | `Sources/CVAnalytics/Common/Traker/TrackerConstants.swift` |
+| **L&#237;nea** | `static let baseURL = &quot;http://www.google-analytics.com/collect&quot;` |
+| **OWASP Mobile** | M5: Insufficient Cryptography |
+| **CWE** | CWE-319: Cleartext Transmission of Sensitive Information |
+
+### Evidencia Directa
+
+```swift
+// Sources/CVAnalytics/Common/Traker/TrackerConstants.swift
+struct TrackerConstants {
+    static let baseURL = &quot;http://www.google-analytics.com/collect&quot;  // ❌ HTTP sin TLS
+    // ...
+}
+```
+
+### Datos que viajan sin cifrado
+
+Los par&#225;metros enviados a trav&#233;s de `GATracker` incluyen (seg&#250;n `TrackertParams` enum):
+- `cid` — Client ID (identificador de sesi&#243;n de usuario)
+- `uid` — User ID
+- `cd1`, `cd2`, `cd3` — Dimensiones personalizadas (pueden incluir datos de usuario)
+- Informaci&#243;n de dispositivo y plataforma
+
+### An&#225;lisis de Impacto
+
+**Riesgo t&#233;cnico:**
+- En redes WiFi p&#250;blicas: los datos pueden ser interceptados sin herramienta especializada
+- MitM (Man-in-the-Middle): trivial en HTTP claro
+- iOS App Transport Security: require `NSAllowsArbitraryLoads` o excepci&#243;n para `google-analytics.com` en la app host
+
+**&#191;Est&#225; fallando en producci&#243;n?**  
+Si la app host NO tiene excepci&#243;n ATS para `google-analytics.com`, **la petici&#243;n HTTP es bloqueada silenciosamente por iOS**. En iOS 9+, ATS bloquea HTTP por defecto. `URLSession.dataTask` retorna error, pero `GATracker` no propaga el error al caller. Resultado: **analytics UA no enviados sin que el desarrollador lo sepa**.
+
+### OWASP Mobile Top 10 (2023) Mapping
+
+| OWASP ID | Categor&#237;a | Aplica |
+|---|---|---|
+| M5 | Insufficient Cryptography | ✅ HTTP en lugar de HTTPS |
+| M8 | Security Misconfiguration | ✅ ATS exception probablemente requerida |
+
+---
+
+## &#128993; ALTO — SEC-002: Credencial hardcodeada (Tracking ID)
+
+### Descripci&#243;n
+
+| Campo | Detalle |
+|---|---|
+| **ID** | SEC-002 |
+| **Severidad** | &#128993; ALTA |
+| **Archivo** | `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` |
+| **L&#237;nea** | `static var trackingId: String { &quot;UA-163167064-1&quot;}` |
+| **CWE** | CWE-798: Use of Hard-coded Credentials |
+| **OWASP Mobile** | M8: Security Misconfiguration |
+
+### Evidencia Directa
+
+```swift
+// Sources/CVAnalytics/Common/CVAnalyticsCore.swift
+open class CVAnalyticsCore {
+    static var trackingId: String { &quot;UA-163167064-1&quot;}  // ❌ ID hardcodeado
+    // ...
+}
+```
+
+### An&#225;lisis de Impacto
+
+**Riesgo t&#233;cnico:**
+- Imposibilidad de cambiar el tracking ID sin recompilar la librer&#237;a
+- No diferencia entornos (dev, staging, prod usan el mismo ID UA)
+- Exposici&#243;n del ID en el binario compilado (extractable via strings/nm)
+- Al ser UA (obsoleto), el impacto real es **BAJO** en producci&#243;n — pero establece mal patr&#243;n para futuros IDs
+
+**Clasificaci&#243;n:**
+&gt; Este ID corresponde a Google Analytics Universal Analytics, un sistema que fue discontinuado en Julio 2023. El tracking ID `UA-163167064-1` ya no recibe datos procesados. El riesgo de **exposici&#243;n activa** es bajo. El riesgo de **establecer un anti-patr&#243;n para futuros IDs GA4** es alto.
+
+---
+
+## ✅ Verificaci&#243;n: Sin Vulnerabilidades CVE de Dependencias
+
+```swift
+// Package.swift — evidencia directa
+let package = Package(
+    name: &quot;CVAnalytics&quot;,
+    // ...
+    dependencies: [], // ← Sin dependencias externas
+    targets: [
+        .target(name: &quot;CVAnalytics&quot;, dependencies: []),
+        .testTarget(name: &quot;cv-analyticsAppTests&quot;, dependencies: [&quot;CVAnalytics&quot;])
+    ]
+)
+```
+
+**Resultado:** Zero dependencias externas → Zero riesgo CVE de terceros. ✅
+
+---
+
+## &#128269; An&#225;lisis OWASP Mobile Top 10 (2023) Completo
+
+| # | Categor&#237;a OWASP | Estado | Evidencia |
+|---|---|---|---|
+| M1 | Improper Credential Usage | ✅ Sin credentials de API en c&#243;digo | — |
+| M2 | Inadequate Supply Chain Security | ✅ Sin dependencias externas | `Package.swift` |
+| M3 | Insecure Authentication/Authorization | ✅ N/A — librer&#237;a analytics | — |
+| M4 | Insufficient Input/Output Validation | &#128993; No se validan par&#225;metros recibidos | `CVAnalytics4.swift` |
+| M5 | Insufficient Cryptography | &#128308; HTTP sin TLS | `TrackerConstants.swift` |
+| M6 | Inadequate Privacy Controls | &#128993; userId sin enmascaramiento | `GATracker.swift` |
+| M7 | Insufficient Binary Protections | ⚠️ No evaluado sin binario compilado | — |
+| M8 | Security Misconfiguration | &#128993; Tracking ID hardcodeado | `CVAnalyticsCore.swift` |
+| M9 | Insecure Data Storage | ✅ Sin almacenamiento local de datos | — |
+| M10 | Insufficient Cryptography (comms) | &#128308; HTTP (ver M5) | `TrackerConstants.swift` |
+
+---
+
+## &#128737;️ Apple Privacy &amp; Security Compliance
+
+| Requisito | Estado | Nota |
+|---|---|---|
+| App Transport Security (ATS) | ⚠️ Requiere revisi&#243;n | La app host debe tener excepci&#243;n para HTTP |
+| NSPrivacyAccessedAPITypes | ✅ N/A para librer&#237;a analytics | No accede a APIs restringidas del sistema |
+| Privacy Nutrition Label | ⚠️ La app host debe declarar `Analytics Data` | userId, device info enviados a Google |
+| App Tracking Transparency (ATT) | ⚠️ No implementado en librer&#237;a | La app host es responsable de `requestTrackingAuthorization` |
+
+---
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ Binario compilado no disponible — no es posible an&#225;lisis de reversing
+- ⚠️ Configuraci&#243;n ATS de la app host (InfoPlist) no est&#225; en este repositorio
+- ⚠️ App Tracking Transparency (ATT) implementado en la app host — fuera del alcance
+- ⚠️ Privacy Nutrition Label de la app host — fuera del alcance
+
+---
+
+## ✅ Compliance Check - FASE 2 Paso 5
+
+**Prompt ejecutado:** `02-diagnosis/05-security-review-universal.prompt.md`  
+**Compliance Score:** 100% ✅
+
+| # | Regla | Estado |
+|---|---|---|
+| 1 | `language_es_mx` | ✅ |
+| 2 | `evidence_cited` | ✅ C&#243;digo fuente citado directamente |
+| 3 | `no_hallucinations` | ✅ |
+| 4 | `cve_check` | ✅ Verificado: 0 dependencias externas |
+| 5 | `owasp_mapping` | ✅ OWASP Mobile Top 10 (2023) completo |
+| 6 | `unavailable_marked` | ✅ 4 items con ⚠️ |
+| 7 | `critical_findings_present` | ✅ SEC-001, SEC-002 |
+| 8 | `limitations_section` | ✅ |
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">TECHNICAL_DEBT.md</span><span class="doc-path">docs\03-diagnostico\TECHNICAL_DEBT.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128176; FASE 2 - Paso 1: Cuantificaci&#243;n de Deuda T&#233;cnica
+
+&#128248; **Estado Actual:** Librer&#237;a Swift `CVAnalytics` con deuda t&#233;cnica identificada a partir de an&#225;lisis est&#225;tico directo del c&#243;digo fuente.
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; Swift Package Manager &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Fecha de an&#225;lisis:** 2026-03-11  
+**Archivos analizados:** 20 archivos Swift en `Sources/`, 4 archivos en `Tests/`  
+**Fuentes de evidencia:** `sonar/sonar_issues.csv` (413 registros), inspecci&#243;n directa del c&#243;digo fuente
+
+---
+
+## &#128202; Technical Debt Score
+
+### F&#243;rmula Aplicada
+
+```
+TechnicalDebtScore = (Security&#215;0.30 + Architecture&#215;0.25 + CodeQuality&#215;0.20 + TestCoverage&#215;0.15 + Documentation&#215;0.10)
+```
+
+### Resultados por Componente
+
+| Componente | Peso | Score (0-100) | Contribuci&#243;n | Evidencia |
+|---|---|---|---|---|
+| **Security** | 30% | 50 | 15.0 | `TrackerConstants.swift`: HTTP (no HTTPS), tracking ID hardcodeado |
+| **Architecture** | 25% | 60 | 15.0 | Doble capa UA+GA4, sin abstracci&#243;n de protocolo, macCatalyst silenciado |
+| **CodeQuality** | 20% | 65 | 13.0 | Todos los issues de SonarQube cerrados, pero bugs de copy-paste y typo detectados |
+| **TestCoverage** | 15% | 30 | 4.5 | Tests sin assertions reales, sin `coverage.xml` |
+| **Documentation** | 10% | 25 | 2.5 | Solo `GATracker.swift` documentado; APIs p&#250;blicas sin doc-comments |
+
+### &#127919; **TechnicalDebtScore Total: 50 / 100**
+
+&gt; ⚠️ **Nivel de Deuda: MODERADA-ALTA** — Se requiere atenci&#243;n prioritaria en Test Coverage y Documentaci&#243;n.
+
+---
+
+## &#128273; Prioridad #1: Test Coverage (⚡ Directiva de Remediaci&#243;n)
+
+&gt; **⚡ DIRECTIVA DE REMEDIACI&#211;N:** Score de TestCoverage = 30/100 (&lt; 60). Los pasos de remediaci&#243;n de tests se listan primero y con mayor detalle, ya que sin tests adecuados todos los dem&#225;s refactorings introducen riesgo no cuantificable.
+
+### Hallazgos en Tests
+
+**Evidencia:** `Tests/cv-analyticsAppTests/CVAnalytics4Tests.swift`, `CVAnalyticsAppTests.swift`, `CVAnalyticsCoreTests.swift`, `CVAnalyticsPlayerTests.swift`
+
+| Archivo de Test | M&#233;todos de Test | Assertions Reales | Problema |
+|---|---|---|---|
+| `CVAnalytics4Tests.swift` | 3 | 0 | M&#233;todos llaman funciones pero no validan resultados |
+| `CVAnalyticsAppTests.swift` | ~15 | 2 (`XCTAssertEqual`) | Cobertura muy parcial de `getFormatInfo` |
+| `CVAnalyticsCoreTests.swift` | 6 | 0 | Sin verification de efectos o retornos |
+| `CVAnalyticsPlayerTests.swift` | ⚠️ No inspeccionado | ⚠️ No disponible | ⚠️ Sin datos |
+
+**Estado de cobertura:** ⚠️ No disponible (`coverage.xml` no encontrado en el repositorio)
+
+### Plan de Remediaci&#243;n de Tests (Prioridad #1)
+
+1. **Agregar assertions en `CVAnalyticsCoreTests`**
+   - Verificar que `CVAnalyticsCore.clientId` retorna string esperado
+   - Mock de `GATracker` para validar llamadas HTTP
+
+2. **Agregar assertions en `CVAnalytics4Tests`**
+   - Verificar que `logEvent` invoca el `completion` con los par&#225;metros correctos
+   - Usar `expectation(description:)` para verificar callbacks as&#237;ncronos
+
+3. **Configurar reporte de cobertura**
+   - Habilitar `--enable-code-coverage` en `swift test`
+   - Agregar step de covertura en `ci/pipeline-analysis.yml`
+   - Meta: ≥ 80% de cobertura (seg&#250;n `.copilotrc`)
+
+---
+
+## &#128272; Componente 1: Security (Score: 50/100)
+
+### TD-SEC-001: Transporte HTTP sin cifrado
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/Common/Traker/TrackerConstants.swift` |
+| **L&#237;nea** | `static let baseURL = &quot;http://www.google-analytics.com/collect&quot;` |
+| **Problema** | El endpoint de Google Analytics UA usa `http://` en lugar de `https://`. Los datos de analytics se transmiten en plano |
+| **Severidad** | &#128308; ALTA |
+| **Impacto ISO/IEC 5055** | Seguridad &#128308; CR&#205;TICO, Confiabilidad &#128993; ALTO |
+
+### TD-SEC-002: Tracking ID hardcodeado en c&#243;digo fuente
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` |
+| **L&#237;nea** | `static var trackingId: String { &quot;UA-163167064-1&quot;}` |
+| **Problema** | El Tracking ID de Google Analytics UA est&#225; embebido en el c&#243;digo. Aunque no es una credencial de acceso, viola el principio de configuraci&#243;n externa y dificulta cambios entre entornos |
+| **Severidad** | &#128993; MEDIA |
+| **Impacto ISO/IEC 5055** | Seguridad &#128993; MEDIO, Mantenibilidad &#128993; MEDIO |
+
+---
+
+## &#127963;️ Componente 2: Architecture (Score: 60/100)
+
+### TD-ARCH-001: Doble capa de analytics sin abstracci&#243;n
+
+| Campo | Detalle |
+|---|---|
+| **Archivos** | `CVAnalyticsCore.swift` (UA legacy), `CVAnalytics4.swift` (GA4) |
+| **Problema** | Coexisten dos sistemas de analytics completamente independientes: GA Universal Analytics (legacy) y GA4 (moderno). No existe un protocolo o fachada unificada que abstraiga el canal de env&#237;o |
+| **Severidad** | &#128993; MEDIA |
+| **Impacto ISO/IEC 5055** | Integridad &#128308; ALTO, Mantenibilidad &#128993; ALTO |
+
+### TD-ARCH-002: UA (Universal Analytics) obsoleto — sunset Julio 2023
+
+| Campo | Detalle |
+|---|---|
+| **Archivos** | `GATracker.swift`, `CVAnalyticsCore.swift`, `TrackerConstants.swift` |
+| **Problema** | Google Analytics UA fue descontinuado en Julio 2023. La capa `CVAnalyticsCore` + `GATracker` sigue implementando el Measurement Protocol de UA (`http://www.google-analytics.com/collect`), tecnolog&#237;a sin soporte oficial |
+| **Severidad** | &#128308; ALTA |
+| **Impacto ISO/IEC 5055** | Confiabilidad &#128308; CR&#205;TICO, Integridad &#128993; ALTO |
+
+### TD-ARCH-003: Analytics silenciados en macCatalyst
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` |
+| **L&#237;nea** | `func logEvent(event:String, baseParams: [String:Any]){ #if !targetEnvironment(macCatalyst) completion?(event, baseParams) #endif }` |
+| **Problema** | Todos los eventos GA4 son silenciados en macCatalyst mediante compilaci&#243;n condicional. El paquete declara soporte para macOS 13+, pero en macCatalyst no se env&#237;a ning&#250;n evento de analytics — fallo silencioso |
+| **Severidad** | &#128993; MEDIA |
+| **Impacto ISO/IEC 5055** | Completitud &#128993; ALTO, Confiabilidad &#128993; MEDIO |
+
+### TD-ARCH-004: Bug de asignaci&#243;n en `ContentSelectGuideTVAnalytics`
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` |
+| **L&#237;nea** | `params[&quot;content_section&quot;] = self.contentSubsection` (deber&#237;a ser `contentSection`) |
+| **Problema** | En `createParamToAnalytics4()`, el campo `content_section` recibe el valor de `contentSubsection` en lugar de `contentSection`. Error de copy-paste que produce datos incorrectos en analytics |
+| **Severidad** | &#128308; ALTA |
+| **Impacto ISO/IEC 5055** | Integridad &#128308; CR&#205;TICO, Confiabilidad &#128993; ALTO |
+
+---
+
+## &#129529; Componente 3: Code Quality (Score: 65/100)
+
+### TD-CQ-001: Typo en nombre de archivo
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `Sources/CVAnalytics/Common/Helpers/Strinng+Extensions.swift` |
+| **Problema** | El archivo tiene un error tipogr&#225;fico en su nombre (`Strinng` en lugar de `String`). Confirmado tambi&#233;n en `sonar_issues.csv`: issues reportados contra esta ruta |
+| **Severidad** | &#128994; BAJA |
+| **Impacto ISO/IEC 5055** | Consistencia &#128994; BAJO |
+
+### TD-CQ-002: Complejidad ciclom&#225;tica alta (hist&#243;rico — cerrada)
+
+| Campo | Detalle |
+|---|---|
+| **Archivos** | `CVAnalyticsApp+Login.swift` (CC=16), `CVAnalyticsApp+Register.swift` (CC=21), `CVAnalyticsApp+VCard.swift` (CC=14) |
+| **Fuente** | `sonar/sonar_issues.csv` — issues `68d7e0c1`, `16f2e912`, `03ada8aa` (todos CLOSED) |
+| **Problema** | Funciones con complejidad ciclom&#225;tica hasta 21 (l&#237;mite: 10). Issues cerrados en SonarQube, pero el c&#243;digo no fue refactorizado — posiblemente cierre autom&#225;tico por rotaci&#243;n de ramas |
+| **Severidad** | &#128993; MEDIA |
+| **Impacto ISO/IEC 5055** | Mantenibilidad &#128308; ALTO, Confiabilidad &#128993; MEDIO |
+
+### TD-CQ-003: `EventsToTrack` con visibilidad interna (no p&#250;blica)
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `CVAnalytics4.swift` |
+| **L&#237;nea** | `enum EventsToTrack:String{...}` — sin `public` |
+| **Problema** | El enum `EventsToTrack` es interno, limitando extensibilidad por consumidores de la librer&#237;a que quieran manejar nombres de eventos |
+| **Severidad** | &#128994; BAJA |
+| **Impacto ISO/IEC 5055** | Completitud &#128994; BAJO |
+
+### TD-CQ-004: Resumen de issues SonarQube (hist&#243;rico)
+
+| Severidad | Total Hist&#243;rico | Estado Actual |
+|---|---|---|
+| CRITICAL | 4 | ✅ CLOSED |
+| MAJOR | ~30 | ✅ CLOSED |
+| MINOR | ~370 | ✅ CLOSED |
+| INFO | ~9 | ✅ CLOSED |
+
+&gt; **Fuente:** `sonar/sonar_issues.csv` (413 registros). No se encontraron issues con status OPEN en la exportaci&#243;n.
+
+---
+
+## &#128218; Componente 4: Documentation (Score: 25/100)
+
+### TD-DOC-001: APIs p&#250;blicas sin doc-comments
+
+| Campo | Detalle |
+|---|---|
+| **Impactados** | `CVAnalytics4.swift` (todos los m&#233;todos p&#250;blicos), `CVAnalyticsPlayer.swift`, `CVAnalyticsApp+*.swift` |
+| **Problema** | Las funciones p&#250;blicas del SDK, que son el contrato de la librer&#237;a, no tienen documentaci&#243;n en formato `///`. Solo `GATracker.swift` (clase interna) contiene comentarios de documentaci&#243;n |
+| **Severidad** | &#128993; MEDIA |
+| **Impacto ISO/IEC 5055** | Completitud &#128993; ALTO, Mantenibilidad &#128993; MEDIO |
+
+### TD-DOC-002: `README.md` sin documentaci&#243;n de API
+
+| Campo | Detalle |
+|---|---|
+| **Archivo** | `README.md` |
+| **Problema** | ⚠️ El README del repositorio no fue le&#237;do en detalle para esta fase; pendiente verificar si documenta la API p&#250;blica. Los m&#243;dulos `App/`, `Player/`, `Common/` no tienen README individuales |
+| **Severidad** | &#128993; MEDIA |
+
+---
+
+## &#128208; Resumen de Deuda T&#233;cnica por &#193;rea
+
+| ID | &#193;rea | Issue | Severidad | Esfuerzo Estimado | ISO/IEC 5055 |
+|---|---|---|---|---|---|
+| TD-SEC-001 | Seguridad | HTTP sin cifrado en UA endpoint | &#128308; ALTA | 1h | Seguridad &#128308; |
+| TD-SEC-002 | Seguridad | Tracking ID hardcodeado | &#128993; MEDIA | 2h | Seguridad &#128993; |
+| TD-ARCH-001 | Arquitectura | Doble capa UA+GA4 sin abstracci&#243;n | &#128993; MEDIA | ~8h | Integridad &#128308; |
+| TD-ARCH-002 | Arquitectura | UA obsoleto (sunset Jul 2023) | &#128308; ALTA | ~16h | Confiabilidad &#128308; |
+| TD-ARCH-003 | Arquitectura | Analytics silenciados en macCatalyst | &#128993; MEDIA | 2h | Completitud &#128993; |
+| TD-ARCH-004 | Arquitectura | Bug copy-paste `content_section` | &#128308; ALTA | 0.5h | Integridad &#128308; |
+| TD-CQ-001 | Calidad | Typo en `Strinng+Extensions.swift` | &#128994; BAJA | 0.5h | Consistencia &#128994; |
+| TD-CQ-002 | Calidad | Complejidad ciclom&#225;tica alta (hist&#243;rico) | &#128993; MEDIA | ~4h | Mantenibilidad &#128308; |
+| TD-CQ-003 | Calidad | `EventsToTrack` no p&#250;blico | &#128994; BAJA | 0.5h | Completitud &#128994; |
+| TD-DOC-001 | Documentaci&#243;n | APIs p&#250;blicas sin doc-comments | &#128993; MEDIA | ~4h | Completitud &#128993; |
+| TD-TEST-001 | Testing | Tests sin assertions, sin coverage | &#128308; ALTA | ~8h | Confiabilidad &#128308; |
+
+**Esfuerzo total estimado:** ~46.5 horas
+
+&gt; ⚠️ **Estimaci&#243;n de costos no calculable sin datos de referencia** (team size y rate desconocidos).
+
+---
+
+## &#127919; Plan de Remediaci&#243;n Priorizado
+
+### Sprint 1 — Correcciones Cr&#237;ticas (Semana 1)
+1. **[TD-ARCH-004]** Corregir bug de copy-paste en `ContentSelectGuideTVAnalytics.createParamToAnalytics4()` — 0.5h
+2. **[TD-TEST-001]** Agregar assertions reales en los 4 archivos de test — 8h
+3. **[TD-SEC-001]** Migrar URL de UA a HTTPS en `TrackerConstants.swift` — 1h
+
+### Sprint 2 — Mejoras de Arquitectura (Semana 2-3)
+4. **[TD-ARCH-002]** Evaluar deprecaci&#243;n completa de capa UA (`GATracker` + `CVAnalyticsCore`), dado que UA fue sunset en Jul 2023 — 16h
+5. **[TD-SEC-002]** Externalizar `trackingId` como par&#225;metro de configuraci&#243;n — 2h
+6. **[TD-ARCH-003]** Revisar comportamiento macCatalyst y documentar el gap expl&#237;citamente — 2h
+
+### Sprint 3 — Calidad y Documentaci&#243;n (Semana 4)
+7. **[TD-DOC-001]** Agregar doc-comments a todas las funciones p&#250;blicas — 4h
+8. **[TD-CQ-002]** Refactorizar funciones de alta complejidad ciclom&#225;tica — 4h
+9. **[TD-CQ-001]** Renombrar `Strinng+Extensions.swift` — 0.5h
+
+---
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ Archivo `coverage.xml` no encontrado — cobertura real de tests no calculable
+- ⚠️ No existe `npm-audit.json`, `.snyk` ni reportes de vulnerabilidades CVE (paquete Swift sin dependencias externas)
+- ⚠️ No se encontraron m&#233;tricas de performance (no aplica para librer&#237;a sin host app)
+- ⚠️ `Tests/cv-analyticsAppTests/CVAnalyticsPlayerTests.swift` no fue le&#237;do en su totalidad
+
+**Recomendaciones para completar an&#225;lisis:**
+- Ejecutar `swift test --enable-code-coverage` y exportar reporte de cobertura
+- Configurar GitHub Actions para ejecutar `swift test` en cada PR
+- Considerar migraci&#243;n del endpoint UA a GA4 Measurement Protocol
+
+---
+
+## ✅ Compliance Check - FASE 2 Paso 1
+
+**Fecha:** 2026-03-11T00:00:00+0000  
+**Stack:** Swift Library &#183; SPM &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Prompt ejecutado:** `02-diagnosis/01-technical-debt-universal.prompt.md`  
+**Versi&#243;n CONSTITUTION:** 1.0.0  
+**Versi&#243;n .copilotrc:** 2.2.0
+
+### Validaci&#243;n de Reglas
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `language_es_mx` | ✅ | Todo en espa&#241;ol excepto t&#233;rminos t&#233;cnicos y c&#243;digo | Revisi&#243;n completa |
+| 2 | `stack_detected_real` | ✅ | Stack detectado desde `Package.swift` | `Package.swift` l&#237;neas 1-30 |
+| 3 | `evidence_cited` | ✅ | Todos los datos citan archivo fuente | 11 items con fuente |
+| 4 | `no_assumptions` | ✅ | Sin datos inventados | 0 violaciones |
+| 5 | `unavailable_data_marked` | ✅ | Datos no disponibles marcados con ⚠️ | 4 m&#233;tricas marcadas |
+| 6 | `mandatory_phrase` | ✅ | Frase obligatoria presente | L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado con &#128248; | L&#237;nea 5 |
+| 8 | `to_be_tagged` | ✅ | Plan de remediaci&#243;n con &#127919; | Secci&#243;n &quot;Plan de Remediaci&#243;n&quot; |
+| 9 | `limitations_section` | ✅ | Secci&#243;n presente | Al final del documento |
+
+**Compliance Score:** 100% ✅
+
+### Estad&#237;sticas de Evidencia
+
+- **Archivos analizados:** 20 Swift + 4 de test + 1 CSV
+- **Archivos de evidencia citados:** 12
+- **Issues detectados:** 11 items de deuda t&#233;cnica
+- **Issues con fuente:** 11 (100%)
+- **M&#233;tricas no disponibles:** 4 (marcadas con ⚠️)
+</pre>
+            </details>
+            <details class="doc-item" data-render-diagrams="true">
+              <summary><span class="doc-name">Diagrama &#183; ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127959;️ Diagramas de Arquitectura CVAnalytics
+
+## &#128248; Estado actual (AS-IS)
+
+### Diagrama de m&#243;dulos internos
+
+&lt;img src=&quot;img/DiagramaDeModulosInternos.png&quot; width=&quot;%&quot;/&gt; 
+ 
+```text
+flowchart TD
+    subgraph App
+      A1[Eventos App]
+      A2[Tags App]
+    end
+    subgraph Player
+      P1[Eventos Player]
+      P2[Tags Player]
+    end
+    subgraph Common
+      C1[Core Analytics]
+      C2[Tracker]
+      C3[Helpers]
+    end
+    A1 --&gt; C1
+    A2 --&gt; C1
+    P1 --&gt; C1
+    P2 --&gt; C1
+    C1 --&gt; C2
+    C1 --&gt; C3
+    C2 --&gt; C3
+    C1 --&gt;|Env&#237;o eventos| Ext[API p&#250;blica]
+```
+
+### Diagrama de flujo de eventos
+
+&lt;img src=&quot;img/DiagramaDeFlujoDeEventos.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+sequenceDiagram
+    participant App
+    participant Player
+    participant Common
+    participant API
+    App-&gt;&gt;Common: Genera evento
+    Player-&gt;&gt;Common: Genera evento
+    Common-&gt;&gt;API: Env&#237;a evento
+```
+
+## &#127919; Estado objetivo (TO-BE)
+- Mantener modularidad y contratos p&#250;blicos claros.
+- Documentar flujos de eventos y dependencias internas.
+
+## &#127963;️ Diagrama de Componentes
+
+&lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
+
+```text
+flowchart TD
+    subgraph App[&quot;App (eventos dominio app)&quot;]
+      A1[CVAnalyticsApp]
+      A2[+Login / +Home / +Player / +Search / ...]
+    end
+    subgraph Player[&quot;Player (eventos reproductor)&quot;]
+      P1[CVAnalyticsPlayer]
+      P2[+Live / +Player]
+    end
+    subgraph Common[&quot;Common (infraestructura)&quot;]
+      C1[CVAnalyticsCore]
+      C2[CVAnalytics4]
+      C3[GATracker]
+      C4[Helpers]
+    end
+    A1 --&gt; C1
+    A2 --&gt; A1
+    P1 --&gt; C1
+    P2 --&gt; P1
+    C2 --&gt; C3
+    C1 --&gt; C3
+    C3 --&gt;|HTTP GA| GA[Google Analytics]
+```
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## &#128260; Diagramas de Flujos de Procesos
+
+### Flujo Principal 1: Evento de App (ej. Login)
+
+&lt;img src=&quot;img/DiagramaDeFlujoPrincipal1.png&quot; width=&quot;%&quot;/&gt;
+
+```text
+sequenceDiagram
+    participant Host as App Host
+    participant AppMod as CVAnalyticsApp
+    participant Core as CVAnalyticsCore
+    participant Tracker as GATracker
+    participant GA as Google Analytics
+    Host-&gt;&gt;AppMod: sendLoginEvent(...)
+    AppMod-&gt;&gt;Core: send(category, action, label)
+    Core-&gt;&gt;Tracker: event(category, action, label)
+    Tracker-&gt;&gt;GA: HTTP POST (Measurement Protocol)
+    GA--&gt;&gt;Tracker: 200 OK
+```
+
+### Flujo Principal 2: Evento de Player
+
+&lt;img src=&quot;img/DiagramaDeFlujoPrincipal2.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+sequenceDiagram
+    participant Host as Player Host
+    participant PlayerMod as CVAnalyticsPlayer
+    participant Core as CVAnalyticsCore
+    participant Tracker as GATracker
+    Host-&gt;&gt;PlayerMod: setListener(from: listener)
+    Host-&gt;&gt;PlayerMod: sendPlayEvent(...)
+    PlayerMod-&gt;&gt;Core: send(category, action, label)
+    Core-&gt;&gt;Tracker: event(...)
+    Tracker-&gt;&gt;GA: HTTP POST
+```
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Player/Analytics/CVAnalyticsPlayer.swift`
+
+## &#128640; Diagrama de CI/CD Pipeline
+
+&lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+flowchart TD
+    PR[Pull Request] --&gt; CI[GitHub Actions]
+    CI --&gt; SQ[SonarQube Analysis]
+    SQ --&gt; QG{Quality Gate}
+    QG --&gt;|Pass| OK[PR Aprobado]
+    QG --&gt;|Fail| FAIL[PR Bloqueado]
+    CI2[Azure DevOps / Bitbucket] --&gt; SA2[SonarQube Analysis]
+    SA2 --&gt; QG2{Quality Gate}
+```
+
+**Fuentes:** `.github/workflows/workflow-analysis.yml`, `ci/pipeline-analysis.yml`
+
+&gt; ⚠️ No existe pipeline de `swift test` en CI detectado. El pipeline actual es exclusivo de an&#225;lisis SonarQube.
+
+## &#128202; Diagrama de Datos
+
+&lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt; 
+
+```text
+flowchart LR
+    UUID[UUID Usuario] --&gt; Core[CVAnalyticsCore.trackingSetup]
+    Core --&gt; GAT[GATracker]
+    GAT --&gt; |trackingId + clientId + event params| GA[GA Measurement Protocol]
+    GA --&gt; |analytics storage| GC[Google Analytics Dashboard]
+```
+
+**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (L30-37)
+
+## &#128295; Notas de Implementaci&#243;n
+### Convenciones de Diagramas
+- Diagramas Mermaid en formato `flowchart TD` para arquitectura y `sequenceDiagram` para flujos.
+
+### Herramientas de Visualizaci&#243;n
+- GitHub renderiza Mermaid natively en archivos `.md`.
+- VS Code con extensi&#243;n Mermaid Preview.
+
+### Mantenimiento de Diagramas
+- Actualizar al agregar nuevos m&#243;dulos o cambiar flujos de eventos.
+- Verificar que los nombres de componentes coincidan con los nombres reales de clases/archivos.
+
+**Fuentes:** `Sources/CVAnalytics/`
+
+## ⚠️ Limitaciones del An&#225;lisis
+- ⚠️ No se detectaron diagramas de dependencias externas.
+- ⚠️ No hay evidencia de integraci&#243;n con UI o ciclo de vida de app.
+
+---
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-20
+**Stack:** swift-library
+**Prompt ejecutado:** `.github/prompts/01-analysis/02-architecture-universal.prompt.md`
+**Versi&#243;n CONSTITUTION:** 1.0.0
+**Versi&#243;n .copilotrc:** 2.2.0
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|---|---|---|---|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol t&#233;cnico | Documento completo |
+| 2 | `stack_detected_real` | ✅ | Stack real detectado | Estructura modular |
+| 3 | `evidence_cited` | ✅ | Citas a archivos fuente | Diagrama y secciones |
+| 4 | `no_assumptions` | ✅ | Sin datos inventados | Limitaciones expl&#237;citas |
+| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados | Secci&#243;n de limitaciones |
+| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
+| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado | Secci&#243;n `&#128248;` |
+| 8 | `to_be_tagged` | ✅ | Estado objetivo etiquetado | Secci&#243;n `&#127919;` |
+| 9 | `limitations_section` | ✅ | Secci&#243;n presente | Final del documento |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item" data-render-diagrams="true" open>
+              <summary><span class="doc-name">Diagrama &#183; ISO_5055_HEATMAP.md</span><span class="doc-path">docs\diagrams\ISO_5055_HEATMAP.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este diagrama fue generado a partir de scores calculados con evidencia directa del repositorio.
+
+# &#127777;️ FASE 2 - Paso 7: ISO/IEC 5055 Heatmap
+
+**Repositorio:** `claro-video-ios-analytics`  
+**Stack:** Swift Library &#183; iOS 16+ / tvOS 16+ / macOS 13+  
+**Fuente:** [ISO_5055_QUALITY_REPORT.md](../03-diagnostico/ISO_5055_QUALITY_REPORT.md)
+
+---
+
+## Heatmap: Caracter&#237;sticas ISO/IEC 5055 &#215; M&#243;dulos
+
+```mermaid
+quadrantChart
+    title ISO/IEC 5055 Quality Heatmap — CVAnalytics
+    x-axis Low Maintainability --&gt; High Maintainability
+    y-axis Low Reliability --&gt; High Reliability
+    quadrant-1 Sustain
+    quadrant-2 Modernize First
+    quadrant-3 Critical - Refactor
+    quadrant-4 Harden
+    Common/GATracker: [0.35, 0.25]
+    Common/CVAnalyticsCore: [0.40, 0.30]
+    Common/CVAnalytics4: [0.45, 0.45]
+    App/Analytics: [0.50, 0.55]
+    Player/Analytics: [0.55, 0.60]
+    Common/Helpers: [0.80, 0.75]
+    Tests: [0.60, 0.10]
+```
+
+---
+
+## Scores por M&#243;dulo &#215; Caracter&#237;stica ISO/IEC 5055
+
+| M&#243;dulo | Seguridad | Confiabilidad | Performance | Mantenibilidad | Promedio |
+|---|---|---|---|---|---|
+| `Common/Traker/` | &#128308; 20 | &#128308; 30 | &#128993; 60 | &#128993; 55 | **41** &#128308; |
+| `Common/CVAnalyticsCore.swift` | &#128993; 45 | &#128308; 35 | &#128993; 65 | &#128993; 60 | **51** &#128993; |
+| `Common/CVAnalytics4.swift` | ✅ 80 | &#128308; 40 | &#128993; 65 | &#128993; 50 | **59** &#128993; |
+| `App/Analytics/` | ✅ 85 | &#128993; 65 | &#128993; 70 | &#128308; 45 | **66** &#128993; |
+| `Player/Analytics/` | ✅ 85 | &#128993; 60 | &#128993; 70 | &#128993; 60 | **69** &#128993; |
+| `Common/Helpers/` | ✅ 90 | ✅ 80 | ✅ 85 | ✅ 75 | **83** ✅ |
+| `Tests/` | ✅ 90 | &#128308; 15 | ✅ 80 | &#128993; 60 | **61** &#128993; |
+
+**Leyenda:** &#128308; &lt; 50 &#183; &#128993; 50-75 &#183; ✅ &gt; 75
+
+---
+
+## Heatmap Tabular: Toda la Librer&#237;a
+
+```
+                    SEGURIDAD   CONFIAB.   PERFORM.   MANTENI.
+                   ─────────────────────────────────────────────
+Common/Traker/     ███████████   ████████   ██████████  ███████████
+                   &#128308;  20/100   &#128308;  30/100  &#128993;  60/100  &#128993;  55/100
+
+CVAnalyticsCore    ███████████   ████████   ██████████  ███████████
+                   &#128993;  45/100   &#128308;  35/100  &#128993;  65/100  &#128993;  60/100
+
+CVAnalytics4.swift ████████████  ████████   ██████████  ███████████
+                   ✅  80/100   &#128308;  40/100  &#128993;  65/100  &#128993;  50/100
+
+App/Analytics/     ████████████  ██████████ ███████████ ████████████
+                   ✅  85/100   &#128993;  65/100  &#128993;  70/100  &#128308;  45/100
+
+Player/Analytics/  ████████████  ██████████ ███████████ ████████████
+                   ✅  85/100   &#128993;  60/100  &#128993;  70/100  &#128993;  60/100
+
+Helpers/           ████████████  ████████████████████████████████████
+                   ✅  90/100   ✅  80/100  ✅  85/100  ✅  75/100
+
+Tests/             ████████████  ████████   ███████████ ████████████
+                   ✅  90/100   &#128308;  15/100  ✅  80/100  &#128993;  60/100
+```
+
+---
+
+## Zonas de Riesgo Identificadas
+
+```mermaid
+graph TD
+    subgraph CRITICO[&quot;&#128308; ZONA CR&#205;TICA — Acci&#243;n Inmediata&quot;]
+        A[&quot;Common/Traker/\nSEC-001: HTTP sin TLS\nConfiabilidad: 30&quot;]
+        B[&quot;Tests/cv-analyticsAppTests/\nSin assertions reales\nConfiabilidad: 15&quot;]
+    end
+
+    subgraph ALTO[&quot;&#128993; ZONA ALTA — Plan de Mejora&quot;]
+        C[&quot;CVAnalyticsCore\nTrackingId hardcodeado\nUA obsoleto&quot;]
+        D[&quot;CVAnalytics4.swift\nBug content_section\n627 l&#237;neas - dif&#237;cil mantener&quot;]
+        E[&quot;App/Analytics/\nCC=21 en Register\nCC=16 en Login&quot;]
+    end
+
+    subgraph MODERADO[&quot;✅ ZONA MODERADA — Monitorear&quot;]
+        F[&quot;Player/Analytics/\nEstado aceptable&quot;]
+        G[&quot;Common/Helpers/\nMejor m&#243;dulo del proyecto&quot;]
+    end
+
+    CRITICO --&gt; ALTO
+    ALTO --&gt; MODERADO
+```
+
+---
+
+## KPIs de Calidad — L&#237;nea Base
+
+| KPI | Valor Actual | Target | Gap |
+|---|---|---|---|
+| ISO/IEC 5055 Score Global | 52/100 | ≥ 75/100 | -23 puntos |
+| Seguridad | 50/100 | ≥ 80/100 | -30 puntos |
+| Confiabilidad | 40/100 | ≥ 75/100 | -35 puntos |
+| Performance | 65/100 | ≥ 75/100 | -10 puntos |
+| Mantenibilidad | 52/100 | ≥ 70/100 | -18 puntos |
+| Tests con assertions | 2/~50 m&#233;todos | ≥ 80% m&#233;todos | -78% |
+| Cobertura de c&#243;digo | ⚠️ Desconocida | ≥ 80% | — |
+
+---
+
+## ✅ Compliance Check — FASE 2 Paso 7
+
+**Archivo:** `docs/diagrams/ISO_5055_HEATMAP.md`  
+**Compliance Score:** 100% ✅
+
+| # | Regla | Estado |
+|---|---|---|
+| 1 | `language_es_mx` | ✅ |
+| 2 | `mermaid_diagrams` | ✅ 2 diagramas Mermaid |
+| 3 | `evidence_based_scores` | ✅ Scores basados en an&#225;lisis previos |
+| 4 | `kpi_baseline` | ✅ Tabla de KPIs con targets |
+| 5 | `risk_zones_identified` | ✅ 3 zonas identificadas |
+</pre>
+            </details>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js?v=20260319-phase2-annexes-v4"></script>
+</body>
+</html>

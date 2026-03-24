@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Documento Consolidado | 20 Repositorios</title>
-    <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
+    <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css?v=20260319-phase2-forcegreen-v4">
 </head>
 <body class="dashboard-page">
   <div class="shell">
@@ -18,12 +18,14 @@
         </div>
         <h1>🎯 Proceso integral de remediación tecnológica</h1>
         <p class="hero-subtitle">Claro Video - 20 Repositorios Prioritarios</p>
-        <p class="hero-mainline">Analisis FASE 1 + FASE 1.5 - Value Strem Spect</p>
+        <p class="hero-mainline">Análisis FASE 1 + FASE 1.5 - Value Stream Spec</p>
         <div class="meta">
-          <span class="chip">Fecha: 2026-02-25</span>
-          <span class="chip">Versión: v1.0</span>
+          <span class="chip">Fecha: 2026-03-18</span>
+          <span class="chip">Versión: v1.1</span>
           <span class="chip">Audiencia: Dirección y Líderes Técnicos</span>
-          <span class="chip">FASE 1.5: Value Strem Spect</span>
+          <span class="chip">FASE 1.5: Value Stream Spec</span>
+          <a class="chip" href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html">Abrir FASE 2</a>
+          <a class="chip" href="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.html">Abrir roadmap ejecutivo</a>
         </div>
       </div>
       <table class="hero-table" aria-label="Resumen principal de la portada">
@@ -40,9 +42,30 @@
             <td>Artefactos generados</td>
             <td>361 documentos técnicos verificados (20 repositorios)</td>
           </tr>
+          <tr>
+            <td>Diagnóstico FASE 2</td>
+            <td><a href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html">Abrir single page dedicada en verde</a></td>
+          </tr>
+          <tr>
+            <td>Roadmap Ejecutivo</td>
+            <td><a href="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.html">Abrir SPA de remediación por stack, VSS y sprints</a></td>
+          </tr>
         </tbody>
       </table>
     </header>
+
+    <div class="phase-switcher reveal" aria-label="Navegación entre fases">
+      <a class="phase-link-card is-current" href="index.html" aria-current="page">
+        <span class="phase-link-kicker">Fase actual</span>
+        <strong>FASE 1 / FASE 1.5</strong>
+        <span>Documentación base y Value Stream Spec en la vista azul principal.</span>
+      </a>
+      <a class="phase-link-card is-next" href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html">
+        <span class="phase-link-kicker">Siguiente fase</span>
+        <strong>FASE 2 · Diagnóstico</strong>
+        <span>Entrar a la single page verde con deuda técnica, riesgos, seguridad e ISO/IEC 5055.</span>
+      </a>
+    </div>
 
     <div class="layout">
       <nav class="toc reveal" aria-label="Índice principal">
@@ -53,7 +76,7 @@
         </div>
         <h2>Índice de Navegación</h2>
         <a href="#resumen">1. Resumen General</a>
-        <a href="#value-strem-spect">1.5 Value Strem Spect (FASE 1.5)</a>
+        <a href="#value-strem-spect">1.5 Value Stream Spec (FASE 1.5)</a>
         <a href="#alcance">2. Metodología</a>
         <a href="#arquitectura">3. Principios de la Metodología</a>
         <a href="#mapa">4. Estado de Salud (Semáforo)</a>
@@ -69,7 +92,7 @@
         <a href="#contenido-docs">Anexo Técnico (Por repositorio)</a>
         <div class="toc-footer">
           <span>20 repositorios</span>
-          <span>20 vistas</span>
+          <span>20 vistas + FASE 2 dedicada</span>
         </div>
       </nav>
 
@@ -108,20 +131,20 @@
         </section>
 
         <section id="value-strem-spect" class="reveal">
-          <h3>1.5 Value Strem Spect (FASE 1.5)</h3>
-          <p>La FASE 1.5 agrega una capa de trazabilidad tecnica sobre la documentacion de inicio. Su objetivo es conectar dominios, componentes, contratos, gaps y superficies de impacto a partir de la evidencia estructurada generada por los desarrolladores.</p>
+          <h3>1.5 Value Stream Spec (FASE 1.5)</h3>
+          <p>La FASE 1.5 agrega una capa de trazabilidad técnica sobre la documentación de inicio. Su objetivo es conectar dominios, componentes, contratos, gaps y superficies de impacto a partir de la evidencia estructurada generada por los desarrolladores.</p>
           <div class="card-grid">
             <article class="mini-card">
-              <h4>Que entrega</h4>
+              <h4>Qué entrega</h4>
               <p>Compliance report, diagramas globales, mapas por dominio, evidencia estructural y superficie de impacto para consultar arquitectura y deuda desde una misma vista.</p>
             </article>
             <article class="mini-card">
               <h4>Alcance actual</h4>
-              <p>Las integraciones visibles hoy cubren los 20 repositorios prioritarios del portafolio. En cada caso se toma la version mas reciente disponible del paquete recibido: <code>new_vss</code>, <code>analysis_v2</code>, <code>Version_v2</code>, la raiz del zip o la variante <code>new</code> cuando existe. El unico caso marcado como parcial es <code>claro-video-aaf-lg-nativa</code>, porque su entrega VSS mas reciente solo incluye <code>AUTH</code>.</p>
+              <p>Las integraciones visibles hoy cubren los 20 repositorios prioritarios del portafolio. En cada caso se toma la versión más reciente disponible del paquete recibido: <code>new_vss</code>, <code>analysis_v2</code>, <code>Version_v2</code>, la raíz del zip o la variante <code>new</code> cuando existe. El único caso marcado como parcial es <code>claro-video-aaf-lg-nativa</code>, porque su entrega VSS más reciente solo incluye <code>AUTH</code>.</p>
             </article>
             <article class="mini-card quick-access-card">
               <h4>Consulta inmediata</h4>
-              <p>Acceso rapido a los repositorios ya integrados en FASE 1.5, con entrada separada a anexo ejecutivo y visor de diagramas.</p>
+              <p>Acceso rápido a los repositorios ya integrados en FASE 1.5, con entrada separada a anexo ejecutivo y visor de diagramas.</p>
               <div class="table-scroll quick-access-table-scroll">
                 <table class="quick-access-table">
                   <thead>
@@ -169,7 +192,7 @@
               <tr>
                 <td><code>VSS_COMPLIANCE_REPORT.md</code></td>
                 <td>Compliance global, cobertura por dominio, gaps y siguientes pasos.</td>
-                <td>Disponible formalmente en <code>claro-video-android-coship</code>. El resto de repositorios integrados se apoyan en <code>INDEX.md</code>, <code>README.md</code>, <code>REPORT_FINAL.md</code>, <code>VALIDATION_*.md</code> o reconstruccion directa desde <code>repo_summary.json</code>, <code>summary.json</code> y <code>SPEC_*.md</code>, segun el formato entregado por cada paquete.</td>
+                <td>Disponible formalmente en <code>claro-video-android-coship</code>. El resto de repositorios integrados se apoyan en <code>INDEX.md</code>, <code>README.md</code>, <code>REPORT_FINAL.md</code>, <code>VALIDATION_*.md</code> o reconstrucción directa desde <code>repo_summary.json</code>, <code>summary.json</code> y <code>SPEC_*.md</code>, según el formato entregado por cada paquete.</td>
               </tr>
               <tr>
                 <td><code>RESUMEN_VSS_GENERADOS.md</code></td>
@@ -178,27 +201,27 @@
               </tr>
               <tr>
                 <td><code>INDEX.md</code></td>
-                <td>Indice consolidado del VSS con dominios, deuda critica, APIs documentadas y siguientes pasos.</td>
+                <td>Índice consolidado del VSS con dominios, deuda crítica, APIs documentadas y siguientes pasos.</td>
                 <td>Disponible hoy en <code>claro-video-ios</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-android-tv</code>, <code>claro-video-aaf-iptv</code> y <code>claro-video-aaf-samsung-nativa</code> como base del anexo ejecutivo y del visor dedicado.</td>
               </tr>
               <tr>
                 <td><code>VALIDATION_REPORT.md</code></td>
-                <td>Validacion final del paquete VSS con dominios agrupados, cobertura MCP y checklist de completitud.</td>
+                <td>Validación final del paquete VSS con dominios agrupados, cobertura MCP y checklist de completitud.</td>
                 <td>Disponible hoy en <code>claro-video-ios-player</code> como base del anexo ejecutivo y del visor dedicado.</td>
               </tr>
               <tr>
                 <td><code>VALIDATION_SUMMARY.md</code></td>
-                <td>Resumen de validacion con dominios generados, discrepancias verificadas contra codigo real y checklist de cumplimiento.</td>
+                <td>Resumen de validación con dominios generados, discrepancias verificadas contra código real y checklist de cumplimiento.</td>
                 <td>Disponible hoy en <code>claro-video-ios-analytics</code> como base del anexo ejecutivo y del visor dedicado.</td>
               </tr>
               <tr>
                 <td><code>README.md</code></td>
-                <td>Consolidado ejecutivo del paquete VSS cuando resume dominios, cobertura MCP, APIs recuperadas y notas de generacion.</td>
+                <td>Consolidado ejecutivo del paquete VSS cuando resume dominios, cobertura MCP, APIs recuperadas y notas de generación.</td>
                 <td>Disponible hoy en <code>claro-video-roku-tv</code> y <code>claro-video-universal-windows-platform</code> como base del anexo ejecutivo y del visor dedicado.</td>
               </tr>
               <tr>
                 <td><code>REPORT_FINAL.md</code></td>
-                <td>Reporte final del paquete VSS cuando resume auditoria, correcciones y estado de cierre por dominio.</td>
+                <td>Reporte final del paquete VSS cuando resume auditoría, correcciones y estado de cierre por dominio.</td>
                 <td>Disponible hoy en <code>claro-video-aaf-ott</code> como base del anexo ejecutivo y del visor dedicado.</td>
               </tr>
               <tr>
@@ -213,7 +236,7 @@
               </tr>
               <tr>
                 <td><code>diagrama_global_claro-video-android-smart-tv.md</code> + <code>impacto_global_claro-video-android-smart-tv.md</code></td>
-                <td>Mapa global e impacto consolidado de <code>claro-video-android-smart-tv</code> sobre Home/Search, TV en vivo, VOD y gestion de cuenta en Android TV.</td>
+                <td>Mapa global e impacto consolidado de <code>claro-video-android-smart-tv</code> sobre Home/Search, TV en vivo, VOD y gestión de cuenta en Android TV.</td>
                 <td>Disponible hoy en el visor dedicado correspondiente del paquete que lo entrega.</td>
               </tr>
               <tr>
@@ -223,7 +246,7 @@
               </tr>
               <tr>
                 <td><code>diagrama_global_claro-video-android-tv.md</code> + <code>impacto_global_claro-video-android-tv.md</code></td>
-                <td>Mapa global e impacto consolidado de <code>claro-video-android-tv</code> sobre autenticacion, busqueda, home, suscripcion, VOD y TV en vivo.</td>
+                <td>Mapa global e impacto consolidado de <code>claro-video-android-tv</code> sobre autenticación, búsqueda, home, suscripción, VOD y TV en vivo.</td>
                 <td>Disponible hoy en el visor dedicado correspondiente del paquete que lo entrega.</td>
               </tr>
               <tr>
@@ -258,17 +281,17 @@
               </tr>
               <tr>
                 <td><code>repo_graph.graphml</code> + <code>repo_evidence_map.json</code></td>
-                <td>Fuente estructural adicional del grafo y evidencia tecnica normalizada.</td>
-                <td>Seccion comparativa dentro de todos los visores dedicados ya integrados en FASE 1.5; la numeracion varia segun el alcance real del paquete.</td>
+                <td>Fuente estructural adicional del grafo y evidencia técnica normalizada.</td>
+                <td>Sección comparativa dentro de todos los visores dedicados ya integrados en FASE 1.5; la numeración varía según el alcance real del paquete.</td>
               </tr>
               <tr>
                 <td>Diagramas por dominio</td>
                 <td>AUTH, SEARCH, VOD, LIVESTREAMING, TIMESHIFT, RECORDED, SUBSCRIPTION, MUSIC, ACNTMGMT y CARROUSEL.</td>
-                <td>Indice del visor dedicado por dominio e impacto en los veinte repositorios del portafolio, ajustado al alcance real de cada paquete.</td>
+                <td>Índice del visor dedicado por dominio e impacto en los veinte repositorios del portafolio, ajustado al alcance real de cada paquete.</td>
               </tr>
             </tbody>
           </table>
-          <p class="quote">Esta capa se presenta como FASE 1.5 porque extiende la documentacion inicial con trazabilidad estructural y mapa de impacto, sin entrar todavia a diagnostico cuantitativo de FASE 2. Hoy ya cubre los 20 repositorios prioritarios; <code>claro-video-aaf-lg-nativa</code> queda explicitamente marcado como integracion parcial.</p>
+          <p class="quote">Esta capa se presenta como FASE 1.5 porque extiende la documentación inicial con trazabilidad estructural y mapa de impacto, sin entrar todavía a diagnóstico cuantitativo de FASE 2. Hoy ya cubre los 20 repositorios prioritarios; <code>claro-video-aaf-lg-nativa</code> queda explícitamente marcado como integración parcial.</p>
         </section>
 
         <section id="alcance" class="reveal">
@@ -713,11 +736,11 @@
           <p><strong>Anti-Alucinacion:</strong> cada prompt incluye reglas que obligan a Copilot a:</p>
           <ul>
             <li>✅ Solo reportar datos verificados desde el código fuente real.</li>
-            <li>✅ Marcar explicitamente con ⚠️ todo dato no disponible.</li>
-            <li>✅ Citar archivo y numero de línea como evidencia de cada hallazgo.</li>
+            <li>✅ Marcar explícitamente con ⚠️ todo dato no disponible.</li>
+            <li>✅ Citar archivo y número de línea como evidencia de cada hallazgo.</li>
             <li>✅ Nunca asumir, estimar ni inventar métricas.</li>
           </ul>
-          <p><strong>Validacion automática (COMPLIANCE GATE):</strong></p>
+          <p><strong>Validación automática (COMPLIANCE GATE):</strong></p>
           <pre>17 artefactos verificados por plataforma:
   ✅ 9 docs en 01-inicio/   ✅ 4 docs en 02-analisis/
   ✅ 1 diagrama             ✅ 2 configs (.copilotrc + copilot.instructions)
@@ -741,13 +764,13 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><strong>FASE 2: Diagnóstico</strong></td>
-                <td>⏳ Pendiente</td>
-                <td>Deuda tecnica, riesgos, calidad, seguridad.</td>
+                <td><a href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html">↗ Página dedicada</a></td>
+                <td>Deuda técnica, riesgos, calidad, seguridad y planes de remediacion en una single page independiente.</td>
               </tr>
               <tr>
                 <td><strong>FASE 3: Acción</strong></td>
                 <td>⏳ Pendiente</td>
-                <td>Refactoring, migracion, CI/CD.</td>
+                <td>Refactoring, migración, CI/CD.</td>
               </tr>
               <tr>
                 <td><strong>FASE 4: Seguimiento</strong></td>
@@ -805,9 +828,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><strong>Trazabilidad</strong></td>
-                <td>Existe linea base, cortes comparables y evidencia versionada</td>
+                <td>Existe línea base, cortes comparables y evidencia versionada</td>
                 <td>Seguimiento parcial o manual, con huecos entre cortes</td>
-                <td>Sin linea base comparable o sin bitacora de avance</td>
+                <td>Sin línea base comparable o sin bitacora de avance</td>
               </tr>
             </tbody>
           </table>
@@ -836,7 +859,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🔴 Secrets hardcoded + ATS deshabilitado</td>
                 <td>🟡 Azure DevOps + SonarCloud, sin pipeline de tests/deploy completo</td>
                 <td>🟡 Trazabilidad incompleta sin <code>Package.resolved</code></td>
-                <td>🔴 Sin baseline historico persistido de coverage por corte</td>
+                <td>🔴 Sin baseline histórico persistido de coverage por corte</td>
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
@@ -847,7 +870,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🔴 Token NewRelic hardcoded + ATS global deshabilitado</td>
                 <td>🟡 CI dual (Azure DevOps + GitHub Actions), sin quality gates persistidos de cobertura/seguridad</td>
                 <td>🟡 SPM definido, pero sin <code>Package.resolved</code> commitado y binarios sin versión trazable</td>
-                <td>🔴 Sin comparativo por corte ni artefactos historicos de pruebas</td>
+                <td>🔴 Sin comparativo por corte ni artefactos históricos de pruebas</td>
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
@@ -880,7 +903,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🟡 <code>trackingId</code> hardcodeado y sin reporte de seguridad automatizado versionado</td>
                 <td>🟡 Pipeline de análisis presente, sin quality gate integral con artefactos persistidos</td>
                 <td>🟢 Sin dependencias de terceros en <code>Package.swift</code></td>
-                <td>🟡 Corte base disponible; falta historico de pruebas/publicacion</td>
+                <td>🟡 Corte base disponible; falta histórico de pruebas/publicacion</td>
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
@@ -1012,7 +1035,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🔴 Riesgo alto por dependencias EOL y CVEs reportados en auditoría base</td>
                 <td>🟡 7 workflows presentes (CI/SonarQube), con madurez parcial y flujos manuales</td>
                 <td>🔴 React/Webpack/Jest/Node en EOL + <code>node-sass</code> deprecado</td>
-                <td>🟡 Corte base y workflows presentes; falta historico de coverage</td>
+                <td>🟡 Corte base y workflows presentes; falta histórico de coverage</td>
                 <td><strong>Testing</strong></td>
               </tr>
               <tr>
@@ -1034,7 +1057,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🔴 Dependencias vulnerables (<code>axios</code>/<code>jsonwebtoken</code>) + CORS abierto y sin rate limiting/validación</td>
                 <td>🟢 CI/CD activo con GitHub Actions + SonarQube y monitoreo New Relic</td>
                 <td>🔴 Deuda en stack/dependencias (Express/Jest/Babel legacy con CVEs conocidos)</td>
-                <td>🟡 Threshold y CI presentes; falta historico versionado de cobertura real</td>
+                <td>🟡 Threshold y CI presentes; falta histórico versionado de cobertura real</td>
                 <td><strong>Dependencias</strong></td>
               </tr>
               <tr>
@@ -1042,7 +1065,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>🟡 <strong>ATENCIÓN</strong></td>
                 <td>🟡 Base MVVM operable con carga legacy (UWP/W81/WP8)</td>
                 <td>🔴 Cobertura no verificable en runner y sin baseline uniforme</td>
-                <td>🟡 Riesgos legacy reportados (<code>http://</code>, material sensible historico)</td>
+                <td>🟡 Riesgos legacy reportados (<code>http://</code>, material sensible histórico)</td>
                 <td>🟡 Quality gate no bloqueante y tooling no homogéneo</td>
                 <td>🟡 Gestion por soluciones/proyectos con inventario pendiente</td>
                 <td>🟡 Corte base FASE 1 disponible; falta seguimiento uniforme multi-target</td>
@@ -1073,14 +1096,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td><strong>Testing</strong></td>
                 <td>✅ Ya existe diagnóstico de brechas y cobertura faltante</td>
-                <td>🔄 Levantar baseline real de pruebas unitarias/integracion</td>
+                <td>🔄 Levantar baseline real de pruebas unitarias/integración</td>
                 <td>⏳ Quality gate bloqueante por cobertura y suites minimas</td>
                 <td>coverage.xml/jacoco/trx versionados por corte</td>
               </tr>
               <tr>
                 <td><strong>Seguridad</strong></td>
                 <td>✅ Hallazgos iniciales identificados (secrets/CVEs/SSL)</td>
-                <td>🔄 Hardening de configuracion y remocion de secretos</td>
+                <td>🔄 Hardening de configuración y remocion de secretos</td>
                 <td>⏳ Escaneos automáticos y politica de cierre</td>
                 <td>Reportes SAST/dependencias + cero secretos hardcoded</td>
               </tr>
@@ -1095,7 +1118,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td><strong>Dependencias</strong></td>
                 <td>✅ Deuda/EOL inicial identificada</td>
                 <td>🔄 Priorizacion de upgrades críticas por riesgo operativo</td>
-                <td>⏳ Consolidacion de stack y remocion de legacy</td>
+                <td>⏳ Consolidación de stack y remoción de legacy</td>
                 <td>Inventario actualizado + lockfiles + matriz de versiones</td>
               </tr>
               <tr>
@@ -1103,11 +1126,11 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>✅ Este semáforo funciona como corte base de referencia</td>
                 <td>🔄 Registrar avances por corte/sprint con responsable</td>
                 <td>⏳ Tendencia historica comparable por dimension</td>
-                <td>Bitacora por corte + semaforo versionado + delta vs corte previo</td>
+                <td>Bitácora por corte + semáforo versionado + delta vs corte previo</td>
               </tr>
             </tbody>
           </table>
-          <p class="quote">Este cronograma convierte el semaforo en un instrumento de seguimiento: <strong>cada corte futuro debe actualizar el estado por dimension, registrar avance real y conservar evidencia comparable contra la linea base actual</strong>.</p>
+          <p class="quote">Este cronograma convierte el semáforo en un instrumento de seguimiento: <strong>cada corte futuro debe actualizar el estado por dimension, registrar avance real y conservar evidencia comparable contra la línea base actual</strong>.</p>
 
           <p><strong>Fuentes de Evidencia (20 repositorios exactos)</strong></p>
           <table>
@@ -1346,24 +1369,24 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <thead>
               <tr>
                 <th>Documento</th>
-                <th>Proposito</th>
+                <th>Propósito</th>
               </tr>
             </thead>
             <tbody>
               <tr><td><code>QUICK_START.md</code></td><td>Setup del ambiente de desarrollo paso a paso.</td></tr>
               <tr><td><code>ARCHITECTURE_GUIDE.md</code></td><td>Arquitectura, patrones y decisiones de diseño.</td></tr>
-              <tr><td><code>BEST_PRACTICES.md</code></td><td>Estandares de codigo y convenciones del equipo.</td></tr>
+              <tr><td><code>BEST_PRACTICES.md</code></td><td>Estándares de código y convenciones del equipo.</td></tr>
               <tr><td><code>DEVELOPMENT_GUIDE.md</code></td><td>Flujo de trabajo: branching, code review, releases.</td></tr>
-              <tr><td><code>CODE_STRUCTURE.md</code></td><td>Navegacion de módulos, carpetas y capas.</td></tr>
-              <tr><td><code>ONBOARDING_GUIDE.md</code></td><td>Plan de incorporacion para nuevos desarrolladores.</td></tr>
-              <tr><td><code>EXECUTIVE_SUMMARY.md</code></td><td>Resumen tecnico del estado actual.</td></tr>
-              <tr><td><code>TROUBLESHOOTING.md</code></td><td>Guia de resolucion de problemas frecuentes.</td></tr>
+              <tr><td><code>CODE_STRUCTURE.md</code></td><td>Navegación de módulos, carpetas y capas.</td></tr>
+              <tr><td><code>ONBOARDING_GUIDE.md</code></td><td>Plan de incorporación para nuevos desarrolladores.</td></tr>
+              <tr><td><code>EXECUTIVE_SUMMARY.md</code></td><td>Resumen técnico del estado actual.</td></tr>
+              <tr><td><code>TROUBLESHOOTING.md</code></td><td>Guía de resolución de problemas frecuentes.</td></tr>
               <tr><td><code>README.md</code></td><td>Índice de documentos y flujo recomendado.</td></tr>
             </tbody>
           </table>
           <p class="quote">Total: 9 documentos de referencia.</p>
 
-          <p><strong>Verificacion en los 20 repositorios solicitados</strong></p>
+          <p><strong>Verificación en los 20 repositorios solicitados</strong></p>
           <table>
             <thead>
               <tr>
@@ -1475,19 +1498,19 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
             </tbody>
           </table>
-          <p><strong>Grupo A.5 - Value Strem Spect <code>new_vss/</code>, <code>analysis_v2/</code> y <code>VSS/GENERATED/</code></strong></p>
+          <p><strong>Grupo A.5 - Value Stream Spec <code>new_vss/</code>, <code>analysis_v2/</code> y <code>VSS/GENERATED/</code></strong></p>
           <table>
             <thead>
               <tr>
                 <th>Artefacto</th>
-                <th>Proposito</th>
+                <th>Propósito</th>
                 <th>Disponibilidad actual</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><code>VSS_COMPLIANCE_REPORT.md</code></td>
-                <td>Resume coverage, compliance, gaps y accion inmediata por dominio.</td>
+                <td>Resume coverage, compliance, gaps y acción inmediata por dominio.</td>
                 <td>Integrado formalmente en <code>claro-video-android-coship</code>. En el resto de repositorios el resumen ejecutivo se toma del consolidado disponible o se reconstruye desde <code>repo_summary.json</code>, <code>summary.json</code> y <code>SPEC_*.md</code>.</td>
               </tr>
               <tr>
@@ -1497,27 +1520,27 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><code>INDEX.md</code></td>
-                <td>Actua como consolidado ejecutivo del paquete cuando no existe un compliance report formal.</td>
+                <td>Actúa como consolidado ejecutivo del paquete cuando no existe un compliance report formal.</td>
                 <td>Integrado en <code>claro-video-ios</code>, <code>claro-video-android-smart-tv</code>, <code>claro-video-android-request-manager</code>, <code>claro-video-android-tv</code>, <code>claro-video-aaf-iptv</code> y <code>claro-video-aaf-samsung-nativa</code>.</td>
               </tr>
               <tr>
                 <td><code>VALIDATION_REPORT.md</code></td>
-                <td>Actua como reporte final del VSS cuando el paquete entrega validacion de dominios, APIs MCP y checklist de cierre.</td>
+                <td>Actúa como reporte final del VSS cuando el paquete entrega validación de dominios, APIs MCP y checklist de cierre.</td>
                 <td>Integrado en <code>claro-video-ios-player</code>.</td>
               </tr>
               <tr>
                 <td><code>VALIDATION_SUMMARY.md</code></td>
-                <td>Actua como consolidado de validacion cuando el paquete entrega discrepancias verificadas, conteo de dominios y tracking dual documentado.</td>
+                <td>Actúa como consolidado de validación cuando el paquete entrega discrepancias verificadas, conteo de dominios y tracking dual documentado.</td>
                 <td>Integrado en <code>claro-video-ios-analytics</code>.</td>
               </tr>
               <tr>
                 <td><code>README.md</code></td>
-                <td>Actua como consolidado ejecutivo del paquete cuando resume dominios, cobertura MCP, APIs recuperadas y notas de generacion.</td>
+                <td>Actúa como consolidado ejecutivo del paquete cuando resume dominios, cobertura MCP, APIs recuperadas y notas de generación.</td>
                 <td>Integrado en <code>claro-video-roku-tv</code> y <code>claro-video-universal-windows-platform</code>.</td>
               </tr>
               <tr>
                 <td><code>REPORT_FINAL.md</code></td>
-                <td>Actua como reporte final del paquete cuando resume auditoria, correcciones y validacion de cierre por dominio.</td>
+                <td>Actúa como reporte final del paquete cuando resume auditoría, correcciones y validación de cierre por dominio.</td>
                 <td>Integrado en <code>claro-video-aaf-ott</code>.</td>
               </tr>
               <tr>
@@ -1533,7 +1556,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td><code>diagrama_vss_*.md</code> + <code>diagrama_impacto_*.md</code></td>
                 <td>Descomponen el repositorio por dominio funcional y foco de deuda.</td>
-                <td>Publicados completos por cada visor dedicado segun la cobertura del paquete: desde 23 secciones en los repos de 10 dominios mas GraphML hasta 5 secciones en <code>claro-video-aaf-lg-nativa</code>, que se presenta como integracion parcial.</td>
+                <td>Publicados completos por cada visor dedicado según la cobertura del paquete: desde 23 secciones en los repos de 10 dominios más GraphML hasta 5 secciones en <code>claro-video-aaf-lg-nativa</code>, que se presenta como integración parcial.</td>
               </tr>
               <tr>
                 <td><code>repo_summary.json</code> + <code>summary.json</code></td>
@@ -1542,12 +1565,12 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><code>repo_graph.graphml</code> + <code>repo_evidence_map.json</code></td>
-                <td>Aportan la fuente estructural cruda y la evidencia tecnica que alimenta el mapa.</td>
-                <td>Render tecnico comparativo agregado en los 20 visores; la numeracion varia segun el alcance del paquete y el numero real de entregables VSS generados.</td>
+                <td>Aportan la fuente estructural cruda y la evidencia técnica que alimenta el mapa.</td>
+                <td>Render técnico comparativo agregado en los 20 visores; la numeración varía según el alcance del paquete y el número real de entregables VSS generados.</td>
               </tr>
             </tbody>
           </table>
-          <p class="quote">FASE 1.5 ya esta disponible en la presentacion para los 20 repositorios prioritarios del portafolio; <code>claro-video-aaf-lg-nativa</code> queda marcado como parcial hasta recibir una entrega VSS completa de sus 10 dominios.</p>
+          <p class="quote">FASE 1.5 ya está disponible en la presentación para los 20 repositorios prioritarios del portafolio; <code>claro-video-aaf-lg-nativa</code> queda marcado como parcial hasta recibir una entrega VSS completa de sus 10 dominios.</p>
         </section>
 
         <section id="matriz" class="reveal">
@@ -1626,9 +1649,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </tbody>
           </table>
 
-          <p><strong>Grupo D - Configuracion de IA</strong></p>
+          <p><strong>Grupo D - Configuración de IA</strong></p>
           <ul>
-            <li><code>.copilotrc</code> - Configuracion de GitHub Copilot para el proyecto.</li>
+            <li><code>.copilotrc</code> - Configuración de GitHub Copilot para el proyecto.</li>
             <li><code>copilot-instructions.md</code> - Instrucciones de contexto para respuestas precisas.</li>
           </ul>
           <table>
@@ -1756,7 +1779,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Stack:</strong> Swift 5.0 · 29 módulos activos · MVVM (28/29) + VIPER (Search) · FairPlay DRM.</li>
             <li><strong>Deuda técnica:</strong> hallazgos críticos en acoplamiento (30+ singletons con ~940+ referencias).</li>
             <li><strong>Issues críticos:</strong> secrets hardcoded y cobertura de tests extremadamente baja (coverage real no medido en CI).</li>
-            <li><strong>Seguridad:</strong> nivel reportado basico/intermedio por hardcoded secrets y configuraciones permissivas (ATS global).</li>
+            <li><strong>Seguridad:</strong> nivel reportado básico/intermedio por hardcoded secrets y configuraciones permissivas (ATS global).</li>
           </ul>
 
           <p><strong>🔴 iOS / tvOS Legacy - Acción Urgente</strong></p>
@@ -1853,7 +1876,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>Stack:</strong> .NET/C# · MVVM · 44 proyectos <code>.csproj</code> · coexistencia UWP/W81/WP8.</li>
             <li><strong>Deuda técnica:</strong> hotspots críticos (ej. <code>SampleDataSource.cs</code> con 10364 LOC), calidad heterogénea y suppressions elevadas.</li>
             <li><strong>Issues críticos:</strong> alto uso de <code>async void</code> (826) y <code>catch</code> vacíos (108) en reportes de analisis.</li>
-            <li><strong>Seguridad/operacion:</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en historico.</li>
+            <li><strong>Seguridad/operación:</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en histórico.</li>
           </ul>
 
           <p class="quote">Base documental: hallazgos extraidos de <code>ANALYSIS_SUMMARY.md</code> de cada uno de los 20 repositorios solicitados.</p>
@@ -1989,7 +2012,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>UX y estabilidad no comparables</td>
               </tr>
               <tr>
-                <td>Sin dashboard unificado de calidad tecnica</td>
+                <td>Sin dashboard unificado de calidad técnica</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
@@ -2010,7 +2033,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
                 <td>⚠️</td>
                 <td>⚠️</td>
                 <td>⚠️</td>
-                <td>Gobernanza tecnica y priorizacion</td>
+                <td>Gobernanza técnica y priorización</td>
               </tr>
             </tbody>
           </table>
@@ -2039,7 +2062,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>iOS Analytics SDK:</strong> 4 suites detectadas, sin reporte de cobertura publicado (<code>coverage.xml</code>/<code>.coverage</code>) ni baseline en CI.</li>
             <li><strong>Android TV STB:</strong> cobertura base con objetivo de mejora, coexistencia Coroutines + RxJava (complejidad operativa).</li>
             <li><strong>Android Request Manager:</strong> sin reportes de coverage (JaCoCo no configurado) y uso de <code>AsyncTask</code> deprecado/removido en API 33.</li>
-            <li><strong>Claro Video Web:</strong> dual router v3/v6 y migracion parcial (<code>App2.js</code>) elevan riesgo de regresion funcional.</li>
+            <li><strong>Claro Video Web:</strong> dual router v3/v6 y migración parcial (<code>App2.js</code>) elevan riesgo de regresion funcional.</li>
             <li><strong>Web Chromecast Receiver:</strong> sin framework de pruebas (<code>npm test</code> falla por definición) y cobertura 0% en el receiver.</li>
             <li><strong>AAF LG Nativa:</strong> sin framework de testing (0% cobertura), lo que incrementa riesgo de regresión en flujo de verificación/redirect.</li>
             <li><strong>AAF Samsung Nativa:</strong> sin framework de testing (0% cobertura) y validación principalmente manual en dispositivo físico.</li>
@@ -2071,7 +2094,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>AAF OTT:</strong> sin secretos hardcoded detectados en rutas auditadas, pero con alto riesgo por dependencias EOL y CVEs reportados en la auditoría base (<code>ANALYSIS_REPORT_ARCHITECTURE.md</code>, <code>ANALYSIS_SUMMARY.md</code>).</li>
             <li><strong>AAF IPTV:</strong> no se reportan secretos hardcoded críticos en FASE 1, pero mantiene riesgo alto por dependencias EOL (React/Webpack/Jest/Babel) y quality gate no bloqueante (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_STACK_DETECTION.md</code>).</li>
             <li><strong>Middleware Claro Musica:</strong> <code>axios 0.19.2</code> (SSRF), <code>jsonwebtoken 8.4.0</code> vulnerable y configuración <code>cors()</code> abierta sin rate limiting/validación de esquema (<code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code>).</li>
-            <li><strong>UWP (Windows/Xbox):</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en historico del repositorio (<code>ANALYSIS_SUMMARY.md</code>).</li>
+            <li><strong>UWP (Windows/Xbox):</strong> evidencia de endpoints <code>http://</code> legacy y material sensible/certificados en histórico del repositorio (<code>ANALYSIS_SUMMARY.md</code>).</li>
           </ul>
           <p class="quote">Posible consecuencia: exposicion de datos, riesgo MITM y mayor superficie de ataque por dependencias vulnerables en produccion.</p>
 
@@ -2096,9 +2119,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <li><strong>AAF OTT:</strong> deuda de modernización por stack React/Webpack/Node/Jest en EOL y migración TypeScript parcial (~8%) sin estrategia integral.</li>
             <li><strong>AAF IPTV:</strong> deuda de modernización por stack React/Webpack/Jest/Babel legacy y God Component de 2371 LOC en <code>src/containers/App/index.jsx</code>.</li>
             <li><strong>Middleware Claro Musica:</strong> deuda de evolución por dependencias legacy en capa HTTP/seguridad y falta de hardening integral (rate limiting + validación de requests).</li>
-            <li><strong>UWP (Windows/Xbox):</strong> complejidad por coexistencia UWP/W81/WP8 y hotspots de gran tamano que incrementan costo de cambio.</li>
+            <li><strong>UWP (Windows/Xbox):</strong> complejidad por coexistencia UWP/W81/WP8 y hotspots de gran tamaño que incrementan costo de cambio.</li>
           </ul>
-          <p class="quote">Posible consecuencia: cada cambio toma mas tiempo, aumenta el riesgo en upgrades y baja la velocidad de entrega del equipo.</p>
+          <p class="quote">Posible consecuencia: cada cambio toma más tiempo, aumenta el riesgo en upgrades y baja la velocidad de entrega del equipo.</p>
 
           <p><strong>Base de evidencia:</strong> <code>ANALYSIS_SUMMARY.md</code>, <code>ANALYSIS_REPORT_ARCHITECTURE.md</code> y <code>ANALYSIS_REPORT_STACK_DETECTION.md</code> de <a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a>, <a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a> y <a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a>.</p>
         </section>
@@ -2115,14 +2138,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             </thead>
             <tbody>
               <tr>
-                <td><strong>FASE 2: Análisis de codigo y diagnóstico</strong></td>
-                <td>Deuda tecnica · Riesgos · Calidad · Seguridad</td>
-                <td>Indice de deuda 0-100 · Matriz de riesgos · CVEs identificados · Auditoria de calidad</td>
+                <td><strong>FASE 2: Análisis de código y diagnóstico</strong></td>
+                <td>Deuda técnica · Riesgos · Calidad · Seguridad</td>
+                <td>Índice de deuda 0-100 · Matriz de riesgos · CVEs identificados · Auditoría de calidad</td>
               </tr>
               <tr>
                 <td><strong>FASE 3: Estrategia y ejecución de la remediacion</strong></td>
                 <td>Refactoring · Migracion · CI/CD</td>
-                <td>Plan de refactoring priorizado · Estrategia de migracion · Pipelines configurados</td>
+                <td>Plan de refactoring priorizado · Estrategia de migración · Pipelines configurados</td>
               </tr>
               <tr>
                 <td><strong>FASE 4: Seguimiento</strong></td>
@@ -2157,8 +2180,8 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td>
-                <td>Validar riesgos P0/P1 (ExoPlayer 2.16.1, jcenter, credenciales/configuracion) y baseline de calidad.</td>
-                <td>Actualizar dependencias criticas, consolidar async model (RxJava -> Coroutines) y habilitar CI/CD con quality gates.</td>
+                <td>Validar riesgos P0/P1 (ExoPlayer 2.16.1, jcenter, credenciales/configuración) y baseline de calidad.</td>
+                <td>Actualizar dependencias críticas, consolidar async model (RxJava -> Coroutines) y habilitar CI/CD con quality gates.</td>
                 <td>KPIs: score de calidad, evolucion de cobertura, vulnerabilidades abiertas/cerradas y tasa de regresion.</td>
               </tr>
               <tr>
@@ -2218,7 +2241,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td>
                 <td>Cuantificar riesgo en dependencias web (Axios/CVEs), unificar routing y validar hardening de secretos de entorno.</td>
-                <td>Actualizar capa HTTP, completar migracion a Router v6, cerrar deuda de componentes legacy y fortalecer quality gates.</td>
+                <td>Actualizar capa HTTP, completar migración a Router v6, cerrar deuda de componentes legacy y fortalecer quality gates.</td>
                 <td>KPIs: vulnerabilidades abiertas/cerradas, estabilidad de pipelines, error rate frontend y cumplimiento de quality gates.</td>
               </tr>
               <tr>
@@ -2259,14 +2282,14 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
               <tr>
                 <td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td>
-                <td>Cuantificar deuda en hotspots, validar riesgos de seguridad legacy (<code>http://</code>, certificados historicos) y homologar calidad por solucion.</td>
-                <td>Reducir <code>async void</code>/<code>catch {}</code>, refactor incremental de hotspots y estrategia explicita para lineas UWP/W81/WP8.</td>
-                <td>KPIs: deuda tecnica por modulo, defectos por release, cumplimiento de quality gate bloqueante y cobertura real en CI.</td>
+                <td>Cuantificar deuda en hotspots, validar riesgos de seguridad legacy (<code>http://</code>, certificados históricos) y homologar calidad por solucion.</td>
+                <td>Reducir <code>async void</code>/<code>catch {}</code>, refactor incremental de hotspots y estrategia explícita para líneas UWP/W81/WP8.</td>
+                <td>KPIs: deuda técnica por módulo, defectos por release, cumplimiento de quality gate bloqueante y cobertura real en CI.</td>
               </tr>
             </tbody>
           </table>
-          <p><strong>⚠️ Limitaciones de FASE 1</strong></p>
-          <p>Datos no disponibles en esta fase, requieren FASE 2 para obtenerse con trazabilidad completa.</p>
+          <p><strong>⚠️ Lo que FASE 1 no resolvia por si sola</strong></p>
+          <p>La capa cuantitativa ya se publica en una single page aparte de FASE 2. En esta página azul se conserva la lectura documental y de trazabilidad de FASE 1 / 1.5; lo pendiente para fases posteriores se concentra en métricas operativas de CI/CD y observabilidad de producción.</p>
           <table>
             <thead>
               <tr>
@@ -2278,8 +2301,8 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
             <tbody>
               <tr>
                 <td>Test coverage</td>
-                <td>Sin <code>coverage.xml</code> en ningun repositorio</td>
-                <td>FASE 2</td>
+                <td>FASE 2 ya entrega baseline o ausencia explícita; la cobertura publicada en CI sigue siendo inconsistente entre repositorios</td>
+                <td>FASE 2 / FASE 3</td>
               </tr>
               <tr>
                 <td>Build times</td>
@@ -2289,22 +2312,22 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td>Crash rate · Active users</td>
                 <td>Sin acceso a métricas de produccion</td>
-                <td>FASE 2</td>
+                <td>FASE 4 / Observabilidad</td>
               </tr>
               <tr>
                 <td>Vulnerabilidades CVE especificas</td>
-                <td>Auditoria de seguridad pendiente</td>
+                <td>Ya disponibles en FASE 2 para los repositorios con evidencia de dependencias y auditoría ejecutada</td>
                 <td>FASE 2</td>
               </tr>
               <tr>
                 <td>Complejidad ciclomatica</td>
-                <td>Sin análisis estático ejecutado</td>
+                <td>Ya estimable en FASE 2 mediante hotspots, SonarQube e ISO/IEC 5055; falta homologación automática continua</td>
                 <td>FASE 2</td>
               </tr>
             </tbody>
           </table>
-          <p class="quote">Recomendación: ejecutar <strong>FASE 2: Análisis de código y diagnóstico</strong> para obtener el análisis completo con datos cuantificables.</p>
-          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code> y reportes de arquitectura/stack de los 20 repositorios solicitados.</p>
+          <p class="quote">Recomendación: consultar la <a href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html">single page dedicada de FASE 2</a> para construir el backlog de FASE 3 por impacto, costo y urgencia.</p>
+          <p class="quote">Base: <code>ANALYSIS_SUMMARY.md</code>, reportes de arquitectura/stack y el paquete normalizado de <code>03-diagnostico/</code> recibido para los 20 repositorios solicitados.</p>
         </section>
         <section id="inversion" class="reveal">
           <h3>11. 💼 Inversión vs. Valor Obtenido</h3>
@@ -2320,10 +2343,10 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <ul>
             <li>📚 Documentación técnica verificada y organizada para onboarding, operación y toma de decisiones.</li>
             <li>✅ Cumplimiento documental validado por repositorio con criterios uniformes.</li>
-            <li>🧾 Base documental amplia en <code>.github/docs</code> y <code>docs/</code> para continuidad operativa y auditoria tecnica.</li>
+            <li>🧾 Base documental amplia en <code>.github/docs</code> y <code>docs/</code> para continuidad operativa y auditoría técnica.</li>
             <li>🔍 Hallazgos priorizados con evidencia trazable en código (archivo + línea) en los reportes de análisis.</li>
             <li>🗺️ Roadmap de acción por repositorio desde <code>ANALYSIS_SUMMARY.md</code>.</li>
-            <li>⚙️ Configuracion de Copilot por repositorio cuando aplica (<code>.copilotrc</code> + <code>copilot-instructions.md</code>).</li>
+            <li>⚙️ Configuración de Copilot por repositorio cuando aplica (<code>.copilotrc</code> + <code>copilot-instructions.md</code>).</li>
             <li>✅ Gate de calidad documental cumplido en 20 de 20 repositorios; sin brechas en Grupos A-E.</li>
           </ul>
         </section>
@@ -2428,7 +2451,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               <tr>
                 <td>Claro Video Web</td>
                 <td>🟡 Sólida (React SPA + SSR parcial)</td>
-                <td>🟡 Moderada-Alta (routing dual y deuda de migracion)</td>
+                <td>🟡 Moderada-Alta (routing dual y deuda de migración)</td>
                 <td>🔴 Crítica (Axios legacy con CVEs activos + hardening pendiente)</td>
                 <td>Actualizar Axios, unificar Router v6 y reforzar seguridad de variables de entorno</td>
               </tr>
@@ -2485,9 +2508,9 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           </table>
 
           <p><strong>La Decision</strong></p>
-          <p class="quote">Se recomienda continuar con la ejecución de <strong>FASE 2: Análisis de código y diagnóstico</strong> para cuantificar la deuda técnica, producir la matriz de riesgos completa y generar un plan de acción priorizado por impacto y costo para cada repositorio.</p>
+          <p class="quote">La recomendación ejecutiva ya cambia a <strong>FASE 3</strong>: usar la salida cuantificada publicada en la <a href="FASE_2_DIAGNOSTICO_20_REPOSITORIOS.html">single page verde de FASE 2</a> para secuenciar remediación, modernización y quality gates por repositorio.</p>
 
-          <p><strong>FASE 2 produce:</strong> Índice de deuda técnica 0-100 · Análisis de seguridad con CVEs identificados · Auditoría de calidad integral · Matriz de riesgos con probabilidad/impacto · Plan de remediación priorizado.</p>
+          <p><strong>FASE 2 ya produjo:</strong> Índice de deuda técnica 0-100 · Análisis de seguridad con CVEs identificados · Auditoría de calidad integral · Matriz de riesgos con probabilidad/impacto · Plan de remediación priorizado.</p>
         </section>
         <section id="prompts-universales" class="reveal">
           <h3>13. 🧠 Prompts Universales Utilizados</h3>
@@ -2536,8 +2559,8 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
           <p><a href="ANEXO_prompts_universales.html">Abrir anexo de prompts universales</a></p>
         </section>
         <section id="contenido-docs" class="reveal">
-          <h3>Anexo Tecnico (Por repositorio): Contenido Completo por Documento</h3>
-          <p class="docs-note">La evidencia por repositorio ahora se separa en archivos HTML independientes para reducir tamano y facilitar mantenimiento. Conteo mostrado: solo entregables obligatorios (17 por repositorio).</p>
+          <h3>Anexo Técnico (Por repositorio): Contenido Completo por Documento</h3>
+          <p class="docs-note">La evidencia por repositorio ahora se separa en archivos HTML independientes para reducir tamaño y facilitar mantenimiento. Conteo mostrado: solo entregables obligatorios (17 por repositorio).</p>
           <table>
             <thead>
               <tr>
@@ -2547,29 +2570,29 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
               </tr>
             </thead>
             <tbody>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-tv-stb.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-smart-tv.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-tv.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-roku-tv.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-coship.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-tvos.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-player.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-services.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-analytics.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-request-manager.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>17</td><td><a href="ANEXO_claro-video-web.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>17</td><td><a href="ANEXO_claro-video-web-chromecast.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-lg-nativa.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-samsung-nativa.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-ott.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-iptv.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>17</td><td><a href="ANEXO_claro-video-middleware-claro-musica.html">Abrir anexo + Value Strem Spect</a></td></tr>
-              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>17</td><td><a href="ANEXO_claro-video-universal-windows-platform.html">Abrir anexo + Value Strem Spect</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv-stb.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv-stb</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-tv-stb.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-smart-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-smart-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-smart-tv.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-tv.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-roku-tv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-roku-tv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-roku-tv.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-coship.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-coship</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-coship.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-tvos.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-tvos</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-tvos.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-player.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-player</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-player.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-services.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-services</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-services.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-ios-analytics.git" target="_blank" rel="noopener noreferrer"><code>claro-video-ios-analytics</code></a></td><td>17</td><td><a href="ANEXO_claro-video-ios-analytics.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-android-request-manager.git" target="_blank" rel="noopener noreferrer"><code>claro-video-android-request-manager</code></a></td><td>17</td><td><a href="ANEXO_claro-video-android-request-manager.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web</code></a></td><td>17</td><td><a href="ANEXO_claro-video-web.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-web-chromecast.git" target="_blank" rel="noopener noreferrer"><code>claro-video-web-chromecast</code></a></td><td>17</td><td><a href="ANEXO_claro-video-web-chromecast.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-lg-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-lg-nativa</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-lg-nativa.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-samsung-nativa.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-samsung-nativa</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-samsung-nativa.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-ott.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-ott</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-ott.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-aaf-iptv.git" target="_blank" rel="noopener noreferrer"><code>claro-video-aaf-iptv</code></a></td><td>17</td><td><a href="ANEXO_claro-video-aaf-iptv.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-middleware-claro-musica.git" target="_blank" rel="noopener noreferrer"><code>claro-video-middleware-claro-musica</code></a></td><td>17</td><td><a href="ANEXO_claro-video-middleware-claro-musica.html">Abrir anexo + Value Stream Spec</a></td></tr>
+              <tr><td><a href="https://github.com/GH-Claro-Video/claro-video-universal-windows-platform.git" target="_blank" rel="noopener noreferrer"><code>claro-video-universal-windows-platform</code></a></td><td>17</td><td><a href="ANEXO_claro-video-universal-windows-platform.html">Abrir anexo + Value Stream Spec</a></td></tr>
             </tbody>
           </table>
-          <p class="quote">Tip: abre cada anexo en una pestana distinta para revisar el detalle tecnico sin sobrecargar el documento principal.</p>
+          <p class="quote">Tip: abre cada anexo en una pestana distinta para revisar el detalle técnico sin sobrecargar el documento principal.</p>
         </section>
         </div>
 
@@ -2580,7 +2603,7 @@ Score 17/17 = 🟢 Proceder | 13-16 = 🟡 Completar | <=12 = 🔴 Reiniciar</pr
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
+    <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js?v=20260319-phase2-forcegreen-v4"></script>
 </body>
 </html>
 
