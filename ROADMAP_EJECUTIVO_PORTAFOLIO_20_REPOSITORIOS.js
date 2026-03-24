@@ -42,6 +42,36 @@
     Dependencias: "Versiones EOL, librerías legacy y riesgo acumulado por actualización pendiente.",
     Trazabilidad: "Documentación, observabilidad y evidencia operativa para seguir cada VSS de punta a punta.",
   };
+  const dimensionEvaluates = {
+    Arquitectura: "Código, arquitectura y acoplamientos que sostienen el flujo.",
+    Testing: "Cobertura, regresión y validación automática de cambios.",
+    Seguridad: "Exposición accidental, accesos, secretos y cadena de confianza.",
+    DevOps: "Pipeline, enforcement, release y controles de entrega.",
+    Dependencias: "Librerías EOL, vulnerabilidades y deuda de actualización.",
+    Trazabilidad: "Logs, evidencia, documentación y seguimiento end-to-end.",
+  };
+  const controlPrinciples = [
+    {
+      title: "Prevención antes que reacción",
+      text: "El plan prioriza controles preventivos por sprint para que los hallazgos no se conviertan en incidente operativo.",
+      accent: "#38bdf8",
+    },
+    {
+      title: "Cero exposición accidental",
+      text: "La lectura ejecutiva se centra en credenciales, configuración, transporte y evidencia que hoy podrían filtrarse o quedar expuestos.",
+      accent: "#10b981",
+    },
+    {
+      title: "Seguridad de la cadena",
+      text: "No basta con un fix de código: el control debe cubrir VSS, pipeline, despliegue, trazabilidad y validación continua.",
+      accent: "#f97316",
+    },
+    {
+      title: "Tendencia a cero vulnerabilidad",
+      text: "La meta no se vende como hecho consumado; se presenta como evolución observable desde el estado actual hasta un modelo controlado.",
+      accent: "#84cc16",
+    },
+  ];
 
   const elements = {
     heroPanel: document.getElementById("hero-panel"),
@@ -58,8 +88,15 @@
     sidebarHandle: document.getElementById("sidebar-handle"),
     sidebarOverlay: document.getElementById("sidebar-overlay"),
     kpis: document.getElementById("kpi-grid"),
+    principleGrid: document.getElementById("principle-grid"),
+    observationalNote: document.getElementById("observational-note"),
+    observationalGrid: document.getElementById("observational-grid"),
     ladder: document.getElementById("priority-ladder"),
+    dimensionMatrixBody: document.getElementById("dimension-matrix-body"),
     dimensionGrid: document.getElementById("dimension-grid"),
+    gapGrid: document.getElementById("gap-grid"),
+    maturityNote: document.getElementById("maturity-note"),
+    maturityGrid: document.getElementById("maturity-grid"),
     generalGanttIntro: document.getElementById("general-gantt-intro"),
     generalGantt: document.getElementById("general-gantt-board"),
     vssOverviewNote: document.getElementById("vss-overview-note"),
@@ -152,6 +189,90 @@
       .toLowerCase()
       .replace(/\s+/g, " ")
       .trim();
+  }
+
+  function hasEvidence(refs) {
+    return Array.isArray(refs) && refs.length > 0;
+  }
+
+  function hasCombinedEvidence(record) {
+    return hasEvidence(record.vss_refs) && hasEvidence(record.phase2_refs);
+  }
+
+  function isExposureRecord(record) {
+    const haystack = normalizeText(
+      [
+        record.pain_point,
+        record.problem_description,
+        record.current_state,
+        record.target_state,
+        record.risk_category_raw,
+      ].join(" ")
+    );
+    return /(expos|credencial|secret|token|hardcod|http|tls|ssl|cert|dns|config)/.test(haystack);
+  }
+
+  function getControlProfile(items) {
+    const total = items.length || 1;
+    const criticalCount = items.filter((record) => record.business_criticality_rank >= 3).length;
+    const reviewCount = items.filter((record) => record.needs_review).length;
+    const evidenceCount = items.filter((record) => hasCombinedEvidence(record)).length;
+    const criticalRatio = criticalCount / total;
+    const reviewRatio = reviewCount / total;
+    const evidenceRatio = evidenceCount / total;
+
+    let stateLabel = "Observacional";
+    if (criticalRatio < 0.25 && reviewRatio < 0.04 && evidenceRatio >= 0.9) {
+      stateLabel = "Baseline inicial";
+    } else if (criticalRatio < 0.4 && reviewRatio < 0.08 && evidenceRatio >= 0.82) {
+      stateLabel = "Observacional con brechas";
+    }
+
+    let riskLabel = "Medio";
+    let riskTone = "normal";
+    if (criticalRatio >= 0.55 || reviewRatio >= 0.12) {
+      riskLabel = "Critico";
+      riskTone = "critical";
+    } else if (criticalRatio >= 0.35 || reviewRatio >= 0.06) {
+      riskLabel = "Alto";
+      riskTone = "high";
+    } else if (criticalRatio >= 0.22) {
+      riskLabel = "Medio-Alto";
+      riskTone = "high";
+    }
+
+    return {
+      total,
+      criticalCount,
+      reviewCount,
+      evidenceCount,
+      criticalRatio,
+      reviewRatio,
+      evidenceRatio,
+      stateLabel,
+      riskLabel,
+      riskTone,
+    };
+  }
+
+  function getEvidenceSummary(records) {
+    const withVss = records.filter((record) => hasEvidence(record.vss_refs)).length;
+    const withPhase2 = records.filter((record) => hasEvidence(record.phase2_refs)).length;
+    const withBoth = records.filter((record) => hasCombinedEvidence(record)).length;
+    const reposWithBoth = new Set(records.filter((record) => hasCombinedEvidence(record)).map((record) => record.repo)).size;
+    const accidentalExposure = records.filter((record) => isExposureRecord(record)).length;
+    const chainSecurity = records.filter((record) => ["Seguridad", "DevOps", "Trazabilidad"].includes(classifyDimension(record))).length;
+    const profile = getControlProfile(records);
+
+    return {
+      withVss,
+      withPhase2,
+      withBoth,
+      reposWithBoth,
+      accidentalExposure,
+      chainSecurity,
+      profile,
+    };
   }
 
   function setOptions(select, items) {
@@ -339,9 +460,9 @@
   function buildDimensionNarrative(dimension, items) {
     const topStack = counter(items.map((record) => record.stack))[0];
     const topStream = counter(items.map((record) => record.value_stream_group))[0];
-    const critical = items.filter((record) => record.business_criticality_rank >= 3).length;
+    const profile = getControlProfile(items);
     const windowLabel = getActiveSprintRange(items);
-    return `${dimension} concentra ${items.length} hallazgos; ${critical} son alta o crítica, el peso principal cae en ${topStack?.[0] || "el portafolio"} y el VSS dominante es ${topStream?.[0] || "sin dato"}. La ventana visible corre de ${windowLabel}.`;
+    return `${dimension} concentra ${items.length} hallazgos; ${profile.criticalCount} son alta o crítica, hoy opera en estado ${profile.stateLabel.toLowerCase()} y el peso principal cae en ${topStack?.[0] || "el portafolio"} con ${topStream?.[0] || "sin dato"} como VSS dominante. La ventana visible corre de ${windowLabel}.`;
   }
 
   function buildValueStreamNarrative(stream, items) {
@@ -350,11 +471,184 @@
     const topSprint = counter(items.map((record) => record.sprint_assigned))[0];
     const repos = new Set(items.map((record) => record.repo)).size;
     const stacks = new Set(items.map((record) => record.stack)).size;
-    return `${stream} reúne ${items.length} hallazgos en ${repos} repositorios y ${stacks} stacks. La dimensión dominante es ${topDimension?.[0] || "sin dato"} y el pico operativo visible cae en ${topSprint?.[0] || "sin sprint"} con mayor presión en ${topStack?.[0] || "el portafolio"}.`;
+    const profile = getControlProfile(items);
+    return `${stream} reúne ${items.length} hallazgos en ${repos} repositorios y ${stacks} stacks. La dimensión dominante es ${topDimension?.[0] || "sin dato"}, el estado actual sigue en ${profile.stateLabel.toLowerCase()} y el pico operativo visible cae en ${topSprint?.[0] || "sin sprint"} con mayor presión en ${topStack?.[0] || "el portafolio"}.`;
+  }
+
+  function renderControlPrinciples() {
+    if (!elements.principleGrid) return;
+    elements.principleGrid.innerHTML = "";
+    controlPrinciples.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "principle-card";
+      card.style.borderColor = hexToRgba(item.accent, 0.34);
+      card.innerHTML = `
+        <span class="dimension-rank">Control</span>
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+      `;
+      elements.principleGrid.appendChild(card);
+    });
+  }
+
+  function renderObservationalState(records) {
+    if (!elements.observationalNote || !elements.observationalGrid) return;
+    const summary = summarize(records);
+    const evidence = getEvidenceSummary(records);
+    const exposureCritical = records.filter((record) => isExposureRecord(record) && record.business_criticality_rank >= 3).length;
+
+    elements.observationalNote.innerHTML = `
+      <article class="general-gantt-note">
+        <strong>El punto de partida sigue siendo observacional, no controlado</strong>
+        <p>${evidence.withBoth} de ${summary.total} hallazgos visibles ya cruzan VSS + FASE 2; aun asi, ${summary.needsReviewCount} siguen marcados para revisión y ${exposureCritical} mantienen exposición alta o crítica. Esta vista sirve para gobernar el cambio sin sobreactuar el nivel de madurez actual.</p>
+      </article>
+    `;
+
+    elements.observationalGrid.innerHTML = "";
+    [
+      ["Repos con evidencia cruzada", `${evidence.reposWithBoth}/${summary.repoCount}`, "Repositorios con al menos un hallazgo respaldado por VSS y FASE 2."],
+      ["Hallazgos con evidencia cruzada", `${evidence.withBoth}/${summary.total}`, "Pain points que ya trazan fuente VSS y anexo diagnóstico."],
+      ["Hallazgos por revisar", summary.needsReviewCount, "Clasificaciones que todavía no conviene vender como baseline cerrado."],
+      ["Exposición accidental visible", evidence.accidentalExposure, "Hallazgos que hablan de secretos, hardcodes, transporte inseguro o configuraciones expuestas."],
+      ["Cadena bajo presión", evidence.chainSecurity, "Hallazgos en Seguridad, DevOps y Trazabilidad que pegan al control end-to-end."],
+      ["Estado actual", evidence.profile.stateLabel, "Lectura conservadora del portafolio usando severidad, revisión pendiente y evidencia cruzada."],
+    ].forEach(([label, value, text]) => {
+      const card = document.createElement("article");
+      card.className = "observational-card";
+      card.innerHTML = `<strong>${value}</strong><span>${label}</span><p>${text}</p>`;
+      elements.observationalGrid.appendChild(card);
+    });
+  }
+
+  function renderDimensionMatrix(records) {
+    if (!elements.dimensionMatrixBody) return;
+    elements.dimensionMatrixBody.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+
+    getDimensionEntries(records).forEach(([dimension, items]) => {
+      const profile = getControlProfile(items);
+      const topStream = counter(items.map((record) => record.value_stream_group))[0]?.[0] || "Sin dato";
+      const row = document.createElement("tr");
+      const riskClass = profile.riskTone === "critical" ? "tag is-critical" : profile.riskTone === "high" ? "tag is-high" : "tag";
+      row.innerHTML = `
+        <td><span class="tag">${escapeHtml(dimension)}</span></td>
+        <td>${escapeHtml(dimensionEvaluates[dimension])}</td>
+        <td>${escapeHtml(profile.stateLabel)}</td>
+        <td><span class="${riskClass}">${escapeHtml(profile.riskLabel)}</span></td>
+        <td>${escapeHtml(topStream)}</td>
+        <td>${escapeHtml(getActiveSprintRange(items))}</td>
+      `;
+      fragment.appendChild(row);
+    });
+
+    elements.dimensionMatrixBody.appendChild(fragment);
+  }
+
+  function buildGapModels(records) {
+    const accidentalExposure = records.filter((record) => isExposureRecord(record));
+    const chainControl = records.filter((record) => ["DevOps", "Trazabilidad"].includes(classifyDimension(record)) || record.value_stream_group === "CI_CD");
+    const dependencies = records.filter((record) => classifyDimension(record) === "Dependencias");
+    const zeroVulnerability = records.filter((record) =>
+      ["Seguridad", "Dependencias"].includes(classifyDimension(record)) && record.business_criticality_rank >= 3
+    );
+
+    return [
+      {
+        title: "Exposición accidental",
+        items: accidentalExposure,
+        text: "La prevención sigue siendo prioritaria porque aún hay secretos, configuraciones y transportes inseguros visibles en la evidencia.",
+      },
+      {
+        title: "Seguridad de la cadena",
+        items: chainControl,
+        text: "Pipeline, release, trazabilidad y enforcement todavía concentran carga suficiente para no declarar control homogéneo del extremo a extremo.",
+      },
+      {
+        title: "Dependencias y obsolescencia",
+        items: dependencies,
+        text: "La cadena no es segura si librerías y toolchains siguen arrastrando deuda EOL o vulnerabilidades sin cerrar.",
+      },
+      {
+        title: "Cero vulnerabilidad aun no alcanzado",
+        items: zeroVulnerability,
+        text: "El plan se presenta como tendencia a cero vulnerabilidad, no como estado ya logrado; la evidencia crítica sigue abierta en seguridad y dependencias.",
+      },
+    ];
+  }
+
+  function renderGapSummary(records) {
+    if (!elements.gapGrid) return;
+    elements.gapGrid.innerHTML = "";
+
+    buildGapModels(records).forEach((gap) => {
+      const items = gap.items;
+      const topStream = counter(items.map((record) => record.value_stream_group))[0]?.[0] || "Sin dato";
+      const topStack = counter(items.map((record) => record.stack))[0]?.[0] || "Sin dato";
+      const sample = getSamplePainPoints(items, 1)[0];
+      const card = document.createElement("article");
+      card.className = "gap-card";
+      card.innerHTML = `
+        <span class="dimension-rank">Brecha</span>
+        <h3>${gap.title}</h3>
+        <p>${gap.text}</p>
+        <div class="pill-row">
+          <span class="tiny-pill">${items.length} hallazgos</span>
+          <span class="tiny-pill">${escapeHtml(topStream)}</span>
+          <span class="tiny-pill">${escapeHtml(topStack)}</span>
+          <span class="tiny-pill">${escapeHtml(getActiveSprintRange(items))}</span>
+        </div>
+        ${sample ? `<ul class="sample-list"><li>${escapeHtml(sample)}</li></ul>` : ""}
+      `;
+      elements.gapGrid.appendChild(card);
+    });
+  }
+
+  function renderMaturityEvolution(records) {
+    if (!elements.maturityNote || !elements.maturityGrid) return;
+    const summary = summarize(records);
+    const evidence = getEvidenceSummary(records);
+    elements.maturityNote.innerHTML = `
+      <article class="general-gantt-note">
+        <strong>Evolución esperada: Observational → Baseline → Controlled</strong>
+        <p>El portafolio arranca en ${evidence.profile.stateLabel.toLowerCase()}: ${summary.total} hallazgos visibles, ${summary.criticalHighCount} alta o crítica y ${summary.needsReviewCount} todavía por revisar. Los sprints no se presentan como Jira; se presentan como mecanismo para cerrar brechas y subir madurez.</p>
+      </article>
+    `;
+
+    elements.maturityGrid.innerHTML = "";
+    [
+      {
+        stage: "Observational",
+        state: "is-current",
+        window: "Hoy",
+        text: `${evidence.withBoth}/${summary.total} hallazgos con evidencia cruzada; aún no hay base suficiente para hablar de control total.`,
+      },
+      {
+        stage: "Baseline",
+        state: "is-next",
+        window: "S32-S35",
+        text: "Se consolida la línea base sobre pruebas, contratos, seguridad y pipeline para cerrar exposición accidental y fijar criterios mínimos.",
+      },
+      {
+        stage: "Controlled",
+        state: "is-target",
+        window: "S36-S42",
+        text: "El objetivo es llegar con quality gate, trazabilidad operativa, validaciones recurrentes y cierre formal por VSS.",
+      },
+    ].forEach((item) => {
+      const card = document.createElement("article");
+      card.className = `maturity-card ${item.state}`;
+      card.innerHTML = `
+        <span class="dimension-rank">${item.window}</span>
+        <h3>${item.stage}</h3>
+        <p>${item.text}</p>
+      `;
+      elements.maturityGrid.appendChild(card);
+    });
   }
 
   function renderHeroPanel(records) {
     const summary = summarize(records);
+    const evidence = getEvidenceSummary(records);
     const themeCounts = counter(records.map((record) => record.priority_theme));
     const topTheme = themeCounts[0] ? themeCounts[0][0] : "Sin datos";
     const streamCounts = counter(records.map((record) => record.value_stream_group));
@@ -369,9 +663,10 @@
       ["Pain points visibles", summary.total],
       ["Repositorios visibles", summary.repoCount],
       ["VSS activos", summary.valueStreamCount],
-      ["VSS dominante", topStream],
+      ["Estado actual", evidence.profile.stateLabel],
       ["Dimensión dominante", topDimension],
       ["Criticidad alta / crítica", summary.criticalHighCount],
+      ["VSS dominante", topStream],
       ["Tema roadmap dominante", topTheme],
     ].forEach(([label, value]) => {
       const card = document.createElement("article");
@@ -384,13 +679,15 @@
 
   function renderKpis(records) {
     const summary = summarize(records);
+    const evidence = getEvidenceSummary(records);
     const lastCoverage = renderCoverage(records);
     elements.kpis.innerHTML = "";
     const cards = [
-      ["Pain points", summary.total],
+      ["Hallazgos visibles", summary.total],
       ["Alta / crítica", summary.criticalHighCount],
-      ["Stacks", summary.stackCount],
-      ["Value streams", summary.valueStreamCount],
+      ["Repos con evidencia cruzada", evidence.reposWithBoth],
+      ["VSS visibles", summary.valueStreamCount],
+      ["Por revisar", summary.needsReviewCount],
       ["Cobertura final", `${lastCoverage.toFixed(1)}%`],
     ];
     cards.forEach(([label, value]) => {
@@ -430,7 +727,7 @@
       const topStacks = counter(items.map((record) => record.stack)).slice(0, 4);
       const topSprints = counter(items.map((record) => record.sprint_assigned)).slice(0, 3);
       const samples = getSamplePainPoints(items, 3);
-      const critical = items.filter((record) => record.business_criticality_rank >= 3).length;
+      const profile = getControlProfile(items);
 
       const card = document.createElement("article");
       card.className = "dimension-card";
@@ -449,7 +746,7 @@
             <span>hallazgos visibles</span>
           </article>
           <article class="dimension-metric">
-            <strong>${critical}</strong>
+            <strong>${profile.criticalCount}</strong>
             <span>alta / crítica</span>
           </article>
           <article class="dimension-metric">
@@ -458,6 +755,8 @@
           </article>
         </div>
         <div class="pill-row">
+          <span class="tiny-pill">${escapeHtml(profile.stateLabel)}</span>
+          <span class="tiny-pill">${escapeHtml(profile.riskLabel)}</span>
           ${topStreams.map(([label, count]) => `<span class="tiny-pill">${escapeHtml(label)}: ${count}</span>`).join("")}
         </div>
         <div class="pill-row" style="margin-top:0.7rem;">
@@ -482,10 +781,11 @@
     const orderedStreams = getOrderedValueStreams(records);
     const topStream = counter(records.map((record) => record.value_stream_group))[0];
     const topSprint = counter(records.map((record) => record.sprint_assigned))[0];
+    const profile = getControlProfile(records);
     elements.vssOverviewNote.innerHTML = `
       <article class="general-gantt-note">
         <strong>${orderedStreams.length} VSS visibles en el horizonte actual</strong>
-        <p>${topStream?.[0] || "Sin VSS dominante"} lidera la carga visible y ${topSprint?.[0] || "sin sprint dominante"} concentra el mayor volumen operativo. Cada bloque resume presión por sprint, dimensión dominante y repositorios tocados.</p>
+        <p>${topStream?.[0] || "Sin VSS dominante"} lidera la carga visible y ${topSprint?.[0] || "sin sprint dominante"} concentra el mayor volumen operativo. El portafolio visible sigue en ${profile.stateLabel.toLowerCase()}, por eso cada bloque resume presión por sprint, dimensión dominante y repositorios tocados en vez de vender control total.</p>
       </article>
     `;
 
@@ -586,7 +886,7 @@
       const dimensionMix = counter(items.map((record) => classifyDimension(record))).slice(0, 4);
       const stackMix = counter(items.map((record) => record.stack)).slice(0, 4);
       const samples = getSamplePainPoints(items, 3);
-      const critical = items.filter((record) => record.business_criticality_rank >= 3).length;
+      const profile = getControlProfile(items);
 
       const card = document.createElement("article");
       card.className = "vss-detail-card";
@@ -640,8 +940,9 @@
           </div>
           <div class="vss-metric-strip">
             <span class="vss-metric-chip">${items.length} hallazgos</span>
-            <span class="vss-metric-chip">${critical} alta / crítica</span>
+            <span class="vss-metric-chip">${profile.criticalCount} alta / crítica</span>
             <span class="vss-metric-chip">${new Set(items.map((record) => record.repo)).size} repos</span>
+            <span class="vss-metric-chip">${escapeHtml(profile.stateLabel)}</span>
             <span class="vss-metric-chip">${getActiveSprintRange(items)}</span>
           </div>
         </div>
@@ -1283,8 +1584,13 @@
     const records = getFilteredRecords();
     renderHeroPanel(records);
     renderKpis(records);
+    renderControlPrinciples();
+    renderObservationalState(records);
+    renderDimensionMatrix(records);
     renderPriorityLadder(records);
     renderDimensionSummary(records);
+    renderGapSummary(records);
+    renderMaturityEvolution(records);
     renderGeneralPlan();
     renderVssOverview(records);
     renderVssDetail(records);
@@ -1341,6 +1647,7 @@
   async function copyVisibleSummary() {
     const records = getFilteredRecords();
     const summary = summarize(records);
+    const evidence = getEvidenceSummary(records);
     const dimensionCounts = counter(records.map((record) => classifyDimension(record)))
       .slice(0, 4)
       .map(([dimension, count]) => `${dimension}: ${count}`)
@@ -1363,6 +1670,8 @@
       `Criticidad alta / crítica: ${summary.criticalHighCount}`,
       `Stacks visibles: ${summary.stackCount}`,
       `Repos visibles: ${summary.repoCount}`,
+      `Estado actual: ${evidence.profile.stateLabel}`,
+      `Evidencia cruzada: ${evidence.withBoth}/${summary.total}`,
       `Dimensiones dominantes: ${dimensionCounts}`,
       `Temas dominantes: ${themeCounts}`,
       `VSS dominantes: ${streamCounts}`,

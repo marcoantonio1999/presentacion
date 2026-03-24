@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Roadmap Ejecutivo de Remediación | 20 Repositorios</title>
-  <link rel="stylesheet" href="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.css?v=20260320j">
+  <link rel="stylesheet" href="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.css?v=20260324-control-v2">
 </head>
 <body class="roadmap-dashboard-page roadmap-sidebar-collapsed">
   <div class="roadmap-shell">
@@ -22,9 +22,9 @@
           </div>
         </div>
         <span class="roadmap-kicker">Roadmap ejecutivo</span>
-        <h1>Remediación priorizada por VSS, dimensiones y sprint</h1>
+        <h1>Gobernanza del portafolio bajo enfoque VSS</h1>
         <p class="roadmap-subtitle">Portafolio Claro Video · 20 repositorios · kickoff 17-mar-2026 · cronograma S31-S42 del 17-mar-2026 al 21-ago-2026</p>
-        <p class="roadmap-mainline">La vista ahora arranca con la clasificación 6D de la presentación base, cruza esa lectura con los value streams y los aterriza en un cronograma global por sprint, un cronograma por cada VSS y el drill-down operativo por stack, repo y sprint.</p>
+        <p class="roadmap-mainline">La vista traduce el backlog y el VSS a lenguaje de control: prevención antes que reacción, cero exposición accidental, seguridad de la cadena y evolución desde un estado observacional hacia un modelo baseline y controlado por sprint.</p>
         <div class="roadmap-meta">
           <span class="roadmap-chip">Fuente maestra: <code>Backlog_Claro_video.xlsx</code></span>
           <span class="roadmap-chip">Enriquecido con <code>fase 2.zip</code> + <code>vss consolidado</code></span>
@@ -48,7 +48,7 @@
         <section class="sidebar-card">
           <span class="sidebar-kicker">Navigator</span>
           <h2>Roadmap Hub</h2>
-          <p>Vista ejecutiva con dimensiones 6D, cronograma global por VSS, cronograma detallado por cada VSS, cobertura acumulada y drill-down completo.</p>
+          <p>Vista ejecutiva para dirección: principios de control, estado observacional, brechas de cadena, dimensiones 6D, cronograma VSS y drill-down operativo.</p>
         </section>
 
         <section class="sidebar-card">
@@ -86,16 +86,20 @@
 
         <nav class="sidebar-card roadmap-nav" aria-label="Secciones del roadmap">
           <a href="#resumen">1. Resumen ejecutivo</a>
-          <a href="#dimensiones">2. Dimensiones 6D</a>
-          <a href="#gantt-general">3. Cronograma general</a>
-          <a href="#gantt-vss-global">4. Cronograma global por VSS</a>
-          <a href="#gantt-vss-detail">5. Cronograma por cada VSS</a>
-          <a href="#gantt">6. Gantt por stack</a>
-          <a href="#cobertura">7. Cobertura acumulada</a>
-          <a href="#hallazgos">8. Hallazgos VSS</a>
-          <a href="#comparativa">9. Comparativa por stack</a>
-          <a href="#detalle">10. Drill-down completo</a>
-          <a href="#trazabilidad">11. Trazabilidad y fuentes</a>
+          <a href="#principios">2. Principios de control</a>
+          <a href="#observacional">3. Estado observacional</a>
+          <a href="#dimensiones">4. Dimensiones 6D</a>
+          <a href="#brechas">5. Brechas de control</a>
+          <a href="#evolucion">6. Evolución de madurez</a>
+          <a href="#gantt-general">7. Cronograma general</a>
+          <a href="#gantt-vss-global">8. Cronograma global por VSS</a>
+          <a href="#gantt-vss-detail">9. Cronograma por cada VSS</a>
+          <a href="#gantt">10. Gantt por stack</a>
+          <a href="#cobertura">11. Cobertura acumulada</a>
+          <a href="#hallazgos">12. Hallazgos VSS</a>
+          <a href="#comparativa">13. Comparativa por stack</a>
+          <a href="#detalle">14. Drill-down completo</a>
+          <a href="#trazabilidad">15. Trazabilidad y fuentes</a>
         </nav>
       </aside>
 
@@ -106,30 +110,91 @@
               <span class="section-kicker">Vista 1</span>
               <h2>Resumen ejecutivo</h2>
             </div>
-            <p>Lectura inmediata del portafolio: cuántos VSS entran al plan, en qué dimensión se concentra la presión y cómo se reparte la carga total del programa.</p>
+            <p>Lectura inmediata del portafolio desde control y riesgo: cuántos VSS entran al plan, cuánto sigue en exposición alta y qué tan lejos estamos del estado controlado.</p>
           </div>
           <div class="kpi-grid" id="kpi-grid"></div>
+        </section>
+
+        <section id="principios" class="roadmap-section">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Vista 2</span>
+              <h2>Principios de control</h2>
+            </div>
+            <p>La narrativa del roadmap ya no se presenta como backlog técnico ni como inventario de herramientas: se presenta como sistema de control para prevenir exposición accidental y asegurar la cadena completa.</p>
+          </div>
+          <div class="principle-grid" id="principle-grid"></div>
+        </section>
+
+        <section id="observacional" class="roadmap-section">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Vista 3</span>
+              <h2>Estado observacional y evidencia</h2>
+            </div>
+            <p>Antes de hablar de control total, la presentación deja claro qué sí está sustentado por evidencia real de VSS, FASE 2 y backlog, y qué todavía sigue como línea base en consolidación.</p>
+          </div>
+          <div class="observational-note" id="observational-note"></div>
+          <div class="observational-grid" id="observational-grid"></div>
         </section>
 
         <section id="dimensiones" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 2</span>
-              <h2>Clasificación por dimensiones 6D</h2>
+              <span class="section-kicker">Vista 4</span>
+              <h2>Dimensiones 6D, estado y riesgo</h2>
             </div>
-            <p>La narrativa VSS se ordena con la misma taxonomía de la presentación inicial: Arquitectura, Testing, Seguridad, DevOps, Dependencias y Trazabilidad, cada una con su resumen ejecutivo y sus VSS dominantes.</p>
+            <p>La narrativa VSS se ordena con la taxonomía de la presentación inicial y aterriza cada dimensión en una lectura ejecutiva: qué evalúa, en qué estado está, qué nivel de riesgo carga y qué VSS la presionan más.</p>
+          </div>
+          <div class="table-wrap dimension-table-wrap">
+            <table class="dimension-table">
+              <thead>
+                <tr>
+                  <th>Dimensión</th>
+                  <th>Qué evalúa</th>
+                  <th>Estado actual</th>
+                  <th>Riesgo</th>
+                  <th>VSS dominante</th>
+                  <th>Sprints activos</th>
+                </tr>
+              </thead>
+              <tbody id="dimension-matrix-body"></tbody>
+            </table>
           </div>
           <div class="priority-ladder" id="priority-ladder"></div>
           <div class="dimension-grid" id="dimension-grid"></div>
         </section>
 
+        <section id="brechas" class="roadmap-section">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Vista 5</span>
+              <h2>Brechas de control de la cadena</h2>
+            </div>
+            <p>Esta vista traduce los hallazgos a lenguaje de gobernanza: dónde sigue existiendo exposición accidental, dónde falta enforcement homogéneo y qué impide afirmar hoy un escenario de cero vulnerabilidad.</p>
+          </div>
+          <div class="gap-grid" id="gap-grid"></div>
+        </section>
+
+        <section id="evolucion" class="roadmap-section">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Vista 6</span>
+              <h2>Evolución de madurez del value stream</h2>
+            </div>
+            <p>La lectura ejecutiva se expresa como madurez operativa: del estado observacional actual a un baseline ejecutable y después a control continuo sostenido por sprint, validación y quality gates.</p>
+          </div>
+          <div class="maturity-note" id="maturity-note"></div>
+          <div class="maturity-grid" id="maturity-grid"></div>
+        </section>
+
         <section id="gantt-general" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 3</span>
+              <span class="section-kicker">Vista 7</span>
               <h2>Cronograma general del programa</h2>
             </div>
-            <p>Punto de partida transversal del programa: kickoff en S31 desde el 17-mar-2026, once sprints formales de S32 a S42, Quality Gate desde S34 y QA + IA acompañando todo el cronograma.</p>
+            <p>Punto de partida transversal del programa: kickoff en S31 desde el 17-mar-2026, once sprints formales de S32 a S42, Quality Gate desde S34 y QA + IA acompañando todo el cronograma como control, no solo como ejecución.</p>
           </div>
           <div class="general-gantt-intro" id="general-gantt-intro"></div>
           <div class="general-gantt-board" id="general-gantt-board"></div>
@@ -138,10 +203,10 @@
         <section id="gantt-vss-global" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 4</span>
+              <span class="section-kicker">Vista 8</span>
               <h2>Cronograma global por sprint y VSS</h2>
             </div>
-            <p>Vista transversal por value stream: cada fila muestra la presión visible por sprint, la dimensión dominante y los repositorios afectados para decidir en qué ola entra cada VSS.</p>
+            <p>Vista transversal por value stream: cada fila muestra la presión visible por sprint, la dimensión dominante y los repositorios afectados para decidir en qué ola entra cada VSS y qué control se consolida en ese tramo.</p>
           </div>
           <div class="vss-overview-note" id="vss-overview-note"></div>
           <div class="vss-overview-board" id="vss-overview-board"></div>
@@ -150,10 +215,10 @@
         <section id="gantt-vss-detail" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 5</span>
+              <span class="section-kicker">Vista 9</span>
               <h2>Cronograma detallado por cada VSS</h2>
             </div>
-            <p>Cada VSS baja a una ficha ejecutiva propia con resumen, mezcla de dimensiones 6D, stacks impactados y timeline por sprint para aterrizar la ejecución.</p>
+            <p>Cada VSS baja a una ficha ejecutiva propia con resumen, mezcla de dimensiones 6D, stacks impactados y timeline por sprint para aterrizar cómo ese flujo pasa de observacional a baseline y luego a controlado.</p>
           </div>
           <div class="vss-detail-grid" id="vss-detail-grid"></div>
         </section>
@@ -161,7 +226,7 @@
         <section id="gantt" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 6</span>
+              <span class="section-kicker">Vista 10</span>
               <h2>Gantt detallado por stack</h2>
             </div>
             <p>Bloques ejecutivos por stack, categoría y value stream, secuenciados sobre el cronograma S31-S42 del plan.</p>
@@ -173,7 +238,7 @@
         <section id="cobertura" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 7</span>
+              <span class="section-kicker">Vista 11</span>
               <h2>Cobertura acumulada por sprint</h2>
             </div>
             <p>Porcentaje atendido por sprint y avance acumulado hasta el cierre del horizonte.</p>
@@ -189,7 +254,7 @@
         <section id="hallazgos" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 8</span>
+              <span class="section-kicker">Vista 12</span>
               <h2>Hallazgos VSS transversales</h2>
             </div>
             <p>Lectura cruzada por categorías del roadmap, stack y value stream para sostener la narrativa ejecutiva del plan después de la capa 6D.</p>
@@ -201,7 +266,7 @@
         <section id="comparativa" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 9</span>
+              <span class="section-kicker">Vista 13</span>
               <h2>Comparativa por stack</h2>
             </div>
             <p>Carga relativa, criticidad y temas dominantes por stack/canal.</p>
@@ -212,7 +277,7 @@
         <section id="detalle" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 10</span>
+              <span class="section-kicker">Vista 14</span>
               <h2>Drill-down completo</h2>
             </div>
             <p>Tabla filtrable con trazabilidad directa a repo, stack, value stream, sprint y fuentes.</p>
@@ -244,7 +309,7 @@
         <section id="trazabilidad" class="roadmap-section">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Vista 11</span>
+              <span class="section-kicker">Vista 15</span>
               <h2>Trazabilidad y fuentes</h2>
             </div>
             <p>Acceso a anexos ya generados y a las fuentes usadas para construir el roadmap.</p>
@@ -255,7 +320,7 @@
     </div>
   </div>
 
-  <script src="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.data.js?v=20260320j"></script>
-  <script src="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.js?v=20260320j"></script>
+  <script src="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.data.js?v=20260324-control-v2"></script>
+  <script src="ROADMAP_EJECUTIVO_PORTAFOLIO_20_REPOSITORIOS.js?v=20260324-control-v2"></script>
 </body>
 </html>

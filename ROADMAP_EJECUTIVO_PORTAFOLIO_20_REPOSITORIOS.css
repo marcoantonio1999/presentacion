@@ -446,7 +446,7 @@ code {
 
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.8rem;
 }
 
@@ -521,6 +521,104 @@ code {
   display: inline-block;
   margin-top: 0.75rem;
   font-size: 1.2rem;
+}
+
+.principle-grid,
+.observational-grid,
+.gap-grid,
+.maturity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.principle-card,
+.observational-card,
+.gap-card,
+.maturity-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(8, 18, 29, 0.98), rgba(7, 15, 24, 0.96)),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.06), transparent 42%);
+  padding: 1rem;
+}
+
+.principle-card h3,
+.observational-card strong,
+.gap-card h3,
+.maturity-card h3 {
+  margin: 0.65rem 0 0;
+  font-family: var(--display);
+}
+
+.principle-card p,
+.observational-card p,
+.gap-card p,
+.maturity-card p {
+  margin: 0.55rem 0 0;
+  color: var(--ink-soft);
+}
+
+.observational-note,
+.maturity-note {
+  margin-bottom: 1rem;
+}
+
+.observational-card strong {
+  display: block;
+  font-size: 1.4rem;
+  color: #e9fff6;
+}
+
+.observational-card span {
+  display: block;
+  margin-top: 0.4rem;
+  color: #d8efff;
+  font-size: 0.9rem;
+}
+
+.maturity-card.is-current {
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.maturity-card.is-next {
+  border-color: rgba(34, 197, 94, 0.28);
+}
+
+.maturity-card.is-target {
+  border-color: rgba(249, 115, 22, 0.28);
+}
+
+.dimension-table-wrap {
+  margin-bottom: 1rem;
+}
+
+.dimension-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 960px;
+}
+
+.dimension-table th,
+.dimension-table td {
+  padding: 0.8rem 0.75rem;
+  border-bottom: 1px solid rgba(88, 125, 168, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.dimension-table th {
+  background: rgba(10, 22, 34, 0.98);
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #d8f6ff;
+}
+
+.dimension-table td {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
 }
 
 .dimension-grid {
@@ -1459,8 +1557,12 @@ code {
   }
 
   .kpi-grid,
+  .principle-grid,
+  .observational-grid,
   .priority-ladder,
   .dimension-grid,
+  .gap-grid,
+  .maturity-grid,
   .insight-grid,
   .stack-grid,
   .source-grid,
@@ -1488,8 +1590,12 @@ code {
   }
 
   .kpi-grid,
+  .principle-grid,
+  .observational-grid,
   .priority-ladder,
   .dimension-grid,
+  .gap-grid,
+  .maturity-grid,
   .insight-grid,
   .stream-grid,
   .stack-grid,
