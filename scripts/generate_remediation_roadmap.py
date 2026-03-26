@@ -14,7 +14,8 @@ from openpyxl import load_workbook
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-BACKLOG_XLSX = Path(r"C:\Users\ordunama\Downloads\Backlog_Claro_video.xlsx")
+BACKLOG_XLSX = Path(r"C:\Users\ordunama\Downloads\Tracking-Backlog-Claro-video.xlsx")
+BACKLOG_SHEET_NAME = "backlog"
 PHASE2_ZIP = Path(r"C:\Users\ordunama\Downloads\fase 2.zip")
 VSS_ROOT = Path(r"C:\Users\ordunama\Downloads\vss consolidado")
 
@@ -31,6 +32,15 @@ THEME_ORDER = [
     "Operación/Otras",
 ]
 THEME_RANK = {theme: index + 1 for index, theme in enumerate(THEME_ORDER)}
+DIMENSION_ORDER = ["Arquitectura", "Testing", "Seguridad", "DevOps", "Dependencias", "Trazabilidad"]
+DIMENSION_THEME_MAP = {
+    "Arquitectura": "Calidad/Arquitectura",
+    "Testing": "Pruebas unitarias",
+    "Seguridad": "Seguridad",
+    "DevOps": "Operación/Otras",
+    "Dependencias": "Calidad/Arquitectura",
+    "Trazabilidad": "Observabilidad",
+}
 
 REPO_STACK = {
     "claro-video-web": "Web",
@@ -59,6 +69,25 @@ REPO_ALIASES = {
     "claro-video-web-chromecast": ["claro-video-web-chromecast", "claro-video-chromecast"],
     "claro-video-aaf-lg-nativa": ["claro-video-aaf-lg-nativa", "claro-video-aff-lg-nativa", "claro-video-aaf-lg-nativa"],
     "claro-video-ios-services": ["claro-video-ios-services", "claro-video-services"],
+}
+TRACKING_SHEET_REPO = {
+    "android-coship": "claro-video-android-coship",
+    "android": "claro-video-android",
+    "web-chromecast": "claro-video-web-chromecast",
+    "web": "claro-video-web",
+    "uwp": "claro-video-universal-windows-platform",
+    "roku-tv": "claro-video-roku-tv",
+    "ios-tvos": "claro-video-ios-tvos",
+    "ios-player": "claro-video-ios-player",
+    "ios-analytics": "claro-video-ios-analytics",
+    "ios": "claro-video-ios",
+    "android-tv-stb": "claro-video-android-tv-stb",
+    "android-tv": "claro-video-android-tv",
+    "android-smart-tv": "claro-video-android-smart-tv",
+    "aaf-samsung-nativa": "claro-video-aaf-samsung-nativa",
+    "aaf-ott": "claro-video-aaf-ott",
+    "aaf-iptv": "claro-video-aaf-iptv",
+    "aaf-lg-nativa": "claro-video-aaf-lg-nativa",
 }
 
 THEME_KEYWORDS = {
@@ -599,6 +628,30 @@ def normalize_sprint_hint(raw_sprint: object, increment: object, period: object)
     return shift_legacy_sprint_id(f"S{value}")
 
 
+def normalize_dimension(raw: object) -> str | None:
+    text = normalize_text(raw)
+    mapping = {
+        "arquitectura": "Arquitectura",
+        "testing": "Testing",
+        "seguridad": "Seguridad",
+        "devops": "DevOps",
+        "dependencias": "Dependencias",
+        "trazabilidad": "Trazabilidad",
+    }
+    return mapping.get(text)
+
+
+def build_theme_scores(theme: str) -> dict[str, int]:
+    return {candidate: 10 if candidate == theme else 0 for candidate in THEME_ORDER}
+
+
+def row_value(raw_row: tuple[object, ...], header_map: dict[str, int], key: str) -> object:
+    index = header_map.get(key)
+    if index is None:
+        return None
+    return raw_row[index]
+
+
 def classify_theme(record_text: str) -> tuple[str, str, bool, dict[str, int]]:
     scores: dict[str, int] = {theme: 0 for theme in THEME_ORDER}
     for theme, keywords in THEME_KEYWORDS.items():
@@ -624,6 +677,18 @@ def classify_theme(record_text: str) -> tuple[str, str, bool, dict[str, int]]:
     if best_score >= 2:
         return best_theme, "baja", best_theme == "Calidad/Arquitectura", scores
     return "Calidad/Arquitectura", "baja", True, scores
+
+
+def infer_priority_theme(row: dict[str, object], record_text: str) -> tuple[str, str, bool, dict[str, int], str | None]:
+    dimension = normalize_dimension(row.get("Dimensión"))
+    heuristic_theme, heuristic_confidence, heuristic_review, heuristic_scores = classify_theme(record_text)
+    if not dimension:
+        return heuristic_theme, heuristic_confidence, heuristic_review, heuristic_scores, None
+
+    mapped_theme = DIMENSION_THEME_MAP[dimension]
+    if mapped_theme in {"Calidad/Arquitectura", "Operación/Otras"} and heuristic_theme in {"Rendimiento", "Observabilidad"}:
+        return heuristic_theme, heuristic_confidence, False, heuristic_scores, dimension
+    return mapped_theme, "alta", False, build_theme_scores(mapped_theme), dimension
 
 
 def alias_candidates(repo: str) -> list[str]:
@@ -702,6 +767,167 @@ def pick_vss_refs(repo: str) -> list[dict[str, str]]:
     return refs[:3]
 
 
+def load_dimension_catalog(workbook) -> list[dict[str, str]]:
+    if "Dimensiones" not in workbook.sheetnames:
+        return []
+
+    worksheet = workbook["Dimensiones"]
+    rows = worksheet.iter_rows(values_only=True)
+    try:
+        headers = list(next(rows))
+    except StopIteration:
+        return []
+
+    header_map = {str(value).strip(): index for index, value in enumerate(headers) if value is not None}
+    if "Dimensión" not in header_map:
+        return []
+
+    catalog: list[dict[str, str]] = []
+    for raw_row in rows:
+        if not any(cell not in (None, "") for cell in raw_row):
+            continue
+        dimension = normalize_dimension(row_value(raw_row, header_map, "Dimensión"))
+        if not dimension:
+            continue
+        benefits = str(row_value(raw_row, header_map, "Beneficios Representativos") or "").strip()
+        catalog.append({"dimension": dimension, "benefits": benefits})
+
+    order_index = {dimension: index for index, dimension in enumerate(DIMENSION_ORDER)}
+    catalog.sort(key=lambda item: order_index.get(item["dimension"], 99))
+    return catalog
+
+
+def infer_tracking_repo(sheet_name: str) -> str | None:
+    normalized = normalize_text(sheet_name)
+    prefix = re.sub(r"-?tracking.*$", "", normalized).strip("- ")
+    return TRACKING_SHEET_REPO.get(prefix)
+
+
+def normalize_tracking_status(raw: object) -> str:
+    text = normalize_text(raw)
+    if not text:
+        return "SIN ESTADO"
+    if "pend" in text:
+        return "PENDIENTE"
+    if "progreso" in text or "curso" in text:
+        return "EN PROGRESO"
+    if "bloq" in text:
+        return "BLOQUEADO"
+    if "complet" in text or "cerrad" in text or "done" in text:
+        return "COMPLETADO"
+    if "ninguno" in text:
+        return "SIN ESTADO"
+    return str(raw).strip().upper()
+
+
+def normalize_tracking_sprint(raw: object) -> str | None:
+    text = normalize_text(raw)
+    if not text:
+        return None
+
+    explicit = re.search(r"\bs(3[1-9]|4[0-2])\b", text)
+    if explicit:
+        return explicit.group(0).upper()
+
+    week_numbers = [int(number) for number in re.findall(r"\b(\d+)\b", text)]
+    if "semana" in text and week_numbers:
+        max_week = max(week_numbers)
+        if max_week == 1:
+            return "S31"
+        if max_week == 2:
+            return "S32"
+        return f"S{min(42, 33 + ((max_week - 3) // 2))}"
+
+    sprint_match = re.search(r"(?:sprint|incremento)\s*p?(\d+)", text)
+    if sprint_match:
+        value = int(sprint_match.group(1))
+        return f"S{min(42, value + 32)}"
+
+    return None
+
+
+def load_tracking_actions(workbook) -> dict[str, object]:
+    actions: list[dict[str, object]] = []
+    used_sheets: list[str] = []
+
+    for sheet_name in workbook.sheetnames:
+        if "tracking" not in normalize_text(sheet_name):
+            continue
+        repo = infer_tracking_repo(sheet_name)
+        if not repo or repo not in REPO_STACK:
+            continue
+
+        worksheet = workbook[sheet_name]
+        rows = worksheet.iter_rows(values_only=True)
+        try:
+            headers = list(next(rows))
+        except StopIteration:
+            continue
+        header_map = {str(value).strip(): index for index, value in enumerate(headers) if value is not None}
+        if "Estado" not in header_map or "Titulo" not in header_map:
+            continue
+
+        used_sheets.append(sheet_name)
+        for raw_row in rows:
+            if not any(cell not in (None, "") for cell in raw_row):
+                continue
+
+            title = str(row_value(raw_row, header_map, "Titulo") or "").strip()
+            code = str(row_value(raw_row, header_map, "Codigo") or "").strip()
+            if not title and not code:
+                continue
+
+            criticality_label, criticality_rank = normalize_criticality(row_value(raw_row, header_map, "Criticidad"))
+            effort_min = coerce_int(row_value(raw_row, header_map, "Esfuerzo_Min_h"))
+            effort_max = coerce_int(row_value(raw_row, header_map, "Esfuerzo_Max_h"))
+            owner = str(row_value(raw_row, header_map, "Responsable") or "").strip() or "Sin responsable"
+            sprint_raw = str(row_value(raw_row, header_map, "Sprint") or "").strip()
+            actions.append(
+                {
+                    "sheet": sheet_name,
+                    "repo": repo,
+                    "stack": REPO_STACK[repo],
+                    "code": code or str(row_value(raw_row, header_map, "ID") or "").strip(),
+                    "block": str(row_value(raw_row, header_map, "Bloque") or "").strip(),
+                    "area": str(row_value(raw_row, header_map, "Area") or "").strip(),
+                    "title": title,
+                    "description": str(row_value(raw_row, header_map, "Descripcion") or "").strip(),
+                    "criticality": criticality_label,
+                    "criticality_rank": criticality_rank,
+                    "status": normalize_tracking_status(row_value(raw_row, header_map, "Estado")),
+                    "sprint_raw": sprint_raw,
+                    "sprint_assigned": normalize_tracking_sprint(row_value(raw_row, header_map, "Sprint")),
+                    "effort_min_h": effort_min,
+                    "effort_max_h": effort_max,
+                    "effort_max_visible": max(effort_min, effort_max),
+                    "remediation_type": str(row_value(raw_row, header_map, "Tipo_Remediacion") or "").strip(),
+                    "dependencies": str(row_value(raw_row, header_map, "Dependencias") or "").strip(),
+                    "implementation_risk": str(row_value(raw_row, header_map, "Riesgo_Implementacion") or "").strip(),
+                    "owasp": str(row_value(raw_row, header_map, "OWASP") or "").strip(),
+                    "owner": owner,
+                    "notes": str(row_value(raw_row, header_map, "Notas") or "").strip(),
+                    "source_path": f"{BACKLOG_XLSX.name}::{sheet_name}",
+                }
+            )
+
+    actions.sort(
+        key=lambda item: (
+            STACK_ORDER.index(item["stack"]),
+            sprintOrder_index(item["sprint_assigned"]),
+            -item["criticality_rank"],
+            item["repo"],
+            item["code"],
+        )
+    )
+
+    return {
+        "source_path": str(BACKLOG_XLSX),
+        "sheet_count": len(used_sheets),
+        "sheet_names": sorted(used_sheets),
+        "actions": actions,
+    }
+
+
 def value_stream_group(row: dict[str, object]) -> str:
     domain = str(row.get("Dominio_VSS") or "").strip()
     stream = str(row.get("Value_Stream") or "").strip()
@@ -722,10 +948,19 @@ def coerce_int(value: object, default: int = 0) -> int:
         return default
 
 
-def sheet_records() -> list[dict[str, object]]:
-    workbook = load_workbook(BACKLOG_XLSX, data_only=True, read_only=True)
+def sprintOrder_index(sprint_id: str | None) -> int:
+    if sprint_id and sprint_id in SPRINT_BY_ID:
+        return sprintOrder_cache[sprint_id]
+    return len(SPRINTS) + 1
+
+
+sprintOrder_cache = {sprint.sprint_id: index for index, sprint in enumerate(SPRINTS)}
+
+
+def sheet_records(workbook) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
-    for worksheet in workbook.worksheets:
+    worksheets = [workbook[BACKLOG_SHEET_NAME]] if BACKLOG_SHEET_NAME in workbook.sheetnames else workbook.worksheets
+    for worksheet in worksheets:
         try:
             headers = list(next(worksheet.iter_rows(min_row=1, max_row=1, values_only=True)))
         except StopIteration:
@@ -829,7 +1064,14 @@ def assign_group_sprints(records: list[dict[str, object]]) -> tuple[list[dict[st
 
 
 def build_dataset() -> dict[str, object]:
-    rows = sheet_records()
+    workbook = load_workbook(BACKLOG_XLSX, data_only=True, read_only=True)
+    try:
+        rows = sheet_records(workbook)
+        dimension_catalog = load_dimension_catalog(workbook)
+        tracking = load_tracking_actions(workbook)
+    finally:
+        workbook.close()
+
     records: list[dict[str, object]] = []
     for index, row in enumerate(rows, start=1):
         repo = normalize_repo(row.get("Repositorio"))
@@ -849,7 +1091,7 @@ def build_dataset() -> dict[str, object]:
                 "Especificacion_VSS",
             )
         )
-        theme, confidence, needs_review, theme_scores = classify_theme(text_blob)
+        theme, confidence, needs_review, theme_scores, dimension = infer_priority_theme(row, text_blob)
         source_sheet = row["_sheet"]
         raw_record = {
             "id": index,
@@ -874,6 +1116,7 @@ def build_dataset() -> dict[str, object]:
             "priority_theme_confidence": confidence,
             "needs_review": needs_review,
             "theme_scores": theme_scores,
+            "dimension": dimension or "",
             "sprint_raw": str(row.get("Sprint") or "").strip(),
             "increment_raw": str(row.get("Incremento") or "").strip(),
             "period_raw": str(row.get("Periodo") or "").strip(),
@@ -963,7 +1206,7 @@ def build_dataset() -> dict[str, object]:
     for stream_name, stream_records in sorted(
         value_stream_records.items(),
         key=lambda item: (-len(item[1]), item[0]),
-    )[:14]:
+    ):
         value_stream_summaries.append(
             {
                 "name": stream_name,
@@ -1017,6 +1260,9 @@ def build_dataset() -> dict[str, object]:
             "repo_count": len({record["repo"] for record in records}),
             "value_stream_count": len(unique_value_streams),
             "needs_review_count": sum(1 for record in records if record["needs_review"]),
+            "tracking_action_count": len(tracking["actions"]),
+            "tracking_repo_count": len({action["repo"] for action in tracking["actions"]}),
+            "tracking_pending_count": sum(1 for action in tracking["actions"] if action["status"] == "PENDIENTE"),
             "coverage_final_percent": 100.0 if total_records else 0,
         },
         "filters": {
@@ -1024,7 +1270,10 @@ def build_dataset() -> dict[str, object]:
             "themes": THEME_ORDER,
             "repos": sorted({record["repo"] for record in records}),
             "sprints": [sprint.sprint_id for sprint in SPRINTS],
+            "value_streams": unique_value_streams,
         },
+        "dimension_catalog": dimension_catalog,
+        "tracking": tracking,
         "coverage": coverage,
         "general_plan": general_plan,
         "stack_summaries": stack_summaries,

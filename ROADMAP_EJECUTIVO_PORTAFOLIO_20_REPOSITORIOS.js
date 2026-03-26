@@ -24,8 +24,10 @@
   const sprintOrder = data.sprints.map((item) => item.id);
   const sprintMeta = new Map(data.sprints.map((item) => [item.id, item]));
   const themeColors = data.priorities.colors;
-  const valueStreamOrder = (data.value_stream_summaries || []).map((item) => item.name);
+  const valueStreamOrder = data.filters.value_streams || (data.value_stream_summaries || []).map((item) => item.name);
   const dimensionOrder = ["Arquitectura", "Testing", "Seguridad", "DevOps", "Dependencias", "Trazabilidad"];
+  const dimensionCatalog = new Map((data.dimension_catalog || []).map((item) => [item.dimension, item]));
+  const trackingActions = data.tracking?.actions || [];
   const dimensionColors = {
     Arquitectura: "#84cc16",
     Testing: "#14b8a6",
@@ -35,12 +37,12 @@
     Trazabilidad: "#22d3ee",
   };
   const dimensionDescriptions = {
-    Arquitectura: "Modularidad, deuda estructural, rendimiento y decisiones de diseño que sostienen los VSS más pesados.",
-    Testing: "Cobertura, regresión y automatización para mover VSS sin perder control operativo.",
-    Seguridad: "Secretos, autenticación, transporte, hardcodes y reducción de superficie explotable.",
-    DevOps: "CI/CD, quality gates, empaquetado y flujo de entrega para ejecutar el backlog con continuidad.",
-    Dependencias: "Versiones EOL, librerías legacy y riesgo acumulado por actualización pendiente.",
-    Trazabilidad: "Documentación, observabilidad y evidencia operativa para seguir cada VSS de punta a punta.",
+    Arquitectura: dimensionCatalog.get("Arquitectura")?.benefits || "Modularidad, deuda estructural, rendimiento y decisiones de diseño que sostienen los VSS más pesados.",
+    Testing: dimensionCatalog.get("Testing")?.benefits || "Cobertura, regresión y automatización para mover VSS sin perder control operativo.",
+    Seguridad: dimensionCatalog.get("Seguridad")?.benefits || "Secretos, autenticación, transporte, hardcodes y reducción de superficie explotable.",
+    DevOps: dimensionCatalog.get("DevOps")?.benefits || "CI/CD, quality gates, empaquetado y flujo de entrega para ejecutar el backlog con continuidad.",
+    Dependencias: dimensionCatalog.get("Dependencias")?.benefits || "Versiones EOL, librerías legacy y riesgo acumulado por actualización pendiente.",
+    Trazabilidad: dimensionCatalog.get("Trazabilidad")?.benefits || "Documentación, observabilidad y evidencia operativa para seguir cada VSS de punta a punta.",
   };
   const dimensionEvaluates = {
     Arquitectura: "Código, arquitectura y acoplamientos que sostienen el flujo.",
@@ -97,6 +99,10 @@
     gapGrid: document.getElementById("gap-grid"),
     maturityNote: document.getElementById("maturity-note"),
     maturityGrid: document.getElementById("maturity-grid"),
+    trackingNote: document.getElementById("tracking-note"),
+    trackingKpis: document.getElementById("tracking-kpi-grid"),
+    trackingSprints: document.getElementById("tracking-sprint-grid"),
+    trackingRepos: document.getElementById("tracking-repo-grid"),
     generalGanttIntro: document.getElementById("general-gantt-intro"),
     generalGantt: document.getElementById("general-gantt-board"),
     vssOverviewNote: document.getElementById("vss-overview-note"),
@@ -172,13 +178,26 @@
     "Operación/Otras": "CI/CD, despliegue, soporte, continuidad operativa y remediaciones transversales restantes.",
   };
 
+  function normalizeDimensionName(value) {
+    const text = normalizeText(value);
+    if (text === "arquitectura") return "Arquitectura";
+    if (text === "testing") return "Testing";
+    if (text === "seguridad") return "Seguridad";
+    if (text === "devops") return "DevOps";
+    if (text === "dependencias") return "Dependencias";
+    if (text === "trazabilidad") return "Trazabilidad";
+    return "";
+  }
+
   function classifyDimension(record) {
-    const stream = record.value_stream_group;
-    if (stream === "Dependencias") return "Dependencias";
-    if (stream === "Cobertura" || stream === "Tests" || record.priority_theme === "Pruebas unitarias") return "Testing";
+    const directDimension = normalizeDimensionName(record.dimension);
+    if (directDimension) return directDimension;
+    const stream = normalizeText(record.value_stream_group);
+    if (stream === "dependencias") return "Dependencias";
+    if (stream === "cobertura" || stream === "tests" || record.priority_theme === "Pruebas unitarias") return "Testing";
     if (record.priority_theme === "Seguridad") return "Seguridad";
-    if (stream === "CI_CD" || record.priority_theme === "Operación/Otras") return "DevOps";
-    if (stream === "Documentacion" || record.priority_theme === "Observabilidad") return "Trazabilidad";
+    if (stream === "ci_cd" || record.priority_theme === "Operación/Otras") return "DevOps";
+    if (stream === "documentacion" || record.priority_theme === "Observabilidad") return "Trazabilidad";
     return "Arquitectura";
   }
 
@@ -457,6 +476,16 @@
       .slice(0, maxItems);
   }
 
+  function getDimensionBenefitSnippet(dimension) {
+    const value = dimensionDescriptions[dimension] || "";
+    return value
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean)
+      .slice(0, 4)
+      .join(", ");
+  }
+
   function buildDimensionNarrative(dimension, items) {
     const topStack = counter(items.map((record) => record.stack))[0];
     const topStream = counter(items.map((record) => record.value_stream_group))[0];
@@ -646,11 +675,180 @@
     });
   }
 
+  function getSourceFileName(path) {
+    return String(path || "").split(/[\\/]/).pop() || String(path || "");
+  }
+
+  function getFilteredTrackingActions(records) {
+    const visibleRepos = new Set(records.map((record) => record.repo));
+    const search = normalizeText(state.search);
+    return trackingActions.filter((action) => {
+      if (!visibleRepos.has(action.repo)) return false;
+      if (state.sprint !== "Todos" && action.sprint_assigned !== state.sprint) return false;
+      if (state.criticalOnly && action.criticality_rank < 3) return false;
+      if (!search) return true;
+      const haystack = normalizeText(
+        [
+          action.repo,
+          action.stack,
+          action.code,
+          action.block,
+          action.area,
+          action.title,
+          action.description,
+          action.status,
+          action.sprint_raw,
+          action.owner,
+          action.dependencies,
+          action.owasp,
+          action.notes,
+        ].join(" ")
+      );
+      return haystack.includes(search);
+    });
+  }
+
+  function summarizeTrackingActions(actions) {
+    const repos = new Set(actions.map((action) => action.repo));
+    const owners = new Set(
+      actions
+        .map((action) => action.owner)
+        .filter((owner) => owner && owner !== "Sin responsable")
+    );
+    const sprints = new Set(actions.map((action) => action.sprint_assigned).filter(Boolean));
+    return {
+      total: actions.length,
+      pendingCount: actions.filter((action) => action.status === "PENDIENTE").length,
+      criticalHighCount: actions.filter((action) => action.criticality_rank >= 3).length,
+      repoCount: repos.size,
+      sprintCount: sprints.size,
+      totalEffortMax: actions.reduce((sum, action) => sum + (Number(action.effort_max_visible) || 0), 0),
+      ownerCount: owners.size,
+      unassignedCount: actions.filter((action) => !action.owner || action.owner === "Sin responsable").length,
+    };
+  }
+
+  function sortSprintIds(ids) {
+    return [...ids].sort((a, b) => {
+      const aIndex = sprintOrder.indexOf(a);
+      const bIndex = sprintOrder.indexOf(b);
+      if (aIndex === -1 && bIndex === -1) return String(a).localeCompare(String(b));
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    });
+  }
+
+  function renderTracking(records) {
+    if (!elements.trackingNote || !elements.trackingKpis || !elements.trackingSprints || !elements.trackingRepos) return;
+
+    const actions = getFilteredTrackingActions(records);
+    const summary = summarizeTrackingActions(actions);
+    const workbookName = getSourceFileName(data.tracking?.source_path || data.metadata.sources.backlog);
+    const sheetCount = data.tracking?.sheet_count || 0;
+
+    elements.trackingNote.innerHTML = `
+      <article class="general-gantt-note">
+        <strong>Tracking operativo conectado al backlog visible</strong>
+        <p>La V2 ya consume <code>${escapeHtml(workbookName)}</code> como fuente maestra. En esta capa se integran ${sheetCount} hojas <code>TRACKING_ACCIONES</code> para bajar de la lectura VSS a acciones concretas por repo, sprint y responsable. Con los filtros actuales hay ${summary.total} acciones visibles, ${summary.pendingCount} siguen pendientes y ${summary.unassignedCount} todavía no tienen responsable asignado.</p>
+      </article>
+    `;
+
+    elements.trackingKpis.innerHTML = "";
+    elements.trackingSprints.innerHTML = "";
+    elements.trackingRepos.innerHTML = "";
+
+    if (!actions.length) {
+      elements.trackingRepos.innerHTML = `<article class="tracking-card"><h3>Sin acciones visibles</h3><p>Los filtros activos no dejan acciones de tracking dentro de los repositorios visibles del backlog.</p></article>`;
+      return;
+    }
+
+    [
+      ["Acciones visibles", summary.total],
+      ["Pendientes", summary.pendingCount],
+      ["Alta / crítica", summary.criticalHighCount],
+      ["Repos con tracking", summary.repoCount],
+      ["Horas máximas", summary.totalEffortMax],
+      ["Sin responsable", summary.unassignedCount],
+    ].forEach(([label, value]) => {
+      const card = document.createElement("article");
+      card.className = "kpi-card";
+      card.innerHTML = `<strong>${value}</strong><span>${label}</span>`;
+      elements.trackingKpis.appendChild(card);
+    });
+
+    const sprintGroups = groupBy(actions, (action) => action.sprint_assigned || "Sin sprint");
+    sortSprintIds([...sprintGroups.keys()]).forEach((sprintId) => {
+      const items = sprintGroups.get(sprintId) || [];
+      const meta = sprintMeta.get(sprintId);
+      const topBlocks = counter(items.map((action) => action.block || "Sin bloque")).slice(0, 3);
+      const statuses = counter(items.map((action) => action.status)).slice(0, 2);
+      const card = document.createElement("article");
+      card.className = "tracking-card";
+      card.innerHTML = `
+        <h3>${escapeHtml(sprintId)}</h3>
+        <p>${meta ? `${shortDate(meta.start)} · ${shortDate(meta.end)}` : "Sprint sin mapeo exacto en el horizonte"}</p>
+        <div class="stack-metric">
+          <div><strong>${items.length}</strong><span>acciones</span></div>
+          <div><strong>${items.reduce((sum, action) => sum + (Number(action.effort_max_visible) || 0), 0)}</strong><span>hrs máx</span></div>
+        </div>
+        <div class="pill-row" style="margin-top:0.8rem;">
+          <span class="tiny-pill">${new Set(items.map((action) => action.repo)).size} repos</span>
+          ${statuses.map(([label, count]) => `<span class="tiny-pill">${escapeHtml(label)}: ${count}</span>`).join("")}
+        </div>
+        <div class="pill-row" style="margin-top:0.6rem;">
+          ${topBlocks.map(([label, count]) => `<span class="tiny-pill">${escapeHtml(label)}: ${count}</span>`).join("")}
+        </div>
+      `;
+      elements.trackingSprints.appendChild(card);
+    });
+
+    const repoGroups = [...groupBy(actions, (action) => action.repo).entries()].sort((a, b) => {
+      const aPending = a[1].filter((action) => action.status === "PENDIENTE").length;
+      const bPending = b[1].filter((action) => action.status === "PENDIENTE").length;
+      if (bPending !== aPending) return bPending - aPending;
+      const aCritical = a[1].filter((action) => action.criticality_rank >= 3).length;
+      const bCritical = b[1].filter((action) => action.criticality_rank >= 3).length;
+      if (bCritical !== aCritical) return bCritical - aCritical;
+      return a[0].localeCompare(b[0]);
+    });
+
+    repoGroups.forEach(([repo, items]) => {
+      const repoRecords = records.filter((record) => record.repo === repo);
+      const topStream = counter(repoRecords.map((record) => record.value_stream_group))[0]?.[0] || "Sin VSS visible";
+      const topDimension = counter(repoRecords.map((record) => classifyDimension(record)))[0]?.[0] || "Sin dimensión visible";
+      const topBlocks = counter(items.map((action) => action.block || "Sin bloque")).slice(0, 3);
+      const sampleTitles = items
+        .map((action) => action.title)
+        .filter(Boolean)
+        .slice(0, 2);
+      const card = document.createElement("article");
+      card.className = "tracking-card";
+      card.innerHTML = `
+        <h3>${escapeHtml(repo)}</h3>
+        <p>${escapeHtml(items[0].stack)} · ${items.length} acciones de tracking visibles · ${items.filter((action) => action.status === "PENDIENTE").length} pendientes</p>
+        <div class="stack-metric">
+          <div><strong>${items.filter((action) => action.criticality_rank >= 3).length}</strong><span>alta / crítica</span></div>
+          <div><strong>${items.reduce((sum, action) => sum + (Number(action.effort_max_visible) || 0), 0)}</strong><span>hrs máx</span></div>
+        </div>
+        <div class="pill-row" style="margin-top:0.8rem;">
+          <span class="tiny-pill">${escapeHtml(topStream)}</span>
+          <span class="tiny-pill">${escapeHtml(topDimension)}</span>
+          <span class="tiny-pill">${new Set(items.map((action) => action.owner).filter((owner) => owner && owner !== "Sin responsable")).size || 0} responsables asignados</span>
+        </div>
+        <div class="pill-row" style="margin-top:0.6rem;">
+          ${topBlocks.map(([label, count]) => `<span class="tiny-pill">${escapeHtml(label)}: ${count}</span>`).join("")}
+        </div>
+        ${sampleTitles.length ? `<ul class="sample-list">${sampleTitles.map((title) => `<li>${escapeHtml(title)}</li>`).join("")}</ul>` : ""}
+      `;
+      elements.trackingRepos.appendChild(card);
+    });
+  }
+
   function renderHeroPanel(records) {
     const summary = summarize(records);
     const evidence = getEvidenceSummary(records);
-    const themeCounts = counter(records.map((record) => record.priority_theme));
-    const topTheme = themeCounts[0] ? themeCounts[0][0] : "Sin datos";
+    const trackingSummary = summarizeTrackingActions(getFilteredTrackingActions(records));
     const streamCounts = counter(records.map((record) => record.value_stream_group));
     const topStream = streamCounts[0] ? streamCounts[0][0] : "Sin datos";
     const dimensionCounts = counter(records.map((record) => classifyDimension(record)));
@@ -661,13 +859,14 @@
     grid.className = "hero-panel-grid";
     [
       ["Pain points visibles", summary.total],
+      ["Acciones tracking", trackingSummary.total],
       ["Repositorios visibles", summary.repoCount],
       ["VSS activos", summary.valueStreamCount],
       ["Estado actual", evidence.profile.stateLabel],
       ["Dimensión dominante", topDimension],
       ["Criticidad alta / crítica", summary.criticalHighCount],
       ["VSS dominante", topStream],
-      ["Tema roadmap dominante", topTheme],
+      ["Sin responsable", trackingSummary.unassignedCount],
     ].forEach(([label, value]) => {
       const card = document.createElement("article");
       card.className = "hero-panel-card";
@@ -680,6 +879,7 @@
   function renderKpis(records) {
     const summary = summarize(records);
     const evidence = getEvidenceSummary(records);
+    const trackingSummary = summarizeTrackingActions(getFilteredTrackingActions(records));
     const lastCoverage = renderCoverage(records);
     elements.kpis.innerHTML = "";
     const cards = [
@@ -687,7 +887,8 @@
       ["Alta / crítica", summary.criticalHighCount],
       ["Repos con evidencia cruzada", evidence.reposWithBoth],
       ["VSS visibles", summary.valueStreamCount],
-      ["Por revisar", summary.needsReviewCount],
+      ["Acciones tracking", trackingSummary.total],
+      ["Sin responsable", trackingSummary.unassignedCount],
       ["Cobertura final", `${lastCoverage.toFixed(1)}%`],
     ];
     cards.forEach(([label, value]) => {
@@ -711,7 +912,7 @@
       card.innerHTML = `
         <span class="priority-rank">Dimensión ${index + 1}</span>
         <h3>${dimension}</h3>
-        <p>${dimensionDescriptions[dimension]}</p>
+        <p>${getDimensionBenefitSnippet(dimension)}</p>
         <strong>${counts[dimension]} hallazgos</strong>
       `;
       elements.ladder.appendChild(card);
@@ -1516,11 +1717,17 @@
   function renderSources(records) {
     elements.sourceGrid.innerHTML = "";
     const summary = summarize(records);
+    const workbookName = getSourceFileName(data.metadata.sources.backlog);
     const globalCards = [
       {
-        title: "Backlog maestro",
-        text: `${summary.total} pain points consolidados desde el Excel de negocio, normalizados y asignados a sprints ejecutivos.`,
-        links: [{ label: "Backlog_Claro_video.xlsx", path: data.metadata.sources.backlog }],
+        title: "Workbook maestro",
+        text: `${summary.total} hallazgos visibles del backlog y ${data.stats.tracking_action_count || 0} acciones operativas consolidadas desde el workbook de negocio.`,
+        links: [{ label: workbookName, path: data.metadata.sources.backlog }],
+      },
+      {
+        title: "Tracking por repo",
+        text: `${data.tracking?.sheet_count || 0} hojas TRACKING_ACCIONES integradas a la V2 para bajar de VSS a acciones por sprint, repo y responsable.`,
+        links: [{ label: `${data.tracking?.sheet_count || 0} hojas tracking`, path: data.metadata.sources.backlog }],
       },
       {
         title: "Diagnóstico FASE 2",
@@ -1591,6 +1798,7 @@
     renderDimensionSummary(records);
     renderGapSummary(records);
     renderMaturityEvolution(records);
+    renderTracking(records);
     renderGeneralPlan();
     renderVssOverview(records);
     renderVssDetail(records);
@@ -1648,6 +1856,7 @@
     const records = getFilteredRecords();
     const summary = summarize(records);
     const evidence = getEvidenceSummary(records);
+    const trackingSummary = summarizeTrackingActions(getFilteredTrackingActions(records));
     const dimensionCounts = counter(records.map((record) => classifyDimension(record)))
       .slice(0, 4)
       .map(([dimension, count]) => `${dimension}: ${count}`)
@@ -1672,6 +1881,7 @@
       `Repos visibles: ${summary.repoCount}`,
       `Estado actual: ${evidence.profile.stateLabel}`,
       `Evidencia cruzada: ${evidence.withBoth}/${summary.total}`,
+      `Tracking visible: ${trackingSummary.total} acciones | pendientes ${trackingSummary.pendingCount} | sin responsable ${trackingSummary.unassignedCount}`,
       `Dimensiones dominantes: ${dimensionCounts}`,
       `Temas dominantes: ${themeCounts}`,
       `VSS dominantes: ${streamCounts}`,
