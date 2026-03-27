@@ -1,0 +1,3661 @@
+{
+  "repo": "claro-video-middleware-claro-musica",
+  "title": "Middleware Claro Musica",
+  "sourceLabel": "analysis",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-middleware-claro-musica",
+    "annex": "ANEXO_claro-video-middleware-claro-musica.html",
+    "legacyViewer": "ANEXO_claro-video-middleware-claro-musica-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-middleware-claro-musica.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_middleware_musica_vss_extract\\claro-video-middleware-claro-musica\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_middleware_musica_vss_extract\\claro-video-middleware-claro-musica\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_middleware_musica_vss_extract\\claro-video-middleware-claro-musica\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_middleware_musica_vss_extract\\claro-video-middleware-claro-musica\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_middleware_musica_vss_extract\\claro-video-middleware-claro-musica\\analysis\\diagrama_global_claro-video-middleware-claro-musica.mmd"
+  },
+  "summary": {
+    "totalNodes": 140,
+    "totalEdges": 76,
+    "rawEdges": 135,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "MUSIC"
+    ],
+    "unresolvedNodes": [
+      "Mapeo de region",
+      "pertenece tambi",
+      "fono",
+      "cm_access_token",
+      "Transforma respuesta",
+      "c",
+      "extrae token_wap para llamar a API de nivel con autenticaci",
+      "extrae params",
+      "APA metadata",
+      "estructura UI de niveles",
+      "newrelic.js",
+      "src/",
+      "New Relic / analytics",
+      "Cliente",
+      "MIDDLEWARE_ENDPOINT=http://mw-cglobal-cvideo-resto.clarovideo.net",
+      "Middleware",
+      "New Relic APM",
+      "Mapea region",
+      "Mapea respuesta de API externa",
+      "contrato del cliente",
+      "Logout",
+      "error rate",
+      "<informacion no encontrada en el repositorio: módulo de logout -> revisar src/user/ o app.js para rutas>",
+      "dashboard de KPIs",
+      "<informacion no encontrada en el repositorio: topología de deployment -> DevOps / IaC>",
+      "New Relic / logs",
+      "schema de respuesta de getAppTops",
+      "estructura UI de carrusel",
+      "Transforma respuesta upstream",
+      "getApaMetadata",
+      "ltiples respuestas",
+      "//",
+      "estructura de men",
+      "endpoints exactos de radios",
+      "ct",
+      "src/radios/v1.0.0/",
+      "schema completo",
+      "Mapea radios",
+      "spec m",
+      "respuesta UI",
+      "schema de respuesta artist",
+      "observar respuesta real de API o documentaci"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 36,
+      "edgeCount": 15,
+      "evidenceCount": 114,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 36
+        }
+      ],
+      "sampleNodes": [
+        "Decodifica cm_access_token",
+        "Frecuencia",
+        "<informacion no encontrada en el repositorio: inventario completo de componentes UI -> repositorios mobile/web>",
+        "Sección de \"Contenido por Nivel\": playlists filtradas por plan",
+        "Estado"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 2,
+      "edgeCount": 2,
+      "evidenceCount": 2,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "Login por email",
+        "SLO login"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 40,
+      "edgeCount": 42,
+      "evidenceCount": 132,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 40
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "sin resultado",
+        "GET tops por nivel/categor",
+        "User_Hub_1.0.0",
+        "user_modify_1.0.0"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 20,
+      "edgeCount": 11,
+      "evidenceCount": 46,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 19
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "frecuencia",
+        "analytics",
+        "frecuencia de logins",
+        "API_ENDPOINT=http://api.claromusica.com",
+        "documentacion API CDN claromusica.com"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 42,
+      "edgeCount": 25,
+      "evidenceCount": 57,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 41
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "Mapeo de region",
+        "pertenece tambi",
+        "fono",
+        "cm_access_token",
+        "Transforma respuesta"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-middleware-claro-musica-node-1",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 77,
+      "files": [
+        "componentes.md",
+        "contracts.md",
+        "metricas.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "`src/level/`",
+        "`src/favorites/`",
+        "Mapeo de APIs - Búsqueda Exhaustiva (ACNTMGMT Domain) — 3 Intentos por API",
+        "6. Acciones de Mejora Sugeridas"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-2",
+      "name": "Mapeo de region",
+      "label": "Mapeo de region",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "2. Utilidades y Dependencias"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-3",
+      "name": "Decodifica cm_access_token",
+      "label": "Decodifica cm_access_token",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "2. Utilidades y Dependencias"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-4",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-5",
+      "name": "<informacion no encontrada en el repositorio: inventario completo de componentes UI -> repositorios mobile/web>",
+      "label": "<informacion no encontrada en el repositorio: inventario completo de componentes UI -> repositorios mobile/web>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-6",
+      "name": "Sección de \"Contenido por Nivel\": playlists filtradas por plan",
+      "label": "Sección de \"Contenido por Nivel\": playlists filtradas por plan",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-7",
+      "name": "pertenece tambi",
+      "label": "pertenece tambi",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/user/` (componente relevante ACNTMGMT)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-8",
+      "name": "fono",
+      "label": "fono",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/user/` (componente relevante ACNTMGMT)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-9",
+      "name": "sin resultado",
+      "label": "sin resultado",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (ACNTMGMT Domain) — 3 Intentos por API",
+        "Mapeo de APIs - Búsqueda Exhaustiva (MUSIC Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-10",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-11",
+      "name": "OpenAPI de APIs CDN claromusica.com",
+      "label": "OpenAPI de APIs CDN claromusica.com",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos (Middleware → APIs upstream)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-12",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-13",
+      "name": "n de cuenta",
+      "label": "n de cuenta",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-14",
+      "name": "README del repositorio o contacto del equipo",
+      "label": "README del repositorio o contacto del equipo",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-15",
+      "name": "n en runtime",
+      "label": "n en runtime",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-16",
+      "name": "n infra",
+      "label": "n infra",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-17",
+      "name": "Jira/GitHub issues",
+      "label": "Jira/GitHub issues",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-18",
+      "name": "Ícono de favorito (toggle) en tarjetas de álbum/artista/canción",
+      "label": "Ícono de favorito (toggle) en tarjetas de álbum/artista/canción",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-19",
+      "name": "spec owner",
+      "label": "spec owner",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-20",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-21",
+      "name": "New Relic APM / logs",
+      "label": "New Relic APM / logs",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-22",
+      "name": "GET tops por nivel/categor",
+      "label": "GET tops por nivel/categor",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/level/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-23",
+      "name": "cm_access_token",
+      "label": "cm_access_token",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md",
+        "journeys.md"
+      ],
+      "sections": [
+        "`src/level/`",
+        "Journey 1: Login por Email",
+        "Journey 2: Login por Teléfono"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-24",
+      "name": "User_Hub_1.0.0",
+      "label": "User_Hub_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (ACNTMGMT Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-25",
+      "name": "Panel \"Mi Cuenta\" / \"Mis Favoritos\": listas de favoritos por tipo",
+      "label": "Panel \"Mi Cuenta\" / \"Mis Favoritos\": listas de favoritos por tipo",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-26",
+      "name": "sistema de tracking del equipo",
+      "label": "sistema de tracking del equipo",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-27",
+      "name": "user_profileread_2.0.0",
+      "label": "user_profileread_2.0.0",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (ACNTMGMT Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-28",
+      "name": "user_modify_1.0.0",
+      "label": "user_modify_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (ACNTMGMT Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-29",
+      "name": "POST /api/favorites/toggle_album_favorite/...",
+      "label": "POST /api/favorites/toggle_album_favorite/...",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Toggle Favorito (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-30",
+      "name": "contratos completos con schemas",
+      "label": "contratos completos con schemas",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos (Middleware → APIs upstream)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-31",
+      "name": "<informacion no encontrada en el repositorio: topología completa de infra -> documentación DevOps / IaC>",
+      "label": "<informacion no encontrada en el repositorio: topología completa de infra -> documentación DevOps / IaC>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-32",
+      "name": "src/utils/requester.js",
+      "label": "src/utils/requester.js",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-33",
+      "name": "DevOps",
+      "label": "DevOps",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-34",
+      "name": "estado de favorito de",
+      "label": "estado de favorito de",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/favorites/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-35",
+      "name": "documentaci",
+      "label": "documentaci",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-36",
+      "name": "Transforma respuesta",
+      "label": "Transforma respuesta",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/level/`",
+        "`src/menu/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-37",
+      "name": "c",
+      "label": "c",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "2. Utilidades y Dependencias",
+        "2. Utilidades Compartidas Involucradas"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-38",
+      "name": "frecuencia",
+      "label": "frecuencia",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver Contenido por Nivel de Suscripción",
+        "3.2 Journey: Ver Panel de Favoritos del Usuario",
+        "3.2 Journey: Login por Teléfono",
+        "3.3 Journey: Verificación de Sesión Activa (isLoggedIn)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-39",
+      "name": "sin resultado directamente",
+      "label": "sin resultado directamente",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (ACNTMGMT Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-40",
+      "name": "extrae token_wap para llamar a API de nivel con autenticaci",
+      "label": "extrae token_wap para llamar a API de nivel con autenticaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/level/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-41",
+      "name": "app.js",
+      "label": "app.js",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-42",
+      "name": "process.env.JWT_SECRET",
+      "label": "process.env.JWT_SECRET",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "6. Acciones de Mejora Sugeridas"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-43",
+      "name": "Indicador de estado de suscripción",
+      "label": "Indicador de estado de suscripción",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-44",
+      "name": "APA",
+      "label": "APA",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Nivel de Contenido (Happy Path)",
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-45",
+      "name": "extrae params",
+      "label": "extrae params",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/level/`",
+        "`src/ribbon/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-46",
+      "name": "token_wap",
+      "label": "token_wap",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "2. Utilidades y Dependencias",
+        "4.1 Sequence — Ver Nivel de Contenido (Happy Path)",
+        "4.2 Sequence — Toggle Favorito (Happy Path)",
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-47",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-48",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-49",
+      "name": "Monitoring: New Relic 5.2.1",
+      "label": "Monitoring: New Relic 5.2.1",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-50",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.3 Journey: Toggle Favorito Individual",
+        "3.4 Journey: Verificar Estado de Sesión y Suscripción",
+        "3.1 Journey: Carga de Pantalla Principal (Home Ribbons)",
+        "3.6 Journey: Tracking de Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-51",
+      "name": "APA metadata",
+      "label": "APA metadata",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/level/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-52",
+      "name": "Puerto: 5000",
+      "label": "Puerto: 5000",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-53",
+      "name": "Login por email",
+      "label": "Login por email",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/user/` (componente relevante ACNTMGMT)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-54",
+      "name": "IaaS",
+      "label": "IaaS",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-55",
+      "name": "analytics",
+      "label": "analytics",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 12,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver Contenido por Nivel de Suscripción",
+        "3.2 Journey: Ver Panel de Favoritos del Usuario",
+        "3.1 Journey: Login por Email",
+        "3.2 Journey: Login por Teléfono"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-56",
+      "name": "estructura UI de niveles",
+      "label": "estructura UI de niveles",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/level/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-57",
+      "name": "Logout_1.0.0",
+      "label": "Logout_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-58",
+      "name": "newrelic.js",
+      "label": "newrelic.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-59",
+      "name": "src/",
+      "label": "src/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-60",
+      "name": "New Relic / analytics",
+      "label": "New Relic / analytics",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-61",
+      "name": "Register_1.0.0",
+      "label": "Register_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-62",
+      "name": "Cliente",
+      "label": "Cliente",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Nota sobre contrato interno del Middleware (cm-middleware)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-63",
+      "name": "n",
+      "label": "n",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-64",
+      "name": "user_login_5.9.3",
+      "label": "user_login_5.9.3",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-65",
+      "name": "accepted_terms_1.0.0",
+      "label": "accepted_terms_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-66",
+      "name": "MIDDLEWARE_ENDPOINT=http://mw-cglobal-cvideo-resto.clarovideo.net",
+      "label": "MIDDLEWARE_ENDPOINT=http://mw-cglobal-cvideo-resto.clarovideo.net",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-67",
+      "name": "Middleware",
+      "label": "Middleware",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Nota sobre contrato interno del Middleware (cm-middleware)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-68",
+      "name": "New Relic APM",
+      "label": "New Relic APM",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-69",
+      "name": "Mapea region",
+      "label": "Mapea region",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "2. Utilidades Compartidas Involucradas",
+        "2. Utilidades Clave en MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-70",
+      "name": "sin resultado exacto",
+      "label": "sin resultado exacto",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 6,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API",
+        "Mapeo de APIs - Búsqueda Exhaustiva (MUSIC Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-71",
+      "name": "Mapea respuesta de API externa",
+      "label": "Mapea respuesta de API externa",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Módulo `src/user/loginByPhone/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-72",
+      "name": "AuthApa_1.0.0",
+      "label": "AuthApa_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-73",
+      "name": "Login_ott_3.0.0",
+      "label": "Login_ott_3.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-74",
+      "name": "contrato del cliente",
+      "label": "contrato del cliente",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Módulo `src/user/loginByPhone/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-75",
+      "name": "RefreshToken_1.0.0",
+      "label": "RefreshToken_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-76",
+      "name": "Logout",
+      "label": "Logout",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Logout"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-77",
+      "name": "error rate",
+      "label": "error rate",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-78",
+      "name": "frecuencia de logins",
+      "label": "frecuencia de logins",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login por Email"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-79",
+      "name": "user_telcel_auth_1.0.0",
+      "label": "user_telcel_auth_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (AUTH Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-80",
+      "name": "apiErrorTransformer",
+      "label": "apiErrorTransformer",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.2 Sequence - Login por Email (Error Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-81",
+      "name": "<informacion no encontrada en el repositorio: módulo de logout -> revisar src/user/ o app.js para rutas>",
+      "label": "<informacion no encontrada en el repositorio: módulo de logout -> revisar src/user/ o app.js para rutas>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Logout"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-82",
+      "name": "API_ENDPOINT=http://api.claromusica.com",
+      "label": "API_ENDPOINT=http://api.claromusica.com",
+      "type": "contract_api",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-83",
+      "name": "dashboard de KPIs",
+      "label": "dashboard de KPIs",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-84",
+      "name": "<informacion no encontrada en el repositorio: topología de deployment -> DevOps / IaC>",
+      "label": "<informacion no encontrada en el repositorio: topología de deployment -> DevOps / IaC>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-85",
+      "name": "SLO login",
+      "label": "SLO login",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-86",
+      "name": "New Relic / logs",
+      "label": "New Relic / logs",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-87",
+      "name": "Pantalla principal (Home) con secciones scrolleables verticalmente",
+      "label": "Pantalla principal (Home) con secciones scrolleables verticalmente",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-88",
+      "name": "Íconos de radio/emisora por género",
+      "label": "Íconos de radio/emisora por género",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-89",
+      "name": "schema de respuesta de getAppTops",
+      "label": "schema de respuesta de getAppTops",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "4.1 App Tops / Ribbon CDN"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-90",
+      "name": "GET /api/radio/listGenreRadioArtist/...",
+      "label": "GET /api/radio/listGenreRadioArtist/...",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-91",
+      "name": "Promise.all",
+      "label": "Promise.all",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-92",
+      "name": "getRibbon",
+      "label": "getRibbon",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/ribbon/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-93",
+      "name": "local JSON",
+      "label": "local JSON",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-94",
+      "name": "estructura UI de carrusel",
+      "label": "estructura UI de carrusel",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/ribbon/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-95",
+      "name": "Carruseles horizontales de álbumes/artistas por categoría",
+      "label": "Carruseles horizontales de álbumes/artistas por categoría",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-96",
+      "name": "Transforma respuesta upstream",
+      "label": "Transforma respuesta upstream",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/ribbon/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-97",
+      "name": "getApaMetadata",
+      "label": "getApaMetadata",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "3.4 `CMS Auth 1.0.0` — POST /services/cms/v1/auth"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-98",
+      "name": "ribbons-transformer.js",
+      "label": "ribbons-transformer.js",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Patrón de Orquestación Ribbons (ribbons-controller.js)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-99",
+      "name": "cms_carrousel_1.0.0",
+      "label": "cms_carrousel_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (CARROUSEL Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-100",
+      "name": "GET /FeaturedStations",
+      "label": "GET /FeaturedStations",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-101",
+      "name": "GET /darstations.aspx",
+      "label": "GET /darstations.aspx",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-102",
+      "name": "ltiples respuestas",
+      "label": "ltiples respuestas",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/ribbons/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-103",
+      "name": "//",
+      "label": "//",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Patrón de Orquestación Ribbons (ribbons-controller.js)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-104",
+      "name": "Esta API es consumida internamente por src/ribbon/v1.0.0/ribbon-task.js",
+      "label": "Esta API es consumida internamente por src/ribbon/v1.0.0/ribbon-task.js",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "3.4 `CMS Auth 1.0.0` — POST /services/cms/v1/auth"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-105",
+      "name": "GET /api/top/getAppTops/...",
+      "label": "GET /api/top/getAppTops/...",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-106",
+      "name": "CMS_Rotation_1.0.0",
+      "label": "CMS_Rotation_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (CARROUSEL Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-107",
+      "name": "estructura de ribbons UI",
+      "label": "estructura de ribbons UI",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/ribbons/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-108",
+      "name": "BRFRE o PRD de pantalla principal",
+      "label": "BRFRE o PRD de pantalla principal",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-109",
+      "name": "NAVDATA_1.0.0",
+      "label": "NAVDATA_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (CARROUSEL Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-110",
+      "name": "favorites API",
+      "label": "favorites API",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home Ribbons (Happy Path)",
+        "Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-111",
+      "name": "Labels de calidad de audio (APA)",
+      "label": "Labels de calidad de audio (APA)",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-112",
+      "name": "estructura de men",
+      "label": "estructura de men",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "`src/menu/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-113",
+      "name": "documentacion API CDN claromusica.com",
+      "label": "documentacion API CDN claromusica.com",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "4.1 App Tops / Ribbon CDN"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-114",
+      "name": "CMS_Superhighlight_5.9.0",
+      "label": "CMS_Superhighlight_5.9.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (CARROUSEL Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-115",
+      "name": "GET /api/album/detail/...",
+      "label": "GET /api/album/detail/...",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-116",
+      "name": "endpoints exactos de radios",
+      "label": "endpoints exactos de radios",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "3. APIs Externas Consumidas"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-117",
+      "name": "Actualizar axios 0.19.2",
+      "label": "Actualizar axios 0.19.2",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "6. Acciones de Mejora Sugeridas"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-118",
+      "name": "Player de radio: emisora actual, pista, controles",
+      "label": "Player de radio: emisora actual, pista, controles",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-119",
+      "name": "artist_1.0.0",
+      "label": "artist_1.0.0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (MUSIC Domain) — 3 Intentos por API"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-120",
+      "name": "ct",
+      "label": "ct",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "2. Utilidades Clave en MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-121",
+      "name": "GET /api/social/user_playlists_following/...",
+      "label": "GET /api/social/user_playlists_following/...",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Obtener Playlists del Usuario (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-122",
+      "name": "src/radios/v1.0.0/",
+      "label": "src/radios/v1.0.0/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "3. APIs Externas Consumidas"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-123",
+      "name": "Pantalla de detalle de álbum: portada, tracklist, botones play/favorito",
+      "label": "Pantalla de detalle de álbum: portada, tracklist, botones play/favorito",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-124",
+      "name": "GET /api/login/...",
+      "label": "GET /api/login/...",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Obtener Playlists del Usuario (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-125",
+      "name": "process.env.PORT",
+      "label": "process.env.PORT",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-126",
+      "name": "schema completo",
+      "label": "schema completo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 2: Album Detail (GET /api/album/detail/...)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-127",
+      "name": "Mapea radios",
+      "label": "Mapea radios",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Módulo `src/radios/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-128",
+      "name": "spec m",
+      "label": "spec m",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: Listar artistas (POST /artist)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-129",
+      "name": "respuesta UI",
+      "label": "respuesta UI",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Módulo `src/playlist/`",
+        "Módulo `src/radios/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-130",
+      "name": "Mapea playlists",
+      "label": "Mapea playlists",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Módulo `src/playlist/`"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-131",
+      "name": "Pantalla de playlists: lista de playlists seguidas + propias",
+      "label": "Pantalla de playlists: lista de playlists seguidas + propias",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-132",
+      "name": "OpenAPI",
+      "label": "OpenAPI",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos (Middleware → APIs upstream)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-133",
+      "name": "GET /api/album/tracks/...",
+      "label": "GET /api/album/tracks/...",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-134",
+      "name": "NEWRELIC",
+      "label": "NEWRELIC",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-135",
+      "name": "BRFRE o PRD de streaming musical",
+      "label": "BRFRE o PRD de streaming musical",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-136",
+      "name": "contratos completos con schemas request/response",
+      "label": "contratos completos con schemas request/response",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos (Middleware → APIs upstream)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-137",
+      "name": "GET /api/userplaylist/list/...",
+      "label": "GET /api/userplaylist/list/...",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Obtener Playlists del Usuario (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-138",
+      "name": "schema de respuesta artist",
+      "label": "schema de respuesta artist",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: Listar artistas (POST /artist)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-139",
+      "name": "observar respuesta real de API o documentaci",
+      "label": "observar respuesta real de API o documentaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 2: Album Detail (GET /api/album/detail/...)"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-node-140",
+      "name": "Pantalla de artista: bio, discografía",
+      "label": "Pantalla de artista: bio, discografía",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-middleware-claro-musica-edge-1",
+      "source": "claro-video-middleware-claro-musica-node-45",
+      "target": "claro-video-middleware-claro-musica-node-51",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-2",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-22",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-3",
+      "source": "claro-video-middleware-claro-musica-node-36",
+      "target": "claro-video-middleware-claro-musica-node-56",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-4",
+      "source": "claro-video-middleware-claro-musica-node-23",
+      "target": "claro-video-middleware-claro-musica-node-40",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-5",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-34",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-6",
+      "source": "claro-video-middleware-claro-musica-node-53",
+      "target": "claro-video-middleware-claro-musica-node-7",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-7",
+      "source": "claro-video-middleware-claro-musica-node-8",
+      "target": "claro-video-middleware-claro-musica-node-7",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-8",
+      "source": "claro-video-middleware-claro-musica-node-3",
+      "target": "claro-video-middleware-claro-musica-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-9",
+      "source": "claro-video-middleware-claro-musica-node-2",
+      "target": "claro-video-middleware-claro-musica-node-37",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-10",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-28",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-11",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-24",
+      "type": "reads",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-12",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-9",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-13",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-39",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-14",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-42",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-15",
+      "source": "claro-video-middleware-claro-musica-node-19",
+      "target": "claro-video-middleware-claro-musica-node-14",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-16",
+      "source": "claro-video-middleware-claro-musica-node-15",
+      "target": "claro-video-middleware-claro-musica-node-21",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-17",
+      "source": "claro-video-middleware-claro-musica-node-16",
+      "target": "claro-video-middleware-claro-musica-node-33",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-18",
+      "source": "claro-video-middleware-claro-musica-node-54",
+      "target": "claro-video-middleware-claro-musica-node-35",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-19",
+      "source": "claro-video-middleware-claro-musica-node-13",
+      "target": "claro-video-middleware-claro-musica-node-35",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-20",
+      "source": "claro-video-middleware-claro-musica-node-17",
+      "target": "claro-video-middleware-claro-musica-node-26",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-21",
+      "source": "claro-video-middleware-claro-musica-node-38",
+      "target": "claro-video-middleware-claro-musica-node-55",
+      "type": "calls",
+      "occurrences": 11,
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-22",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-44",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-23",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-46",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-24",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-29",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-25",
+      "source": "claro-video-middleware-claro-musica-node-30",
+      "target": "claro-video-middleware-claro-musica-node-11",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-26",
+      "source": "claro-video-middleware-claro-musica-node-71",
+      "target": "claro-video-middleware-claro-musica-node-74",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-27",
+      "source": "claro-video-middleware-claro-musica-node-69",
+      "target": "claro-video-middleware-claro-musica-node-37",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-28",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-73",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-29",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-64",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-30",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-70",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-31",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-61",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-32",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-72",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-33",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-75",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-34",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-79",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-35",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-57",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-36",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-65",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-37",
+      "source": "claro-video-middleware-claro-musica-node-67",
+      "target": "claro-video-middleware-claro-musica-node-62",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-38",
+      "source": "claro-video-middleware-claro-musica-node-63",
+      "target": "claro-video-middleware-claro-musica-node-35",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-39",
+      "source": "claro-video-middleware-claro-musica-node-83",
+      "target": "claro-video-middleware-claro-musica-node-60",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-40",
+      "source": "claro-video-middleware-claro-musica-node-85",
+      "target": "claro-video-middleware-claro-musica-node-68",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-41",
+      "source": "claro-video-middleware-claro-musica-node-77",
+      "target": "claro-video-middleware-claro-musica-node-86",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-42",
+      "source": "claro-video-middleware-claro-musica-node-78",
+      "target": "claro-video-middleware-claro-musica-node-55",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-43",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-80",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AUTH_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-44",
+      "source": "claro-video-middleware-claro-musica-node-45",
+      "target": "claro-video-middleware-claro-musica-node-92",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-45",
+      "source": "claro-video-middleware-claro-musica-node-96",
+      "target": "claro-video-middleware-claro-musica-node-94",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-46",
+      "source": "claro-video-middleware-claro-musica-node-102",
+      "target": "claro-video-middleware-claro-musica-node-107",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-47",
+      "source": "claro-video-middleware-claro-musica-node-36",
+      "target": "claro-video-middleware-claro-musica-node-112",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-48",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-106",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-49",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-114",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-50",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-99",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-51",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-109",
+      "type": "consumes",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-52",
+      "source": "claro-video-middleware-claro-musica-node-104",
+      "target": "claro-video-middleware-claro-musica-node-97",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-53",
+      "source": "claro-video-middleware-claro-musica-node-89",
+      "target": "claro-video-middleware-claro-musica-node-113",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-54",
+      "source": "claro-video-middleware-claro-musica-node-103",
+      "target": "claro-video-middleware-claro-musica-node-98",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-55",
+      "source": "claro-video-middleware-claro-musica-node-108",
+      "target": "claro-video-middleware-claro-musica-node-35",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-56",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-105",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-57",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-90",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-58",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-100",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-59",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-93",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-60",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-101",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-61",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-110",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-62",
+      "source": "claro-video-middleware-claro-musica-node-130",
+      "target": "claro-video-middleware-claro-musica-node-129",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-63",
+      "source": "claro-video-middleware-claro-musica-node-127",
+      "target": "claro-video-middleware-claro-musica-node-129",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-64",
+      "source": "claro-video-middleware-claro-musica-node-69",
+      "target": "claro-video-middleware-claro-musica-node-120",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-65",
+      "source": "claro-video-middleware-claro-musica-node-116",
+      "target": "claro-video-middleware-claro-musica-node-122",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-66",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-119",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-67",
+      "source": "claro-video-middleware-claro-musica-node-138",
+      "target": "claro-video-middleware-claro-musica-node-128",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-68",
+      "source": "claro-video-middleware-claro-musica-node-126",
+      "target": "claro-video-middleware-claro-musica-node-139",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-69",
+      "source": "claro-video-middleware-claro-musica-node-117",
+      "target": "claro-video-middleware-claro-musica-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-70",
+      "source": "claro-video-middleware-claro-musica-node-135",
+      "target": "claro-video-middleware-claro-musica-node-35",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-71",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-115",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-72",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-133",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-73",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-124",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-74",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-121",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-75",
+      "source": "claro-video-middleware-claro-musica-node-1",
+      "target": "claro-video-middleware-claro-musica-node-137",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-middleware-claro-musica-edge-76",
+      "source": "claro-video-middleware-claro-musica-node-136",
+      "target": "claro-video-middleware-claro-musica-node-132",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:55.510Z",
+    "nodeTypes": [
+      "component",
+      "contract_api"
+    ],
+    "topFiles": [
+      "componentes.md",
+      "contracts.md",
+      "metricas.md",
+      "SPEC_ACCOUNT_MANAGEMENT.md",
+      "SPEC_AUTH_LOGIN_AUTHENTICATION.md",
+      "SPEC_CARROUSEL_NAVIGATION.md",
+      "SPEC_MUSIC_STREAMING.md",
+      "journeys.md",
+      "evidencia_codigo.txt"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 11,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-middleware-claro-musica",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-middleware-claro-musica.md",
+          "analysis\\diagrama_global_claro-video-middleware-claro-musica.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 138,
+          "edgeCount": 76,
+          "groupCount": 4,
+          "isolatedCount": 35
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-middleware-claro-musica",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-middleware-claro-musica.md"
+        ],
+        "metrics": {
+          "nodeCount": 6,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-middleware-claro-musica/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 55,
+          "edgeCount": 25,
+          "groupCount": 0,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-middleware-claro-musica/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 55,
+          "edgeCount": 25,
+          "groupCount": 0,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS claro-video-middleware-claro-musica/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 24,
+          "groupCount": 0,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS claro-video-middleware-claro-musica/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 24,
+          "groupCount": 0,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS claro-video-middleware-claro-musica/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 60,
+          "edgeCount": 28,
+          "groupCount": 0,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS claro-video-middleware-claro-musica/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 60,
+          "edgeCount": 28,
+          "groupCount": 0,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 9,
+        "title": "Diagrama VSS claro-video-middleware-claro-musica/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-middleware-claro-musica_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 53,
+          "edgeCount": 24,
+          "groupCount": 0,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS claro-video-middleware-claro-musica/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-middleware-claro-musica_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 53,
+          "edgeCount": 24,
+          "groupCount": 0,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 11,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 140,
+          "edgeCount": 76,
+          "groupCount": 0,
+          "isolatedCount": 36
+        }
+      }
+    ]
+  }
+}

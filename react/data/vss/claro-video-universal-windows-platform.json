@@ -1,0 +1,3816 @@
+{
+  "repo": "claro-video-universal-windows-platform",
+  "title": "UWP Windows Platform",
+  "sourceLabel": "subcarpeta new del paquete OneDrive_1_3-12-2026.zip",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-universal-windows-platform",
+    "annex": "ANEXO_claro-video-universal-windows-platform.html",
+    "legacyViewer": "ANEXO_claro-video-universal-windows-platform-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-universal-windows-platform.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-universal-windows-platform\\new\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-universal-windows-platform\\new\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-universal-windows-platform\\new\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-universal-windows-platform\\new\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-universal-windows-platform\\new\\analysis\\diagrama_global_docs.mmd"
+  },
+  "summary": {
+    "totalNodes": 171,
+    "totalEdges": 37,
+    "rawEdges": 58,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "MUSIC",
+      "RECORDED",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "TIMESHIFT",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "Vinculaci",
+      "View",
+      "LinkDevice",
+      "Control parental (activar, cambiar PIN, validar)",
+      "User_Hub",
+      "Gestión de preferencias (idioma, calidad, notificaciones)",
+      "Gestión de dispositivos vinculados",
+      "user_modify",
+      "POST /services/user/v1/modify",
+      "Journey",
+      "API Contract",
+      "Controlpin",
+      "Agregador de datos de usuario",
+      "POST /v1/controlpin/",
+      "parental_pin_activated",
+      "Consulta de datos de cliente / plan activo",
+      "Consulta de datos del cliente",
+      "ConsultarDatosClientes",
+      "ViewModel",
+      "Navigation",
+      "Registro nuevo usuario",
+      "EntryPoint",
+      "DI",
+      "Recuperación de contraseña",
+      "Domain Type",
+      "Renovación de sesión (refresh)",
+      "Aceptación T&C",
+      "Cierre de sesión",
+      "Segmentación por nivel de usuario (Leveluser)",
+      "Navegación por sección especial",
+      "Gestión de carruseles (CarruselManager)",
+      "Carga del Home con carruseles",
+      "Manager",
+      "Rotación de contenido por CMS",
+      "superhighlight_clicked",
+      "Selector",
+      "carousel_viewed",
+      "Superhighlight (banner editorial principal)",
+      "CarruselManager",
+      "Listado de canales disponibles (Lineup)",
+      "Media Core",
+      "Tracking de canal en vivo",
+      "Media Adapter",
+      "Mapper",
+      "Canales múltiples simultáneos (MultiView)",
+      "Analítica",
+      "Configuración",
+      "artist_browsed",
+      "Consultar directorio de artistas",
+      "Ver tracks de un artista",
+      "content_resumed",
+      "Seenlast",
+      "Ver mis grabaciones",
+      "Converter",
+      "Eliminar grabación de serie",
+      "Gestión de recordatorios (crear/eliminar)",
+      "GET /services/user/v1/seenlast",
+      "Eliminar del historial (Seendel)",
+      "Continúa Viendo (resume desde último punto)",
+      "Búsqueda de canales lineales",
+      "Búsqueda por vertical/categoría",
+      "Búsqueda multi-contenido",
+      "squeda",
+      "Búsqueda textual predictiva",
+      "Recomendaciones de contenido",
+      "Suscripción a plan",
+      "Cancelación de suscripción",
+      "Pago y confirmación de compra",
+      "Reactivación de suscripción",
+      "Renta de contenido individual",
+      "cms-filters.lab.eastus2.azr.int.claromexico.com",
+      "DLA.ClaroVideo.Client",
+      "View/PlayerEstPage.xaml",
+      "<informacion no encontrada en el repositorio: topología de producción -> IaC/diagramas de deployment>",
+      "Service",
+      "content_buffering",
+      "Media",
+      "content_played",
+      "Download Helpers",
+      "Navegar catálogo y ver detalle de contenido",
+      "Media Subtítulos WebVTT",
+      "Verificar disponibilidad y renta de contenido",
+      "Reproducir con subtítulos (TTML/WebVTT)",
+      "Download Adapter",
+      "Reproducir contenido (streaming adaptativo)",
+      "Media Subtítulos TTML"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 4,
+      "edgeCount": 1,
+      "evidenceCount": 4,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 3
+        },
+        {
+          "type": "event_technical",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "user_profileread",
+        "profile_updated",
+        "Ver y editar perfil de usuario",
+        "GET /services/user/v1/profile"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 51,
+      "edgeCount": 26,
+      "evidenceCount": 161,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 51
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "View/ProfilePage.xaml",
+        "View/TermsAndConditions.xaml",
+        "Evidencia primaria",
+        "Confluence/Jira"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 0,
+      "edgeCount": 0,
+      "evidenceCount": 0,
+      "typeCounts": [],
+      "sampleNodes": []
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 6,
+      "edgeCount": 0,
+      "evidenceCount": 7,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 4
+        },
+        {
+          "type": "event_technical",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "live_channel_started",
+        "epg_channel_viewed",
+        "Navegación EPG (Guía de Programación)",
+        "Crear recordatorio desde EPG",
+        "Verificación de versión de filtros EPG por región (admin)"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 3,
+      "edgeCount": 0,
+      "evidenceCount": 3,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 2
+        },
+        {
+          "type": "event_technical",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "music_playback_started",
+        "Reproducir música (player de Claro Música)",
+        "Explorar carrusel de música (géneros/álbumes)"
+      ]
+    },
+    {
+      "id": "RECORDED",
+      "label": "Recorded DVR",
+      "short": "RECORDED",
+      "summary": "Grabaciones, reminder flow y NPVR legado.",
+      "nodeCount": 15,
+      "edgeCount": 4,
+      "evidenceCount": 15,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 13
+        },
+        {
+          "type": "event_technical",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "Reproducción en Xbox",
+        "Reproducción de canal en vivo",
+        "GET /recordings/v3/light-list",
+        "RecordingsLightList",
+        "Reminder"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 2,
+      "edgeCount": 0,
+      "evidenceCount": 2,
+      "typeCounts": [
+        {
+          "type": "event_technical",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "search_result_selected",
+        "search_query"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 3,
+      "edgeCount": 0,
+      "evidenceCount": 3,
+      "typeCounts": [
+        {
+          "type": "event_technical",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "subscription_started",
+        "subscription_cancelled",
+        "payment_confirmed"
+      ]
+    },
+    {
+      "id": "TIMESHIFT",
+      "label": "Timeshift",
+      "short": "TIMESHIFT",
+      "summary": "Buffer, replay y grabación NPVR programada.",
+      "nodeCount": 1,
+      "edgeCount": 0,
+      "evidenceCount": 1,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "<informacion no encontrada en el repositorio: views específicas de TimeShift -> inventario de XAML en código>"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 0,
+      "edgeCount": 0,
+      "evidenceCount": 0,
+      "typeCounts": [],
+      "sampleNodes": []
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 86,
+      "edgeCount": 7,
+      "evidenceCount": 200,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 73
+        },
+        {
+          "type": "event_technical",
+          "count": 7
+        },
+        {
+          "type": "client",
+          "count": 3
+        },
+        {
+          "type": "contract_api",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "Vinculaci",
+        "View",
+        "LinkDevice",
+        "Control parental (activar, cambiar PIN, validar)",
+        "User_Hub"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-universal-windows-platform-node-1",
+      "name": "Vinculaci",
+      "label": "Vinculaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-2",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 34,
+      "files": [
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md",
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md",
+        "SPEC_MUSIC_CLARO_MUSICA.md",
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md",
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md",
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md",
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "Happy Path – Ver perfil",
+        "Representacion",
+        "Happy Path – Carga del Home",
+        "Happy Path – Reproducción de canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-3",
+      "name": "user_profileread",
+      "label": "user_profileread",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-4",
+      "name": "View",
+      "label": "View",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 35,
+      "files": [
+        "componentes.md",
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md",
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md",
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md",
+        "SPEC_MUSIC_CLARO_MUSICA.md",
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md",
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md",
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md",
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "Componentes – ACNTMGMT",
+        "5. Component View",
+        "Componentes – AUTH",
+        "Componentes – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-5",
+      "name": "LinkDevice",
+      "label": "LinkDevice",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-6",
+      "name": "Control parental (activar, cambiar PIN, validar)",
+      "label": "Control parental (activar, cambiar PIN, validar)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-7",
+      "name": "User_Hub",
+      "label": "User_Hub",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-8",
+      "name": "Gestión de preferencias (idioma, calidad, notificaciones)",
+      "label": "Gestión de preferencias (idioma, calidad, notificaciones)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-9",
+      "name": "Gestión de dispositivos vinculados",
+      "label": "Gestión de dispositivos vinculados",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-10",
+      "name": "profile_updated",
+      "label": "profile_updated",
+      "type": "event_technical",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-11",
+      "name": "View/ProfilePage.xaml",
+      "label": "View/ProfilePage.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md"
+      ],
+      "sections": [
+        "Happy Path – Ver perfil"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-12",
+      "name": "user_modify",
+      "label": "user_modify",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-13",
+      "name": "POST /services/user/v1/modify",
+      "label": "POST /services/user/v1/modify",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-14",
+      "name": "Journey",
+      "label": "Journey",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 10,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – ACNTMGMT",
+        "Journeys – AUTH",
+        "Journeys – CARROUSEL",
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-15",
+      "name": "API Contract",
+      "label": "API Contract",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 38,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – ACNTMGMT",
+        "Componentes – CARROUSEL",
+        "Componentes – LIVESTREAMING",
+        "Componentes – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-16",
+      "name": "Controlpin",
+      "label": "Controlpin",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-17",
+      "name": "Ver y editar perfil de usuario",
+      "label": "Ver y editar perfil de usuario",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-18",
+      "name": "Agregador de datos de usuario",
+      "label": "Agregador de datos de usuario",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-19",
+      "name": "POST /v1/controlpin/",
+      "label": "POST /v1/controlpin/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-20",
+      "name": "parental_pin_activated",
+      "label": "parental_pin_activated",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-21",
+      "name": "Consulta de datos de cliente / plan activo",
+      "label": "Consulta de datos de cliente / plan activo",
+      "type": "client",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-22",
+      "name": "Consulta de datos del cliente",
+      "label": "Consulta de datos del cliente",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-23",
+      "name": "ConsultarDatosClientes",
+      "label": "ConsultarDatosClientes",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-24",
+      "name": "GET  /services/user/v1/profile",
+      "label": "GET /services/user/v1/profile",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-25",
+      "name": "ViewModel",
+      "label": "ViewModel",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 25,
+      "files": [
+        "componentes.md",
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md",
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md",
+        "SPEC_MUSIC_CLARO_MUSICA.md",
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md",
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md",
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md",
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "Componentes – ACNTMGMT",
+        "5. Component View",
+        "Componentes – AUTH",
+        "Componentes – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-26",
+      "name": "View/TermsAndConditions.xaml",
+      "label": "View/TermsAndConditions.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-27",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-28",
+      "name": "Confluence/Jira",
+      "label": "Confluence/Jira",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-29",
+      "name": "lista completa del valor de negocio del dominio Auth",
+      "label": "lista completa del valor de negocio del dominio Auth",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Valor entregado"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-30",
+      "name": "user_telcel_auth",
+      "label": "user_telcel_auth",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-31",
+      "name": "BRFRE",
+      "label": "BRFRE",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-32",
+      "name": "View/ExtendedSplash.xaml",
+      "label": "View/ExtendedSplash.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-33",
+      "name": "Navigation",
+      "label": "Navigation",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-34",
+      "name": "View/XboxV2/",
+      "label": "View/XboxV2/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-35",
+      "name": "BRFRE o PRD para Auth",
+      "label": "BRFRE o PRD para Auth",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-36",
+      "name": "View/PasswordRecovery.xaml",
+      "label": "View/PasswordRecovery.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-37",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-38",
+      "name": "tablero del proyecto",
+      "label": "tablero del proyecto",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-39",
+      "name": "Registro nuevo usuario",
+      "label": "Registro nuevo usuario",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-40",
+      "name": "EntryPoint",
+      "label": "EntryPoint",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-41",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-42",
+      "name": "DI",
+      "label": "DI",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-43",
+      "name": "Verificar SwaggerHub directo",
+      "label": "Verificar SwaggerHub directo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-44",
+      "name": "Login con credenciales",
+      "label": "Login con credenciales",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-45",
+      "name": "App UWP",
+      "label": "App UWP",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-46",
+      "name": "documentaci",
+      "label": "documentaci",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-47",
+      "name": "Recuperación de contraseña",
+      "label": "Recuperación de contraseña",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-48",
+      "name": "azr-eastus2-cmex-cvideo-mfw-*",
+      "label": "azr-eastus2-cmex-cvideo-mfw-*",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-49",
+      "name": "Domain Type",
+      "label": "Domain Type",
+      "type": "client",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-50",
+      "name": "matriz de responsabilidades",
+      "label": "matriz de responsabilidades",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-51",
+      "name": "Renovación de sesión (refresh)",
+      "label": "Renovación de sesión (refresh)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-52",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-53",
+      "name": "spec completa de eventos de analytics para Auth",
+      "label": "spec completa de eventos de analytics para Auth",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-54",
+      "name": "aws-east-microfwk-*",
+      "label": "aws-east-microfwk-*",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-55",
+      "name": "View/Onboarding/",
+      "label": "View/Onboarding/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components",
+        "Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-56",
+      "name": "PRD/documentaci",
+      "label": "PRD/documentaci",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Valor entregado"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-57",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-58",
+      "name": "telemetr",
+      "label": "telemetr",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-59",
+      "name": "Aceptación T&C",
+      "label": "Aceptación T&C",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-60",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-61",
+      "name": "Cierre de sesión",
+      "label": "Cierre de sesión",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-62",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con credenciales",
+        "3.2 Journey: Registro de nuevo usuario",
+        "3.3 Journey: Aceptación de Términos y Condiciones",
+        "3.4 Journey: Recuperación de contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-63",
+      "name": "qro-microfwk-*",
+      "label": "qro-microfwk-*",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-64",
+      "name": "rol responsable del dominio AUTH",
+      "label": "rol responsable del dominio AUTH",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-65",
+      "name": "tickets Jira/GitHub",
+      "label": "tickets Jira/GitHub",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-66",
+      "name": "USR-SmartCardLogin",
+      "label": "USR-SmartCardLogin",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-67",
+      "name": "tech lead de Auth",
+      "label": "tech lead de Auth",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-68",
+      "name": "Segmentación por nivel de usuario (Leveluser)",
+      "label": "Segmentación por nivel de usuario (Leveluser)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-69",
+      "name": "Navegación por sección especial",
+      "label": "Navegación por sección especial",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-70",
+      "name": "Gestión de carruseles (CarruselManager)",
+      "label": "Gestión de carruseles (CarruselManager)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-71",
+      "name": "Carga del Home con carruseles",
+      "label": "Carga del Home con carruseles",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-72",
+      "name": "Manager",
+      "label": "Manager",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-73",
+      "name": "Rotación de contenido por CMS",
+      "label": "Rotación de contenido por CMS",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-74",
+      "name": "superhighlight_clicked",
+      "label": "superhighlight_clicked",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-75",
+      "name": "Selector",
+      "label": "Selector",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-76",
+      "name": "carousel_viewed",
+      "label": "carousel_viewed",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-77",
+      "name": "View/Home.xaml",
+      "label": "View/Home.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md"
+      ],
+      "sections": [
+        "Happy Path – Carga del Home"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-78",
+      "name": "Superhighlight (banner editorial principal)",
+      "label": "Superhighlight (banner editorial principal)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-79",
+      "name": "CarruselManager",
+      "label": "CarruselManager",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-80",
+      "name": "Listado de canales disponibles (Lineup)",
+      "label": "Listado de canales disponibles (Lineup)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-81",
+      "name": "Media Core",
+      "label": "Media Core",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md",
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-82",
+      "name": "Reproducción en Xbox",
+      "label": "Reproducción en Xbox",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-83",
+      "name": "Tracking de canal en vivo",
+      "label": "Tracking de canal en vivo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-84",
+      "name": "live_channel_started",
+      "label": "live_channel_started",
+      "type": "event_technical",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-85",
+      "name": "epg_channel_viewed",
+      "label": "epg_channel_viewed",
+      "type": "event_technical",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-86",
+      "name": "Reproducción de canal en vivo",
+      "label": "Reproducción de canal en vivo",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-87",
+      "name": "Media Adapter",
+      "label": "Media Adapter",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md",
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-88",
+      "name": "View/PlayerLiveMultiple.xaml",
+      "label": "View/PlayerLiveMultiple.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "Happy Path – Reproducción de canal en vivo",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-89",
+      "name": "Navegación EPG (Guía de Programación)",
+      "label": "Navegación EPG (Guía de Programación)",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-90",
+      "name": "Mapper",
+      "label": "Mapper",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – LIVESTREAMING",
+        "Componentes – RECORDED",
+        "Componentes – TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-91",
+      "name": "Canales múltiples simultáneos (MultiView)",
+      "label": "Canales múltiples simultáneos (MultiView)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-92",
+      "name": "Gu",
+      "label": "Gu",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md"
+      ],
+      "sections": [
+        "Happy Path – Consulta de EPG"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-93",
+      "name": "Analítica",
+      "label": "Analítica",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-94",
+      "name": "music_playback_started",
+      "label": "music_playback_started",
+      "type": "event_technical",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-95",
+      "name": "Configuración",
+      "label": "Configuración",
+      "type": "client",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-96",
+      "name": "Reproducir música (player de Claro Música)",
+      "label": "Reproducir música (player de Claro Música)",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-97",
+      "name": "Explorar carrusel de música (géneros/álbumes)",
+      "label": "Explorar carrusel de música (géneros/álbumes)",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-98",
+      "name": "View/PlayerMusica.xaml",
+      "label": "View/PlayerMusica.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "Happy Path – Reproducir canción"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-99",
+      "name": "View/MusicaCarrusel.xaml",
+      "label": "View/MusicaCarrusel.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "Happy Path – Reproducir canción"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-100",
+      "name": "artist_browsed",
+      "label": "artist_browsed",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-101",
+      "name": "Consultar directorio de artistas",
+      "label": "Consultar directorio de artistas",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-102",
+      "name": "Ver tracks de un artista",
+      "label": "Ver tracks de un artista",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-103",
+      "name": "GET /recordings/v3/light-list",
+      "label": "GET /recordings/v3/light-list",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-104",
+      "name": "RecordingsLightList",
+      "label": "RecordingsLightList",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-105",
+      "name": "content_resumed",
+      "label": "content_resumed",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-106",
+      "name": "Crear recordatorio desde EPG",
+      "label": "Crear recordatorio desde EPG",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-107",
+      "name": "Seenlast",
+      "label": "Seenlast",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-108",
+      "name": "Ver mis grabaciones",
+      "label": "Ver mis grabaciones",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-109",
+      "name": "Converter",
+      "label": "Converter",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-110",
+      "name": "Reminder",
+      "label": "Reminder",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-111",
+      "name": "reminder_set",
+      "label": "reminder_set",
+      "type": "event_technical",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-112",
+      "name": "Eliminar grabación de serie",
+      "label": "Eliminar grabación de serie",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-113",
+      "name": "Carrusel",
+      "label": "Carrusel",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "sections": [
+        "Happy Path – Continúa Viendo"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-114",
+      "name": "GET /services/user/v1/reminder/",
+      "label": "GET /services/user/v1/reminder/",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-115",
+      "name": "Gestión de recordatorios (crear/eliminar)",
+      "label": "Gestión de recordatorios (crear/eliminar)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-116",
+      "name": "View/PlayerRecordingsPage.xaml",
+      "label": "View/PlayerRecordingsPage.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "sections": [
+        "Happy Path – Continúa Viendo",
+        "Happy Path – Lista de grabaciones"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-117",
+      "name": "Recording_Series_Delete",
+      "label": "Recording_Series_Delete",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-118",
+      "name": "GET /services/recordings/v3/series/delete",
+      "label": "GET /services/recordings/v3/series/delete",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-119",
+      "name": "GET /services/user/v1/seenlast",
+      "label": "GET /services/user/v1/seenlast",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "APIs confirmadas vía MCP"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-120",
+      "name": "Eliminar del historial (Seendel)",
+      "label": "Eliminar del historial (Seendel)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-121",
+      "name": "Continúa Viendo (resume desde último punto)",
+      "label": "Continúa Viendo (resume desde último punto)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-122",
+      "name": "recording_created",
+      "label": "recording_created",
+      "type": "event_technical",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-123",
+      "name": "Búsqueda de canales lineales",
+      "label": "Búsqueda de canales lineales",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-124",
+      "name": "Búsqueda por vertical/categoría",
+      "label": "Búsqueda por vertical/categoría",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-125",
+      "name": "View/SearchPage.xaml",
+      "label": "View/SearchPage.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md"
+      ],
+      "sections": [
+        "Happy Path – Búsqueda predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-126",
+      "name": "search_result_selected",
+      "label": "search_result_selected",
+      "type": "event_technical",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-127",
+      "name": "Búsqueda multi-contenido",
+      "label": "Búsqueda multi-contenido",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-128",
+      "name": "reproducci",
+      "label": "reproducci",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del flujo"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-129",
+      "name": "squeda",
+      "label": "squeda",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del flujo"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-130",
+      "name": "Búsqueda textual predictiva",
+      "label": "Búsqueda textual predictiva",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-131",
+      "name": "search_query",
+      "label": "search_query",
+      "type": "event_technical",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-132",
+      "name": "Recomendaciones de contenido",
+      "label": "Recomendaciones de contenido",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-133",
+      "name": "navega a View/PlayerPageNew.xaml",
+      "label": "navega a View/PlayerPageNew.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md"
+      ],
+      "sections": [
+        "Happy Path – Búsqueda predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-134",
+      "name": "Suscripción a plan",
+      "label": "Suscripción a plan",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-135",
+      "name": "Cancelación de suscripción",
+      "label": "Cancelación de suscripción",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-136",
+      "name": "Selección de plan en onboarding",
+      "label": "Selección de plan en onboarding",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-137",
+      "name": "Pago y confirmación de compra",
+      "label": "Pago y confirmación de compra",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-138",
+      "name": "Reactivación de suscripción",
+      "label": "Reactivación de suscripción",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-139",
+      "name": "View/Subscription.xaml",
+      "label": "View/Subscription.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md"
+      ],
+      "sections": [
+        "Happy Path – Compra de suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-140",
+      "name": "subscription_started",
+      "label": "subscription_started",
+      "type": "event_technical",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-141",
+      "name": "Renta de contenido individual",
+      "label": "Renta de contenido individual",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-142",
+      "name": "subscription_cancelled",
+      "label": "subscription_cancelled",
+      "type": "event_technical",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-143",
+      "name": "payment_confirmed",
+      "label": "payment_confirmed",
+      "type": "event_technical",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-144",
+      "name": "BRFRE o PRD para TimeShift",
+      "label": "BRFRE o PRD para TimeShift",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-145",
+      "name": "rol responsable del dominio TIMESHIFT",
+      "label": "rol responsable del dominio TIMESHIFT",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-146",
+      "name": "<informacion no encontrada en el repositorio: views específicas de TimeShift -> inventario de XAML en código>",
+      "label": "<informacion no encontrada en el repositorio: views específicas de TimeShift -> inventario de XAML en código>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-147",
+      "name": "View/LiveTV",
+      "label": "View/LiveTV",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-148",
+      "name": "cms-filters.lab.eastus2.azr.int.claromexico.com",
+      "label": "cms-filters.lab.eastus2.azr.int.claromexico.com",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-149",
+      "name": "DLA.ClaroVideo.Client",
+      "label": "DLA.ClaroVideo.Client",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-150",
+      "name": "View/PlayerEstPage.xaml",
+      "label": "View/PlayerEstPage.xaml",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-151",
+      "name": "<informacion no encontrada en el repositorio: topología de producción -> IaC/diagramas de deployment>",
+      "label": "<informacion no encontrada en el repositorio: topología de producción -> IaC/diagramas de deployment>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-152",
+      "name": "Verificación de versión de filtros EPG por región (admin)",
+      "label": "Verificación de versión de filtros EPG por región (admin)",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-153",
+      "name": "Activar reproducción con TimeShift en canal habilitado",
+      "label": "Activar reproducción con TimeShift en canal habilitado",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-154",
+      "name": "Service",
+      "label": "Service",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-155",
+      "name": "tech lead de LiveTV/Timeshift",
+      "label": "tech lead de LiveTV/Timeshift",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-156",
+      "name": "Inactividad durante reproducción con TimeShift activo",
+      "label": "Inactividad durante reproducción con TimeShift activo",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-157",
+      "name": "Reproducción en canal sin TimeShift (fallback)",
+      "label": "Reproducción en canal sin TimeShift (fallback)",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-158",
+      "name": "content_buffering",
+      "label": "content_buffering",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-159",
+      "name": "Media",
+      "label": "Media",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes – VOD"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-160",
+      "name": "content_played",
+      "label": "content_played",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-161",
+      "name": "Download Helpers",
+      "label": "Download Helpers",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-162",
+      "name": "Navegar catálogo y ver detalle de contenido",
+      "label": "Navegar catálogo y ver detalle de contenido",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – VOD"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-163",
+      "name": "Media Subtítulos WebVTT",
+      "label": "Media Subtítulos WebVTT",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-164",
+      "name": "Verificar disponibilidad y renta de contenido",
+      "label": "Verificar disponibilidad y renta de contenido",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – VOD"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-165",
+      "name": "Reproducir con subtítulos (TTML/WebVTT)",
+      "label": "Reproducir con subtítulos (TTML/WebVTT)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – VOD"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-166",
+      "name": "Download Adapter",
+      "label": "Download Adapter",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-167",
+      "name": "View/PlayerPageNew.xaml",
+      "label": "View/PlayerPageNew.xaml",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "Happy Path – Reproducción de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-168",
+      "name": "Youbora Analytics",
+      "label": "Youbora Analytics",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View",
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-169",
+      "name": "Descargar contenido para reproducción offline",
+      "label": "Descargar contenido para reproducción offline",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – VOD"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-170",
+      "name": "Reproducir contenido (streaming adaptativo)",
+      "label": "Reproducir contenido (streaming adaptativo)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journeys – VOD"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-node-171",
+      "name": "Media Subtítulos TTML",
+      "label": "Media Subtítulos TTML",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "sections": [
+        "5. Component View"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-universal-windows-platform-edge-1",
+      "source": "claro-video-universal-windows-platform-node-3",
+      "target": "claro-video-universal-windows-platform-node-24",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-2",
+      "source": "claro-video-universal-windows-platform-node-12",
+      "target": "claro-video-universal-windows-platform-node-13",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-3",
+      "source": "claro-video-universal-windows-platform-node-7",
+      "target": "claro-video-universal-windows-platform-node-18",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-4",
+      "source": "claro-video-universal-windows-platform-node-5",
+      "target": "claro-video-universal-windows-platform-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-5",
+      "source": "claro-video-universal-windows-platform-node-23",
+      "target": "claro-video-universal-windows-platform-node-22",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-6",
+      "source": "claro-video-universal-windows-platform-node-16",
+      "target": "claro-video-universal-windows-platform-node-19",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-7",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-11",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACNTMGMT_GESTION_CUENTA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-8",
+      "source": "claro-video-universal-windows-platform-node-64",
+      "target": "claro-video-universal-windows-platform-node-31",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-9",
+      "source": "claro-video-universal-windows-platform-node-67",
+      "target": "claro-video-universal-windows-platform-node-50",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-10",
+      "source": "claro-video-universal-windows-platform-node-35",
+      "target": "claro-video-universal-windows-platform-node-28",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-11",
+      "source": "claro-video-universal-windows-platform-node-65",
+      "target": "claro-video-universal-windows-platform-node-38",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-12",
+      "source": "claro-video-universal-windows-platform-node-29",
+      "target": "claro-video-universal-windows-platform-node-56",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-13",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-55",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-14",
+      "source": "claro-video-universal-windows-platform-node-66",
+      "target": "claro-video-universal-windows-platform-node-43",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-15",
+      "source": "claro-video-universal-windows-platform-node-30",
+      "target": "claro-video-universal-windows-platform-node-43",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-16",
+      "source": "claro-video-universal-windows-platform-node-45",
+      "target": "claro-video-universal-windows-platform-node-58",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-17",
+      "source": "claro-video-universal-windows-platform-node-53",
+      "target": "claro-video-universal-windows-platform-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-18",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-77",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_HOME_NAVEGACION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-19",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-88",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-20",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-92",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVESTREAMING_TV_EN_VIVO.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-21",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-99",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_CLARO_MUSICA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-22",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-98",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_CLARO_MUSICA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-23",
+      "source": "claro-video-universal-windows-platform-node-104",
+      "target": "claro-video-universal-windows-platform-node-103",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-24",
+      "source": "claro-video-universal-windows-platform-node-107",
+      "target": "claro-video-universal-windows-platform-node-119",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-25",
+      "source": "claro-video-universal-windows-platform-node-110",
+      "target": "claro-video-universal-windows-platform-node-114",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-26",
+      "source": "claro-video-universal-windows-platform-node-117",
+      "target": "claro-video-universal-windows-platform-node-118",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-27",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-113",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-28",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-116",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_RECORDED_GRABACIONES_HISTORIAL.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-29",
+      "source": "claro-video-universal-windows-platform-node-129",
+      "target": "claro-video-universal-windows-platform-node-128",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-30",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-125",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-31",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-133",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-32",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-139",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-33",
+      "source": "claro-video-universal-windows-platform-node-145",
+      "target": "claro-video-universal-windows-platform-node-31",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-34",
+      "source": "claro-video-universal-windows-platform-node-155",
+      "target": "claro-video-universal-windows-platform-node-50",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-35",
+      "source": "claro-video-universal-windows-platform-node-144",
+      "target": "claro-video-universal-windows-platform-node-28",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-36",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-147",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-universal-windows-platform-edge-37",
+      "source": "claro-video-universal-windows-platform-node-2",
+      "target": "claro-video-universal-windows-platform-node-167",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_VIDEO_ON_DEMAND.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:55.779Z",
+    "nodeTypes": [
+      "component",
+      "event_technical",
+      "contract_api",
+      "client"
+    ],
+    "topFiles": [
+      "evidencia_codigo.txt",
+      "SPEC_ACNTMGMT_GESTION_CUENTA.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "SPEC_CARROUSEL_HOME_NAVEGACION.md",
+      "SPEC_LIVESTREAMING_TV_EN_VIVO.md",
+      "SPEC_MUSIC_CLARO_MUSICA.md",
+      "SPEC_RECORDED_GRABACIONES_HISTORIAL.md",
+      "SPEC_SEARCH_BUSQUEDA_CONTENIDO.md",
+      "SPEC_SUBSCRIPTION_SUSCRIPCIONES_PAGOS.md",
+      "SPEC_TIMESHIFT_REPRODUCCION_RETRASADA.md",
+      "SPEC_VOD_VIDEO_ON_DEMAND.md",
+      "componentes.md",
+      "journeys.md",
+      "metricas.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 23,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global docs",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_docs.md",
+          "analysis\\diagrama_global_docs.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 171,
+          "edgeCount": 37,
+          "groupCount": 10,
+          "isolatedCount": 114
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global docs",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_docs.md"
+        ],
+        "metrics": {
+          "nodeCount": 12,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS docs/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_docs_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_docs_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 25,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS docs/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_docs_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_docs_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 25,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS docs/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_docs_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_docs_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 27
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS docs/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_docs_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_docs_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 27
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS docs/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_docs_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_docs_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 1,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS docs/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_docs_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_docs_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 1,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS docs/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_docs_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_docs_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS docs/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_docs_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_docs_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 11,
+        "title": "Diagrama VSS docs/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_docs_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_docs_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS docs/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_docs_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_docs_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-RECORDED-vss",
+        "order": 13,
+        "title": "Diagrama VSS docs/RECORDED",
+        "kind": "domain_vss",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_docs_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_docs_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 26,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-RECORDED-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS docs/RECORDED",
+        "kind": "domain_impact",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_docs_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_docs_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 26,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 15,
+        "title": "Diagrama VSS docs/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_docs_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_docs_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 16,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS docs/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_docs_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_docs_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 16,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 17,
+        "title": "Diagrama VSS docs/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_docs_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_docs_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 1,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 18,
+        "title": "Diagrama Impacto VSS docs/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_docs_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_docs_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 1,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-vss",
+        "order": 19,
+        "title": "Diagrama VSS docs/TIMESHIFT",
+        "kind": "domain_vss",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_docs_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_docs_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-impact",
+        "order": 20,
+        "title": "Diagrama Impacto VSS docs/TIMESHIFT",
+        "kind": "domain_impact",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_docs_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_docs_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 21,
+        "title": "Diagrama VSS docs/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_docs_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_docs_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 21,
+          "edgeCount": 1,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 22,
+        "title": "Diagrama Impacto VSS docs/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_docs_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_docs_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 21,
+          "edgeCount": 1,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 23,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 171,
+          "edgeCount": 37,
+          "groupCount": 0,
+          "isolatedCount": 114
+        }
+      }
+    ]
+  }
+}

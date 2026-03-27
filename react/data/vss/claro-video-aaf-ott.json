@@ -1,0 +1,5569 @@
+{
+  "repo": "claro-video-aaf-ott",
+  "title": "AAF OTT",
+  "sourceLabel": "analysis",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-aaf-ott",
+    "annex": "ANEXO_claro-video-aaf-ott.html",
+    "legacyViewer": "ANEXO_claro-video-aaf-ott-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-aaf-ott.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-ott\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-ott\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-ott\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-ott\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-ott\\analysis\\diagrama_global_claro-video-aaf-ott.mmd"
+  },
+  "summary": {
+    "totalNodes": 269,
+    "totalEdges": 57,
+    "rawEdges": 97,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "MUSIC",
+      "RECORDED",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "TIMESHIFT",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "GetUserInfo",
+      "Tipo: Obligatorio / Legal",
+      "accepted_terms_1.0.0",
+      "src/requests/tasks/user/GetBookmarkTask.js",
+      "Pasos:",
+      "Verificar c",
+      "Tipo: Secundario",
+      "Tipo: Core",
+      "Trigger: Nuevo usuario o cambio de términos",
+      "dashboards APM",
+      "SLO de latencia",
+      "Ptv",
+      "PINControl",
+      "HeaderBrasil",
+      "Trigger: Usuario llega al Home de la aplicación",
+      "Resultado: Lista de contenido filtrado por categoría",
+      "src/requests/tasks/cms/LevelTask.js",
+      "Trigger: Usuario selecciona categoría/género en el menú",
+      "Resultado: Carrusel de ofertas visible",
+      "Trigger: Automático al ingresar (si el usuario está autenticado)",
+      "src/requests/tasks/cms/OffersTask.js",
+      "src/requests/tasks/cms/LevelUserTask.js",
+      "src/components/",
+      "Trigger: Usuario accede a sección de novedades u ofertas",
+      "Resultado: Sección personalizada visible",
+      "src/containers/",
+      "ScheduleList.js",
+      "EventManager.js",
+      "ResumeController.js",
+      "ChannelController.js",
+      "EventController.js",
+      "FilterController.js",
+      "KeyInterceptor.js",
+      "ChannelList.js",
+      "DataList.js",
+      "TimeBarController.js",
+      "artist_1.0.0",
+      "API dedicada de m",
+      "track stream",
+      "Trigger: Usuario busca artista, álbum o canción",
+      "URL de stream manejada por Bitmovin Player",
+      "Trigger: Usuario selecciona canción o álbum para reproducir",
+      "Trigger: Usuario accede a \"Mis grabaciones\"",
+      "Resultado: Grabación programada exitosamente",
+      "Trigger: Usuario selecciona grabación para reproducir",
+      "src/AAFPlayer/AAFPlayer.js",
+      "Resultado: Grabación reproduciéndose",
+      "Resultado: Lista de grabaciones visible",
+      "Trigger: Usuario presiona \"Eliminar grabación\"",
+      "Planselector_5.9.0",
+      "Trigger: Usuario solicita cancelar suscripción actual",
+      "Trigger: Usuario paga mediante método Claro Pagos",
+      "Trigger: Usuario decide contratar un plan de Claro Video",
+      "Trigger: Usuario paga mediante cargo a factura telefónica",
+      "CancelSuscription_1.0.0",
+      "Tipo: Alternativo",
+      "Tipo: Core (comercialmente crítico)",
+      "Tipo: Alternativo (región MX)",
+      "Resultado: Suscripción cancelada",
+      "Trigger: Usuario presiona rebobinar durante TV en vivo",
+      "Trigger: Usuario presiona pausa durante TV en vivo",
+      "Resultado: Reprodución continua desde posición pausada",
+      "L"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 30,
+      "edgeCount": 12,
+      "evidenceCount": 232,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 27
+        },
+        {
+          "type": "event_technical",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "Trigger: Usuario accede a \"Mis favoritos\"",
+        "src/profile/AddProfile/",
+        "Trigger: Usuario desea cambiar nombre o avatar de su perfil",
+        "src/profile/EditProfile/"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 33,
+      "edgeCount": 7,
+      "evidenceCount": 131,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 32
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "Criticidad",
+        "Canales",
+        "Frecuencia",
+        "IaC / ecosystem.config.js",
+        "spec de analytics / Firebase"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 15,
+      "edgeCount": 5,
+      "evidenceCount": 22,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 12
+        },
+        {
+          "type": "event_technical",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "cms_ribbon",
+        "LevelRibbonTask.js",
+        "Resultado: Home poblado con carrouseles de contenido",
+        "LevelTask.js",
+        "NAVBAR_SET_SECTION"
+      ]
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 19,
+      "edgeCount": 5,
+      "evidenceCount": 33,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 17
+        },
+        {
+          "type": "event_technical",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "EpgPersistence.js",
+        "render grid",
+        "EpgTask.js",
+        "CONTEXT_EPG_ACTION",
+        "EpgLineUp.js"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 27,
+      "edgeCount": 6,
+      "evidenceCount": 36,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 22
+        },
+        {
+          "type": "event_technical",
+          "count": 5
+        }
+      ],
+      "sampleNodes": [
+        "MUSIC_LOGIN_CM",
+        "ArtistDetailTask.js",
+        "SetupPlayTask.js",
+        "Resultado: Música reproduciéndose",
+        "MUSIC_ARTIST_LOADED"
+      ]
+    },
+    {
+      "id": "RECORDED",
+      "label": "Recorded DVR",
+      "short": "RECORDED",
+      "summary": "Grabaciones, reminder flow y NPVR legado.",
+      "nodeCount": 17,
+      "edgeCount": 6,
+      "evidenceCount": 26,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 13
+        },
+        {
+          "type": "event_technical",
+          "count": 3
+        },
+        {
+          "type": "client",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "PasswordReminder",
+        "ListNpvrTask.js",
+        "AAFPlayer.js",
+        "NPVR_LIST_REFRESH",
+        "NPVR_RECORD_ADD"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 11,
+      "edgeCount": 3,
+      "evidenceCount": 14,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 10
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "SLO definido",
+        "BRFRE",
+        "<informacion no encontrada en el repositorio: deployment de Search Service -> IaC>",
+        "propietario",
+        "Analytics"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 24,
+      "edgeCount": 8,
+      "evidenceCount": 36,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 20
+        },
+        {
+          "type": "event_technical",
+          "count": 3
+        },
+        {
+          "type": "actor",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "2FA callbacks",
+        "TimerManager2FA",
+        "HubFija",
+        "Multi-gateway: la selección de gateway se resuelve en cliente según región del usuario",
+        "SUBSCRIPTION_CANCELLED"
+      ]
+    },
+    {
+      "id": "TIMESHIFT",
+      "label": "Timeshift",
+      "short": "TIMESHIFT",
+      "summary": "Buffer, replay y grabación NPVR programada.",
+      "nodeCount": 16,
+      "edgeCount": 6,
+      "evidenceCount": 25,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 14
+        },
+        {
+          "type": "event_technical",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "PLAYER_STATE_TIMESHIFT",
+        "Lógica de timeshift implementada mayormente en el player (Bitmovin/Shaka) a nivel de offset de sesión",
+        "Timeshift/main.js",
+        "src/AAF/Timeshift/EventTimeshift.js",
+        "Bitmovin/Shaka Player"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 14,
+      "edgeCount": 3,
+      "evidenceCount": 19,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 10
+        },
+        {
+          "type": "event_technical",
+          "count": 4
+        }
+      ],
+      "sampleNodes": [
+        "Youbora tracking events",
+        "Player: Bitmovin Player 8.165.0 + Shaka Player 3.0.1 (embedded en SPA)",
+        "PurchaseButtonInfoTask",
+        "initPlayer",
+        "Player state events"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 63,
+      "edgeCount": 8,
+      "evidenceCount": 103,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 63
+        }
+      ],
+      "sampleNodes": [
+        "GetUserInfo",
+        "Tipo: Obligatorio / Legal",
+        "accepted_terms_1.0.0",
+        "src/requests/tasks/user/GetBookmarkTask.js",
+        "Pasos:"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-aaf-ott-node-1",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "contracts.md"
+      ],
+      "sections": [
+        "4.1 Representacion",
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-2",
+      "name": "Trigger: Usuario accede a \"Mis favoritos\"",
+      "label": "Trigger: Usuario accede a \"Mis favoritos\"",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Ver y gestionar favoritos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-3",
+      "name": "src/profile/AddProfile/",
+      "label": "src/profile/AddProfile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Crear y gestionar perfiles familiares"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-4",
+      "name": "Trigger: Usuario desea cambiar nombre o avatar de su perfil",
+      "label": "Trigger: Usuario desea cambiar nombre o avatar de su perfil",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Editar perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-5",
+      "name": "src/profile/EditProfile/",
+      "label": "src/profile/EditProfile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Editar perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-6",
+      "name": "Trigger: Usuario desea cambiar al perfil de otro miembro familiar",
+      "label": "Trigger: Usuario desea cambiar al perfil de otro miembro familiar",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Cambiar de perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-7",
+      "name": "USER_INFO_UPDATED",
+      "label": "USER_INFO_UPDATED",
+      "type": "event_technical",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-8",
+      "name": "TERMS_ACCEPTED",
+      "label": "TERMS_ACCEPTED",
+      "type": "event_technical",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-9",
+      "name": "GetUserInfoTask.js",
+      "label": "GetUserInfoTask.js",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-10",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 49,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Crear nuevo perfil familiar",
+        "3.2 Journey: Cambiar de perfil",
+        "3.3 Journey: Editar perfil",
+        "3.4 Journey: Gestionar favoritos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-11",
+      "name": "Resultado: Sesión en el perfil seleccionado",
+      "label": "Resultado: Sesión en el perfil seleccionado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Cambiar de perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-12",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 49,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Crear nuevo perfil familiar",
+        "3.2 Journey: Cambiar de perfil",
+        "3.3 Journey: Editar perfil",
+        "3.4 Journey: Gestionar favoritos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-13",
+      "name": "GetUserInfo",
+      "label": "GetUserInfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-14",
+      "name": "POST /services/user/v1/profile",
+      "label": "POST /services/user/v1/profile",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-15",
+      "name": "Tipo: Obligatorio / Legal",
+      "label": "Tipo: Obligatorio / Legal",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Aceptar términos y condiciones"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-16",
+      "name": "accepted_terms_1.0.0",
+      "label": "accepted_terms_1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Aceptar términos y condiciones"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-17",
+      "name": "AddProfile",
+      "label": "AddProfile",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-18",
+      "name": "GET /services/user/v1/info",
+      "label": "GET /services/user/v1/info",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-19",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 37,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Crear nuevo perfil familiar",
+        "Journey 1: Login con usuario/contraseña (OTT)",
+        "Journey 2: Login por Token (SSO / Deep Link)",
+        "Journey 3: Registro de nuevo usuario"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-20",
+      "name": "src/profile/SelectProfile/",
+      "label": "src/profile/SelectProfile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Cambiar de perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-21",
+      "name": "SelectImage",
+      "label": "SelectImage",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-22",
+      "name": "src/requests/tasks/user/GetBookmarkTask.js",
+      "label": "src/requests/tasks/user/GetBookmarkTask.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Ver y gestionar favoritos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-23",
+      "name": "Resultado: Nuevo perfil familiar creado",
+      "label": "Resultado: Nuevo perfil familiar creado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Crear y gestionar perfiles familiares"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-24",
+      "name": "USER_PROFILE_CHANGED",
+      "label": "USER_PROFILE_CHANGED",
+      "type": "event_technical",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-25",
+      "name": "<informacion no encontrada: backend de User/Profile>",
+      "label": "<informacion no encontrada: backend de User/Profile>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-26",
+      "name": "Trigger: Usuario administrador accede a \"Gestionar perfiles\"",
+      "label": "Trigger: Usuario administrador accede a \"Gestionar perfiles\"",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Crear y gestionar perfiles familiares"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-27",
+      "name": "Pasos:",
+      "label": "Pasos:",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 19,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Crear y gestionar perfiles familiares",
+        "Journey 2: Cambiar de perfil",
+        "Journey 3: Editar perfil",
+        "Journey 4: Ver y gestionar favoritos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-28",
+      "name": "Resultado: Perfil actualizado",
+      "label": "Resultado: Perfil actualizado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Editar perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-29",
+      "name": "Verificar c",
+      "label": "Verificar c",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 4,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-30",
+      "name": "UI",
+      "label": "UI",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 12,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-31",
+      "name": "Tipo: Secundario",
+      "label": "Tipo: Secundario",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 6,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Ver y gestionar favoritos",
+        "Journey 3: Ver ofertas y contenido de descubrimiento",
+        "Journey 4: Vista personalizada \"Para mí\"",
+        "Journey 4: Gestionar playlists"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-32",
+      "name": "Tipo: Core",
+      "label": "Tipo: Core",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 13,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Crear y gestionar perfiles familiares",
+        "Journey 2: Cambiar de perfil",
+        "Journey 3: Editar perfil",
+        "Journey 1: Mostrar Home con carruseles de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-33",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 32,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Crear nuevo perfil familiar",
+        "Journey 1: Login con usuario/contraseña (OTT)",
+        "Journey 2: Login por Token (SSO / Deep Link)",
+        "Journey 3: Registro de nuevo usuario"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-34",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 44,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Crear nuevo perfil familiar",
+        "3.2 Journey: Cambiar de perfil",
+        "3.3 Journey: Editar perfil",
+        "3.5 Journey: Aceptar TYCS"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-35",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 42,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Crear nuevo perfil familiar",
+        "3.2 Journey: Cambiar de perfil",
+        "3.3 Journey: Editar perfil",
+        "Journey 1: Login con usuario/contraseña (OTT)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-36",
+      "name": "Resultado: Lista de favoritos actualizada",
+      "label": "Resultado: Lista de favoritos actualizada",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Ver y gestionar favoritos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-37",
+      "name": "Trigger: Nuevo usuario o cambio de términos",
+      "label": "Trigger: Nuevo usuario o cambio de términos",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Aceptar términos y condiciones"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-38",
+      "name": "2FA callbacks",
+      "label": "2FA callbacks",
+      "type": "actor",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-39",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 26,
+      "files": [
+        "journeys.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Journey 1: Login con usuario/contraseña (OTT)",
+        "Journey 2: Login por Token (SSO / Deep Link)",
+        "Journey 3: Registro de nuevo usuario",
+        "Journey 4: Refresh de Token"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-40",
+      "name": "IaC / ecosystem.config.js",
+      "label": "IaC / ecosystem.config.js",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-41",
+      "name": "spec de analytics / Firebase",
+      "label": "spec de analytics / Firebase",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-42",
+      "name": "dashboards APM",
+      "label": "dashboards APM",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "SLOs Requeridos (No documentados en repo)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-43",
+      "name": "src/authentication/AuthDevice/",
+      "label": "src/authentication/AuthDevice/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-44",
+      "name": "PasswordReminder",
+      "label": "PasswordReminder",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-45",
+      "name": "src/authentication/Register/",
+      "label": "src/authentication/Register/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-46",
+      "name": "TimerManager2FA",
+      "label": "TimerManager2FA",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-47",
+      "name": "src/authentication/Login/LoginLogic.js",
+      "label": "src/authentication/Login/LoginLogic.js",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-48",
+      "name": "LoginLogic",
+      "label": "LoginLogic",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-49",
+      "name": "SLO de latencia",
+      "label": "SLO de latencia",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "SLOs Requeridos (No documentados en repo)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-50",
+      "name": "Login (index.tsx)",
+      "label": "Login (index.tsx)",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-51",
+      "name": "BRFRE / README del equipo",
+      "label": "BRFRE / README del equipo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-52",
+      "name": "src/authentication/PasswordReminder/",
+      "label": "src/authentication/PasswordReminder/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-53",
+      "name": "AuthDevice",
+      "label": "AuthDevice",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-54",
+      "name": "Ptv",
+      "label": "Ptv",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-55",
+      "name": "PINControl",
+      "label": "PINControl",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-56",
+      "name": "tricas",
+      "label": "tricas",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-57",
+      "name": "README del equipo",
+      "label": "README del equipo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-58",
+      "name": "propietario del flujo",
+      "label": "propietario del flujo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-59",
+      "name": "ecosystem.config.js",
+      "label": "ecosystem.config.js",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-60",
+      "name": "<informacion no encontrada en el repositorio: topología completa de infraestructura -> IaC / diagramas de red>",
+      "label": "<informacion no encontrada en el repositorio: topología completa de infraestructura -> IaC / diagramas de red>",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-61",
+      "name": "eventos de analytics de auth",
+      "label": "eventos de analytics de auth",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-62",
+      "name": "src/authentication/Login/index.tsx",
+      "label": "src/authentication/Login/index.tsx",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-63",
+      "name": "SLO definido",
+      "label": "SLO definido",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "SLOs Requeridos (No documentados en repo)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-64",
+      "name": "Plataformas: Smart TV (webOS, Tizen), Web Browser, STB",
+      "label": "Plataformas: Smart TV (webOS, Tizen), Web Browser, STB",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-65",
+      "name": "Register",
+      "label": "Register",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-66",
+      "name": "Analytics / RUM",
+      "label": "Analytics / RUM",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-67",
+      "name": "src/authentication/Ptv/",
+      "label": "src/authentication/Ptv/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-68",
+      "name": "BRFRE",
+      "label": "BRFRE",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 3,
+      "files": [
+        "metricas.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "SLOs Requeridos (No documentados en repo)",
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-69",
+      "name": "HeaderBrasil",
+      "label": "HeaderBrasil",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-70",
+      "name": "LoginCM",
+      "label": "LoginCM",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "contracts.md"
+      ],
+      "sections": [
+        "UI Components",
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-71",
+      "name": "technical owner",
+      "label": "technical owner",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-72",
+      "name": "APIs Backend: Múltiples instancias regionales de microservicios (QRO, AWS East, AWS West, Azure East US2)",
+      "label": "APIs Backend: Múltiples instancias regionales de microservicios (QRO, AWS East, AWS West, Azure East US2)",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-73",
+      "name": "Runtime: Node.js v10.24.1 (🔴 EOL desde abril 2021)",
+      "label": "Runtime: Node.js v10.24.1 (🔴 EOL desde abril 2021)",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-74",
+      "name": "Home / Galer",
+      "label": "Home / Galer",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-75",
+      "name": "n de infra",
+      "label": "n de infra",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-76",
+      "name": "Redirect",
+      "label": "Redirect",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-77",
+      "name": "src/authentication/LoginCM/",
+      "label": "src/authentication/LoginCM/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "journeys.md"
+      ],
+      "sections": [
+        "5.1 UI Components",
+        "Journey 1: Login específico al módulo de Música (CM)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-78",
+      "name": "Trigger: Usuario llega al Home de la aplicación",
+      "label": "Trigger: Usuario llega al Home de la aplicación",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Mostrar Home con carruseles de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-79",
+      "name": "Resultado: Lista de contenido filtrado por categoría",
+      "label": "Resultado: Lista de contenido filtrado por categoría",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Navegar por categorías"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-80",
+      "name": "cms_ribbon",
+      "label": "cms_ribbon",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-81",
+      "name": "src/requests/tasks/cms/LevelTask.js",
+      "label": "src/requests/tasks/cms/LevelTask.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Mostrar Home con carruseles de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-82",
+      "name": "Trigger: Usuario selecciona categoría/género en el menú",
+      "label": "Trigger: Usuario selecciona categoría/género en el menú",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Navegar por categorías"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-83",
+      "name": "LevelRibbonTask.js",
+      "label": "LevelRibbonTask.js",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-84",
+      "name": "Resultado: Home poblado con carrouseles de contenido",
+      "label": "Resultado: Home poblado con carrouseles de contenido",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Mostrar Home con carruseles de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-85",
+      "name": "Resultado: Carrusel de ofertas visible",
+      "label": "Resultado: Carrusel de ofertas visible",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Ver ofertas y contenido de descubrimiento"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-86",
+      "name": "LevelTask.js",
+      "label": "LevelTask.js",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-87",
+      "name": "NAVBAR_SET_SECTION",
+      "label": "NAVBAR_SET_SECTION",
+      "type": "event_technical",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-88",
+      "name": "USER_CONTENT_LOAD",
+      "label": "USER_CONTENT_LOAD",
+      "type": "event_technical",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-89",
+      "name": "GET /services/cms/level",
+      "label": "GET /services/cms/level",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-90",
+      "name": "Trigger: Automático al ingresar (si el usuario está autenticado)",
+      "label": "Trigger: Automático al ingresar (si el usuario está autenticado)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Vista personalizada \"Para mí\""
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-91",
+      "name": "LevelUserTask.js",
+      "label": "LevelUserTask.js",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-92",
+      "name": "src/requests/tasks/cms/OffersTask.js",
+      "label": "src/requests/tasks/cms/OffersTask.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Ver ofertas y contenido de descubrimiento"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-93",
+      "name": "src/requests/tasks/cms/LevelRibbonTask.js",
+      "label": "src/requests/tasks/cms/LevelRibbonTask.js",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Navegar por categorías"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-94",
+      "name": "GET /services/cms/level/ribbon",
+      "label": "GET /services/cms/level/ribbon",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-95",
+      "name": "CAROUSEL_LOAD",
+      "label": "CAROUSEL_LOAD",
+      "type": "event_technical",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-96",
+      "name": "GET /services/cms/level/user",
+      "label": "GET /services/cms/level/user",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-97",
+      "name": "src/requests/tasks/cms/LevelUserTask.js",
+      "label": "src/requests/tasks/cms/LevelUserTask.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Vista personalizada \"Para mí\""
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-98",
+      "name": "src/components/",
+      "label": "src/components/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes React"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-99",
+      "name": "Trigger: Usuario accede a sección de novedades u ofertas",
+      "label": "Trigger: Usuario accede a sección de novedades u ofertas",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Ver ofertas y contenido de descubrimiento"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-100",
+      "name": "render carruseles por ribbon",
+      "label": "render carruseles por ribbon",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-101",
+      "name": "CMS backend: servicio externo que gestiona el catálogo y la personalización",
+      "label": "CMS backend: servicio externo que gestiona el catálogo y la personalización",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-102",
+      "name": "Resultado: Sección personalizada visible",
+      "label": "Resultado: Sección personalizada visible",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Vista personalizada \"Para mí\""
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-103",
+      "name": "src/containers/",
+      "label": "src/containers/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes React"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-104",
+      "name": "<informacion no encontrada: CDN o caché de respuestas CMS>",
+      "label": "<informacion no encontrada: CDN o caché de respuestas CMS>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-105",
+      "name": "EpgPersistence.js",
+      "label": "EpgPersistence.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Componentes Clave",
+        "4.1 Representacion",
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-106",
+      "name": "render grid",
+      "label": "render grid",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-107",
+      "name": "ScheduleList.js",
+      "label": "ScheduleList.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-108",
+      "name": "EpgTask.js",
+      "label": "EpgTask.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-109",
+      "name": "CONTEXT_EPG_ACTION",
+      "label": "CONTEXT_EPG_ACTION",
+      "type": "event_technical",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-110",
+      "name": "EpgLineUp.js",
+      "label": "EpgLineUp.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-111",
+      "name": "EventGridController.js",
+      "label": "EventGridController.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Componentes Clave",
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-112",
+      "name": "EventManager.js",
+      "label": "EventManager.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-113",
+      "name": "ResumeController.js",
+      "label": "ResumeController.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-114",
+      "name": "GET /services/epg/v1/lineup",
+      "label": "GET /services/epg/v1/lineup",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-115",
+      "name": "EPG_LOAD",
+      "label": "EPG_LOAD",
+      "type": "event_technical",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-116",
+      "name": "EpgConstants.js",
+      "label": "EpgConstants.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-117",
+      "name": "ChannelController.js",
+      "label": "ChannelController.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-118",
+      "name": "EventController.js",
+      "label": "EventController.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-119",
+      "name": "GET /services/epg/...",
+      "label": "GET /services/epg/...",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-120",
+      "name": "FilterController.js",
+      "label": "FilterController.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-121",
+      "name": "KeyInterceptor.js",
+      "label": "KeyInterceptor.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-122",
+      "name": "ChannelList.js",
+      "label": "ChannelList.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-123",
+      "name": "DataList.js",
+      "label": "DataList.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-124",
+      "name": "loadEpg",
+      "label": "loadEpg",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-125",
+      "name": "EPGUtil.js",
+      "label": "EPGUtil.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-126",
+      "name": "EpgDataManager.js",
+      "label": "EpgDataManager.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-127",
+      "name": "EpgController.js",
+      "label": "EpgController.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Componentes Clave",
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-128",
+      "name": "cache local",
+      "label": "cache local",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-129",
+      "name": "<informacion no encontrada en el repositorio: componentes React de EPG UI -> src/components/>",
+      "label": "<informacion no encontrada en el repositorio: componentes React de EPG UI -> src/components/>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-130",
+      "name": "TimeBarController.js",
+      "label": "TimeBarController.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes Clave"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-131",
+      "name": "<informacion no encontrada en el repositorio: infra del EPG backend>",
+      "label": "<informacion no encontrada en el repositorio: infra del EPG backend>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-132",
+      "name": "src/AAF/Nepg/",
+      "label": "src/AAF/Nepg/",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-133",
+      "name": "MUSIC_LOGIN_CM",
+      "label": "MUSIC_LOGIN_CM",
+      "type": "event_technical",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-134",
+      "name": "artist_1.0.0",
+      "label": "artist_1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Buscar y explorar catálogo de música"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-135",
+      "name": "ArtistDetailTask.js",
+      "label": "ArtistDetailTask.js",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Explorar artista"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-136",
+      "name": "SetupPlayTask.js",
+      "label": "SetupPlayTask.js",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-137",
+      "name": "Resultado: Música reproduciéndose",
+      "label": "Resultado: Música reproduciéndose",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Reproducir canción / álbum / playlist"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-138",
+      "name": "MUSIC_ARTIST_LOADED",
+      "label": "MUSIC_ARTIST_LOADED",
+      "type": "event_technical",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-139",
+      "name": "Resultado: Acceso al catálogo de música",
+      "label": "Resultado: Acceso al catálogo de música",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login específico al módulo de Música (CM)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-140",
+      "name": "reproduce stream de audio",
+      "label": "reproduce stream de audio",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-141",
+      "name": "src/requests/tasks/music/PlaylistTask.js",
+      "label": "src/requests/tasks/music/PlaylistTask.js",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Gestionar playlists"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-142",
+      "name": "Claro Música: sub-servicio independiente con su propio backend de identidad (LoginCM)",
+      "label": "Claro Música: sub-servicio independiente con su propio backend de identidad (LoginCM)",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-143",
+      "name": "API dedicada de m",
+      "label": "API dedicada de m",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-144",
+      "name": "Trigger: Usuario accede a sus playlists",
+      "label": "Trigger: Usuario accede a sus playlists",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Gestionar playlists"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-145",
+      "name": "Resultado: Playlists disponibles para reproducción",
+      "label": "Resultado: Playlists disponibles para reproducción",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Gestionar playlists"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-146",
+      "name": "track stream",
+      "label": "track stream",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-147",
+      "name": "GET /music/v1/track/setup",
+      "label": "GET /music/v1/track/setup",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-148",
+      "name": "controles play/pause/skip",
+      "label": "controles play/pause/skip",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-149",
+      "name": "src/requests/tasks/music/SetupPlayTask.js",
+      "label": "src/requests/tasks/music/SetupPlayTask.js",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Reproducir canción / álbum / playlist"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-150",
+      "name": "player-controls-user.js",
+      "label": "player-controls-user.js",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-151",
+      "name": "SEARCH_Vertical_1.0.0",
+      "label": "SEARCH_Vertical_1.0.0",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Explorar artista"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-152",
+      "name": "MUSIC_PLAYER_PAUSE",
+      "label": "MUSIC_PLAYER_PAUSE",
+      "type": "event_technical",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-153",
+      "name": "Trigger: Usuario busca artista, álbum o canción",
+      "label": "Trigger: Usuario busca artista, álbum o canción",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Buscar y explorar catálogo de música"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-154",
+      "name": "URL de stream manejada por Bitmovin Player",
+      "label": "URL de stream manejada por Bitmovin Player",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-155",
+      "name": "Tipo: Core (prerrequisito para música)",
+      "label": "Tipo: Core (prerrequisito para música)",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login específico al módulo de Música (CM)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-156",
+      "name": "GET /services/search/vertical",
+      "label": "GET /services/search/vertical",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Explorar artista"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-157",
+      "name": "Trigger: Usuario accede al módulo de Claro Música",
+      "label": "Trigger: Usuario accede al módulo de Claro Música",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login específico al módulo de Música (CM)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-158",
+      "name": "Verificar src/authentication/LoginCM/",
+      "label": "Verificar src/authentication/LoginCM/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-159",
+      "name": "playlist",
+      "label": "playlist",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-160",
+      "name": "MUSIC_PLAYER_PLAY",
+      "label": "MUSIC_PLAYER_PLAY",
+      "type": "event_technical",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-161",
+      "name": "Resultado: Catálogo de música navegable",
+      "label": "Resultado: Catálogo de música navegable",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Buscar y explorar catálogo de música"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-162",
+      "name": "POST /artist",
+      "label": "POST /artist",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Explorar artista"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-163",
+      "name": "MUSIC_PLAYLIST_LOADED",
+      "label": "MUSIC_PLAYLIST_LOADED",
+      "type": "event_technical",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-164",
+      "name": "Evidencia de separación arquitectónica: login propio, tasks propias, actions propias, assets propios",
+      "label": "Evidencia de separación arquitectónica: login propio, tasks propias, actions propias, assets propios",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-165",
+      "name": "Trigger: Usuario selecciona canción o álbum para reproducir",
+      "label": "Trigger: Usuario selecciona canción o álbum para reproducir",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Reproducir canción / álbum / playlist"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-166",
+      "name": "<informacion no encontrada: CDN de audio, DRM de música>",
+      "label": "<informacion no encontrada: CDN de audio, DRM de música>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-167",
+      "name": "Trigger: Usuario accede a \"Mis grabaciones\"",
+      "label": "Trigger: Usuario accede a \"Mis grabaciones\"",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Ver lista de grabaciones"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-168",
+      "name": "Resultado: Grabación programada exitosamente",
+      "label": "Resultado: Grabación programada exitosamente",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Programar grabación de un programa"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-169",
+      "name": "ListNpvrTask.js",
+      "label": "ListNpvrTask.js",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-170",
+      "name": "AAFPlayer.js",
+      "label": "AAFPlayer.js",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_RECORDED_DVR.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-171",
+      "name": "NPVR_LIST_REFRESH",
+      "label": "NPVR_LIST_REFRESH",
+      "type": "event_technical",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-172",
+      "name": "NPVR_RECORD_ADD",
+      "label": "NPVR_RECORD_ADD",
+      "type": "event_technical",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-173",
+      "name": "Trigger: Usuario selecciona grabación para reproducir",
+      "label": "Trigger: Usuario selecciona grabación para reproducir",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Ver grabación almacenada"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-174",
+      "name": "GET /recordings/v3/light-list",
+      "label": "GET /recordings/v3/light-list",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-175",
+      "name": "src/AAFPlayer/AAFPlayer.js",
+      "label": "src/AAFPlayer/AAFPlayer.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Ver grabación almacenada"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-176",
+      "name": "Resultado: Grabación reproduciéndose",
+      "label": "Resultado: Grabación reproduciéndose",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Ver grabación almacenada"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-177",
+      "name": "src/requests/tasks/npvr/RemoveNpvrTask.js",
+      "label": "src/requests/tasks/npvr/RemoveNpvrTask.js",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Eliminar grabación / serie"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-178",
+      "name": "Cliente OTT: solo lista y reproduce; el backend gestiona el grabado",
+      "label": "Cliente OTT: solo lista y reproduce; el backend gestiona el grabado",
+      "type": "client",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-179",
+      "name": "Resultado: Lista de grabaciones visible",
+      "label": "Resultado: Lista de grabaciones visible",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Ver lista de grabaciones"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-180",
+      "name": "NPVR_RECORD_DELETE",
+      "label": "NPVR_RECORD_DELETE",
+      "type": "event_technical",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-181",
+      "name": "render lista de grabaciones",
+      "label": "render lista de grabaciones",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-182",
+      "name": "src/AAF/Npvr/NpvrUploader.js",
+      "label": "src/AAF/Npvr/NpvrUploader.js",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Programar grabación de un programa"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-183",
+      "name": "Trigger: Usuario presiona \"Eliminar grabación\"",
+      "label": "Trigger: Usuario presiona \"Eliminar grabación\"",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Eliminar grabación / serie"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-184",
+      "name": "reproduce grabaci",
+      "label": "reproduce grabaci",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-185",
+      "name": "<informacion no encontrada: infra NPVR backend>",
+      "label": "<informacion no encontrada: infra NPVR backend>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-186",
+      "name": "Grabaciones almacenadas en backend cloud (NPVR server)",
+      "label": "Grabaciones almacenadas en backend cloud (NPVR server)",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-187",
+      "name": "Trigger: Usuario selecciona \"Grabar\" en un programa de la EPG",
+      "label": "Trigger: Usuario selecciona \"Grabar\" en un programa de la EPG",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Programar grabación de un programa"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-188",
+      "name": "src/requests/tasks/npvr/ListNpvrTask.js",
+      "label": "src/requests/tasks/npvr/ListNpvrTask.js",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Ver lista de grabaciones"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-189",
+      "name": "AddNpvr",
+      "label": "AddNpvr",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-190",
+      "name": "<informacion no encontrada en el repositorio: deployment de Search Service -> IaC>",
+      "label": "<informacion no encontrada en el repositorio: deployment de Search Service -> IaC>",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-191",
+      "name": "propietario",
+      "label": "propietario",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-192",
+      "name": "Analytics",
+      "label": "Analytics",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-193",
+      "name": "squeda",
+      "label": "squeda",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-194",
+      "name": "Search action creators",
+      "label": "Search action creators",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-195",
+      "name": "<informacion no encontrada en el repositorio: componentes UI de búsqueda -> src/components/ (requiere inspección)>",
+      "label": "<informacion no encontrada en el repositorio: componentes UI de búsqueda -> src/components/ (requiere inspección)>",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-196",
+      "name": "Frontend: SPA React 15.6.1 + Express 4.16.2",
+      "label": "Frontend: SPA React 15.6.1 + Express 4.16.2",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-197",
+      "name": "APIs Backend: Múltiples instancias regionales",
+      "label": "APIs Backend: Múltiples instancias regionales",
+      "type": "contract_api",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-198",
+      "name": "Searcher components",
+      "label": "Searcher components",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-199",
+      "name": "HubFija",
+      "label": "HubFija",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-200",
+      "name": "Multi-gateway: la selección de gateway se resuelve en cliente según región del usuario",
+      "label": "Multi-gateway: la selección de gateway se resuelve en cliente según región del usuario",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-201",
+      "name": "Planselector_5.9.0",
+      "label": "Planselector_5.9.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Contratar plan de suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-202",
+      "name": "SUBSCRIPTION_CANCELLED",
+      "label": "SUBSCRIPTION_CANCELLED",
+      "type": "event_technical",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-203",
+      "name": "src/payments/DetailSelector/",
+      "label": "src/payments/DetailSelector/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Ver detalle de plan / upgrade"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-204",
+      "name": "Resultado: Suscripción activa y contenido desbloqueado",
+      "label": "Resultado: Suscripción activa y contenido desbloqueado",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Contratar plan de suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-205",
+      "name": "PAYWAY_BUY_CONFIRM",
+      "label": "PAYWAY_BUY_CONFIRM",
+      "type": "event_technical",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-206",
+      "name": "Trigger: Usuario solicita cancelar suscripción actual",
+      "label": "Trigger: Usuario solicita cancelar suscripción actual",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Cancelar suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-207",
+      "name": "Trigger: Usuario paga mediante método Claro Pagos",
+      "label": "Trigger: Usuario paga mediante método Claro Pagos",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Pago mediante Claro Pagos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-208",
+      "name": "PaymentMethods component",
+      "label": "PaymentMethods component",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-209",
+      "name": "Payway: servicio backend de pagos externo",
+      "label": "Payway: servicio backend de pagos externo",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-210",
+      "name": "PlanSelector component",
+      "label": "PlanSelector component",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-211",
+      "name": "PLAN_SELECTED",
+      "label": "PLAN_SELECTED",
+      "type": "event_technical",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-212",
+      "name": "Trigger: Usuario decide contratar un plan de Claro Video",
+      "label": "Trigger: Usuario decide contratar un plan de Claro Video",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Contratar plan de suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-213",
+      "name": "GET /services/payway/planselector",
+      "label": "GET /services/payway/planselector",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-214",
+      "name": "PlanselectorTask.js",
+      "label": "PlanselectorTask.js",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-215",
+      "name": "Trigger: Usuario paga mediante cargo a factura telefónica",
+      "label": "Trigger: Usuario paga mediante cargo a factura telefónica",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Pago por Factura Fija (Telmex/Claro)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-216",
+      "name": "CancelSuscription_1.0.0",
+      "label": "CancelSuscription_1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Cancelar suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-217",
+      "name": "POST /claropagos/...",
+      "label": "POST /claropagos/...",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-218",
+      "name": "Tipo: Alternativo",
+      "label": "Tipo: Alternativo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Pago mediante Claro Pagos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-219",
+      "name": "<informacion no encontrada: PCI-DSS compliance, tokenización de tarjetas>",
+      "label": "<informacion no encontrada: PCI-DSS compliance, tokenización de tarjetas>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-220",
+      "name": "ClaroPagosGate",
+      "label": "ClaroPagosGate",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-221",
+      "name": "TelmexMexicoGate",
+      "label": "TelmexMexicoGate",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-222",
+      "name": "Tipo: Core (comercialmente crítico)",
+      "label": "Tipo: Core (comercialmente crítico)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Contratar plan de suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-223",
+      "name": "Tipo: Alternativo (región MX)",
+      "label": "Tipo: Alternativo (región MX)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Pago por Factura Fija (Telmex/Claro)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-224",
+      "name": "subscription/status",
+      "label": "subscription/status",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-225",
+      "name": "BuyConfirmTask.js",
+      "label": "BuyConfirmTask.js",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-226",
+      "name": "POST /services/payway/buyconfirm",
+      "label": "POST /services/payway/buyconfirm",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-227",
+      "name": "POST /facturafija/...",
+      "label": "POST /facturafija/...",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-228",
+      "name": "POST /telmex/...",
+      "label": "POST /telmex/...",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-229",
+      "name": "src/payments/HubFija/",
+      "label": "src/payments/HubFija/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Pago por Factura Fija (Telmex/Claro)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-230",
+      "name": "src/payments/ClaroPagosGate/",
+      "label": "src/payments/ClaroPagosGate/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Pago mediante Claro Pagos"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-231",
+      "name": "Resultado: Suscripción cancelada",
+      "label": "Resultado: Suscripción cancelada",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Cancelar suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-232",
+      "name": "PLAYER_STATE_TIMESHIFT",
+      "label": "PLAYER_STATE_TIMESHIFT",
+      "type": "event_technical",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-233",
+      "name": "Trigger: Usuario presiona rebobinar durante TV en vivo",
+      "label": "Trigger: Usuario presiona rebobinar durante TV en vivo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Retroceder en el tiempo en canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-234",
+      "name": "Resultado: Reproducción retrasada del canal en vivo",
+      "label": "Resultado: Reproducción retrasada del canal en vivo",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Retroceder en el tiempo en canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-235",
+      "name": "Lógica de timeshift implementada mayormente en el player (Bitmovin/Shaka) a nivel de offset de sesión",
+      "label": "Lógica de timeshift implementada mayormente en el player (Bitmovin/Shaka) a nivel de offset de sesión",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-236",
+      "name": "Timeshift/main.js",
+      "label": "Timeshift/main.js",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-237",
+      "name": "src/AAF/Timeshift/EventTimeshift.js",
+      "label": "src/AAF/Timeshift/EventTimeshift.js",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Retroceder en el tiempo en canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-238",
+      "name": "Bitmovin/Shaka Player",
+      "label": "Bitmovin/Shaka Player",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-239",
+      "name": "seek",
+      "label": "seek",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-240",
+      "name": "SET_PLAYER_STATE",
+      "label": "SET_PLAYER_STATE",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-241",
+      "name": "<informacion no encontrada: configuración de servidor para timeshift/buffer>",
+      "label": "<informacion no encontrada: configuración de servidor para timeshift/buffer>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-242",
+      "name": "TimeshiftUtil.js",
+      "label": "TimeshiftUtil.js",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-243",
+      "name": "Trigger: Usuario presiona pausa durante TV en vivo",
+      "label": "Trigger: Usuario presiona pausa durante TV en vivo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Pausar TV en vivo y reanudar desde posición anterior"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-244",
+      "name": "activateTimeshift",
+      "label": "activateTimeshift",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-245",
+      "name": "playerstates.js",
+      "label": "playerstates.js",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-246",
+      "name": "Resultado: Reprodución continua desde posición pausada",
+      "label": "Resultado: Reprodución continua desde posición pausada",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Pausar TV en vivo y reanudar desde posición anterior"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-247",
+      "name": "timeshift stream",
+      "label": "timeshift stream",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-248",
+      "name": "calculateOffset",
+      "label": "calculateOffset",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-249",
+      "name": "src/AAF/Timeshift/main.js",
+      "label": "src/AAF/Timeshift/main.js",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Pausar TV en vivo y reanudar desde posición anterior"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-250",
+      "name": "handlePause",
+      "label": "handlePause",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-251",
+      "name": "TIMESHIFT_ACTIVATE",
+      "label": "TIMESHIFT_ACTIVATE",
+      "type": "event_technical",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-252",
+      "name": "L",
+      "label": "L",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-253",
+      "name": "Youbora tracking events",
+      "label": "Youbora tracking events",
+      "type": "event_technical",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-254",
+      "name": "Player: Bitmovin Player 8.165.0 + Shaka Player 3.0.1 (embedded en SPA)",
+      "label": "Player: Bitmovin Player 8.165.0 + Shaka Player 3.0.1 (embedded en SPA)",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-255",
+      "name": "content-playback",
+      "label": "content-playback",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-256",
+      "name": "PurchaseButtonInfoTask",
+      "label": "PurchaseButtonInfoTask",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-257",
+      "name": "initPlayer",
+      "label": "initPlayer",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-258",
+      "name": "Player state events",
+      "label": "Player state events",
+      "type": "event_technical",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-259",
+      "name": "<informacion no encontrada en el repositorio: componentes UI del player VOD -> src/components/ (requiere inspección)>",
+      "label": "<informacion no encontrada en el repositorio: componentes UI del player VOD -> src/components/ (requiere inspección)>",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-260",
+      "name": "trackPlayStart",
+      "label": "trackPlayStart",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-261",
+      "name": "<informacion no encontrada en el repositorio: CDN de streaming -> infraestructura>",
+      "label": "<informacion no encontrada en el repositorio: CDN de streaming -> infraestructura>",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-262",
+      "name": "verificar acceso",
+      "label": "verificar acceso",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-263",
+      "name": "Evento Redux",
+      "label": "Evento Redux",
+      "type": "event_technical",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-264",
+      "name": "DRM: Widevine (Chrome/Android), PlayReady (Windows), Fairplay (Safari/iOS)",
+      "label": "DRM: Widevine (Chrome/Android), PlayReady (Windows), Fairplay (Safari/iOS)",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-265",
+      "name": "PLAY_MEDIA",
+      "label": "PLAY_MEDIA",
+      "type": "event_technical",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-266",
+      "name": "<informacion no encontrada en el repositorio: topología completa -> IaC>",
+      "label": "<informacion no encontrada en el repositorio: topología completa -> IaC>",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-267",
+      "name": "content-search-api",
+      "label": "content-search-api",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-268",
+      "name": "youboraInfinity",
+      "label": "youboraInfinity",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-node-269",
+      "name": "no VOD match",
+      "label": "no VOD match",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs - Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-aaf-ott-edge-1",
+      "source": "claro-video-aaf-ott-node-13",
+      "target": "claro-video-aaf-ott-node-29",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-2",
+      "source": "claro-video-aaf-ott-node-9",
+      "target": "claro-video-aaf-ott-node-18",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-3",
+      "source": "claro-video-aaf-ott-node-30",
+      "target": "claro-video-aaf-ott-node-17",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-4",
+      "source": "claro-video-aaf-ott-node-30",
+      "target": "claro-video-aaf-ott-node-21",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-5",
+      "source": "claro-video-aaf-ott-node-1",
+      "target": "claro-video-aaf-ott-node-14",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-6",
+      "source": "claro-video-aaf-ott-node-63",
+      "target": "claro-video-aaf-ott-node-68",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-7",
+      "source": "claro-video-aaf-ott-node-49",
+      "target": "claro-video-aaf-ott-node-42",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-8",
+      "source": "claro-video-aaf-ott-node-58",
+      "target": "claro-video-aaf-ott-node-51",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-9",
+      "source": "claro-video-aaf-ott-node-71",
+      "target": "claro-video-aaf-ott-node-57",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-10",
+      "source": "claro-video-aaf-ott-node-75",
+      "target": "claro-video-aaf-ott-node-40",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-11",
+      "source": "claro-video-aaf-ott-node-56",
+      "target": "claro-video-aaf-ott-node-66",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-12",
+      "source": "claro-video-aaf-ott-node-76",
+      "target": "claro-video-aaf-ott-node-74",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-13",
+      "source": "claro-video-aaf-ott-node-61",
+      "target": "claro-video-aaf-ott-node-41",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-14",
+      "source": "claro-video-aaf-ott-node-80",
+      "target": "claro-video-aaf-ott-node-29",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-15",
+      "source": "claro-video-aaf-ott-node-86",
+      "target": "claro-video-aaf-ott-node-89",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-16",
+      "source": "claro-video-aaf-ott-node-83",
+      "target": "claro-video-aaf-ott-node-94",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-17",
+      "source": "claro-video-aaf-ott-node-91",
+      "target": "claro-video-aaf-ott-node-96",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-18",
+      "source": "claro-video-aaf-ott-node-30",
+      "target": "claro-video-aaf-ott-node-100",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-19",
+      "source": "claro-video-aaf-ott-node-127",
+      "target": "claro-video-aaf-ott-node-124",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-20",
+      "source": "claro-video-aaf-ott-node-110",
+      "target": "claro-video-aaf-ott-node-114",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-21",
+      "source": "claro-video-aaf-ott-node-108",
+      "target": "claro-video-aaf-ott-node-119",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-22",
+      "source": "claro-video-aaf-ott-node-105",
+      "target": "claro-video-aaf-ott-node-128",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-23",
+      "source": "claro-video-aaf-ott-node-111",
+      "target": "claro-video-aaf-ott-node-106",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-24",
+      "source": "claro-video-aaf-ott-node-70",
+      "target": "claro-video-aaf-ott-node-158",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-25",
+      "source": "claro-video-aaf-ott-node-159",
+      "target": "claro-video-aaf-ott-node-143",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-26",
+      "source": "claro-video-aaf-ott-node-146",
+      "target": "claro-video-aaf-ott-node-154",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-27",
+      "source": "claro-video-aaf-ott-node-136",
+      "target": "claro-video-aaf-ott-node-147",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-28",
+      "source": "claro-video-aaf-ott-node-1",
+      "target": "claro-video-aaf-ott-node-140",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-29",
+      "source": "claro-video-aaf-ott-node-150",
+      "target": "claro-video-aaf-ott-node-148",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-30",
+      "source": "claro-video-aaf-ott-node-151",
+      "target": "claro-video-aaf-ott-node-156",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-31",
+      "source": "claro-video-aaf-ott-node-135",
+      "target": "claro-video-aaf-ott-node-162",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-32",
+      "source": "claro-video-aaf-ott-node-189",
+      "target": "claro-video-aaf-ott-node-29",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-33",
+      "source": "claro-video-aaf-ott-node-169",
+      "target": "claro-video-aaf-ott-node-174",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-34",
+      "source": "claro-video-aaf-ott-node-30",
+      "target": "claro-video-aaf-ott-node-181",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-35",
+      "source": "claro-video-aaf-ott-node-170",
+      "target": "claro-video-aaf-ott-node-184",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_DVR.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-36",
+      "source": "claro-video-aaf-ott-node-191",
+      "target": "claro-video-aaf-ott-node-68",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-37",
+      "source": "claro-video-aaf-ott-node-193",
+      "target": "claro-video-aaf-ott-node-192",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-38",
+      "source": "claro-video-aaf-ott-node-224",
+      "target": "claro-video-aaf-ott-node-29",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-39",
+      "source": "claro-video-aaf-ott-node-214",
+      "target": "claro-video-aaf-ott-node-213",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-40",
+      "source": "claro-video-aaf-ott-node-30",
+      "target": "claro-video-aaf-ott-node-210",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-41",
+      "source": "claro-video-aaf-ott-node-30",
+      "target": "claro-video-aaf-ott-node-208",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-42",
+      "source": "claro-video-aaf-ott-node-220",
+      "target": "claro-video-aaf-ott-node-217",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-43",
+      "source": "claro-video-aaf-ott-node-221",
+      "target": "claro-video-aaf-ott-node-228",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-44",
+      "source": "claro-video-aaf-ott-node-199",
+      "target": "claro-video-aaf-ott-node-227",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-45",
+      "source": "claro-video-aaf-ott-node-225",
+      "target": "claro-video-aaf-ott-node-226",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-46",
+      "source": "claro-video-aaf-ott-node-247",
+      "target": "claro-video-aaf-ott-node-252",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-47",
+      "source": "claro-video-aaf-ott-node-170",
+      "target": "claro-video-aaf-ott-node-250",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-48",
+      "source": "claro-video-aaf-ott-node-236",
+      "target": "claro-video-aaf-ott-node-244",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-49",
+      "source": "claro-video-aaf-ott-node-242",
+      "target": "claro-video-aaf-ott-node-248",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-50",
+      "source": "claro-video-aaf-ott-node-238",
+      "target": "claro-video-aaf-ott-node-239",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-51",
+      "source": "claro-video-aaf-ott-node-245",
+      "target": "claro-video-aaf-ott-node-240",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-52",
+      "source": "claro-video-aaf-ott-node-1",
+      "target": "claro-video-aaf-ott-node-267",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-53",
+      "source": "claro-video-aaf-ott-node-1",
+      "target": "claro-video-aaf-ott-node-255",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-54",
+      "source": "claro-video-aaf-ott-node-1",
+      "target": "claro-video-aaf-ott-node-269",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-55",
+      "source": "claro-video-aaf-ott-node-256",
+      "target": "claro-video-aaf-ott-node-262",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-56",
+      "source": "claro-video-aaf-ott-node-170",
+      "target": "claro-video-aaf-ott-node-257",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-ott-edge-57",
+      "source": "claro-video-aaf-ott-node-268",
+      "target": "claro-video-aaf-ott-node-260",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:55.157Z",
+    "nodeTypes": [
+      "component",
+      "event_technical",
+      "actor",
+      "contract_api",
+      "client"
+    ],
+    "topFiles": [
+      "SPEC_ACCOUNT_MANAGEMENT.md",
+      "SPEC_MUSIC_STREAMING.md",
+      "contracts.md",
+      "journeys.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "SPEC_CARROUSEL_NAVIGATION.md",
+      "SPEC_LIVE_BROADCAST.md",
+      "SPEC_RECORDED_DVR.md",
+      "SPEC_CONTENT_DISCOVERY.md",
+      "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+      "SPEC_TIMESHIFT_PLAYBACK.md",
+      "SPEC_VOD_PLAYBACK.md",
+      "componentes.md",
+      "metricas.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 23,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-aaf-ott",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-aaf-ott.md",
+          "analysis\\diagrama_global_claro-video-aaf-ott.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 269,
+          "edgeCount": 57,
+          "groupCount": 10,
+          "isolatedCount": 170
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-aaf-ott",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-aaf-ott.md"
+        ],
+        "metrics": {
+          "nodeCount": 12,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-aaf-ott/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-aaf-ott_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-aaf-ott_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 37,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 28
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 37,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 28
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS claro-video-aaf-ott/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-aaf-ott_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-aaf-ott_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 30
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 30
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS claro-video-aaf-ott/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-aaf-ott_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-aaf-ott_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 38,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 28
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 38,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 28
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS claro-video-aaf-ott/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-aaf-ott_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-aaf-ott_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 35,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 25
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 35,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 25
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 11,
+        "title": "Diagrama VSS claro-video-aaf-ott/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-aaf-ott_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-aaf-ott_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 30
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 46,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 30
+        }
+      },
+      {
+        "id": "domain-RECORDED-vss",
+        "order": 13,
+        "title": "Diagrama VSS claro-video-aaf-ott/RECORDED",
+        "kind": "domain_vss",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-aaf-ott_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-aaf-ott_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 33,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 25
+        }
+      },
+      {
+        "id": "domain-RECORDED-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/RECORDED",
+        "kind": "domain_impact",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 33,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 25
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 15,
+        "title": "Diagrama VSS claro-video-aaf-ott/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-aaf-ott_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-aaf-ott_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 19,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 19,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 17,
+        "title": "Diagrama VSS claro-video-aaf-ott/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-aaf-ott_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-aaf-ott_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 44,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 29
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 18,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 44,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 29
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-vss",
+        "order": 19,
+        "title": "Diagrama VSS claro-video-aaf-ott/TIMESHIFT",
+        "kind": "domain_vss",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-aaf-ott_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-aaf-ott_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-impact",
+        "order": 20,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/TIMESHIFT",
+        "kind": "domain_impact",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 21,
+        "title": "Diagrama VSS claro-video-aaf-ott/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-aaf-ott_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-aaf-ott_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 28,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 22,
+        "title": "Diagrama Impacto VSS claro-video-aaf-ott/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-aaf-ott_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 28,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 23,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 269,
+          "edgeCount": 57,
+          "groupCount": 0,
+          "isolatedCount": 170
+        }
+      }
+    ]
+  }
+}

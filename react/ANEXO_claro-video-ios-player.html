@@ -1,0 +1,1728 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anexo Técnico - claro-video-ios-player</title>
+  <link rel="stylesheet" href="RESUMEN_EJECUTIVO_4_REPOSITORIOS.css">
+</head>
+<body class="dashboard-page annex-page">
+  <div class="shell">
+    <header class="hero is-visible">
+      <span class="kicker">Anexo Técnico</span>
+      <h1>claro-video-ios-player</h1>
+      <p class="hero-mainline">Contenido completo por documento + Value Strem Spect (VSS)</p>
+      <p><a href="index.html#contenido-docs">Volver al resumen consolidado</a></p>
+    </header>
+
+    <main class="main">
+      <section id="contenido-docs">
+        <h3>Anexo Técnico: claro-video-ios-player</h3>
+        <p class="docs-note">Documentos detectados: 14 (FASE 1) + Value Strem Spect (VSS) integrado desde el paquete recibido el 12 de marzo de 2026.</p>
+        <div class="vss-overview">
+          <div class="vss-overview-head">
+            <div>
+              <span class="vss-badge">FASE 1.5 - Value Strem Spect</span>
+              <h4>Resumen ejecutivo Value Strem Spect integrado en el anexo</h4>
+              <p>Se tomo como referencia la unica entrega incluida en el zip <code>claro-video-ios-player new.zip</code>. Dentro del paquete no existen carpetas paralelas tipo <code>analysis_v1</code>, <code>analysis_v2</code> o <code>new_vss</code>, asi que la raiz del zip se toma como la version vigente para esta presentacion.</p>
+            </div>
+            <div class="vss-source-chip">Referencia: paquete recibido 2026-03-12 · VALIDATION_REPORT generado 2026-03-11</div>
+          </div>
+
+          <div class="vss-metrics" aria-label="Metricas ejecutivas Value Strem Spect">
+            <article class="vss-stat">
+              <strong>6 / 10</strong>
+              <span>dominios validados</span>
+            </article>
+            <article class="vss-stat">
+              <strong>144</strong>
+              <span>nodos globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>99</strong>
+              <span>relaciones globales</span>
+            </article>
+            <article class="vss-stat">
+              <strong>36</strong>
+              <span>archivos VSS generados</span>
+            </article>
+          </div>
+
+          <div class="card-grid vss-card-grid">
+            <article class="mini-card">
+              <h4>Cobertura funcional</h4>
+              <p>El paquete cubre la superficie real del player en <code>VOD</code>, <code>LIVESTREAMING</code>, <code>TIMESHIFT</code>, <code>RECORDED</code>, <code>MUSIC</code> y <code>SUBSCRIPTION</code>. El <code>VALIDATION_REPORT.md</code> consolida 22 value streams internos agrupados en 6 dominios y cierra la busqueda MCP con <code>27/27</code> APIs encontradas.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Hotspots cuantitativos</h4>
+              <p><code>VOD</code> es el flujo mas cargado con 41 nodos y 24 relaciones. <code>SUBSCRIPTION</code> y <code>LIVESTREAMING</code> quedan inmediatamente detras con 44 nodos y 22/17 relaciones, mientras <code>TIMESHIFT</code> y <code>MUSIC</code> se apoyan en componentes compartidos del player y FairPlay.</p>
+            </article>
+            <article class="mini-card">
+              <h4>Riesgo operativo</h4>
+              <p>La propia evidencia marca deuda tecnica directa: URL hardcodeada del certificado FairPlay de musica en <code>ProviderAMCOMusic.swift</code>, licencias de <code>Bitmovin</code> hardcodeadas en <code>BitmovinConstants.swift</code>, estado global mutable en <code>SharedInfo.swift</code> y enums/flags con semantica ambigua para live, purchase y timeshift.</p>
+            </article>
+          </div>
+
+          <p class="vss-footnote">Este paquete no incluye un <code>VSS_COMPLIANCE_REPORT.md</code> formal ni un <code>RESUMEN_VSS_GENERADOS.md</code>, pero si trae un <code>VSS/GENERATED/VALIDATION_REPORT.md</code> como consolidado ejecutivo. La lectura se reconstruyo desde ese reporte, <code>analysis/repo_summary.json</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+          <article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Seccion de diagramas Value Strem Spect</h4>
+              <p>Los diagramas completos se movieron a una pagina dedicada para mejorar lectura, zoom y navegacion, sin omitir ningun archivo generado por los desarrolladores.</p>
+            </div>
+            <div class="vss-detail-body">
+              <p>La pagina dedicada conserva el diagrama global, el impacto global, los 12 diagramas por dominio del paquete y una vista comparativa adicional del <code>repo_graph.graphml</code>.</p>
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Indice completo</h4>
+                  <p><a href="index.html#/fase-1/vss/claro-video-ios-player">Abrir pagina de diagramas Value Strem Spect</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Diagrama global</h4>
+                  <p><a href="index.html#/fase-1/vss/claro-video-ios-player">Ir al grafo consolidado</a></p>
+                </article>
+                <article class="mini-card">
+                  <h4>Impacto global</h4>
+                  <p><a href="index.html#/fase-1/vss/claro-video-ios-player">Ir al mapa de impacto</a></p>
+                </article>
+              </div>
+              <p class="vss-footnote">La pagina dedicada conserva los 14 entregables completos del paquete y agrega una seccion 15 para visualizar <code>repo_graph.graphml</code> como comparativo tecnico. Esa vista normaliza 142 nodos unicos, 99 relaciones y 2 IDs duplicados detectados en la fuente estructural.</p>
+            </div>
+          </article>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Mapa Value Strem Spect por dominio</span><span class="doc-path">6 dominios del player - foco funcional + relaciones por flujo</span></summary>
+            <div class="vss-detail-body">
+              <div class="table-scroll vss-table-scroll">
+                <table class="vss-domain-table">
+                  <thead>
+                    <tr>
+                      <th>Dominio</th>
+                      <th>Foco funcional</th>
+                      <th>Relaciones</th>
+                      <th>Impacto directo / indirecto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>LIVESTREAMING</td><td>Canales live, swipe channel, favoritos, recordatorios y mini-EPG</td><td>17</td><td>14 / 0</td></tr>
+                    <tr><td>MUSIC</td><td>Audio playback, album-artista, remote controls y lock screen</td><td>13</td><td>11 / 0</td></tr>
+                    <tr><td>RECORDED</td><td>NPVR, boton de grabacion, opciones evento/serie y playback de grabados</td><td>11</td><td>10 / 0</td></tr>
+                    <tr><td>SUBSCRIPTION</td><td>FinPlayer, compra/renta/suscripcion, siguiente episodio y recomendaciones</td><td>22</td><td>18 / 0</td></tr>
+                    <tr><td>TIMESHIFT</td><td>Seek en live, replay de evento pasado y slider temporal compartido</td><td>12</td><td>11 / 0</td></tr>
+                    <tr><td>VOD</td><td>Playback on demand, DRM FairPlay, offline, analytics y cierre FinPlayer</td><td>24</td><td>17 / 0</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="doc-item">
+            <summary><span class="doc-name">Hallazgos y siguientes pasos del Value Strem Spect</span><span class="doc-path">scope real + deuda del player + accion inmediata</span></summary>
+            <div class="vss-detail-body">
+              <div class="card-grid">
+                <article class="mini-card">
+                  <h4>Hotspots confirmados</h4>
+                  <ul class="vss-list">
+                    <li><code>VOD</code>, <code>SUBSCRIPTION</code> y <code>LIVESTREAMING</code> concentran la mayor carga funcional del paquete y sostienen el camino critico del reproductor.</li>
+                    <li>El alcance de 6 dominios es intencional: este paquete representa el SDK/player, no el mapa funcional completo de la app iOS principal.</li>
+                    <li><code>TIMESHIFT</code>, <code>RECORDED</code> y <code>MUSIC</code> son mas pequenos en volumen, pero dependen del mismo stack compartido de player, DRM y estado global.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Riesgos operativos</h4>
+                  <ul class="vss-list">
+                    <li><code>MUSIC-001</code>: <code>ProviderAMCOMusic.swift</code> deja hardcodeada la URL del certificado FairPlay de musica.</li>
+                    <li><code>VOD-003</code>: <code>BitmovinConstants.swift</code> mantiene licencias de Bitmovin Player y Analytics hardcodeadas.</li>
+                    <li><code>VOD-004</code> y <code>TIMESHIFT-001</code>: <code>SharedInfo.swift</code> mezcla estado global mutable y el flag <code>isNoInLiveWithTimeShift</code>.</li>
+                    <li><code>LIVESTREAMING-001</code> y <code>SUBSCRIPTION-001</code>: enums y contratos con semantica ambigua como <code>OptionLive</code> y el typo <code>purchaseSeasson</code>.</li>
+                  </ul>
+                </article>
+                <article class="mini-card">
+                  <h4>Siguiente movimiento</h4>
+                  <ul class="vss-list">
+                    <li>Priorizar FASE 2 sobre <code>VOD</code>, <code>LIVESTREAMING</code> y <code>SUBSCRIPTION</code>, porque concentran playback, DRM y monetizacion.</li>
+                    <li>Externalizar certificados y licencias, y reducir el estado global mutable antes de seguir ampliando features del player.</li>
+                    <li>Usar <code>VALIDATION_REPORT.md</code> como consolidado funcional inicial y la seccion 15 del <code>repo_graph.graphml</code> como respaldo estructural.</li>
+                    <li>Documentar dependencias que hoy quedan fuera del repo, como Apple IAP e infraestructura backend de music/timeshift/NPVR.</li>
+                  </ul>
+                </article>
+              </div>
+              <p class="vss-footnote">Fuentes integradas: <code>VSS/GENERATED/VALIDATION_REPORT.md</code>, <code>analysis/repo_summary.json</code>, <code>analysis/impacto_global_claro-video-ios-player.md</code>, <code>analysis/repo_graph.graphml</code>, <code>analysis/repo_graph.json</code>, <code>analysis/repo_evidence_map.json</code>, <code>VSS/GENERATED/*/analysis/summary.json</code> y <code>VSS/GENERATED/*/SPEC_*.md</code>.</p>
+            </div>
+          </details>
+        </div>
+<article class="repo-content-block">
+            <div class="repo-content-head">
+              <h4>Repositorio: claro-video-ios-player</h4>
+              <p>Documentos detectados: 14 (FASE 1)</p>
+            </div>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ARCHITECTURE_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Architecture Guide - cv-ios-player
+
+## &#128203; Resumen Arquitect&#243;nico
+### Stack Tecnol&#243;gico
+- Swift 5.7, Swift Package Manager, iOS 16+, tvOS 16+.
+- Dependencias: `bitmovin/player-ios` 3.83.0, `bitmovin-analytics-collector-ios` 3.11.1, `plugin-ios-bitmovin` 1.1.6.
+
+### Patrones Arquitect&#243;nicos Principales
+- SDK modular por plataforma con n&#250;cleo compartido.
+- Dependency Injection por protocolos `*Injectable`.
+- Observer pattern para eventos de reproducci&#243;n.
+
+### Principios de Dise&#241;o
+- Reutilizaci&#243;n en `CVPlayerCommon` antes de duplicar por plataforma.
+- API p&#250;blica estable en `FrameworkPublic`.
+- Separaci&#243;n entre librer&#237;a y app de soporte (`TestApp`).
+
+## &#127959;️ Arquitectura General
+### Diagrama de Alto Nivel
+- Ver `../diagrams/ARCHITECTURE_DIAGRAMS.md`.
+
+### Componentes Principales
+- `Sources/CVPlayer/` (iOS)
+- `Sources/CVPlayerTVOS/` (tvOS)
+- `Sources/CVPlayerCommon/` (core compartido)
+
+### Flujo de Datos
+- App cliente → Builder (`PlayerBuilderiOS/TVOS`) → Core (`CVPlayerCommon`) → Bitmovin/NPAW/FairPlay.
+
+## &#128230; Estructura de M&#243;dulos
+### M&#243;dulos Core
+- `CVPlayerCommon`: DI, observers, FairPlay, utilidades y contratos p&#250;blicos.
+
+### M&#243;dulos de Dominio
+- `CVPlayer` y `CVPlayerTVOS` para l&#243;gica de plataforma.
+
+### M&#243;dulos de Infraestructura
+- Integraciones Bitmovin, NPAW y coleccionistas de anal&#237;tica.
+
+### Dependencias Entre M&#243;dulos
+- `CVPlayer` → `CVPlayerCommon`
+- `CVPlayerTVOS` → `CVPlayerCommon`
+- `CVPlayerCommon` → dependencias externas declaradas en `Package.swift`
+
+## &#128260; Patrones de Dise&#241;o
+### Patr&#243;n Arquitect&#243;nico (MVVM, Clean, etc.)
+- No se detecta implementaci&#243;n formal MVVM/Clean; s&#237; modularizaci&#243;n por targets SPM.
+
+### Dependency Injection
+- `InjectionRootViewController`, `InjectionEvents`, `InjectionData`, `InjectionPlayerControls`.
+
+### Repository Pattern
+- No se detecta `Repository` expl&#237;cito.
+
+### Observer/State Management
+- Gesti&#243;n de eventos en `Sources/CVPlayerCommon/Observers/`.
+
+## &#128225; Integraciones Externas
+### APIs Consumidas
+- APIs de Bitmovin Player/Analytics y adapter de NPAW.
+
+### Servicios de Terceros
+- Bitmovin, NPAW y FairPlay (Apple DRM).
+
+### Bases de Datos
+- No se detecta base de datos en el SDK.
+
+### Sistemas de Cache
+- No se detecta capa de cache propia en el SDK.
+
+## &#128737;️ Consideraciones de Seguridad
+### Autenticaci&#243;n y Autorizaci&#243;n
+- FairPlay para contenido protegido en `Sources/CVPlayerCommon/FairPlay/`.
+
+### Manejo de Secrets
+- No se detectan secretos hardcodeados en fuentes inspeccionadas.
+
+### Validaci&#243;n de Datos
+- Validar URLs/config de reproducci&#243;n antes de inicializar player.
+
+### Protecci&#243;n de APIs
+- Contratos p&#250;blicos delimitados en `FrameworkPublic` y resto interno por defecto.
+
+## &#128202; Performance y Escalabilidad
+### Estrategias de Caching
+- Manejo de buffer/caching delegado al player engine.
+
+### Optimizaciones de Consultas
+- No aplica (sin capa DB/API propia en este SDK).
+
+### Manejo de Concurrencia
+- Controlar trabajo en main thread en callbacks/observers.
+
+### M&#233;tricas de Performance
+- No existen artefactos de m&#233;tricas persistidos en el repositorio.
+
+## &#128295; Evoluci&#243;n y Mantenimiento
+### Principios de Extensibilidad
+- Extender funcionalidad compartida en `CVPlayerCommon`.
+
+### Versionado de APIs
+- No se detecta pol&#237;tica formal documentada.
+
+### Estrategias de Migraci&#243;n
+- Revisar cambios breaking al actualizar dependencias externas.
+
+### Refactoring Guidelines
+- Evitar romper API p&#250;blica; preferir deprecaci&#243;n previa.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No hay ADRs formales.
+- ⚠️ No hay m&#233;tricas cuantitativas de complejidad/cobertura en archivos de salida.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Agregar ADRs en `docs/`.
+- Publicar artefactos de cobertura/performance en CI.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Stack y m&#243;dulos detectados desde c&#243;digo | `Package.swift`, `Sources/**` |
+| 3 | `evidence_cited` | ✅ | Afirmaciones ancladas a rutas reales | `Sources/CVPlayerCommon/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">BEST_PRACTICES.md</span><span class="doc-path">.github\docs\01-inicio\BEST_PRACTICES.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Best Practices - cv-ios-player
+
+## &#128187; Convenciones de C&#243;digo
+### Nombres y Nomenclatura
+- `UpperCamelCase` para tipos y `lowerCamelCase` para miembros.
+
+### Estructura de Archivos
+- Organizaci&#243;n por m&#243;dulo y responsabilidad (`CVPlayer`, `CVPlayerTVOS`, `CVPlayerCommon`).
+
+### Comentarios y Documentaci&#243;n
+- L&#243;gica de negocio en espa&#241;ol; APIs y t&#233;rminos t&#233;cnicos en ingl&#233;s.
+
+### Formateo y Estilo
+- Mantener consistencia Swift y evitar estilos no estandarizados.
+
+## &#127959;️ Arquitectura y Dise&#241;o
+### Principios SOLID
+- Aplicar separaci&#243;n de responsabilidades entre targets y componentes.
+
+### Separaci&#243;n de Responsabilidades
+- Compartido en `CVPlayerCommon`; espec&#237;fico por plataforma en su target.
+
+### Manejo de Dependencias
+- Dependencias con versi&#243;n fija en `Package.swift`.
+
+### Patrones Recomendados
+- DI por protocolos `*Injectable`, observer para eventos de player.
+
+## &#129514; Testing y Calidad
+### Estrategia de Testing
+- Unit tests en `Tests/` y `PlayerTVTests/`.
+
+### Cobertura M&#237;nima
+- Objetivo operativo: ≥ 80% en contratos p&#250;blicos cr&#237;ticos.
+
+### Tipos de Tests
+- Unit, integraci&#243;n (manual en `TestApp`) y regresi&#243;n en CI.
+
+### Mocking y Fixtures
+- Mockear dependencias externas mediante protocolos/abstracciones.
+
+## &#128274; Seguridad
+### Validaci&#243;n de Entrada
+- Validar URLs/config de reproducci&#243;n antes de inicializar player.
+
+### Manejo de Secrets
+- No hardcodear tokens/credenciales.
+
+### Logging Seguro
+- Evitar exponer datos sensibles en logs.
+
+### Control de Acceso
+- Limitar superficie p&#250;blica a tipos realmente necesarios.
+
+## &#128202; Performance
+### Optimizaciones Comunes
+- Minimizar trabajo en hilo principal de UI/observers.
+
+### Profiling y Monitoring
+- Usar Instruments para profiling de memoria/CPU.
+
+### Caching Strategies
+- Delegar buffering/caching al engine de reproducci&#243;n.
+
+### Resource Management
+- Liberar observers y referencias para evitar leaks.
+
+## &#128640; Deployment y DevOps
+### CI/CD Pipeline
+- Workflows en `.github/workflows/`.
+
+### Environment Management
+- Configuraci&#243;n de entorno gestionada por apps consumidoras.
+
+### Rollback Strategies
+- Revertir a versi&#243;n/tag anterior del paquete.
+
+### Monitoring y Alertas
+- Observabilidad por dashboards de analytics del consumidor.
+
+## ⚠️ Anti-patrones
+### Qu&#233; Evitar
+- Duplicaci&#243;n de l&#243;gica entre iOS/tvOS.
+
+### Code Smells Comunes
+- DI global r&#237;gida sin override por instancia.
+
+### Ejemplos de Mal C&#243;digo
+- Hardcoded secrets y callbacks pesados en main thread.
+
+### C&#243;mo Refactorizar
+- Mover c&#243;digo compartido a `CVPlayerCommon` y encapsular dependencias.
+
+## &#128221; Documentaci&#243;n
+### Est&#225;ndares de Documentaci&#243;n
+- Documentaci&#243;n t&#233;cnica en espa&#241;ol con t&#233;rminos de API en ingl&#233;s.
+
+### API Documentation
+- Documentar contratos p&#250;blicos (`public`) con claridad.
+
+### README Guidelines
+- Mantener rutas y enlaces de `.github/docs/` actualizados.
+
+### Change Logs
+- No existe `CHANGELOG.md`; recomendado para releases.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No hay m&#233;tricas de cobertura persistidas.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Publicar reportes de tests/cobertura en CI.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Basado en `Package.swift` y estructura real | `Package.swift`, `Sources/**` |
+| 3 | `evidence_cited` | ✅ | Secciones alineadas al repositorio | `.github/workflows/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">CODE_STRUCTURE.md</span><span class="doc-path">.github\docs\01-inicio\CODE_STRUCTURE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Code Structure - cv-ios-player
+
+## &#128193; Estructura de Directorios
+### Directorio Ra&#237;z
+- `Package.swift`, `Sources/`, `Tests/`, `PlayerTVTests/`, `TestApp/`, `.github/`, `scripts/`.
+
+### M&#243;dulos Principales
+- `Sources/CVPlayer/`
+- `Sources/CVPlayerTVOS/`
+- `Sources/CVPlayerCommon/`
+
+### Recursos y Assets
+- `Sources/CVPlayerCommon/Assets.xcassets/`.
+
+### Configuraci&#243;n
+- Configuraci&#243;n principal en `Package.swift` y workflows en `.github/workflows/`.
+
+## &#128230; Organizaci&#243;n por Capas
+### Presentation Layer
+- Builders/controladores de plataforma (`CVPlayer`, `CVPlayerTVOS`).
+
+### Business Logic Layer
+- L&#243;gica compartida en `CVPlayerCommon`.
+
+### Data Access Layer
+- Adaptadores/SDKs de reproducci&#243;n y analytics externos.
+
+### Infrastructure Layer
+- DI, observers, helpers y configuraci&#243;n compartida.
+
+## &#128279; Dependencias y M&#243;dulos
+### Core Modules
+- `CVPlayerCommon`.
+
+### Feature Modules
+- `CVPlayer`, `CVPlayerTVOS`.
+
+### Shared Modules
+- Componentes transversales en `CVPlayerCommon`.
+
+### External Dependencies
+- Bitmovin Player, Bitmovin Analytics, NPAW plugin.
+
+## &#128196; Convenciones de Archivos
+### Naming Conventions
+- Nombres Swift est&#225;ndar y protocolos `*Injectable`.
+
+### File Organization
+- Organizaci&#243;n por responsabilidad funcional.
+
+### Package Structure
+- Targets SPM por plataforma y m&#243;dulo com&#250;n.
+
+### Resource Management
+- Assets compartidos en `CVPlayerCommon`.
+
+## &#127919; Responsabilidades por M&#243;dulo
+### CVPlayer: Responsabilidades
+- Integraci&#243;n de reproducci&#243;n para iOS.
+
+### CVPlayerTVOS: Responsabilidades
+- Integraci&#243;n de reproducci&#243;n para tvOS.
+
+### CVPlayerCommon: Responsabilidades
+- L&#243;gica compartida, DI, observers y FairPlay.
+
+## &#128260; Flujo de Datos
+### Data Flow Diagram
+- App cliente → Builder → Core → Player/Analytics/DRM.
+
+### State Management
+- Estado controlado por player + observers compartidos.
+
+### Event Handling
+- Eventos en `Observers/` y delegaci&#243;n a consumidores.
+
+### Communication Patterns
+- Delegaci&#243;n/protocolos para desacoplar m&#243;dulos.
+
+## &#128203; Gu&#237;as de Implementaci&#243;n
+### Adding New Features
+- Implementar en core si aplica a ambas plataformas.
+
+### Modifying Existing Code
+- Preservar contratos p&#250;blicos y compatibilidad.
+
+### Refactoring Guidelines
+- Reducir duplicaci&#243;n entre targets iOS/tvOS.
+
+### Migration Strategies
+- Validar breaking changes al actualizar SDKs externos.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No hay mapa formal de ownership por carpeta.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Publicar matriz de ownership y visibilidad por m&#243;dulo.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Estructura real del repo | `Sources/**`, `Package.swift` |
+| 3 | `evidence_cited` | ✅ | Secciones conectadas a artefactos reales | `.github/workflows/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">DEVELOPMENT_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\DEVELOPMENT_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Development Guide - cv-ios-player
+
+## &#128640; Workflow de Desarrollo
+### Git Workflow
+- Flujo por ramas de trabajo y PRs.
+
+### Branch Strategy
+- Ramas `feature/*`, `fix/*`, `hotfix/*`, `release/*`, `main`.
+
+### Commit Guidelines
+- Commits at&#243;micos con referencia de ticket.
+
+### PR Process
+- PR con template y validaci&#243;n CI antes de merge.
+
+## &#128736;️ Herramientas de Desarrollo
+### IDE Recomendado
+- Xcode 14.3+.
+
+### Extensions y Plugins
+- No se detecta lista formal de extensiones obligatorias en repositorio.
+
+### Configuraci&#243;n del Entorno
+- Abrir `VideoPlayerSwift.xcodeproj` y resolver SPM.
+
+### Scripts &#218;tiles
+- Scripts en `scripts/` para branching/PR automation.
+
+## &#128203; Tareas Comunes
+### Agregar Nueva Feature
+- Implementar en m&#243;dulo correcto y cubrir con tests.
+
+### Implementar API Endpoint
+- No aplica al SDK (sin backend HTTP propio).
+
+### Agregar Tests
+- A&#241;adir pruebas en `Tests/` o `PlayerTVTests/`.
+
+### Actualizar Dependencias
+- Modificar `Package.swift` y validar compatibilidad.
+
+## &#129514; Testing Guidelines
+### Running Tests
+- Ejecutar desde esquemas de Xcode o `xcodebuild`.
+
+### Writing Tests
+- Priorizar contratos p&#250;blicos y rutas cr&#237;ticas.
+
+### Test Data Management
+- No hardcodear credenciales/tokens.
+
+### Performance Testing
+- Usar Instruments para validaci&#243;n de performance.
+
+## &#128027; Debugging
+### Debugging Techniques
+- Breakpoints en builders/observers y evaluaci&#243;n de estado DI.
+
+### Common Issues
+- Fallas de linking o resoluci&#243;n SPM.
+
+### Logging Standards
+- Logging t&#233;cnico sin exponer informaci&#243;n sensible.
+
+### Profiling Tools
+- Instruments y Xcode Console.
+
+## &#128230; Dependency Management
+### Adding Dependencies
+- Agregar solo si es estrictamente necesario y con versi&#243;n controlada.
+
+### Version Management
+- Versiones exactas declaradas en `Package.swift`.
+
+### Security Scanning
+- No hay reporte de escaneo persistido en repositorio.
+
+### License Compliance
+- Validar licencias de dependencias externas antes de actualizar.
+
+## &#128295; Build y Deploy
+### Build Scripts
+- Build por Xcode y `xcodebuild`.
+
+### Environment Configuration
+- Variables sensibles v&#237;a secrets de CI.
+
+### Deployment Process
+- Publicaci&#243;n por versionado de paquete y release branch.
+
+### Rollback Procedures
+- Revertir a release/tag anterior.
+
+## &#128202; Monitoring y Logs
+### Application Monitoring
+- Integraci&#243;n de analytics por Bitmovin/NPAW.
+
+### Log Analysis
+- Revisi&#243;n en consola Xcode y dashboards externos.
+
+### Performance Metrics
+- Sin artefactos de m&#233;tricas persistidos en repo.
+
+### Error Tracking
+- Existe contrato p&#250;blico para reporte de errores (`crashlyticsReport(...)`), pero no se detecta configuraci&#243;n/implementaci&#243;n concreta versionada de un proveedor en este repositorio.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No existe gu&#237;a formal de extensiones/plugins.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Publicar gu&#237;a de entorno de desarrollo est&#225;ndar del equipo.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Flujo y stack verificables | `.github/workflows/**`, `scripts/**` |
+| 3 | `evidence_cited` | ✅ | Secciones ancladas a rutas reales | `Package.swift` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">EXECUTIVE_SUMMARY.md</span><span class="doc-path">.github\docs\01-inicio\EXECUTIVE_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+&gt; **Declaraci&#243;n de Veracidad:**  
+&gt; Este documento fue generado a partir de evidencia directa del repositorio y,  
+&gt; cuando existe, de artefactos de CI/CD. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+---
+**Versi&#243;n:** 1.0 (Inicial — FASE 1 completada)  
+**Fecha:** 2026-02-23  
+**Estado:** &#128248; An&#225;lisis inicial completado  
+**Pr&#243;xima actualizaci&#243;n:** Al completar FASE 2 (se mueve a `05-seguimiento/`)  
+---
+
+# &#127760; Executive Summary - cv-ios-player
+
+## &#128203; Informaci&#243;n General del Proyecto
+
+### &#127970; Contexto Organizacional
+
+- **Proyecto:** cv-ios-player
+- **Prop&#243;sito:** SDK Swift de reproducci&#243;n de video para aplicaciones iOS y tvOS
+- **Audiencia:** Equipos de desarrollo de apps iOS/tvOS que consumen el SDK
+- **Dominio:** Reproducci&#243;n multimedia, DRM (FairPlay), anal&#237;tica de video
+
+### &#128736;️ Stack Tecnol&#243;gico (DETECTADO)
+
+- **Lenguaje Principal:** Swift (`swift-tools-version:5.7`)
+- **Framework:** Swift Package Manager + Bitmovin Player 3.83.0
+- **Plataforma:** iOS 16+ y tvOS 16+
+- **Herramientas Build:** Xcode + SPM (sin Gradle/Maven/npm)
+
+Fuente: `Package.swift`
+
+## &#127919; Resumen Ejecutivo (v1.0 — Parcial)
+
+⚠️ **Este es un resumen inicial. El resumen ejecutivo completo (&#128248; FOTOGRAF&#205;A COMPLETA) estar&#225; disponible al completar FASE 2.**
+
+### &#127959;️ Estado Arquitect&#243;nico Inicial
+
+- **Patr&#243;n Principal:** Modularizaci&#243;n SPM con DI por protocolos `*Injectable`
+- **Complejidad:** Media — 3 targets de librer&#237;a + 3 dependencias externas exactas
+- **Madurez:** SDK funcional con app de soporte; documentaci&#243;n base completa (FASE 1)
+
+### &#128202; M&#233;tricas B&#225;sicas (FASE 1)
+
+- **M&#243;dulos/Componentes:** 3 targets de librer&#237;a + 1 app soporte + 2 targets de test
+- **Dependencias Externas:** 3 (Bitmovin Player 3.83.0, Bitmovin Analytics 3.11.1, NPAW 1.1.6)
+- **Workflows CI/CD:** 7 detectados en `.github/workflows/`
+- **L&#237;neas de C&#243;digo:** No medido (pendiente herramienta est&#225;tica en FASE 2)
+
+Fuente: `Package.swift`, `.github/workflows/`
+
+## &#128203; Artefactos Generados (FASE 1)
+
+### ✅ Documentaci&#243;n Fundamental (8 archivos — `.github/docs/01-inicio/`)
+
+- &#128218; Setup y Onboarding: `QUICK_START.md`, `ONBOARDING_GUIDE.md`, `TROUBLESHOOTING.md`
+- &#127959;️ Arquitectura y C&#243;digo: `ARCHITECTURE_GUIDE.md`, `CODE_STRUCTURE.md`
+- &#128640; Desarrollo y Pr&#225;cticas: `DEVELOPMENT_GUIDE.md`, `BEST_PRACTICES.md`
+- &#128203; &#205;ndice general: `README.md`
+
+### ✅ An&#225;lisis T&#233;cnico (3 archivos — `.github/docs/02-analisis/`)
+
+- &#128202; Reporte de stack: `ANALYSIS_REPORT_STACK_DETECTION.md`
+- &#127959;️ Reporte de arquitectura: `ANALYSIS_REPORT_ARCHITECTURE.md`
+- &#128202; Resumen de an&#225;lisis: `ANALYSIS_SUMMARY.md`
+
+### ✅ Diagramas (1 archivo — `.github/docs/diagrams/`)
+
+- &#127912; Diagramas arquitect&#243;nicos: `ARCHITECTURE_DIAGRAMS.md`
+
+### ⏱️ Tiempo Invertido
+
+- **FASE 1:** Generado mediante orquestador + auditor&#237;a autom&#225;tica
+- **Eficiencia:** Documentaci&#243;n base completa en sesi&#243;n &#250;nica
+
+## &#127919; Roadmap de Fases
+
+### &#128203; Pr&#243;xima: FASE 2 — DIAGN&#211;STICO
+
+- **Objetivo:** Cuantificar deuda t&#233;cnica, riesgos y calidad
+- **Deliverables:** 5 reportes de diagn&#243;stico detallados
+- **Tiempo estimado:** 50-70 minutos
+- **Output clave:** &#128248; **FOTOGRAF&#205;A COMPLETA** (Executive Summary v2.0)
+
+### &#128302; Siguientes Fases
+
+- **FASE 3:** Planes de acci&#243;n ejecutables (65-85 min)
+- **FASE 4:** Seguimiento y m&#233;tricas continuas (38-62 min)
+
+## &#128640; Instrucciones de Continuaci&#243;n
+
+### Para FASE 2 (Diagn&#243;stico)
+
+1. Ejecutar `02-diagnosis/01-technical-debt-universal.prompt.md`
+2. Este Executive Summary se mover&#225; autom&#225;ticamente a `.github/docs/05-seguimiento/`
+3. Se actualizar&#225; con datos cuantitativos completos (v2.0)
+
+## ⚠️ Limitaciones Actuales (FASE 1)
+
+**Datos no disponibles en el repositorio (Requieren FASE 2):**
+- ⚠️ Scores cuantitativos de deuda t&#233;cnica
+- ⚠️ M&#233;tricas de calidad de c&#243;digo
+- ⚠️ An&#225;lisis de riesgos de seguridad
+- ⚠️ Coverage de tests y performance
+
+**Herramientas No Evaluadas A&#250;n:**
+- SonarLint/SonarCloud (calidad)
+- Coverage tools (testing)
+- SAST/DAST (seguridad)
+- Performance monitoring
+
+**Recomendaciones para completar an&#225;lisis:**
+- Ejecutar herramientas de coverage, security audit y an&#225;lisis est&#225;tico con salida persistida.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-23T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+ (detectado desde `Package.swift`)
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|----------|
+| 1 | `language_es_mx` | ✅ | Contenido en espa&#241;ol, t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n completa |
+| 2 | `stack_detected_real` | ✅ | Stack detectado desde archivos reales | `Package.swift` |
+| 3 | `evidence_cited` | ✅ | M&#243;dulos, dependencias y artefactos citados con evidencia | `Package.swift`, `.github/docs/**` |
+
+**Compliance Score:** 100% ✅
+
+**&#128221; Nota Importante:** Este documento se mueve a `.github/docs/05-seguimiento/executive-summary.md` al iniciar FASE 2 y se actualiza incrementalmente hasta la v4.0 final.
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ONBOARDING_GUIDE.md</span><span class="doc-path">.github\docs\01-inicio\ONBOARDING_GUIDE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Onboarding Guide - cv-ios-player
+
+## &#128203; Checklist de Onboarding
+### Primera Semana
+#### D&#237;a 1: Setup T&#233;cnico
+- Completar QUICK_START y validar build local.
+
+#### D&#237;a 2-3: Arquitectura
+- Revisar `ARCHITECTURE_GUIDE.md` y `CODE_STRUCTURE.md`.
+
+#### D&#237;a 4-5: C&#243;digo y Pr&#225;cticas
+- Revisar `BEST_PRACTICES.md` y flujo de desarrollo.
+
+### Segunda Semana
+#### D&#237;a 6-7: Primera Contribuci&#243;n
+- PR peque&#241;o con tests.
+
+#### D&#237;a 8-10: Feature Completa
+- Entregar cambio de mayor alcance con revisi&#243;n.
+
+## &#127891; Recursos de Aprendizaje
+### Arquitectura del Proyecto
+- Gu&#237;as de `01-inicio` y reportes de `02-analisis`.
+
+### Stack Tecnol&#243;gico
+- Swift/SPM + Bitmovin/NPAW/FairPlay.
+
+### Domain Knowledge
+- Reproducci&#243;n de video, DRM y eventos de player.
+
+### Tools y Workflows
+- Scripts en `scripts/` y workflows en `.github/workflows/`.
+
+## &#128101; Equipo y Comunicaci&#243;n
+### Contactos Clave
+- No hay listado formal de contactos en repositorio.
+
+### Canales de Comunicaci&#243;n
+- Issues/PRs del repositorio.
+
+### Meetings y Ceremonias
+- No documentadas en archivos versionados.
+
+### Escalation Paths
+- Escalar bloqueos cr&#237;ticos por issue y responsables t&#233;cnicos.
+
+## &#128640; Primeras Tareas Recomendadas
+### Week 1 Tasks
+- Setup, lectura de arquitectura, ejecuci&#243;n de tests.
+
+### Week 2 Tasks
+- Primera contribuci&#243;n y revisi&#243;n de c&#243;digo.
+
+### Week 3-4 Tasks
+- Cambios con impacto en m&#243;dulo compartido.
+
+### Graduation Criteria
+- PR aprobado + dominio b&#225;sico de m&#243;dulos.
+
+## &#128197; Timeline de Onboarding
+### Milestones Semanales
+- Semana 1 setup, semana 2 primera contribuci&#243;n.
+
+### Expected Deliverables
+- Build local estable + PR validado.
+
+### Support Available
+- Documentaci&#243;n `01-inicio` y revisiones de equipo.
+
+### Feedback Sessions
+- Feedback en PRs y revisiones t&#233;cnicas.
+
+## &#127919; Objetivos por Fase
+### Technical Setup
+- Entorno operativo con build/test b&#225;sicos.
+
+### Knowledge Acquisition
+- Comprensi&#243;n de arquitectura modular y DI.
+
+### First Contribution
+- Cambio funcional con pruebas.
+
+### Full Productivity
+- Capacidad de aportar cambios de forma aut&#243;noma.
+
+## &#127384; Support Resources
+### Technical Questions
+- Revisar `TROUBLESHOOTING.md` y abrir issue.
+
+### Process Questions
+- Revisar `DEVELOPMENT_GUIDE.md`.
+
+### Administrative Issues
+- Gestionar accesos con administradores del repositorio.
+
+### Emergency Contacts
+- No documentados en repositorio.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ Contactos/ceremonias del equipo no versionados.
+
+**Recomendaciones para completar an&#225;lisis:**
+- A&#241;adir responsables, canales y horario de soporte en onboarding.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Onboarding adaptado al stack real | `Package.swift` |
+| 3 | `evidence_cited` | ✅ | Secciones basadas en rutas reales | `.github/docs/**`, `scripts/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">QUICK_START.md</span><span class="doc-path">.github\docs\01-inicio\QUICK_START.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Quick Start Guide - cv-ios-player
+
+---
+**Versi&#243;n:** 1.0
+**Fecha:** 2026-02-24
+**Tiempo estimado:** 30-45 minutos
+**Audiencia:** Nuevos desarrolladores del equipo
+---
+
+## &#128640; Introducci&#243;n
+`cv-ios-player` es un SDK Swift de reproducci&#243;n de video para iOS/tvOS distribuido por Swift Package Manager, con m&#243;dulos `CVPlayer`, `CVPlayerTVOS` y `CVPlayerCommon`.
+
+## &#128203; Prerrequisitos
+- [ ] macOS con Xcode 14.3+
+- [ ] Acceso al repositorio
+- [ ] Simulador o dispositivo iOS 16+/tvOS 16+
+- [ ] Credenciales FairPlay si se usa contenido protegido
+
+## ⚙️ Configuraci&#243;n del Entorno
+### 1. Instalar Herramienta Principal
+- Instalar/actualizar Xcode 14.3 o superior.
+
+### 2. Configurar SDK/Framework
+- Abrir `VideoPlayerSwift.xcodeproj` y resolver dependencias SPM.
+
+### 3. Configurar Dependencias
+- Verificar resoluci&#243;n de dependencias en `Package.swift`.
+
+## &#128193; Clonar y Configurar Proyecto
+### 1. Clonar el Repositorio
+```bash
+git clone &lt;url-del-repo&gt;
+cd claro-video-ios-player-main
+```
+
+### 2. Configurar Archivos Secrets
+- Configurar secretos en GitHub Actions para CI cuando aplique (`TF_GITHUB_TOKEN`).
+
+### 3. Configurar Servicios Externos
+- Preparar credenciales/licencias FairPlay para pruebas DRM.
+
+## &#128296; Build del Proyecto
+### 1. Sincronizar Dependencias
+- Abrir el proyecto en Xcode para resolver SPM autom&#225;ticamente.
+
+### 2. Build Debug/Development
+```bash
+xcodebuild -scheme VideoPlayerSwift-Universal -configuration Debug build
+```
+**⏱️ Tiempo esperado:** 3-10 minutos
+
+## &#128241; Ejecutar la Aplicaci&#243;n
+### 1. Run Configuration
+- Seleccionar esquema `TestApp` en Xcode.
+
+### 2. Ejecutar App
+- Ejecutar en simulador/dispositivo compatible.
+
+### 3. Verificar Instalaci&#243;n
+- ✅ Compila `import CVPlayer` en target iOS
+- ✅ Compila `import CVPlayerTVOS` en target tvOS
+- ✅ Se puede instanciar `getVideoPlayerViewController()`
+
+## &#129514; Ejecutar Tests
+### Unit Tests
+- `Tests/cv-ios-playerTests/VideoPlayerSwiftTests/`
+- `PlayerTVTests/PlayerTVTests.swift`
+
+### Integration Tests
+- Validaci&#243;n manual en `TestApp`.
+**&#127919; Target de cobertura:** ≥ 80%
+
+## &#128027; Debugging
+### 1. Configurar Debug Mode
+- Usar esquema `TestApp` en modo `Debug`.
+
+### 2. Logs &#250;tiles
+- Revisar callbacks en `Sources/CVPlayerCommon/Observers/`.
+
+### 3. Herramienta de Debugging Espec&#237;fica
+- Xcode Instruments (`Time Profiler`, `Leaks`).
+
+## &#128295; Troubleshooting
+### Errores Comunes
+#### 1. Error T&#237;pico 1
+- `ld: framework not found`: verificar producto enlazado (`CVPlayer`/`CVPlayerTVOS`).
+
+#### 2. Error T&#237;pico 2
+- Fallo de resoluci&#243;n SPM: `File &gt; Packages &gt; Reset Package Caches`.
+
+### Performance Issues
+- Evitar observers redundantes y trabajo pesado en hilo principal.
+
+## &#128218; Recursos Adicionales
+### Documentaci&#243;n del Proyecto
+- `ARCHITECTURE_GUIDE.md`
+- `CODE_STRUCTURE.md`
+- `DEVELOPMENT_GUIDE.md`
+
+### Herramientas de Desarrollo
+- Xcode, Instruments, GitHub Actions.
+
+### Comunidad Interna
+- Issues/PRs del repositorio y template de PR en `.github/pull_request_template.md`.
+
+## ✅ Checklist Final
+### Entorno
+- [ ] Xcode operativo
+- [ ] SPM resuelto
+
+### Configuraci&#243;n
+- [ ] Esquemas visibles
+- [ ] Plataformas m&#237;nimas correctas
+
+### Funcionalidad
+- [ ] Build Debug exitoso
+- [ ] Tests base ejecutan
+
+### Accesos
+- [ ] Acceso a repo
+- [ ] Acceso a workflows
+
+## &#127384; Obtener Ayuda
+### 1. Documentaci&#243;n
+- Revisar `TROUBLESHOOTING.md` y `ONBOARDING_GUIDE.md`.
+
+### 2. Equipo
+- Abrir issue con contexto t&#233;cnico y pasos de reproducci&#243;n.
+
+### 3. Escalaci&#243;n
+- Bloqueos cr&#237;ticos de DRM: escalar al equipo de plataforma.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ Reporte autom&#225;tico de cobertura (no existe `coverage.xml`).
+
+**Recomendaciones para completar an&#225;lisis:**
+- Agregar artefactos de cobertura y m&#233;tricas de CI en siguientes fases.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol + t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Stack detectado desde `Package.swift` | `Package.swift` |
+| 3 | `evidence_cited` | ✅ | Contenido basado en estructura real | `Sources/**`, `.github/workflows/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">.github\docs\01-inicio\README.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128218; Documentaci&#243;n de Inicio
+
+## &#127919; Prop&#243;sito
+Documentaci&#243;n fundamental del proyecto generada autom&#225;ticamente.
+
+## &#128203; Archivos Disponibles
+### Setup R&#225;pido
+- [QUICK_START.md](./QUICK_START.md) - Setup t&#233;cnico (30-45 min)
+
+### Arquitectura y Dise&#241;o
+- [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) - Gu&#237;a arquitect&#243;nica
+- [CODE_STRUCTURE.md](./CODE_STRUCTURE.md) - Estructura del c&#243;digo
+
+### Desarrollo
+- [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) - Workflow diario
+- [BEST_PRACTICES.md](./BEST_PRACTICES.md) - Mejores pr&#225;cticas
+
+### Onboarding
+- [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md) - Integraci&#243;n completa
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Resoluci&#243;n de problemas
+
+## &#128640; Flujo Recomendado
+### Para Desarrolladores Nuevos
+1. **D&#237;a 1:** [QUICK_START.md](./QUICK_START.md)
+2. **Semana 1-2:** [ONBOARDING_GUIDE.md](./ONBOARDING_GUIDE.md)
+3. **Ongoing:** [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md)
+
+### Para Arquitectos/Leads
+1. [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
+2. [CODE_STRUCTURE.md](./CODE_STRUCTURE.md)
+3. [BEST_PRACTICES.md](./BEST_PRACTICES.md)
+
+## ⏱️ Tiempos Estimados
+- **Setup t&#233;cnico:** 30-45 minutos (QUICK_START)
+- **Comprensi&#243;n arquitect&#243;nica:** 2-3 horas
+- **Onboarding completo:** 1-2 semanas
+
+## &#128202; Generado por
+- **Prompt:** `01-analysis/03-index-universal.prompt.md`
+- **Fase:** FASE 1: AN&#193;LISIS
+- **Fecha:** 2026-02-24
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No existe `coverage.xml` para m&#233;tricas de tests.
+- ⚠️ No hay reportes SAST/DAST persistidos como artefactos versionados.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Agregar publicaci&#243;n de cobertura y seguridad en CI.
+- Versionar resultados en `03-diagnostico/` para fases siguientes.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Contenido en espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Stack y estructura detectados desde el repositorio | `Package.swift`, `.github/docs/**` |
+| 3 | `evidence_cited` | ✅ | Navegaci&#243;n y metadatos trazables a archivos reales | `.github/docs/01-inicio/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">TROUBLESHOOTING.md</span><span class="doc-path">.github\docs\01-inicio\TROUBLESHOOTING.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# Troubleshooting Guide - cv-ios-player
+
+## &#128295; Problemas de Setup
+### Environment Issues
+- Xcode/SPM no resuelve dependencias al abrir el proyecto.
+
+### Dependency Problems
+- Fallas de red hacia repositorios externos de dependencias.
+
+### Configuration Errors
+- Selecci&#243;n de producto/target incorrecto (`CVPlayer` vs `CVPlayerTVOS`).
+
+### Permission Issues
+- Falta de acceso a repositorio/secrets en CI.
+
+## &#127959;️ Build y Compile
+### Build Failures
+- Errores de build por esquema o plataforma no compatible.
+
+### Dependency Conflicts
+- Cambios de versiones externas sin validar compatibilidad.
+
+### Version Mismatches
+- Entorno con versi&#243;n de Xcode no alineada a Swift tools.
+
+### Platform-specific Issues
+- Build iOS/tvOS fallando por configuraci&#243;n de destino.
+
+## &#127939;‍♂️ Runtime Issues
+### Application Crashes
+- Crash por configuraci&#243;n incompleta de reproducci&#243;n.
+
+### Performance Problems
+- Callbacks pesados en main thread.
+
+### Memory Leaks
+- Observers/closures sin liberaci&#243;n adecuada.
+
+### Network Issues
+- Latencia/falla en stream o licencia DRM.
+
+## &#129514; Testing Problems
+### Test Failures
+- Tests rotos por cambios de API/fixtures.
+
+### Flaky Tests
+- Dependencia de estado compartido no aislado.
+
+### Test Environment Issues
+- Simulador/dispositivo no compatible con target.
+
+### Coverage Problems
+- No hay artefacto de cobertura en repo.
+
+## &#128640; Deployment Issues
+### Configuration Problems
+- Tag/release incorrecto para consumo SPM.
+
+### Environment Differences
+- Diferencias entre entorno local y CI.
+
+### Network Connectivity
+- Runner sin acceso a dependencias remotas.
+
+### Resource Constraints
+- Tiempo de build/test insuficiente en CI.
+
+## &#128202; Monitoring y Debugging
+### Log Analysis
+- Revisar logs de Xcode y eventos de observers.
+
+### Performance Profiling
+- Usar Instruments (`Time Profiler`, `Leaks`).
+
+### Error Tracking
+- No se detecta integraci&#243;n expl&#237;cita de tracking en repo.
+
+### Health Checks
+- Estado de workflows en `.github/workflows/`.
+
+## &#127384; Escalation Guidelines
+### When to Escalate
+- Falla cr&#237;tica de reproducci&#243;n/DRM en producci&#243;n.
+
+### Who to Contact
+- Responsables t&#233;cnicos del repositorio v&#237;a issue/PR.
+
+### Information to Provide
+- Versi&#243;n, dispositivo, logs, pasos de reproducci&#243;n.
+
+### Emergency Procedures
+- Revertir a versi&#243;n/tag previo.
+
+## &#128218; Additional Resources
+### Documentation Links
+- `QUICK_START.md`, `DEVELOPMENT_GUIDE.md`, `BEST_PRACTICES.md`.
+
+### Community Forums
+- Canales oficiales de proveedores (Bitmovin/NPAW) cuando aplique.
+
+### Expert Contacts
+- No documentados en repo.
+
+### External Tools
+- Xcode Instruments y consola de Xcode.
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No hay cat&#225;logo hist&#243;rico de incidentes.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Mantener lista versionada de incidentes conocidos y workaround.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol + t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Problemas alineados al stack real | `Package.swift`, `Sources/**` |
+| 3 | `evidence_cited` | ✅ | Referencias a artefactos existentes | `.github/workflows/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_ARCHITECTURE.md</span><span class="doc-path">.github\docs\02-análisis\ANALYSIS_REPORT_ARCHITECTURE.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127959;️ Reporte de An&#225;lisis Arquitect&#243;nico - cv-ios-player
+
+## &#128203; Resumen Ejecutivo
+### Patr&#243;n Arquitect&#243;nico
+- SDK modular por plataforma con core compartido.
+
+### Complejidad Estimada
+- Media.
+
+### Estado de la Arquitectura
+- Estructura clara, con oportunidades de formalizaci&#243;n de m&#233;tricas.
+
+## &#127963;️ Arquitectura de Alto Nivel
+### Componentes Principales
+- `CVPlayer`, `CVPlayerTVOS`, `CVPlayerCommon`, `TestApp`.
+
+### Relaciones y Dependencias
+- Targets de plataforma dependen de `CVPlayerCommon`.
+
+### Entry Points
+- `Package.swift` y builders p&#250;blicos del SDK.
+
+## &#128230; An&#225;lisis de M&#243;dulos
+### Distribuci&#243;n de Responsabilidades
+- Core compartido vs l&#243;gica espec&#237;fica por plataforma.
+
+### Acoplamiento y Cohesi&#243;n
+- Cohesi&#243;n alta en core; acoplamiento moderado por DI global.
+
+### Interfaces P&#250;blicas
+- Contratos en `FrameworkPublic` y builders p&#250;blicos.
+
+## &#128260; Patrones Identificados
+### Patrones Arquitect&#243;nicos
+- Modularizaci&#243;n SPM.
+
+### Patrones de Dise&#241;o
+- Dependency Injection, Observer, Delegation.
+
+### Anti-patrones Detectados
+- DI global centralizada con baja configurabilidad por instancia.
+
+## &#128225; APIs y Integraciones
+### APIs Expuestas
+- Builders y contratos p&#250;blicos del SDK.
+
+### APIs Consumidas
+- Bitmovin Player/Analytics y NPAW.
+
+### Servicios Externos
+- Bitmovin, NPAW y FairPlay.
+
+## &#128272; Aspectos de Seguridad
+### Puntos de Autenticaci&#243;n
+- FairPlay DRM.
+
+### Validaci&#243;n de Datos
+- Validar entradas de reproducci&#243;n previo a init.
+
+### Manejo de Secrets
+- No se observan secretos hardcodeados en rutas auditadas.
+
+## &#128202; M&#233;tricas y Performance
+### Complejidad Ciclom&#225;tica
+- No disponible en Fase 1.
+
+### L&#237;neas de C&#243;digo
+- No disponible en Fase 1.
+
+### Cobertura de Tests
+- No disponible en Fase 1 (sin artefacto de cobertura).
+
+## &#127919; Recomendaciones
+### Mejoras Arquitect&#243;nicas
+- Reducir rigidez de DI global.
+
+### Refactorings Prioritarios
+- Fortalecer trazabilidad de m&#233;tricas en CI.
+
+### Modernizaci&#243;n T&#233;cnica
+- Evaluar actualizaci&#243;n de toolchain/dependencias.
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ Sin ADRs ni m&#233;tricas cuantitativas persistidas.
+
+### Recomendaciones para completar an&#225;lisis
+- Incorporar reportes de calidad/cobertura/performance.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Arquitectura alineada al c&#243;digo real | `Sources/**`, `Package.swift` |
+| 3 | `evidence_cited` | ✅ | Hallazgos con rutas de evidencia | `Sources/CVPlayerCommon/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_REPORT_STACK_DETECTION.md</span><span class="doc-path">.github\docs\02-análisis\ANALYSIS_REPORT_STACK_DETECTION.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128269; Reporte de Detecci&#243;n de Stack - cv-ios-player
+
+## &#128203; Resumen Ejecutivo
+### Stack Detectado
+- Swift 5.7 + Swift Package Manager + iOS 16+/tvOS 16+.
+
+### Confianza del An&#225;lisis
+- Alta (declaraci&#243;n directa en `Package.swift`).
+
+### Archivos de Evidencia Analizados
+- `Package.swift`, `.github/workflows/*.yml`, `VideoPlayerSwift.xcodeproj/project.pbxproj`.
+
+## &#128736;️ Stack Tecnol&#243;gico Identificado
+### Lenguage Principal
+- Swift.
+
+### Framework/Plataforma
+- SDK de reproducci&#243;n para iOS/tvOS con Bitmovin.
+
+### Herramientas de Build
+- Swift Package Manager + Xcode.
+
+### Gesti&#243;n de Dependencias
+- Dependencias con `exact` en `Package.swift`.
+
+## &#128194; Evidencia por Categor&#237;a
+### Build Files
+- `Package.swift`, `VideoPlayerSwift.xcodeproj/project.pbxproj`.
+
+### Dependency Management
+- SPM y dependencias externas declaradas.
+
+### Development Tools
+- Xcode; no se detecta configuraci&#243;n de lint/formatter.
+
+### Infrastructure
+- GitHub Actions en `.github/workflows/`.
+
+## &#128202; An&#225;lisis de Versiones
+### Versiones Actuales
+- Swift tools 5.7, iOS 16+, tvOS 16+, Bitmovin 3.83.0, Analytics 3.11.1, NPAW 1.1.6.
+
+### Compatibilidad
+- Compatible con entorno Xcode moderno para iOS/tvOS 16+.
+
+### Recomendaciones de Actualizaci&#243;n
+- Revisar dependencias peri&#243;dicamente por seguridad y compatibilidad.
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ No existe `coverage.xml`.
+- ⚠️ No existen reportes de security scan persistidos.
+
+### Recomendaciones para completar an&#225;lisis
+- Publicar artefactos de cobertura y seguridad desde CI.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Stack detectado desde archivos reales | `Package.swift` |
+| 3 | `evidence_cited` | ✅ | Datos trazables a rutas del repo | `.github/workflows/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ANALYSIS_SUMMARY.md</span><span class="doc-path">.github\docs\02-análisis\ANALYSIS_SUMMARY.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#128202; Resumen de An&#225;lisis - FASE 1 - cv-ios-player
+
+## &#127919; Resumen Ejecutivo
+### Stack Tecnol&#243;gico
+- Swift 5.7, SPM, iOS/tvOS 16+, Bitmovin + NPAW.
+
+### Estado Arquitect&#243;nico
+- Arquitectura modular con n&#250;cleo compartido.
+
+### Nivel de Madurez
+- Medio; estructura clara con brechas m&#233;tricas en Fase 1.
+
+## &#128202; M&#233;tricas Clave
+### Complejidad del Proyecto
+- 3 targets de librer&#237;a + app de soporte + tests.
+
+### Estado de Documentaci&#243;n
+- Documentaci&#243;n base de Fase 1 existente.
+
+### Cobertura T&#233;cnica
+- Sin artefactos de cobertura cuantitativa.
+
+## &#127959;️ Arquitectura
+### Patr&#243;n Principal
+- Modularizaci&#243;n SPM + DI por protocolos.
+
+### Fortalezas Identificadas
+- Separaci&#243;n por plataforma y core compartido.
+
+### &#193;reas de Mejora
+- M&#233;tricas autom&#225;ticas de calidad/performance.
+
+## &#128203; Deliverables Generados
+### Documentaci&#243;n Creada
+- `01-inicio/` con gu&#237;as fundamentales.
+
+### Diagramas Producidos
+- `diagrams/ARCHITECTURE_DIAGRAMS.md`.
+
+### Configuraciones Establecidas
+- Workflows y prompts en `.github/`.
+
+## &#127919; Pr&#243;ximos Pasos
+### Preparaci&#243;n para Fase 2
+- Ejecutar prompts de diagn&#243;stico.
+
+### Informaci&#243;n Requerida
+- Cobertura, seguridad y m&#233;tricas de performance.
+
+### Dependencias Identificadas
+- Artefactos de CI para cuantificar estado t&#233;cnico.
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ Cobertura cuantitativa y reportes SAST/DAST.
+
+### Recomendaciones para completar an&#225;lisis
+- A&#241;adir salida de herramientas de calidad y seguridad.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Datos tomados del repo | `Package.swift`, `Sources/**` |
+| 3 | `evidence_cited` | ✅ | Secciones con base en artefactos reales | `.github/docs/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">README.md</span><span class="doc-path">.github\docs\02-análisis\README.md</span></summary>
+              <pre class="doc-pre"># &#128202; Reportes de An&#225;lisis (Fase 1)
+
+&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+## Prop&#243;sito
+
+Almacenar an&#225;lisis de stack y arquitectura del proyecto.
+
+## Archivos previstos
+
+- `ANALYSIS_REPORT_STACK_DETECTION.md`
+- `ANALYSIS_REPORT_ARCHITECTURE.md`
+- `ANALYSIS_SUMMARY.md`
+
+## Prompts generadores
+
+- `.github/prompts/01-analysis/01-stack-detection-universal.prompt.md`
+- `.github/prompts/01-analysis/02-architecture-universal.prompt.md`
+- `.github/prompts/01-analysis/03-index-universal.prompt.md`
+
+## ⚠️ Limitaciones del An&#225;lisis
+
+**Datos no disponibles en el repositorio:**
+- ⚠️ No existen a&#250;n los reportes de Fase 1 en esta carpeta.
+
+**Recomendaciones para completar an&#225;lisis:**
+- Ejecutar los prompts de Fase 1 en secuencia.
+</pre>
+            </details>
+            <details class="doc-item">
+              <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">.github\docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
+              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
+
+# &#127912; Diagramas Arquitect&#243;nicos - cv-ios-player
+
+## &#127963;️ Diagrama de Componentes
+
+&lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart LR
+    A[CVPlayer iOS] --&gt; C[CVPlayerCommon]
+    B[CVPlayerTVOS] --&gt; C
+    T[TestApp] --&gt; A
+    T --&gt; B
+    C --&gt; D[BitmovinPlayer]
+    C --&gt; E[NpawPluginBitmovinAdapter]
+    C --&gt; F[BitmovinCollector]
+    C --&gt; G[FairPlay]
+    C --&gt; H[Observers]
+```
+
+## &#128260; Diagramas de Flujos de Procesos
+
+### Flujo Principal 1: Inicializaci&#243;n de Player
+
+&lt;img src=&quot;img/DiagramaDeFlujosInit.png&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+sequenceDiagram
+    participant App as App
+    participant Builder as Builder
+    participant Core as CVPlayerCommon
+    participant DRM as FairPlay
+    participant Engine as BitmovinPlayer
+    App-&gt;&gt;Builder: Solicita view controller
+    Builder-&gt;&gt;Core: Resuelve dependencias
+    Core-&gt;&gt;DRM: Configura DRM
+    Core-&gt;&gt;Engine: Inicializa player
+    Engine--&gt;&gt;App: Reproductor listo / error
+```
+
+### Flujo Principal 2: Eventos de Reproducci&#243;n
+
+&lt;img src=&quot;img/DiagramaDeFlujosPlayback.png&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+sequenceDiagram
+    participant Engine as BitmovinPlayer
+    participant Obs as Observers
+    participant Del as Delegates
+    participant Analytics as NPAW/Collector
+    Engine-&gt;&gt;Obs: Evento playback
+    Obs-&gt;&gt;Del: Notifica app cliente
+    Obs-&gt;&gt;Analytics: Env&#237;a tracking
+```
+
+## &#128640; Diagrama de CI/CD Pipeline
+
+&lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart TD
+    PR[Push/PR] --&gt; CI[ci.yml]
+    CI --&gt; Build[Build]
+    Build --&gt; Gate{Quality Gate}
+    Gate --&gt;|Pass| Test[Tests]
+    Gate --&gt;|Fail| Block[Block]
+    Test --&gt;|OK| Merge[Merge]
+    Test --&gt;|Fail| Rollback[Rollback to previous tag]
+    Manual[workflow_dispatch] --&gt; BranchFactory[branch-factory.yml]
+```
+
+## &#128202; Diagrama de Datos
+
+&lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt;
+
+```mermaid
+flowchart LR
+    Config[Playback Config] --&gt; Builder
+    Builder --&gt; Core
+    Core --&gt; Player
+    Player --&gt; Events
+    Events --&gt; Observers
+    Observers --&gt; Delegates
+    Observers --&gt; Analytics
+```
+
+## &#128295; Notas de Implementaci&#243;n
+### Convenciones de Diagramas
+- Mermaid para consistencia y versionado en Markdown.
+
+### Herramientas de Visualizaci&#243;n
+- GitHub markdown renderer y VS Code.
+
+### Mantenimiento de Diagramas
+- Actualizar al cambiar m&#243;dulos/dependencias/workflows.
+
+## ⚠️ Limitaciones del An&#225;lisis
+### Datos no disponibles en el repositorio
+- ⚠️ No hay baseline hist&#243;rico de diagramas para comparar evoluci&#243;n.
+
+### Recomendaciones para completar an&#225;lisis
+- Versionar cambios de arquitectura con ADR + actualizaci&#243;n de diagramas.
+
+## ✅ Compliance Check - Fase 1
+
+**Fecha:** 2026-02-24T00:00:00Z
+**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
+**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
+
+| # | Regla | Estado | Detalle | Evidencia |
+|---|-------|--------|---------|-----------|
+| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
+| 2 | `stack_detected_real` | ✅ | Diagramas alineados al repo | `Package.swift`, `Sources/**` |
+| 3 | `evidence_cited` | ✅ | Elementos del diagrama mapean a archivos reales | `.github/workflows/**` |
+
+**Compliance Score:** 100% ✅
+</pre>
+            </details>
+          </article>
+      </section>
+    </main>
+
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="RESUMEN_EJECUTIVO_4_REPOSITORIOS.js"></script>
+</body>
+</html>
+
+

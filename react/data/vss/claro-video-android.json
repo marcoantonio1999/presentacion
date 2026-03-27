@@ -1,0 +1,6266 @@
+{
+  "repo": "claro-video-android",
+  "title": "Android",
+  "sourceLabel": "analysis_v2",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-android",
+    "annex": "ANEXO_claro-video-android.html",
+    "legacyViewer": "ANEXO_claro-video-android-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-android.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_android_vss_extract\\claro-video-android\\analysis_v2\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_android_vss_extract\\claro-video-android\\analysis_v2\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_android_vss_extract\\claro-video-android\\analysis_v2\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_android_vss_extract\\claro-video-android\\analysis_v2\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_android_vss_extract\\claro-video-android\\analysis_v2\\analysis\\diagrama_global_claro-video-android.mmd"
+  },
+  "summary": {
+    "totalNodes": 249,
+    "totalEdges": 116,
+    "rawEdges": 1295,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "MUSIC",
+      "RECORDED",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "TIMESHIFT",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "Backend: fan_in=1, fan_out=1",
+      "UserHubApiService: fan_in=2, fan_out=2",
+      "Tipo: Supporting | Criticidad: MEDIA",
+      "AccountFragment: fan_in=3, fan_out=3",
+      "POST /amx/ott: fan_in=0, fan_out=1",
+      "Tipo: Core | Criticidad: ALTA",
+      ": fan_in=2, fan_out=0",
+      "UserRepository: fan_in=3, fan_out=4",
+      "registro: fan_in=0, fan_out=1",
+      "Trigger: App abierta sin sesion activa",
+      ": fan_in=2, fan_out=7",
+      "refresh: fan_in=1, fan_out=0",
+      "Resultado: Token renovado transparentemente",
+      "Tipo: Supporting | Criticidad: CRITICA | Estado: Observed (inferido)",
+      "Evidencia: Logout API v1.0.0",
+      "primera suscripcion: fan_in=1, fan_out=0",
+      "Evidencia: RefreshToken API v1.0.0",
+      "n_refresh: fan_in=1, fan_out=0",
+      "Tipo: Core | Criticidad: ALTA | Estado: Observed",
+      "Usuario: fan_in=0, fan_out=1",
+      "navegacion a Home: fan_in=1, fan_out=0",
+      "Trigger: \"Crear cuenta\" seleccionado",
+      "n_v1-sso-refresh: fan_in=1, fan_out=0",
+      "Resultado: Token JWT almacenado, nav al Home",
+      "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed",
+      "GET /nav/v1/data: fan_in=1, fan_out=0",
+      "3. Tap en banner",
+      ": fan_in=0, fan_out=8",
+      "navega a detalle",
+      "3. Tap en thumbnail: fan_in=0, fan_out=1",
+      "navega a contendo",
+      "n_navega-a-contendo: fan_in=1, fan_out=0",
+      "n_navega-a-detalle: fan_in=1, fan_out=0",
+      "n_get-cms-superhighlight: fan_in=1, fan_out=0",
+      "3. Tap en thumbnail",
+      "n_get-nav-v1-data: fan_in=1, fan_out=0",
+      "3. Tap en banner: fan_in=0, fan_out=1",
+      "n_item: fan_in=1, fan_out=0",
+      "BaseEventDetailFragment: fan_in=1, fan_out=0",
+      ": fan_in=1, fan_out=3",
+      "BaseEventDetailFragment",
+      "5. Tap en evento: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "n_baseeventdetailfragment: fan_in=1, fan_out=0",
+      "5. Tap en evento",
+      "5. Tap en evento: fan_in=0, fan_out=1",
+      "GET lineup: fan_in=0, fan_out=1",
+      "3. Tap en artista",
+      "lista de pistas: fan_in=1, fan_out=0",
+      "POST /artist con artist_id",
+      "3. Tap en artista: fan_in=0, fan_out=1",
+      ": fan_in=0, fan_out=4",
+      "1. Usuario selecciona album",
+      "10.20.28.46: fan_in=1, fan_out=0",
+      "lista de pistas",
+      "n_post-artist-con-artist-id: fan_in=1, fan_out=0",
+      "n_lista-de-pistas: fan_in=1, fan_out=0",
+      "2. Tap en pista",
+      "n_10-20-28-46: fan_in=1, fan_out=0",
+      "POST /artist: fan_in=0, fan_out=1",
+      "4. Tap en grabacion completada: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "Tipo: Core | Criticidad: ALTA: fan_in=0, fan_out=0",
+      ": fan_in=0, fan_out=3",
+      "4. Tap en grabacion completada",
+      ": fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "4. Tap en grabacion completada: fan_in=0, fan_out=1",
+      "GET /generic: fan_in=0, fan_out=1",
+      "Tiempo medio busqueda",
+      "GET /predictive: fan_in=0, fan_out=1",
+      "Resultado: Lista de sugerencias en tiempo real",
+      ": fan_in=2, fan_out=3",
+      "Tiempo medio busqueda: fan_in=0, fan_out=1",
+      "Tipo: Core | Criticidad: MEDIA | Estado: Observed",
+      "Resultado: Contenido sugerido basado en historial",
+      "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed (inferido)",
+      "Usuario tipea: fan_in=0, fan_out=1",
+      "Trigger: Usuario escribe caracter a caracter",
+      "Trigger: Usuario abre busqueda sin texto",
+      "token: fan_in=1, fan_out=0",
+      "n_confirmsuscriptionfragment: fan_in=1, fan_out=0",
+      "getPlans: fan_in=0, fan_out=1",
+      "GET /planselector: fan_in=1, fan_out=0",
+      "1. Usuario selecciona plan: fan_in=0, fan_out=1",
+      "POST /buyconfirm: fan_in=0, fan_out=1",
+      "1. Usuario selecciona plan",
+      "usar POST: fan_in=1, fan_out=0",
+      ": fan_in=1, fan_out=5",
+      "n_usar-post: fan_in=1, fan_out=0",
+      "n_get-planselector: fan_in=1, fan_out=0",
+      "ConfirmSuscriptionFragment",
+      "tap en evento pasado: fan_in=1, fan_out=0: fan_in=0, fan_out=0",
+      "Tipo: Core | Criticidad: ALTA: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "Tipo: Supporting | Criticidad: MEDIA: fan_in=0, fan_out=0",
+      "n_tap-en-evento-pasado: fan_in=1, fan_out=0",
+      ": fan_in=0, fan_out=1",
+      "tap en evento pasado: fan_in=1, fan_out=0",
+      "Tipo: Supporting | Criticidad: MEDIA: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "GET /data: fan_in=0, fan_out=1",
+      "DRM: fan_in=1, fan_out=0",
+      "DRM challenge: fan_in=0, fan_out=1",
+      "Evidencia: ExoPlayerOfflineView.kt + DownloadsActivity.java",
+      "DRM challenge: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      ": fan_in=1, fan_out=2",
+      "Tipo: Core | Criticidad: ALTA | Estado: Observed: fan_in=0, fan_out=0",
+      "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "n_drm: fan_in=1, fan_out=0"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 14,
+      "edgeCount": 20,
+      "evidenceCount": 56,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 14
+        }
+      ],
+      "sampleNodes": [
+        "Backend",
+        "ProfileSearchResultAdapter: fan_in=2, fan_out=2",
+        "CreateProfileUseCase",
+        "POST /amx/ott",
+        "ProfileSearchResultAdapter"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 19,
+      "edgeCount": 8,
+      "evidenceCount": 29,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 17
+        },
+        {
+          "type": "contract_api",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "forward",
+        "validar 401",
+        "/v3/ott",
+        "registro",
+        "Notificacion de exito"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 5,
+      "edgeCount": 3,
+      "evidenceCount": 8,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 5
+        }
+      ],
+      "sampleNodes": [
+        "GET /cms/carrousel: fan_in=1, fan_out=0",
+        "n_get-cms-carrousel: fan_in=1, fan_out=0",
+        "GET /cms/superhighlight",
+        "GET /cms/carrousel",
+        "GET /nav/v1/data"
+      ]
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 8,
+      "edgeCount": 2,
+      "evidenceCount": 11,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 8
+        }
+      ],
+      "sampleNodes": [
+        "GET /livechannel",
+        "GET /livechannel: fan_in=0, fan_out=1",
+        "/epg/lineup",
+        "GET lineup",
+        "/epg/lineup: fan_in=1, fan_out=0"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 5,
+      "edgeCount": 2,
+      "evidenceCount": 7,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 5
+        }
+      ],
+      "sampleNodes": [
+        "POST /artist",
+        "PlayerMusicActivity",
+        "PlayerMusicActivity: fan_in=1, fan_out=0",
+        "10.20.28.46",
+        "n_playermusicactivity: fan_in=1, fan_out=0"
+      ]
+    },
+    {
+      "id": "RECORDED",
+      "label": "Recorded DVR",
+      "short": "RECORDED",
+      "summary": "Grabaciones, reminder flow y NPVR legado.",
+      "nodeCount": 6,
+      "edgeCount": 2,
+      "evidenceCount": 9,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 6
+        }
+      ],
+      "sampleNodes": [
+        "n_reproduccion: fan_in=1, fan_out=0",
+        "n_get-recordings-v3-series-delete: fan_in=1, fan_out=0",
+        "reproduccion",
+        "GET /recordings/v3/series/delete: fan_in=1, fan_out=0",
+        "reproduccion: fan_in=1, fan_out=0"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 71,
+      "edgeCount": 76,
+      "evidenceCount": 2477,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 71
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "n_warningprofilekidsdialog",
+        "n_profilesearchresultadapter",
+        "n_createprofileusecase",
+        "n_accountfragment"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 7,
+      "edgeCount": 4,
+      "evidenceCount": 12,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 7
+        }
+      ],
+      "sampleNodes": [
+        "usar POST",
+        "POST /buyconfirm",
+        "token",
+        "CancelSuscription usa HTTP GET para operacion modificadora",
+        "tarjeta"
+      ]
+    },
+    {
+      "id": "TIMESHIFT",
+      "label": "Timeshift",
+      "short": "TIMESHIFT",
+      "summary": "Buffer, replay y grabación NPVR programada.",
+      "nodeCount": 2,
+      "edgeCount": 1,
+      "evidenceCount": 4,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "EPG Grid",
+        "tap en evento pasado"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 7,
+      "edgeCount": 2,
+      "evidenceCount": 10,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 7
+        }
+      ],
+      "sampleNodes": [
+        "Resultado: Lista de resultados (VOD, series, canales)",
+        "Evidencia: BasePlayerFragment.java + ContentData v1.1.0",
+        "DRM challenge",
+        "GET /data",
+        "DRM"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 105,
+      "edgeCount": 9,
+      "evidenceCount": 125,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 102
+        },
+        {
+          "type": "contract_api",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "Backend: fan_in=1, fan_out=1",
+        "UserHubApiService: fan_in=2, fan_out=2",
+        "Tipo: Supporting | Criticidad: MEDIA",
+        "AccountFragment: fan_in=3, fan_out=3",
+        "POST /amx/ott: fan_in=0, fan_out=1"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-android-node-1",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1253,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md",
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_vss_claro-video-android_recorded.md",
+        "journeys.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "diagrama_impacto_vss_claro-video-android_timeshift.md",
+        "diagrama_vss_claro-video-android_timeshift.md",
+        "diagrama_impacto_vss_claro-video-android_vod.md",
+        "diagrama_vss_claro-video-android_vod.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT",
+        "Diagrama 4: Consulta Datos Cliente Telcel (J-ACN-04)",
+        "Diagrama Impacto VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-2",
+      "name": "Backend",
+      "label": "Backend",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 1: Cargar Datos de Cuenta (J-ACN-01)",
+        "Diagrama 3: Crear Nuevo Perfil (J-ACN-03)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-3",
+      "name": "ProfileSearchResultAdapter: fan_in=2, fan_out=2",
+      "label": "ProfileSearchResultAdapter: fan_in=2, fan_out=2",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-4",
+      "name": "CreateProfileUseCase",
+      "label": "CreateProfileUseCase",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 3: Crear Nuevo Perfil (J-ACN-03)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-5",
+      "name": "POST /amx/ott",
+      "label": "POST /amx/ott",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 4: Consulta Datos Cliente Telcel (J-ACN-04)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-6",
+      "name": "n_warningprofilekidsdialog",
+      "label": "n_warningprofilekidsdialog",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-7",
+      "name": "Backend: fan_in=1, fan_out=1",
+      "label": "Backend: fan_in=1, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-8",
+      "name": "ProfileSearchResultAdapter",
+      "label": "ProfileSearchResultAdapter",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 2: Seleccion de Perfil Kids (J-ACN-02)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-9",
+      "name": "n_profilesearchresultadapter",
+      "label": "n_profilesearchresultadapter",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-10",
+      "name": "GetUserProfileUseCase: fan_in=2, fan_out=2",
+      "label": "GetUserProfileUseCase: fan_in=2, fan_out=2",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-11",
+      "name": "UserHubApiService: fan_in=2, fan_out=2",
+      "label": "UserHubApiService: fan_in=2, fan_out=2",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-12",
+      "name": "Tipo: Supporting | Criticidad: MEDIA",
+      "label": "Tipo: Supporting | Criticidad: MEDIA",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Consulta datos Telcel (AMX)",
+        "Journey 3: Notificacion de reproduccion",
+        "Journey 4: Configurar recordatorio",
+        "Journey 3: Cancelar Suscripcion"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-13",
+      "name": "n_createprofileusecase",
+      "label": "n_createprofileusecase",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-14",
+      "name": "GetUserProfileUseCase",
+      "label": "GetUserProfileUseCase",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 1: Cargar Datos de Cuenta (J-ACN-01)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-15",
+      "name": "AccountFragment: fan_in=3, fan_out=3",
+      "label": "AccountFragment: fan_in=3, fan_out=3",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-16",
+      "name": "POST /amx/ott: fan_in=0, fan_out=1",
+      "label": "POST /amx/ott: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-17",
+      "name": "UserHubApiService",
+      "label": "UserHubApiService",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 1: Cargar Datos de Cuenta (J-ACN-01)",
+        "Diagrama 3: Crear Nuevo Perfil (J-ACN-03)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-18",
+      "name": "n_accountfragment",
+      "label": "n_accountfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-19",
+      "name": "WarningProfileKidsDialog",
+      "label": "WarningProfileKidsDialog",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 2: Seleccion de Perfil Kids (J-ACN-02)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-20",
+      "name": "AccountFragment",
+      "label": "AccountFragment",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 1: Cargar Datos de Cuenta (J-ACN-01)",
+        "Diagrama 2: Seleccion de Perfil Kids (J-ACN-02)",
+        "Diagrama 3: Crear Nuevo Perfil (J-ACN-03)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-21",
+      "name": "POST /consultardatoscliente",
+      "label": "POST /consultardatoscliente",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 4: Consulta Datos Cliente Telcel (J-ACN-04)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-22",
+      "name": "WarningProfileKidsDialog: fan_in=2, fan_out=1",
+      "label": "WarningProfileKidsDialog: fan_in=2, fan_out=1",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-23",
+      "name": "Tipo: Core | Criticidad: ALTA",
+      "label": "Tipo: Core | Criticidad: ALTA",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 9,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Ver datos de cuenta",
+        "Journey 2: Crear nuevo perfil",
+        "Journey 3: Seleccionar perfil activo",
+        "Journey 1: Carga de Home con Ribbons"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-24",
+      "name": "UserRepository",
+      "label": "UserRepository",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Diagrama 1: Cargar Datos de Cuenta (J-ACN-01)",
+        "Diagrama 2: Seleccion de Perfil Kids (J-ACN-02)",
+        "Diagrama 3: Crear Nuevo Perfil (J-ACN-03)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-25",
+      "name": "n_userrepository",
+      "label": "n_userrepository",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-26",
+      "name": ": fan_in=2, fan_out=0",
+      "label": ": fan_in=2, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-27",
+      "name": "n_backend",
+      "label": "n_backend",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-28",
+      "name": "n_userhubapiservice",
+      "label": "n_userhubapiservice",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-29",
+      "name": "UserRepository: fan_in=3, fan_out=4",
+      "label": "UserRepository: fan_in=3, fan_out=4",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-30",
+      "name": "CreateProfileUseCase: fan_in=2, fan_out=2",
+      "label": "CreateProfileUseCase: fan_in=2, fan_out=2",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-31",
+      "name": "n_getuserprofileusecase",
+      "label": "n_getuserprofileusecase",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-32",
+      "name": "n_item",
+      "label": "n_item",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 72,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_vss_claro-video-android_acntmgmt.md",
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md",
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md",
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md",
+        "diagrama_impacto_vss_claro-video-android_vod.md",
+        "diagrama_vss_claro-video-android_vod.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "Diagrama VSS claro-video-android/ACNTMGMT",
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-33",
+      "name": "registro: fan_in=0, fan_out=1",
+      "label": "registro: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-34",
+      "name": "n_n-netloginfragment",
+      "label": "n_n-netloginfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-35",
+      "name": "forward",
+      "label": "forward",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Diagrama 2: Token Refresh Silencioso"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-36",
+      "name": "Trigger: App abierta sin sesion activa",
+      "label": "Trigger: App abierta sin sesion activa",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login con Email/Password"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-37",
+      "name": ": fan_in=2, fan_out=7",
+      "label": ": fan_in=2, fan_out=7",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-38",
+      "name": "n_n-navegacion-a-home",
+      "label": "n_n-navegacion-a-home",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-39",
+      "name": "validar 401",
+      "label": "validar 401",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "10.1 Unit Tests (inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-40",
+      "name": "refresh: fan_in=1, fan_out=0",
+      "label": "refresh: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-41",
+      "name": "/v3/ott",
+      "label": "/v3/ott",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Diagrama 1: Login Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-42",
+      "name": "n_refresh",
+      "label": "n_refresh",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-43",
+      "name": "n_netloginfragment",
+      "label": "n_netloginfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-44",
+      "name": "n_n-primera-suscripcion",
+      "label": "n_n-primera-suscripcion",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-45",
+      "name": "registro",
+      "label": "registro",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9.2 Firebase Analytics"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-46",
+      "name": "Notificacion de exito",
+      "label": "Notificacion de exito",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.3 Flujo de Datos"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-47",
+      "name": "n_primera-suscripcion",
+      "label": "n_primera-suscripcion",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-48",
+      "name": "n_v1-sso-refresh",
+      "label": "n_v1-sso-refresh",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-49",
+      "name": "Evidencia: BaseRegisterPaymentFragment.java + RegisterCV API v1.0.0",
+      "label": "Evidencia: BaseRegisterPaymentFragment.java + RegisterCV API v1.0.0",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Registro Nuevo Usuario"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-50",
+      "name": "Resultado: Token renovado transparentemente",
+      "label": "Resultado: Token renovado transparentemente",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Token Refresh Automatico"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-51",
+      "name": "Tipo: Supporting | Criticidad: CRITICA | Estado: Observed (inferido)",
+      "label": "Tipo: Supporting | Criticidad: CRITICA | Estado: Observed (inferido)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Token Refresh Automatico"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-52",
+      "name": "Evidencia: Logout API v1.0.0",
+      "label": "Evidencia: Logout API v1.0.0",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Logout"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-53",
+      "name": "n_n-v1-sso-refresh",
+      "label": "n_n-v1-sso-refresh",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-54",
+      "name": "primera suscripcion: fan_in=1, fan_out=0",
+      "label": "primera suscripcion: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-55",
+      "name": "Evidencia: RefreshToken API v1.0.0",
+      "label": "Evidencia: RefreshToken API v1.0.0",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Token Refresh Automatico"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-56",
+      "name": "n_refresh: fan_in=1, fan_out=0",
+      "label": "n_refresh: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-57",
+      "name": "Tipo: Core | Criticidad: ALTA | Estado: Observed",
+      "label": "Tipo: Core | Criticidad: ALTA | Estado: Observed",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login con Email/Password",
+        "Journey 2: Registro Nuevo Usuario",
+        "Journey 1: Busqueda Generica",
+        "Journey 1: Reproduccion de Pelicula"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-58",
+      "name": "mostrar mensaje de error",
+      "label": "mostrar mensaje de error",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "J-AUTH-01: Login Email/Password"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-59",
+      "name": "Usuario: fan_in=0, fan_out=1",
+      "label": "Usuario: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-60",
+      "name": "/v1/sso/refresh",
+      "label": "/v1/sso/refresh",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Diagrama 2: Token Refresh Silencioso"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-61",
+      "name": "NetLoginFragment: fan_in=1, fan_out=0",
+      "label": "NetLoginFragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-62",
+      "name": "navegacion a Home: fan_in=1, fan_out=0",
+      "label": "navegacion a Home: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-63",
+      "name": "Trigger: \"Crear cuenta\" seleccionado",
+      "label": "Trigger: \"Crear cuenta\" seleccionado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Registro Nuevo Usuario"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-64",
+      "name": "n_navegacion-a-home",
+      "label": "n_navegacion-a-home",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-65",
+      "name": "Trigger: HTTP 401 interceptado por AuthInterceptor OkHttp",
+      "label": "Trigger: HTTP 401 interceptado por AuthInterceptor OkHttp",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Token Refresh Automatico"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-66",
+      "name": "n_mostrar-mensaje-de-error",
+      "label": "n_mostrar-mensaje-de-error",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-67",
+      "name": "n_netloginfragment: fan_in=1, fan_out=0",
+      "label": "n_netloginfragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-68",
+      "name": "primera suscripcion",
+      "label": "primera suscripcion",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9.2 Firebase Analytics"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-69",
+      "name": "navegacion a Home",
+      "label": "navegacion a Home",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.3 Flujo de Datos"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-70",
+      "name": "Evidencia: NetLoginFragment.java + Login_ott API v3.0.0",
+      "label": "Evidencia: NetLoginFragment.java + Login_ott API v3.0.0",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login con Email/Password"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-71",
+      "name": "POST refresh_token",
+      "label": "POST refresh_token",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "Diagrama 2: Token Refresh Silencioso"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-72",
+      "name": "n_v1-sso-refresh: fan_in=1, fan_out=0",
+      "label": "n_v1-sso-refresh: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-73",
+      "name": "n_n-mostrar-mensaje-de-error",
+      "label": "n_n-mostrar-mensaje-de-error",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-74",
+      "name": "Resultado: Token JWT almacenado, nav al Home",
+      "label": "Resultado: Token JWT almacenado, nav al Home",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Login con Email/Password"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-75",
+      "name": "Usuario",
+      "label": "Usuario",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.3 Flujo de Datos"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-76",
+      "name": "n_n-item",
+      "label": "n_n-item",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 224,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md",
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md",
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md",
+        "diagrama_impacto_vss_claro-video-android_vod.md",
+        "diagrama_vss_claro-video-android_vod.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH",
+        "Diagrama Impacto VSS claro-video-android/LIVESTREAMING",
+        "Diagrama VSS claro-video-android/LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-77",
+      "name": "n_n-refresh",
+      "label": "n_n-refresh",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_vss_claro-video-android_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/AUTH",
+        "Diagrama VSS claro-video-android/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-78",
+      "name": "NetLoginFragment",
+      "label": "NetLoginFragment",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.3 Flujo de Datos"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-79",
+      "name": "refresh",
+      "label": "refresh",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "10.1 Unit Tests (inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-80",
+      "name": "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed",
+      "label": "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Logout",
+        "Journey 3: Reproduccion Offline"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-81",
+      "name": "HTTP 401",
+      "label": "HTTP 401",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "J-AUTH-01: Login Email/Password"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-82",
+      "name": "GET /nav/v1/data: fan_in=1, fan_out=0",
+      "label": "GET /nav/v1/data: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-83",
+      "name": "3. Tap en banner",
+      "label": "3. Tap en banner",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Interaccion con SuperHighlight"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-84",
+      "name": "n_n-get-cms-superhighlight",
+      "label": "n_n-get-cms-superhighlight",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-85",
+      "name": "n_navega-a-detalle",
+      "label": "n_navega-a-detalle",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-86",
+      "name": ": fan_in=0, fan_out=8",
+      "label": ": fan_in=0, fan_out=8",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-87",
+      "name": "navega a detalle",
+      "label": "navega a detalle",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Scroll y Tap en Ribbon Item"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-88",
+      "name": "n_n-navega-a-detalle",
+      "label": "n_n-navega-a-detalle",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-89",
+      "name": "GET /cms/carrousel: fan_in=1, fan_out=0",
+      "label": "GET /cms/carrousel: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-90",
+      "name": "n_n-get-nav-v1-data",
+      "label": "n_n-get-nav-v1-data",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-91",
+      "name": "n_get-nav-v1-data",
+      "label": "n_get-nav-v1-data",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-92",
+      "name": "n_get-cms-carrousel",
+      "label": "n_get-cms-carrousel",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-93",
+      "name": "3. Tap en thumbnail: fan_in=0, fan_out=1",
+      "label": "3. Tap en thumbnail: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-94",
+      "name": "n_get-cms-carrousel: fan_in=1, fan_out=0",
+      "label": "n_get-cms-carrousel: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-95",
+      "name": "navega a contendo",
+      "label": "navega a contendo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Interaccion con SuperHighlight"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-96",
+      "name": "n_navega-a-contendo: fan_in=1, fan_out=0",
+      "label": "n_navega-a-contendo: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-97",
+      "name": "n_navega-a-detalle: fan_in=1, fan_out=0",
+      "label": "n_navega-a-detalle: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-98",
+      "name": "n_n-get-cms-carrousel",
+      "label": "n_n-get-cms-carrousel",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-99",
+      "name": "GET /cms/superhighlight",
+      "label": "GET /cms/superhighlight",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "3.1 Flujo de Carga Home"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-100",
+      "name": "n_get-cms-superhighlight: fan_in=1, fan_out=0",
+      "label": "n_get-cms-superhighlight: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-101",
+      "name": "3. Tap en thumbnail",
+      "label": "3. Tap en thumbnail",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Scroll y Tap en Ribbon Item"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-102",
+      "name": "n_get-cms-superhighlight",
+      "label": "n_get-cms-superhighlight",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-103",
+      "name": "n_get-nav-v1-data: fan_in=1, fan_out=0",
+      "label": "n_get-nav-v1-data: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-104",
+      "name": "n_n-navega-a-contendo",
+      "label": "n_n-navega-a-contendo",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-105",
+      "name": "GET /cms/carrousel",
+      "label": "GET /cms/carrousel",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "3.1 Flujo de Carga Home"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-106",
+      "name": "n_navega-a-contendo",
+      "label": "n_navega-a-contendo",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md",
+        "diagrama_vss_claro-video-android_carrousel.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "Diagrama VSS claro-video-android/CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-107",
+      "name": "3. Tap en banner: fan_in=0, fan_out=1",
+      "label": "3. Tap en banner: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-108",
+      "name": "GET /nav/v1/data",
+      "label": "GET /nav/v1/data",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "3.1 Flujo de Carga Home"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-109",
+      "name": "GET /livechannel",
+      "label": "GET /livechannel",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-110",
+      "name": "n_item: fan_in=1, fan_out=0",
+      "label": "n_item: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-111",
+      "name": "BaseEventDetailFragment: fan_in=1, fan_out=0",
+      "label": "BaseEventDetailFragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-112",
+      "name": "n_n-epg-lineup",
+      "label": "n_n-epg-lineup",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/LIVESTREAMING",
+        "Diagrama VSS claro-video-android/LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-113",
+      "name": ": fan_in=1, fan_out=3",
+      "label": ": fan_in=1, fan_out=3",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-114",
+      "name": "BaseEventDetailFragment",
+      "label": "BaseEventDetailFragment",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Consultar Guia EPG"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-115",
+      "name": "5. Tap en evento: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "label": "5. Tap en evento: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-116",
+      "name": "n_n-baseeventdetailfragment",
+      "label": "n_n-baseeventdetailfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/LIVESTREAMING",
+        "Diagrama VSS claro-video-android/LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-117",
+      "name": "n_baseeventdetailfragment: fan_in=1, fan_out=0",
+      "label": "n_baseeventdetailfragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-118",
+      "name": "GET /livechannel: fan_in=0, fan_out=1",
+      "label": "GET /livechannel: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-119",
+      "name": "5. Tap en evento",
+      "label": "5. Tap en evento",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Consultar Guia EPG"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-120",
+      "name": "/epg/lineup",
+      "label": "/epg/lineup",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-121",
+      "name": "5. Tap en evento: fan_in=0, fan_out=1",
+      "label": "5. Tap en evento: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-122",
+      "name": "GET lineup: fan_in=0, fan_out=1",
+      "label": "GET lineup: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-123",
+      "name": "GET lineup",
+      "label": "GET lineup",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-124",
+      "name": "/epg/lineup: fan_in=1, fan_out=0",
+      "label": "/epg/lineup: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-125",
+      "name": "n_epg-lineup: fan_in=1, fan_out=0",
+      "label": "n_epg-lineup: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-126",
+      "name": "n_baseeventdetailfragment",
+      "label": "n_baseeventdetailfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/LIVESTREAMING",
+        "Diagrama VSS claro-video-android/LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-127",
+      "name": "n_epg-lineup",
+      "label": "n_epg-lineup",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_vss_claro-video-android_livestreaming.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/LIVESTREAMING",
+        "Diagrama VSS claro-video-android/LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-128",
+      "name": "3. Tap en artista",
+      "label": "3. Tap en artista",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Navegar por artistas"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-129",
+      "name": "lista de pistas: fan_in=1, fan_out=0",
+      "label": "lista de pistas: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-130",
+      "name": "POST /artist con artist_id",
+      "label": "POST /artist con artist_id",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Navegar por artistas"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-131",
+      "name": "3. Tap en artista: fan_in=0, fan_out=1",
+      "label": "3. Tap en artista: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-132",
+      "name": "POST /artist",
+      "label": "POST /artist",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-133",
+      "name": ": fan_in=0, fan_out=4",
+      "label": ": fan_in=0, fan_out=4",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-134",
+      "name": "1. Usuario selecciona album",
+      "label": "1. Usuario selecciona album",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Reproducir pista"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-135",
+      "name": "10.20.28.46: fan_in=1, fan_out=0",
+      "label": "10.20.28.46: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-136",
+      "name": "lista de pistas",
+      "label": "lista de pistas",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Reproducir pista"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-137",
+      "name": "PlayerMusicActivity",
+      "label": "PlayerMusicActivity",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Reproducir pista"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-138",
+      "name": "n_post-artist-con-artist-id: fan_in=1, fan_out=0",
+      "label": "n_post-artist-con-artist-id: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-139",
+      "name": "n_n-10-20-28-46",
+      "label": "n_n-10-20-28-46",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-140",
+      "name": "PlayerMusicActivity: fan_in=1, fan_out=0",
+      "label": "PlayerMusicActivity: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-141",
+      "name": "10.20.28.46",
+      "label": "10.20.28.46",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-142",
+      "name": "n_n-post-artist-con-artist-id",
+      "label": "n_n-post-artist-con-artist-id",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-143",
+      "name": "n_lista-de-pistas: fan_in=1, fan_out=0",
+      "label": "n_lista-de-pistas: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-144",
+      "name": "n_n-lista-de-pistas",
+      "label": "n_n-lista-de-pistas",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-145",
+      "name": "n_n-playermusicactivity",
+      "label": "n_n-playermusicactivity",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-146",
+      "name": "n_playermusicactivity: fan_in=1, fan_out=0",
+      "label": "n_playermusicactivity: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-147",
+      "name": "n_lista-de-pistas",
+      "label": "n_lista-de-pistas",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-148",
+      "name": "n_post-artist-con-artist-id",
+      "label": "n_post-artist-con-artist-id",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-149",
+      "name": "n_10-20-28-46",
+      "label": "n_10-20-28-46",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-150",
+      "name": "2. Tap en pista",
+      "label": "2. Tap en pista",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Reproducir pista"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-151",
+      "name": "n_playermusicactivity",
+      "label": "n_playermusicactivity",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md",
+        "diagrama_vss_claro-video-android_music.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "Diagrama VSS claro-video-android/MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-152",
+      "name": "n_10-20-28-46: fan_in=1, fan_out=0",
+      "label": "n_10-20-28-46: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-153",
+      "name": "POST /artist: fan_in=0, fan_out=1",
+      "label": "POST /artist: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-154",
+      "name": "n_n-reproduccion",
+      "label": "n_n-reproduccion",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_vss_claro-video-android_recorded.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/RECORDED",
+        "Diagrama VSS claro-video-android/RECORDED",
+        "Diagrama Impacto VSS claro-video-android/SEARCH",
+        "Diagrama VSS claro-video-android/SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-155",
+      "name": "4. Tap en grabacion completada: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "label": "4. Tap en grabacion completada: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-156",
+      "name": "n_reproduccion: fan_in=1, fan_out=0",
+      "label": "n_reproduccion: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-157",
+      "name": "Tipo: Core | Criticidad: ALTA: fan_in=0, fan_out=0",
+      "label": "Tipo: Core | Criticidad: ALTA: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-158",
+      "name": ": fan_in=0, fan_out=3",
+      "label": ": fan_in=0, fan_out=3",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-159",
+      "name": "4. Tap en grabacion completada",
+      "label": "4. Tap en grabacion completada",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Ver lista de grabaciones DVR"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-160",
+      "name": "n_get-recordings-v3-series-delete",
+      "label": "n_get-recordings-v3-series-delete",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_vss_claro-video-android_recorded.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/RECORDED",
+        "Diagrama VSS claro-video-android/RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-161",
+      "name": "n_get-recordings-v3-series-delete: fan_in=1, fan_out=0",
+      "label": "n_get-recordings-v3-series-delete: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-162",
+      "name": "reproduccion",
+      "label": "reproduccion",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md",
+        "metricas.md"
+      ],
+      "sections": [
+        "Journey 1: Ver lista de grabaciones DVR",
+        "KPIs y Metricas - SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-163",
+      "name": "GET /recordings/v3/series/delete: fan_in=1, fan_out=0",
+      "label": "GET /recordings/v3/series/delete: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-164",
+      "name": "n_reproduccion",
+      "label": "n_reproduccion",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_vss_claro-video-android_recorded.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/RECORDED",
+        "Diagrama VSS claro-video-android/RECORDED",
+        "Diagrama Impacto VSS claro-video-android/SEARCH",
+        "Diagrama VSS claro-video-android/SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-165",
+      "name": "GET /recordings/v3/series/delete",
+      "label": "GET /recordings/v3/series/delete",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Eliminar grabacion de serie"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-166",
+      "name": ": fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "label": ": fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-167",
+      "name": "reproduccion: fan_in=1, fan_out=0",
+      "label": "reproduccion: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-168",
+      "name": "n_n-get-recordings-v3-series-delete",
+      "label": "n_n-get-recordings-v3-series-delete",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_vss_claro-video-android_recorded.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/RECORDED",
+        "Diagrama VSS claro-video-android/RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-169",
+      "name": "4. Tap en grabacion completada: fan_in=0, fan_out=1",
+      "label": "4. Tap en grabacion completada: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-170",
+      "name": "GET /recordings/v3/series/delete: fan_in=1, fan_out=0: fan_in=0, fan_out=0",
+      "label": "GET /recordings/v3/series/delete: fan_in=1, fan_out=0: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-171",
+      "name": "GET /generic: fan_in=0, fan_out=1",
+      "label": "GET /generic: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-172",
+      "name": "Tiempo medio busqueda",
+      "label": "Tiempo medio busqueda",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs y Metricas - SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-173",
+      "name": "GET /predictive: fan_in=0, fan_out=1",
+      "label": "GET /predictive: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-174",
+      "name": "Resultado: Lista de sugerencias en tiempo real",
+      "label": "Resultado: Lista de sugerencias en tiempo real",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Busqueda Predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-175",
+      "name": "Resultado: Lista de resultados (VOD, series, canales)",
+      "label": "Resultado: Lista de resultados (VOD, series, canales)",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Busqueda Generica"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-176",
+      "name": ": fan_in=2, fan_out=3",
+      "label": ": fan_in=2, fan_out=3",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-177",
+      "name": "Tiempo medio busqueda: fan_in=0, fan_out=1",
+      "label": "Tiempo medio busqueda: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-178",
+      "name": "GET /predictive",
+      "label": "GET /predictive",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "Busqueda con Predictivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-179",
+      "name": "Tipo: Core | Criticidad: MEDIA | Estado: Observed",
+      "label": "Tipo: Core | Criticidad: MEDIA | Estado: Observed",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Busqueda Predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-180",
+      "name": "Usuario tipea",
+      "label": "Usuario tipea",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "3.2 Flujo de Datos (Busqueda Generica)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-181",
+      "name": "Resultado: Contenido sugerido basado en historial",
+      "label": "Resultado: Contenido sugerido basado en historial",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Recomendaciones"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-182",
+      "name": "GET /generic",
+      "label": "GET /generic",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "Busqueda con Predictivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-183",
+      "name": "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed (inferido)",
+      "label": "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed (inferido)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Recomendaciones"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-184",
+      "name": "SearchFragment",
+      "label": "SearchFragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "3.2 Flujo de Datos (Busqueda Generica)"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-185",
+      "name": "Usuario tipea: fan_in=0, fan_out=1",
+      "label": "Usuario tipea: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-186",
+      "name": "Trigger: Usuario escribe caracter a caracter",
+      "label": "Trigger: Usuario escribe caracter a caracter",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Busqueda Predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-187",
+      "name": "Trigger: Usuario abre busqueda sin texto",
+      "label": "Trigger: Usuario abre busqueda sin texto",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Recomendaciones"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-188",
+      "name": "n_searchfragment: fan_in=1, fan_out=0",
+      "label": "n_searchfragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-189",
+      "name": "SearchFragment: fan_in=1, fan_out=0",
+      "label": "SearchFragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-190",
+      "name": "Trigger: Usuario escribe en SearchFragment y presiona buscar",
+      "label": "Trigger: Usuario escribe en SearchFragment y presiona buscar",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Busqueda Generica"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-191",
+      "name": "n_n-searchfragment",
+      "label": "n_n-searchfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SEARCH",
+        "Diagrama VSS claro-video-android/SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-192",
+      "name": "n_searchfragment",
+      "label": "n_searchfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_vss_claro-video-android_search.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SEARCH",
+        "Diagrama VSS claro-video-android/SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-193",
+      "name": "usar POST",
+      "label": "usar POST",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Deuda Tecnica"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-194",
+      "name": "POST /buyconfirm",
+      "label": "POST /buyconfirm",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5. Diagrama de Flujo de Compra"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-195",
+      "name": "token: fan_in=1, fan_out=0",
+      "label": "token: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-196",
+      "name": "token",
+      "label": "token",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "3. Arquitectura"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-197",
+      "name": "n_confirmsuscriptionfragment: fan_in=1, fan_out=0",
+      "label": "n_confirmsuscriptionfragment: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-198",
+      "name": "n_token",
+      "label": "n_token",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-199",
+      "name": "n_confirmsuscriptionfragment",
+      "label": "n_confirmsuscriptionfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-200",
+      "name": "getPlans: fan_in=0, fan_out=1",
+      "label": "getPlans: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-201",
+      "name": "GET /planselector: fan_in=1, fan_out=0",
+      "label": "GET /planselector: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-202",
+      "name": "CancelSuscription usa HTTP GET para operacion modificadora",
+      "label": "CancelSuscription usa HTTP GET para operacion modificadora",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Deuda Tecnica"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-203",
+      "name": "n_n-token",
+      "label": "n_n-token",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-204",
+      "name": "tarjeta",
+      "label": "tarjeta",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "3. Arquitectura"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-205",
+      "name": "n_get-planselector",
+      "label": "n_get-planselector",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-206",
+      "name": "1. Usuario selecciona plan: fan_in=0, fan_out=1",
+      "label": "1. Usuario selecciona plan: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-207",
+      "name": "n_n-get-planselector",
+      "label": "n_n-get-planselector",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-208",
+      "name": "POST /buyconfirm: fan_in=0, fan_out=1",
+      "label": "POST /buyconfirm: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-209",
+      "name": "1. Usuario selecciona plan",
+      "label": "1. Usuario selecciona plan",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Comprar Plan"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-210",
+      "name": "n_usar-post",
+      "label": "n_usar-post",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-211",
+      "name": "getPlans",
+      "label": "getPlans",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5. Diagrama de Flujo de Compra"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-212",
+      "name": "n_n-confirmsuscriptionfragment",
+      "label": "n_n-confirmsuscriptionfragment",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-213",
+      "name": "usar POST: fan_in=1, fan_out=0",
+      "label": "usar POST: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-214",
+      "name": ": fan_in=1, fan_out=5",
+      "label": ": fan_in=1, fan_out=5",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-215",
+      "name": "n_usar-post: fan_in=1, fan_out=0",
+      "label": "n_usar-post: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-216",
+      "name": "n_get-planselector: fan_in=1, fan_out=0",
+      "label": "n_get-planselector: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-217",
+      "name": "GET /planselector",
+      "label": "GET /planselector",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5. Diagrama de Flujo de Compra"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-218",
+      "name": "ConfirmSuscriptionFragment",
+      "label": "ConfirmSuscriptionFragment",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Comprar Plan"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-219",
+      "name": "n_n-usar-post",
+      "label": "n_n-usar-post",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_vss_claro-video-android_subscription.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "Diagrama VSS claro-video-android/SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-220",
+      "name": "tap en evento pasado: fan_in=1, fan_out=0: fan_in=0, fan_out=0",
+      "label": "tap en evento pasado: fan_in=1, fan_out=0: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-221",
+      "name": "n_n-tap-en-evento-pasado",
+      "label": "n_n-tap-en-evento-pasado",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_timeshift.md",
+        "diagrama_vss_claro-video-android_timeshift.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/TIMESHIFT",
+        "Diagrama VSS claro-video-android/TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-222",
+      "name": "Tipo: Core | Criticidad: ALTA: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "label": "Tipo: Core | Criticidad: ALTA: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-223",
+      "name": "EPG Grid",
+      "label": "EPG Grid",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Flujo Catch-up"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-224",
+      "name": "tap en evento pasado",
+      "label": "tap en evento pasado",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Flujo Catch-up"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-225",
+      "name": "n_tap-en-evento-pasado",
+      "label": "n_tap-en-evento-pasado",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_timeshift.md",
+        "diagrama_vss_claro-video-android_timeshift.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/TIMESHIFT",
+        "Diagrama VSS claro-video-android/TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-226",
+      "name": "Tipo: Supporting | Criticidad: MEDIA: fan_in=0, fan_out=0",
+      "label": "Tipo: Supporting | Criticidad: MEDIA: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-227",
+      "name": "n_tap-en-evento-pasado: fan_in=1, fan_out=0",
+      "label": "n_tap-en-evento-pasado: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-228",
+      "name": ": fan_in=0, fan_out=1",
+      "label": ": fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-229",
+      "name": "tap en evento pasado: fan_in=1, fan_out=0",
+      "label": "tap en evento pasado: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-230",
+      "name": "EPG Grid: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "label": "EPG Grid: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-231",
+      "name": "EPG Grid: fan_in=0, fan_out=1",
+      "label": "EPG Grid: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-232",
+      "name": "Tipo: Supporting | Criticidad: MEDIA: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "label": "Tipo: Supporting | Criticidad: MEDIA: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-233",
+      "name": "Evidencia: BasePlayerFragment.java + ContentData v1.1.0",
+      "label": "Evidencia: BasePlayerFragment.java + ContentData v1.1.0",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Reproduccion de Pelicula"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-234",
+      "name": "GET /data: fan_in=0, fan_out=1",
+      "label": "GET /data: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-235",
+      "name": "n_drm",
+      "label": "n_drm",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_vod.md",
+        "diagrama_vss_claro-video-android_vod.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/VOD",
+        "Diagrama VSS claro-video-android/VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-236",
+      "name": "DRM challenge",
+      "label": "DRM challenge",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-237",
+      "name": "GET /data",
+      "label": "GET /data",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-238",
+      "name": "n_n-drm",
+      "label": "n_n-drm",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_vod.md",
+        "diagrama_vss_claro-video-android_vod.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android/VOD",
+        "Diagrama VSS claro-video-android/VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-239",
+      "name": "DRM: fan_in=1, fan_out=0",
+      "label": "DRM: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-240",
+      "name": "DRM challenge: fan_in=0, fan_out=1",
+      "label": "DRM challenge: fan_in=0, fan_out=1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-241",
+      "name": "Evidencia: ExoPlayerOfflineView.kt + DownloadsActivity.java",
+      "label": "Evidencia: ExoPlayerOfflineView.kt + DownloadsActivity.java",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: Reproduccion Offline"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-242",
+      "name": "DRM",
+      "label": "DRM",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5. Diagrama de Secuencia"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-243",
+      "name": "DRM challenge: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "label": "DRM challenge: fan_in=0, fan_out=1: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-244",
+      "name": "Evidencia: VodResultAdapter.java + content_list v5.8.9",
+      "label": "Evidencia: VodResultAdapter.java + content_list v5.8.9",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Reproduccion de Serie"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-245",
+      "name": ": fan_in=1, fan_out=2",
+      "label": ": fan_in=1, fan_out=2",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-246",
+      "name": "Evidencia: VodResultAdapter.java + content_list v5.8.9: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "label": "Evidencia: VodResultAdapter.java + content_list v5.8.9: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-247",
+      "name": "Tipo: Core | Criticidad: ALTA | Estado: Observed: fan_in=0, fan_out=0",
+      "label": "Tipo: Core | Criticidad: ALTA | Estado: Observed: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-248",
+      "name": "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "label": "Tipo: Supporting | Criticidad: MEDIA | Estado: Observed: fan_in=0, fan_out=0: fan_in=0, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-node-249",
+      "name": "n_drm: fan_in=1, fan_out=0",
+      "label": "n_drm: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-android-edge-1",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-31",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-2",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-25",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-3",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-28",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-4",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-27",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-5",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-18",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-6",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-9",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-7",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-6",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-8",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-13",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-9",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-32",
+      "type": "calls",
+      "occurrences": 72,
+      "evidenceCount": 72,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_impacto_vss_claro-video-android_vod.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-10",
+      "source": "claro-video-android-node-20",
+      "target": "claro-video-android-node-14",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-11",
+      "source": "claro-video-android-node-14",
+      "target": "claro-video-android-node-24",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-12",
+      "source": "claro-video-android-node-24",
+      "target": "claro-video-android-node-17",
+      "type": "reads",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-13",
+      "source": "claro-video-android-node-17",
+      "target": "claro-video-android-node-2",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-14",
+      "source": "claro-video-android-node-2",
+      "target": "claro-video-android-node-17",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-15",
+      "source": "claro-video-android-node-17",
+      "target": "claro-video-android-node-24",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-16",
+      "source": "claro-video-android-node-24",
+      "target": "claro-video-android-node-14",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-17",
+      "source": "claro-video-android-node-14",
+      "target": "claro-video-android-node-20",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-18",
+      "source": "claro-video-android-node-20",
+      "target": "claro-video-android-node-8",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-19",
+      "source": "claro-video-android-node-8",
+      "target": "claro-video-android-node-20",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-20",
+      "source": "claro-video-android-node-8",
+      "target": "claro-video-android-node-19",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-21",
+      "source": "claro-video-android-node-24",
+      "target": "claro-video-android-node-19",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-22",
+      "source": "claro-video-android-node-19",
+      "target": "claro-video-android-node-8",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-23",
+      "source": "claro-video-android-node-20",
+      "target": "claro-video-android-node-4",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-24",
+      "source": "claro-video-android-node-4",
+      "target": "claro-video-android-node-24",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-25",
+      "source": "claro-video-android-node-24",
+      "target": "claro-video-android-node-17",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-26",
+      "source": "claro-video-android-node-24",
+      "target": "claro-video-android-node-4",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-27",
+      "source": "claro-video-android-node-4",
+      "target": "claro-video-android-node-20",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-28",
+      "source": "claro-video-android-node-21",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-29",
+      "source": "claro-video-android-node-5",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-30",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-34",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-31",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-38",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-32",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-73",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-33",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-76",
+      "type": "calls",
+      "occurrences": 224,
+      "evidenceCount": 224,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md",
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+        "diagrama_impacto_vss_claro-video-android_search.md",
+        "diagrama_impacto_vss_claro-video-android_subscription.md",
+        "diagrama_impacto_vss_claro-video-android_vod.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-34",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-53",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-35",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-44",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-36",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-77",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-37",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-43",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-38",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-64",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-39",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-66",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-40",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-48",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-41",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-47",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-42",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-42",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_auth.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-43",
+      "source": "claro-video-android-node-75",
+      "target": "claro-video-android-node-78",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-44",
+      "source": "claro-video-android-node-46",
+      "target": "claro-video-android-node-69",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-45",
+      "source": "claro-video-android-node-81",
+      "target": "claro-video-android-node-58",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-46",
+      "source": "claro-video-android-node-41",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-47",
+      "source": "claro-video-android-node-35",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-48",
+      "source": "claro-video-android-node-71",
+      "target": "claro-video-android-node-60",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-49",
+      "source": "claro-video-android-node-45",
+      "target": "claro-video-android-node-68",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-50",
+      "source": "claro-video-android-node-39",
+      "target": "claro-video-android-node-79",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-51",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-104",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-52",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-88",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-53",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-90",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-54",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-84",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-55",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-98",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-56",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-106",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-57",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-85",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-58",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-91",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-59",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-102",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-60",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-92",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_carrousel.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-61",
+      "source": "claro-video-android-node-83",
+      "target": "claro-video-android-node-95",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-62",
+      "source": "claro-video-android-node-101",
+      "target": "claro-video-android-node-87",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-63",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-108",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-64",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-99",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-65",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-105",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-66",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-116",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-67",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-112",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-68",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-126",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-69",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-127",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_livestreaming.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-70",
+      "source": "claro-video-android-node-119",
+      "target": "claro-video-android-node-114",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-71",
+      "source": "claro-video-android-node-123",
+      "target": "claro-video-android-node-120",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-72",
+      "source": "claro-video-android-node-109",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-73",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-142",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-74",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-144",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-75",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-145",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-76",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-139",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-77",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-148",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-78",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-147",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-79",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-151",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-80",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-149",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_music.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-81",
+      "source": "claro-video-android-node-128",
+      "target": "claro-video-android-node-130",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-82",
+      "source": "claro-video-android-node-134",
+      "target": "claro-video-android-node-136",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-83",
+      "source": "claro-video-android-node-150",
+      "target": "claro-video-android-node-137",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-84",
+      "source": "claro-video-android-node-132",
+      "target": "claro-video-android-node-141",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-85",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-154",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_impacto_vss_claro-video-android_search.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-86",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-168",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-87",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-164",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md",
+        "diagrama_impacto_vss_claro-video-android_search.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-88",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-160",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_recorded.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-89",
+      "source": "claro-video-android-node-159",
+      "target": "claro-video-android-node-162",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-90",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-165",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-91",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-191",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_search.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-92",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-192",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_search.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-93",
+      "source": "claro-video-android-node-172",
+      "target": "claro-video-android-node-162",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-94",
+      "source": "claro-video-android-node-180",
+      "target": "claro-video-android-node-184",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-95",
+      "source": "claro-video-android-node-178",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-96",
+      "source": "claro-video-android-node-182",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-97",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-212",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-98",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-203",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-99",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-207",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-100",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-219",
+      "type": "calls",
+      "occurrences": 16,
+      "evidenceCount": 16,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-101",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-199",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-102",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-198",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-103",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-205",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-104",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-210",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_subscription.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-105",
+      "source": "claro-video-android-node-209",
+      "target": "claro-video-android-node-218",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-106",
+      "source": "claro-video-android-node-204",
+      "target": "claro-video-android-node-196",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-107",
+      "source": "claro-video-android-node-211",
+      "target": "claro-video-android-node-217",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-108",
+      "source": "claro-video-android-node-194",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-109",
+      "source": "claro-video-android-node-202",
+      "target": "claro-video-android-node-193",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-110",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-221",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_timeshift.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-111",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-225",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_timeshift.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-112",
+      "source": "claro-video-android-node-223",
+      "target": "claro-video-android-node-224",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-113",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-238",
+      "type": "calls",
+      "occurrences": 32,
+      "evidenceCount": 32,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_vod.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-114",
+      "source": "claro-video-android-node-1",
+      "target": "claro-video-android-node-235",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android_vod.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-115",
+      "source": "claro-video-android-node-237",
+      "target": "claro-video-android-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-edge-116",
+      "source": "claro-video-android-node-236",
+      "target": "claro-video-android-node-242",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:52.736Z",
+    "nodeTypes": [
+      "component",
+      "contract_api"
+    ],
+    "topFiles": [
+      "diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+      "diagrama_vss_claro-video-android_acntmgmt.md",
+      "SPEC_ACCOUNT_MANAGEMENT.md",
+      "diagrama_impacto_vss_claro-video-android_auth.md",
+      "diagrama_vss_claro-video-android_auth.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "diagrama_impacto_vss_claro-video-android_carrousel.md",
+      "diagrama_vss_claro-video-android_carrousel.md",
+      "SPEC_CARROUSEL_NAVIGATION.md",
+      "diagrama_impacto_vss_claro-video-android_livestreaming.md",
+      "diagrama_vss_claro-video-android_livestreaming.md",
+      "SPEC_LIVE_BROADCAST.md",
+      "diagrama_impacto_vss_claro-video-android_music.md",
+      "diagrama_vss_claro-video-android_music.md",
+      "diagrama_impacto_vss_claro-video-android_recorded.md",
+      "diagrama_vss_claro-video-android_recorded.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 23,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-android",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-android.md",
+          "analysis\\diagrama_global_claro-video-android.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 249,
+          "edgeCount": 116,
+          "groupCount": 10,
+          "isolatedCount": 120
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-android",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-android.md"
+        ],
+        "metrics": {
+          "nodeCount": 12,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-android/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-android_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-android_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 29,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-android/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-android_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-android_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 29,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS claro-video-android/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-android_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-android_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 51,
+          "edgeCount": 22,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS claro-video-android/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-android_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-android_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 51,
+          "edgeCount": 22,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS claro-video-android/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-android_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-android_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 29,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS claro-video-android/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-android_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-android_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 29,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS claro-video-android/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-android_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-android_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 23,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS claro-video-android/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-android_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-android_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 23,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 11,
+        "title": "Diagrama VSS claro-video-android/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-android_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-android_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 28,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS claro-video-android/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-android_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-android_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 28,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "domain-RECORDED-vss",
+        "order": 13,
+        "title": "Diagrama VSS claro-video-android/RECORDED",
+        "kind": "domain_vss",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-android_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-android_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 20,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-RECORDED-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS claro-video-android/RECORDED",
+        "kind": "domain_impact",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-android_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-android_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 20,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 15,
+        "title": "Diagrama VSS claro-video-android/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-android_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-android_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS claro-video-android/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-android_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-android_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 17,
+        "title": "Diagrama VSS claro-video-android/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-android_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-android_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 18,
+        "title": "Diagrama Impacto VSS claro-video-android/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-android_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-android_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-vss",
+        "order": 19,
+        "title": "Diagrama VSS claro-video-android/TIMESHIFT",
+        "kind": "domain_vss",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-android_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-android_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-impact",
+        "order": 20,
+        "title": "Diagrama Impacto VSS claro-video-android/TIMESHIFT",
+        "kind": "domain_impact",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-android_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-android_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 21,
+        "title": "Diagrama VSS claro-video-android/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-android_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-android_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 23,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 22,
+        "title": "Diagrama Impacto VSS claro-video-android/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-android_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-android_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 23,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 23,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 249,
+          "edgeCount": 116,
+          "groupCount": 0,
+          "isolatedCount": 120
+        }
+      }
+    ]
+  }
+}

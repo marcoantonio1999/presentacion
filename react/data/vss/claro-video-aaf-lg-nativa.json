@@ -1,0 +1,4104 @@
+{
+  "repo": "claro-video-aaf-lg-nativa",
+  "title": "AAF LG Nativa",
+  "sourceLabel": "paquete claro-video-aff-lg-nativa new.zip",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-aaf-lg-nativa",
+    "annex": "ANEXO_claro-video-aaf-lg-nativa.html",
+    "legacyViewer": "ANEXO_claro-video-aaf-lg-nativa-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-aaf-lg-nativa.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_lg_vss_extract_v1\\claro-video-aff-lg-nativa\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_lg_vss_extract_v1\\claro-video-aff-lg-nativa\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_lg_vss_extract_v1\\claro-video-aff-lg-nativa\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_lg_vss_extract_v1\\claro-video-aff-lg-nativa\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_lg_vss_extract_v1\\claro-video-aff-lg-nativa\\analysis\\diagrama_global_claro-video-aff-lg-nativa.mmd"
+  },
+  "summary": {
+    "totalNodes": 165,
+    "totalEdges": 93,
+    "rawEdges": 145,
+    "vssIncluded": [
+      "AUTH"
+    ],
+    "unresolvedNodes": [
+      "Punto de entrada / trigger",
+      "7",
+      "Evento visibilitychange",
+      "2 segundos",
+      "var REGEXP_HASH",
+      "var TIME_TO_CLOSE_APP_BACKGROUND_SECONDS",
+      "var NR_url",
+      "historial de cambios previos a esta spec",
+      "subscrito",
+      "var DO_REDIRECT_AAF",
+      "122",
+      "otros gaps identificados por el equipo",
+      "equipo de observabilidad / New Relic account 675452",
+      "retryConnectCallback",
+      "var ENABLE_CONSOLE",
+      "protocol",
+      "onFailure",
+      "id del dispositivo",
+      "var TYPE_URL_AAF_ERROR",
+      "localStorage.setItem",
+      "window.location.replace",
+      "tech lead del equipo",
+      "93",
+      "return",
+      "1.5 segundos",
+      "#logger",
+      "var SHOW_SCREEN_LOG",
+      "equipo de distribuci",
+      "equipo de infraestructura",
+      "equipo de WebTV",
+      "navigator.online check",
+      "120",
+      "package_dev.sh",
+      "equipo de producto / Jira",
+      "no reportado a NR",
+      "8. Modal visible",
+      "n de infra",
+      "webOS.service.request",
+      "<informacion no encontrada en el repositorio: listado completo de elementos UI del DOM -> análisis completo de nativeModal.js + index.html>",
+      "documentaci",
+      "window.location.reload",
+      "POST a https",
+      "Solo se verifica que retorna HTTP 200",
+      "document.hidden",
+      "dashboards de NR o SLOs formales",
+      "appIsAvailable",
+      "New Relic account 675452",
+      "callback error",
+      "n en runtime",
+      "121",
+      "var XHR_REQUEST_TIMEOUT_SECONDS_HASH",
+      "equipo de WebTV LG Nativa",
+      "isCheckingApp",
+      "webOSDev.connection.getStatus",
+      "97",
+      "implementar instrumentaci",
+      "6. Usuario presiona Reintentar",
+      "39",
+      "var AAF_url",
+      "Evento visibilitychange / webkitvisibilitychange",
+      "callbackError",
+      "var app_http_protocol",
+      "/",
+      "var DATA_LOAD_FAILURE_ERROR",
+      "1",
+      "usuario llega al Claro Video streaming SPA",
+      "Jira/GitHub project/dashboard",
+      "var NR_EVENT_ERROR",
+      "Luna com.webos.settingsservice/getSystemSettings",
+      "Api_v2_Account_1.0.0",
+      "al recuperar red",
+      "**Tipo**",
+      "https",
+      "disconnected",
+      "Canales",
+      "Resultado",
+      "90",
+      "var PREFLIGHT_HASH_CHECK",
+      "feedback modal",
+      "Si no",
+      "git log",
+      "Jira / backlog",
+      "cnica documentada por el equipo",
+      "algunas m",
+      "onErrorConnection",
+      "126",
+      "XHR_REQUEST_TIMEOUT_SECONDS_HASH",
+      "equipo de WebTV / README / CODEOWNERS",
+      "Evidencia primaria",
+      "**Resultado**",
+      "package_http.sh",
+      "notifica cambios",
+      "modelName",
+      "var NETWORK_ERROR",
+      "country",
+      "enviar",
+      "**Estado**",
+      "127",
+      "96",
+      "package_prod.sh",
+      "o por tipo",
+      "retryStartApp",
+      "Logout 1.0.0",
+      "XHR_REQUEST_TIMEOUT_SECONDS",
+      "webOSDev.LGUDID",
+      "86",
+      "NO enviar",
+      "nr.sendErrorMetric",
+      "false",
+      "var TYPE_URL_CANT_GET_HASHJS_FROM_INDEX_ERROR",
+      "onSuccess.any connected",
+      "**Evidencia primaria**",
+      "4. Usuario presiona Enter",
+      "**Trigger**",
+      "Frecuencia",
+      "getCommitHash",
+      "Estado",
+      "IaaS/cloud provider del servidor aaf-cvideo-tv.clarovideo.net",
+      "n",
+      "analytics spec / equipo de producto",
+      "98",
+      "create",
+      "nombre del propietario del spec",
+      "128",
+      "**Frecuencia**",
+      "91",
+      "nativeModalError.setBodyText",
+      "usuario en Claro Video SPA",
+      "Criticidad",
+      "125",
+      "var XHR_REQUEST_TIMEOUT_SECONDS",
+      "**Canal**",
+      "var TYPE_NETWORK_ERROR",
+      "NativeModalButton",
+      "sin .github/workflows/ detectado",
+      "true",
+      "101",
+      "92",
+      "**Criticidad**",
+      "Luna com.webos.service.tv.systemproperty/getSystemInfo",
+      "isInternetConnectionAvailable",
+      "equipo de infraestructura / CDN del AAF URL",
+      "hashResult",
+      "var USE_LOCAL_URL",
+      "RefreshToken 1.0.0",
+      "95",
+      "Trigger",
+      "100",
+      "onSuccessConnection",
+      "var IPK_version",
+      "ADR / backlog t",
+      "var TYPE_URL_HASHJS_ERROR",
+      "CI/CD automatizado",
+      "NativeModal",
+      "accepted terms 1.0.0"
+    ]
+  },
+  "domains": [
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 9,
+      "edgeCount": 9,
+      "evidenceCount": 9,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 9
+        }
+      ],
+      "sampleNodes": [
+        "Login ott 3.0.0",
+        "user login 5.9.3",
+        "USR-SmartCardLogin 1.0.0",
+        "user telcel auth 1.0.0",
+        "RegisterCV 1.0.0"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 155,
+      "edgeCount": 93,
+      "evidenceCount": 328,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 155
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "7",
+        "Evento visibilitychange",
+        "2 segundos",
+        "var REGEXP_HASH"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-aaf-lg-nativa-node-1",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 56,
+      "files": [
+        "componentes.md",
+        "contracts.md",
+        "evidencia_codigo.txt",
+        "journeys.md",
+        "metricas.md",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "main.js — Orquestador",
+        "nr.js — Telemetría New Relic",
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)",
+        "Contrato de Solicitud (Request)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-2",
+      "name": "7",
+      "label": "7",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-3",
+      "name": "Evento visibilitychange",
+      "label": "Evento visibilitychange",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.5 Journey: Regreso desde Background → Recarga Condicional"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-4",
+      "name": "2 segundos",
+      "label": "2 segundos",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Solicitud (Request)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-5",
+      "name": "var REGEXP_HASH",
+      "label": "var REGEXP_HASH",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-6",
+      "name": "var TIME_TO_CLOSE_APP_BACKGROUND_SECONDS",
+      "label": "var TIME_TO_CLOSE_APP_BACKGROUND_SECONDS",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-7",
+      "name": "var NR_url",
+      "label": "var NR_url",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-8",
+      "name": "historial de cambios previos a esta spec",
+      "label": "historial de cambios previos a esta spec",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "11. Change History"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-9",
+      "name": "subscrito",
+      "label": "subscrito",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "API: webOS Luna Services (v1.2.10 SDK — IPC interno, NO HTTP REST)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-10",
+      "name": "var DO_REDIRECT_AAF",
+      "label": "var DO_REDIRECT_AAF",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-11",
+      "name": "122",
+      "label": "122",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-12",
+      "name": "otros gaps identificados por el equipo",
+      "label": "otros gaps identificados por el equipo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "10.1 Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-13",
+      "name": "equipo de observabilidad / New Relic account 675452",
+      "label": "equipo de observabilidad / New Relic account 675452",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs Derivados (Inferidos — No Observados en Tiempo Real)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-14",
+      "name": "retryConnectCallback",
+      "label": "retryConnectCallback",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-15",
+      "name": "var ENABLE_CONSOLE",
+      "label": "var ENABLE_CONSOLE",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-16",
+      "name": "protocol",
+      "label": "protocol",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 6,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Build scripts"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-17",
+      "name": "onFailure",
+      "label": "onFailure",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Flujo principal AAF"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-18",
+      "name": "id del dispositivo",
+      "label": "id del dispositivo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "nr.js — Telemetría New Relic"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-19",
+      "name": "var TYPE_URL_AAF_ERROR",
+      "label": "var TYPE_URL_AAF_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-20",
+      "name": "localStorage.setItem",
+      "label": "localStorage.setItem",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 4,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "backgroundController.js — lifecycle background"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-21",
+      "name": "Login ott 3.0.0",
+      "label": "Login ott 3.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-22",
+      "name": "window.location.replace",
+      "label": "window.location.replace",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Flujo principal AAF"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-23",
+      "name": "tech lead del equipo",
+      "label": "tech lead del equipo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-24",
+      "name": "93",
+      "label": "93",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-25",
+      "name": "return",
+      "label": "return",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Pasos observados en código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-26",
+      "name": "1.5 segundos",
+      "label": "1.5 segundos",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Solicitud (Request)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-27",
+      "name": "#logger",
+      "label": "#logger",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-28",
+      "name": "var SHOW_SCREEN_LOG",
+      "label": "var SHOW_SCREEN_LOG",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-29",
+      "name": "equipo de distribuci",
+      "label": "equipo de distribuci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-30",
+      "name": "user login 5.9.3",
+      "label": "user login 5.9.3",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-31",
+      "name": "equipo de infraestructura",
+      "label": "equipo de infraestructura",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-32",
+      "name": "equipo de WebTV",
+      "label": "equipo de WebTV",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-33",
+      "name": "navigator.online check",
+      "label": "navigator.online check",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Flujo principal AAF"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-34",
+      "name": "120",
+      "label": "120",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-35",
+      "name": "package_dev.sh",
+      "label": "package_dev.sh",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Build scripts"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-36",
+      "name": "equipo de producto / Jira",
+      "label": "equipo de producto / Jira",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-37",
+      "name": "no reportado a NR",
+      "label": "no reportado a NR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-38",
+      "name": "8. Modal visible",
+      "label": "8. Modal visible",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Pasos observados en código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-39",
+      "name": "n de infra",
+      "label": "n de infra",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-40",
+      "name": "webOS.service.request",
+      "label": "webOS.service.request",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 4,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "nr.js — telemetría"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-41",
+      "name": "<informacion no encontrada en el repositorio: listado completo de elementos UI del DOM -> análisis completo de nativeModal.js + index.html>",
+      "label": "<informacion no encontrada en el repositorio: listado completo de elementos UI del DOM -> análisis completo de nativeModal.js + index.html>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-42",
+      "name": "documentaci",
+      "label": "documentaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "12. Glosario"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-43",
+      "name": "window.location.reload",
+      "label": "window.location.reload",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "main.js — Orquestador"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-44",
+      "name": "POST a https",
+      "label": "POST a https",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "Eventos de Error Reportados a New Relic"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-45",
+      "name": "Solo se verifica que retorna HTTP 200",
+      "label": "Solo se verifica que retorna HTTP 200",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Respuesta Exitosa (HTTP 200)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-46",
+      "name": "document.hidden",
+      "label": "document.hidden",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Journey 5: Regreso desde Background → Recarga Condicional",
+        "3.5 Journey: Regreso desde Background → Recarga Condicional"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-47",
+      "name": "dashboards de NR o SLOs formales",
+      "label": "dashboards de NR o SLOs formales",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs Derivados (Inferidos — No Observados en Tiempo Real)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-48",
+      "name": "appIsAvailable",
+      "label": "appIsAvailable",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "main.js — Orquestador"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-49",
+      "name": "New Relic account 675452",
+      "label": "New Relic account 675452",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-50",
+      "name": "callback error",
+      "label": "callback error",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Error"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-51",
+      "name": "n en runtime",
+      "label": "n en runtime",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-52",
+      "name": "121",
+      "label": "121",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-53",
+      "name": "var XHR_REQUEST_TIMEOUT_SECONDS_HASH",
+      "label": "var XHR_REQUEST_TIMEOUT_SECONDS_HASH",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-54",
+      "name": "equipo de WebTV LG Nativa",
+      "label": "equipo de WebTV LG Nativa",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-55",
+      "name": "isCheckingApp",
+      "label": "isCheckingApp",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Respuesta Exitosa (HTTP 200)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-56",
+      "name": "webOSDev.connection.getStatus",
+      "label": "webOSDev.connection.getStatus",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Journey 2: Error de Red → Modal → Retry",
+        "3.2 Journey: Error de Red → Modal → Retry",
+        "4.2 Sequence — Network Error → Modal → Recovery"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-57",
+      "name": "97",
+      "label": "97",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-58",
+      "name": "implementar instrumentaci",
+      "label": "implementar instrumentaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-59",
+      "name": "6. Usuario presiona Reintentar",
+      "label": "6. Usuario presiona Reintentar",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Pasos observados en código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-60",
+      "name": "39",
+      "label": "39",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-61",
+      "name": "var AAF_url",
+      "label": "var AAF_url",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-62",
+      "name": "Evento visibilitychange / webkitvisibilitychange",
+      "label": "Evento visibilitychange / webkitvisibilitychange",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Regreso desde Background → Recarga Condicional"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-63",
+      "name": "callbackError",
+      "label": "callbackError",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "contracts.md",
+        "journeys.md"
+      ],
+      "sections": [
+        "Contrato de Error",
+        "Pasos observados en código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-64",
+      "name": "var app_http_protocol",
+      "label": "var app_http_protocol",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-65",
+      "name": "/",
+      "label": "/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO B. APIs consumidas directamente por este repo (no en catálogo SwaggerHub)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-66",
+      "name": "var DATA_LOAD_FAILURE_ERROR",
+      "label": "var DATA_LOAD_FAILURE_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-67",
+      "name": "1",
+      "label": "1",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Estado del catálogo MCP (pre-flight)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-68",
+      "name": "usuario llega al Claro Video streaming SPA",
+      "label": "usuario llega al Claro Video streaming SPA",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Arranque Exitoso → Redirect al SPA (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-69",
+      "name": "Jira/GitHub project/dashboard",
+      "label": "Jira/GitHub project/dashboard",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-70",
+      "name": "var NR_EVENT_ERROR",
+      "label": "var NR_EVENT_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-71",
+      "name": "USR-SmartCardLogin 1.0.0",
+      "label": "USR-SmartCardLogin 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-72",
+      "name": "Luna com.webos.settingsservice/getSystemSettings",
+      "label": "Luna com.webos.settingsservice/getSystemSettings",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "nr.js — Telemetría New Relic"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-73",
+      "name": "Api_v2_Account_1.0.0",
+      "label": "Api_v2_Account_1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Estado del catálogo MCP (pre-flight)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-74",
+      "name": "al recuperar red",
+      "label": "al recuperar red",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Network Error → Modal → Recovery"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-75",
+      "name": "**Tipo**",
+      "label": "**Tipo**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry",
+        "Journey 4a: Hash No Encontrado en index.html → Error",
+        "Journey 4b: Bundle JS Hash No Disponible (HTTP error) → Error"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-76",
+      "name": "https",
+      "label": "https",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO B. APIs consumidas directamente por este repo (no en catálogo SwaggerHub)",
+        "Contrato de Solicitud (Request)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-77",
+      "name": "disconnected",
+      "label": "disconnected",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Flujo principal AAF"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-78",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-79",
+      "name": "user telcel auth 1.0.0",
+      "label": "user telcel auth 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-80",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-81",
+      "name": "90",
+      "label": "90",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-82",
+      "name": "var PREFLIGHT_HASH_CHECK",
+      "label": "var PREFLIGHT_HASH_CHECK",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-83",
+      "name": "feedback modal",
+      "label": "feedback modal",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-84",
+      "name": "Si no",
+      "label": "Si no",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Comportamiento de deduplicación"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-85",
+      "name": "git log",
+      "label": "git log",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "11. Change History"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-86",
+      "name": "RegisterCV 1.0.0",
+      "label": "RegisterCV 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-87",
+      "name": "Jira / backlog",
+      "label": "Jira / backlog",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "10.1 Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-88",
+      "name": "cnica documentada por el equipo",
+      "label": "cnica documentada por el equipo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "10.2 Deuda tecnica"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-89",
+      "name": "algunas m",
+      "label": "algunas m",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "Riesgos de Performance Identificados en Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-90",
+      "name": "onErrorConnection",
+      "label": "onErrorConnection",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "evidencia_codigo.txt",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Flujo principal AAF",
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-91",
+      "name": "126",
+      "label": "126",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-92",
+      "name": "XHR_REQUEST_TIMEOUT_SECONDS_HASH",
+      "label": "XHR_REQUEST_TIMEOUT_SECONDS_HASH",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Solicitud (Request)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-93",
+      "name": "equipo de WebTV / README / CODEOWNERS",
+      "label": "equipo de WebTV / README / CODEOWNERS",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-94",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-95",
+      "name": "**Resultado**",
+      "label": "**Resultado**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry",
+        "Journey 4a: Hash No Encontrado en index.html → Error",
+        "Journey 4b: Bundle JS Hash No Disponible (HTTP error) → Error"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-96",
+      "name": "package_http.sh",
+      "label": "package_http.sh",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Build scripts"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-97",
+      "name": "notifica cambios",
+      "label": "notifica cambios",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "API: webOS Luna Services (v1.2.10 SDK — IPC interno, NO HTTP REST)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-98",
+      "name": "modelName",
+      "label": "modelName",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "nr.js — Telemetría New Relic"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-99",
+      "name": "var NETWORK_ERROR",
+      "label": "var NETWORK_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-100",
+      "name": "country",
+      "label": "country",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "nr.js — Telemetría New Relic"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-101",
+      "name": "enviar",
+      "label": "enviar",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Comportamiento de deduplicación"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-102",
+      "name": "**Estado**",
+      "label": "**Estado**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry",
+        "Journey 4a: Hash No Encontrado en index.html → Error",
+        "Journey 4b: Bundle JS Hash No Disponible (HTTP error) → Error"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-103",
+      "name": "127",
+      "label": "127",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-104",
+      "name": "96",
+      "label": "96",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-105",
+      "name": "package_prod.sh",
+      "label": "package_prod.sh",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Build scripts"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-106",
+      "name": "o por tipo",
+      "label": "o por tipo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "Riesgos de Performance Identificados en Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-107",
+      "name": "retryStartApp",
+      "label": "retryStartApp",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Pasos observados en código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-108",
+      "name": "Logout 1.0.0",
+      "label": "Logout 1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-109",
+      "name": "XHR_REQUEST_TIMEOUT_SECONDS",
+      "label": "XHR_REQUEST_TIMEOUT_SECONDS",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato de Solicitud (Request)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-110",
+      "name": "webOSDev.LGUDID",
+      "label": "webOSDev.LGUDID",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "nr.js — telemetría"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-111",
+      "name": "86",
+      "label": "86",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-112",
+      "name": "AuthApa 1.0.0",
+      "label": "AuthApa 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-113",
+      "name": "NO enviar",
+      "label": "NO enviar",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Comportamiento de deduplicación"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-114",
+      "name": "nr.sendErrorMetric",
+      "label": "nr.sendErrorMetric",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 7,
+      "files": [
+        "contracts.md",
+        "evidencia_codigo.txt",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Contrato de Error",
+        "Flujo principal AAF",
+        "3.2.2 Pasos observados",
+        "4.2 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-115",
+      "name": "false",
+      "label": "false",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "evidencia_codigo.txt",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Flujo principal AAF",
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-116",
+      "name": "var TYPE_URL_CANT_GET_HASHJS_FROM_INDEX_ERROR",
+      "label": "var TYPE_URL_CANT_GET_HASHJS_FROM_INDEX_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-117",
+      "name": "onSuccess.any connected",
+      "label": "onSuccess.any connected",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Flujo principal AAF"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-118",
+      "name": "**Evidencia primaria**",
+      "label": "**Evidencia primaria**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry",
+        "Journey 4a: Hash No Encontrado en index.html → Error",
+        "Journey 4b: Bundle JS Hash No Disponible (HTTP error) → Error"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-119",
+      "name": "4. Usuario presiona Enter",
+      "label": "4. Usuario presiona Enter",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-120",
+      "name": "**Trigger**",
+      "label": "**Trigger**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry",
+        "Journey 4a: Hash No Encontrado en index.html → Error",
+        "Journey 4b: Bundle JS Hash No Disponible (HTTP error) → Error"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-121",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-122",
+      "name": "getCommitHash",
+      "label": "getCommitHash",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "main.js — Orquestador"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-123",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-124",
+      "name": "user register 1.0.0",
+      "label": "user register 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-125",
+      "name": "IaaS/cloud provider del servidor aaf-cvideo-tv.clarovideo.net",
+      "label": "IaaS/cloud provider del servidor aaf-cvideo-tv.clarovideo.net",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-126",
+      "name": "User oauth callback login 1.0.0",
+      "label": "User oauth callback login 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-127",
+      "name": "n",
+      "label": "n",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-128",
+      "name": "analytics spec / equipo de producto",
+      "label": "analytics spec / equipo de producto",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-129",
+      "name": "98",
+      "label": "98",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-130",
+      "name": "create",
+      "label": "create",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-131",
+      "name": "nombre del propietario del spec",
+      "label": "nombre del propietario del spec",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-132",
+      "name": "128",
+      "label": "128",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-133",
+      "name": "**Frecuencia**",
+      "label": "**Frecuencia**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-134",
+      "name": "91",
+      "label": "91",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-135",
+      "name": "nativeModalError.setBodyText",
+      "label": "nativeModalError.setBodyText",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Pasos observados en código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-136",
+      "name": "usuario en Claro Video SPA",
+      "label": "usuario en Claro Video SPA",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.1 Journey: Arranque Exitoso → Redirect al SPA (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-137",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-138",
+      "name": "125",
+      "label": "125",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-139",
+      "name": "var XHR_REQUEST_TIMEOUT_SECONDS",
+      "label": "var XHR_REQUEST_TIMEOUT_SECONDS",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-140",
+      "name": "**Canal**",
+      "label": "**Canal**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-141",
+      "name": "var TYPE_NETWORK_ERROR",
+      "label": "var TYPE_NETWORK_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-142",
+      "name": "NativeModalButton",
+      "label": "NativeModalButton",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-143",
+      "name": "sin .github/workflows/ detectado",
+      "label": "sin .github/workflows/ detectado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-144",
+      "name": "true",
+      "label": "true",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 8,
+      "files": [
+        "contracts.md",
+        "evidencia_codigo.txt",
+        "journeys.md",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Comportamiento de deduplicación",
+        "Flujo principal AAF",
+        "Pasos observados en código",
+        "3.2.2 Pasos observados"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-145",
+      "name": "101",
+      "label": "101",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-146",
+      "name": "92",
+      "label": "92",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-147",
+      "name": "**Criticidad**",
+      "label": "**Criticidad**",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 3: SPA No Disponible → Modal de Error de App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-148",
+      "name": "Luna com.webos.service.tv.systemproperty/getSystemInfo",
+      "label": "Luna com.webos.service.tv.systemproperty/getSystemInfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "nr.js — Telemetría New Relic"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-149",
+      "name": "isInternetConnectionAvailable",
+      "label": "isInternetConnectionAvailable",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Journey 2: Error de Red → Modal → Retry",
+        "3.2 Journey: Error de Red → Modal → Retry",
+        "4.2 Sequence — Network Error → Modal → Recovery"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-150",
+      "name": "equipo de infraestructura / CDN del AAF URL",
+      "label": "equipo de infraestructura / CDN del AAF URL",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-151",
+      "name": "BRFRE o PRD de referencia",
+      "label": "BRFRE o PRD de referencia",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-152",
+      "name": "UserLoginDynamic 1.0.0",
+      "label": "UserLoginDynamic 1.0.0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-153",
+      "name": "hashResult",
+      "label": "hashResult",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "appManager.js — verificación"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-154",
+      "name": "var USE_LOCAL_URL",
+      "label": "var USE_LOCAL_URL",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-155",
+      "name": "RefreshToken 1.0.0",
+      "label": "RefreshToken 1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-156",
+      "name": "95",
+      "label": "95",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-157",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "3.3 Journey: SPA No Disponible → Modal Error App → Retry",
+        "3.4 Journey: Error de Integridad del Bundle JS → Modal Error App → Retry"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-158",
+      "name": "100",
+      "label": "100",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-159",
+      "name": "onSuccessConnection",
+      "label": "onSuccessConnection",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 4,
+      "files": [
+        "evidencia_codigo.txt",
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "Flujo principal AAF",
+        "3.2.2 Pasos observados",
+        "4.2 Sequence — Network Error → Modal → Recovery"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-160",
+      "name": "var IPK_version",
+      "label": "var IPK_version",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Constantes críticas"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-161",
+      "name": "ADR / backlog t",
+      "label": "ADR / backlog t",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "10.2 Deuda tecnica"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-162",
+      "name": "var TYPE_URL_HASHJS_ERROR",
+      "label": "var TYPE_URL_HASHJS_ERROR",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "Error type constants"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-163",
+      "name": "CI/CD automatizado",
+      "label": "CI/CD automatizado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-164",
+      "name": "NativeModal",
+      "label": "NativeModal",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-node-165",
+      "name": "accepted terms 1.0.0",
+      "label": "accepted terms 1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "📋 PASO A. APIs del ÍNDICE DE MAPEO — Dominio AUTH (12 APIs)"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-1",
+      "source": "claro-video-aaf-lg-nativa-node-48",
+      "target": "claro-video-aaf-lg-nativa-node-122",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-2",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-43",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-3",
+      "source": "claro-video-aaf-lg-nativa-node-148",
+      "target": "claro-video-aaf-lg-nativa-node-98",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-4",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-18",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-5",
+      "source": "claro-video-aaf-lg-nativa-node-72",
+      "target": "claro-video-aaf-lg-nativa-node-100",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-6",
+      "source": "claro-video-aaf-lg-nativa-node-67",
+      "target": "claro-video-aaf-lg-nativa-node-73",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-7",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-21",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-8",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-30",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-9",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-152",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-10",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-124",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-11",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-86",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-12",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-112",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-13",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-155",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-14",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-126",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-15",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-71",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-16",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-79",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-17",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-108",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-18",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-165",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-19",
+      "source": "claro-video-aaf-lg-nativa-node-65",
+      "target": "claro-video-aaf-lg-nativa-node-76",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-20",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-76",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-21",
+      "source": "claro-video-aaf-lg-nativa-node-109",
+      "target": "claro-video-aaf-lg-nativa-node-4",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-22",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-63",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-23",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-114",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-24",
+      "source": "claro-video-aaf-lg-nativa-node-92",
+      "target": "claro-video-aaf-lg-nativa-node-26",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-25",
+      "source": "claro-video-aaf-lg-nativa-node-45",
+      "target": "claro-video-aaf-lg-nativa-node-55",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-26",
+      "source": "claro-video-aaf-lg-nativa-node-50",
+      "target": "claro-video-aaf-lg-nativa-node-114",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-27",
+      "source": "claro-video-aaf-lg-nativa-node-144",
+      "target": "claro-video-aaf-lg-nativa-node-113",
+      "type": "returns_to",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-28",
+      "source": "claro-video-aaf-lg-nativa-node-84",
+      "target": "claro-video-aaf-lg-nativa-node-101",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-29",
+      "source": "claro-video-aaf-lg-nativa-node-9",
+      "target": "claro-video-aaf-lg-nativa-node-97",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-30",
+      "source": "claro-video-aaf-lg-nativa-node-2",
+      "target": "claro-video-aaf-lg-nativa-node-64",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-31",
+      "source": "claro-video-aaf-lg-nativa-node-60",
+      "target": "claro-video-aaf-lg-nativa-node-160",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-32",
+      "source": "claro-video-aaf-lg-nativa-node-111",
+      "target": "claro-video-aaf-lg-nativa-node-61",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-33",
+      "source": "claro-video-aaf-lg-nativa-node-81",
+      "target": "claro-video-aaf-lg-nativa-node-7",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-34",
+      "source": "claro-video-aaf-lg-nativa-node-158",
+      "target": "claro-video-aaf-lg-nativa-node-82",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-35",
+      "source": "claro-video-aaf-lg-nativa-node-145",
+      "target": "claro-video-aaf-lg-nativa-node-5",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-36",
+      "source": "claro-video-aaf-lg-nativa-node-34",
+      "target": "claro-video-aaf-lg-nativa-node-6",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-37",
+      "source": "claro-video-aaf-lg-nativa-node-52",
+      "target": "claro-video-aaf-lg-nativa-node-139",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-38",
+      "source": "claro-video-aaf-lg-nativa-node-11",
+      "target": "claro-video-aaf-lg-nativa-node-53",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-39",
+      "source": "claro-video-aaf-lg-nativa-node-138",
+      "target": "claro-video-aaf-lg-nativa-node-10",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-40",
+      "source": "claro-video-aaf-lg-nativa-node-91",
+      "target": "claro-video-aaf-lg-nativa-node-154",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-41",
+      "source": "claro-video-aaf-lg-nativa-node-103",
+      "target": "claro-video-aaf-lg-nativa-node-28",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-42",
+      "source": "claro-video-aaf-lg-nativa-node-132",
+      "target": "claro-video-aaf-lg-nativa-node-15",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-43",
+      "source": "claro-video-aaf-lg-nativa-node-134",
+      "target": "claro-video-aaf-lg-nativa-node-66",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-44",
+      "source": "claro-video-aaf-lg-nativa-node-146",
+      "target": "claro-video-aaf-lg-nativa-node-99",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-45",
+      "source": "claro-video-aaf-lg-nativa-node-24",
+      "target": "claro-video-aaf-lg-nativa-node-70",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-46",
+      "source": "claro-video-aaf-lg-nativa-node-156",
+      "target": "claro-video-aaf-lg-nativa-node-141",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-47",
+      "source": "claro-video-aaf-lg-nativa-node-104",
+      "target": "claro-video-aaf-lg-nativa-node-19",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-48",
+      "source": "claro-video-aaf-lg-nativa-node-57",
+      "target": "claro-video-aaf-lg-nativa-node-116",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-49",
+      "source": "claro-video-aaf-lg-nativa-node-129",
+      "target": "claro-video-aaf-lg-nativa-node-162",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-50",
+      "source": "claro-video-aaf-lg-nativa-node-115",
+      "target": "claro-video-aaf-lg-nativa-node-90",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-51",
+      "source": "claro-video-aaf-lg-nativa-node-77",
+      "target": "claro-video-aaf-lg-nativa-node-90",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-52",
+      "source": "claro-video-aaf-lg-nativa-node-117",
+      "target": "claro-video-aaf-lg-nativa-node-159",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-53",
+      "source": "claro-video-aaf-lg-nativa-node-17",
+      "target": "claro-video-aaf-lg-nativa-node-33",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-54",
+      "source": "claro-video-aaf-lg-nativa-node-144",
+      "target": "claro-video-aaf-lg-nativa-node-114",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-55",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-22",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-56",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-153",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-57",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-20",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-58",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-40",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-59",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-110",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-60",
+      "source": "claro-video-aaf-lg-nativa-node-105",
+      "target": "claro-video-aaf-lg-nativa-node-16",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-61",
+      "source": "claro-video-aaf-lg-nativa-node-35",
+      "target": "claro-video-aaf-lg-nativa-node-16",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-62",
+      "source": "claro-video-aaf-lg-nativa-node-96",
+      "target": "claro-video-aaf-lg-nativa-node-16",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-63",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-68",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-64",
+      "source": "claro-video-aaf-lg-nativa-node-56",
+      "target": "claro-video-aaf-lg-nativa-node-149",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-65",
+      "source": "claro-video-aaf-lg-nativa-node-59",
+      "target": "claro-video-aaf-lg-nativa-node-107",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-66",
+      "source": "claro-video-aaf-lg-nativa-node-144",
+      "target": "claro-video-aaf-lg-nativa-node-25",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-67",
+      "source": "claro-video-aaf-lg-nativa-node-38",
+      "target": "claro-video-aaf-lg-nativa-node-135",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-68",
+      "source": "claro-video-aaf-lg-nativa-node-62",
+      "target": "claro-video-aaf-lg-nativa-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-69",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-44",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-70",
+      "source": "claro-video-aaf-lg-nativa-node-47",
+      "target": "claro-video-aaf-lg-nativa-node-13",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-71",
+      "source": "claro-video-aaf-lg-nativa-node-106",
+      "target": "claro-video-aaf-lg-nativa-node-89",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-72",
+      "source": "claro-video-aaf-lg-nativa-node-131",
+      "target": "claro-video-aaf-lg-nativa-node-93",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-73",
+      "source": "claro-video-aaf-lg-nativa-node-23",
+      "target": "claro-video-aaf-lg-nativa-node-54",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-74",
+      "source": "claro-video-aaf-lg-nativa-node-51",
+      "target": "claro-video-aaf-lg-nativa-node-49",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-75",
+      "source": "claro-video-aaf-lg-nativa-node-39",
+      "target": "claro-video-aaf-lg-nativa-node-150",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-76",
+      "source": "claro-video-aaf-lg-nativa-node-125",
+      "target": "claro-video-aaf-lg-nativa-node-31",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-77",
+      "source": "claro-video-aaf-lg-nativa-node-151",
+      "target": "claro-video-aaf-lg-nativa-node-36",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-78",
+      "source": "claro-video-aaf-lg-nativa-node-69",
+      "target": "claro-video-aaf-lg-nativa-node-32",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-79",
+      "source": "claro-video-aaf-lg-nativa-node-37",
+      "target": "claro-video-aaf-lg-nativa-node-58",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-80",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-136",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-81",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-130",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-82",
+      "source": "claro-video-aaf-lg-nativa-node-119",
+      "target": "claro-video-aaf-lg-nativa-node-14",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-83",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-83",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-84",
+      "source": "claro-video-aaf-lg-nativa-node-127",
+      "target": "claro-video-aaf-lg-nativa-node-159",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-85",
+      "source": "claro-video-aaf-lg-nativa-node-3",
+      "target": "claro-video-aaf-lg-nativa-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-86",
+      "source": "claro-video-aaf-lg-nativa-node-74",
+      "target": "claro-video-aaf-lg-nativa-node-159",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-87",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-29",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-88",
+      "source": "claro-video-aaf-lg-nativa-node-163",
+      "target": "claro-video-aaf-lg-nativa-node-143",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-89",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-128",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-90",
+      "source": "claro-video-aaf-lg-nativa-node-12",
+      "target": "claro-video-aaf-lg-nativa-node-87",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-91",
+      "source": "claro-video-aaf-lg-nativa-node-88",
+      "target": "claro-video-aaf-lg-nativa-node-161",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-92",
+      "source": "claro-video-aaf-lg-nativa-node-8",
+      "target": "claro-video-aaf-lg-nativa-node-85",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-lg-nativa-edge-93",
+      "source": "claro-video-aaf-lg-nativa-node-1",
+      "target": "claro-video-aaf-lg-nativa-node-42",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_AAF_APP_BOOTSTRAPPING.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:54.948Z",
+    "nodeTypes": [
+      "component"
+    ],
+    "topFiles": [
+      "componentes.md",
+      "contracts.md",
+      "evidencia_codigo.txt",
+      "journeys.md",
+      "metricas.md",
+      "SPEC_AAF_APP_BOOTSTRAPPING.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-aff-lg-nativa",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-aff-lg-nativa.md",
+          "analysis\\diagrama_global_claro-video-aff-lg-nativa.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 158,
+          "edgeCount": 92,
+          "groupCount": 1,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-aff-lg-nativa",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-aff-lg-nativa.md"
+        ],
+        "metrics": {
+          "nodeCount": 3,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-aff-lg-nativa/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-aff-lg-nativa_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-aff-lg-nativa_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 158,
+          "edgeCount": 92,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-aff-lg-nativa/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-aff-lg-nativa_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-aff-lg-nativa_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 158,
+          "edgeCount": 92,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 5,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 165,
+          "edgeCount": 93,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      }
+    ]
+  }
+}
