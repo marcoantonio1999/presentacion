@@ -1,0 +1,1871 @@
+{
+  "repo": "claro-video-aaf-samsung-nativa",
+  "title": "AAF Samsung Nativa",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-aaf-samsung-nativa",
+    "annex": "ANEXO_claro-video-aaf-samsung-nativa.html",
+    "vssRoute": "#/fase-1/vss/claro-video-aaf-samsung-nativa"
+  },
+  "source": {
+    "docPath": "claro-video-aaf-samsung-nativa\\claro-video-aaf-samsung-nativa\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 5,
+    "flowchartCount": 4,
+    "sequenceCount": 1,
+    "totalNodes": 108,
+    "totalEdges": 94,
+    "sections": [
+      "Diagrama 1: Arquitectura General AAF",
+      "Diagramas de Flujos de Procesos",
+      "Diagrama 4: Módulos JS — Dependencias",
+      "Diagrama 5: Pipeline de Build",
+      "Diagrama 6: Manejo de Errores y Métricas New Relic"
+    ]
+  },
+  "diagrams": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "Arquitectura General AAF",
+        "kind": "flowchart",
+        "section": "Diagrama 1: Arquitectura General AAF",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-aaf-samsung-nativa\\claro-video-aaf-samsung-nativa\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "TIZEN",
+              "label": "Samsung Tizen Smart TV (Dispositivo)"
+            },
+            {
+              "id": "NATIVE",
+              "label": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "EXTERNAL",
+              "label": "Servicios Externos"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "HTML",
+              "label": "index.html\\n(Entry Point WGT)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "CNTS",
+              "label": "cnts.js\\n(Constantes & Config)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "MAIN",
+              "label": "main.js\\n(Orquestador)",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "NR",
+              "label": "nr.js\\n(New Relic)",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "MODAL",
+              "label": "nativeModal.js\\n(UI Modal Error)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "BGCTRL",
+              "label": "backgroundController.js\\n(BG/FG Lifecycle)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "APPMGR",
+              "label": "appManager.js\\n(Preflight Check)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "REQ",
+              "label": "req.js\\n(XHR Wrapper)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "LS",
+              "label": "localStorage\\n(CVIDEO_AAF_LAUNCH_TIMEMARK)",
+              "type": "component",
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+            },
+            {
+              "id": "WEBAPIS",
+              "label": "Samsung WebAPI\\n(webapis.network\\nwebapis.productinfo\\ntizen.application)",
+              "type": "component",
+              "group": "Samsung Tizen Smart TV (Dispositivo)"
+            },
+            {
+              "id": "AAF",
+              "label": "AAF Web App\\nhttps://aaf-cvideo-tv.clarovideo.net/\\n(App React hosteada)",
+              "type": "component",
+              "group": "Servicios Externos"
+            },
+            {
+              "id": "NEWRELIC",
+              "label": "New Relic Insights\\nhttps://insights-collector.newrelic.com\\n(Monitoreo & Eventos)",
+              "type": "component",
+              "group": "Servicios Externos"
+            },
+            {
+              "id": "FONTS",
+              "label": "Google Fonts\\n(Roboto CDN)",
+              "type": "component",
+              "group": "Servicios Externos"
+            }
+          ],
+          "edges": [
+            {
+              "id": "HTML=>CNTS=>=>solid",
+              "source": "HTML",
+              "target": "CNTS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CNTS=>MAIN=>=>solid",
+              "source": "CNTS",
+              "target": "MAIN",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>NR=>=>solid",
+              "source": "MAIN",
+              "target": "NR",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>MODAL=>=>solid",
+              "source": "MAIN",
+              "target": "MODAL",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>BGCTRL=>=>solid",
+              "source": "MAIN",
+              "target": "BGCTRL",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>APPMGR=>=>solid",
+              "source": "MAIN",
+              "target": "APPMGR",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "APPMGR=>REQ=>=>solid",
+              "source": "APPMGR",
+              "target": "REQ",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NR=>REQ=>=>solid",
+              "source": "NR",
+              "target": "REQ",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "BGCTRL=>LS=>=>solid",
+              "source": "BGCTRL",
+              "target": "LS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>WEBAPIS=>=>solid",
+              "source": "MAIN",
+              "target": "WEBAPIS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NR=>WEBAPIS=>=>solid",
+              "source": "NR",
+              "target": "WEBAPIS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "APPMGR=>AAF=>GET index.html\\n+ GET main.[hash].js=>solid",
+              "source": "APPMGR",
+              "target": "AAF",
+              "label": "GET index.html\\n+ GET main.[hash].js",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NR=>NEWRELIC=>POST AppStartupMetricsError=>solid",
+              "source": "NR",
+              "target": "NEWRELIC",
+              "label": "POST AppStartupMetricsError",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HTML=>FONTS=>preconnect=>solid",
+              "source": "HTML",
+              "target": "FONTS",
+              "label": "preconnect",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>AAF=>window.location.replace(AAF_url)=>solid",
+              "source": "MAIN",
+              "target": "AAF",
+              "label": "window.location.replace(AAF_url)",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 13,
+          "edgeCount": 15,
+          "groupCount": 3,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Flujo Principal 1: Arranque de la Aplicación (Startup Sequence)",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-aaf-samsung-nativa\\claro-video-aaf-samsung-nativa\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "W",
+              "label": "window.onload"
+            },
+            {
+              "id": "M",
+              "label": "main.js"
+            },
+            {
+              "id": "NR",
+              "label": "nr.js"
+            },
+            {
+              "id": "BC",
+              "label": "backgroundController.js"
+            },
+            {
+              "id": "IC",
+              "label": "internetConnection (main.js)"
+            },
+            {
+              "id": "NET",
+              "label": "webapis.network"
+            },
+            {
+              "id": "AM",
+              "label": "appManager.js"
+            },
+            {
+              "id": "AAF",
+              "label": "AAF Server"
+            },
+            {
+              "id": "W-",
+              "label": "W-"
+            },
+            {
+              "id": "M-",
+              "label": "M-"
+            },
+            {
+              "id": "NR--",
+              "label": "NR--"
+            },
+            {
+              "id": "IC-",
+              "label": "IC-"
+            },
+            {
+              "id": "NET--",
+              "label": "NET--"
+            },
+            {
+              "id": "AM-",
+              "label": "AM-"
+            },
+            {
+              "id": "AAF--",
+              "label": "AAF--"
+            },
+            {
+              "id": "AM--",
+              "label": "AM--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-W",
+              "label": "window.onload",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-M",
+              "label": "main.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-NR",
+              "label": "nr.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-BC",
+              "label": "backgroundController.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-IC",
+              "label": "internetConnection (main.js)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-NET",
+              "label": "webapis.network",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-AM",
+              "label": "appManager.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-AAF",
+              "label": "AAF Server",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-W-",
+              "label": "W-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-M-",
+              "label": "M-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-NR--",
+              "label": "NR--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-IC-",
+              "label": "IC-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-NET--",
+              "label": "NET--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-AM-",
+              "label": "AM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-AAF--",
+              "label": "AAF--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-AM--",
+              "label": "AM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "startApp()",
+              "subtitle": "W- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "resetTimeMark()",
+              "subtitle": "M- → backgroundController.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1680,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "getAppVersion() + getTVInfo() + getUDID() + getCountry()",
+              "subtitle": "M- → nr.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1540,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "datos del dispositivo recopilados",
+              "subtitle": "NR-- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1540,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "setAppVisibilityHandler()",
+              "subtitle": "M- → internetConnection (main.js)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1820,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "checkConnection()",
+              "subtitle": "M- → internetConnection (main.js)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1820,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "isConnectedToGateway()",
+              "subtitle": "IC- → webapis.network",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2240,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "ALT",
+              "subtitle": "Conectado",
+              "type": "control",
+              "group": "control",
+              "stat": "8",
+              "x": 2100,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "true",
+              "subtitle": "NET-- → internetConnection (main.js)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2240,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "onSuccessConnection()",
+              "subtitle": "IC- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1680,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "appIsAvailable(AAF_url)",
+              "subtitle": "M- → appManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2100,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "GET https://aaf-cvideo-tv.clarovideo.net/",
+              "subtitle": "AM- → AAF Server",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 2800,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "ALT",
+              "subtitle": "Index HTML disponible (200)",
+              "type": "control",
+              "group": "control",
+              "stat": "13",
+              "x": 2100,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "indexhtml",
+              "subtitle": "AAF-- → appManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 2800,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "getCommitHash(indexhtml)",
+              "subtitle": "AM- → appManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 2660,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "ALT",
+              "subtitle": "Hash encontrado",
+              "type": "control",
+              "group": "control",
+              "stat": "16",
+              "x": 2100,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "GET static/js/react.[hash].js",
+              "subtitle": "AM- → AAF Server",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "17",
+              "x": 2800,
+              "y": 2664
+            },
+            {
+              "id": "step-18",
+              "label": "ALT",
+              "subtitle": "JS disponible (200)",
+              "type": "control",
+              "group": "control",
+              "stat": "18",
+              "x": 2100,
+              "y": 2820
+            },
+            {
+              "id": "step-19",
+              "label": "js",
+              "subtitle": "AAF-- → appManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "19",
+              "x": 2800,
+              "y": 2976
+            },
+            {
+              "id": "step-20",
+              "label": "callback éxito",
+              "subtitle": "AM-- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "20",
+              "x": 2240,
+              "y": 3132
+            },
+            {
+              "id": "step-21",
+              "label": "redirectAAF()",
+              "subtitle": "M- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "21",
+              "x": 1400,
+              "y": 3288
+            },
+            {
+              "id": "step-22",
+              "label": "Nota",
+              "subtitle": "M · window.location.replace(AAF_url)",
+              "type": "note",
+              "group": "note",
+              "stat": "22",
+              "x": 2100,
+              "y": 3444
+            },
+            {
+              "id": "step-23",
+              "label": "ELSE",
+              "subtitle": "JS no disponible",
+              "type": "control",
+              "group": "control",
+              "stat": "23",
+              "x": 2100,
+              "y": 3600
+            },
+            {
+              "id": "step-24",
+              "label": "callbackError",
+              "subtitle": "AM-- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "24",
+              "x": 2240,
+              "y": 3756
+            },
+            {
+              "id": "step-25",
+              "label": "sendErrorMetric(TYPE_URL_HASHJS_ERROR)",
+              "subtitle": "M- → nr.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "25",
+              "x": 1540,
+              "y": 3912
+            },
+            {
+              "id": "step-26",
+              "label": "showAppError() → modal visible",
+              "subtitle": "M- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "26",
+              "x": 1400,
+              "y": 4068
+            },
+            {
+              "id": "step-27",
+              "label": "ELSE",
+              "subtitle": "Hash no encontrado",
+              "type": "control",
+              "group": "control",
+              "stat": "27",
+              "x": 2100,
+              "y": 4224
+            },
+            {
+              "id": "step-28",
+              "label": "callbackError",
+              "subtitle": "AM-- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "28",
+              "x": 2240,
+              "y": 4380
+            },
+            {
+              "id": "step-29",
+              "label": "sendErrorMetric(TYPE_URL_CANT_GET_HASHJS_FROM_INDEX_ERROR)",
+              "subtitle": "M- → nr.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "29",
+              "x": 1540,
+              "y": 4536
+            },
+            {
+              "id": "step-30",
+              "label": "showAppError()",
+              "subtitle": "M- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "30",
+              "x": 1400,
+              "y": 4692
+            },
+            {
+              "id": "step-31",
+              "label": "ELSE",
+              "subtitle": "URL no disponible",
+              "type": "control",
+              "group": "control",
+              "stat": "31",
+              "x": 2100,
+              "y": 4848
+            },
+            {
+              "id": "step-32",
+              "label": "error HTTP",
+              "subtitle": "AAF-- → appManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "32",
+              "x": 2800,
+              "y": 5004
+            },
+            {
+              "id": "step-33",
+              "label": "callbackError",
+              "subtitle": "AM-- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "33",
+              "x": 2240,
+              "y": 5160
+            },
+            {
+              "id": "step-34",
+              "label": "sendErrorMetric(TYPE_URL_AAF_ERROR)",
+              "subtitle": "M- → nr.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "34",
+              "x": 1540,
+              "y": 5316
+            },
+            {
+              "id": "step-35",
+              "label": "showAppError()",
+              "subtitle": "M- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "35",
+              "x": 1400,
+              "y": 5472
+            },
+            {
+              "id": "step-36",
+              "label": "ELSE",
+              "subtitle": "Sin conexión",
+              "type": "control",
+              "group": "control",
+              "stat": "36",
+              "x": 2100,
+              "y": 5628
+            },
+            {
+              "id": "step-37",
+              "label": "false",
+              "subtitle": "NET-- → internetConnection (main.js)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "37",
+              "x": 2240,
+              "y": 5784
+            },
+            {
+              "id": "step-38",
+              "label": "onErrorConnection()",
+              "subtitle": "IC- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "38",
+              "x": 1680,
+              "y": 5940
+            },
+            {
+              "id": "step-39",
+              "label": "nativeModalError.show() (modal red)",
+              "subtitle": "M- → main.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "39",
+              "x": 1400,
+              "y": 6096
+            },
+            {
+              "id": "step-40",
+              "label": "sendErrorMetric(TYPE_NETWORK_ERROR) [próxima reconexión]",
+              "subtitle": "M- → nr.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "40",
+              "x": 1540,
+              "y": 6252
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-17=>step-18",
+              "source": "step-17",
+              "target": "step-18",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-18=>step-19",
+              "source": "step-18",
+              "target": "step-19",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-19=>step-20",
+              "source": "step-19",
+              "target": "step-20",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-20=>step-21",
+              "source": "step-20",
+              "target": "step-21",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-21=>step-22",
+              "source": "step-21",
+              "target": "step-22",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-22=>step-23",
+              "source": "step-22",
+              "target": "step-23",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-23=>step-24",
+              "source": "step-23",
+              "target": "step-24",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-24=>step-25",
+              "source": "step-24",
+              "target": "step-25",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-25=>step-26",
+              "source": "step-25",
+              "target": "step-26",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-26=>step-27",
+              "source": "step-26",
+              "target": "step-27",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-27=>step-28",
+              "source": "step-27",
+              "target": "step-28",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-28=>step-29",
+              "source": "step-28",
+              "target": "step-29",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-29=>step-30",
+              "source": "step-29",
+              "target": "step-30",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-30=>step-31",
+              "source": "step-30",
+              "target": "step-31",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-31=>step-32",
+              "source": "step-31",
+              "target": "step-32",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-32=>step-33",
+              "source": "step-32",
+              "target": "step-33",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-33=>step-34",
+              "source": "step-33",
+              "target": "step-34",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-34=>step-35",
+              "source": "step-34",
+              "target": "step-35",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-35=>step-36",
+              "source": "step-35",
+              "target": "step-36",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-36=>step-37",
+              "source": "step-36",
+              "target": "step-37",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-37=>step-38",
+              "source": "step-37",
+              "target": "step-38",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-38=>step-39",
+              "source": "step-38",
+              "target": "step-39",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-39=>step-40",
+              "source": "step-39",
+              "target": "step-40",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 16,
+          "participantCount": 16
+        },
+        "metrics": {
+          "nodeCount": 56,
+          "edgeCount": 39,
+          "groupCount": 16,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Módulos JS — Dependencias",
+        "kind": "flowchart",
+        "section": "Diagrama 4: Módulos JS — Dependencias",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-aaf-samsung-nativa\\claro-video-aaf-samsung-nativa\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "CNTS",
+              "label": "cnts.js\\n(Globals: AAF_url, WGT_version\\nTimers, i18n, Flags)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "REQ",
+              "label": "req.js\\n(XHR Wrapper)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MAIN",
+              "label": "main.js\\n(Orquestador)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NR",
+              "label": "nr.js\\n(New Relic)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MODAL",
+              "label": "nativeModal.js\\n(UI Modal)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "BGCTRL",
+              "label": "backgroundController.js\\n(BG Lifecycle)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "APPMGR",
+              "label": "appManager.js\\n(AAF Preflight)",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "CNTS=>APPMGR=>AAF_url, timeouts,\\nflags, i18n=>solid",
+              "source": "CNTS",
+              "target": "APPMGR",
+              "label": "AAF_url, timeouts,\\nflags, i18n",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CNTS=>NR=>NR_url, WGT_version\\nerror types=>solid",
+              "source": "CNTS",
+              "target": "NR",
+              "label": "NR_url, WGT_version\\nerror types",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CNTS=>MAIN=>AAF_url, DO_REDIRECT_AAF\\nTimers, SHOW_SCREEN_LOG=>solid",
+              "source": "CNTS",
+              "target": "MAIN",
+              "label": "AAF_url, DO_REDIRECT_AAF\\nTimers, SHOW_SCREEN_LOG",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CNTS=>BGCTRL=>TIME_TO_CLOSE_APP\\n_BACKGROUND_SECONDS=>solid",
+              "source": "CNTS",
+              "target": "BGCTRL",
+              "label": "TIME_TO_CLOSE_APP\\n_BACKGROUND_SECONDS",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CNTS=>MODAL=>NativeModalNetworkTexts\\nNativeModalErrorTexts=>solid",
+              "source": "CNTS",
+              "target": "MODAL",
+              "label": "NativeModalNetworkTexts\\nNativeModalErrorTexts",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "REQ=>APPMGR=>request(url, cb, cbErr)=>solid",
+              "source": "REQ",
+              "target": "APPMGR",
+              "label": "request(url, cb, cbErr)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "REQ=>NR=>request(url, cb, cbErr)=>solid",
+              "source": "REQ",
+              "target": "NR",
+              "label": "request(url, cb, cbErr)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>APPMGR=>appIsAvailable()\\nmainJSIsAvailable()\\ngetCommitHash()=>solid",
+              "source": "MAIN",
+              "target": "APPMGR",
+              "label": "appIsAvailable()\\nmainJSIsAvailable()\\ngetCommitHash()",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>BGCTRL=>setTimeMark()\\nreloadApp()\\nresetTimeMark()=>solid",
+              "source": "MAIN",
+              "target": "BGCTRL",
+              "label": "setTimeMark()\\nreloadApp()\\nresetTimeMark()",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>MODAL=>create()\\nshow() / hide()\\nsetBodyText()\\nsetRetryCallback()=>solid",
+              "source": "MAIN",
+              "target": "MODAL",
+              "label": "create()\\nshow() / hide()\\nsetBodyText()\\nsetRetryCallback()",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MAIN=>NR=>getAppVersion()\\ngetTVInfo()\\ngetUDID()\\ngetCountry()\\nsendErrorMetric()=>solid",
+              "source": "MAIN",
+              "target": "NR",
+              "label": "getAppVersion()\\ngetTVInfo()\\ngetUDID()\\ngetCountry()\\nsendErrorMetric()",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 7,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Pipeline de Build",
+        "kind": "flowchart",
+        "section": "Diagrama 5: Pipeline de Build",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-aaf-samsung-nativa\\claro-video-aaf-samsung-nativa\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [
+            {
+              "id": "PROD",
+              "label": "package_prod.sh"
+            },
+            {
+              "id": "DEV",
+              "label": "package_dev.sh"
+            },
+            {
+              "id": "HTTP",
+              "label": "package_http.sh"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "SRC",
+              "label": "Clarovideo/\\n(código fuente)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B1",
+              "label": "tizen build-web\\n--optimize",
+              "type": "component",
+              "group": "package_prod.sh"
+            },
+            {
+              "id": "P1",
+              "label": "tizen package\\n-t wgt -s AMX",
+              "type": "component",
+              "group": "package_prod.sh"
+            },
+            {
+              "id": "B2",
+              "label": "tizen build-web",
+              "type": "component",
+              "group": "package_dev.sh"
+            },
+            {
+              "id": "P2",
+              "label": "tizen package\\n-t wgt",
+              "type": "component",
+              "group": "package_dev.sh"
+            },
+            {
+              "id": "B3",
+              "label": "tizen build-web\\n(http protocol)",
+              "type": "component",
+              "group": "package_http.sh"
+            },
+            {
+              "id": "P3",
+              "label": "tizen package\\n-t wgt",
+              "type": "component",
+              "group": "package_http.sh"
+            },
+            {
+              "id": "PROD",
+              "label": "PROD",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DEV",
+              "label": "DEV",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "HTTP",
+              "label": "HTTP",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R1",
+              "label": "release/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R2",
+              "label": "release/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R3",
+              "label": "release/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "TV",
+              "label": "Samsung TV",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "B1=>P1=>=>solid",
+              "source": "B1",
+              "target": "P1",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B2=>P2=>=>solid",
+              "source": "B2",
+              "target": "P2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B3=>P3=>=>solid",
+              "source": "B3",
+              "target": "P3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SRC=>PROD=>=>solid",
+              "source": "SRC",
+              "target": "PROD",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SRC=>DEV=>=>solid",
+              "source": "SRC",
+              "target": "DEV",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SRC=>HTTP=>=>solid",
+              "source": "SRC",
+              "target": "HTTP",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PROD=>R1=>Clarovideo_prod.wgt\\n(HTTPS + firma AMX)=>solid",
+              "source": "PROD",
+              "target": "R1",
+              "label": "Clarovideo_prod.wgt\\n(HTTPS + firma AMX)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DEV=>R2=>Clarovideo_dev.wgt\\n(HTTPS, sin redirect AAF)=>solid",
+              "source": "DEV",
+              "target": "R2",
+              "label": "Clarovideo_dev.wgt\\n(HTTPS, sin redirect AAF)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HTTP=>R3=>Clarovideo_http.wgt\\n(HTTP, Charles proxy)=>solid",
+              "source": "HTTP",
+              "target": "R3",
+              "label": "Clarovideo_http.wgt\\n(HTTP, Charles proxy)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "R1=>TV=>install_wgt_on_device.sh=>solid",
+              "source": "R1",
+              "target": "TV",
+              "label": "install_wgt_on_device.sh",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "R2=>TV=>install_wgt_on_device.sh=>solid",
+              "source": "R2",
+              "target": "TV",
+              "label": "install_wgt_on_device.sh",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "R3=>TV=>install_wgt_on_device.sh=>solid",
+              "source": "R3",
+              "target": "TV",
+              "label": "install_wgt_on_device.sh",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 14,
+          "edgeCount": 12,
+          "groupCount": 3,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Manejo de Errores y Métricas New Relic",
+        "kind": "flowchart",
+        "section": "Diagrama 6: Manejo de Errores y Métricas New Relic",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-aaf-samsung-nativa\\claro-video-aaf-samsung-nativa\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "START",
+              "label": "Startup",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK-Conectado-a-Gateway",
+              "label": "CHK{¿Conectado a Gateway?}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK",
+              "label": "CHK",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ERR_NET",
+              "label": "onErrorConnection()\\nnativeModal: error red\\n(NativeModalNetworkTexts)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK_AAF-GET-AAF-index-html",
+              "label": "CHK_AAF{GET AAF index.html}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK_AAF",
+              "label": "CHK_AAF",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ERR_AAF",
+              "label": "showAppError()\\nnr.sendErrorMetric(TYPE=2)\\nAAF URL no disponible",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK_HASH-Hash-JS-en-HTML",
+              "label": "CHK_HASH{¿Hash JS en HTML?}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK_HASH",
+              "label": "CHK_HASH",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ERR_HASH",
+              "label": "showAppError()\\nnr.sendErrorMetric(TYPE=3)\\nHash no en index.html",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK_JS-GET-react-hash-js",
+              "label": "CHK_JS{\"GET react.[hash].js\"}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CHK_JS",
+              "label": "CHK_JS",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ERR_JS",
+              "label": "showAppError()\\nnr.sendErrorMetric(TYPE=4)\\nJS no disponible",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "REDIRECT",
+              "label": "redirectAAF()\\nwindow.location.replace(AAF_url) ✅",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NR_NET",
+              "label": "nr → New Relic:\\nType=1 (próx. conexión)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NR_AAF",
+              "label": "nr → New Relic:\\nType=2",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NR_HASH",
+              "label": "nr → New Relic:\\nType=3",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NR_JS",
+              "label": "nr → New Relic:\\nType=4",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "START=>CHK-Conectado-a-Gateway=>=>solid",
+              "source": "START",
+              "target": "CHK-Conectado-a-Gateway",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK=>ERR_NET=>No=>solid",
+              "source": "CHK",
+              "target": "ERR_NET",
+              "label": "No",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_NET=>CHK=>Reintento usuario\\n(Enter / KeyCode 13)=>solid",
+              "source": "ERR_NET",
+              "target": "CHK",
+              "label": "Reintento usuario\\n(Enter / KeyCode 13)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK=>CHK_AAF-GET-AAF-index-html=>Sí=>solid",
+              "source": "CHK",
+              "target": "CHK_AAF-GET-AAF-index-html",
+              "label": "Sí",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK_AAF=>ERR_AAF=>Error HTTP=>solid",
+              "source": "CHK_AAF",
+              "target": "ERR_AAF",
+              "label": "Error HTTP",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK_AAF=>CHK_HASH-Hash-JS-en-HTML=>200 OK=>solid",
+              "source": "CHK_AAF",
+              "target": "CHK_HASH-Hash-JS-en-HTML",
+              "label": "200 OK",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK_HASH=>ERR_HASH=>No=>solid",
+              "source": "CHK_HASH",
+              "target": "ERR_HASH",
+              "label": "No",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK_HASH=>CHK_JS-GET-react-hash-js=>Sí=>solid",
+              "source": "CHK_HASH",
+              "target": "CHK_JS-GET-react-hash-js",
+              "label": "Sí",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK_JS=>ERR_JS=>Error=>solid",
+              "source": "CHK_JS",
+              "target": "ERR_JS",
+              "label": "Error",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CHK_JS=>REDIRECT=>200 OK=>solid",
+              "source": "CHK_JS",
+              "target": "REDIRECT",
+              "label": "200 OK",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_AAF=>CHK_AAF=>Reintento\\n(Enter)=>solid",
+              "source": "ERR_AAF",
+              "target": "CHK_AAF",
+              "label": "Reintento\\n(Enter)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_HASH=>CHK_AAF=>Reintento\\n(Enter)=>solid",
+              "source": "ERR_HASH",
+              "target": "CHK_AAF",
+              "label": "Reintento\\n(Enter)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_JS=>CHK_AAF=>Reintento\\n(Enter)=>solid",
+              "source": "ERR_JS",
+              "target": "CHK_AAF",
+              "label": "Reintento\\n(Enter)",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_NET=>NR_NET=>=>solid",
+              "source": "ERR_NET",
+              "target": "NR_NET",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_AAF=>NR_AAF=>=>solid",
+              "source": "ERR_AAF",
+              "target": "NR_AAF",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_HASH=>NR_HASH=>=>solid",
+              "source": "ERR_HASH",
+              "target": "NR_HASH",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ERR_JS=>NR_JS=>=>solid",
+              "source": "ERR_JS",
+              "target": "NR_JS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 18,
+          "edgeCount": 17,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

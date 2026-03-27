@@ -257,7 +257,7 @@ La solucion implementa una app principal UWP (`DLA.ClaroVideo`) en .NET/C# con c
 
 Ver detalle en:
 - `../02-analisis/ARCH_02D_DATAFLOWS.md`
-- `../diagrams/ARCHITECTURE_DIAGRAMS.md` (`D02`, `D03`)
+- `index.html#/fase-1/architecture/claro-video-universal-windows-platform` (`D02`, `D03`)
 
 ## 5) Entry points y composicion
 Entrypoints principales observados:
@@ -319,7 +319,7 @@ Composicion DI:
 - Estado y ciclo de vida coordinados por scopes (`ApplicationScope`, `UserScope`).
 
 ### Diagrama de Alto Nivel
-- Ver `../diagrams/ARCHITECTURE_DIAGRAMS.md`:
+- Ver `index.html#/fase-1/architecture/claro-video-universal-windows-platform`:
   - `D01` (capas)
   - `D04` (entrypoints/activacion)
   - `D06` (dependencias de modulos)
@@ -463,7 +463,7 @@ Composicion DI:
 - `../02-analisis/ARCH_02D_DATAFLOWS.md`
 - `../02-analisis/ARCH_02E_ANTIPATTERNS.md`
 - `../02-analisis/ARCH_02F_DIAGRAMS_SUMMARY.md`
-- `../diagrams/ARCHITECTURE_DIAGRAMS.md`
+- `index.html#/fase-1/architecture/claro-video-universal-windows-platform`
 
 &lt;!-- Encabezados no obligatorios agregados para completar estructura de validacion --&gt;
 
@@ -1691,7 +1691,7 @@ Este &#237;ndice centraliza la documentaci&#243;n base de arranque t&#233;cnico 
 |---|---|---|
 | [QUICK_START](./QUICK_START.md) | Arranque r&#225;pido y comandos base | Dev nuevo / Dev existente |
 | [ARCHITECTURE_GUIDE](./ARCHITECTURE_GUIDE.md) | Vista arquitect&#243;nica y l&#237;mites por capa | Dev existente / Arquitectura |
-| [ARCHITECTURE_DIAGRAMS](../diagrams/ARCHITECTURE_DIAGRAMS.md) | Diagramas de arquitectura, flujos y riesgos con evidencia | Dev existente / Arquitectura |
+| [ARCHITECTURE_DIAGRAMS](index.html#/fase-1/architecture/claro-video-universal-windows-platform) | Diagramas de arquitectura, flujos y riesgos con evidencia | Dev existente / Arquitectura |
 | [BEST_PRACTICES](./BEST_PRACTICES.md) | Pr&#225;cticas de desarrollo y calidad recomendadas | Dev existente |
 | [DEVELOPMENT_GUIDE](./DEVELOPMENT_GUIDE.md) | Flujo operativo para desarrollo diario | Dev nuevo / Dev existente |
 | [CODE_STRUCTURE](./CODE_STRUCTURE.md) | Mapa de carpetas, m&#243;dulos y entry points | Dev nuevo |
@@ -1709,7 +1709,7 @@ Este &#237;ndice centraliza la documentaci&#243;n base de arranque t&#233;cnico 
 
 ### Dev existente
 1. [ARCHITECTURE_GUIDE](./ARCHITECTURE_GUIDE.md)
-2. [ARCHITECTURE_DIAGRAMS](../diagrams/ARCHITECTURE_DIAGRAMS.md)
+2. [ARCHITECTURE_DIAGRAMS](index.html#/fase-1/architecture/claro-video-universal-windows-platform)
 3. [BEST_PRACTICES](./BEST_PRACTICES.md)
 4. [DEVELOPMENT_GUIDE](./DEVELOPMENT_GUIDE.md)
 5. [TROUBLESHOOTING](./TROUBLESHOOTING.md)
@@ -2562,7 +2562,7 @@ El an&#225;lisis consolidado de la sesi&#243;n identifica una base .NET/C# con a
 Este documento mapea flujos reales desde UI hasta endpoint en el stack .NET/UWP, usando evidencia de clases/metodos concretos.
 
 Cross-reference:
-- `../diagrams/ARCHITECTURE_DIAGRAMS.md` (`D02`, `D03`)
+- `index.html#/fase-1/architecture/claro-video-universal-windows-platform` (`D02`, `D03`)
 - `ARCH_02E_ANTIPATTERNS.md` (riesgos de implementacion en los mismos flujos)
 
 ## 1) Flow A — Login (autenticacion)
@@ -2738,7 +2738,7 @@ graph TB
 
 ## 3) Correlacion con docs de arquitectura
 - Flujos impactados: `ARCH_02D_DATAFLOWS.md` (Flow A Login, Flow B GetMedia).
-- Diagramas impactados: `../diagrams/ARCHITECTURE_DIAGRAMS.md` (`D02`, `D03`, `D05`, `D07`).
+- Diagramas impactados: `index.html#/fase-1/architecture/claro-video-universal-windows-platform` (`D02`, `D03`, `D05`, `D07`).
 - Resumen ejecutivo de diagramas: `ARCH_02F_DIAGRAMS_SUMMARY.md`.
 
 ## 4) Plan de remediacion por fases
@@ -2799,7 +2799,7 @@ graph TB
               <pre class="doc-pre"># ARCHITECTURE — Diagrams &amp; Summary (.NET/C#)
 
 ## 1) Executive Summary
-- Se consolidaron **8 diagramas arquitectonicos** versionados en `../diagrams/ARCHITECTURE_DIAGRAMS.md` (`D01..D08`).
+- Se consolidaron **8 diagramas arquitectonicos** versionados en `index.html#/fase-1/architecture/claro-video-universal-windows-platform` (`D01..D08`).
 - Cobertura lograda:
   - Capas y componentes
   - Flujos criticos (Login, GetMedia)
@@ -2816,14 +2816,14 @@ graph TB
 ## 2) Inventario de diagramas
 | ID | Nombre | Objetivo | Vinculo principal |
 |---|---|---|---|
-| D01 | Arquitectura de capas | Mostrar estructura Presentation -&gt; Application -&gt; Services -&gt; Data -&gt; Domain | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d01-arquitectura-de-capas-netuwp` |
-| D02 | Flujo Login | Trazar flujo de autenticacion extremo a extremo | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d02-flujo-de-datos-de-autenticacion-login` |
-| D03 | Flujo GetMedia | Trazar flujo de reproduccion extremo a extremo | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d03-flujo-de-datos-de-reproduccion-getmedia` |
-| D04 | Entrypoints y activacion | Mostrar rutas de launch/activation/background por plataforma | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d04-entrypoints-activacion-y-background` |
-| D05 | Topologia DI | Visualizar contenedor/scopes/ServiceLocator/ResolveNamed | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d05-topologia-di-y-resolucion-de-dependencias` |
-| D06 | Dependencias de modulos | Mostrar relaciones entre proyectos core | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d06-dependencias-de-modulos-principales` |
-| D07 | Mapa de antipatrones | Relacionar hotspots con riesgo operativo | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d07-mapa-de-antipatrones-y-riesgo-operacional` |
-| D08 | Observabilidad | Ubicar analytics/logging en la arquitectura | `../diagrams/ARCHITECTURE_DIAGRAMS.md#d08-observabilidad-e-integraciones-transversales` |
+| D01 | Arquitectura de capas | Mostrar estructura Presentation -&gt; Application -&gt; Services -&gt; Data -&gt; Domain | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d01-arquitectura-de-capas-netuwp` |
+| D02 | Flujo Login | Trazar flujo de autenticacion extremo a extremo | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d02-flujo-de-datos-de-autenticacion-login` |
+| D03 | Flujo GetMedia | Trazar flujo de reproduccion extremo a extremo | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d03-flujo-de-datos-de-reproduccion-getmedia` |
+| D04 | Entrypoints y activacion | Mostrar rutas de launch/activation/background por plataforma | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d04-entrypoints-activacion-y-background` |
+| D05 | Topologia DI | Visualizar contenedor/scopes/ServiceLocator/ResolveNamed | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d05-topologia-di-y-resolucion-de-dependencias` |
+| D06 | Dependencias de modulos | Mostrar relaciones entre proyectos core | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d06-dependencias-de-modulos-principales` |
+| D07 | Mapa de antipatrones | Relacionar hotspots con riesgo operativo | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d07-mapa-de-antipatrones-y-riesgo-operacional` |
+| D08 | Observabilidad | Ubicar analytics/logging en la arquitectura | `index.html#/fase-1/architecture/claro-video-universal-windows-platform#d08-observabilidad-e-integraciones-transversales` |
 
 ## 3) Matriz de cobertura (pregunta -&gt; diagrama -&gt; evidencia)
 | Pregunta de arquitectura | Diagrama(s) | Evidencia clave |
@@ -2923,7 +2923,7 @@ Este &#237;ndice re&#250;ne los entregables de an&#225;lisis t&#233;cnico consol
 | [ARCH_02D_DATAFLOWS](./ARCH_02D_DATAFLOWS.md) | Flujos de datos relevantes entre capas | Dev Team |
 | [ARCH_02E_ANTIPATTERNS](./ARCH_02E_ANTIPATTERNS.md) | Evidencia de antipatrones y hotspots | Arquitectura / QA |
 | [ARCH_02F_DIAGRAMS_SUMMARY](./ARCH_02F_DIAGRAMS_SUMMARY.md) | Resumen de diagramas y vistas derivadas | Arquitectura / Stakeholders |
-| [ARCHITECTURE_DIAGRAMS](../diagrams/ARCHITECTURE_DIAGRAMS.md) | Catalogo de diagramas Mermaid con evidencia de codigo | Arquitectura / Dev Team |
+| [ARCHITECTURE_DIAGRAMS](index.html#/fase-1/architecture/claro-video-universal-windows-platform) | Catalogo de diagramas Mermaid con evidencia de codigo | Arquitectura / Dev Team |
 
 ## Ruta de lectura recomendada
 

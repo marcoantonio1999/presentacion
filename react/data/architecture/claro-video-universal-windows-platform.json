@@ -1,0 +1,2116 @@
+{
+  "repo": "claro-video-universal-windows-platform",
+  "title": "UWP Windows Platform",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-universal-windows-platform",
+    "annex": "ANEXO_claro-video-universal-windows-platform.html",
+    "vssRoute": "#/fase-1/vss/claro-video-universal-windows-platform"
+  },
+  "source": {
+    "docPath": "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 8,
+    "flowchartCount": 6,
+    "sequenceCount": 2,
+    "totalNodes": 131,
+    "totalEdges": 84,
+    "sections": [
+      "D01) Arquitectura de capas (.NET/UWP)",
+      "D02) Flujo de datos de autenticacion (Login)",
+      "D03) Flujo de datos de reproduccion (GetMedia)",
+      "D04) Entrypoints, activacion y background",
+      "D05) Topologia DI y resolucion de dependencias",
+      "D06) Dependencias de modulos principales",
+      "D07) Mapa de antipatrones y riesgo operacional",
+      "D08) Observabilidad e integraciones transversales"
+    ]
+  },
+  "diagrams": {
+    "total": 8,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "D01) Arquitectura de capas (.NET/UWP)",
+        "kind": "flowchart",
+        "section": "D01) Arquitectura de capas (.NET/UWP)",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Presentation",
+              "label": "Presentation"
+            },
+            {
+              "id": "Application",
+              "label": "Application"
+            },
+            {
+              "id": "Services",
+              "label": "Services"
+            },
+            {
+              "id": "Data",
+              "label": "Data"
+            },
+            {
+              "id": "Domain",
+              "label": "Domain"
+            },
+            {
+              "id": "CrossCutting",
+              "label": "CrossCutting"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "AppShell",
+              "label": "AppShellNewExp.xaml.cs",
+              "type": "component",
+              "group": "Presentation"
+            },
+            {
+              "id": "LoginPage",
+              "label": "LoginNewFlow.xaml.cs",
+              "type": "component",
+              "group": "Presentation"
+            },
+            {
+              "id": "PlayerPage",
+              "label": "PlayerTVNewFlowPage.xaml.cs",
+              "type": "component",
+              "group": "Presentation"
+            },
+            {
+              "id": "LoginVM",
+              "label": "LoginNewFlowViewModel",
+              "type": "component",
+              "group": "Presentation"
+            },
+            {
+              "id": "PlayerVM",
+              "label": "PlayerTVNewFlowViewModel",
+              "type": "component",
+              "group": "Presentation"
+            },
+            {
+              "id": "BL",
+              "label": "BusinessLayer",
+              "type": "component",
+              "group": "Application"
+            },
+            {
+              "id": "Nav",
+              "label": "ServiceNavigation / INavigationManager",
+              "type": "component",
+              "group": "Application"
+            },
+            {
+              "id": "LoginSvc",
+              "label": "LoginService",
+              "type": "component",
+              "group": "Services"
+            },
+            {
+              "id": "PlayerSvc",
+              "label": "PlayerService",
+              "type": "component",
+              "group": "Services"
+            },
+            {
+              "id": "LoginRepo",
+              "label": "LoginWebRepository",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "PlayerRepo",
+              "label": "PlayerWebRepository",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "Client",
+              "label": "IClaroVideoClient.NewPost",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "TLogin",
+              "label": "Template.Login_CL",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "TMedia",
+              "label": "Template.PlayerGetMedia_CL",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "UserEntity",
+              "label": "UserEntity",
+              "type": "component",
+              "group": "Domain"
+            },
+            {
+              "id": "PlayerEntity",
+              "label": "PlayerMediaEntity",
+              "type": "component",
+              "group": "Domain"
+            },
+            {
+              "id": "Result",
+              "label": "CommandResult",
+              "type": "component",
+              "group": "Domain"
+            },
+            {
+              "id": "DI",
+              "label": "AutofacConfig + ServiceLocator",
+              "type": "component",
+              "group": "CrossCutting"
+            },
+            {
+              "id": "Obs",
+              "label": "NewRelic + Youbora + GA4",
+              "type": "component",
+              "group": "CrossCutting"
+            },
+            {
+              "id": "DI-resuelve-dependencias-LoginVM",
+              "label": "DI -.resuelve dependencias.-> LoginVM",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DI-resuelve-dependencias-PlayerVM",
+              "label": "DI -.resuelve dependencias.-> PlayerVM",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DI-resuelve-dependencias-BL",
+              "label": "DI -.resuelve dependencias.-> BL",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Obs-telemetria-eventos-LoginVM",
+              "label": "Obs -.telemetria/eventos.-> LoginVM",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Obs-telemetria-eventos-PlayerVM",
+              "label": "Obs -.telemetria/eventos.-> PlayerVM",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "AppShell=>LoginVM=>=>solid",
+              "source": "AppShell",
+              "target": "LoginVM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppShell=>PlayerVM=>=>solid",
+              "source": "AppShell",
+              "target": "PlayerVM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginPage=>LoginVM=>=>solid",
+              "source": "LoginPage",
+              "target": "LoginVM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerPage=>PlayerVM=>=>solid",
+              "source": "PlayerPage",
+              "target": "PlayerVM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginVM=>LoginSvc=>=>solid",
+              "source": "LoginVM",
+              "target": "LoginSvc",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerVM=>PlayerSvc=>=>solid",
+              "source": "PlayerVM",
+              "target": "PlayerSvc",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginSvc=>LoginRepo=>=>solid",
+              "source": "LoginSvc",
+              "target": "LoginRepo",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerSvc=>PlayerRepo=>=>solid",
+              "source": "PlayerSvc",
+              "target": "PlayerRepo",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginRepo=>Client=>=>solid",
+              "source": "LoginRepo",
+              "target": "Client",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerRepo=>Client=>=>solid",
+              "source": "PlayerRepo",
+              "target": "Client",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginRepo=>TLogin=>=>solid",
+              "source": "LoginRepo",
+              "target": "TLogin",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerRepo=>TMedia=>=>solid",
+              "source": "PlayerRepo",
+              "target": "TMedia",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginSvc=>UserEntity=>=>solid",
+              "source": "LoginSvc",
+              "target": "UserEntity",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerSvc=>PlayerEntity=>=>solid",
+              "source": "PlayerSvc",
+              "target": "PlayerEntity",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginSvc=>Result=>=>solid",
+              "source": "LoginSvc",
+              "target": "Result",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerSvc=>Result=>=>solid",
+              "source": "PlayerSvc",
+              "target": "Result",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 9
+        },
+        "metrics": {
+          "nodeCount": 24,
+          "edgeCount": 16,
+          "groupCount": 6,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "D02) Flujo de datos de autenticacion (Login)",
+        "kind": "sequence",
+        "section": "D02) Flujo de datos de autenticacion (Login)",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Usuario",
+              "label": "Usuario"
+            },
+            {
+              "id": "LoginPage",
+              "label": "LoginNewFlow (Page)"
+            },
+            {
+              "id": "LoginVM",
+              "label": "LoginNewFlowViewModel"
+            },
+            {
+              "id": "LoginSvc",
+              "label": "LoginService"
+            },
+            {
+              "id": "LoginRepo",
+              "label": "LoginWebRepository"
+            },
+            {
+              "id": "Client",
+              "label": "IClaroVideoClient"
+            },
+            {
+              "id": "API",
+              "label": "user/v2/ott/login"
+            },
+            {
+              "id": "Domain",
+              "label": "CommandResult"
+            },
+            {
+              "id": "Usuario-",
+              "label": "Usuario-"
+            },
+            {
+              "id": "LoginPage-",
+              "label": "LoginPage-"
+            },
+            {
+              "id": "LoginVM-",
+              "label": "LoginVM-"
+            },
+            {
+              "id": "LoginSvc-",
+              "label": "LoginSvc-"
+            },
+            {
+              "id": "LoginRepo-",
+              "label": "LoginRepo-"
+            },
+            {
+              "id": "Client-",
+              "label": "Client-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "Client--",
+              "label": "Client--"
+            },
+            {
+              "id": "LoginRepo--",
+              "label": "LoginRepo--"
+            },
+            {
+              "id": "LoginSvc--",
+              "label": "LoginSvc--"
+            },
+            {
+              "id": "LoginVM--",
+              "label": "LoginVM--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-Usuario",
+              "label": "Usuario",
+              "subtitle": "Actor",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginPage",
+              "label": "LoginNewFlow (Page)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginVM",
+              "label": "LoginNewFlowViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginSvc",
+              "label": "LoginService",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginRepo",
+              "label": "LoginWebRepository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-Client",
+              "label": "IClaroVideoClient",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "user/v2/ott/login",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-Domain",
+              "label": "CommandResult",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Usuario-",
+              "label": "Usuario-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginPage-",
+              "label": "LoginPage-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginVM-",
+              "label": "LoginVM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginSvc-",
+              "label": "LoginSvc-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginRepo-",
+              "label": "LoginRepo-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Client-",
+              "label": "Client-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-Client--",
+              "label": "Client--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginRepo--",
+              "label": "LoginRepo--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginSvc--",
+              "label": "LoginSvc--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4760,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginVM--",
+              "label": "LoginVM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5040,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Captura usuario y password",
+              "subtitle": "Usuario- → LoginNewFlow (Page)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Evento de login",
+              "subtitle": "LoginPage- → LoginNewFlowViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "Login_CL(user, password, captcha)",
+              "subtitle": "LoginVM- → LoginService",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1820,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Login_CL(...)",
+              "subtitle": "LoginSvc- → LoginWebRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 2100,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "NewPost(..., Template.Login_CL, ...)",
+              "subtitle": "LoginRepo- → IClaroVideoClient",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2380,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "POST autenticacion",
+              "subtitle": "Client- → user/v2/ott/login",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2660,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "respuesta login",
+              "subtitle": "API-- → IClaroVideoClient",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2660,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "LoginResponse",
+              "subtitle": "Client-- → LoginWebRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2660,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "UserEntity",
+              "subtitle": "LoginRepo-- → LoginService",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2660,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "CommandResult",
+              "subtitle": "LoginSvc-- → LoginNewFlowViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2660,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "estado UI (success/error)",
+              "subtitle": "LoginVM-- → LoginNewFlow (Page)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2660,
+              "y": 1728
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 19,
+          "participantCount": 19
+        },
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 10,
+          "groupCount": 19,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "D03) Flujo de datos de reproduccion (GetMedia)",
+        "kind": "sequence",
+        "section": "D03) Flujo de datos de reproduccion (GetMedia)",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Usuario",
+              "label": "Usuario"
+            },
+            {
+              "id": "PlayerPage",
+              "label": "PlayerTVNewFlowPage"
+            },
+            {
+              "id": "PlayerVM",
+              "label": "PlayerTVNewFlowViewModel"
+            },
+            {
+              "id": "PlayerSvc",
+              "label": "PlayerService"
+            },
+            {
+              "id": "PlayerRepo",
+              "label": "PlayerWebRepository"
+            },
+            {
+              "id": "Client",
+              "label": "IClaroVideoClient"
+            },
+            {
+              "id": "API",
+              "label": "player/v1/getmedia"
+            },
+            {
+              "id": "Domain",
+              "label": "CommandResult"
+            },
+            {
+              "id": "Usuario-",
+              "label": "Usuario-"
+            },
+            {
+              "id": "PlayerPage-",
+              "label": "PlayerPage-"
+            },
+            {
+              "id": "PlayerVM-",
+              "label": "PlayerVM-"
+            },
+            {
+              "id": "PlayerSvc-",
+              "label": "PlayerSvc-"
+            },
+            {
+              "id": "PlayerRepo-",
+              "label": "PlayerRepo-"
+            },
+            {
+              "id": "Client-",
+              "label": "Client-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "Client--",
+              "label": "Client--"
+            },
+            {
+              "id": "PlayerRepo--",
+              "label": "PlayerRepo--"
+            },
+            {
+              "id": "PlayerSvc--",
+              "label": "PlayerSvc--"
+            },
+            {
+              "id": "PlayerVM--",
+              "label": "PlayerVM--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-Usuario",
+              "label": "Usuario",
+              "subtitle": "Actor",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerPage",
+              "label": "PlayerTVNewFlowPage",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerVM",
+              "label": "PlayerTVNewFlowViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerSvc",
+              "label": "PlayerService",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerRepo",
+              "label": "PlayerWebRepository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-Client",
+              "label": "IClaroVideoClient",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "player/v1/getmedia",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-Domain",
+              "label": "CommandResult",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Usuario-",
+              "label": "Usuario-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerPage-",
+              "label": "PlayerPage-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerVM-",
+              "label": "PlayerVM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerSvc-",
+              "label": "PlayerSvc-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerRepo-",
+              "label": "PlayerRepo-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Client-",
+              "label": "Client-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-Client--",
+              "label": "Client--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerRepo--",
+              "label": "PlayerRepo--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerSvc--",
+              "label": "PlayerSvc--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4760,
+              "y": 0
+            },
+            {
+              "id": "participant-PlayerVM--",
+              "label": "PlayerVM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5040,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Selecciona canal/contenido",
+              "subtitle": "Usuario- → PlayerTVNewFlowPage",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Solicitar reproduccion",
+              "subtitle": "PlayerPage- → PlayerTVNewFlowViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "GetMedia(...)",
+              "subtitle": "PlayerVM- → PlayerTVNewFlowViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1680,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Media_CL(params, body, retry)",
+              "subtitle": "PlayerVM- → PlayerService",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1820,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Media_CL(...)",
+              "subtitle": "PlayerSvc- → PlayerWebRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2100,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "NewPost(..., Template.PlayerGetMedia_CL, ...)",
+              "subtitle": "PlayerRepo- → IClaroVideoClient",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2380,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "POST getmedia",
+              "subtitle": "Client- → player/v1/getmedia",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2660,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "respuesta media",
+              "subtitle": "API-- → IClaroVideoClient",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2660,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "PlayerGetMediaResponse",
+              "subtitle": "Client-- → PlayerWebRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2660,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "PlayerMediaEntity",
+              "subtitle": "PlayerRepo-- → PlayerService",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2660,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "CommandResult",
+              "subtitle": "PlayerSvc-- → PlayerTVNewFlowViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2660,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "Actualiza estado de player",
+              "subtitle": "PlayerVM-- → PlayerTVNewFlowPage",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 2660,
+              "y": 1884
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 19,
+          "participantCount": 19
+        },
+        "metrics": {
+          "nodeCount": 31,
+          "edgeCount": 11,
+          "groupCount": 19,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "D04) Entrypoints, activacion y background",
+        "kind": "flowchart",
+        "section": "D04) Entrypoints, activacion y background",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [
+            {
+              "id": "UWP",
+              "label": "UWP"
+            },
+            {
+              "id": "Win81",
+              "label": "Win81"
+            },
+            {
+              "id": "WP8",
+              "label": "WP8"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "UOnLaunch",
+              "label": "App.OnLaunched",
+              "type": "component",
+              "group": "UWP"
+            },
+            {
+              "id": "UOnActivated",
+              "label": "App.OnActivated",
+              "type": "component",
+              "group": "UWP"
+            },
+            {
+              "id": "UProtocol",
+              "label": "Protocolos: setregion / dlaapk",
+              "type": "component",
+              "group": "UWP"
+            },
+            {
+              "id": "UBg",
+              "label": "BackgroundTask: ClaroVideoLiveTileService.Run",
+              "type": "component",
+              "group": "UWP"
+            },
+            {
+              "id": "WOnLaunch",
+              "label": "App.OnLaunched",
+              "type": "component",
+              "group": "Win81"
+            },
+            {
+              "id": "WOnActivated",
+              "label": "App.OnActivated",
+              "type": "component",
+              "group": "Win81"
+            },
+            {
+              "id": "WProtocol",
+              "label": "Protocolo: clarovideo",
+              "type": "component",
+              "group": "Win81"
+            },
+            {
+              "id": "PLaunch",
+              "label": "Application_Launching",
+              "type": "component",
+              "group": "WP8"
+            }
+          ],
+          "edges": [
+            {
+              "id": "UOnLaunch=>UOnActivated=>=>solid",
+              "source": "UOnLaunch",
+              "target": "UOnActivated",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UOnActivated=>UProtocol=>=>solid",
+              "source": "UOnActivated",
+              "target": "UProtocol",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UOnActivated=>UBg=>=>solid",
+              "source": "UOnActivated",
+              "target": "UBg",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "WOnLaunch=>WOnActivated=>=>solid",
+              "source": "WOnLaunch",
+              "target": "WOnActivated",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "WOnActivated=>WProtocol=>=>solid",
+              "source": "WOnActivated",
+              "target": "WProtocol",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 1
+        },
+        "metrics": {
+          "nodeCount": 8,
+          "edgeCount": 5,
+          "groupCount": 3,
+          "isolatedCount": 1
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "D05) Topologia DI y resolucion de dependencias",
+        "kind": "flowchart",
+        "section": "D05) Topologia DI y resolucion de dependencias",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "Config",
+              "label": "AutofacConfig.ConfigContainer",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Scope",
+              "label": "AutofacConfig.Scope (static)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Locator",
+              "label": "ServiceLocator.Current.GetInstance",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AppScope",
+              "label": "ApplicationScope",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "UserScope",
+              "label": "UserScope.GetChildScope",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "VMs",
+              "label": "ViewModels",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CodeBehind",
+              "label": "AppShellNewExp.xaml.cs",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Named",
+              "label": "Named/ResolveNamed services",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ExtNav",
+              "label": "ExternalNavigationCommand (home/special/deeplink)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PlayerNamed",
+              "label": "IPlayerService \"playerservice\"",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "Config=>Scope=>=>solid",
+              "source": "Config",
+              "target": "Scope",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Scope=>AppScope=>=>solid",
+              "source": "Scope",
+              "target": "AppScope",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Scope=>Locator=>=>solid",
+              "source": "Scope",
+              "target": "Locator",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Locator=>VMs=>=>solid",
+              "source": "Locator",
+              "target": "VMs",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppScope=>UserScope=>=>solid",
+              "source": "AppScope",
+              "target": "UserScope",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UserScope=>VMs=>=>solid",
+              "source": "UserScope",
+              "target": "VMs",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UserScope=>Named=>=>solid",
+              "source": "UserScope",
+              "target": "Named",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Scope=>CodeBehind=>=>solid",
+              "source": "Scope",
+              "target": "CodeBehind",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Named=>ExtNav=>=>solid",
+              "source": "Named",
+              "target": "ExtNav",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Named=>PlayerNamed=>=>solid",
+              "source": "Named",
+              "target": "PlayerNamed",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 10,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-6",
+        "order": 6,
+        "title": "D06) Dependencias de modulos principales",
+        "kind": "flowchart",
+        "section": "D06) Dependencias de modulos principales",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "AppUWP",
+              "label": "DLA.ClaroVideo (UWP)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Negocio",
+              "label": "DLA.ClaroVideo.Negocio",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Service",
+              "label": "DLA.ClaroVideo.Service.Providers",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Client",
+              "label": "DLA.ClaroVideo.Client",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Domain",
+              "label": "DLA.ClaroVideo.Domain",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Framework",
+              "label": "DLA.ClaroVideo.Framework",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Logging",
+              "label": "DLA.ClaroVideo.Logging",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "LiveTile",
+              "label": "DLA.ClaroVideo.LiveTileService",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Tests",
+              "label": "ClaroVideoTest",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "AppUWP=>Negocio=>=>solid",
+              "source": "AppUWP",
+              "target": "Negocio",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppUWP=>Service=>=>solid",
+              "source": "AppUWP",
+              "target": "Service",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppUWP=>Client=>=>solid",
+              "source": "AppUWP",
+              "target": "Client",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppUWP=>Domain=>=>solid",
+              "source": "AppUWP",
+              "target": "Domain",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppUWP=>Framework=>=>solid",
+              "source": "AppUWP",
+              "target": "Framework",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppUWP=>Logging=>=>solid",
+              "source": "AppUWP",
+              "target": "Logging",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppUWP=>LiveTile=>=>solid",
+              "source": "AppUWP",
+              "target": "LiveTile",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Negocio=>Service=>=>solid",
+              "source": "Negocio",
+              "target": "Service",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Negocio=>Client=>=>solid",
+              "source": "Negocio",
+              "target": "Client",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Negocio=>Domain=>=>solid",
+              "source": "Negocio",
+              "target": "Domain",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Negocio=>Framework=>=>solid",
+              "source": "Negocio",
+              "target": "Framework",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Negocio=>Logging=>=>solid",
+              "source": "Negocio",
+              "target": "Logging",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Negocio=>LiveTile=>=>solid",
+              "source": "Negocio",
+              "target": "LiveTile",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Service=>Client=>=>solid",
+              "source": "Service",
+              "target": "Client",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Service=>Domain=>=>solid",
+              "source": "Service",
+              "target": "Domain",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Service=>Framework=>=>solid",
+              "source": "Service",
+              "target": "Framework",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Service=>Logging=>=>solid",
+              "source": "Service",
+              "target": "Logging",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Tests=>Negocio=>=>solid",
+              "source": "Tests",
+              "target": "Negocio",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Tests=>Service=>=>solid",
+              "source": "Tests",
+              "target": "Service",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Tests=>Client=>=>solid",
+              "source": "Tests",
+              "target": "Client",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Tests=>Domain=>=>solid",
+              "source": "Tests",
+              "target": "Domain",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 21,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-7",
+        "order": 7,
+        "title": "D07) Mapa de antipatrones y riesgo operacional",
+        "kind": "flowchart",
+        "section": "D07) Mapa de antipatrones y riesgo operacional",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "H1",
+              "label": "Hotspot: PlayerTVNewFlowViewModel 6284 LOC",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H2",
+              "label": "Hotspot: ItemDetailPage.xaml.cs 5678 LOC",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H3",
+              "label": "Hotspot: AppShellViewModel 4160 LOC",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H4",
+              "label": "Hotspot: BusinessLayer 3664 LOC",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H5",
+              "label": "Resolve runtime en UI/VM",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H6",
+              "label": "ServiceLocator.Current.GetInstance 55 usos",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H7",
+              "label": "HTTP hardcodeado WP8 Proxy 42 ocurrencias",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R1",
+              "label": "Regresiones de funcionalidad de player",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R2",
+              "label": "Dificultad para testear UI legacy",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R3",
+              "label": "Acoplamiento de shell/navegacion",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R4",
+              "label": "Orquestacion monolitica",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R5",
+              "label": "Dependencias ocultas y fragilidad",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R6",
+              "label": "Estado global no determinista",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "R7",
+              "label": "Riesgo de seguridad/compliance",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "H1=>R1=>=>solid",
+              "source": "H1",
+              "target": "R1",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H2=>R2=>=>solid",
+              "source": "H2",
+              "target": "R2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H3=>R3=>=>solid",
+              "source": "H3",
+              "target": "R3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H4=>R4=>=>solid",
+              "source": "H4",
+              "target": "R4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H5=>R5=>=>solid",
+              "source": "H5",
+              "target": "R5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H6=>R6=>=>solid",
+              "source": "H6",
+              "target": "R6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H7=>R7=>=>solid",
+              "source": "H7",
+              "target": "R7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 14,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-8",
+        "order": 8,
+        "title": "D08) Observabilidad e integraciones transversales",
+        "kind": "flowchart",
+        "section": "D08) Observabilidad e integraciones transversales",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-universal-windows-platform\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "App",
+              "label": "App/ViewModels",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "GA4",
+              "label": "GoogleAnalytics4",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NR",
+              "label": "NewRelic",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "YB",
+              "label": "Youbora",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Logger",
+              "label": "ILogger / FileLogger",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "App=>GA4=>=>solid",
+              "source": "App",
+              "target": "GA4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>NR=>=>solid",
+              "source": "App",
+              "target": "NR",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>YB=>=>solid",
+              "source": "App",
+              "target": "YB",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>Logger=>=>solid",
+              "source": "App",
+              "target": "Logger",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 5,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

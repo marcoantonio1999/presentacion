@@ -1,0 +1,1276 @@
+{
+  "repo": "claro-video-android-smart-tv",
+  "title": "Android Smart TV",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-android-smart-tv",
+    "annex": "ANEXO_claro-video-android-smart-tv.html",
+    "vssRoute": "#/fase-1/vss/claro-video-android-smart-tv"
+  },
+  "source": {
+    "docPath": "claro-video-android-smart-tv\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 5,
+    "flowchartCount": 4,
+    "sequenceCount": 1,
+    "totalNodes": 92,
+    "totalEdges": 48,
+    "sections": [
+      "️ Diagrama de Componentes",
+      "Diagramas de Flujos de Procesos",
+      "Diagrama de CI/CD Pipeline",
+      "Diagrama de Datos"
+    ]
+  },
+  "diagrams": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "️ Diagrama de Componentes",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-android-smart-tv\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-Proyecto-Claro-Android",
+              "label": "subgraph \"Proyecto Claro Android\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "APP",
+              "label": "📱 app\\nAplicación principal Android TV\\ncom.amco.clarovideo",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "SDK",
+              "label": "🌐 AMXNetworkSdk\\nSDK de red: Retrofit + Room\\ncom.amco.clarovideo.network",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "EPG",
+              "label": "📺 AMXEpg\\nElectronic Program Guide",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "TIF",
+              "label": "📡 AMXTvInputService\\nAndroid TV Input Service",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "BEN",
+              "label": "⚡ benchmark\\nMacroBenchmark",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "APP=>SDK=>=>solid",
+              "source": "APP",
+              "target": "SDK",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "APP=>EPG=>=>solid",
+              "source": "APP",
+              "target": "EPG",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "APP=>TIF=>=>solid",
+              "source": "APP",
+              "target": "TIF",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "BEN=>APP=>=>dashed",
+              "source": "BEN",
+              "target": "APP",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 1
+        },
+        "metrics": {
+          "nodeCount": 6,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 1
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Flujo Principal 1: Navegación Android TV",
+        "kind": "flowchart",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-smart-tv\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "LAUNCH",
+              "label": "🚀 App Launch\\nClaroApp (@HiltAndroidApp)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "SPLASH",
+              "label": "🌟 SplashFragment\\npresentation/splash/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "LOGIN",
+              "label": "🔐 LoginFragment\\npresentation/login/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "HOME",
+              "label": "🏠 HomeFragment\\npresentation/home/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-Home-Tabs",
+              "label": "subgraph \"Home Tabs\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "RAILS",
+              "label": "🎬 HomeBannersRails\\nVOD / Originals / Series",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "LIVE",
+              "label": "📺 LiveTV\\npresentation/live/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MINIEPG",
+              "label": "📋 MiniEPG\\npresentation/miniepg/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-Contenido",
+              "label": "subgraph \"Contenido\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "VOD",
+              "label": "🎥 VOD Detail\\npresentation/voddetail/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PLAYER",
+              "label": "▶️ Video Player\\nBitmovin 3.96.0",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "EPG_SCREEN",
+              "label": "📡 EPG Full\\npresentation/epg/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-Usuario",
+              "label": "subgraph \"Usuario\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PROFILE",
+              "label": "👤 Profile\\npresentation/profile/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "SETTINGS",
+              "label": "⚙️ Settings\\npresentation/settings/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PAY",
+              "label": "💳 Payments\\npresentation/payments/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "SEARCH",
+              "label": "🔍 Search\\npresentation/searchnew/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MYCONTENT",
+              "label": "❤️ My Content\\npresentation/mycontent/",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "LAUNCH=>SPLASH=>=>solid",
+              "source": "LAUNCH",
+              "target": "SPLASH",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SPLASH=>LOGIN=>=>solid",
+              "source": "SPLASH",
+              "target": "LOGIN",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SPLASH=>HOME=>=>solid",
+              "source": "SPLASH",
+              "target": "HOME",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LOGIN=>HOME=>=>solid",
+              "source": "LOGIN",
+              "target": "HOME",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>RAILS=>=>solid",
+              "source": "HOME",
+              "target": "RAILS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>LIVE=>=>solid",
+              "source": "HOME",
+              "target": "LIVE",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>MINIEPG=>=>solid",
+              "source": "HOME",
+              "target": "MINIEPG",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RAILS=>VOD=>=>solid",
+              "source": "RAILS",
+              "target": "VOD",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VOD=>PLAYER=>=>solid",
+              "source": "VOD",
+              "target": "PLAYER",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LIVE=>PLAYER=>=>solid",
+              "source": "LIVE",
+              "target": "PLAYER",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LIVE=>EPG_SCREEN=>=>solid",
+              "source": "LIVE",
+              "target": "EPG_SCREEN",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>PROFILE=>=>solid",
+              "source": "HOME",
+              "target": "PROFILE",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>SETTINGS=>=>solid",
+              "source": "HOME",
+              "target": "SETTINGS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>PAY=>=>solid",
+              "source": "HOME",
+              "target": "PAY",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>SEARCH=>=>solid",
+              "source": "HOME",
+              "target": "SEARCH",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HOME=>MYCONTENT=>=>solid",
+              "source": "HOME",
+              "target": "MYCONTENT",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 3
+        },
+        "metrics": {
+          "nodeCount": 18,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 3
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Flujo Principal 2: Pipeline de Video (Bitmovin + NPAW)",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-smart-tv\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "USER",
+              "label": "👤 Usuario (D-pad)"
+            },
+            {
+              "id": "FRAG",
+              "label": "VideoPlayerFragment"
+            },
+            {
+              "id": "VM",
+              "label": "VideoPlayerViewModel"
+            },
+            {
+              "id": "UC",
+              "label": "PlaybackUseCase"
+            },
+            {
+              "id": "API",
+              "label": "Content API (Retrofit)"
+            },
+            {
+              "id": "BIT",
+              "label": "Bitmovin Player 3.96.0"
+            },
+            {
+              "id": "NPAW",
+              "label": "NPAW Youbora 7.3.4"
+            },
+            {
+              "id": "FIRE",
+              "label": "Firebase Crashlytics"
+            },
+            {
+              "id": "USER-",
+              "label": "USER-"
+            },
+            {
+              "id": "FRAG-",
+              "label": "FRAG-"
+            },
+            {
+              "id": "VM-",
+              "label": "VM-"
+            },
+            {
+              "id": "UC-",
+              "label": "UC-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "UC--",
+              "label": "UC--"
+            },
+            {
+              "id": "BIT-",
+              "label": "BIT-"
+            },
+            {
+              "id": "BIT--",
+              "label": "BIT--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-USER",
+              "label": "👤 Usuario (D-pad)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-FRAG",
+              "label": "VideoPlayerFragment",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-VM",
+              "label": "VideoPlayerViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-UC",
+              "label": "PlaybackUseCase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "Content API (Retrofit)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-BIT",
+              "label": "Bitmovin Player 3.96.0",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-NPAW",
+              "label": "NPAW Youbora 7.3.4",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-FIRE",
+              "label": "Firebase Crashlytics",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-USER-",
+              "label": "USER-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-FRAG-",
+              "label": "FRAG-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-VM-",
+              "label": "VM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-UC-",
+              "label": "UC-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-UC--",
+              "label": "UC--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-BIT-",
+              "label": "BIT-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-BIT--",
+              "label": "BIT--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Selecciona contenido",
+              "subtitle": "USER- → VideoPlayerFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "playContent(contentId)",
+              "subtitle": "FRAG- → VideoPlayerViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "invoke(contentId)",
+              "subtitle": "VM- → PlaybackUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1820,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "getStreamURL(contentId)",
+              "subtitle": "UC- → Content API (Retrofit)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 2100,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "StreamURL + DRM config",
+              "subtitle": "API-- → PlaybackUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2100,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "Result.Success(streamConfig)",
+              "subtitle": "UC-- → VideoPlayerViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2100,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "uiState = Playing",
+              "subtitle": "VM- → VideoPlayerFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1540,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "loadSource(streamConfig)",
+              "subtitle": "FRAG- → Bitmovin Player 3.96.0",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 1960,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "onStart() + trackQoE",
+              "subtitle": "BIT- → NPAW Youbora 7.3.4",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2800,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "Video reproduciendo",
+              "subtitle": "BIT-- → 👤 Usuario (D-pad)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2100,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "ALT",
+              "subtitle": "Error en reproducción",
+              "type": "control",
+              "group": "control",
+              "stat": "11",
+              "x": 2100,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "logError(exception)",
+              "subtitle": "BIT- → Firebase Crashlytics",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 2940,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "onPlayerError",
+              "subtitle": "BIT- → VideoPlayerViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 2240,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "uiState = Error",
+              "subtitle": "VM- → VideoPlayerFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 1540,
+              "y": 2196
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 16,
+          "participantCount": 16
+        },
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 13,
+          "groupCount": 16,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Diagrama de CI/CD Pipeline",
+        "kind": "flowchart",
+        "section": "Diagrama de CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-android-smart-tv\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "MANUAL",
+              "label": "👤 Trigger manual\\nworkflow_dispatch\\n(GitHub Actions UI)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-gradle-yml-Gradle-CI-Build",
+              "label": "subgraph \"gradle.yml — Gradle CI Build\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B1",
+              "label": "actions/checkout@v4",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B2",
+              "label": "setup-java@v4 (JDK 17 Temurin)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B3",
+              "label": "dos2unix + chmod gradlew",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B4",
+              "label": "./gradlew assemble{target}\\nOpciones: ProdSmarttvRelease\\nProdPlayStoreRelease\\nProdOemStoreRelease\\n+ variantes Debug",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B5",
+              "label": "upload-artifact@v4\\nAPK → app/build/outputs/apk/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-testgradle-yml-Gradle-CI-Test",
+              "label": "subgraph \"testgradle.yml — Gradle CI Test\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "T1",
+              "label": "actions/checkout@v4",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "T2",
+              "label": "setup-java@v4 (JDK 17 Temurin)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "T3",
+              "label": "dos2unix + chmod gradlew",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "T4",
+              "label": "./gradlew test{target}\\nOpciones: DevPlayStoreDebugUnitTestCoverage\\nProdPlayStoreDebugUnitTestCoverage",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "T5",
+              "label": "upload-artifact@v4\\nReports → app/build/reports/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-sonar-yml-Sonar-Analysis",
+              "label": "subgraph \"sonar.yml — Sonar Analysis\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "S1",
+              "label": "actions/checkout@v4",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "S2",
+              "label": "SonarCloud analysis\\n(comentado — no activo)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B2-B3-B4-B5",
+              "label": "B2 --> B3 --> B4 --> B5",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "T2-T3-T4-T5",
+              "label": "T2 --> T3 --> T4 --> T5",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "S1-S2",
+              "label": "S1 --> S2",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "MANUAL=>B1=>=>solid",
+              "source": "MANUAL",
+              "target": "B1",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B1=>B2-B3-B4-B5=>=>solid",
+              "source": "B1",
+              "target": "B2-B3-B4-B5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MANUAL=>T1=>=>solid",
+              "source": "MANUAL",
+              "target": "T1",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "T1=>T2-T3-T4-T5=>=>solid",
+              "source": "T1",
+              "target": "T2-T3-T4-T5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MANUAL=>S1-S2=>=>solid",
+              "source": "MANUAL",
+              "target": "S1-S2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 13
+        },
+        "metrics": {
+          "nodeCount": 19,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Diagrama de Datos",
+        "kind": "flowchart",
+        "section": "Diagrama de Datos",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-android-smart-tv\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-app-module",
+              "label": "subgraph \"app module\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "REPO_I_APP",
+              "label": "Repository\\nInterfaces\\n(domain)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-AMXNetworkSdk",
+              "label": "subgraph \"AMXNetworkSdk\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-network-domain",
+              "label": "subgraph \"network/domain\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "REPO_I_SDK",
+              "label": "Repository\\nInterfaces",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "UC_SDK",
+              "label": "UseCases",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-network-data",
+              "label": "subgraph \"network/data\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "REPO_IMPL_SDK",
+              "label": "Repository\\nImplementations",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DTO_SDK",
+              "label": "DTOs / Models",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DATASRC",
+              "label": "DataSources\\nhome/ ipTv/ vod/\\nsearch/ payments/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-network-infra",
+              "label": "subgraph \"network/infra\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "BASE",
+              "label": "BaseRepository",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ROOM",
+              "label": "Room DAOs",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-Room-Databases",
+              "label": "subgraph \"Room Databases\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "LIVEDB",
+              "label": "LiveDatabase\\n(v8 — 8 migraciones)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "STARTDB",
+              "label": "StartupAPIsDatabase\\n(v21 — 21 migraciones)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "subgraph-External-APIs",
+              "label": "subgraph \"External APIs\"",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "RETROFIT",
+              "label": "Retrofit 2.11.0\\nREST APIs",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "OKHTTP",
+              "label": "OkHttp 4.12.0\\nHTTP Client",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "REPO_I_APP=>REPO_I_SDK=>=>solid",
+              "source": "REPO_I_APP",
+              "target": "REPO_I_SDK",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UC_SDK=>REPO_I_SDK=>=>solid",
+              "source": "UC_SDK",
+              "target": "REPO_I_SDK",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "REPO_I_SDK=>REPO_IMPL_SDK=>impl=>dashed",
+              "source": "REPO_I_SDK",
+              "target": "REPO_IMPL_SDK",
+              "label": "impl",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "REPO_IMPL_SDK=>DATASRC=>=>solid",
+              "source": "REPO_IMPL_SDK",
+              "target": "DATASRC",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "REPO_IMPL_SDK=>ROOM=>=>solid",
+              "source": "REPO_IMPL_SDK",
+              "target": "ROOM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DATASRC=>RETROFIT=>=>solid",
+              "source": "DATASRC",
+              "target": "RETROFIT",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RETROFIT=>OKHTTP=>=>solid",
+              "source": "RETROFIT",
+              "target": "OKHTTP",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ROOM=>LIVEDB=>=>solid",
+              "source": "ROOM",
+              "target": "LIVEDB",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ROOM=>STARTDB=>=>solid",
+              "source": "ROOM",
+              "target": "STARTDB",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "BASE=>REPO_IMPL_SDK=>=>solid",
+              "source": "BASE",
+              "target": "REPO_IMPL_SDK",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 8
+        },
+        "metrics": {
+          "nodeCount": 19,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 8
+        }
+      }
+    ]
+  }
+}

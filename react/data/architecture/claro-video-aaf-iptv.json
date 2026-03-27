@@ -1,0 +1,2250 @@
+{
+  "repo": "claro-video-aaf-iptv",
+  "title": "AAF IPTV",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-aaf-iptv",
+    "annex": "ANEXO_claro-video-aaf-iptv.html",
+    "vssRoute": "#/fase-1/vss/claro-video-aaf-iptv"
+  },
+  "source": {
+    "docPath": "claro-video-aaf-iptv\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2,
+    "totalNodes": 153,
+    "totalEdges": 88,
+    "sections": [
+      "️ Diagrama de Componentes",
+      "Flujos de Procesos Principales",
+      "CI/CD Pipeline"
+    ]
+  },
+  "diagrams": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "️ Diagrama de Componentes",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-aaf-iptv\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Bootstrap",
+              "label": "Bootstrap Layer"
+            },
+            {
+              "id": "Store",
+              "label": "Redux Store (src/store.js)"
+            },
+            {
+              "id": "Containers",
+              "label": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "Components",
+              "label": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "Actions",
+              "label": "Actions (src/actions/)"
+            },
+            {
+              "id": "AAFModule",
+              "label": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFPlayerModule",
+              "label": "AAFPlayer (src/AAFPlayer/)"
+            },
+            {
+              "id": "Requests",
+              "label": "API Layer (src/requests/)"
+            },
+            {
+              "id": "Devices",
+              "label": "Device Abstraction (src/devices/)"
+            },
+            {
+              "id": "Payments",
+              "label": "Payments (src/payments/)"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "IndexJS",
+              "label": "src/index.js\\n(ReactDOM.render)",
+              "type": "component",
+              "group": "Bootstrap Layer"
+            },
+            {
+              "id": "AppLoader",
+              "label": "applicationLoader.js\\n(APIs iniciales)",
+              "type": "component",
+              "group": "Bootstrap Layer"
+            },
+            {
+              "id": "Worker",
+              "label": "app.worker.js\\n(Service Worker)",
+              "type": "component",
+              "group": "Bootstrap Layer"
+            },
+            {
+              "id": "Server",
+              "label": "server.js\\n(Express)",
+              "type": "component",
+              "group": "Bootstrap Layer"
+            },
+            {
+              "id": "RootReducer",
+              "label": "rootReducer\\n(23 reducers combinados)",
+              "type": "component",
+              "group": "Redux Store (src/store.js)"
+            },
+            {
+              "id": "ThunkMW",
+              "label": "redux-thunk",
+              "type": "component",
+              "group": "Redux Store (src/store.js)"
+            },
+            {
+              "id": "AppContainer",
+              "label": "App/index.jsx\\n(React Router)",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "HomeContainer",
+              "label": "Home/",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "VideoContainer",
+              "label": "VideoContainer",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "TvContainer",
+              "label": "Tv/",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "EpgContainer",
+              "label": "Epg/",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "SearchContainer",
+              "label": "Search/",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "ProfileContainer",
+              "label": "Profile/",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "MyContentContainer",
+              "label": "MyContentContainer",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "MusicContainer",
+              "label": "Music/",
+              "type": "component",
+              "group": "Containers Layer (src/containers/)"
+            },
+            {
+              "id": "HeaderComp",
+              "label": "Header/",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "RibbonComp",
+              "label": "Ribbon/ Grid/",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "VideoComp",
+              "label": "Video/ PlayerControls/",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "EpgComp",
+              "label": "Epg/",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "AuthComp",
+              "label": "AuthComp",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "PaymentComp",
+              "label": "Payment/",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "ModalComp",
+              "label": "Modal/",
+              "type": "component",
+              "group": "Presentational Components (src/components/)"
+            },
+            {
+              "id": "UserActions",
+              "label": "user.js",
+              "type": "component",
+              "group": "Actions (src/actions/)"
+            },
+            {
+              "id": "PlaymediaActions",
+              "label": "playmedia.js",
+              "type": "component",
+              "group": "Actions (src/actions/)"
+            },
+            {
+              "id": "EpgActions",
+              "label": "epg.js",
+              "type": "component",
+              "group": "Actions (src/actions/)"
+            },
+            {
+              "id": "ModalActions",
+              "label": "modal.js",
+              "type": "component",
+              "group": "Actions (src/actions/)"
+            },
+            {
+              "id": "MetricsActions",
+              "label": "metrics.js",
+              "type": "component",
+              "group": "Actions (src/actions/)"
+            },
+            {
+              "id": "AAFAuth",
+              "label": "AAFAuth",
+              "type": "component",
+              "group": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFPin",
+              "label": "Pin",
+              "type": "component",
+              "group": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFTimeshift",
+              "label": "Timeshift",
+              "type": "component",
+              "group": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFResilence",
+              "label": "AAFResilence",
+              "type": "component",
+              "group": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFDatabase",
+              "label": "AAFDatabase",
+              "type": "component",
+              "group": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFSilo",
+              "label": "Silo",
+              "type": "component",
+              "group": "AAF Framework (src/AAF/)"
+            },
+            {
+              "id": "AAFPlayerMain",
+              "label": "AAFPlayer.js\\n(Shaka Player wrapper)",
+              "type": "component",
+              "group": "AAFPlayer (src/AAFPlayer/)"
+            },
+            {
+              "id": "RequestMgr",
+              "label": "RequestManager.js\\n(retry + refresh token)",
+              "type": "component",
+              "group": "API Layer (src/requests/)"
+            },
+            {
+              "id": "ApaLayer",
+              "label": "apa/ (Metadata, Asset,\\nLauncher, Translator)",
+              "type": "component",
+              "group": "API Layer (src/requests/)"
+            },
+            {
+              "id": "Tasks",
+              "label": "tasks/ (CMS tasks)",
+              "type": "component",
+              "group": "API Layer (src/requests/)"
+            },
+            {
+              "id": "DeviceJS",
+              "label": "device.js\\n(getPlatform)",
+              "type": "component",
+              "group": "Device Abstraction (src/devices/)"
+            },
+            {
+              "id": "Platforms",
+              "label": "Tizen / WebOS / Nagra /\\nArris / AndroidTV / web...",
+              "type": "component",
+              "group": "Device Abstraction (src/devices/)"
+            },
+            {
+              "id": "Checkout",
+              "label": "Checkout/",
+              "type": "component",
+              "group": "Payments (src/payments/)"
+            },
+            {
+              "id": "PlanSel",
+              "label": "PlanSelector/",
+              "type": "component",
+              "group": "Payments (src/payments/)"
+            },
+            {
+              "id": "Gateways",
+              "label": "HubGate/ ClaroColombiaGate/\\nTelmexMexicoGate/...",
+              "type": "component",
+              "group": "Payments (src/payments/)"
+            },
+            {
+              "id": "Store",
+              "label": "Store",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Requests",
+              "label": "Requests",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Containers",
+              "label": "Containers",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Components",
+              "label": "Components",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Actions",
+              "label": "Actions",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AAFModule",
+              "label": "AAFModule",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AAFPlayerModule",
+              "label": "AAFPlayerModule",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Devices",
+              "label": "Devices",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Payments",
+              "label": "Payments",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "IndexJS=>AppLoader=>=>solid",
+              "source": "IndexJS",
+              "target": "AppLoader",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "IndexJS=>Store=>=>solid",
+              "source": "IndexJS",
+              "target": "Store",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "IndexJS=>AppContainer=>=>solid",
+              "source": "IndexJS",
+              "target": "AppContainer",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppLoader=>Requests=>=>solid",
+              "source": "AppLoader",
+              "target": "Requests",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Store=>RootReducer=>=>solid",
+              "source": "Store",
+              "target": "RootReducer",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Store=>ThunkMW=>=>solid",
+              "source": "Store",
+              "target": "ThunkMW",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppContainer=>Containers=>=>solid",
+              "source": "AppContainer",
+              "target": "Containers",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Containers=>Components=>=>solid",
+              "source": "Containers",
+              "target": "Components",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Containers=>Actions=>=>solid",
+              "source": "Containers",
+              "target": "Actions",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Actions=>Store=>=>solid",
+              "source": "Actions",
+              "target": "Store",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AAFModule=>AAFAuth=>=>solid",
+              "source": "AAFModule",
+              "target": "AAFAuth",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AAFModule=>AAFDatabase=>=>solid",
+              "source": "AAFModule",
+              "target": "AAFDatabase",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AAFModule=>AAFResilence=>=>solid",
+              "source": "AAFModule",
+              "target": "AAFResilence",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AAFPlayerModule=>AAFModule=>=>solid",
+              "source": "AAFPlayerModule",
+              "target": "AAFModule",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VideoContainer=>AAFPlayerModule=>=>solid",
+              "source": "VideoContainer",
+              "target": "AAFPlayerModule",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VideoContainer=>AAFModule=>=>solid",
+              "source": "VideoContainer",
+              "target": "AAFModule",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Requests=>RequestMgr=>=>solid",
+              "source": "Requests",
+              "target": "RequestMgr",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RequestMgr=>ApaLayer=>=>solid",
+              "source": "RequestMgr",
+              "target": "ApaLayer",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "IndexJS=>Devices=>=>solid",
+              "source": "IndexJS",
+              "target": "Devices",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Devices=>DeviceJS=>=>solid",
+              "source": "Devices",
+              "target": "DeviceJS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DeviceJS=>Platforms=>=>solid",
+              "source": "DeviceJS",
+              "target": "Platforms",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MyContentContainer=>Payments=>=>solid",
+              "source": "MyContentContainer",
+              "target": "Payments",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Payments=>Requests=>=>solid",
+              "source": "Payments",
+              "target": "Requests",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AuthComp=>AAFModule=>=>solid",
+              "source": "AuthComp",
+              "target": "AAFModule",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 27
+        },
+        "metrics": {
+          "nodeCount": 51,
+          "edgeCount": 24,
+          "groupCount": 10,
+          "isolatedCount": 27
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Flujo Principal 1: Bootstrap de Aplicación",
+        "kind": "sequence",
+        "section": "Flujos de Procesos Principales",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-aaf-iptv\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "User",
+              "label": "Usuario/DispositivoTV"
+            },
+            {
+              "id": "IndexJS",
+              "label": "src/index.js"
+            },
+            {
+              "id": "Device",
+              "label": "src/devices/device.js"
+            },
+            {
+              "id": "AppLoader",
+              "label": "applicationLoader.js"
+            },
+            {
+              "id": "Requests",
+              "label": "requests/loader.js"
+            },
+            {
+              "id": "APA",
+              "label": "requests/apa/"
+            },
+            {
+              "id": "Redux",
+              "label": "Redux Store"
+            },
+            {
+              "id": "ReactDOM",
+              "label": "ReactDOM"
+            },
+            {
+              "id": "User-",
+              "label": "User-"
+            },
+            {
+              "id": "IndexJS-",
+              "label": "IndexJS-"
+            },
+            {
+              "id": "Device--",
+              "label": "Device--"
+            },
+            {
+              "id": "AppLoader-",
+              "label": "AppLoader-"
+            },
+            {
+              "id": "Requests--",
+              "label": "Requests--"
+            },
+            {
+              "id": "APA--",
+              "label": "APA--"
+            },
+            {
+              "id": "AppLoader--",
+              "label": "AppLoader--"
+            },
+            {
+              "id": "ReactDOM--",
+              "label": "ReactDOM--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-User",
+              "label": "Usuario/DispositivoTV",
+              "subtitle": "Actor",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-IndexJS",
+              "label": "src/index.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-Device",
+              "label": "src/devices/device.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-AppLoader",
+              "label": "applicationLoader.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Requests",
+              "label": "requests/loader.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-APA",
+              "label": "requests/apa/",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Redux",
+              "label": "Redux Store",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-ReactDOM",
+              "label": "ReactDOM",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-User-",
+              "label": "User-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-IndexJS-",
+              "label": "IndexJS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-Device--",
+              "label": "Device--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-AppLoader-",
+              "label": "AppLoader-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-Requests--",
+              "label": "Requests--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-APA--",
+              "label": "APA--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-AppLoader--",
+              "label": "AppLoader--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-ReactDOM--",
+              "label": "ReactDOM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Carga la app (URL / boot STB)",
+              "subtitle": "User- → src/index.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Device.getDevice() / getPlatform()",
+              "subtitle": "IndexJS- → src/devices/device.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "deviceObject (tizen | webos | nagra | arris | web...)",
+              "subtitle": "Device-- → src/index.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1540,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "ALT",
+              "subtitle": "Dispositivo Arris",
+              "type": "control",
+              "group": "control",
+              "stat": "4",
+              "x": 2100,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "deviceObject.disableArrisKeys()",
+              "subtitle": "IndexJS- → src/devices/device.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1540,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "await loadInitialApis()",
+              "subtitle": "IndexJS- → applicationLoader.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1680,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "user/startheaderinfo (sync)",
+              "subtitle": "AppLoader- → requests/loader.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2100,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "session / token info",
+              "subtitle": "Requests-- → applicationLoader.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2100,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "PAR",
+              "subtitle": "APIs asíncronas en paralelo",
+              "type": "control",
+              "group": "control",
+              "stat": "9",
+              "x": 2100,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "apa/metadata",
+              "subtitle": "AppLoader- → requests/apa/",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2240,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "apa/asset",
+              "subtitle": "AppLoader- → requests/apa/",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2240,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "apa/launcher",
+              "subtitle": "AppLoader- → requests/apa/",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 2240,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "configuración de la app",
+              "subtitle": "APA-- → applicationLoader.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 2240,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "Ready",
+              "subtitle": "AppLoader-- → src/index.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 2100,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "createStore (ya inicializado en store.js)",
+              "subtitle": "IndexJS- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 2100,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "ReactDOM.render(   )",
+              "subtitle": "IndexJS- → ReactDOM",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 2240,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "App visible en pantalla",
+              "subtitle": "ReactDOM-- → Usuario/DispositivoTV",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "17",
+              "x": 2100,
+              "y": 2664
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 16,
+          "participantCount": 16
+        },
+        "metrics": {
+          "nodeCount": 33,
+          "edgeCount": 16,
+          "groupCount": 16,
+          "isolatedCount": 16
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Flujo Principal 2: Autenticación de Usuario (Login)",
+        "kind": "sequence",
+        "section": "Flujos de Procesos Principales",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-aaf-iptv\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "User",
+              "label": "Usuario"
+            },
+            {
+              "id": "LoginUI",
+              "label": "authentication/Login"
+            },
+            {
+              "id": "AuthActions",
+              "label": "actions/user.js"
+            },
+            {
+              "id": "Redux",
+              "label": "Redux Store"
+            },
+            {
+              "id": "RequestMgr",
+              "label": "requests/RequestManager.js"
+            },
+            {
+              "id": "AAFAuth",
+              "label": "AAF/Auth/login.js"
+            },
+            {
+              "id": "API",
+              "label": "Backend API (mfwks)"
+            },
+            {
+              "id": "Storage",
+              "label": "DeviceStorage"
+            },
+            {
+              "id": "User-",
+              "label": "User-"
+            },
+            {
+              "id": "LoginUI-",
+              "label": "LoginUI-"
+            },
+            {
+              "id": "AuthActions-",
+              "label": "AuthActions-"
+            },
+            {
+              "id": "AAFAuth-",
+              "label": "AAFAuth-"
+            },
+            {
+              "id": "RequestMgr-",
+              "label": "RequestMgr-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "RequestMgr--",
+              "label": "RequestMgr--"
+            },
+            {
+              "id": "AAFAuth--",
+              "label": "AAFAuth--"
+            },
+            {
+              "id": "Redux--",
+              "label": "Redux--"
+            },
+            {
+              "id": "LoginUI--",
+              "label": "LoginUI--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-User",
+              "label": "Usuario",
+              "subtitle": "Actor",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginUI",
+              "label": "authentication/Login",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-AuthActions",
+              "label": "actions/user.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-Redux",
+              "label": "Redux Store",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-RequestMgr",
+              "label": "requests/RequestManager.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-AAFAuth",
+              "label": "AAF/Auth/login.js",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "Backend API (mfwks)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-Storage",
+              "label": "DeviceStorage",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-User-",
+              "label": "User-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginUI-",
+              "label": "LoginUI-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-AuthActions-",
+              "label": "AuthActions-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-AAFAuth-",
+              "label": "AAFAuth-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-RequestMgr-",
+              "label": "RequestMgr-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-RequestMgr--",
+              "label": "RequestMgr--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-AAFAuth--",
+              "label": "AAFAuth--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-Redux--",
+              "label": "Redux--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "participant-LoginUI--",
+              "label": "LoginUI--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4760,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Ingresa credenciales",
+              "subtitle": "User- → authentication/Login",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "dispatch(fetchIsLoggedIn / fetchSmartCardLogin)",
+              "subtitle": "LoginUI- → actions/user.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "dispatch loading state",
+              "subtitle": "AuthActions- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1820,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Auth.login(credentials)",
+              "subtitle": "AuthActions- → AAF/Auth/login.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 2100,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "POST /user/login (vía RequestManager)",
+              "subtitle": "AAFAuth- → requests/RequestManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2100,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "ALT",
+              "subtitle": "Login exitoso",
+              "type": "control",
+              "group": "control",
+              "stat": "6",
+              "x": 2380,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "POST /user/login",
+              "subtitle": "RequestMgr- → Backend API (mfwks)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2520,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "200 OK + JWT Token",
+              "subtitle": "API-- → requests/RequestManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2380,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "token response",
+              "subtitle": "RequestMgr-- → AAF/Auth/login.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2660,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "Persiste token (DeviceStorage)",
+              "subtitle": "AAFAuth- → DeviceStorage",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2520,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "Success",
+              "subtitle": "AAFAuth-- → actions/user.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2380,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "dispatch(updateUserState)",
+              "subtitle": "AuthActions- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 1820,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "state.user actualizado",
+              "subtitle": "Redux-- → authentication/Login",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 2380,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "Redirige a Home",
+              "subtitle": "LoginUI-- → Usuario",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 2380,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "ELSE",
+              "subtitle": "Token expirado — Retry con refresh",
+              "type": "control",
+              "group": "control",
+              "stat": "15",
+              "x": 2380,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "Fetch falla (401)",
+              "subtitle": "RequestMgr- → Backend API (mfwks)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 2520,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "refreshToken() vía requests/loader.js",
+              "subtitle": "RequestMgr- → requests/RequestManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "17",
+              "x": 2240,
+              "y": 2664
+            },
+            {
+              "id": "step-18",
+              "label": "POST /user/login (retry)",
+              "subtitle": "RequestMgr- → Backend API (mfwks)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "18",
+              "x": 2520,
+              "y": 2820
+            },
+            {
+              "id": "step-19",
+              "label": "Nuevo token",
+              "subtitle": "API-- → requests/RequestManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "19",
+              "x": 2380,
+              "y": 2976
+            },
+            {
+              "id": "step-20",
+              "label": "Success tras retry",
+              "subtitle": "RequestMgr-- → AAF/Auth/login.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "20",
+              "x": 2660,
+              "y": 3132
+            },
+            {
+              "id": "step-21",
+              "label": "ELSE",
+              "subtitle": "Credenciales inválidas",
+              "type": "control",
+              "group": "control",
+              "stat": "21",
+              "x": 2380,
+              "y": 3288
+            },
+            {
+              "id": "step-22",
+              "label": "401 Unauthorized",
+              "subtitle": "API-- → requests/RequestManager.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "22",
+              "x": 2380,
+              "y": 3444
+            },
+            {
+              "id": "step-23",
+              "label": "Error parseado",
+              "subtitle": "RequestMgr-- → AAF/Auth/login.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "23",
+              "x": 2660,
+              "y": 3600
+            },
+            {
+              "id": "step-24",
+              "label": "throw AuthError",
+              "subtitle": "AAFAuth-- → actions/user.js",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "24",
+              "x": 2380,
+              "y": 3756
+            },
+            {
+              "id": "step-25",
+              "label": "dispatch(setAuthError)",
+              "subtitle": "AuthActions- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "25",
+              "x": 1820,
+              "y": 3912
+            },
+            {
+              "id": "step-26",
+              "label": "error state",
+              "subtitle": "Redux-- → authentication/Login",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "26",
+              "x": 2380,
+              "y": 4068
+            },
+            {
+              "id": "step-27",
+              "label": "Muestra mensaje de error",
+              "subtitle": "LoginUI-- → Usuario",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "27",
+              "x": 2380,
+              "y": 4224
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-17=>step-18",
+              "source": "step-17",
+              "target": "step-18",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-18=>step-19",
+              "source": "step-18",
+              "target": "step-19",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-19=>step-20",
+              "source": "step-19",
+              "target": "step-20",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-20=>step-21",
+              "source": "step-20",
+              "target": "step-21",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-21=>step-22",
+              "source": "step-21",
+              "target": "step-22",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-22=>step-23",
+              "source": "step-22",
+              "target": "step-23",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-23=>step-24",
+              "source": "step-23",
+              "target": "step-24",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-24=>step-25",
+              "source": "step-24",
+              "target": "step-25",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-25=>step-26",
+              "source": "step-25",
+              "target": "step-26",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-26=>step-27",
+              "source": "step-26",
+              "target": "step-27",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 18,
+          "participantCount": 18
+        },
+        "metrics": {
+          "nodeCount": 45,
+          "edgeCount": 26,
+          "groupCount": 18,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Flujo 3: Flujo de Datos Redux (Patrón Flux)",
+        "kind": "flowchart",
+        "section": "Flujos de Procesos Principales",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-aaf-iptv\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "User",
+              "label": "👤 Usuario",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Component",
+              "label": "React Component\\ncontainers/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Dispatch",
+              "label": "dispatch(action)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ActionCreator",
+              "label": "Action Creator\\nsrc/actions/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Middleware",
+              "label": "redux-thunk\\nMiddleware",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "API",
+              "label": "API Request\\nsrc/requests/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Reducer",
+              "label": "Reducer\\nsrc/reducers/",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Store",
+              "label": "Redux Store\\nsrc/store.js",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "View",
+              "label": "📺 Vista Actualizada",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "User=>Component=>=>solid",
+              "source": "User",
+              "target": "Component",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Component=>Dispatch=>=>solid",
+              "source": "Component",
+              "target": "Dispatch",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Dispatch=>ActionCreator=>=>solid",
+              "source": "Dispatch",
+              "target": "ActionCreator",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ActionCreator=>Middleware=>=>solid",
+              "source": "ActionCreator",
+              "target": "Middleware",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Middleware=>API=>=>solid",
+              "source": "Middleware",
+              "target": "API",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "API=>Middleware=>=>solid",
+              "source": "API",
+              "target": "Middleware",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Middleware=>Reducer=>=>solid",
+              "source": "Middleware",
+              "target": "Reducer",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Reducer=>Store=>=>solid",
+              "source": "Reducer",
+              "target": "Store",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Store=>Component=>=>solid",
+              "source": "Store",
+              "target": "Component",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Component=>View=>=>solid",
+              "source": "Component",
+              "target": "View",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Diagrama de Flujo CI/CD Completo",
+        "kind": "flowchart",
+        "section": "CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-aaf-iptv\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "Dev",
+              "label": "Desarrollador",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Push",
+              "label": "Push / PR",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Branch-Tipo-de-branch",
+              "label": "Branch{Tipo de branch?}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Branch",
+              "label": "Branch",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CI",
+              "label": "ci.yml",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Sonar",
+              "label": "workflow-analysis.yml\\nSonarQube",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "SonarScan",
+              "label": "Análisis SonarQube\\nsrc/ JS/JSX/SCSS",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "QualityGate-Quality-Gate",
+              "label": "QualityGate{Quality Gate}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "QualityGate",
+              "label": "QualityGate",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MergeOK",
+              "label": "✅ Allow Merge",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MergeFail",
+              "label": "❌ Block Merge",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "BranchFactory",
+              "label": "branch-factory.yml\\nCrear rama estándar",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "OpenPR",
+              "label": "open-pr-release-to-main.yml\\nAbrir PR release→main",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "RemoveFeat",
+              "label": "remove-feature-from-integration.yml\\nLimpiar branches",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Transfer",
+              "label": "transfer-branch-bitbucket.yml\\nSync Bitbucket",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "Dev=>Push=>=>solid",
+              "source": "Dev",
+              "target": "Push",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Push=>Branch-Tipo-de-branch=>=>solid",
+              "source": "Push",
+              "target": "Branch-Tipo-de-branch",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Branch=>CI=>main / release/ / feature/ / bugfix/ / hotfix/ / support/=>solid",
+              "source": "Branch",
+              "target": "CI",
+              "label": "main / release/ / feature/ / bugfix/ / hotfix/ / support/",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Branch=>Sonar=>PR abierto=>solid",
+              "source": "Branch",
+              "target": "Sonar",
+              "label": "PR abierto",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Sonar=>SonarScan=>=>solid",
+              "source": "Sonar",
+              "target": "SonarScan",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SonarScan=>QualityGate-Quality-Gate=>=>solid",
+              "source": "SonarScan",
+              "target": "QualityGate-Quality-Gate",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QualityGate=>MergeOK=>Pass=>solid",
+              "source": "QualityGate",
+              "target": "MergeOK",
+              "label": "Pass",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QualityGate=>MergeFail=>Fail=>solid",
+              "source": "QualityGate",
+              "target": "MergeFail",
+              "label": "Fail",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Dev=>BranchFactory=>Manual=>solid",
+              "source": "Dev",
+              "target": "BranchFactory",
+              "label": "Manual",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Dev=>OpenPR=>Manual=>solid",
+              "source": "Dev",
+              "target": "OpenPR",
+              "label": "Manual",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Dev=>RemoveFeat=>Manual=>solid",
+              "source": "Dev",
+              "target": "RemoveFeat",
+              "label": "Manual",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Dev=>Transfer=>Manual=>solid",
+              "source": "Dev",
+              "target": "Transfer",
+              "label": "Manual",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

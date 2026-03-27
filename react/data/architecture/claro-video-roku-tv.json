@@ -1,0 +1,1044 @@
+{
+  "repo": "claro-video-roku-tv",
+  "title": "Roku TV",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-roku-tv",
+    "annex": "ANEXO_claro-video-roku-tv.html",
+    "vssRoute": "#/fase-1/vss/claro-video-roku-tv"
+  },
+  "source": {
+    "docPath": "claro-video-roku-tv\\claro-video-roku-tv\\documentacionroku_v1\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2,
+    "totalNodes": 60,
+    "totalEdges": 35,
+    "sections": [
+      "️ Diagrama de Componentes",
+      "Diagramas de Flujos de Procesos",
+      "Diagrama de CI/CD Pipeline",
+      "Diagrama de Datos"
+    ]
+  },
+  "diagrams": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "️ Diagrama de Componentes",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-roku-tv\\claro-video-roku-tv\\documentacionroku_v1\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [
+            {
+              "id": "UI",
+              "label": "UI"
+            },
+            {
+              "id": "Domain",
+              "label": "Domain"
+            },
+            {
+              "id": "Data",
+              "label": "Data"
+            },
+            {
+              "id": "Infra",
+              "label": "Infra"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "A",
+              "label": "Activities",
+              "type": "component",
+              "group": "UI"
+            },
+            {
+              "id": "F",
+              "label": "Fragments",
+              "type": "component",
+              "group": "UI"
+            },
+            {
+              "id": "VM",
+              "label": "ViewModels",
+              "type": "component",
+              "group": "UI"
+            },
+            {
+              "id": "UC",
+              "label": "UseCases",
+              "type": "component",
+              "group": "Domain"
+            },
+            {
+              "id": "R",
+              "label": "Repositories",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "M",
+              "label": "Managers/Tasks Legacy",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "DS",
+              "label": "DataSources",
+              "type": "component",
+              "group": "Data"
+            },
+            {
+              "id": "NET",
+              "label": "Retrofit/OkHttp",
+              "type": "component",
+              "group": "Infra"
+            },
+            {
+              "id": "EXT",
+              "label": "Firebase/NewRelic",
+              "type": "component",
+              "group": "Infra"
+            }
+          ],
+          "edges": [
+            {
+              "id": "A=>VM=>=>solid",
+              "source": "A",
+              "target": "VM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "F=>VM=>=>solid",
+              "source": "F",
+              "target": "VM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VM=>UC=>=>solid",
+              "source": "VM",
+              "target": "UC",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UC=>R=>=>solid",
+              "source": "UC",
+              "target": "R",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "R=>DS=>=>solid",
+              "source": "R",
+              "target": "DS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VM=>M=>=>solid",
+              "source": "VM",
+              "target": "M",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DS=>NET=>=>solid",
+              "source": "DS",
+              "target": "NET",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NET=>EXT=>=>solid",
+              "source": "NET",
+              "target": "EXT",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 8,
+          "groupCount": 4,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Flujo Principal 1: Flujo Moderno (UI → UseCase → Repository)",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-roku-tv\\claro-video-roku-tv\\documentacionroku_v1\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "U",
+              "label": "User"
+            },
+            {
+              "id": "UI",
+              "label": "UI"
+            },
+            {
+              "id": "VM",
+              "label": "ViewModel"
+            },
+            {
+              "id": "UC",
+              "label": "UseCase"
+            },
+            {
+              "id": "R",
+              "label": "Repository"
+            },
+            {
+              "id": "DS",
+              "label": "DataSource"
+            },
+            {
+              "id": "U-",
+              "label": "U-"
+            },
+            {
+              "id": "UI-",
+              "label": "UI-"
+            },
+            {
+              "id": "VM-",
+              "label": "VM-"
+            },
+            {
+              "id": "UC-",
+              "label": "UC-"
+            },
+            {
+              "id": "R-",
+              "label": "R-"
+            },
+            {
+              "id": "DS--",
+              "label": "DS--"
+            },
+            {
+              "id": "R--",
+              "label": "R--"
+            },
+            {
+              "id": "VM--",
+              "label": "VM--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-U",
+              "label": "User",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-UI",
+              "label": "UI",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-VM",
+              "label": "ViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-UC",
+              "label": "UseCase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-R",
+              "label": "Repository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-DS",
+              "label": "DataSource",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-U-",
+              "label": "U-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-UI-",
+              "label": "UI-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-VM-",
+              "label": "VM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-UC-",
+              "label": "UC-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-R-",
+              "label": "R-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-DS--",
+              "label": "DS--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-R--",
+              "label": "R--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-VM--",
+              "label": "VM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Acción",
+              "subtitle": "U- → UI",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 980,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Evento",
+              "subtitle": "UI- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1260,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "Ejecutar caso de uso",
+              "subtitle": "VM- → UseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1540,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Solicitud dominio",
+              "subtitle": "UC- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1820,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Request data",
+              "subtitle": "R- → DataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2100,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "Response",
+              "subtitle": "DS-- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2100,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "Resultado",
+              "subtitle": "R-- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1960,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "Estado actualizado",
+              "subtitle": "VM-- → UI",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 1960,
+              "y": 1260
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 14,
+          "participantCount": 14
+        },
+        "metrics": {
+          "nodeCount": 22,
+          "edgeCount": 7,
+          "groupCount": 14,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Flujo Principal 2: Flujo Legacy (UI → Manager/Task)",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-roku-tv\\claro-video-roku-tv\\documentacionroku_v1\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "U",
+              "label": "User"
+            },
+            {
+              "id": "UI",
+              "label": "UI"
+            },
+            {
+              "id": "VM",
+              "label": "ViewModel"
+            },
+            {
+              "id": "L",
+              "label": "LegacyManagerTask"
+            },
+            {
+              "id": "U-",
+              "label": "U-"
+            },
+            {
+              "id": "UI-",
+              "label": "UI-"
+            },
+            {
+              "id": "VM-",
+              "label": "VM-"
+            },
+            {
+              "id": "L--",
+              "label": "L--"
+            },
+            {
+              "id": "VM--",
+              "label": "VM--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-U",
+              "label": "User",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-UI",
+              "label": "UI",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-VM",
+              "label": "ViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-L",
+              "label": "LegacyManagerTask",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-U-",
+              "label": "U-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-UI-",
+              "label": "UI-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-VM-",
+              "label": "VM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-L--",
+              "label": "L--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-VM--",
+              "label": "VM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Acción",
+              "subtitle": "U- → UI",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 700,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Evento",
+              "subtitle": "UI- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 980,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "Request manager/task",
+              "subtitle": "VM- → LegacyManagerTask",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1260,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Resultado",
+              "subtitle": "L-- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1260,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Estado actualizado",
+              "subtitle": "VM-- → UI",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1260,
+              "y": 792
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 9,
+          "participantCount": 9
+        },
+        "metrics": {
+          "nodeCount": 14,
+          "edgeCount": 4,
+          "groupCount": 9,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Diagrama de CI/CD Pipeline",
+        "kind": "flowchart",
+        "section": "Diagrama de CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-roku-tv\\claro-video-roku-tv\\documentacionroku_v1\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "GIT",
+              "label": "Push/PR",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "CI",
+              "label": "Workflow Build",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B1",
+              "label": ":app:assembleCoshipProdQA",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B2",
+              "label": "Opciones gradle incl. -x test",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ART",
+              "label": "Artifact Build",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "WARN",
+              "label": "Riesgo: tests omitidos en algunos flujos",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "GIT=>CI=>=>solid",
+              "source": "GIT",
+              "target": "CI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CI=>B1=>=>solid",
+              "source": "CI",
+              "target": "B1",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CI=>B2=>=>solid",
+              "source": "CI",
+              "target": "B2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B1=>ART=>=>solid",
+              "source": "B1",
+              "target": "ART",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B2=>WARN=>=>solid",
+              "source": "B2",
+              "target": "WARN",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 6,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Diagrama de Datos",
+        "kind": "flowchart",
+        "section": "Diagrama de Datos",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-roku-tv\\claro-video-roku-tv\\documentacionroku_v1\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "UI2",
+              "label": "UI Event",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "VM2",
+              "label": "ViewModel",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MOD",
+              "label": "Modern Path",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "LEG",
+              "label": "Legacy Path",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "UC2",
+              "label": "UseCase",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "REPO",
+              "label": "Repository",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DS2",
+              "label": "DataSource/API",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "MGR",
+              "label": "Manager/Task",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "RESP",
+              "label": "Response",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "UI2=>VM2=>=>solid",
+              "source": "UI2",
+              "target": "VM2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VM2=>MOD=>=>solid",
+              "source": "VM2",
+              "target": "MOD",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VM2=>LEG=>=>solid",
+              "source": "VM2",
+              "target": "LEG",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MOD=>UC2=>=>solid",
+              "source": "MOD",
+              "target": "UC2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UC2=>REPO=>=>solid",
+              "source": "UC2",
+              "target": "REPO",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "REPO=>DS2=>=>solid",
+              "source": "REPO",
+              "target": "DS2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LEG=>MGR=>=>solid",
+              "source": "LEG",
+              "target": "MGR",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DS2=>RESP=>=>solid",
+              "source": "DS2",
+              "target": "RESP",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MGR=>RESP=>=>solid",
+              "source": "MGR",
+              "target": "RESP",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RESP=>VM2=>=>solid",
+              "source": "RESP",
+              "target": "VM2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VM2=>UI2=>=>solid",
+              "source": "VM2",
+              "target": "UI2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

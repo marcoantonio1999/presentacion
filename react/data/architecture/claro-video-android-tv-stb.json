@@ -1,0 +1,5306 @@
+{
+  "repo": "claro-video-android-tv-stb",
+  "title": "Android TV STB",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-android-tv-stb",
+    "annex": "ANEXO_claro-video-android-tv-stb.html",
+    "vssRoute": "#/fase-1/vss/claro-video-android-tv-stb"
+  },
+  "source": {
+    "docPath": "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 16,
+    "flowchartCount": 10,
+    "sequenceCount": 6,
+    "totalNodes": 335,
+    "totalEdges": 213,
+    "sections": [
+      "1️⃣ Arquitectura de 3 Capas",
+      "2️⃣ Flujo de Datos: Login",
+      "3️⃣ Flujo de Datos: EPG (Electronic Program Guide)",
+      "4️⃣ Módulos del Proyecto y Dependencias",
+      "5️⃣ Dependency Injection (Hilt) Modules",
+      "6️⃣ MVVM Pattern - State Management",
+      "7️⃣ Capas de Presentation, Domain, Data",
+      "8️⃣ Video Playback Architecture",
+      "9️⃣ Security Architecture",
+      "State Flow (Reactive Data)",
+      "1️⃣1️⃣ Diagrama de Componentes - Arquitectura Integral",
+      "N03: Diagramas de Flujos de Procesos",
+      "N04: Diagrama de CI/CD Pipeline"
+    ]
+  },
+  "diagrams": {
+    "total": 16,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "1️⃣ Arquitectura de 3 Capas",
+        "kind": "flowchart",
+        "section": "1️⃣ Arquitectura de 3 Capas",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Presentation",
+              "label": "PRESENTATION LAYER"
+            },
+            {
+              "id": "Domain",
+              "label": "DOMAIN LAYER - Business Logic"
+            },
+            {
+              "id": "Data",
+              "label": "DATA LAYER"
+            },
+            {
+              "id": "Remote",
+              "label": "Remote APIs"
+            },
+            {
+              "id": "Local",
+              "label": "Local Database"
+            },
+            {
+              "id": "RepositoryImpl",
+              "label": "Repository Implementation"
+            },
+            {
+              "id": "DI",
+              "label": "Dependency Injection - Hilt"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "MainActivity",
+              "label": "MainActivity",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "HomeFragment",
+              "label": "HomeFragment",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "EPGFragment",
+              "label": "EPGFragment",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "PlayerActivity",
+              "label": "PlayerActivity",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "ProfileFragment",
+              "label": "ProfileFragment",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "SettingsFragment",
+              "label": "SettingsFragment",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "HomeVM",
+              "label": "HomeViewModel",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "EPGViewModel",
+              "label": "EPGViewModel",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "PlayerVM",
+              "label": "PlayerViewModel",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "ProfileVM",
+              "label": "ProfileViewModel",
+              "type": "component",
+              "group": "PRESENTATION LAYER"
+            },
+            {
+              "id": "Entities",
+              "label": "Entities · Program, Channel · User, LoginCredentials",
+              "type": "component",
+              "group": "DOMAIN LAYER - Business Logic"
+            },
+            {
+              "id": "Repositories",
+              "label": "Repository Interfaces · LoginRepository · ProgramRepository · ChannelRepository · UserRepository",
+              "type": "component",
+              "group": "DOMAIN LAYER - Business Logic"
+            },
+            {
+              "id": "UseCases",
+              "label": "UseCases · LoginUseCase · GetProgramsUseCase · GetChannelsUseCase · GetUserProfileUseCase",
+              "type": "component",
+              "group": "DOMAIN LAYER - Business Logic"
+            },
+            {
+              "id": "LoginApi",
+              "label": "LoginApi",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "EPGApi",
+              "label": "EPGApi",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "PlayerApi",
+              "label": "PlayerApi",
+              "type": "component",
+              "group": "Remote APIs"
+            },
+            {
+              "id": "UserApi",
+              "label": "UserApi",
+              "type": "component",
+              "group": "Remote APIs"
+            },
+            {
+              "id": "Retrofit",
+              "label": "Retrofit Client",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "OkHttp",
+              "label": "OkHttp Layer",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "RoomDB",
+              "label": "Room Database",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "ProgramDao",
+              "label": "ProgramDao",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "ChannelDao",
+              "label": "ChannelDao",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "UserDao",
+              "label": "UserDao",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "LoginRepoImpl",
+              "label": "LoginRepositoryImpl",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "ProgramRepoImpl",
+              "label": "ProgramRepositoryImpl",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "ChannelRepoImpl",
+              "label": "ChannelRepositoryImpl",
+              "type": "component",
+              "group": "Repository Implementation"
+            },
+            {
+              "id": "UserRepoImpl",
+              "label": "UserRepositoryImpl",
+              "type": "component",
+              "group": "Repository Implementation"
+            },
+            {
+              "id": "NetworkModule",
+              "label": "NetworkModule · Retrofit config · API clients",
+              "type": "component",
+              "group": "Dependency Injection - Hilt"
+            },
+            {
+              "id": "DatabaseModule",
+              "label": "DatabaseModule · Room setup · DAOs",
+              "type": "component",
+              "group": "Dependency Injection - Hilt"
+            },
+            {
+              "id": "RepositoryModule",
+              "label": "RepositoryModule · Repository impls",
+              "type": "component",
+              "group": "Dependency Injection - Hilt"
+            },
+            {
+              "id": "ViewModelModule",
+              "label": "ViewModelModule · ViewModel injection",
+              "type": "component",
+              "group": "Dependency Injection - Hilt"
+            },
+            {
+              "id": "RepositoryImpl",
+              "label": "RepositoryImpl",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DI",
+              "label": "DI",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Remote",
+              "label": "Remote",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Local",
+              "label": "Local",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "HomeFragment=>HomeVM=>observes=>dashed",
+              "source": "HomeFragment",
+              "target": "HomeVM",
+              "label": "observes",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "EPGFragment=>EPGViewModel=>observes=>dashed",
+              "source": "EPGFragment",
+              "target": "EPGViewModel",
+              "label": "observes",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "PlayerActivity=>PlayerVM=>observes=>dashed",
+              "source": "PlayerActivity",
+              "target": "PlayerVM",
+              "label": "observes",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "ProfileFragment=>ProfileVM=>observes=>dashed",
+              "source": "ProfileFragment",
+              "target": "ProfileVM",
+              "label": "observes",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "LoginRepoImpl=>LoginApi=>uses=>solid",
+              "source": "LoginRepoImpl",
+              "target": "LoginApi",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LoginRepoImpl=>ProgramDao=>uses=>solid",
+              "source": "LoginRepoImpl",
+              "target": "ProgramDao",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ProgramRepoImpl=>EPGApi=>uses=>solid",
+              "source": "ProgramRepoImpl",
+              "target": "EPGApi",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ProgramRepoImpl=>ProgramDao=>uses=>solid",
+              "source": "ProgramRepoImpl",
+              "target": "ProgramDao",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Retrofit=>OkHttp=>HTTP layer=>solid",
+              "source": "Retrofit",
+              "target": "OkHttp",
+              "label": "HTTP layer",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RoomDB=>ProgramDao=>DAOs=>solid",
+              "source": "RoomDB",
+              "target": "ProgramDao",
+              "label": "DAOs",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RoomDB=>ChannelDao=>DAOs=>solid",
+              "source": "RoomDB",
+              "target": "ChannelDao",
+              "label": "DAOs",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RoomDB=>UserDao=>DAOs=>solid",
+              "source": "RoomDB",
+              "target": "UserDao",
+              "label": "DAOs",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HomeVM=>UseCases=>uses=>solid",
+              "source": "HomeVM",
+              "target": "UseCases",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGViewModel=>UseCases=>uses=>solid",
+              "source": "EPGViewModel",
+              "target": "UseCases",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerVM=>UseCases=>uses=>solid",
+              "source": "PlayerVM",
+              "target": "UseCases",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UseCases=>Repositories=>uses=>solid",
+              "source": "UseCases",
+              "target": "Repositories",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Repositories=>RepositoryImpl=>implemented by=>solid",
+              "source": "Repositories",
+              "target": "RepositoryImpl",
+              "label": "implemented by",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DI=>Remote=>provides=>dashed",
+              "source": "DI",
+              "target": "Remote",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "DI=>Local=>provides=>dashed",
+              "source": "DI",
+              "target": "Local",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "DI=>RepositoryImpl=>provides=>dashed",
+              "source": "DI",
+              "target": "RepositoryImpl",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "DI=>HomeVM=>provides=>dashed",
+              "source": "DI",
+              "target": "HomeVM",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "DI=>EPGViewModel=>provides=>dashed",
+              "source": "DI",
+              "target": "EPGViewModel",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 11
+        },
+        "metrics": {
+          "nodeCount": 35,
+          "edgeCount": 22,
+          "groupCount": 7,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "2️⃣ Flujo de Datos: Login",
+        "kind": "sequence",
+        "section": "2️⃣ Flujo de Datos: Login",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "User",
+              "label": "User"
+            },
+            {
+              "id": "Fragment",
+              "label": "LoginFragment"
+            },
+            {
+              "id": "ViewModel",
+              "label": "LoginViewModel"
+            },
+            {
+              "id": "UseCase",
+              "label": "LoginUseCase"
+            },
+            {
+              "id": "Repository",
+              "label": "LoginRepository"
+            },
+            {
+              "id": "RemoteDS",
+              "label": "RemoteDataSource"
+            },
+            {
+              "id": "LocalDS",
+              "label": "LocalDataSource"
+            },
+            {
+              "id": "API",
+              "label": "LoginApi · Retrofit"
+            },
+            {
+              "id": "Room",
+              "label": "Room DB"
+            },
+            {
+              "id": "User-",
+              "label": "User-"
+            },
+            {
+              "id": "Fragment-",
+              "label": "Fragment-"
+            },
+            {
+              "id": "ViewModel-",
+              "label": "ViewModel-"
+            },
+            {
+              "id": "UseCase-",
+              "label": "UseCase-"
+            },
+            {
+              "id": "Repository-",
+              "label": "Repository-"
+            },
+            {
+              "id": "RemoteDS-",
+              "label": "RemoteDS-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "RemoteDS--",
+              "label": "RemoteDS--"
+            },
+            {
+              "id": "LocalDS-",
+              "label": "LocalDS-"
+            },
+            {
+              "id": "LocalDS--",
+              "label": "LocalDS--"
+            },
+            {
+              "id": "Repository--",
+              "label": "Repository--"
+            },
+            {
+              "id": "UseCase--",
+              "label": "UseCase--"
+            },
+            {
+              "id": "ViewModel--",
+              "label": "ViewModel--"
+            },
+            {
+              "id": "Fragment--",
+              "label": "Fragment--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-User",
+              "label": "User",
+              "subtitle": "Actor",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Fragment",
+              "label": "LoginFragment",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-ViewModel",
+              "label": "LoginViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-UseCase",
+              "label": "LoginUseCase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Repository",
+              "label": "LoginRepository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-RemoteDS",
+              "label": "RemoteDataSource",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-LocalDS",
+              "label": "LocalDataSource",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "LoginApi · Retrofit",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Room",
+              "label": "Room DB",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-User-",
+              "label": "User-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-Fragment-",
+              "label": "Fragment-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-ViewModel-",
+              "label": "ViewModel-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-UseCase-",
+              "label": "UseCase-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Repository-",
+              "label": "Repository-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-RemoteDS-",
+              "label": "RemoteDS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-RemoteDS--",
+              "label": "RemoteDS--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "participant-LocalDS-",
+              "label": "LocalDS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4760,
+              "y": 0
+            },
+            {
+              "id": "participant-LocalDS--",
+              "label": "LocalDS--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5040,
+              "y": 0
+            },
+            {
+              "id": "participant-Repository--",
+              "label": "Repository--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5320,
+              "y": 0
+            },
+            {
+              "id": "participant-UseCase--",
+              "label": "UseCase--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5600,
+              "y": 0
+            },
+            {
+              "id": "participant-ViewModel--",
+              "label": "ViewModel--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5880,
+              "y": 0
+            },
+            {
+              "id": "participant-Fragment--",
+              "label": "Fragment--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 6160,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Ingresa credenciales",
+              "subtitle": "User- → LoginFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1400,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "login(username, password)",
+              "subtitle": "Fragment- → LoginViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1680,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "invoke(credentials)",
+              "subtitle": "ViewModel- → LoginUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1960,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "login(credentials)",
+              "subtitle": "UseCase- → LoginRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 2240,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "login(credentials)",
+              "subtitle": "Repository- → RemoteDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2520,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "POST /auth/login",
+              "subtitle": "RemoteDS- → LoginApi · Retrofit",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2940,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "Response",
+              "subtitle": "API-- → RemoteDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2800,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "LoginResult",
+              "subtitle": "RemoteDS-- → LoginRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2800,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "saveSession(token, user)",
+              "subtitle": "Repository- → LocalDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2660,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "insert(UserEntity)",
+              "subtitle": "LocalDS- → Room DB",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 3500,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "Success",
+              "subtitle": "LocalDS-- → LoginRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 3080,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "Result",
+              "subtitle": "Repository-- → LoginUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 3080,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "Result",
+              "subtitle": "UseCase-- → LoginViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 3080,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "Update StateFlow",
+              "subtitle": "ViewModel- → LoginViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 1820,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "emit UiState",
+              "subtitle": "ViewModel-- → LoginFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 3080,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "Re-compose",
+              "subtitle": "Fragment- → LoginFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 1540,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "Mostrar Home o Error",
+              "subtitle": "Fragment-- → User",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "17",
+              "x": 3080,
+              "y": 2664
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 23,
+          "participantCount": 23
+        },
+        "metrics": {
+          "nodeCount": 40,
+          "edgeCount": 16,
+          "groupCount": 23,
+          "isolatedCount": 23
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "3️⃣ Flujo de Datos: EPG (Electronic Program Guide)",
+        "kind": "sequence",
+        "section": "3️⃣ Flujo de Datos: EPG (Electronic Program Guide)",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "EPGFragment",
+              "label": "EPGFragment"
+            },
+            {
+              "id": "EPGViewModel",
+              "label": "EPGViewModel"
+            },
+            {
+              "id": "GetProgramsUC",
+              "label": "GetProgramsUseCase"
+            },
+            {
+              "id": "ProgramRepo",
+              "label": "ProgramRepository"
+            },
+            {
+              "id": "LocalDS",
+              "label": "LocalDataSource"
+            },
+            {
+              "id": "RemoteDS",
+              "label": "RemoteDataSource"
+            },
+            {
+              "id": "Room",
+              "label": "Room DB"
+            },
+            {
+              "id": "API",
+              "label": "EPGApi · Retrofit"
+            },
+            {
+              "id": "EPGFragment-",
+              "label": "EPGFragment-"
+            },
+            {
+              "id": "EPGViewModel-",
+              "label": "EPGViewModel-"
+            },
+            {
+              "id": "GetProgramsUC-",
+              "label": "GetProgramsUC-"
+            },
+            {
+              "id": "ProgramRepo-",
+              "label": "ProgramRepo-"
+            },
+            {
+              "id": "LocalDS-",
+              "label": "LocalDS-"
+            },
+            {
+              "id": "Room--",
+              "label": "Room--"
+            },
+            {
+              "id": "LocalDS--",
+              "label": "LocalDS--"
+            },
+            {
+              "id": "RemoteDS-",
+              "label": "RemoteDS-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "RemoteDS--",
+              "label": "RemoteDS--"
+            },
+            {
+              "id": "ProgramRepo--",
+              "label": "ProgramRepo--"
+            },
+            {
+              "id": "GetProgramsUC--",
+              "label": "GetProgramsUC--"
+            },
+            {
+              "id": "EPGFragment--",
+              "label": "EPGFragment--"
+            },
+            {
+              "id": "User",
+              "label": "User"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-EPGFragment",
+              "label": "EPGFragment",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGViewModel",
+              "label": "EPGViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-GetProgramsUC",
+              "label": "GetProgramsUseCase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-ProgramRepo",
+              "label": "ProgramRepository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-LocalDS",
+              "label": "LocalDataSource",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-RemoteDS",
+              "label": "RemoteDataSource",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Room",
+              "label": "Room DB",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "EPGApi · Retrofit",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGFragment-",
+              "label": "EPGFragment-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGViewModel-",
+              "label": "EPGViewModel-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-GetProgramsUC-",
+              "label": "GetProgramsUC-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-ProgramRepo-",
+              "label": "ProgramRepo-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-LocalDS-",
+              "label": "LocalDS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Room--",
+              "label": "Room--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-LocalDS--",
+              "label": "LocalDS--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-RemoteDS-",
+              "label": "RemoteDS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "participant-RemoteDS--",
+              "label": "RemoteDS--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4760,
+              "y": 0
+            },
+            {
+              "id": "participant-ProgramRepo--",
+              "label": "ProgramRepo--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5040,
+              "y": 0
+            },
+            {
+              "id": "participant-GetProgramsUC--",
+              "label": "GetProgramsUC--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5320,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGFragment--",
+              "label": "EPGFragment--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5600,
+              "y": 0
+            },
+            {
+              "id": "participant-User",
+              "label": "User",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 5880,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Load programs for channel",
+              "subtitle": "EPGFragment- → EPGViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "invoke(channelId)",
+              "subtitle": "EPGViewModel- → GetProgramsUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "getPrograms(channelId)",
+              "subtitle": "GetProgramsUC- → ProgramRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1820,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "getPrograms(channelId)",
+              "subtitle": "ProgramRepo- → LocalDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 2100,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Query programs",
+              "subtitle": "LocalDS- → Room DB",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2520,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "ALT",
+              "subtitle": "Data exists in cache",
+              "type": "control",
+              "group": "control",
+              "stat": "6",
+              "x": 2940,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "Return List",
+              "subtitle": "Room-- → LocalDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2380,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "Return cached data",
+              "subtitle": "LocalDS-- → ProgramRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2380,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "ELSE",
+              "subtitle": "Data not cached",
+              "type": "control",
+              "group": "control",
+              "stat": "9",
+              "x": 2940,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "Empty or stale",
+              "subtitle": "LocalDS-- → ProgramRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2380,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "getPrograms(channelId)",
+              "subtitle": "ProgramRepo- → RemoteDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2240,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "GET /epg/programs/{channelId}",
+              "subtitle": "RemoteDS- → EPGApi · Retrofit",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 3080,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "Response >",
+              "subtitle": "API-- → RemoteDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 2940,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "Map DTO → Entity",
+              "subtitle": "RemoteDS- → RemoteDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 2800,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "savePrograms(entities)",
+              "subtitle": "RemoteDS- → LocalDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 2660,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "Insert/Update programs",
+              "subtitle": "LocalDS- → Room DB",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 2520,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "Success",
+              "subtitle": "LocalDS-- → RemoteDataSource",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "17",
+              "x": 2660,
+              "y": 2664
+            },
+            {
+              "id": "step-18",
+              "label": "Result with data",
+              "subtitle": "RemoteDS-- → ProgramRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "18",
+              "x": 2800,
+              "y": 2820
+            },
+            {
+              "id": "step-19",
+              "label": "Convert Entity → Domain Model",
+              "subtitle": "ProgramRepo- → ProgramRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "19",
+              "x": 1960,
+              "y": 2976
+            },
+            {
+              "id": "step-20",
+              "label": "Flow >",
+              "subtitle": "ProgramRepo-- → GetProgramsUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "20",
+              "x": 2800,
+              "y": 3132
+            },
+            {
+              "id": "step-21",
+              "label": "Emit Flow",
+              "subtitle": "GetProgramsUC-- → EPGViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "21",
+              "x": 2800,
+              "y": 3288
+            },
+            {
+              "id": "step-22",
+              "label": "Collect and update StateFlow",
+              "subtitle": "EPGViewModel- → EPGViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "22",
+              "x": 1400,
+              "y": 3444
+            },
+            {
+              "id": "step-23",
+              "label": "Observe StateFlow",
+              "subtitle": "EPGFragment- → EPGFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "23",
+              "x": 1120,
+              "y": 3600
+            },
+            {
+              "id": "step-24",
+              "label": "Update RecyclerView adapter",
+              "subtitle": "EPGFragment- → EPGFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "24",
+              "x": 1120,
+              "y": 3756
+            },
+            {
+              "id": "step-25",
+              "label": "Display programs",
+              "subtitle": "EPGFragment-- → User",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "25",
+              "x": 5740,
+              "y": 3912
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-17=>step-18",
+              "source": "step-17",
+              "target": "step-18",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-18=>step-19",
+              "source": "step-18",
+              "target": "step-19",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-19=>step-20",
+              "source": "step-19",
+              "target": "step-20",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-20=>step-21",
+              "source": "step-20",
+              "target": "step-21",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-21=>step-22",
+              "source": "step-21",
+              "target": "step-22",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-22=>step-23",
+              "source": "step-22",
+              "target": "step-23",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-23=>step-24",
+              "source": "step-23",
+              "target": "step-24",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-24=>step-25",
+              "source": "step-24",
+              "target": "step-25",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 22,
+          "participantCount": 22
+        },
+        "metrics": {
+          "nodeCount": 47,
+          "edgeCount": 24,
+          "groupCount": 22,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "4️⃣ Módulos del Proyecto y Dependencias",
+        "kind": "flowchart",
+        "section": "4️⃣ Módulos del Proyecto y Dependencias",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "app",
+              "label": "app · (Main Application)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AMXNetworkSdk",
+              "label": "AMXNetworkSdk · (Network Layer)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AMXEpg",
+              "label": "AMXEpg · (Program Guide)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AMXPlayer",
+              "label": "AMXPlayer · (Video Player)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "AMXTvInput",
+              "label": "AMXTvInputService · (TV Integration)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Multicast",
+              "label": "LicensedMulticastSolution · (Multicast Streaming)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Benchmark",
+              "label": "benchmark · (Performance)",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "app=>AMXNetworkSdk=>depends on=>solid",
+              "source": "app",
+              "target": "AMXNetworkSdk",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "app=>AMXEpg=>depends on=>solid",
+              "source": "app",
+              "target": "AMXEpg",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "app=>AMXPlayer=>depends on=>solid",
+              "source": "app",
+              "target": "AMXPlayer",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "app=>AMXTvInput=>depends on=>solid",
+              "source": "app",
+              "target": "AMXTvInput",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "app=>Multicast=>depends on=>solid",
+              "source": "app",
+              "target": "Multicast",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AMXEpg=>AMXNetworkSdk=>depends on=>solid",
+              "source": "AMXEpg",
+              "target": "AMXNetworkSdk",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AMXPlayer=>AMXNetworkSdk=>depends on=>solid",
+              "source": "AMXPlayer",
+              "target": "AMXNetworkSdk",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Multicast=>AMXNetworkSdk=>depends on=>solid",
+              "source": "Multicast",
+              "target": "AMXNetworkSdk",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Benchmark=>app=>measures=>solid",
+              "source": "Benchmark",
+              "target": "app",
+              "label": "measures",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 7,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "5️⃣ Dependency Injection (Hilt) Modules",
+        "kind": "flowchart",
+        "section": "5️⃣ Dependency Injection (Hilt) Modules",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Modules",
+              "label": "Hilt Modules"
+            },
+            {
+              "id": "InjectionPoints",
+              "label": "Injection Points - Decorated with"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "HiltAndroidApp",
+              "label": "HiltAndroidApp · ClaroApp",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NetworkMod",
+              "label": "NetworkModule · @InstallIn(SingletonComponent) · Retrofit + OkHttpClient · API interfaces",
+              "type": "component",
+              "group": "Hilt Modules"
+            },
+            {
+              "id": "DatabaseMod",
+              "label": "DatabaseModule · @InstallIn(SingletonComponent) · AppDatabase + DAOs",
+              "type": "component",
+              "group": "Hilt Modules"
+            },
+            {
+              "id": "RepoMod",
+              "label": "RepositoryModule · @InstallIn(SingletonComponent) · LoginRepository · ProgramRepository",
+              "type": "component",
+              "group": "Hilt Modules"
+            },
+            {
+              "id": "ViewModelMod",
+              "label": "ViewModelModule · ViewModels + UseCases",
+              "type": "component",
+              "group": "Hilt Modules"
+            },
+            {
+              "id": "ActivitiesEP",
+              "label": "Activities · (AndroidEntryPoint)",
+              "type": "component",
+              "group": "Injection Points - Decorated with"
+            },
+            {
+              "id": "FragmentsEP",
+              "label": "Fragments · (AndroidEntryPoint)",
+              "type": "component",
+              "group": "Injection Points - Decorated with"
+            },
+            {
+              "id": "ViewModelsEP",
+              "label": "ViewModels · (HiltViewModel)",
+              "type": "component",
+              "group": "Injection Points - Decorated with"
+            },
+            {
+              "id": "Modules",
+              "label": "Modules",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "InjectionPoints",
+              "label": "InjectionPoints",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "HiltAndroidApp=>Modules=>initializes=>solid",
+              "source": "HiltAndroidApp",
+              "target": "Modules",
+              "label": "initializes",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Modules=>InjectionPoints=>provides instances to=>solid",
+              "source": "Modules",
+              "target": "InjectionPoints",
+              "label": "provides instances to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NetworkMod=>ActivitiesEP=>Retrofit Client=>dashed",
+              "source": "NetworkMod",
+              "target": "ActivitiesEP",
+              "label": "Retrofit Client",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "DatabaseMod=>FragmentsEP=>AppDatabase=>dashed",
+              "source": "DatabaseMod",
+              "target": "FragmentsEP",
+              "label": "AppDatabase",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "RepoMod=>ViewModelsEP=>Repository Impls=>dashed",
+              "source": "RepoMod",
+              "target": "ViewModelsEP",
+              "label": "Repository Impls",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "ViewModelMod=>ViewModelsEP=>ViewModel instances=>dashed",
+              "source": "ViewModelMod",
+              "target": "ViewModelsEP",
+              "label": "ViewModel instances",
+              "style": "dashed",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 10,
+          "edgeCount": 6,
+          "groupCount": 2,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-6",
+        "order": 6,
+        "title": "6️⃣ MVVM Pattern - State Management",
+        "kind": "flowchart",
+        "section": "6️⃣ MVVM Pattern - State Management",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "User",
+              "label": "👤 User",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "UI",
+              "label": "🖼️ UI · (Fragment/Activity)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ViewModel",
+              "label": "ViewModel · (MVVM)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "StateFlow",
+              "label": "StateFlow · (State)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "UseCase",
+              "label": "UseCase",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Repository",
+              "label": "Repository",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "User=>UI=>1. User Input=>solid",
+              "source": "User",
+              "target": "UI",
+              "label": "1. User Input",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UI=>ViewModel=>2. Call ViewModel=>solid",
+              "source": "UI",
+              "target": "ViewModel",
+              "label": "2. Call ViewModel",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ViewModel=>UseCase=>3. Use case=>solid",
+              "source": "ViewModel",
+              "target": "UseCase",
+              "label": "3. Use case",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UseCase=>Repository=>4. Get data=>solid",
+              "source": "UseCase",
+              "target": "Repository",
+              "label": "4. Get data",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Repository=>UseCase=>5. Return data=>solid",
+              "source": "Repository",
+              "target": "UseCase",
+              "label": "5. Return data",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UseCase=>ViewModel=>6. Return result=>solid",
+              "source": "UseCase",
+              "target": "ViewModel",
+              "label": "6. Return result",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ViewModel=>StateFlow=>7. Update=>solid",
+              "source": "ViewModel",
+              "target": "StateFlow",
+              "label": "7. Update",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "StateFlow=>UI=>8. Observe=>dashed",
+              "source": "StateFlow",
+              "target": "UI",
+              "label": "8. Observe",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "UI=>UI=>9. Update UI=>solid",
+              "source": "UI",
+              "target": "UI",
+              "label": "9. Update UI",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "UI=>User=>10. Display to user=>solid",
+              "source": "UI",
+              "target": "User",
+              "label": "10. Display to user",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 6,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-7",
+        "order": 7,
+        "title": "7️⃣ Capas de Presentation, Domain, Data",
+        "kind": "flowchart",
+        "section": "7️⃣ Capas de Presentation, Domain, Data",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [
+            {
+              "id": "PresentationLayer",
+              "label": "🖼️ PRESENTATION LAYER · UI - Android specific"
+            },
+            {
+              "id": "DomainLayer",
+              "label": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+            },
+            {
+              "id": "DataLayer",
+              "label": "📊 DATA LAYER · Storage & APIs"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "Activities",
+              "label": "Activities",
+              "type": "component",
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+            },
+            {
+              "id": "Fragments",
+              "label": "Fragments",
+              "type": "component",
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+            },
+            {
+              "id": "Adapters",
+              "label": "Adapters",
+              "type": "component",
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+            },
+            {
+              "id": "ViewModels",
+              "label": "ViewModels",
+              "type": "component",
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+            },
+            {
+              "id": "Extensions",
+              "label": "Extensions",
+              "type": "component",
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+            },
+            {
+              "id": "Entities",
+              "label": "Entities",
+              "type": "component",
+              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+            },
+            {
+              "id": "UseCases",
+              "label": "UseCases",
+              "type": "component",
+              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+            },
+            {
+              "id": "RepoInterfaces",
+              "label": "Repository · Interfaces",
+              "type": "component",
+              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+            },
+            {
+              "id": "RepoImpl",
+              "label": "Repository · Implementation",
+              "type": "component",
+              "group": "📊 DATA LAYER · Storage & APIs"
+            },
+            {
+              "id": "DataSources",
+              "label": "DataSources · Remote/Local/Cache",
+              "type": "component",
+              "group": "📊 DATA LAYER · Storage & APIs"
+            },
+            {
+              "id": "DTOs",
+              "label": "DTOs · (Serialization)",
+              "type": "component",
+              "group": "📊 DATA LAYER · Storage & APIs"
+            },
+            {
+              "id": "Mappers",
+              "label": "Mappers · (DTO ↔ Entity)",
+              "type": "component",
+              "group": "📊 DATA LAYER · Storage & APIs"
+            },
+            {
+              "id": "PresentationLayer",
+              "label": "PresentationLayer",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DomainLayer",
+              "label": "DomainLayer",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DataLayer",
+              "label": "DataLayer",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "Fragments=>ViewModels=>uses=>dashed",
+              "source": "Fragments",
+              "target": "ViewModels",
+              "label": "uses",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "Adapters=>Fragments=>displays=>dashed",
+              "source": "Adapters",
+              "target": "Fragments",
+              "label": "displays",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "UseCases=>RepoInterfaces=>uses=>dashed",
+              "source": "UseCases",
+              "target": "RepoInterfaces",
+              "label": "uses",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "Entities=>UseCases=>used by=>dashed",
+              "source": "Entities",
+              "target": "UseCases",
+              "label": "used by",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "RepoImpl=>DataSources=>uses=>dashed",
+              "source": "RepoImpl",
+              "target": "DataSources",
+              "label": "uses",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "DataSources=>DTOs=>works with=>dashed",
+              "source": "DataSources",
+              "target": "DTOs",
+              "label": "works with",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "RepoImpl=>Mappers=>uses=>dashed",
+              "source": "RepoImpl",
+              "target": "Mappers",
+              "label": "uses",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "PresentationLayer=>DomainLayer=>depends on=>solid",
+              "source": "PresentationLayer",
+              "target": "DomainLayer",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DomainLayer=>DataLayer=>depends on=>solid",
+              "source": "DomainLayer",
+              "target": "DataLayer",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 2
+        },
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 9,
+          "groupCount": 3,
+          "isolatedCount": 2
+        }
+      },
+      {
+        "id": "architecture-8",
+        "order": 8,
+        "title": "8️⃣ Video Playback Architecture",
+        "kind": "flowchart",
+        "section": "8️⃣ Video Playback Architecture",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "PlayerActivity",
+              "label": "PlayerActivity · (UI)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PlayerVM",
+              "label": "PlayerViewModel · (State)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "GetStreamUC",
+              "label": "GetStreamUrlUseCase",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PlayerRepository",
+              "label": "PlayerRepository",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ExoPlayer",
+              "label": "ExoPlayer",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DataSource",
+              "label": "ExoPlayer · DataSource",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Youbora",
+              "label": "Youbora · (Video Analytics)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "NewRelic",
+              "label": "NewRelic · (APM)",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "PlayerActivity=>PlayerVM=>use=>solid",
+              "source": "PlayerActivity",
+              "target": "PlayerVM",
+              "label": "use",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerVM=>GetStreamUC=>invoke=>solid",
+              "source": "PlayerVM",
+              "target": "GetStreamUC",
+              "label": "invoke",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "GetStreamUC=>PlayerRepository=>get URL=>solid",
+              "source": "GetStreamUC",
+              "target": "PlayerRepository",
+              "label": "get URL",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerVM=>ExoPlayer=>configure=>solid",
+              "source": "PlayerVM",
+              "target": "ExoPlayer",
+              "label": "configure",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ExoPlayer=>DataSource=>load=>solid",
+              "source": "ExoPlayer",
+              "target": "DataSource",
+              "label": "load",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DataSource=>ExoPlayer=>streaming=>solid",
+              "source": "DataSource",
+              "target": "ExoPlayer",
+              "label": "streaming",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ExoPlayer=>Youbora=>emit metrics=>solid",
+              "source": "ExoPlayer",
+              "target": "Youbora",
+              "label": "emit metrics",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ExoPlayer=>NewRelic=>emit metrics=>solid",
+              "source": "ExoPlayer",
+              "target": "NewRelic",
+              "label": "emit metrics",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 8,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-9",
+        "order": 9,
+        "title": "9️⃣ Security Architecture",
+        "kind": "flowchart",
+        "section": "9️⃣ Security Architecture",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "SecurityLayers",
+              "label": "Security Hardening"
+            },
+            {
+              "id": "Transport",
+              "label": "Transport Security"
+            },
+            {
+              "id": "DataSecurity",
+              "label": "Data Security"
+            },
+            {
+              "id": "ApiSecurity",
+              "label": "API Security"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "Client",
+              "label": "Apps · (Presentation)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ProGuard",
+              "label": "ProGuard/R8 · (Code obfuscation)",
+              "type": "component",
+              "group": "Security Hardening"
+            },
+            {
+              "id": "Lint",
+              "label": "Android Lint · (Security checks)",
+              "type": "component",
+              "group": "Security Hardening"
+            },
+            {
+              "id": "TLS",
+              "label": "TLS 1.2+ · (Certificate pinning)",
+              "type": "component",
+              "group": "Transport Security"
+            },
+            {
+              "id": "NetworkConfig",
+              "label": "Network Security Config",
+              "type": "component",
+              "group": "Transport Security"
+            },
+            {
+              "id": "DataStore",
+              "label": "DataStore · (Encrypted prefs)",
+              "type": "component",
+              "group": "Data Security"
+            },
+            {
+              "id": "RoomEnc",
+              "label": "Room Encryption",
+              "type": "component",
+              "group": "Data Security"
+            },
+            {
+              "id": "SanitizeInput",
+              "label": "Input Validation",
+              "type": "component",
+              "group": "Data Security"
+            },
+            {
+              "id": "AuthToken",
+              "label": "Auth Token · (JWT/Bearer)",
+              "type": "component",
+              "group": "API Security"
+            },
+            {
+              "id": "ApiKey",
+              "label": "API Key Management · (gradle.properties)",
+              "type": "component",
+              "group": "API Security"
+            },
+            {
+              "id": "RateLimiting",
+              "label": "Rate Limiting",
+              "type": "component",
+              "group": "API Security"
+            },
+            {
+              "id": "Transport",
+              "label": "Transport",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "DataSecurity",
+              "label": "DataSecurity",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ApiSecurity",
+              "label": "ApiSecurity",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "SecurityLayers",
+              "label": "SecurityLayers",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "Client=>Transport=>secure=>solid",
+              "source": "Client",
+              "target": "Transport",
+              "label": "secure",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Transport=>TLS=>TLS=>solid",
+              "source": "Transport",
+              "target": "TLS",
+              "label": "TLS",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Transport=>NetworkConfig=>config=>solid",
+              "source": "Transport",
+              "target": "NetworkConfig",
+              "label": "config",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Client=>DataSecurity=>data=>solid",
+              "source": "Client",
+              "target": "DataSecurity",
+              "label": "data",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DataSecurity=>DataStore=>encrypted=>solid",
+              "source": "DataSecurity",
+              "target": "DataStore",
+              "label": "encrypted",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DataSecurity=>SanitizeInput=>validate=>solid",
+              "source": "DataSecurity",
+              "target": "SanitizeInput",
+              "label": "validate",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Client=>ApiSecurity=>api calls=>solid",
+              "source": "Client",
+              "target": "ApiSecurity",
+              "label": "api calls",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ApiSecurity=>AuthToken=>token based=>solid",
+              "source": "ApiSecurity",
+              "target": "AuthToken",
+              "label": "token based",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ApiSecurity=>ApiKey=>secrets=>solid",
+              "source": "ApiSecurity",
+              "target": "ApiKey",
+              "label": "secrets",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Client=>SecurityLayers=>build=>solid",
+              "source": "Client",
+              "target": "SecurityLayers",
+              "label": "build",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SecurityLayers=>ProGuard=>obfuscate=>solid",
+              "source": "SecurityLayers",
+              "target": "ProGuard",
+              "label": "obfuscate",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SecurityLayers=>Lint=>check=>solid",
+              "source": "SecurityLayers",
+              "target": "Lint",
+              "label": "check",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 2
+        },
+        "metrics": {
+          "nodeCount": 15,
+          "edgeCount": 12,
+          "groupCount": 4,
+          "isolatedCount": 2
+        }
+      },
+      {
+        "id": "architecture-10",
+        "order": 10,
+        "title": "State Flow (Reactive Data)",
+        "kind": "flowchart",
+        "section": "State Flow (Reactive Data)",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "Data",
+              "label": "🗄️ Data · (Repository)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Flow",
+              "label": "Flow · (Cold Flow)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "StateFlow",
+              "label": "StateFlow · (Hot Flow)",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "ViewModel",
+              "label": "ViewModel",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Fragment",
+              "label": "Fragment",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "UI",
+              "label": "🖼️ UI",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "Data=>Flow=>emit=>solid",
+              "source": "Data",
+              "target": "Flow",
+              "label": "emit",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Flow=>ViewModel=>collect=>solid",
+              "source": "Flow",
+              "target": "ViewModel",
+              "label": "collect",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ViewModel=>StateFlow=>update=>solid",
+              "source": "ViewModel",
+              "target": "StateFlow",
+              "label": "update",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Fragment=>StateFlow=>observe=>solid",
+              "source": "Fragment",
+              "target": "StateFlow",
+              "label": "observe",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Fragment=>UI=>update UI=>solid",
+              "source": "Fragment",
+              "target": "UI",
+              "label": "update UI",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 6,
+          "edgeCount": 5,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-11",
+        "order": 11,
+        "title": "1️⃣1️⃣ Diagrama de Componentes - Arquitectura Integral",
+        "kind": "flowchart",
+        "section": "1️⃣1️⃣ Diagrama de Componentes - Arquitectura Integral",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Android",
+              "label": "📱 ANDROID OS LAYER"
+            },
+            {
+              "id": "App",
+              "label": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "Network",
+              "label": "🌐 AMXNetworkSdk (Networking Layer)"
+            },
+            {
+              "id": "EPGModule",
+              "label": "📺 AMXEpg (Program Guide Module)"
+            },
+            {
+              "id": "PlayerModule",
+              "label": "▶️ AMXPlayer (Video Playback Module)"
+            },
+            {
+              "id": "TVInput",
+              "label": "📡 AMXTvInputService (TV Integration Module)"
+            },
+            {
+              "id": "Multicast",
+              "label": "🎬 LicensedMulticastSolution (Streaming Module)"
+            },
+            {
+              "id": "LocalStorage",
+              "label": "💾 LOCAL STORAGE & DI"
+            },
+            {
+              "id": "Monitoring",
+              "label": "📊 MONITORING & ANALYTICS"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "AndroidTV",
+              "label": "Android TV Platform",
+              "type": "component",
+              "group": "📱 ANDROID OS LAYER"
+            },
+            {
+              "id": "RemoteControl",
+              "label": "🎮 Remote Control · D-Pad Input Handler",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "SystemServices",
+              "label": "System Services · Display, Audio, etc",
+              "type": "component",
+              "group": "📱 ANDROID OS LAYER"
+            },
+            {
+              "id": "MainActivity",
+              "label": "MainActivity · (Entry Point)",
+              "type": "component",
+              "group": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "NavGraph",
+              "label": "Navigation Graph · (Navigation Control)",
+              "type": "component",
+              "group": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "HomeScreen",
+              "label": "HomeScreen · Fragment",
+              "type": "component",
+              "group": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "EPGScreen",
+              "label": "EPG Screen · Fragment",
+              "type": "component",
+              "group": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "PlayerScreen",
+              "label": "Player Screen · Fragment",
+              "type": "component",
+              "group": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "SettingsScreen",
+              "label": "Settings · Fragment",
+              "type": "component",
+              "group": "🏠 APP MODULE (Main Application)"
+            },
+            {
+              "id": "RetrofitClient",
+              "label": "Retrofit Client",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "OkHttpClient",
+              "label": "OkHttp · + Interceptors",
+              "type": "component",
+              "group": "🌐 AMXNetworkSdk (Networking Layer)"
+            },
+            {
+              "id": "APIEndpoints",
+              "label": "API Endpoints · → Login · → EPG · → Stream · → User",
+              "type": "component",
+              "group": "🌐 AMXNetworkSdk (Networking Layer)"
+            },
+            {
+              "id": "SecurityConfig",
+              "label": "Security Config · → Certificate Pinning · → TLS 1.2+",
+              "type": "component",
+              "group": "🌐 AMXNetworkSdk (Networking Layer)"
+            },
+            {
+              "id": "EPGViewModel",
+              "label": "EPGViewModel · (State Management)",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "GetProgramsUC",
+              "label": "GetProgramsUseCase",
+              "type": "component",
+              "group": "📺 AMXEpg (Program Guide Module)"
+            },
+            {
+              "id": "GetChannelsUC",
+              "label": "GetChannelsUseCase",
+              "type": "component",
+              "group": "📺 AMXEpg (Program Guide Module)"
+            },
+            {
+              "id": "EPGRepository",
+              "label": "EPGRepository · (Interface)",
+              "type": "component",
+              "group": "📺 AMXEpg (Program Guide Module)"
+            },
+            {
+              "id": "EPGRepImpl",
+              "label": "EPGRepositoryImpl · (Implementation)",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "PlayerViewModel",
+              "label": "PlayerViewModel · (Playback State)",
+              "type": "component",
+              "group": "shared"
+            },
+            {
+              "id": "GetStreamUC",
+              "label": "GetStreamUrlUseCase",
+              "type": "component",
+              "group": "▶️ AMXPlayer (Video Playback Module)"
+            },
+            {
+              "id": "PlayerRepository",
+              "label": "PlayerRepository",
+              "type": "component",
+              "group": "▶️ AMXPlayer (Video Playback Module)"
+            },
+            {
+              "id": "ExoPlayer",
+              "label": "ExoPlayer · (Video Engine)",
+              "type": "component",
+              "group": "▶️ AMXPlayer (Video Playback Module)"
+            },
+            {
+              "id": "Youbora",
+              "label": "Youbora SDK · (Analytics)",
+              "type": "component",
+              "group": "▶️ AMXPlayer (Video Playback Module)"
+            },
+            {
+              "id": "TVInputService",
+              "label": "TVInputService · (OS Integration)",
+              "type": "component",
+              "group": "📡 AMXTvInputService (TV Integration Module)"
+            },
+            {
+              "id": "RemoteHandler",
+              "label": "Remote Input Handler",
+              "type": "component",
+              "group": "📡 AMXTvInputService (TV Integration Module)"
+            },
+            {
+              "id": "ChannelObserver",
+              "label": "Channel Observer",
+              "type": "component",
+              "group": "📡 AMXTvInputService (TV Integration Module)"
+            },
+            {
+              "id": "MulticastManager",
+              "label": "Multicast Manager",
+              "type": "component",
+              "group": "🎬 LicensedMulticastSolution (Streaming Module)"
+            },
+            {
+              "id": "LicenseValidator",
+              "label": "License Validator",
+              "type": "component",
+              "group": "🎬 LicensedMulticastSolution (Streaming Module)"
+            },
+            {
+              "id": "StreamBuffer",
+              "label": "Stream Buffer · Management",
+              "type": "component",
+              "group": "🎬 LicensedMulticastSolution (Streaming Module)"
+            },
+            {
+              "id": "RoomDB",
+              "label": "Room Database · → Programs · → Channels · → Users · → Schedules",
+              "type": "component",
+              "group": "💾 LOCAL STORAGE & DI"
+            },
+            {
+              "id": "DataStorePrefs",
+              "label": "DataStore · (Encrypted Preferences)",
+              "type": "component",
+              "group": "💾 LOCAL STORAGE & DI"
+            },
+            {
+              "id": "HiltContainer",
+              "label": "Hilt DI Container · @HiltAndroidApp · @HiltViewModel · @AndroidEntryPoint",
+              "type": "component",
+              "group": "💾 LOCAL STORAGE & DI"
+            },
+            {
+              "id": "NewRelic",
+              "label": "NewRelic · (APM & Crashes)",
+              "type": "component",
+              "group": "📊 MONITORING & ANALYTICS"
+            },
+            {
+              "id": "GoogleAnalytics",
+              "label": "Google Analytics · (User Events)",
+              "type": "component",
+              "group": "📊 MONITORING & ANALYTICS"
+            },
+            {
+              "id": "FirebaseCrashlytics",
+              "label": "Firebase Crashlytics · (Error Tracking)",
+              "type": "component",
+              "group": "📊 MONITORING & ANALYTICS"
+            },
+            {
+              "id": "EPGModule",
+              "label": "EPGModule",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "PlayerModule",
+              "label": "PlayerModule",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Network",
+              "label": "Network",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "LocalStorage",
+              "label": "LocalStorage",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "Multicast",
+              "label": "Multicast",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "App",
+              "label": "App",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "MainActivity=>NavGraph=>navigate=>solid",
+              "source": "MainActivity",
+              "target": "NavGraph",
+              "label": "navigate",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NavGraph=>HomeScreen=>route to=>solid",
+              "source": "NavGraph",
+              "target": "HomeScreen",
+              "label": "route to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NavGraph=>EPGScreen=>route to=>solid",
+              "source": "NavGraph",
+              "target": "EPGScreen",
+              "label": "route to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NavGraph=>PlayerScreen=>route to=>solid",
+              "source": "NavGraph",
+              "target": "PlayerScreen",
+              "label": "route to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NavGraph=>SettingsScreen=>route to=>solid",
+              "source": "NavGraph",
+              "target": "SettingsScreen",
+              "label": "route to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RetrofitClient=>OkHttpClient=>uses=>solid",
+              "source": "RetrofitClient",
+              "target": "OkHttpClient",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "OkHttpClient=>SecurityConfig=>enforces=>solid",
+              "source": "OkHttpClient",
+              "target": "SecurityConfig",
+              "label": "enforces",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RetrofitClient=>APIEndpoints=>calls=>solid",
+              "source": "RetrofitClient",
+              "target": "APIEndpoints",
+              "label": "calls",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGViewModel=>GetProgramsUC=>uses=>solid",
+              "source": "EPGViewModel",
+              "target": "GetProgramsUC",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGViewModel=>GetChannelsUC=>uses=>solid",
+              "source": "EPGViewModel",
+              "target": "GetChannelsUC",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "GetProgramsUC=>EPGRepository=>depends on=>solid",
+              "source": "GetProgramsUC",
+              "target": "EPGRepository",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGRepository=>EPGRepImpl=>implemented by=>solid",
+              "source": "EPGRepository",
+              "target": "EPGRepImpl",
+              "label": "implemented by",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerViewModel=>GetStreamUC=>uses=>solid",
+              "source": "PlayerViewModel",
+              "target": "GetStreamUC",
+              "label": "uses",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "GetStreamUC=>PlayerRepository=>depends on=>solid",
+              "source": "GetStreamUC",
+              "target": "PlayerRepository",
+              "label": "depends on",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerViewModel=>ExoPlayer=>configures=>solid",
+              "source": "PlayerViewModel",
+              "target": "ExoPlayer",
+              "label": "configures",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ExoPlayer=>Youbora=>metrics to=>solid",
+              "source": "ExoPlayer",
+              "target": "Youbora",
+              "label": "metrics to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RemoteControl=>TVInputService=>system broadcast=>dashed",
+              "source": "RemoteControl",
+              "target": "TVInputService",
+              "label": "system broadcast",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "TVInputService=>RemoteHandler=>handle=>solid",
+              "source": "TVInputService",
+              "target": "RemoteHandler",
+              "label": "handle",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "TVInputService=>ChannelObserver=>observe=>solid",
+              "source": "TVInputService",
+              "target": "ChannelObserver",
+              "label": "observe",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MulticastManager=>LicenseValidator=>validate=>solid",
+              "source": "MulticastManager",
+              "target": "LicenseValidator",
+              "label": "validate",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "MulticastManager=>StreamBuffer=>buffer=>solid",
+              "source": "MulticastManager",
+              "target": "StreamBuffer",
+              "label": "buffer",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HiltContainer=>RetrofitClient=>provides=>dashed",
+              "source": "HiltContainer",
+              "target": "RetrofitClient",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "HiltContainer=>RoomDB=>provides=>dashed",
+              "source": "HiltContainer",
+              "target": "RoomDB",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "HiltContainer=>EPGRepImpl=>provides=>dashed",
+              "source": "HiltContainer",
+              "target": "EPGRepImpl",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "HiltContainer=>EPGViewModel=>provides=>dashed",
+              "source": "HiltContainer",
+              "target": "EPGViewModel",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "HiltContainer=>PlayerViewModel=>provides=>dashed",
+              "source": "HiltContainer",
+              "target": "PlayerViewModel",
+              "label": "provides",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "HomeScreen=>EPGModule=>request data=>solid",
+              "source": "HomeScreen",
+              "target": "EPGModule",
+              "label": "request data",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGScreen=>EPGModule=>request data=>solid",
+              "source": "EPGScreen",
+              "target": "EPGModule",
+              "label": "request data",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerScreen=>PlayerModule=>request data=>solid",
+              "source": "PlayerScreen",
+              "target": "PlayerModule",
+              "label": "request data",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGRepImpl=>Network=>HTTP calls=>solid",
+              "source": "EPGRepImpl",
+              "target": "Network",
+              "label": "HTTP calls",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerRepository=>Network=>HTTP calls=>solid",
+              "source": "PlayerRepository",
+              "target": "Network",
+              "label": "HTTP calls",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "EPGRepImpl=>LocalStorage=>persist/read=>solid",
+              "source": "EPGRepImpl",
+              "target": "LocalStorage",
+              "label": "persist/read",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerRepository=>LocalStorage=>persist/read=>solid",
+              "source": "PlayerRepository",
+              "target": "LocalStorage",
+              "label": "persist/read",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerScreen=>SystemServices=>output=>solid",
+              "source": "PlayerScreen",
+              "target": "SystemServices",
+              "label": "output",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ChannelObserver=>EPGModule=>notifies=>solid",
+              "source": "ChannelObserver",
+              "target": "EPGModule",
+              "label": "notifies",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ChannelObserver=>PlayerModule=>notifies=>solid",
+              "source": "ChannelObserver",
+              "target": "PlayerModule",
+              "label": "notifies",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerModule=>Multicast=>stream via=>solid",
+              "source": "PlayerModule",
+              "target": "Multicast",
+              "label": "stream via",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Multicast=>ExoPlayer=>streams to=>solid",
+              "source": "Multicast",
+              "target": "ExoPlayer",
+              "label": "streams to",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "PlayerModule=>Youbora=>metrics=>solid",
+              "source": "PlayerModule",
+              "target": "Youbora",
+              "label": "metrics",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Network=>NewRelic=>errors=>dashed",
+              "source": "Network",
+              "target": "NewRelic",
+              "label": "errors",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "App=>GoogleAnalytics=>events=>dashed",
+              "source": "App",
+              "target": "GoogleAnalytics",
+              "label": "events",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "App=>FirebaseCrashlytics=>crashes=>dashed",
+              "source": "App",
+              "target": "FirebaseCrashlytics",
+              "label": "crashes",
+              "style": "dashed",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 2
+        },
+        "metrics": {
+          "nodeCount": 41,
+          "edgeCount": 42,
+          "groupCount": 9,
+          "isolatedCount": 2
+        }
+      },
+      {
+        "id": "architecture-12",
+        "order": 12,
+        "title": "Flujo 1: Autenticación de Usuario",
+        "kind": "sequence",
+        "section": "N03: Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "User",
+              "label": "Usuario (Remote)"
+            },
+            {
+              "id": "App",
+              "label": "LoginFragment"
+            },
+            {
+              "id": "VM",
+              "label": "LoginViewModel"
+            },
+            {
+              "id": "UC",
+              "label": "LoginUseCase"
+            },
+            {
+              "id": "Repo",
+              "label": "LoginRepository"
+            },
+            {
+              "id": "API",
+              "label": "LoginApi"
+            },
+            {
+              "id": "Store",
+              "label": "DataStore"
+            },
+            {
+              "id": "User-",
+              "label": "User-"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "VM-",
+              "label": "VM-"
+            },
+            {
+              "id": "UC-",
+              "label": "UC-"
+            },
+            {
+              "id": "Repo-",
+              "label": "Repo-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "Repo--",
+              "label": "Repo--"
+            },
+            {
+              "id": "UI",
+              "label": "UI"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-User",
+              "label": "Usuario (Remote)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-App",
+              "label": "LoginFragment",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-VM",
+              "label": "LoginViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-UC",
+              "label": "LoginUseCase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo",
+              "label": "LoginRepository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "LoginApi",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Store",
+              "label": "DataStore",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-User-",
+              "label": "User-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-VM-",
+              "label": "VM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-UC-",
+              "label": "UC-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo-",
+              "label": "Repo-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo--",
+              "label": "Repo--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-UI",
+              "label": "UI",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Ingresar credenciales",
+              "subtitle": "User- → LoginFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1120,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "onLoginClick(email, password)",
+              "subtitle": "App- → LoginViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1400,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "invoke(LoginRequest)",
+              "subtitle": "VM- → LoginUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1680,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "login(credentials)",
+              "subtitle": "UC- → LoginRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1960,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "authenticate(email, password)",
+              "subtitle": "Repo- → LoginApi",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2240,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "Token + User metadata",
+              "subtitle": "API-- → LoginRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2240,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "saveToken(encrypted)",
+              "subtitle": "Repo- → DataStore",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2380,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "LoginSuccess",
+              "subtitle": "Repo-- → UI",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 3780,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "Navegar a HomeFragment",
+              "subtitle": "VM- → LoginFragment",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 1400,
+              "y": 1416
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 15,
+          "participantCount": 15
+        },
+        "metrics": {
+          "nodeCount": 24,
+          "edgeCount": 8,
+          "groupCount": 15,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "architecture-13",
+        "order": 13,
+        "title": "Flujo 2: Reproducción de Contenido",
+        "kind": "sequence",
+        "section": "N03: Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "User",
+              "label": "Usuario (D-pad)"
+            },
+            {
+              "id": "Player",
+              "label": "PlayerActivity"
+            },
+            {
+              "id": "PVM",
+              "label": "PlayerViewModel"
+            },
+            {
+              "id": "PRep",
+              "label": "PlayerRepository"
+            },
+            {
+              "id": "PApi",
+              "label": "PlayerApi"
+            },
+            {
+              "id": "EP",
+              "label": "ExoPlayer"
+            },
+            {
+              "id": "YB",
+              "label": "Youbora SDK"
+            },
+            {
+              "id": "User-",
+              "label": "User-"
+            },
+            {
+              "id": "Player-",
+              "label": "Player-"
+            },
+            {
+              "id": "PVM-",
+              "label": "PVM-"
+            },
+            {
+              "id": "PRep-",
+              "label": "PRep-"
+            },
+            {
+              "id": "PApi--",
+              "label": "PApi--"
+            },
+            {
+              "id": "PRep--",
+              "label": "PRep--"
+            },
+            {
+              "id": "EP-",
+              "label": "EP-"
+            },
+            {
+              "id": "EP--",
+              "label": "EP--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-User",
+              "label": "Usuario (D-pad)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Player",
+              "label": "PlayerActivity",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-PVM",
+              "label": "PlayerViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-PRep",
+              "label": "PlayerRepository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-PApi",
+              "label": "PlayerApi",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-EP",
+              "label": "ExoPlayer",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-YB",
+              "label": "Youbora SDK",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-User-",
+              "label": "User-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Player-",
+              "label": "Player-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-PVM-",
+              "label": "PVM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-PRep-",
+              "label": "PRep-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-PApi--",
+              "label": "PApi--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-PRep--",
+              "label": "PRep--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-EP-",
+              "label": "EP-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-EP--",
+              "label": "EP--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Seleccionar programa",
+              "subtitle": "User- → PlayerActivity",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1120,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "onProgramSelected(programId)",
+              "subtitle": "Player- → PlayerViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1400,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "getStreamUrl(programId)",
+              "subtitle": "PVM- → PlayerRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1680,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "getPlaybackUrl(programId)",
+              "subtitle": "PRep- → PlayerApi",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1960,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "HLS_URL",
+              "subtitle": "PApi-- → PlayerRepository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1960,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "StreamUrl",
+              "subtitle": "PRep-- → PlayerActivity",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1820,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "prepare(mediaItem)",
+              "subtitle": "Player- → ExoPlayer",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1820,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "initializeCodec()",
+              "subtitle": "EP- → ExoPlayer",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2520,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "startMonitoring()",
+              "subtitle": "EP- → Youbora SDK",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2660,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "Play (D-pad center)",
+              "subtitle": "User- → ExoPlayer",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1680,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "playbackStarted event",
+              "subtitle": "EP-- → Youbora SDK",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2800,
+              "y": 1728
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 15,
+          "participantCount": 15
+        },
+        "metrics": {
+          "nodeCount": 26,
+          "edgeCount": 10,
+          "groupCount": 15,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "architecture-14",
+        "order": 14,
+        "title": "Flujo 3: Sincronización de EPG",
+        "kind": "sequence",
+        "section": "N03: Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "App",
+              "label": "App Lifecycle"
+            },
+            {
+              "id": "WM",
+              "label": "WorkManager"
+            },
+            {
+              "id": "EPGUc",
+              "label": "GetCachedProgramsUseCase"
+            },
+            {
+              "id": "EPGApi",
+              "label": "EPGApi"
+            },
+            {
+              "id": "Room",
+              "label": "Room Database"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "WM-",
+              "label": "WM-"
+            },
+            {
+              "id": "EPGUc-",
+              "label": "EPGUc-"
+            },
+            {
+              "id": "EPGApi--",
+              "label": "EPGApi--"
+            },
+            {
+              "id": "Room--",
+              "label": "Room--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-App",
+              "label": "App Lifecycle",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-WM",
+              "label": "WorkManager",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGUc",
+              "label": "GetCachedProgramsUseCase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGApi",
+              "label": "EPGApi",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Room",
+              "label": "Room Database",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-WM-",
+              "label": "WM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGUc-",
+              "label": "EPGUc-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-EPGApi--",
+              "label": "EPGApi--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-Room--",
+              "label": "Room--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "schedulePeriodicSync(6 hours)",
+              "subtitle": "App- → WorkManager",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 840,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "invoke()",
+              "subtitle": "WM- → GetCachedProgramsUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1120,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "getPrograms(channels=[])",
+              "subtitle": "EPGUc- → EPGApi",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1400,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Programs list",
+              "subtitle": "EPGApi-- → GetCachedProgramsUseCase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1400,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "insertPrograms(newPrograms)",
+              "subtitle": "EPGUc- → Room Database",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1540,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "notifyObservers()",
+              "subtitle": "Room-- → App Lifecycle",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1260,
+              "y": 948
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 10,
+          "participantCount": 10
+        },
+        "metrics": {
+          "nodeCount": 16,
+          "edgeCount": 5,
+          "groupCount": 10,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "architecture-15",
+        "order": 15,
+        "title": "Flujo 4: Error Handling - Network Failure",
+        "kind": "sequence",
+        "section": "N03: Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "App",
+              "label": "ViewModel"
+            },
+            {
+              "id": "Repo",
+              "label": "Repository"
+            },
+            {
+              "id": "API",
+              "label": "API Call"
+            },
+            {
+              "id": "Retry",
+              "label": "RetryInterceptor"
+            },
+            {
+              "id": "Local",
+              "label": "Room Cache"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "Repo-",
+              "label": "Repo-"
+            },
+            {
+              "id": "API-",
+              "label": "API-"
+            },
+            {
+              "id": "Retry-",
+              "label": "Retry-"
+            },
+            {
+              "id": "Retry--",
+              "label": "Retry--"
+            },
+            {
+              "id": "Local--",
+              "label": "Local--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-App",
+              "label": "ViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo",
+              "label": "Repository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "API Call",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-Retry",
+              "label": "RetryInterceptor",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Local",
+              "label": "Room Cache",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo-",
+              "label": "Repo-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-API-",
+              "label": "API-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Retry-",
+              "label": "Retry-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-Retry--",
+              "label": "Retry--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-Local--",
+              "label": "Local--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "getData()",
+              "subtitle": "App- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 840,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "HTTP GET request",
+              "subtitle": "Repo- → API Call",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1120,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "Connection timeout",
+              "subtitle": "API- → RetryInterceptor",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1400,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Retry attempt 1 (wait 1s)",
+              "subtitle": "Retry- → API Call",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1400,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Failure",
+              "subtitle": "API- → RetryInterceptor",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1400,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "Retry attempt 2 (wait 2s)",
+              "subtitle": "Retry- → API Call",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1400,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "Failure",
+              "subtitle": "API- → RetryInterceptor",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1400,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "Max retries exceeded",
+              "subtitle": "Retry-- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 1400,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "Load cached data",
+              "subtitle": "Repo- → Room Cache",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 1400,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "Fallback data",
+              "subtitle": "Local-- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1400,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "updateUI(cachedData)",
+              "subtitle": "App- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 700,
+              "y": 1728
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 11,
+          "participantCount": 11
+        },
+        "metrics": {
+          "nodeCount": 22,
+          "edgeCount": 10,
+          "groupCount": 11,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "architecture-16",
+        "order": 16,
+        "title": "Pipeline Actual (Esperado)",
+        "kind": "flowchart",
+        "section": "N04: Diagrama de CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-android-tv-stb\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "A",
+              "label": "📤 Push to GitHub",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "B",
+              "label": "👷 GitHub Actions",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "C",
+              "label": "🔨 Build APK",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "D",
+              "label": "📦 Artifact",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "E",
+              "label": "🔐 Sign with Keystore",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "F",
+              "label": "📱 Deploy to QA",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "G",
+              "label": "✅ QA Tests",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "H",
+              "label": "🎯 Google Play Internal",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "I",
+              "label": "🚀 Play Store Release",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "J",
+              "label": "🧪 Unit Tests",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "K",
+              "label": "📊 Code Coverage",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "L",
+              "label": "🔍 Lint Analysis",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "M",
+              "label": "Report",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "N-Build-Status",
+              "label": "N{Build Status}",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "N",
+              "label": "N",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "O",
+              "label": "✅ Green Build",
+              "type": "component",
+              "group": ""
+            },
+            {
+              "id": "P",
+              "label": "❌ Reject PR",
+              "type": "component",
+              "group": ""
+            }
+          ],
+          "edges": [
+            {
+              "id": "A=>B=>webhook=>solid",
+              "source": "A",
+              "target": "B",
+              "label": "webhook",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B=>C=>trigger=>solid",
+              "source": "B",
+              "target": "C",
+              "label": "trigger",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>D=>gradle assemble=>solid",
+              "source": "C",
+              "target": "D",
+              "label": "gradle assemble",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "D=>E=>signed=>solid",
+              "source": "D",
+              "target": "E",
+              "label": "signed",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "E=>F=>if main branch=>solid",
+              "source": "E",
+              "target": "F",
+              "label": "if main branch",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "F=>G=>firebase testing=>solid",
+              "source": "F",
+              "target": "G",
+              "label": "firebase testing",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "G=>H=>if pass=>solid",
+              "source": "G",
+              "target": "H",
+              "label": "if pass",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "H=>I=>manual approval=>solid",
+              "source": "H",
+              "target": "I",
+              "label": "manual approval",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>J=>parallel=>dashed",
+              "source": "C",
+              "target": "J",
+              "label": "parallel",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "C=>K=>parallel=>dashed",
+              "source": "C",
+              "target": "K",
+              "label": "parallel",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "C=>L=>parallel=>dashed",
+              "source": "C",
+              "target": "L",
+              "label": "parallel",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "J=>M=>JUnit 4=>solid",
+              "source": "J",
+              "target": "M",
+              "label": "JUnit 4",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "K=>M=>JaCoCo=>solid",
+              "source": "K",
+              "target": "M",
+              "label": "JaCoCo",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "L=>M=>ktlint=>solid",
+              "source": "L",
+              "target": "M",
+              "label": "ktlint",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M=>N-Build-Status=>>80% coverage=>solid",
+              "source": "M",
+              "target": "N-Build-Status",
+              "label": ">80% coverage",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "N=>O=>PASS=>solid",
+              "source": "N",
+              "target": "O",
+              "label": "PASS",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "N=>P=>FAIL=>solid",
+              "source": "N",
+              "target": "P",
+              "label": "FAIL",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 17,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

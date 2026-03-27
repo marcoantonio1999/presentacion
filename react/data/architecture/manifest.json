@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "claro-video-android-coship",
+    "title": "Android Coship",
+    "annex": "ANEXO_claro-video-android-coship.html",
+    "route": "/fase-1/architecture/claro-video-android-coship",
+    "hashRoute": "#/fase-1/architecture/claro-video-android-coship",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-android",
+    "title": "Android",
+    "annex": "ANEXO_claro-video-android.html",
+    "route": "/fase-1/architecture/claro-video-android",
+    "hashRoute": "#/fase-1/architecture/claro-video-android",
+    "diagramCount": 15,
+    "flowchartCount": 12,
+    "sequenceCount": 3
+  },
+  {
+    "slug": "claro-video-android-request-manager",
+    "title": "Android Request Manager",
+    "annex": "ANEXO_claro-video-android-request-manager.html",
+    "route": "/fase-1/architecture/claro-video-android-request-manager",
+    "hashRoute": "#/fase-1/architecture/claro-video-android-request-manager",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-android-smart-tv",
+    "title": "Android Smart TV",
+    "annex": "ANEXO_claro-video-android-smart-tv.html",
+    "route": "/fase-1/architecture/claro-video-android-smart-tv",
+    "hashRoute": "#/fase-1/architecture/claro-video-android-smart-tv",
+    "diagramCount": 5,
+    "flowchartCount": 4,
+    "sequenceCount": 1
+  },
+  {
+    "slug": "claro-video-android-tv",
+    "title": "Android TV",
+    "annex": "ANEXO_claro-video-android-tv.html",
+    "route": "/fase-1/architecture/claro-video-android-tv",
+    "hashRoute": "#/fase-1/architecture/claro-video-android-tv",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-android-tv-stb",
+    "title": "Android TV STB",
+    "annex": "ANEXO_claro-video-android-tv-stb.html",
+    "route": "/fase-1/architecture/claro-video-android-tv-stb",
+    "hashRoute": "#/fase-1/architecture/claro-video-android-tv-stb",
+    "diagramCount": 16,
+    "flowchartCount": 10,
+    "sequenceCount": 6
+  },
+  {
+    "slug": "claro-video-ios",
+    "title": "iOS",
+    "annex": "ANEXO_claro-video-ios.html",
+    "route": "/fase-1/architecture/claro-video-ios",
+    "hashRoute": "#/fase-1/architecture/claro-video-ios",
+    "diagramCount": 10,
+    "flowchartCount": 10,
+    "sequenceCount": 0
+  },
+  {
+    "slug": "claro-video-ios-analytics",
+    "title": "iOS Analytics",
+    "annex": "ANEXO_claro-video-ios-analytics.html",
+    "route": "/fase-1/architecture/claro-video-ios-analytics",
+    "hashRoute": "#/fase-1/architecture/claro-video-ios-analytics",
+    "diagramCount": 7,
+    "flowchartCount": 4,
+    "sequenceCount": 3
+  },
+  {
+    "slug": "claro-video-ios-player",
+    "title": "iOS Player",
+    "annex": "ANEXO_claro-video-ios-player.html",
+    "route": "/fase-1/architecture/claro-video-ios-player",
+    "hashRoute": "#/fase-1/architecture/claro-video-ios-player",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-ios-services",
+    "title": "iOS Services",
+    "annex": "ANEXO_claro-video-ios-services.html",
+    "route": "/fase-1/architecture/claro-video-ios-services",
+    "hashRoute": "#/fase-1/architecture/claro-video-ios-services",
+    "diagramCount": 9,
+    "flowchartCount": 7,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-ios-tvos",
+    "title": "tvOS",
+    "annex": "ANEXO_claro-video-ios-tvos.html",
+    "route": "/fase-1/architecture/claro-video-ios-tvos",
+    "hashRoute": "#/fase-1/architecture/claro-video-ios-tvos",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-web",
+    "title": "Web",
+    "annex": "ANEXO_claro-video-web.html",
+    "route": "/fase-1/architecture/claro-video-web",
+    "hashRoute": "#/fase-1/architecture/claro-video-web",
+    "diagramCount": 8,
+    "flowchartCount": 6,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-web-chromecast",
+    "title": "Web Chromecast",
+    "annex": "ANEXO_claro-video-web-chromecast.html",
+    "route": "/fase-1/architecture/claro-video-web-chromecast",
+    "hashRoute": "#/fase-1/architecture/claro-video-web-chromecast",
+    "diagramCount": 3,
+    "flowchartCount": 1,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-aaf-lg-nativa",
+    "title": "AAF LG Nativa",
+    "annex": "ANEXO_claro-video-aaf-lg-nativa.html",
+    "route": "/fase-1/architecture/claro-video-aaf-lg-nativa",
+    "hashRoute": "#/fase-1/architecture/claro-video-aaf-lg-nativa",
+    "diagramCount": 6,
+    "flowchartCount": 5,
+    "sequenceCount": 1
+  },
+  {
+    "slug": "claro-video-aaf-samsung-nativa",
+    "title": "AAF Samsung Nativa",
+    "annex": "ANEXO_claro-video-aaf-samsung-nativa.html",
+    "route": "/fase-1/architecture/claro-video-aaf-samsung-nativa",
+    "hashRoute": "#/fase-1/architecture/claro-video-aaf-samsung-nativa",
+    "diagramCount": 5,
+    "flowchartCount": 4,
+    "sequenceCount": 1
+  },
+  {
+    "slug": "claro-video-aaf-ott",
+    "title": "AAF OTT",
+    "annex": "ANEXO_claro-video-aaf-ott.html",
+    "route": "/fase-1/architecture/claro-video-aaf-ott",
+    "hashRoute": "#/fase-1/architecture/claro-video-aaf-ott",
+    "diagramCount": 7,
+    "flowchartCount": 4,
+    "sequenceCount": 3
+  },
+  {
+    "slug": "claro-video-aaf-iptv",
+    "title": "AAF IPTV",
+    "annex": "ANEXO_claro-video-aaf-iptv.html",
+    "route": "/fase-1/architecture/claro-video-aaf-iptv",
+    "hashRoute": "#/fase-1/architecture/claro-video-aaf-iptv",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-middleware-claro-musica",
+    "title": "Middleware Claro Musica",
+    "annex": "ANEXO_claro-video-middleware-claro-musica.html",
+    "route": "/fase-1/architecture/claro-video-middleware-claro-musica",
+    "hashRoute": "#/fase-1/architecture/claro-video-middleware-claro-musica",
+    "diagramCount": 7,
+    "flowchartCount": 6,
+    "sequenceCount": 1
+  },
+  {
+    "slug": "claro-video-roku-tv",
+    "title": "Roku TV",
+    "annex": "ANEXO_claro-video-roku-tv.html",
+    "route": "/fase-1/architecture/claro-video-roku-tv",
+    "hashRoute": "#/fase-1/architecture/claro-video-roku-tv",
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2
+  },
+  {
+    "slug": "claro-video-universal-windows-platform",
+    "title": "UWP Windows Platform",
+    "annex": "ANEXO_claro-video-universal-windows-platform.html",
+    "route": "/fase-1/architecture/claro-video-universal-windows-platform",
+    "hashRoute": "#/fase-1/architecture/claro-video-universal-windows-platform",
+    "diagramCount": 8,
+    "flowchartCount": 6,
+    "sequenceCount": 2
+  }
+]
