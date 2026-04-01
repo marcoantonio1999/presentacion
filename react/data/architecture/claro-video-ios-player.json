@@ -45,55 +45,82 @@
               "id": "A",
               "label": "CVPlayer iOS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "C",
               "label": "CVPlayerCommon",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "B",
               "label": "CVPlayerTVOS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "T",
               "label": "TestApp",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "D",
               "label": "BitmovinPlayer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "E",
               "label": "NpawPluginBitmovinAdapter",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "F",
               "label": "BitmovinCollector",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "G",
               "label": "FairPlay",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "H",
               "label": "Observers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             }
           ],
           "edges": [
@@ -582,67 +609,100 @@
               "id": "PR",
               "label": "Push/PR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CI",
               "label": "ci.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Build",
               "label": "Build",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Gate-Quality-Gate",
               "label": "Gate{Quality Gate}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Gate",
               "label": "Gate",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Test",
               "label": "Tests",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Block",
               "label": "Block",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Merge",
               "label": "Merge",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Rollback",
               "label": "Rollback to previous tag",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "Manual",
               "label": "workflow_dispatch",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "BranchFactory",
               "label": "branch-factory.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             }
           ],
           "edges": [
@@ -740,49 +800,73 @@
               "id": "Config",
               "label": "Playback Config",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Builder",
               "label": "Builder",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Core",
               "label": "Core",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Player",
               "label": "Player",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Events",
               "label": "Events",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Observers",
               "label": "Observers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Delegates",
               "label": "Delegates",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Analytics",
               "label": "Analytics",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             }
           ],
           "edges": [

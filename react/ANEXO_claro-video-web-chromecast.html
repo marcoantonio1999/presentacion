@@ -5984,206 +5984,27 @@ FASE 4, Step 4: 04-tracking/04-executive-summary-universal.prompt.md
 **Fase:** FASE 0 - Preparaci&#243;n
 </pre>
             </details>
-            <details class="doc-item">
+            <details class="doc-item architecture-doc-item">
               <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
-              <pre class="doc-pre"># Architecture Diagrams - cv-chromecast
-
-&gt; **Declaracion de Veracidad:** Diagramas generados a partir de evidencia directa del repositorio.
-&gt; Ninguna relacion ha sido asumida sin verificacion en el codigo fuente.
-&gt; **Archivos de evidencia:** `src/js/player.js` (2431 lineas), `src/js/app.js`, `src/index.html`
-
----
-
-## Diagrama de Componentes
-
-```mermaid
-graph TB
-    subgraph Sender
-        A[App Movil / Web]
-    end
-
-    subgraph Chromecast Device
-        B[Cast Receiver OS]
-        C[Chrome 38+]
-        D[index.html]
-        E[bundle.js]
-        F[Cast SDK Globals]
-        G[Shaka Player Global]
-    end
-
-    subgraph cv-chromecast App
-        H[app.js - Entry Point]
-        I[CastPlayer - player.js 2431 LOC]
-        J[constants.js]
-        K[stringutils.js]
-    end
-
-    subgraph External APIs
-        L[ClaroVideo API]
-        M[Appgrid API]
-        N[DRM Widevine Server]
-    end
-
-    A -- Cast Protocol --&gt; B
-    B --&gt; C
-    C --&gt; D
-    D --&gt; E
-    D --&gt; F
-    D --&gt; G
-    E --&gt; H
-    H --&gt; I
-    I --&gt; J
-    I --&gt; K
-    I -- HTTP XHR --&gt; L
-    I -- HTTP XHR --&gt; M
-    I -- DRM License --&gt; N
-```
-
-## Diagramas de Flujos de Procesos
-
-### Flujo Principal 1: [Nombre]
-
-**Flujo: Inicializacion del Receiver**
-
-```mermaid
-sequenceDiagram
-    participant OS as Chromecast OS
-    participant HTML as index.html
-    participant App as app.js
-    participant Player as CastPlayer (player.js)
-    participant CastSDK as Cast SDK
-
-    OS-&gt;&gt;HTML: Carga receiver URL
-    HTML-&gt;&gt;HTML: Carga Shaka Player CDN
-    HTML-&gt;&gt;HTML: Carga Cast SDK CDN
-    HTML-&gt;&gt;App: Ejecuta bundle.js
-    App-&gt;&gt;Player: new CastPlayer()
-    Player-&gt;&gt;CastSDK: CastReceiverManager.getInstance()
-    Player-&gt;&gt;CastSDK: new MediaManager(mediaElement)
-    Player-&gt;&gt;CastSDK: getCastMessageBus(&#39;urn:x-cast:com.claro.sync&#39;)
-    Player-&gt;&gt;CastSDK: receiverManager.start()
-    Player--&gt;&gt;App: Ready
-    App--&gt;&gt;OS: Receiver inicializado
-```
-
-### Flujo Principal 2: [Nombre]
-
-**Flujo: Reproduccion de Contenido VOD**
-
-```mermaid
-sequenceDiagram
-    participant Sender as Sender App
-    participant MM as MediaManager
-    participant Player as CastPlayer
-    participant API as ClaroVideo/Appgrid API
-    participant Shaka as Shaka Player
-    participant DRM as Widevine DRM
-
-    Sender-&gt;&gt;MM: onLoad (MediaInformation)
-    MM-&gt;&gt;Player: onLoad_()
-    Player-&gt;&gt;API: POST auth/login (HKS token)
-    API--&gt;&gt;Player: sessionToken
-    Player-&gt;&gt;API: GET content/streams
-    API--&gt;&gt;Player: streamURL + DRM config
-    Player-&gt;&gt;Shaka: shaka.Player(videoElement)
-    Shaka-&gt;&gt;DRM: Request license
-    DRM--&gt;&gt;Shaka: License OK
-    Shaka-&gt;&gt;Player: load(streamURL)
-    Player-&gt;&gt;MM: mediaInformation updated
-    Player--&gt;&gt;Sender: PLAYING state
-```
-
-## Diagrama de CI/CD Pipeline
-
-&gt; **Dato no disponible:** Sin CI/CD configurado en el repositorio.
-
-Pipeline actual es manual:
-
-```
-yarn build --&gt; chromecast/ --&gt; deploy.sh --&gt; ZIP --&gt; Google Cast Console (manual)
-```
-
-## Diagrama de Datos
-
-```mermaid
-erDiagram
-    CAST_MESSAGE_BUS {
-        string event
-        object data
-    }
-    MEDIA_INFORMATION {
-        string contentId
-        string contentType
-        object customData
-    }
-    CUSTOM_DATA {
-        string token
-        string sessionToken
-        string idProfile
-        string idDevice
-    }
-    CAST_PLAYER_STATE {
-        string state
-        string type
-        boolean continuousPlayback
-    }
-
-    CAST_MESSAGE_BUS ||--|| MEDIA_INFORMATION : triggers_load
-    MEDIA_INFORMATION ||--|| CUSTOM_DATA : contains
-    CAST_PLAYER_STATE ||--|| CAST_MESSAGE_BUS : notifies
-```
-
-## Notas de Implementacion
-
-### Convenciones de Diagramas
-
-- **Mermaid** se usa para todos los diagramas en este proyecto.
-- Los diagramas de componentes usan `graph TB` (top-bottom).
-- Las secuencias usan `sequenceDiagram`.
-- Colores: rojo = componente con deuda tecnica alta, verde = componente estable.
-- Todos los diagramas deben renderizar correctamente en GitHub Markdown.
-
-### Herramientas de Visualizacion
-
-- **GitHub:** Renderiza Mermaid nativo en archivos `.md`
-- **VS Code:** Extension &quot;Mermaid Preview&quot; (vstirbu.vscode-mermaid-preview)
-- **draw.io:** Para diagramas de arquitectura mas complejos exportados como PNG
-
-### Mantenimiento de Diagramas
-
-- Actualizar diagramas al agregar nuevos modulos en `src/js/`
-- Actualizar flujos de secuencia al cambiar integraciones con APIs externas
-- Verificar que los diagramas Mermaid siguen siendo validos antes de commit
-
----
-
-## Limitaciones del Analisis
-
-### Datos no disponibles en el repositorio
-
-- Diagrama de infraestructura de production (CDNs, servidores de DRM, etc.)
-- Flujos de autenticacion completos con Appgrid (parcialmente en player.js)
-- Topologia de red del servicio de streaming
-
-### Recomendaciones para completar el analisis
-
-1. Documentar la infraestructura de produccion con el equipo de operaciones
-2. Agregar diagrama de estados completo del receiver (casting lifecycle)
-3. Agregar diagrama de flujo de error handling
-
----
-
-## Compliance Check - Fase 1
-
-| # | Criterio | Estado |
-|---|---------|--------|
-| 1 | Declaracion de Veracidad | OK |
-| 2 | Diagramas basados en codigo fuente | OK |
-| 3 | Convenciones documentadas | OK |
-| 4 | Limitaciones declaradas | OK |
-
-**Compliance Score: 100%**
-</pre>
+              <div class="vss-detail-body">
+                <p>Este documento se consulta ahora desde una vista interactiva por repositorio, sin exponer el markdown crudo dentro del anexo ejecutivo.</p>
+                <div class="card-grid">
+                  <article class="mini-card">
+                    <h4>Vista interactiva</h4>
+                    <p>Los diagramas del documento original quedan disponibles con navegación individual, zoom nativo y lectura visual por flujo.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Lectura ejecutiva</h4>
+                    <p>La arquitectura se presenta por componentes, procesos, datos y secuencias, conservando el orden del archivo base.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Repositorio actual</h4>
+                    <p><strong>Web Chromecast</strong> ya tiene su mapa dedicado de arquitectura dentro de FASE 1.</p>
+                  </article>
+                </div>
+                <p class="vss-footnote">La consulta principal de diagramas ya se realiza en el visor interactivo; el contenido documental sigue disponible como respaldo del paquete base.</p>
+                <p><a href="index.html#/fase-1/architecture/claro-video-web-chromecast">Abrir mapa de arquitectura interactivo</a></p>
+              </div>
             </details>
             <details class="doc-item">
               <summary><span class="doc-name">README.md</span><span class="doc-path">docs\diagrams\README.md</span></summary>

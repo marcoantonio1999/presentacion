@@ -40,19 +40,35 @@
           "groups": [
             {
               "id": "Sender",
-              "label": "Sender"
+              "label": "Sender",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Chromecast",
-              "label": "Chromecast"
+              "label": "Chromecast",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 2
             },
             {
               "id": "cv-chromecast",
-              "label": "cv-chromecast"
+              "label": "cv-chromecast",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 9
             },
             {
               "id": "External",
-              "label": "External"
+              "label": "External",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 14
             }
           ],
           "nodes": [
@@ -60,103 +76,154 @@
               "id": "A",
               "label": "App Movil / Web",
               "type": "component",
-              "group": "Sender"
+              "group": "Sender",
+              "groupId": "Sender",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "B",
               "label": "Cast Receiver OS",
               "type": "component",
-              "group": "Chromecast"
+              "group": "Chromecast",
+              "groupId": "Chromecast",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "C",
               "label": "Chrome 38+",
               "type": "component",
-              "group": "Chromecast"
+              "group": "Chromecast",
+              "groupId": "Chromecast",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "D",
               "label": "index.html",
               "type": "component",
-              "group": "Chromecast"
+              "group": "Chromecast",
+              "groupId": "Chromecast",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "E",
               "label": "bundle.js",
               "type": "component",
-              "group": "Chromecast"
+              "group": "Chromecast",
+              "groupId": "Chromecast",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "F",
               "label": "Cast SDK Globals",
               "type": "component",
-              "group": "Chromecast"
+              "group": "Chromecast",
+              "groupId": "Chromecast",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "G",
               "label": "Shaka Player Global",
               "type": "component",
-              "group": "Chromecast"
+              "group": "Chromecast",
+              "groupId": "Chromecast",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "H",
               "label": "app.js - Entry Point",
               "type": "component",
-              "group": "cv-chromecast"
+              "group": "cv-chromecast",
+              "groupId": "cv-chromecast",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "I",
               "label": "CastPlayer - player.js 2431 LOC",
               "type": "component",
-              "group": "cv-chromecast"
+              "group": "cv-chromecast",
+              "groupId": "cv-chromecast",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "J",
               "label": "constants.js",
               "type": "component",
-              "group": "cv-chromecast"
+              "group": "cv-chromecast",
+              "groupId": "cv-chromecast",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "K",
               "label": "stringutils.js",
               "type": "component",
-              "group": "cv-chromecast"
+              "group": "cv-chromecast",
+              "groupId": "cv-chromecast",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "L",
               "label": "ClaroVideo API",
               "type": "component",
-              "group": "External"
+              "group": "External",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "M",
               "label": "Appgrid API",
               "type": "component",
-              "group": "External"
+              "group": "External",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "N",
               "label": "DRM Widevine Server",
               "type": "component",
-              "group": "External"
+              "group": "External",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "A-Cast-Protocol",
               "label": "A -- Cast Protocol",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "I-HTTP-XHR",
               "label": "I -- HTTP XHR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 38
             },
             {
               "id": "I-DRM-License",
               "label": "I -- DRM License",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 42
             }
           ],
           "edges": [

@@ -42,43 +42,83 @@
           "groups": [
             {
               "id": "Presentation",
-              "label": "📱 Presentation Layer"
+              "label": "📱 Presentation Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
             },
             {
               "id": "UIKitModules",
-              "label": "UIKit Modules (25)"
+              "label": "UIKit Modules (25)",
+              "parentId": "Presentation",
+              "depth": 1,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "SwiftUIModules",
-              "label": "SwiftUI Modules (3)"
+              "label": "SwiftUI Modules (3)",
+              "parentId": "Presentation",
+              "depth": 1,
+              "direction": "",
+              "order": 11
             },
             {
               "id": "VIPERModule",
-              "label": "VIPER Module (1)"
+              "label": "VIPER Module (1)",
+              "parentId": "Presentation",
+              "depth": 1,
+              "direction": "",
+              "order": 15
             },
             {
               "id": "ViewModels",
-              "label": "🧠 ViewModel Layer"
+              "label": "🧠 ViewModel Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 18
             },
             {
               "id": "Services",
-              "label": "⚙️ Service Layer (Facades)"
+              "label": "⚙️ Service Layer (Facades)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 25
             },
             {
               "id": "Helpers",
-              "label": "🔧 Helpers Layer"
+              "label": "🔧 Helpers Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 36
             },
             {
               "id": "Frameworks",
-              "label": "📦 Internal SPM Frameworks"
+              "label": "📦 Internal SPM Frameworks",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 46
             },
             {
               "id": "External",
-              "label": "🌐 External Dependencies"
+              "label": "🌐 External Dependencies",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 55
             },
             {
               "id": "Platform",
-              "label": "🍎 Apple Platform"
+              "label": "🍎 Apple Platform",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 63
             }
           ],
           "nodes": [
@@ -86,349 +126,523 @@
               "id": "Initial",
               "label": "InitialVC · Splash + Init",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Main",
               "label": "MainVC · UITabBarController",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Listings",
               "label": "ListingsVC · Carousels",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "TV",
               "label": "TVEPGController · Live TV",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Player",
               "label": "Player · VOD/Live/Music",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Download",
               "label": "DownloadVC · Offline",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Profiles",
               "label": "ProfilesVC · User Profiles",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "Music",
               "label": "MusicVC · Music Player",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Transactions",
               "label": "TransactionsVC · Purchases",
               "type": "component",
-              "group": "UIKit Modules (25)"
+              "group": "UIKit Modules (25)",
+              "groupId": "UIKitModules",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "VCard",
               "label": "VCardView · Content Detail",
               "type": "component",
-              "group": "SwiftUI Modules (3)"
+              "group": "SwiftUI Modules (3)",
+              "groupId": "SwiftUIModules",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "LoginView",
               "label": "LoginView · Authentication",
               "type": "component",
-              "group": "SwiftUI Modules (3)"
+              "group": "SwiftUI Modules (3)",
+              "groupId": "SwiftUIModules",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "UserDataView",
               "label": "UserDataView · User Info",
               "type": "component",
-              "group": "SwiftUI Modules (3)"
+              "group": "SwiftUI Modules (3)",
+              "groupId": "SwiftUIModules",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Search",
               "label": "Search · Router+Interactor · +Presenter+View",
               "type": "component",
-              "group": "VIPER Module (1)"
+              "group": "VIPER Module (1)",
+              "groupId": "VIPERModule",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "Base",
               "label": "BaseViewController · 927 LOC + 6 extensions",
               "type": "component",
-              "group": "📱 Presentation Layer"
+              "group": "📱 Presentation Layer",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "InitialVM",
               "label": "InitialViewModel · State enum + Listener",
               "type": "component",
-              "group": "🧠 ViewModel Layer"
+              "group": "🧠 ViewModel Layer",
+              "groupId": "ViewModels",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "MainVM",
               "label": "MainViewModel · State enum + Listener",
               "type": "component",
-              "group": "🧠 ViewModel Layer"
+              "group": "🧠 ViewModel Layer",
+              "groupId": "ViewModels",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "ListingsVM",
               "label": "ListingsViewModel · Protocol-based",
               "type": "component",
-              "group": "🧠 ViewModel Layer"
+              "group": "🧠 ViewModel Layer",
+              "groupId": "ViewModels",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "VCardVM",
               "label": "VCardViewModel · @MainActor ObservableObject",
               "type": "component",
-              "group": "🧠 ViewModel Layer"
+              "group": "🧠 ViewModel Layer",
+              "groupId": "ViewModels",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "LoginVM",
               "label": "LoginDataViewModel · Combine @Published",
               "type": "component",
-              "group": "🧠 ViewModel Layer"
+              "group": "🧠 ViewModel Layer",
+              "groupId": "ViewModels",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "PlayerCore",
               "label": "Player.swift · PlayerProtocol (24 methods)",
               "type": "component",
-              "group": "🧠 ViewModel Layer"
+              "group": "🧠 ViewModel Layer",
+              "groupId": "ViewModels",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "UserMgr",
               "label": "UserManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "PaywayMgr",
               "label": "PaywayManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "LevelMgr",
               "label": "LevelManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "PlayerMgr",
               "label": "PlayerManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "CmsMgr",
               "label": "CmsManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "EPGMgr",
               "label": "EPGManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "ProfileMgr",
               "label": "ProfileManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "FavsMgr",
               "label": "FavoritesManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "NpvrMgr",
               "label": "NpvrManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "MusicMgr",
               "label": "MusicMiddlewareManager",
               "type": "component",
-              "group": "⚙️ Service Layer (Facades)"
+              "group": "⚙️ Service Layer (Facades)",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "DLMgr",
               "label": "DeepLinkingManager · + Navigator + Parser",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "DownloadMgr",
               "label": "DownloadManager · 772 LOC",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 38
             },
             {
               "id": "ChromeMgr",
               "label": "ChromeCastManager · 525 LOC",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 39
             },
             {
               "id": "PurchaseMgr",
               "label": "PurchaseManager · 435 LOC",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 40
             },
             {
               "id": "LocalData",
               "label": "LocalDataManager · 191 refs",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 41
             },
             {
               "id": "MediaMgr",
               "label": "MediaPlayerMedia · Manager 606 LOC",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 42
             },
             {
               "id": "FairPlay",
               "label": "AssetLoaderDelegate · + ContentKeyDelegate",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 43
             },
             {
               "id": "CoreDataMgr",
               "label": "CoreDataManager",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 44
             },
             {
               "id": "Navigation",
               "label": "Navigation.shared · Node tree",
               "type": "component",
-              "group": "🔧 Helpers Layer"
+              "group": "🔧 Helpers Layer",
+              "groupId": "Helpers",
+              "groupPath": [],
+              "order": 45
             },
             {
               "id": "CVServices",
               "label": "CVServices · REST Networking",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 47
             },
             {
               "id": "CVModel",
               "label": "CVModel · Data Models",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 48
             },
             {
               "id": "CVExtension",
               "label": "CVExtension · Swift Extensions",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 49
             },
             {
               "id": "CVLocalizable",
               "label": "CVLocalizable · i18n",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 50
             },
             {
               "id": "CVAnalytics",
               "label": "CVAnalytics · Analytics Base",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 51
             },
             {
               "id": "CVPlayer",
               "label": "CVPlayer / · CVPlayerTVOS",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 52
             },
             {
               "id": "CVPlayerCommon",
               "label": "CVPlayerCommon · Player Interfaces",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 53
             },
             {
               "id": "CVCommonViews",
               "label": "CVCommonViews · Shared Views",
               "type": "component",
-              "group": "📦 Internal SPM Frameworks"
+              "group": "📦 Internal SPM Frameworks",
+              "groupId": "Frameworks",
+              "groupPath": [],
+              "order": 54
             },
             {
               "id": "Firebase",
               "label": "Firebase GA4 · + Dynamic Links",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 56
             },
             {
               "id": "NewRelic",
               "label": "NewRelic APM",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 57
             },
             {
               "id": "Youbora",
               "label": "Youbora NPAW",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 58
             },
             {
               "id": "Facebook",
               "label": "FBSDKLoginKit",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 59
             },
             {
               "id": "GoogleCast",
               "label": "Google Cast · xcframework",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 60
             },
             {
               "id": "Bitmovin",
               "label": "Bitmovin Player",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 61
             },
             {
               "id": "StoreKit",
               "label": "StoreKit IAP",
               "type": "component",
-              "group": "🌐 External Dependencies"
+              "group": "🌐 External Dependencies",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 62
             },
             {
               "id": "AVKit",
               "label": "AVKit / AVFoundation",
               "type": "component",
-              "group": "🍎 Apple Platform"
+              "group": "🍎 Apple Platform",
+              "groupId": "Platform",
+              "groupPath": [],
+              "order": 64
             },
             {
               "id": "CoreData",
               "label": "CoreData",
               "type": "component",
-              "group": "🍎 Apple Platform"
+              "group": "🍎 Apple Platform",
+              "groupId": "Platform",
+              "groupPath": [],
+              "order": 65
             },
             {
               "id": "CoreSpotlight",
               "label": "CoreSpotlight",
               "type": "component",
-              "group": "🍎 Apple Platform"
+              "group": "🍎 Apple Platform",
+              "groupId": "Platform",
+              "groupPath": [],
+              "order": 66
             },
             {
               "id": "APNs",
               "label": "APNs",
               "type": "component",
-              "group": "🍎 Apple Platform"
+              "group": "🍎 Apple Platform",
+              "groupId": "Platform",
+              "groupPath": [],
+              "order": 67
             }
           ],
           "edges": [
@@ -771,15 +985,27 @@
           "groups": [
             {
               "id": "MainTab",
-              "label": "MainViewController (UITabBarController)"
+              "label": "MainViewController (UITabBarController)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "LR",
+              "order": 21
             },
             {
               "id": "DeepLinks",
-              "label": "Deep Link Entry"
+              "label": "Deep Link Entry",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 42
             },
             {
               "id": "Modals",
-              "label": "Modal Presentations"
+              "label": "Modal Presentations",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 58
             }
           ],
           "nodes": [
@@ -787,193 +1013,289 @@
               "id": "Launch",
               "label": "🚀 App Launch",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "AppDelegate",
               "label": "AppDelegate · NewRelic + Defaults",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "SceneDelegate",
               "label": "SceneDelegate · Window + Services",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "InitialVC",
               "label": "InitialViewController · Splash Screen",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "MainVC",
               "label": "MainVC",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "Landing",
               "label": "LandingPage",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "ProfileSelect",
               "label": "Profiles Selection",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "LoginModal",
               "label": "Login · (SwiftUI Modal)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "SignUp",
               "label": "SignUp",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "Tab1",
               "label": "Tab: Home · ListingsVC",
               "type": "component",
-              "group": "MainViewController (UITabBarController)"
+              "group": "MainViewController (UITabBarController)",
+              "groupId": "MainTab",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "Tab2",
               "label": "Tab: Series · ListingsVC",
               "type": "component",
-              "group": "MainViewController (UITabBarController)"
+              "group": "MainViewController (UITabBarController)",
+              "groupId": "MainTab",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Tab3",
               "label": "Tab: TV · TVEPGController",
               "type": "component",
-              "group": "MainViewController (UITabBarController)"
+              "group": "MainViewController (UITabBarController)",
+              "groupId": "MainTab",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "TabN",
               "label": "Tab: N · (Backend config)",
               "type": "component",
-              "group": "MainViewController (UITabBarController)"
+              "group": "MainViewController (UITabBarController)",
+              "groupId": "MainTab",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "MainTab",
               "label": "MainTab",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "VCardDetail",
               "label": "VCard Detail · (SwiftUI Hosted)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "PlayerLive",
               "label": "Player Live",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "ListadoGrid",
               "label": "ListadoGrid",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "PlayerVOD",
               "label": "Player VOD",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "PlanSelector",
               "label": "PlanSelector",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 39
             },
             {
               "id": "PlayerTrailer",
               "label": "Player Trailer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 41
             },
             {
               "id": "DLVCard",
               "label": "dlaapk://vcard/{id}",
               "type": "component",
-              "group": "Deep Link Entry"
+              "group": "Deep Link Entry",
+              "groupId": "DeepLinks",
+              "groupPath": [],
+              "order": 43
             },
             {
               "id": "DLPlayer",
               "label": "dlaapk://catalogo?autoplay={id}",
               "type": "component",
-              "group": "Deep Link Entry"
+              "group": "Deep Link Entry",
+              "groupId": "DeepLinks",
+              "groupPath": [],
+              "order": 44
             },
             {
               "id": "DLLanding",
               "label": "dlaapk://landing",
               "type": "component",
-              "group": "Deep Link Entry"
+              "group": "Deep Link Entry",
+              "groupId": "DeepLinks",
+              "groupPath": [],
+              "order": 45
             },
             {
               "id": "DLFirebase",
               "label": "Firebase Dynamic Link",
               "type": "component",
-              "group": "Deep Link Entry"
+              "group": "Deep Link Entry",
+              "groupId": "DeepLinks",
+              "groupPath": [],
+              "order": 46
             },
             {
               "id": "DLPush",
               "label": "Push Notification",
               "type": "component",
-              "group": "Deep Link Entry"
+              "group": "Deep Link Entry",
+              "groupId": "DeepLinks",
+              "groupPath": [],
+              "order": 47
             },
             {
               "id": "SearchModal",
               "label": "Search · (VIPER)",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 59
             },
             {
               "id": "DownloadModal",
               "label": "Download Center",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 60
             },
             {
               "id": "AccountSuspended",
               "label": "Account Suspended",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 61
             },
             {
               "id": "RecoverPwd",
               "label": "Recover Password",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 62
             },
             {
               "id": "RecoverPin",
               "label": "Recover PIN",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 63
             },
             {
               "id": "TermsCond",
               "label": "Terms & Conditions",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 64
             },
             {
               "id": "MusicPlayer",
               "label": "Music Player",
               "type": "component",
-              "group": "Modal Presentations"
+              "group": "Modal Presentations",
+              "groupId": "Modals",
+              "groupPath": [],
+              "order": 65
             }
           ],
           "edges": [
@@ -1212,19 +1534,35 @@
           "groups": [
             {
               "id": "PlayerModule",
-              "label": "🎬 Player Module (4,743 LOC)"
+              "label": "🎬 Player Module (4,743 LOC)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
             },
             {
               "id": "LazyManagers",
-              "label": "Lazy Sub-managers"
+              "label": "Lazy Sub-managers",
+              "parentId": "PlayerModule",
+              "depth": 1,
+              "direction": "",
+              "order": 2
             },
             {
               "id": "DataManagers",
-              "label": "Data State"
+              "label": "Data State",
+              "parentId": "PlayerModule",
+              "depth": 1,
+              "direction": "",
+              "order": 10
             },
             {
               "id": "ExternalPlayer",
-              "label": "Player Engine"
+              "label": "Player Engine",
+              "parentId": "PlayerModule",
+              "depth": 1,
+              "direction": "",
+              "order": 14
             }
           ],
           "nodes": [
@@ -1232,103 +1570,154 @@
               "id": "Player",
               "label": "Player.swift · 1,009 LOC · PlayerProtocol (24 methods) · Coordinador Principal",
               "type": "component",
-              "group": "🎬 Player Module (4,743 LOC)"
+              "group": "🎬 Player Module (4,743 LOC)",
+              "groupId": "PlayerModule",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Live",
               "label": "LiveManager · 1,071 LOC · EPG, Timeshift, Channels",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Analytics",
               "label": "AnalitycsHandler · 427 LOC · GA4 + Youbora + Dashboard",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Continue",
               "label": "ContinuePlayback · 337 LOC · Inactivity Detection",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "FinPlayer",
               "label": "ManagerFinPlayer · 301 LOC · End-of-content Recs",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Swap",
               "label": "SwapVideoOptions · 293 LOC · Language/Episode swap",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Cast",
               "label": "ChromeCast · 152 LOC · Chromecast Session",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "FP",
               "label": "FairPlay · 106 LOC · DRM Management",
               "type": "component",
-              "group": "Lazy Sub-managers"
+              "group": "Lazy Sub-managers",
+              "groupId": "LazyManagers",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "CommonData",
               "label": "CommonDataSwiftPlayer · .shared (278 LOC) · ⚠️ Sin thread safety",
               "type": "component",
-              "group": "Data State"
+              "group": "Data State",
+              "groupId": "DataManagers",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "VideoData",
               "label": "VideoData · Video metadata",
               "type": "component",
-              "group": "Data State"
+              "group": "Data State",
+              "groupId": "DataManagers",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "AudioData",
               "label": "AudioData · Audio metadata",
               "type": "component",
-              "group": "Data State"
+              "group": "Data State",
+              "groupId": "DataManagers",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "BitPlayer",
               "label": "Bitmovin Player · (CVPlayer / CVPlayerTVOS)",
               "type": "component",
-              "group": "Player Engine"
+              "group": "Player Engine",
+              "groupId": "ExternalPlayer",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "PiP",
               "label": "Picture-in-Picture · (AVKit)",
               "type": "component",
-              "group": "Player Engine"
+              "group": "Player Engine",
+              "groupId": "ExternalPlayer",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "API",
               "label": "CVServices API",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 40
             },
             {
               "id": "FirebaseGA4",
               "label": "Firebase GA4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 44
             },
             {
               "id": "YouboraAPI",
               "label": "Youbora NPAW",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 46
             },
             {
               "id": "GCast",
               "label": "Google Cast SDK",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 48
             }
           ],
           "edges": [
@@ -1487,19 +1876,35 @@
           "groups": [
             {
               "id": "ViewControllers",
-              "label": "ViewControllers / ViewModels"
+              "label": "ViewControllers / ViewModels",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Managers",
-              "label": "Service Managers (10 Facades)"
+              "label": "Service Managers (10 Facades)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 2
             },
             {
               "id": "CVServicesLayer",
-              "label": "CVServices Framework"
+              "label": "CVServices Framework",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 13
             },
             {
               "id": "Backend",
-              "label": "REST API Backend"
+              "label": "REST API Backend",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 22
             }
           ],
           "nodes": [
@@ -1507,121 +1912,181 @@
               "id": "VC",
               "label": "Any ViewController · or ViewModel",
               "type": "component",
-              "group": "ViewControllers / ViewModels"
+              "group": "ViewControllers / ViewModels",
+              "groupId": "ViewControllers",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "UM",
               "label": "UserManager · 322 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "PM",
               "label": "PaywayManager · 321 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "LM",
               "label": "LevelManager · 267 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "NM",
               "label": "NpvrManager · 215 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "FM",
               "label": "FavoritesManager · 187 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "PrM",
               "label": "ProfileManager · 128 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "EM",
               "label": "EPGManager · 108 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "PlM",
               "label": "PlayerManager · 89 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "CM",
               "label": "CmsManager · 86 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "MM",
               "label": "MusicMiddleware · 61 LOC",
               "type": "component",
-              "group": "Service Managers (10 Facades)"
+              "group": "Service Managers (10 Facades)",
+              "groupId": "Managers",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "USS",
               "label": "UserServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "PSS",
               "label": "PaywayServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "CSS",
               "label": "CmsServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "NSS",
               "label": "NpvrServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "PrSS",
               "label": "ProfileServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "ESS",
               "label": "EPGServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "PlSS",
               "label": "PlayerServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "MSS",
               "label": "MusicServicesManager",
               "type": "component",
-              "group": "CVServices Framework"
+              "group": "CVServices Framework",
+              "groupId": "CVServicesLayer",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "API",
               "label": "Claro Video API · (device-specific endpoints)",
               "type": "component",
-              "group": "REST API Backend"
+              "group": "REST API Backend",
+              "groupId": "Backend",
+              "groupPath": [],
+              "order": 23
             }
           ],
           "edges": [
@@ -1828,23 +2293,43 @@
           "groups": [
             {
               "id": "ManualDI",
-              "label": "Manual DI Pattern"
+              "label": "Manual DI Pattern",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
             },
             {
               "id": "ConstructorDI",
-              "label": "Constructor Injection (con defaults)"
+              "label": "Constructor Injection (con defaults)",
+              "parentId": "ManualDI",
+              "depth": 1,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "SingletonDI",
-              "label": "Singleton Access (.shared)"
+              "label": "Singleton Access (.shared)",
+              "parentId": "ManualDI",
+              "depth": 1,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "FacadeDI",
-              "label": "Class-level Facades"
+              "label": "Class-level Facades",
+              "parentId": "ManualDI",
+              "depth": 1,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "Testing",
-              "label": "Testing Impact"
+              "label": "Testing Impact",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 16
             }
           ],
           "nodes": [
@@ -1852,103 +2337,154 @@
               "id": "VCardVM2",
               "label": "VCardViewModel · init(service: PaywayServicesProtocol · = PaywayManager())",
               "type": "component",
-              "group": "Constructor Injection (con defaults)"
+              "group": "Constructor Injection (con defaults)",
+              "groupId": "ConstructorDI",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "LoginVM2",
               "label": "LoginDataViewModel · init(service: UserServicesProtocol · = UserManager())",
               "type": "component",
-              "group": "Constructor Injection (con defaults)"
+              "group": "Constructor Injection (con defaults)",
+              "groupId": "ConstructorDI",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "S1",
               "label": "LocalDataManager.shared · 191 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "S2",
               "label": "DownloadManager.shared · 84 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "S3",
               "label": "MediaPlayerHLS...shared · 68 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "S4",
               "label": "DeepLinkingManager.shared · 63 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "S5",
               "label": "ChromeCastManager.shared · 41 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "S6",
               "label": "Navigation.shared · 39 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "S7",
               "label": "CommonDataSwiftPlayer.shared · 38 refs",
               "type": "component",
-              "group": "Singleton Access (.shared)"
+              "group": "Singleton Access (.shared)",
+              "groupId": "SingletonDI",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "F1",
               "label": "UserManager.login()",
               "type": "component",
-              "group": "Class-level Facades"
+              "group": "Class-level Facades",
+              "groupId": "FacadeDI",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "F2",
               "label": "CmsManager.getLevel()",
               "type": "component",
-              "group": "Class-level Facades"
+              "group": "Class-level Facades",
+              "groupId": "FacadeDI",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "F3",
               "label": "PlayerManager.getMedia()",
               "type": "component",
-              "group": "Class-level Facades"
+              "group": "Class-level Facades",
+              "groupId": "FacadeDI",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "Mock",
               "label": "✅ Mockable via protocol · (VCard, Login)",
               "type": "component",
-              "group": "Testing Impact"
+              "group": "Testing Impact",
+              "groupId": "Testing",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "NoMock",
               "label": "❌ Not mockable · (940+ singleton refs)",
               "type": "component",
-              "group": "Testing Impact"
+              "group": "Testing Impact",
+              "groupId": "Testing",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "ConstructorDI",
               "label": "ConstructorDI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "SingletonDI",
               "label": "SingletonDI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "FacadeDI",
               "label": "FacadeDI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             }
           ],
           "edges": [
@@ -2003,23 +2539,43 @@
           "groups": [
             {
               "id": "Patterns",
-              "label": "4 Patrones de Binding Coexisten"
+              "label": "4 Patrones de Binding Coexisten",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
             },
             {
               "id": "P1",
-              "label": "Pattern 1: Closure-based Listener"
+              "label": "Pattern 1: Closure-based Listener",
+              "parentId": "Patterns",
+              "depth": 1,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "P2",
-              "label": "Pattern 2: Combine @Published"
+              "label": "Pattern 2: Combine @Published",
+              "parentId": "Patterns",
+              "depth": 1,
+              "direction": "",
+              "order": 8
             },
             {
               "id": "P3",
-              "label": "Pattern 3: VIPER Protocols"
+              "label": "Pattern 3: VIPER Protocols",
+              "parentId": "Patterns",
+              "depth": 1,
+              "direction": "",
+              "order": 14
             },
             {
               "id": "P4",
-              "label": "Pattern 4: NotificationCenter"
+              "label": "Pattern 4: NotificationCenter",
+              "parentId": "Patterns",
+              "depth": 1,
+              "direction": "",
+              "order": 20
             }
           ],
           "nodes": [
@@ -2027,151 +2583,226 @@
               "id": "CL1",
               "label": "ViewModel",
               "type": "component",
-              "group": "Pattern 1: Closure-based Listener"
+              "group": "Pattern 1: Closure-based Listener",
+              "groupId": "P1",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "CL2",
               "label": "enum State { case loading, loaded, error }",
               "type": "component",
-              "group": "Pattern 1: Closure-based Listener"
+              "group": "Pattern 1: Closure-based Listener",
+              "groupId": "P1",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "CL3",
               "label": "typealias Listener = (State) -> Void",
               "type": "component",
-              "group": "Pattern 1: Closure-based Listener"
+              "group": "Pattern 1: Closure-based Listener",
+              "groupId": "P1",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "CL4",
               "label": "bindState(listener:) / unbindState()",
               "type": "component",
-              "group": "Pattern 1: Closure-based Listener"
+              "group": "Pattern 1: Closure-based Listener",
+              "groupId": "P1",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "CL2-CL3-CL4",
               "label": "CL2 --> CL3 --> CL4",
               "type": "component",
-              "group": "Pattern 1: Closure-based Listener"
+              "group": "Pattern 1: Closure-based Listener",
+              "groupId": "P1",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "CB1",
               "label": "@MainActor class ViewModel: ObservableObject",
               "type": "component",
-              "group": "Pattern 2: Combine @Published"
+              "group": "Pattern 2: Combine @Published",
+              "groupId": "P2",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "CB2",
               "label": "@Published var data: [Item]",
               "type": "component",
-              "group": "Pattern 2: Combine @Published"
+              "group": "Pattern 2: Combine @Published",
+              "groupId": "P2",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "CB3",
               "label": "SwiftUI auto-binding / sink in UIKit",
               "type": "component",
-              "group": "Pattern 2: Combine @Published"
+              "group": "Pattern 2: Combine @Published",
+              "groupId": "P2",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "CB2-CB3",
               "label": "CB2 --> CB3",
               "type": "component",
-              "group": "Pattern 2: Combine @Published"
+              "group": "Pattern 2: Combine @Published",
+              "groupId": "P2",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "VP1",
               "label": "ViewToPresenter protocol",
               "type": "component",
-              "group": "Pattern 3: VIPER Protocols"
+              "group": "Pattern 3: VIPER Protocols",
+              "groupId": "P3",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "VP2",
               "label": "PresenterToView protocol",
               "type": "component",
-              "group": "Pattern 3: VIPER Protocols"
+              "group": "Pattern 3: VIPER Protocols",
+              "groupId": "P3",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "VP3",
               "label": "Explicit method calls",
               "type": "component",
-              "group": "Pattern 3: VIPER Protocols"
+              "group": "Pattern 3: VIPER Protocols",
+              "groupId": "P3",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "VP2-VP3",
               "label": "VP2 --> VP3",
               "type": "component",
-              "group": "Pattern 3: VIPER Protocols"
+              "group": "Pattern 3: VIPER Protocols",
+              "groupId": "P3",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "NC1",
               "label": "NotificationCenter.default.post",
               "type": "component",
-              "group": "Pattern 4: NotificationCenter"
+              "group": "Pattern 4: NotificationCenter",
+              "groupId": "P4",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "NC2",
               "label": "82+ calls in Modules",
               "type": "component",
-              "group": "Pattern 4: NotificationCenter"
+              "group": "Pattern 4: NotificationCenter",
+              "groupId": "P4",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "NC3",
               "label": "No type safety",
               "type": "component",
-              "group": "Pattern 4: NotificationCenter"
+              "group": "Pattern 4: NotificationCenter",
+              "groupId": "P4",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "NC2-NC3",
               "label": "NC2 --> NC3",
               "type": "component",
-              "group": "Pattern 4: NotificationCenter"
+              "group": "Pattern 4: NotificationCenter",
+              "groupId": "P4",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "P1",
               "label": "P1",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "UIKit",
               "label": "UIKit Dominant",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "P2",
               "label": "P2",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "SwiftUI",
               "label": "SwiftUI Emerging",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "P3",
               "label": "P3",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "VIPER",
               "label": "Search Only",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "P4",
               "label": "P4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "Global",
               "label": "Global Events",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
             }
           ],
           "edges": [
@@ -2266,15 +2897,27 @@
           "groups": [
             {
               "id": "Toggle",
-              "label": "Runtime Toggle"
+              "label": "Runtime Toggle",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Modern",
-              "label": "✅ Módulos Modernos (29)"
+              "label": "✅ Módulos Modernos (29)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 2
             },
             {
               "id": "Legacy",
-              "label": "❌ Módulos Legacy (9)"
+              "label": "❌ Módulos Legacy (9)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 9
             }
           ],
           "nodes": [
@@ -2282,85 +2925,127 @@
               "id": "Flag",
               "label": "Metadata.useHamburgerNav",
               "type": "component",
-              "group": "Runtime Toggle"
+              "group": "Runtime Toggle",
+              "groupId": "Toggle",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "ModMain",
               "label": "Main · (TabBar)",
               "type": "component",
-              "group": "✅ Módulos Modernos (29)"
+              "group": "✅ Módulos Modernos (29)",
+              "groupId": "Modern",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "ModSearch",
               "label": "Search · (VIPER)",
               "type": "component",
-              "group": "✅ Módulos Modernos (29)"
+              "group": "✅ Módulos Modernos (29)",
+              "groupId": "Modern",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "ModListings",
               "label": "Listings",
               "type": "component",
-              "group": "✅ Módulos Modernos (29)"
+              "group": "✅ Módulos Modernos (29)",
+              "groupId": "Modern",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "ModBase",
               "label": "Base",
               "type": "component",
-              "group": "✅ Módulos Modernos (29)"
+              "group": "✅ Módulos Modernos (29)",
+              "groupId": "Modern",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "ModMenu",
               "label": "Menu · (Navigation.shared)",
               "type": "component",
-              "group": "✅ Módulos Modernos (29)"
+              "group": "✅ Módulos Modernos (29)",
+              "groupId": "Modern",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "ModOther",
               "label": "+ 24 más",
               "type": "component",
-              "group": "✅ Módulos Modernos (29)"
+              "group": "✅ Módulos Modernos (29)",
+              "groupId": "Modern",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "OldMain2",
               "label": "OldMain · (OldMainVC 777 LOC)",
               "type": "component",
-              "group": "❌ Módulos Legacy (9)"
+              "group": "❌ Módulos Legacy (9)",
+              "groupId": "Legacy",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "OldSearch2",
               "label": "OldSearch · (2,677 LOC)",
               "type": "component",
-              "group": "❌ Módulos Legacy (9)"
+              "group": "❌ Módulos Legacy (9)",
+              "groupId": "Legacy",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "OldMenu2",
               "label": "OldMenu · (Hamburger 1,247 LOC)",
               "type": "component",
-              "group": "❌ Módulos Legacy (9)"
+              "group": "❌ Módulos Legacy (9)",
+              "groupId": "Legacy",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "OldBase2",
               "label": "OldBase (599)",
               "type": "component",
-              "group": "❌ Módulos Legacy (9)"
+              "group": "❌ Módulos Legacy (9)",
+              "groupId": "Legacy",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "OldOther",
               "label": "+ 5 más · Total: 8,296 LOC",
               "type": "component",
-              "group": "❌ Módulos Legacy (9)"
+              "group": "❌ Módulos Legacy (9)",
+              "groupId": "Legacy",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Modern",
               "label": "Modern",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "Legacy",
               "label": "Legacy",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             }
           ],
           "edges": [
@@ -2415,19 +3100,35 @@
           "groups": [
             {
               "id": "BuildPipeline",
-              "label": "pipeline-build.yml"
+              "label": "pipeline-build.yml",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 5
             },
             {
               "id": "AnalysisPipeline",
-              "label": "pipeline-analysis.yml"
+              "label": "pipeline-analysis.yml",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 14
             },
             {
               "id": "Missing",
-              "label": "⚠️ Pipelines Ausentes"
+              "label": "⚠️ Pipelines Ausentes",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 30
             },
             {
               "id": "Rollback",
-              "label": "🔄 Rollback"
+              "label": "🔄 Rollback",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 36
             }
           ],
           "nodes": [
@@ -2435,151 +3136,226 @@
               "id": "Dev",
               "label": "👨‍💻 Developer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Bitbucket",
               "label": "Bitbucket Repository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "AzureDevOps",
               "label": "Azure DevOps Pipelines",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "B1",
               "label": "Download cv-auto-devops template",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "B2",
               "label": "Install Development.p12 certificate",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "B3",
               "label": "Install 3x .mobileprovision profiles",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "B4",
               "label": "xcodebuild clean build · Xcode 15 / iphoneos · Configuration: Production Debug",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "B5",
               "label": "Export IPA · ExportOptions/Development.plist",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "B6",
               "label": "Publish Artifact",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "B2-B3-B4-B5-B6",
               "label": "B2 --> B3 --> B4 --> B5 --> B6",
               "type": "component",
-              "group": "pipeline-build.yml"
+              "group": "pipeline-build.yml",
+              "groupId": "BuildPipeline",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "A1",
               "label": "Configure SonarCloud",
               "type": "component",
-              "group": "pipeline-analysis.yml"
+              "group": "pipeline-analysis.yml",
+              "groupId": "AnalysisPipeline",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "A2",
               "label": "Static Analysis · Swift only",
               "type": "component",
-              "group": "pipeline-analysis.yml"
+              "group": "pipeline-analysis.yml",
+              "groupId": "AnalysisPipeline",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "A3",
               "label": "Quality Gate Check",
               "type": "component",
-              "group": "pipeline-analysis.yml"
+              "group": "pipeline-analysis.yml",
+              "groupId": "AnalysisPipeline",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "A2-A3",
               "label": "A2 --> A3",
               "type": "component",
-              "group": "pipeline-analysis.yml"
+              "group": "pipeline-analysis.yml",
+              "groupId": "AnalysisPipeline",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "BuildPipeline",
               "label": "BuildPipeline",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "AnalysisPipeline",
               "label": "AnalysisPipeline",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Artifact",
               "label": "📦 Build Artifact · Development IPA",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "PRApprove",
               "label": "PR Approved",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "PRBlock",
               "label": "PR Blocked",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "M1",
               "label": "❌ Test Pipeline · (Unit + UI)",
               "type": "component",
-              "group": "⚠️ Pipelines Ausentes"
+              "group": "⚠️ Pipelines Ausentes",
+              "groupId": "Missing",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "M2",
               "label": "❌ TestFlight Deploy",
               "type": "component",
-              "group": "⚠️ Pipelines Ausentes"
+              "group": "⚠️ Pipelines Ausentes",
+              "groupId": "Missing",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "M3",
               "label": "❌ App Store Deploy",
               "type": "component",
-              "group": "⚠️ Pipelines Ausentes"
+              "group": "⚠️ Pipelines Ausentes",
+              "groupId": "Missing",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "M4",
               "label": "❌ tvOS / macOS Build",
               "type": "component",
-              "group": "⚠️ Pipelines Ausentes"
+              "group": "⚠️ Pipelines Ausentes",
+              "groupId": "Missing",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "M5",
               "label": "❌ Dependency Scanning",
               "type": "component",
-              "group": "⚠️ Pipelines Ausentes"
+              "group": "⚠️ Pipelines Ausentes",
+              "groupId": "Missing",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "R1",
               "label": "⚠️ Dato no disponible — · No se detectó estrategia · de rollback en CI YAML",
               "type": "component",
-              "group": "🔄 Rollback"
+              "group": "🔄 Rollback",
+              "groupId": "Rollback",
+              "groupPath": [],
+              "order": 37
             }
           ],
           "edges": [
@@ -2682,23 +3458,43 @@
           "groups": [
             {
               "id": "UserInput",
-              "label": "👤 Entrada de Usuario"
+              "label": "👤 Entrada de Usuario",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "APILayer",
-              "label": "🌐 CVServices (REST API)"
+              "label": "🌐 CVServices (REST API)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 6
             },
             {
               "id": "LocalStorage",
-              "label": "💾 Almacenamiento Local"
+              "label": "💾 Almacenamiento Local",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "Analytics_Out",
-              "label": "📊 Analytics (Salida)"
+              "label": "📊 Analytics (Salida)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 16
             },
             {
               "id": "ExternalServices",
-              "label": "🔗 Servicios Externos"
+              "label": "🔗 Servicios Externos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 20
             }
           ],
           "nodes": [
@@ -2706,121 +3502,181 @@
               "id": "Login",
               "label": "Login · (email/password/Facebook/Apple)",
               "type": "component",
-              "group": "👤 Entrada de Usuario"
+              "group": "👤 Entrada de Usuario",
+              "groupId": "UserInput",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Search_Q",
               "label": "Búsqueda de contenido",
               "type": "component",
-              "group": "👤 Entrada de Usuario"
+              "group": "👤 Entrada de Usuario",
+              "groupId": "UserInput",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Browse",
               "label": "Navegación por catálogo",
               "type": "component",
-              "group": "👤 Entrada de Usuario"
+              "group": "👤 Entrada de Usuario",
+              "groupId": "UserInput",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Download_Req",
               "label": "Solicitud de descarga",
               "type": "component",
-              "group": "👤 Entrada de Usuario"
+              "group": "👤 Entrada de Usuario",
+              "groupId": "UserInput",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Purchase",
               "label": "Compra de contenido",
               "type": "component",
-              "group": "👤 Entrada de Usuario"
+              "group": "👤 Entrada de Usuario",
+              "groupId": "UserInput",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "UserAPI",
               "label": "UserServicesManager · /login, /register, /logout",
               "type": "component",
-              "group": "🌐 CVServices (REST API)"
+              "group": "🌐 CVServices (REST API)",
+              "groupId": "APILayer",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "CmsAPI",
               "label": "CmsServicesManager · /level, /carousels",
               "type": "component",
-              "group": "🌐 CVServices (REST API)"
+              "group": "🌐 CVServices (REST API)",
+              "groupId": "APILayer",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PlayerAPI",
               "label": "PlayerServicesManager · /playerMedia, /ads",
               "type": "component",
-              "group": "🌐 CVServices (REST API)"
+              "group": "🌐 CVServices (REST API)",
+              "groupId": "APILayer",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "EPGAPI",
               "label": "EPGServicesManager · /epg/version, /channels",
               "type": "component",
-              "group": "🌐 CVServices (REST API)"
+              "group": "🌐 CVServices (REST API)",
+              "groupId": "APILayer",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "PaywayAPI",
               "label": "PaywayServicesManager · /payway, /plans",
               "type": "component",
-              "group": "🌐 CVServices (REST API)"
+              "group": "🌐 CVServices (REST API)",
+              "groupId": "APILayer",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "UserDefaults",
               "label": "LocalDataManager · (UserDefaults) · 191 refs - Tokens, prefs",
               "type": "component",
-              "group": "💾 Almacenamiento Local"
+              "group": "💾 Almacenamiento Local",
+              "groupId": "LocalStorage",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "CoreDataStore",
               "label": "CoreData · 10+ model versions · (3.5.3 → 3.17.8)",
               "type": "component",
-              "group": "💾 Almacenamiento Local"
+              "group": "💾 Almacenamiento Local",
+              "groupId": "LocalStorage",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "FileSystem",
               "label": "File System · HLS segments offline · FairPlay .key files",
               "type": "component",
-              "group": "💾 Almacenamiento Local"
+              "group": "💾 Almacenamiento Local",
+              "groupId": "LocalStorage",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "GA4",
               "label": "Firebase GA4 · User events",
               "type": "component",
-              "group": "📊 Analytics (Salida)"
+              "group": "📊 Analytics (Salida)",
+              "groupId": "Analytics_Out",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "YB",
               "label": "Youbora NPAW · Video metrics",
               "type": "component",
-              "group": "📊 Analytics (Salida)"
+              "group": "📊 Analytics (Salida)",
+              "groupId": "Analytics_Out",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "NR",
               "label": "NewRelic · Crashes + APM",
               "type": "component",
-              "group": "📊 Analytics (Salida)"
+              "group": "📊 Analytics (Salida)",
+              "groupId": "Analytics_Out",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "FairPlaySrv",
               "label": "Apple FairPlay · DRM Keys",
               "type": "component",
-              "group": "🔗 Servicios Externos"
+              "group": "🔗 Servicios Externos",
+              "groupId": "ExternalServices",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "APNsSrv",
               "label": "Apple APNs · Push Notifications",
               "type": "component",
-              "group": "🔗 Servicios Externos"
+              "group": "🔗 Servicios Externos",
+              "groupId": "ExternalServices",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "CastSrv",
               "label": "Google Cast · Chromecast",
               "type": "component",
-              "group": "🔗 Servicios Externos"
+              "group": "🔗 Servicios Externos",
+              "groupId": "ExternalServices",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "StoreKitSrv",
               "label": "Apple StoreKit · In-App Purchases",
               "type": "component",
-              "group": "🔗 Servicios Externos"
+              "group": "🔗 Servicios Externos",
+              "groupId": "ExternalServices",
+              "groupPath": [],
+              "order": 24
             }
           ],
           "edges": [
@@ -2955,15 +3811,27 @@
           "groups": [
             {
               "id": "Critical",
-              "label": "🔴 Críticos"
+              "label": "🔴 Críticos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "High",
-              "label": "🟡 Altos"
+              "label": "🟡 Altos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "Medium",
-              "label": "🟢 Medios"
+              "label": "🟢 Medios",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 9
             }
           ],
           "nodes": [
@@ -2971,115 +3839,172 @@
               "id": "GC",
               "label": "God Classes · 18 archivos > 500 LOC · 2 archivos > 1000 LOC",
               "type": "component",
-              "group": "🔴 Críticos"
+              "group": "🔴 Críticos",
+              "groupId": "Critical",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "SA",
               "label": "Singleton Abuse · 30+ singletons · ~940+ referencias",
               "type": "component",
-              "group": "🔴 Críticos"
+              "group": "🔴 Críticos",
+              "groupId": "Critical",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "HS",
               "label": "Hardcoded Secrets · NewRelic token · Cert password en YAML",
               "type": "component",
-              "group": "🔴 Críticos"
+              "group": "🔴 Críticos",
+              "groupId": "Critical",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "IP",
               "label": "Inconsistent Binding · 4 patrones distintos",
               "type": "component",
-              "group": "🟡 Altos"
+              "group": "🟡 Altos",
+              "groupId": "High",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "NC",
               "label": "NotificationCenter Overuse · 82+ llamadas · Sin type safety",
               "type": "component",
-              "group": "🟡 Altos"
+              "group": "🟡 Altos",
+              "groupId": "High",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "DQ",
               "label": "DispatchQueue.main · 215+ llamadas manual · Sin @MainActor",
               "type": "component",
-              "group": "🟡 Altos"
+              "group": "🟡 Altos",
+              "groupId": "High",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "FU",
               "label": "Force Unwraps · ~61 ocurrencias · Crash risk",
               "type": "component",
-              "group": "🟡 Altos"
+              "group": "🟡 Altos",
+              "groupId": "High",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "NoCoord",
               "label": "No Coordinator · Nav distribuida",
               "type": "component",
-              "group": "🟢 Medios"
+              "group": "🟢 Medios",
+              "groupId": "Medium",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "LegacyDup",
               "label": "Legacy Duplication · 8,296 LOC OldModules",
               "type": "component",
-              "group": "🟢 Medios"
+              "group": "🟢 Medios",
+              "groupId": "Medium",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "BaseGod",
               "label": "BaseVC God Object · 1,723 LOC total",
               "type": "component",
-              "group": "🟢 Medios"
+              "group": "🟢 Medios",
+              "groupId": "Medium",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "LowTest",
               "label": "Low Test Coverage · 1.25% ratio",
               "type": "component",
-              "group": "🟢 Medios"
+              "group": "🟢 Medios",
+              "groupId": "Medium",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "NoTS",
               "label": "No Thread Safety · CommonDataSwiftPlayer",
               "type": "component",
-              "group": "🟢 Medios"
+              "group": "🟢 Medios",
+              "groupId": "Medium",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "SubManagers",
               "label": "Extraer sub-componentes",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "Protocols",
               "label": "Protocolos para testing",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "Vault",
               "label": "Azure Key Vault",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "Combine",
               "label": "Adoptar Combine",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "Publishers",
               "label": "Combine Publishers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "MainActor",
               "label": "@MainActor",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "Migration",
               "label": "Migración a Modules",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 28
             }
           ],
           "edges": [

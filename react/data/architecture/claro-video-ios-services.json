@@ -45,31 +45,46 @@
               "id": "CVServices",
               "label": "📦 CVServices · (80 archivos) · Networking + Managers + QueryBuilder",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CVModel",
               "label": "📦 CVModel · (218 archivos) · Modelos + Parsers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "CVExtension",
               "label": "📦 CVExtension · (43 archivos) · Extensiones Swift/UIKit",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "CVLocalizable",
               "label": "📦 CVLocalizable · (6 archivos) · Localización",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "CVCommonViews",
               "label": "📦 CVCommonViews · (26 archivos) · Vistas SwiftUI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             }
           ],
           "edges": [
@@ -175,115 +190,172 @@
               "id": "subgraph-App-Consumer",
               "label": "subgraph \"📱 App Consumer\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "App",
               "label": "iOS/tvOS App",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "subgraph-CVServices-Module",
               "label": "subgraph \"🏗️ CVServices Module\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "subgraph-Facade-Layer-CVManagers",
               "label": "subgraph \"Facade Layer — CVManagers/\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Manager",
               "label": "ServicesManager · static methods · (19 managers)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "subgraph-Service-Layer-ClaroVideoServices-Service",
               "label": "subgraph \"Service Layer — ClaroVideoServices/Service/\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Service",
               "label": "Services · CVServiceProtocol · (22 services)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "subgraph-Request-Layer-ClaroVideoServices-Request",
               "label": "subgraph \"Request Layer — ClaroVideoServices/Request/\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Request",
               "label": "Request · RequestProtocol · (20 request files)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "subgraph-Network-Layer-ClaroVideoNetworking",
               "label": "subgraph \"Network Layer — ClaroVideoNetworking/\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Dispatcher",
               "label": "NetworkDispatcher · DispatcherProtocol",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "subgraph-Configuration-QueryBuilder",
               "label": "subgraph \"Configuration — QueryBuilder/\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "QB",
               "label": "QueryBuilder.shared · Singleton (893 LOC)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "QBDevice",
               "label": "QBDeviceData",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "QBLocal",
               "label": "QBLocalData",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "QBUser",
               "label": "QBUserData",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "QBEndpoints",
               "label": "QBEndpoints",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "subgraph-External",
               "label": "subgraph \"🌐 External\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "API",
               "label": "Claro Video REST APIs",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             }
           ],
           "edges": [
@@ -397,55 +469,82 @@
               "id": "subgraph-CVServices-SDK",
               "label": "subgraph \"📦 CVServices SDK\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "subgraph-Shared-Code-sin-if-os",
               "label": "subgraph \"Shared Code — sin #if os\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Core",
               "label": "CVServices · CVModel · CVExtension · CVLocalizable",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "subgraph-if-os-iOS",
               "label": "subgraph \"#if os(iOS)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "iOSViews",
               "label": "CVCommonViews · Constants iOS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "iOSExt",
               "label": "UIKit Extensions · (IS_IPAD checks)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "subgraph-if-os-tvOS",
               "label": "subgraph \"#if os(tvOS)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "tvOSViews",
               "label": "CVCommonViews · Constants tvOS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "tvOSParams",
               "label": "QueryBuilder · device_model: aapl · device_manufacturer: aapl · device_category: tablet",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             }
           ],
           "edges": [
@@ -1778,121 +1877,181 @@
               "id": "subgraph-Developer-Local",
               "label": "subgraph \"🔧 Developer Local\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Dev",
               "label": "Developer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Build",
               "label": "swift build",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Test",
               "label": "swift test",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Build-Test",
               "label": "Build --> Test",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "subgraph-Source-Control",
               "label": "subgraph \"📦 Source Control\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Repo",
               "label": "Bitbucket / GitHub · claro-video-ios-services",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "subgraph-Azure-DevOps-Pipeline",
               "label": "subgraph \"🔄 Azure DevOps Pipeline\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "Trigger",
               "label": "Pipeline Trigger · (ci/pipeline-analysis.yml)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "subgraph-Stage-Analysis",
               "label": "subgraph \"Stage: Analysis\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Checkout",
               "label": "Checkout Code",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Resources",
               "label": "Resource: cv-auto-devops",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "Variables",
               "label": "Load Variables · (ci/variables/variables-analysis.yml)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "SonarScan",
               "label": "SonarCloud Scan · org: clarovideo · key: cv-ios-services",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "subgraph-SonarCloud",
               "label": "subgraph \"📊 SonarCloud\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Quality",
               "label": "Quality Gate",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "Report",
               "label": "Analysis Report · - Code Smells · - Bugs · - Vulnerabilities · - Duplications",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "subgraph-No-detectado-en-repo",
               "label": "subgraph \"⚠️ No detectado en repo\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "Deploy",
               "label": "Deployment / Release · ⚠️ Dato no disponible",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "Rollback",
               "label": "Rollback Strategy · ⚠️ Dato no disponible",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 36
             }
           ],
           "edges": [
@@ -1998,163 +2157,244 @@
               "id": "subgraph-App",
               "label": "subgraph \"📱 App\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "AppConfig",
               "label": "Configuración · (tokens, region, device)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "AppUI",
               "label": "UI Layer · (SwiftUI / UIKit)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "subgraph-CVServices",
               "label": "subgraph \"🏗️ CVServices\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "QB",
               "label": "QueryBuilder.shared",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "subgraph-Datos-de-configuraci-n",
               "label": "subgraph \"Datos de configuración\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "QBDevice",
               "label": "QBDeviceData · manufacturer, model, · category, osVersion",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "QBLocal",
               "label": "QBLocalData · hks(), region, · sessionKey(), appVersion",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "QBUser",
               "label": "QBUserData · user(), userToken(), · cmAccessToken()",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "QBEndpoints",
               "label": "QBEndpoints · musicBaseUrl, · launcherBaseUrl, pushBaseUrl",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Params",
               "label": "ServiceParameters · (Dictionary [String: String])",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Env",
               "label": "Environment · (baseUrl, httpProtocol)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "NetReq",
               "label": "URLRequest · (URL + headers + body)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "subgraph-CVModel",
               "label": "subgraph \"📦 CVModel\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "subgraph-Parsing-Moderno",
               "label": "subgraph \"Parsing Moderno\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "JSONData",
               "label": "JSON Data · (from API response)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "Decoder",
               "label": "JSONDecoder",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "CodableModel",
               "label": "Codable Model · (struct/class)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "subgraph-Parsing-Legacy",
               "label": "subgraph \"Parsing Legacy\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "DictData",
               "label": "[String: AnyObject] · (from JSONSerialization)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "ManualParse",
               "label": "parseObject(dictionary:)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "LegacyModel",
               "label": "Legacy Model",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "subgraph-API",
               "label": "subgraph \"🌐 API\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "Request",
               "label": "HTTP Request · GET/POST",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Response",
               "label": "HTTP Response · JSON payload",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "Decoder-CodableModel",
               "label": "Decoder --> CodableModel",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 50
             },
             {
               "id": "ManualParse-LegacyModel",
               "label": "ManualParse --> LegacyModel",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 52
             }
           ],
           "edges": [
@@ -2316,109 +2556,163 @@
               "id": "subgraph-CVModel-218-archivos",
               "label": "subgraph \"📦 CVModel (218 archivos)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "subgraph-Dominios-Principales",
               "label": "subgraph \"Dominios Principales\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Initial",
               "label": "🚀 Initial · Launcher, StartHeaderInfo, · Asset, Metadata, Navigation",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "EPG",
               "label": "📺 EPG · EPGChannel, EPGMenu, · EPGProgram",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Player",
               "label": "▶️ PlayerMedia · Quality, UserMedia, · Tracklist, AudioSubtitle",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "User",
               "label": "👤 User · Profiles, Authentication",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Content",
               "label": "📋 Content · CVGroup, Search, · Favorited, Reminder",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "subgraph-Dominios-Secundarios",
               "label": "subgraph \"Dominios Secundarios\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Music",
               "label": "🎵 Music · MusicItem, MusicMedia, · MusicMetadata",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "Payment",
               "label": "💳 Payway · PlanOffer, Campaign",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Recording",
               "label": "📹 Recording · NPVR, SeriesRecording",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Soccer",
               "label": "⚽ Soccer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "CMS",
               "label": "📝 CMS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "subgraph-C-digo-Legacy",
               "label": "subgraph \"⚠️ Código Legacy\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "OldModels",
               "label": "OldModels/ · OldSearch/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "subgraph-Infraestructura",
               "label": "subgraph \"Infraestructura\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "Common",
               "label": "Common · ErrorCodes, Network",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "Parser",
               "label": "Parser/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             }
           ],
           "edges": [],
@@ -2451,67 +2745,100 @@
               "id": "subgraph-Estado-Actual",
               "label": "subgraph \"📸 Estado Actual\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "subgraph-Moderno-Codable-60-archivos",
               "label": "subgraph \"✅ Moderno — Codable (60 archivos)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "CodableModel",
               "label": "struct Model: Codable",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "JSONDecoder",
               "label": "JSONDecoder()",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "subgraph-Legacy-Manual-28-archivos",
               "label": "subgraph \"⚠️ Legacy — Manual (28 archivos)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "ManualModel",
               "label": "Model + Parceable extension",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "ManualParse",
               "label": "parseObject(dictionary:) · [String: AnyObject]",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "ForceUnwrap",
               "label": "as! [String: AnyObject] · ⚠️ 14 force unwraps",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "subgraph-Estado-Objetivo",
               "label": "subgraph \"🎯 Estado Objetivo\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "AllCodable",
               "label": "Todos los modelos: Codable/Decodable",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "SafeParsing",
               "label": "Safe parsing sin force unwraps",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             }
           ],
           "edges": [

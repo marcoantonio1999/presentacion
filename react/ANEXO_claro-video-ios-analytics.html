@@ -2201,207 +2201,27 @@ Consolidar evidencia t&#233;cnica real del repositorio. Todos los hallazgos debe
 &gt; ⚠️ **Nota anti-alucinaci&#243;n:** todos los hallazgos de estos reportes deben citar evidencia directa de archivos del repositorio (`Sources/`, `Tests/`, `Package.swift`, `ci/`).
 </pre>
             </details>
-            <details class="doc-item">
+            <details class="doc-item architecture-doc-item">
               <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">.github\docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
-              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
-
-# &#127959;️ Diagramas de Arquitectura CVAnalytics
-
-## &#128248; Estado actual (AS-IS)
-
-### Diagrama de m&#243;dulos internos
-
-&lt;img src=&quot;img/DiagramaDeModulosInternos.png&quot; width=&quot;%&quot;/&gt; 
- 
-```mermaid
-flowchart TD
-    subgraph App
-      A1[Eventos App]
-      A2[Tags App]
-    end
-    subgraph Player
-      P1[Eventos Player]
-      P2[Tags Player]
-    end
-    subgraph Common
-      C1[Core Analytics]
-      C2[Tracker]
-      C3[Helpers]
-    end
-    A1 --&gt; C1
-    A2 --&gt; C1
-    P1 --&gt; C1
-    P2 --&gt; C1
-    C1 --&gt; C2
-    C1 --&gt; C3
-    C2 --&gt; C3
-    C1 --&gt;|Env&#237;o eventos| Ext[API p&#250;blica]
-```
-
-### Diagrama de flujo de eventos
-
-&lt;img src=&quot;img/DiagramaDeFlujoDeEventos.png&quot; width=&quot;%&quot;/&gt; 
-
-```mermaid
-sequenceDiagram
-    participant App
-    participant Player
-    participant Common
-    participant API
-    App-&gt;&gt;Common: Genera evento
-    Player-&gt;&gt;Common: Genera evento
-    Common-&gt;&gt;API: Env&#237;a evento
-```
-
-## &#127919; Estado objetivo (TO-BE)
-- Mantener modularidad y contratos p&#250;blicos claros.
-- Documentar flujos de eventos y dependencias internas.
-
-## &#127963;️ Diagrama de Componentes
-
-&lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart TD
-    subgraph App[&quot;App (eventos dominio app)&quot;]
-      A1[CVAnalyticsApp]
-      A2[+Login / +Home / +Player / +Search / ...]
-    end
-    subgraph Player[&quot;Player (eventos reproductor)&quot;]
-      P1[CVAnalyticsPlayer]
-      P2[+Live / +Player]
-    end
-    subgraph Common[&quot;Common (infraestructura)&quot;]
-      C1[CVAnalyticsCore]
-      C2[CVAnalytics4]
-      C3[GATracker]
-      C4[Helpers]
-    end
-    A1 --&gt; C1
-    A2 --&gt; A1
-    P1 --&gt; C1
-    P2 --&gt; P1
-    C2 --&gt; C3
-    C1 --&gt; C3
-    C3 --&gt;|HTTP GA| GA[Google Analytics]
-```
-
-**Fuentes:** `Sources/CVAnalytics/`
-
-## &#128260; Diagramas de Flujos de Procesos
-
-### Flujo Principal 1: Evento de App (ej. Login)
-
-&lt;img src=&quot;img/DiagramaDeFlujoPrincipal1.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-sequenceDiagram
-    participant Host as App Host
-    participant AppMod as CVAnalyticsApp
-    participant Core as CVAnalyticsCore
-    participant Tracker as GATracker
-    participant GA as Google Analytics
-    Host-&gt;&gt;AppMod: sendLoginEvent(...)
-    AppMod-&gt;&gt;Core: send(category, action, label)
-    Core-&gt;&gt;Tracker: event(category, action, label)
-    Tracker-&gt;&gt;GA: HTTP POST (Measurement Protocol)
-    GA--&gt;&gt;Tracker: 200 OK
-```
-
-### Flujo Principal 2: Evento de Player
-
-&lt;img src=&quot;img/DiagramaDeFlujoPrincipal2.png&quot; width=&quot;%&quot;/&gt; 
-
-```mermaid
-sequenceDiagram
-    participant Host as Player Host
-    participant PlayerMod as CVAnalyticsPlayer
-    participant Core as CVAnalyticsCore
-    participant Tracker as GATracker
-    Host-&gt;&gt;PlayerMod: setListener(from: listener)
-    Host-&gt;&gt;PlayerMod: sendPlayEvent(...)
-    PlayerMod-&gt;&gt;Core: send(category, action, label)
-    Core-&gt;&gt;Tracker: event(...)
-    Tracker-&gt;&gt;GA: HTTP POST
-```
-
-**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift`, `Sources/CVAnalytics/Player/Analytics/CVAnalyticsPlayer.swift`
-
-## &#128640; Diagrama de CI/CD Pipeline
-
-&lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt; 
-
-```mermaid
-flowchart TD
-    PR[Pull Request] --&gt; CI[GitHub Actions]
-    CI --&gt; SQ[SonarQube Analysis]
-    SQ --&gt; QG{Quality Gate}
-    QG --&gt;|Pass| OK[PR Aprobado]
-    QG --&gt;|Fail| FAIL[PR Bloqueado]
-    CI2[Azure DevOps / Bitbucket] --&gt; SA2[SonarQube Analysis]
-    SA2 --&gt; QG2{Quality Gate}
-```
-
-**Fuentes:** `.github/workflows/workflow-analysis.yml`, `ci/pipeline-analysis.yml`
-
-&gt; ⚠️ No existe pipeline de `swift test` en CI detectado. El pipeline actual es exclusivo de an&#225;lisis SonarQube.
-
-## &#128202; Diagrama de Datos
-
-&lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt; 
-
-```mermaid
-flowchart LR
-    UUID[UUID Usuario] --&gt; Core[CVAnalyticsCore.trackingSetup]
-    Core --&gt; GAT[GATracker]
-    GAT --&gt; |trackingId + clientId + event params| GA[GA Measurement Protocol]
-    GA --&gt; |analytics storage| GC[Google Analytics Dashboard]
-```
-
-**Fuentes:** `Sources/CVAnalytics/Common/CVAnalyticsCore.swift` (L30-37)
-
-## &#128295; Notas de Implementaci&#243;n
-### Convenciones de Diagramas
-- Diagramas Mermaid en formato `flowchart TD` para arquitectura y `sequenceDiagram` para flujos.
-
-### Herramientas de Visualizaci&#243;n
-- GitHub renderiza Mermaid natively en archivos `.md`.
-- VS Code con extensi&#243;n Mermaid Preview.
-
-### Mantenimiento de Diagramas
-- Actualizar al agregar nuevos m&#243;dulos o cambiar flujos de eventos.
-- Verificar que los nombres de componentes coincidan con los nombres reales de clases/archivos.
-
-**Fuentes:** `Sources/CVAnalytics/`
-
-## ⚠️ Limitaciones del An&#225;lisis
-- ⚠️ No se detectaron diagramas de dependencias externas.
-- ⚠️ No hay evidencia de integraci&#243;n con UI o ciclo de vida de app.
-
----
-
-## ✅ Compliance Check - Fase 1
-
-**Fecha:** 2026-02-20
-**Stack:** swift-library
-**Prompt ejecutado:** `.github/prompts/01-analysis/02-architecture-universal.prompt.md`
-**Versi&#243;n CONSTITUTION:** 1.0.0
-**Versi&#243;n .copilotrc:** 2.2.0
-
-| # | Regla | Estado | Detalle | Evidencia |
-|---|---|---|---|---|
-| 1 | `language_es_mx` | ✅ | Espa&#241;ol t&#233;cnico | Documento completo |
-| 2 | `stack_detected_real` | ✅ | Stack real detectado | Estructura modular |
-| 3 | `evidence_cited` | ✅ | Citas a archivos fuente | Diagrama y secciones |
-| 4 | `no_assumptions` | ✅ | Sin datos inventados | Limitaciones expl&#237;citas |
-| 5 | `unavailable_data_marked` | ✅ | Datos faltantes marcados | Secci&#243;n de limitaciones |
-| 6 | `mandatory_phrase` | ✅ | Frase de evidencia presente | L&#237;nea 1 |
-| 7 | `as_is_tagged` | ✅ | Estado actual etiquetado | Secci&#243;n `&#128248;` |
-| 8 | `to_be_tagged` | ✅ | Estado objetivo etiquetado | Secci&#243;n `&#127919;` |
-| 9 | `limitations_section` | ✅ | Secci&#243;n presente | Final del documento |
-
-**Compliance Score:** 100% ✅
-</pre>
+              <div class="vss-detail-body">
+                <p>Este documento se consulta ahora desde una vista interactiva por repositorio, sin exponer el markdown crudo dentro del anexo ejecutivo.</p>
+                <div class="card-grid">
+                  <article class="mini-card">
+                    <h4>Vista interactiva</h4>
+                    <p>Los diagramas del documento original quedan disponibles con navegación individual, zoom nativo y lectura visual por flujo.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Lectura ejecutiva</h4>
+                    <p>La arquitectura se presenta por componentes, procesos, datos y secuencias, conservando el orden del archivo base.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Repositorio actual</h4>
+                    <p><strong>iOS Analytics</strong> ya tiene su mapa dedicado de arquitectura dentro de FASE 1.</p>
+                  </article>
+                </div>
+                <p class="vss-footnote">La consulta principal de diagramas ya se realiza en el visor interactivo; el contenido documental sigue disponible como respaldo del paquete base.</p>
+                <p><a href="index.html#/fase-1/architecture/claro-video-ios-analytics">Abrir mapa de arquitectura interactivo</a></p>
+              </div>
             </details>
           </article>
       </section>

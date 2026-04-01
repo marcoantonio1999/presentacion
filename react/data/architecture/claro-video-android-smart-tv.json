@@ -45,37 +45,55 @@
               "id": "subgraph-Proyecto-Claro-Android",
               "label": "subgraph \"Proyecto Claro Android\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "APP",
               "label": "📱 app\\nAplicación principal Android TV\\ncom.amco.clarovideo",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "SDK",
               "label": "🌐 AMXNetworkSdk\\nSDK de red: Retrofit + Room\\ncom.amco.clarovideo.network",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "EPG",
               "label": "📺 AMXEpg\\nElectronic Program Guide",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "TIF",
               "label": "📡 AMXTvInputService\\nAndroid TV Input Service",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "BEN",
               "label": "⚡ benchmark\\nMacroBenchmark",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             }
           ],
           "edges": [
@@ -141,109 +159,163 @@
               "id": "LAUNCH",
               "label": "🚀 App Launch\\nClaroApp (@HiltAndroidApp)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "SPLASH",
               "label": "🌟 SplashFragment\\npresentation/splash/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "LOGIN",
               "label": "🔐 LoginFragment\\npresentation/login/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "HOME",
               "label": "🏠 HomeFragment\\npresentation/home/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "subgraph-Home-Tabs",
               "label": "subgraph \"Home Tabs\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "RAILS",
               "label": "🎬 HomeBannersRails\\nVOD / Originals / Series",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "LIVE",
               "label": "📺 LiveTV\\npresentation/live/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "MINIEPG",
               "label": "📋 MiniEPG\\npresentation/miniepg/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "subgraph-Contenido",
               "label": "subgraph \"Contenido\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "VOD",
               "label": "🎥 VOD Detail\\npresentation/voddetail/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "PLAYER",
               "label": "▶️ Video Player\\nBitmovin 3.96.0",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "EPG_SCREEN",
               "label": "📡 EPG Full\\npresentation/epg/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "subgraph-Usuario",
               "label": "subgraph \"Usuario\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "PROFILE",
               "label": "👤 Profile\\npresentation/profile/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "SETTINGS",
               "label": "⚙️ Settings\\npresentation/settings/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "PAY",
               "label": "💳 Payments\\npresentation/payments/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "SEARCH",
               "label": "🔍 Search\\npresentation/searchnew/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "MYCONTENT",
               "label": "❤️ My Content\\npresentation/mycontent/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             }
           ],
           "edges": [
@@ -887,115 +959,172 @@
               "id": "MANUAL",
               "label": "👤 Trigger manual\\nworkflow_dispatch\\n(GitHub Actions UI)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "subgraph-gradle-yml-Gradle-CI-Build",
               "label": "subgraph \"gradle.yml — Gradle CI Build\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "B1",
               "label": "actions/checkout@v4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "B2",
               "label": "setup-java@v4 (JDK 17 Temurin)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "B3",
               "label": "dos2unix + chmod gradlew",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "B4",
               "label": "./gradlew assemble{target}\\nOpciones: ProdSmarttvRelease\\nProdPlayStoreRelease\\nProdOemStoreRelease\\n+ variantes Debug",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "B5",
               "label": "upload-artifact@v4\\nAPK → app/build/outputs/apk/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "subgraph-testgradle-yml-Gradle-CI-Test",
               "label": "subgraph \"testgradle.yml — Gradle CI Test\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "T1",
               "label": "actions/checkout@v4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "T2",
               "label": "setup-java@v4 (JDK 17 Temurin)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "T3",
               "label": "dos2unix + chmod gradlew",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "T4",
               "label": "./gradlew test{target}\\nOpciones: DevPlayStoreDebugUnitTestCoverage\\nProdPlayStoreDebugUnitTestCoverage",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "T5",
               "label": "upload-artifact@v4\\nReports → app/build/reports/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "subgraph-sonar-yml-Sonar-Analysis",
               "label": "subgraph \"sonar.yml — Sonar Analysis\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "S1",
               "label": "actions/checkout@v4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "S2",
               "label": "SonarCloud analysis\\n(comentado — no activo)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "B2-B3-B4-B5",
               "label": "B2 --> B3 --> B4 --> B5",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "T2-T3-T4-T5",
               "label": "T2 --> T3 --> T4 --> T5",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "S1-S2",
               "label": "S1 --> S2",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
             }
           ],
           "edges": [
@@ -1069,115 +1198,172 @@
               "id": "subgraph-app-module",
               "label": "subgraph \"app module\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "REPO_I_APP",
               "label": "Repository\\nInterfaces\\n(domain)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "subgraph-AMXNetworkSdk",
               "label": "subgraph \"AMXNetworkSdk\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "subgraph-network-domain",
               "label": "subgraph \"network/domain\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "REPO_I_SDK",
               "label": "Repository\\nInterfaces",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "UC_SDK",
               "label": "UseCases",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "subgraph-network-data",
               "label": "subgraph \"network/data\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "REPO_IMPL_SDK",
               "label": "Repository\\nImplementations",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "DTO_SDK",
               "label": "DTOs / Models",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "DATASRC",
               "label": "DataSources\\nhome/ ipTv/ vod/\\nsearch/ payments/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "subgraph-network-infra",
               "label": "subgraph \"network/infra\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "BASE",
               "label": "BaseRepository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "ROOM",
               "label": "Room DAOs",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "subgraph-Room-Databases",
               "label": "subgraph \"Room Databases\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "LIVEDB",
               "label": "LiveDatabase\\n(v8 — 8 migraciones)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "STARTDB",
               "label": "StartupAPIsDatabase\\n(v21 — 21 migraciones)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "subgraph-External-APIs",
               "label": "subgraph \"External APIs\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "RETROFIT",
               "label": "Retrofit 2.11.0\\nREST APIs",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "OKHTTP",
               "label": "OkHttp 4.12.0\\nHTTP Client",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             }
           ],
           "edges": [

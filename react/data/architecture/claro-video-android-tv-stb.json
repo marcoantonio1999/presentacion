@@ -51,31 +51,59 @@
           "groups": [
             {
               "id": "Presentation",
-              "label": "PRESENTATION LAYER"
+              "label": "PRESENTATION LAYER",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Domain",
-              "label": "DOMAIN LAYER - Business Logic"
+              "label": "DOMAIN LAYER - Business Logic",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 19
             },
             {
               "id": "Data",
-              "label": "DATA LAYER"
+              "label": "DATA LAYER",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 23
             },
             {
               "id": "Remote",
-              "label": "Remote APIs"
+              "label": "Remote APIs",
+              "parentId": "Data",
+              "depth": 1,
+              "direction": "",
+              "order": 24
             },
             {
               "id": "Local",
-              "label": "Local Database"
+              "label": "Local Database",
+              "parentId": "Data",
+              "depth": 1,
+              "direction": "",
+              "order": 31
             },
             {
               "id": "RepositoryImpl",
-              "label": "Repository Implementation"
+              "label": "Repository Implementation",
+              "parentId": "Data",
+              "depth": 1,
+              "direction": "",
+              "order": 36
             },
             {
               "id": "DI",
-              "label": "Dependency Injection - Hilt"
+              "label": "Dependency Injection - Hilt",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 57
             }
           ],
           "nodes": [
@@ -83,211 +111,316 @@
               "id": "MainActivity",
               "label": "MainActivity",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "HomeFragment",
               "label": "HomeFragment",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "EPGFragment",
               "label": "EPGFragment",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "PlayerActivity",
               "label": "PlayerActivity",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "ProfileFragment",
               "label": "ProfileFragment",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "SettingsFragment",
               "label": "SettingsFragment",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "HomeVM",
               "label": "HomeViewModel",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "EPGViewModel",
               "label": "EPGViewModel",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PlayerVM",
               "label": "PlayerViewModel",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "ProfileVM",
               "label": "ProfileViewModel",
               "type": "component",
-              "group": "PRESENTATION LAYER"
+              "group": "PRESENTATION LAYER",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Entities",
               "label": "Entities · Program, Channel · User, LoginCredentials",
               "type": "component",
-              "group": "DOMAIN LAYER - Business Logic"
+              "group": "DOMAIN LAYER - Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "Repositories",
               "label": "Repository Interfaces · LoginRepository · ProgramRepository · ChannelRepository · UserRepository",
               "type": "component",
-              "group": "DOMAIN LAYER - Business Logic"
+              "group": "DOMAIN LAYER - Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "UseCases",
               "label": "UseCases · LoginUseCase · GetProgramsUseCase · GetChannelsUseCase · GetUserProfileUseCase",
               "type": "component",
-              "group": "DOMAIN LAYER - Business Logic"
+              "group": "DOMAIN LAYER - Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "LoginApi",
               "label": "LoginApi",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "EPGApi",
               "label": "EPGApi",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "PlayerApi",
               "label": "PlayerApi",
               "type": "component",
-              "group": "Remote APIs"
+              "group": "Remote APIs",
+              "groupId": "Remote",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "UserApi",
               "label": "UserApi",
               "type": "component",
-              "group": "Remote APIs"
+              "group": "Remote APIs",
+              "groupId": "Remote",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "Retrofit",
               "label": "Retrofit Client",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "OkHttp",
               "label": "OkHttp Layer",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "RoomDB",
               "label": "Room Database",
               "type": "component",
-              "group": "shared"
+              "group": "DATA LAYER",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "ProgramDao",
               "label": "ProgramDao",
               "type": "component",
-              "group": "shared"
+              "group": "DATA LAYER",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "ChannelDao",
               "label": "ChannelDao",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "UserDao",
               "label": "UserDao",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "LoginRepoImpl",
               "label": "LoginRepositoryImpl",
               "type": "component",
-              "group": "shared"
+              "group": "DATA LAYER",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "ProgramRepoImpl",
               "label": "ProgramRepositoryImpl",
               "type": "component",
-              "group": "shared"
+              "group": "DATA LAYER",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 38
             },
             {
               "id": "ChannelRepoImpl",
               "label": "ChannelRepositoryImpl",
               "type": "component",
-              "group": "Repository Implementation"
+              "group": "Repository Implementation",
+              "groupId": "RepositoryImpl",
+              "groupPath": [],
+              "order": 39
             },
             {
               "id": "UserRepoImpl",
               "label": "UserRepositoryImpl",
               "type": "component",
-              "group": "Repository Implementation"
+              "group": "Repository Implementation",
+              "groupId": "RepositoryImpl",
+              "groupPath": [],
+              "order": 40
             },
             {
               "id": "NetworkModule",
               "label": "NetworkModule · Retrofit config · API clients",
               "type": "component",
-              "group": "Dependency Injection - Hilt"
+              "group": "Dependency Injection - Hilt",
+              "groupId": "DI",
+              "groupPath": [],
+              "order": 58
             },
             {
               "id": "DatabaseModule",
               "label": "DatabaseModule · Room setup · DAOs",
               "type": "component",
-              "group": "Dependency Injection - Hilt"
+              "group": "Dependency Injection - Hilt",
+              "groupId": "DI",
+              "groupPath": [],
+              "order": 59
             },
             {
               "id": "RepositoryModule",
               "label": "RepositoryModule · Repository impls",
               "type": "component",
-              "group": "Dependency Injection - Hilt"
+              "group": "Dependency Injection - Hilt",
+              "groupId": "DI",
+              "groupPath": [],
+              "order": 60
             },
             {
               "id": "ViewModelModule",
               "label": "ViewModelModule · ViewModel injection",
               "type": "component",
-              "group": "Dependency Injection - Hilt"
+              "group": "Dependency Injection - Hilt",
+              "groupId": "DI",
+              "groupPath": [],
+              "order": 61
             },
             {
               "id": "RepositoryImpl",
               "label": "RepositoryImpl",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 71
             },
             {
               "id": "DI",
               "label": "DI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 72
             },
             {
               "id": "Remote",
               "label": "Remote",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 73
             },
             {
               "id": "Local",
               "label": "Local",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 75
             }
           ],
           "edges": [
@@ -1882,43 +2015,64 @@
               "id": "app",
               "label": "app · (Main Application)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "AMXNetworkSdk",
               "label": "AMXNetworkSdk · (Network Layer)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "AMXEpg",
               "label": "AMXEpg · (Program Guide)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "AMXPlayer",
               "label": "AMXPlayer · (Video Player)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "AMXTvInput",
               "label": "AMXTvInputService · (TV Integration)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Multicast",
               "label": "LicensedMulticastSolution · (Multicast Streaming)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Benchmark",
               "label": "benchmark · (Performance)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             }
           ],
           "edges": [
@@ -2021,11 +2175,19 @@
           "groups": [
             {
               "id": "Modules",
-              "label": "Hilt Modules"
+              "label": "Hilt Modules",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "InjectionPoints",
-              "label": "Injection Points - Decorated with"
+              "label": "Injection Points - Decorated with",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 6
             }
           ],
           "nodes": [
@@ -2033,61 +2195,91 @@
               "id": "HiltAndroidApp",
               "label": "HiltAndroidApp · ClaroApp",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "NetworkMod",
               "label": "NetworkModule · @InstallIn(SingletonComponent) · Retrofit + OkHttpClient · API interfaces",
               "type": "component",
-              "group": "Hilt Modules"
+              "group": "Hilt Modules",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "DatabaseMod",
               "label": "DatabaseModule · @InstallIn(SingletonComponent) · AppDatabase + DAOs",
               "type": "component",
-              "group": "Hilt Modules"
+              "group": "Hilt Modules",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "RepoMod",
               "label": "RepositoryModule · @InstallIn(SingletonComponent) · LoginRepository · ProgramRepository",
               "type": "component",
-              "group": "Hilt Modules"
+              "group": "Hilt Modules",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "ViewModelMod",
               "label": "ViewModelModule · ViewModels + UseCases",
               "type": "component",
-              "group": "Hilt Modules"
+              "group": "Hilt Modules",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "ActivitiesEP",
               "label": "Activities · (AndroidEntryPoint)",
               "type": "component",
-              "group": "Injection Points - Decorated with"
+              "group": "Injection Points - Decorated with",
+              "groupId": "InjectionPoints",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "FragmentsEP",
               "label": "Fragments · (AndroidEntryPoint)",
               "type": "component",
-              "group": "Injection Points - Decorated with"
+              "group": "Injection Points - Decorated with",
+              "groupId": "InjectionPoints",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "ViewModelsEP",
               "label": "ViewModels · (HiltViewModel)",
               "type": "component",
-              "group": "Injection Points - Decorated with"
+              "group": "Injection Points - Decorated with",
+              "groupId": "InjectionPoints",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Modules",
               "label": "Modules",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "InjectionPoints",
               "label": "InjectionPoints",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             }
           ],
           "edges": [
@@ -2169,37 +2361,55 @@
               "id": "User",
               "label": "👤 User",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "UI",
               "label": "🖼️ UI · (Fragment/Activity)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "ViewModel",
               "label": "ViewModel · (MVVM)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "StateFlow",
               "label": "StateFlow · (State)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "UseCase",
               "label": "UseCase",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Repository",
               "label": "Repository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             }
           ],
           "edges": [
@@ -2310,15 +2520,27 @@
           "groups": [
             {
               "id": "PresentationLayer",
-              "label": "🖼️ PRESENTATION LAYER · UI - Android specific"
+              "label": "🖼️ PRESENTATION LAYER · UI - Android specific",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "DomainLayer",
-              "label": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+              "label": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 10
             },
             {
               "id": "DataLayer",
-              "label": "📊 DATA LAYER · Storage & APIs"
+              "label": "📊 DATA LAYER · Storage & APIs",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 18
             }
           ],
           "nodes": [
@@ -2326,91 +2548,136 @@
               "id": "Activities",
               "label": "Activities",
               "type": "component",
-              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific",
+              "groupId": "PresentationLayer",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Fragments",
               "label": "Fragments",
               "type": "component",
-              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific",
+              "groupId": "PresentationLayer",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Adapters",
               "label": "Adapters",
               "type": "component",
-              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific",
+              "groupId": "PresentationLayer",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "ViewModels",
               "label": "ViewModels",
               "type": "component",
-              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific",
+              "groupId": "PresentationLayer",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Extensions",
               "label": "Extensions",
               "type": "component",
-              "group": "🖼️ PRESENTATION LAYER · UI - Android specific"
+              "group": "🖼️ PRESENTATION LAYER · UI - Android specific",
+              "groupId": "PresentationLayer",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Entities",
               "label": "Entities",
               "type": "component",
-              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin",
+              "groupId": "DomainLayer",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "UseCases",
               "label": "UseCases",
               "type": "component",
-              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin",
+              "groupId": "DomainLayer",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "RepoInterfaces",
               "label": "Repository · Interfaces",
               "type": "component",
-              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin"
+              "group": "🧅 DOMAIN LAYER · Business Logic - Pure Kotlin",
+              "groupId": "DomainLayer",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "RepoImpl",
               "label": "Repository · Implementation",
               "type": "component",
-              "group": "📊 DATA LAYER · Storage & APIs"
+              "group": "📊 DATA LAYER · Storage & APIs",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "DataSources",
               "label": "DataSources · Remote/Local/Cache",
               "type": "component",
-              "group": "📊 DATA LAYER · Storage & APIs"
+              "group": "📊 DATA LAYER · Storage & APIs",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "DTOs",
               "label": "DTOs · (Serialization)",
               "type": "component",
-              "group": "📊 DATA LAYER · Storage & APIs"
+              "group": "📊 DATA LAYER · Storage & APIs",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "Mappers",
               "label": "Mappers · (DTO ↔ Entity)",
               "type": "component",
-              "group": "📊 DATA LAYER · Storage & APIs"
+              "group": "📊 DATA LAYER · Storage & APIs",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "PresentationLayer",
               "label": "PresentationLayer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "DomainLayer",
               "label": "DomainLayer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "DataLayer",
               "label": "DataLayer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 32
             }
           ],
           "edges": [
@@ -2516,49 +2783,73 @@
               "id": "PlayerActivity",
               "label": "PlayerActivity · (UI)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "PlayerVM",
               "label": "PlayerViewModel · (State)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "GetStreamUC",
               "label": "GetStreamUrlUseCase",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "PlayerRepository",
               "label": "PlayerRepository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "ExoPlayer",
               "label": "ExoPlayer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "DataSource",
               "label": "ExoPlayer · DataSource",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Youbora",
               "label": "Youbora · (Video Analytics)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "NewRelic",
               "label": "NewRelic · (APM)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             }
           ],
           "edges": [
@@ -2653,19 +2944,35 @@
           "groups": [
             {
               "id": "SecurityLayers",
-              "label": "Security Hardening"
+              "label": "Security Hardening",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "Transport",
-              "label": "Transport Security"
+              "label": "Transport Security",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "DataSecurity",
-              "label": "Data Security"
+              "label": "Data Security",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 7
             },
             {
               "id": "ApiSecurity",
-              "label": "API Security"
+              "label": "API Security",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 11
             }
           ],
           "nodes": [
@@ -2673,91 +2980,136 @@
               "id": "Client",
               "label": "Apps · (Presentation)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "ProGuard",
               "label": "ProGuard/R8 · (Code obfuscation)",
               "type": "component",
-              "group": "Security Hardening"
+              "group": "Security Hardening",
+              "groupId": "SecurityLayers",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Lint",
               "label": "Android Lint · (Security checks)",
               "type": "component",
-              "group": "Security Hardening"
+              "group": "Security Hardening",
+              "groupId": "SecurityLayers",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "TLS",
               "label": "TLS 1.2+ · (Certificate pinning)",
               "type": "component",
-              "group": "Transport Security"
+              "group": "Transport Security",
+              "groupId": "Transport",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "NetworkConfig",
               "label": "Network Security Config",
               "type": "component",
-              "group": "Transport Security"
+              "group": "Transport Security",
+              "groupId": "Transport",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "DataStore",
               "label": "DataStore · (Encrypted prefs)",
               "type": "component",
-              "group": "Data Security"
+              "group": "Data Security",
+              "groupId": "DataSecurity",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "RoomEnc",
               "label": "Room Encryption",
               "type": "component",
-              "group": "Data Security"
+              "group": "Data Security",
+              "groupId": "DataSecurity",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "SanitizeInput",
               "label": "Input Validation",
               "type": "component",
-              "group": "Data Security"
+              "group": "Data Security",
+              "groupId": "DataSecurity",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "AuthToken",
               "label": "Auth Token · (JWT/Bearer)",
               "type": "component",
-              "group": "API Security"
+              "group": "API Security",
+              "groupId": "ApiSecurity",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "ApiKey",
               "label": "API Key Management · (gradle.properties)",
               "type": "component",
-              "group": "API Security"
+              "group": "API Security",
+              "groupId": "ApiSecurity",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "RateLimiting",
               "label": "Rate Limiting",
               "type": "component",
-              "group": "API Security"
+              "group": "API Security",
+              "groupId": "ApiSecurity",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Transport",
               "label": "Transport",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "DataSecurity",
               "label": "DataSecurity",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "ApiSecurity",
               "label": "ApiSecurity",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "SecurityLayers",
               "label": "SecurityLayers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
             }
           ],
           "edges": [
@@ -2887,37 +3239,55 @@
               "id": "Data",
               "label": "🗄️ Data · (Repository)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Flow",
               "label": "Flow · (Cold Flow)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "StateFlow",
               "label": "StateFlow · (Hot Flow)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "ViewModel",
               "label": "ViewModel",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Fragment",
               "label": "Fragment",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "UI",
               "label": "🖼️ UI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             }
           ],
           "edges": [
@@ -2988,39 +3358,75 @@
           "groups": [
             {
               "id": "Android",
-              "label": "📱 ANDROID OS LAYER"
+              "label": "📱 ANDROID OS LAYER",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "App",
-              "label": "🏠 APP MODULE (Main Application)"
+              "label": "🏠 APP MODULE (Main Application)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "Network",
-              "label": "🌐 AMXNetworkSdk (Networking Layer)"
+              "label": "🌐 AMXNetworkSdk (Networking Layer)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 21
             },
             {
               "id": "EPGModule",
-              "label": "📺 AMXEpg (Program Guide Module)"
+              "label": "📺 AMXEpg (Program Guide Module)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 32
             },
             {
               "id": "PlayerModule",
-              "label": "▶️ AMXPlayer (Video Playback Module)"
+              "label": "▶️ AMXPlayer (Video Playback Module)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 46
             },
             {
               "id": "TVInput",
-              "label": "📡 AMXTvInputService (TV Integration Module)"
+              "label": "📡 AMXTvInputService (TV Integration Module)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 60
             },
             {
               "id": "Multicast",
-              "label": "🎬 LicensedMulticastSolution (Streaming Module)"
+              "label": "🎬 LicensedMulticastSolution (Streaming Module)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 70
             },
             {
               "id": "LocalStorage",
-              "label": "💾 LOCAL STORAGE & DI"
+              "label": "💾 LOCAL STORAGE & DI",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 78
             },
             {
               "id": "Monitoring",
-              "label": "📊 MONITORING & ANALYTICS"
+              "label": "📊 MONITORING & ANALYTICS",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 92
             }
           ],
           "nodes": [
@@ -3028,247 +3434,370 @@
               "id": "AndroidTV",
               "label": "Android TV Platform",
               "type": "component",
-              "group": "📱 ANDROID OS LAYER"
+              "group": "📱 ANDROID OS LAYER",
+              "groupId": "Android",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "RemoteControl",
               "label": "🎮 Remote Control · D-Pad Input Handler",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "SystemServices",
               "label": "System Services · Display, Audio, etc",
               "type": "component",
-              "group": "📱 ANDROID OS LAYER"
+              "group": "📱 ANDROID OS LAYER",
+              "groupId": "Android",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "MainActivity",
               "label": "MainActivity · (Entry Point)",
               "type": "component",
-              "group": "🏠 APP MODULE (Main Application)"
+              "group": "🏠 APP MODULE (Main Application)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "NavGraph",
               "label": "Navigation Graph · (Navigation Control)",
               "type": "component",
-              "group": "🏠 APP MODULE (Main Application)"
+              "group": "🏠 APP MODULE (Main Application)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "HomeScreen",
               "label": "HomeScreen · Fragment",
               "type": "component",
-              "group": "🏠 APP MODULE (Main Application)"
+              "group": "🏠 APP MODULE (Main Application)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "EPGScreen",
               "label": "EPG Screen · Fragment",
               "type": "component",
-              "group": "🏠 APP MODULE (Main Application)"
+              "group": "🏠 APP MODULE (Main Application)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PlayerScreen",
               "label": "Player Screen · Fragment",
               "type": "component",
-              "group": "🏠 APP MODULE (Main Application)"
+              "group": "🏠 APP MODULE (Main Application)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "SettingsScreen",
               "label": "Settings · Fragment",
               "type": "component",
-              "group": "🏠 APP MODULE (Main Application)"
+              "group": "🏠 APP MODULE (Main Application)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "RetrofitClient",
               "label": "Retrofit Client",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "OkHttpClient",
               "label": "OkHttp · + Interceptors",
               "type": "component",
-              "group": "🌐 AMXNetworkSdk (Networking Layer)"
+              "group": "🌐 AMXNetworkSdk (Networking Layer)",
+              "groupId": "Network",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "APIEndpoints",
               "label": "API Endpoints · → Login · → EPG · → Stream · → User",
               "type": "component",
-              "group": "🌐 AMXNetworkSdk (Networking Layer)"
+              "group": "🌐 AMXNetworkSdk (Networking Layer)",
+              "groupId": "Network",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "SecurityConfig",
               "label": "Security Config · → Certificate Pinning · → TLS 1.2+",
               "type": "component",
-              "group": "🌐 AMXNetworkSdk (Networking Layer)"
+              "group": "🌐 AMXNetworkSdk (Networking Layer)",
+              "groupId": "Network",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "EPGViewModel",
               "label": "EPGViewModel · (State Management)",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "GetProgramsUC",
               "label": "GetProgramsUseCase",
               "type": "component",
-              "group": "📺 AMXEpg (Program Guide Module)"
+              "group": "📺 AMXEpg (Program Guide Module)",
+              "groupId": "EPGModule",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "GetChannelsUC",
               "label": "GetChannelsUseCase",
               "type": "component",
-              "group": "📺 AMXEpg (Program Guide Module)"
+              "group": "📺 AMXEpg (Program Guide Module)",
+              "groupId": "EPGModule",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "EPGRepository",
               "label": "EPGRepository · (Interface)",
               "type": "component",
-              "group": "📺 AMXEpg (Program Guide Module)"
+              "group": "📺 AMXEpg (Program Guide Module)",
+              "groupId": "EPGModule",
+              "groupPath": [],
+              "order": 36
             },
             {
               "id": "EPGRepImpl",
               "label": "EPGRepositoryImpl · (Implementation)",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "PlayerViewModel",
               "label": "PlayerViewModel · (Playback State)",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 47
             },
             {
               "id": "GetStreamUC",
               "label": "GetStreamUrlUseCase",
               "type": "component",
-              "group": "▶️ AMXPlayer (Video Playback Module)"
+              "group": "▶️ AMXPlayer (Video Playback Module)",
+              "groupId": "PlayerModule",
+              "groupPath": [],
+              "order": 48
             },
             {
               "id": "PlayerRepository",
               "label": "PlayerRepository",
               "type": "component",
-              "group": "▶️ AMXPlayer (Video Playback Module)"
+              "group": "▶️ AMXPlayer (Video Playback Module)",
+              "groupId": "PlayerModule",
+              "groupPath": [],
+              "order": 49
             },
             {
               "id": "ExoPlayer",
               "label": "ExoPlayer · (Video Engine)",
               "type": "component",
-              "group": "▶️ AMXPlayer (Video Playback Module)"
+              "group": "▶️ AMXPlayer (Video Playback Module)",
+              "groupId": "PlayerModule",
+              "groupPath": [],
+              "order": 50
             },
             {
               "id": "Youbora",
               "label": "Youbora SDK · (Analytics)",
               "type": "component",
-              "group": "▶️ AMXPlayer (Video Playback Module)"
+              "group": "▶️ AMXPlayer (Video Playback Module)",
+              "groupId": "PlayerModule",
+              "groupPath": [],
+              "order": 51
             },
             {
               "id": "TVInputService",
               "label": "TVInputService · (OS Integration)",
               "type": "component",
-              "group": "📡 AMXTvInputService (TV Integration Module)"
+              "group": "📡 AMXTvInputService (TV Integration Module)",
+              "groupId": "TVInput",
+              "groupPath": [],
+              "order": 61
             },
             {
               "id": "RemoteHandler",
               "label": "Remote Input Handler",
               "type": "component",
-              "group": "📡 AMXTvInputService (TV Integration Module)"
+              "group": "📡 AMXTvInputService (TV Integration Module)",
+              "groupId": "TVInput",
+              "groupPath": [],
+              "order": 62
             },
             {
               "id": "ChannelObserver",
               "label": "Channel Observer",
               "type": "component",
-              "group": "📡 AMXTvInputService (TV Integration Module)"
+              "group": "📡 AMXTvInputService (TV Integration Module)",
+              "groupId": "TVInput",
+              "groupPath": [],
+              "order": 63
             },
             {
               "id": "MulticastManager",
               "label": "Multicast Manager",
               "type": "component",
-              "group": "🎬 LicensedMulticastSolution (Streaming Module)"
+              "group": "🎬 LicensedMulticastSolution (Streaming Module)",
+              "groupId": "Multicast",
+              "groupPath": [],
+              "order": 71
             },
             {
               "id": "LicenseValidator",
               "label": "License Validator",
               "type": "component",
-              "group": "🎬 LicensedMulticastSolution (Streaming Module)"
+              "group": "🎬 LicensedMulticastSolution (Streaming Module)",
+              "groupId": "Multicast",
+              "groupPath": [],
+              "order": 72
             },
             {
               "id": "StreamBuffer",
               "label": "Stream Buffer · Management",
               "type": "component",
-              "group": "🎬 LicensedMulticastSolution (Streaming Module)"
+              "group": "🎬 LicensedMulticastSolution (Streaming Module)",
+              "groupId": "Multicast",
+              "groupPath": [],
+              "order": 73
             },
             {
               "id": "RoomDB",
               "label": "Room Database · → Programs · → Channels · → Users · → Schedules",
               "type": "component",
-              "group": "💾 LOCAL STORAGE & DI"
+              "group": "💾 LOCAL STORAGE & DI",
+              "groupId": "LocalStorage",
+              "groupPath": [],
+              "order": 79
             },
             {
               "id": "DataStorePrefs",
               "label": "DataStore · (Encrypted Preferences)",
               "type": "component",
-              "group": "💾 LOCAL STORAGE & DI"
+              "group": "💾 LOCAL STORAGE & DI",
+              "groupId": "LocalStorage",
+              "groupPath": [],
+              "order": 80
             },
             {
               "id": "HiltContainer",
               "label": "Hilt DI Container · @HiltAndroidApp · @HiltViewModel · @AndroidEntryPoint",
               "type": "component",
-              "group": "💾 LOCAL STORAGE & DI"
+              "group": "💾 LOCAL STORAGE & DI",
+              "groupId": "LocalStorage",
+              "groupPath": [],
+              "order": 81
             },
             {
               "id": "NewRelic",
               "label": "NewRelic · (APM & Crashes)",
               "type": "component",
-              "group": "📊 MONITORING & ANALYTICS"
+              "group": "📊 MONITORING & ANALYTICS",
+              "groupId": "Monitoring",
+              "groupPath": [],
+              "order": 93
             },
             {
               "id": "GoogleAnalytics",
               "label": "Google Analytics · (User Events)",
               "type": "component",
-              "group": "📊 MONITORING & ANALYTICS"
+              "group": "📊 MONITORING & ANALYTICS",
+              "groupId": "Monitoring",
+              "groupPath": [],
+              "order": 94
             },
             {
               "id": "FirebaseCrashlytics",
               "label": "Firebase Crashlytics · (Error Tracking)",
               "type": "component",
-              "group": "📊 MONITORING & ANALYTICS"
+              "group": "📊 MONITORING & ANALYTICS",
+              "groupId": "Monitoring",
+              "groupPath": [],
+              "order": 95
             },
             {
               "id": "EPGModule",
               "label": "EPGModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 97
             },
             {
               "id": "PlayerModule",
               "label": "PlayerModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 101
             },
             {
               "id": "Network",
               "label": "Network",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 103
             },
             {
               "id": "LocalStorage",
               "label": "LocalStorage",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 107
             },
             {
               "id": "Multicast",
               "label": "Multicast",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 117
             },
             {
               "id": "App",
               "label": "App",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 124
             }
           ],
           "edges": [
@@ -5055,103 +5584,154 @@
               "id": "A",
               "label": "📤 Push to GitHub",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "B",
               "label": "👷 GitHub Actions",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "C",
               "label": "🔨 Build APK",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "D",
               "label": "📦 Artifact",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "E",
               "label": "🔐 Sign with Keystore",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "F",
               "label": "📱 Deploy to QA",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "G",
               "label": "✅ QA Tests",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "H",
               "label": "🎯 Google Play Internal",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "I",
               "label": "🚀 Play Store Release",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "J",
               "label": "🧪 Unit Tests",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "K",
               "label": "📊 Code Coverage",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "L",
               "label": "🔍 Lint Analysis",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "M",
               "label": "Report",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "N-Build-Status",
               "label": "N{Build Status}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "N",
               "label": "N",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "O",
               "label": "✅ Green Build",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "P",
               "label": "❌ Reject PR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
             }
           ],
           "edges": [

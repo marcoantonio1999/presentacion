@@ -43,15 +43,27 @@
           "groups": [
             {
               "id": "App",
-              "label": "App"
+              "label": "App",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Player",
-              "label": "Player"
+              "label": "Player",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 3
             },
             {
               "id": "Common",
-              "label": "Common"
+              "label": "Common",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 6
             }
           ],
           "nodes": [
@@ -59,49 +71,73 @@
               "id": "A1",
               "label": "Eventos App",
               "type": "component",
-              "group": "App"
+              "group": "App",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "A2",
               "label": "Tags App",
               "type": "component",
-              "group": "App"
+              "group": "App",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "P1",
               "label": "Eventos Player",
               "type": "component",
-              "group": "Player"
+              "group": "Player",
+              "groupId": "Player",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "P2",
               "label": "Tags Player",
               "type": "component",
-              "group": "Player"
+              "group": "Player",
+              "groupId": "Player",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "C1",
               "label": "Core Analytics",
               "type": "component",
-              "group": "Common"
+              "group": "Common",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "C2",
               "label": "Tracker",
               "type": "component",
-              "group": "Common"
+              "group": "Common",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "C3",
               "label": "Helpers",
               "type": "component",
-              "group": "Common"
+              "group": "Common",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Ext",
               "label": "API pública",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
             }
           ],
           "edges": [
@@ -363,15 +399,27 @@
           "groups": [
             {
               "id": "App",
-              "label": "App (eventos dominio app)"
+              "label": "App (eventos dominio app)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Player",
-              "label": "Player (eventos reproductor)"
+              "label": "Player (eventos reproductor)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 3
             },
             {
               "id": "Common",
-              "label": "Common (infraestructura)"
+              "label": "Common (infraestructura)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 6
             }
           ],
           "nodes": [
@@ -379,55 +427,82 @@
               "id": "A1",
               "label": "CVAnalyticsApp",
               "type": "component",
-              "group": "App (eventos dominio app)"
+              "group": "App (eventos dominio app)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "A2",
               "label": "+Login / +Home / +Player / +Search / ...",
               "type": "component",
-              "group": "App (eventos dominio app)"
+              "group": "App (eventos dominio app)",
+              "groupId": "App",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "P1",
               "label": "CVAnalyticsPlayer",
               "type": "component",
-              "group": "Player (eventos reproductor)"
+              "group": "Player (eventos reproductor)",
+              "groupId": "Player",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "P2",
               "label": "+Live / +Player",
               "type": "component",
-              "group": "Player (eventos reproductor)"
+              "group": "Player (eventos reproductor)",
+              "groupId": "Player",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "C1",
               "label": "CVAnalyticsCore",
               "type": "component",
-              "group": "Common (infraestructura)"
+              "group": "Common (infraestructura)",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "C2",
               "label": "CVAnalytics4",
               "type": "component",
-              "group": "Common (infraestructura)"
+              "group": "Common (infraestructura)",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "C3",
               "label": "GATracker",
               "type": "component",
-              "group": "Common (infraestructura)"
+              "group": "Common (infraestructura)",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "C4",
               "label": "Helpers",
               "type": "component",
-              "group": "Common (infraestructura)"
+              "group": "Common (infraestructura)",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "GA",
               "label": "Google Analytics",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             }
           ],
           "edges": [
@@ -988,61 +1063,91 @@
               "id": "PR",
               "label": "Pull Request",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CI",
               "label": "GitHub Actions",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "SQ",
               "label": "SonarQube Analysis",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "QG-Quality-Gate",
               "label": "QG{Quality Gate}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "QG",
               "label": "QG",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "OK",
               "label": "PR Aprobado",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "FAIL",
               "label": "PR Bloqueado",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "CI2",
               "label": "Azure DevOps / Bitbucket",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "SA2",
               "label": "SonarQube Analysis",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "QG2-Quality-Gate",
               "label": "QG2{Quality Gate}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             }
           ],
           "edges": [
@@ -1132,31 +1237,46 @@
               "id": "UUID",
               "label": "UUID Usuario",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Core",
               "label": "CVAnalyticsCore.trackingSetup",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "GAT",
               "label": "GATracker",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "GA",
               "label": "GA Measurement Protocol",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "GC",
               "label": "Google Analytics Dashboard",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             }
           ],
           "edges": [

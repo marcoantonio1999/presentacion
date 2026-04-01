@@ -45,47 +45,91 @@
           "groups": [
             {
               "id": "Browser",
-              "label": "🌐 Browser / Smart TV"
+              "label": "🌐 Browser / Smart TV",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Entry",
-              "label": "Entry Points"
+              "label": "Entry Points",
+              "parentId": "Browser",
+              "depth": 1,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "AppShell",
-              "label": "App Shell"
+              "label": "App Shell",
+              "parentId": "Browser",
+              "depth": 1,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "Layers",
-              "label": "Capas de la Aplicación"
+              "label": "Capas de la Aplicación",
+              "parentId": "Browser",
+              "depth": 1,
+              "direction": "",
+              "order": 8
             },
             {
               "id": "UI",
-              "label": "UI Layer — src/components/ + src/containers/"
+              "label": "UI Layer — src/components/ + src/containers/",
+              "parentId": "Layers",
+              "depth": 2,
+              "direction": "",
+              "order": 9
             },
             {
               "id": "State",
-              "label": "State Management — Redux"
+              "label": "State Management — Redux",
+              "parentId": "Layers",
+              "depth": 2,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "Domain",
-              "label": "Domain / Business Logic"
+              "label": "Domain / Business Logic",
+              "parentId": "Layers",
+              "depth": 2,
+              "direction": "",
+              "order": 17
             },
             {
               "id": "DataLayer",
-              "label": "Data / Services Layer"
+              "label": "Data / Services Layer",
+              "parentId": "Layers",
+              "depth": 2,
+              "direction": "",
+              "order": 23
             },
             {
               "id": "Workers",
-              "label": "Workers"
+              "label": "Workers",
+              "parentId": "Browser",
+              "depth": 1,
+              "direction": "",
+              "order": 27
             },
             {
               "id": "Servers",
-              "label": "🖥️ Servidores Node.js (PM2)"
+              "label": "🖥️ Servidores Node.js (PM2)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 30
             },
             {
               "id": "External",
-              "label": "☁️ Servicios Externos"
+              "label": "☁️ Servicios Externos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 33
             }
           ],
           "nodes": [
@@ -93,187 +137,280 @@
               "id": "IndexJS",
               "label": "src/index.js\\n(Bootstrap React)",
               "type": "component",
-              "group": "Entry Points"
+              "group": "Entry Points",
+              "groupId": "Entry",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "StoreJS",
               "label": "src/store.js\\n(Redux Store)",
               "type": "component",
-              "group": "Entry Points"
+              "group": "Entry Points",
+              "groupId": "Entry",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Provider",
               "label": "Redux Provider",
               "type": "component",
-              "group": "App Shell"
+              "group": "App Shell",
+              "groupId": "AppShell",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Router",
               "label": "React Router 4\\n(react-router-dom)",
               "type": "component",
-              "group": "App Shell"
+              "group": "App Shell",
+              "groupId": "AppShell",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "App",
               "label": "containers/App\\n(Root Component)",
               "type": "component",
-              "group": "App Shell"
+              "group": "App Shell",
+              "groupId": "AppShell",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Components",
               "label": "~80+ React Components\\n(presentacionales)",
               "type": "component",
-              "group": "UI Layer — src/components/ + src/containers/"
+              "group": "UI Layer — src/components/ + src/containers/",
+              "groupId": "UI",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Containers",
               "label": "Redux Containers\\n(connect HOC)",
               "type": "component",
-              "group": "UI Layer — src/components/ + src/containers/"
+              "group": "UI Layer — src/components/ + src/containers/",
+              "groupId": "UI",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Store",
               "label": "Redux Store",
               "type": "component",
-              "group": "State Management — Redux"
+              "group": "State Management — Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "Actions",
               "label": "src/actions/\\n(22 archivos)",
               "type": "component",
-              "group": "State Management — Redux"
+              "group": "State Management — Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Reducers",
               "label": "src/reducers/\\n(26 reducers)",
               "type": "component",
-              "group": "State Management — Redux"
+              "group": "State Management — Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "Thunk",
               "label": "redux-thunk\\n(async actions)",
               "type": "component",
-              "group": "State Management — Redux"
+              "group": "State Management — Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "AAF",
               "label": "AAF Framework\\nsrc/AAF/",
               "type": "component",
-              "group": "Domain / Business Logic"
+              "group": "Domain / Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "AAFPlayer",
               "label": "AAFPlayer\\nsrc/AAFPlayer/",
               "type": "component",
-              "group": "Domain / Business Logic"
+              "group": "Domain / Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "Persistence",
               "label": "AAFPersistenceManager\\nsrc/AAFPersistenceManager/",
               "type": "component",
-              "group": "Domain / Business Logic"
+              "group": "Domain / Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "Auth",
               "label": "Authentication\\nsrc/authentication/",
               "type": "component",
-              "group": "Domain / Business Logic"
+              "group": "Domain / Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "Payments",
               "label": "Payments\\nsrc/payments/",
               "type": "component",
-              "group": "Domain / Business Logic"
+              "group": "Domain / Business Logic",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "Requests",
               "label": "src/requests/\\n(Ajax, RequestManager)",
               "type": "component",
-              "group": "Data / Services Layer"
+              "group": "Data / Services Layer",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "Config",
               "label": "src/config/\\n(applicationLoader)",
               "type": "component",
-              "group": "Data / Services Layer"
+              "group": "Data / Services Layer",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "DeviceStorage",
               "label": "DeviceStorage\\n(localStorage abstraction)",
               "type": "component",
-              "group": "Data / Services Layer"
+              "group": "Data / Services Layer",
+              "groupId": "DataLayer",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "AppWorker",
               "label": "src/app.worker.js\\n(Web Worker)",
               "type": "component",
-              "group": "Workers"
+              "group": "Workers",
+              "groupId": "Workers",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "ServiceWorker",
               "label": "registerServiceWorker.js\\n(PWA)",
               "type": "component",
-              "group": "Workers"
+              "group": "Workers",
+              "groupId": "Workers",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "ExpressStatic",
               "label": "server.js\\nExpress:8080\\n(Sirve SPA)",
               "type": "component",
-              "group": "🖥️ Servidores Node.js (PM2)"
+              "group": "🖥️ Servidores Node.js (PM2)",
+              "groupId": "Servers",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "MiddlewareVideo",
               "label": "middleware/video\\nExpress:4000\\n(Video proxy)",
               "type": "component",
-              "group": "🖥️ Servidores Node.js (PM2)"
+              "group": "🖥️ Servidores Node.js (PM2)",
+              "groupId": "Servers",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "ClaroAPI",
               "label": "Claro Video API\\n(contenidos, EPG, auth)",
               "type": "component",
-              "group": "☁️ Servicios Externos"
+              "group": "☁️ Servicios Externos",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "Bitmovin",
               "label": "Bitmovin Player 8.165\\n(DRM/streaming)",
               "type": "component",
-              "group": "☁️ Servicios Externos"
+              "group": "☁️ Servicios Externos",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "Shaka",
               "label": "Shaka Player 3.0\\n(DRM alternativo)",
               "type": "component",
-              "group": "☁️ Servicios Externos"
+              "group": "☁️ Servicios Externos",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 36
             },
             {
               "id": "NewRelic",
               "label": "New Relic APM",
               "type": "component",
-              "group": "☁️ Servicios Externos"
+              "group": "☁️ Servicios Externos",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "SonarQube",
               "label": "SonarQube\\n(calidad de código)",
               "type": "component",
-              "group": "☁️ Servicios Externos"
+              "group": "☁️ Servicios Externos",
+              "groupId": "External",
+              "groupPath": [],
+              "order": 38
             },
             {
               "id": "Domain",
               "label": "Domain",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 61
             },
             {
               "id": "DataLayer",
               "label": "DataLayer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 63
             },
             {
               "id": "Browser",
               "label": "Browser",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 74
             }
           ],
           "edges": [
@@ -448,7 +585,11 @@
           "groups": [
             {
               "id": "AAF",
-              "label": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "label": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             }
           ],
           "nodes": [
@@ -456,91 +597,136 @@
               "id": "AAFMain",
               "label": "AAF.js\\n(Façade)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Pin",
               "label": "Pin/\\n(Control parental)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Timeshift",
               "label": "Timeshift/\\n(Pausa TV en vivo)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Auth",
               "label": "Auth/\\n(Autenticación AAF)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Resilence",
               "label": "Resilence/\\n(Retry + TTL)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "AdsUtils",
               "label": "Ads/Utils\\n(Publicidad)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Database",
               "label": "Database/\\n(Acceso a datos)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Nepg",
               "label": "Nepg/\\n(Next EPG)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "Npvr",
               "label": "Npvr/\\n(Cloud PVR)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "LanguageLive",
               "label": "LanguageLive/\\n(Idiomas en vivo)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "LoaderExp",
               "label": "LoaderExp/\\n(Loader de experiencias)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Spinner",
               "label": "Spinner/\\n(Loading UI)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "TimeoutAAF",
               "label": "TimeoutAAF/\\n(Timeouts)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "lib",
               "label": "lib/\\n(Librería interna)",
               "type": "component",
-              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)"
+              "group": "AAF — Advanced Advertising Framework\\n(src/AAF/)",
+              "groupId": "AAF",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "TTLUtil",
               "label": "TTLUtil",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             }
           ],
           "edges": [
@@ -2099,19 +2285,35 @@
           "groups": [
             {
               "id": "Triggers",
-              "label": "🔀 Triggers"
+              "label": "🔀 Triggers",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Pipelines",
-              "label": "⚙️ Pipelines"
+              "label": "⚙️ Pipelines",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "Quality",
-              "label": "🔍 Calidad"
+              "label": "🔍 Calidad",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "Runners",
-              "label": "🖥️ Runners"
+              "label": "🖥️ Runners",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 15
             }
           ],
           "nodes": [
@@ -2119,91 +2321,136 @@
               "id": "Push",
               "label": "push a main/release/feature/\\nbugfix/hotfix/support",
               "type": "component",
-              "group": "🔀 Triggers"
+              "group": "🔀 Triggers",
+              "groupId": "Triggers",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "PR",
               "label": "Pull Request",
               "type": "component",
-              "group": "🔀 Triggers"
+              "group": "🔀 Triggers",
+              "groupId": "Triggers",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Manual",
               "label": "workflow_dispatch\\n(manual)",
               "type": "component",
-              "group": "🔀 Triggers"
+              "group": "🔀 Triggers",
+              "groupId": "Triggers",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "CI",
               "label": "ci.yml\\n(Pipeline CI Principal)",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Analysis",
               "label": "workflow-analysis.yml\\n(SonarQube)",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "BranchFactory",
               "label": "branch-factory.yml\\n(Crear ramas)",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "PRFeature",
               "label": "open-pr-feature-to-release",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PRRelease",
               "label": "open-pr-release-to-main",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "RemoveFeature",
               "label": "remove-feature-from-integration",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "TechHistory",
               "label": "technical-history-branch",
               "type": "component",
-              "group": "⚙️ Pipelines"
+              "group": "⚙️ Pipelines",
+              "groupId": "Pipelines",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Sonar",
               "label": "SonarQube Analysis\\nproyecto: claro-video-aaf-ott",
               "type": "component",
-              "group": "🔍 Calidad"
+              "group": "🔍 Calidad",
+              "groupId": "Quality",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "SonarGate",
               "label": "Quality Gate\\n(qualitygate.wait=false)",
               "type": "component",
-              "group": "🔍 Calidad"
+              "group": "🔍 Calidad",
+              "groupId": "Quality",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "UbuntuLatest",
               "label": "ubuntu-latest",
               "type": "component",
-              "group": "🖥️ Runners"
+              "group": "🖥️ Runners",
+              "groupId": "Runners",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "IOSRunner",
               "label": "ios (self-hosted)",
               "type": "component",
-              "group": "🖥️ Runners"
+              "group": "🖥️ Runners",
+              "groupId": "Runners",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "Warning",
               "label": "⚠️ Sin quality gate\\nactivo en merge",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 47
             }
           ],
           "edges": [
@@ -2354,43 +2601,83 @@
           "groups": [
             {
               "id": "Root",
-              "label": "📁 Proyecto raíz"
+              "label": "📁 Proyecto raíz",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Source",
-              "label": "📁 src/"
+              "label": "📁 src/",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
             },
             {
               "id": "AAFModule",
-              "label": "AAF/"
+              "label": "AAF/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 8
             },
             {
               "id": "PlayerModule",
-              "label": "AAFPlayer/"
+              "label": "AAFPlayer/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 10
             },
             {
               "id": "PersistModule",
-              "label": "AAFPersistenceManager/"
+              "label": "AAFPersistenceManager/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "UIModules",
-              "label": "components/ + containers/"
+              "label": "components/ + containers/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 14
             },
             {
               "id": "StateModules",
-              "label": "actions/ + reducers/"
+              "label": "actions/ + reducers/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 16
             },
             {
               "id": "AuthModule",
-              "label": "authentication/"
+              "label": "authentication/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 18
             },
             {
               "id": "RequestsModule",
-              "label": "requests/"
+              "label": "requests/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 20
             },
             {
               "id": "TFAModule",
-              "label": "2FA/"
+              "label": "2FA/",
+              "parentId": "Source",
+              "depth": 1,
+              "direction": "",
+              "order": 22
             }
           ],
           "nodes": [
@@ -2398,97 +2685,145 @@
               "id": "PackageJSON",
               "label": "package.json",
               "type": "component",
-              "group": "📁 Proyecto raíz"
+              "group": "📁 Proyecto raíz",
+              "groupId": "Root",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "FactoryMaker",
               "label": "factoryMaker.js\\n(Build variants)",
               "type": "component",
-              "group": "📁 Proyecto raíz"
+              "group": "📁 Proyecto raíz",
+              "groupId": "Root",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "ServerJS",
               "label": "server.js\\n(Express SPA)",
               "type": "component",
-              "group": "📁 Proyecto raíz"
+              "group": "📁 Proyecto raíz",
+              "groupId": "Root",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Ecosystem",
               "label": "ecosystem.config.js\\n(PM2)",
               "type": "component",
-              "group": "📁 Proyecto raíz"
+              "group": "📁 Proyecto raíz",
+              "groupId": "Root",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "IndexJS",
               "label": "index.js\\n(Entry point)",
               "type": "component",
-              "group": "📁 src/"
+              "group": "📁 src/",
+              "groupId": "Source",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "StoreJS",
               "label": "store.js\\n(Redux)",
               "type": "component",
-              "group": "📁 src/"
+              "group": "📁 src/",
+              "groupId": "Source",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "AAFJS",
               "label": "AAF.js (Façade)",
               "type": "component",
-              "group": "AAF/"
+              "group": "AAF/",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "PlayerJS",
               "label": "AAFPlayer.js",
               "type": "component",
-              "group": "AAFPlayer/"
+              "group": "AAFPlayer/",
+              "groupId": "PlayerModule",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "EpgMgr",
               "label": "EpgDataManager.js",
               "type": "component",
-              "group": "AAFPersistenceManager/"
+              "group": "AAFPersistenceManager/",
+              "groupId": "PersistModule",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "UI80",
               "label": "~80+ componentes",
               "type": "component",
-              "group": "components/ + containers/"
+              "group": "components/ + containers/",
+              "groupId": "UIModules",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "Redux26",
               "label": "26 reducers\\n22 action files",
               "type": "component",
-              "group": "actions/ + reducers/"
+              "group": "actions/ + reducers/",
+              "groupId": "StateModules",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "AuthFlows",
               "label": "Login, Register,\\nPasswordReminder, 2FA",
               "type": "component",
-              "group": "authentication/"
+              "group": "authentication/",
+              "groupId": "AuthModule",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "HTTP",
               "label": "Ajax.js\\nRequestManager.js",
               "type": "component",
-              "group": "requests/"
+              "group": "requests/",
+              "groupId": "RequestsModule",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "TS",
               "label": "callbacks.ts\\nTimerManager.ts\\n(TypeScript)",
               "type": "component",
-              "group": "2FA/"
+              "group": "2FA/",
+              "groupId": "TFAModule",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "External",
               "label": "☁️ Claro Video API",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "BitmovinShaka",
               "label": "Bitmovin 8.165\\no Shaka 3.0",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 37
             }
           ],
           "edges": [

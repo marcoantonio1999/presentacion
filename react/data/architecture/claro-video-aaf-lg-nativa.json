@@ -47,31 +47,46 @@
               "id": "TV",
               "label": "LG Smart TV — WebOS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "SHELL",
               "label": "AAF Shell App\\ncom.clarovideov9 v4.0.0\\nVanilla JS + webOSTV.js 1.2.10",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "AAF",
               "label": "App Web Hosteada\\naaf-cvideo-tv.clarovideo.net\\n(React SPA — Claro Video Streaming)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "NR",
               "label": "New Relic Insights\\nCollector API",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "LUNA",
               "label": "Luna Services\\nLG WebOS IPC",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             }
           ],
           "edges": [
@@ -145,49 +160,73 @@
               "id": "WEBOS",
               "label": "webOSTV.js 1.2.10\\nSDK LG",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CNTS",
               "label": "cnts.js\\nConstantes + Config\\n+ i18n + Feature Flags",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "REQ",
               "label": "req.js\\nXMLHttpRequest\\nAbstraction",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "MAIN",
               "label": "main.js\\nOrquestador Principal\\n+ AAF Flow",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "NR",
               "label": "nr.js\\nNew Relic\\nAnalytics",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "MODAL",
               "label": "nativeModal.js\\nUI Modal\\nErrores Nativos",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "BG",
               "label": "backgroundController.js\\nBackground/Foreground\\n+ localStorage",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "APP",
               "label": "appManager.js\\nVerificación App\\n+ Hash Check",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             }
           ],
           "edges": [
@@ -1175,121 +1214,181 @@
               "id": "ROOT",
               "label": "📁 claro-video-aaf-lg-nativa/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CLARO",
               "label": "📁 Clarovideo/ ← EDITAR AQUÍ",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "WORKDIR",
               "label": "📁 workingdirectory/ ← NO EDITAR (autogenerado)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "SCRIPTS",
               "label": "📄 package_prod.sh\\npackage_dev.sh\\npackage_http.sh",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "DOCS",
               "label": "📁 .github/docs/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "APPINFO",
               "label": "📄 appinfo.json\\n(App ID, versión, iconos)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "INDEX",
               "label": "📄 index.html\\n(Entry point + script load order)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "JS",
               "label": "📁 js/\\n7 módulos JS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "CSS",
               "label": "📁 css/\\nstyle.css\\nnativeModal.css",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "SDK",
               "label": "📁 webOSTVjs-1.2.10/\\nwebOSTV.js\\nwebOSTV-dev.js",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "ASSETS",
               "label": "🖼️ Imágenes\\n(splash, launcher, iconos)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "CNTS",
               "label": "cnts.js · Constantes",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "REQ",
               "label": "req.js · XHR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "MAIN",
               "label": "main.js · Orquestador",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "NR",
               "label": "nr.js · New Relic",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "MODAL",
               "label": "nativeModal.js · UI Modal",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "BG",
               "label": "backgroundController.js · BG/FG",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "APPJS",
               "label": "appManager.js · App Check",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "DEV",
               "label": "📁 dev/ (build dev)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 36
             },
             {
               "id": "HTTP",
               "label": "📁 http/ (build http)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 38
             }
           ],
           "edges": [
@@ -1475,79 +1574,118 @@
               "id": "A",
               "label": "GET {AAF_url}index.html\\n(timeout: 2s)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "B-HTTP-200",
               "label": "B{HTTP 200?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "B",
               "label": "B",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "ERR1",
               "label": "sendErrorMetric\\nTYPE_URL_AAF_ERROR\\n+ showAppError()",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "C",
               "label": "Parsear HTML con RegExp:\\n/(.+)react\\\\.([a-zA-Z0-9]+)(?!\\\\.js)/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "D-Hash-encontrado",
               "label": "D{Hash encontrado?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "D",
               "label": "D",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "ERR2",
               "label": "sendErrorMetric\\nTYPE_URL_CANT_GET_HASHJS_FROM_INDEX_ERROR\\n+ showAppError()",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "E",
               "label": "GET {AAF_url}static/js/react.{commitHash}.js\\n(timeout: 1.5s)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "F-HTTP-200",
               "label": "F{HTTP 200?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "F",
               "label": "F",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "ERR3",
               "label": "sendErrorMetric\\nTYPE_URL_HASHJS_ERROR\\n+ showAppError()",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "OK",
               "label": "✅ window.location.replace(AAF_url)\\nREDIRECT EXITOSO",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             }
           ],
           "edges": [
@@ -1653,37 +1791,55 @@
               "id": "E1",
               "label": "Error Tipo 1\\nSin red\\n(TYPE_NETWORK_ERROR)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "E2",
               "label": "Error Tipo 2\\nAAF URL no disponible\\n(TYPE_URL_AAF_ERROR)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "E3",
               "label": "Error Tipo 3\\nHash no encontrado en HTML\\n(TYPE_URL_CANT_GET_HASHJS...)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "E4",
               "label": "Error Tipo 4\\nHash JS no disponible\\n(TYPE_URL_HASHJS_ERROR)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "NR",
               "label": "POST\\ninsights-collector.newrelic.com\\n/v1/accounts/675452/events\\nEventType: AppStartupMetricsError",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "DASH",
               "label": "New Relic Dashboard\\nMonitoreo de arranque\\nde la app en TVs",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             }
           ],
           "edges": [

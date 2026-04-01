@@ -1592,126 +1592,27 @@ Almacenar an&#225;lisis de stack y arquitectura del proyecto.
 - Ejecutar los prompts de Fase 1 en secuencia.
 </pre>
             </details>
-            <details class="doc-item">
+            <details class="doc-item architecture-doc-item">
               <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">.github\docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
-              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ning&#250;n dato ha sido asumido sin verificaci&#243;n.
-
-# &#127912; Diagramas Arquitect&#243;nicos - cv-ios-player
-
-## &#127963;️ Diagrama de Componentes
-
-&lt;img src=&quot;img/DiagramaDeComponentes.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart LR
-    A[CVPlayer iOS] --&gt; C[CVPlayerCommon]
-    B[CVPlayerTVOS] --&gt; C
-    T[TestApp] --&gt; A
-    T --&gt; B
-    C --&gt; D[BitmovinPlayer]
-    C --&gt; E[NpawPluginBitmovinAdapter]
-    C --&gt; F[BitmovinCollector]
-    C --&gt; G[FairPlay]
-    C --&gt; H[Observers]
-```
-
-## &#128260; Diagramas de Flujos de Procesos
-
-### Flujo Principal 1: Inicializaci&#243;n de Player
-
-&lt;img src=&quot;img/DiagramaDeFlujosInit.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-sequenceDiagram
-    participant App as App
-    participant Builder as Builder
-    participant Core as CVPlayerCommon
-    participant DRM as FairPlay
-    participant Engine as BitmovinPlayer
-    App-&gt;&gt;Builder: Solicita view controller
-    Builder-&gt;&gt;Core: Resuelve dependencias
-    Core-&gt;&gt;DRM: Configura DRM
-    Core-&gt;&gt;Engine: Inicializa player
-    Engine--&gt;&gt;App: Reproductor listo / error
-```
-
-### Flujo Principal 2: Eventos de Reproducci&#243;n
-
-&lt;img src=&quot;img/DiagramaDeFlujosPlayback.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-sequenceDiagram
-    participant Engine as BitmovinPlayer
-    participant Obs as Observers
-    participant Del as Delegates
-    participant Analytics as NPAW/Collector
-    Engine-&gt;&gt;Obs: Evento playback
-    Obs-&gt;&gt;Del: Notifica app cliente
-    Obs-&gt;&gt;Analytics: Env&#237;a tracking
-```
-
-## &#128640; Diagrama de CI/CD Pipeline
-
-&lt;img src=&quot;img/DiagramaDeCICDPipeline.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart TD
-    PR[Push/PR] --&gt; CI[ci.yml]
-    CI --&gt; Build[Build]
-    Build --&gt; Gate{Quality Gate}
-    Gate --&gt;|Pass| Test[Tests]
-    Gate --&gt;|Fail| Block[Block]
-    Test --&gt;|OK| Merge[Merge]
-    Test --&gt;|Fail| Rollback[Rollback to previous tag]
-    Manual[workflow_dispatch] --&gt; BranchFactory[branch-factory.yml]
-```
-
-## &#128202; Diagrama de Datos
-
-&lt;img src=&quot;img/DiagramaDeDatos.png&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart LR
-    Config[Playback Config] --&gt; Builder
-    Builder --&gt; Core
-    Core --&gt; Player
-    Player --&gt; Events
-    Events --&gt; Observers
-    Observers --&gt; Delegates
-    Observers --&gt; Analytics
-```
-
-## &#128295; Notas de Implementaci&#243;n
-### Convenciones de Diagramas
-- Mermaid para consistencia y versionado en Markdown.
-
-### Herramientas de Visualizaci&#243;n
-- GitHub markdown renderer y VS Code.
-
-### Mantenimiento de Diagramas
-- Actualizar al cambiar m&#243;dulos/dependencias/workflows.
-
-## ⚠️ Limitaciones del An&#225;lisis
-### Datos no disponibles en el repositorio
-- ⚠️ No hay baseline hist&#243;rico de diagramas para comparar evoluci&#243;n.
-
-### Recomendaciones para completar an&#225;lisis
-- Versionar cambios de arquitectura con ADR + actualizaci&#243;n de diagramas.
-
-## ✅ Compliance Check - Fase 1
-
-**Fecha:** 2026-02-24T00:00:00Z
-**Stack:** Swift 5.7 / SPM / iOS 16+ / tvOS 16+
-**Prompt ejecutado:** `auditoriaF5DocsvsProyecto.prompt.md`
-
-| # | Regla | Estado | Detalle | Evidencia |
-|---|-------|--------|---------|-----------|
-| 1 | `language_es_mx` | ✅ | Espa&#241;ol con t&#233;rminos t&#233;cnicos en ingl&#233;s | Revisi&#243;n del archivo |
-| 2 | `stack_detected_real` | ✅ | Diagramas alineados al repo | `Package.swift`, `Sources/**` |
-| 3 | `evidence_cited` | ✅ | Elementos del diagrama mapean a archivos reales | `.github/workflows/**` |
-
-**Compliance Score:** 100% ✅
-</pre>
+              <div class="vss-detail-body">
+                <p>Este documento se consulta ahora desde una vista interactiva por repositorio, sin exponer el markdown crudo dentro del anexo ejecutivo.</p>
+                <div class="card-grid">
+                  <article class="mini-card">
+                    <h4>Vista interactiva</h4>
+                    <p>Los diagramas del documento original quedan disponibles con navegación individual, zoom nativo y lectura visual por flujo.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Lectura ejecutiva</h4>
+                    <p>La arquitectura se presenta por componentes, procesos, datos y secuencias, conservando el orden del archivo base.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Repositorio actual</h4>
+                    <p><strong>iOS Player</strong> ya tiene su mapa dedicado de arquitectura dentro de FASE 1.</p>
+                  </article>
+                </div>
+                <p class="vss-footnote">La consulta principal de diagramas ya se realiza en el visor interactivo; el contenido documental sigue disponible como respaldo del paquete base.</p>
+                <p><a href="index.html#/fase-1/architecture/claro-video-ios-player">Abrir mapa de arquitectura interactivo</a></p>
+              </div>
             </details>
           </article>
       </section>

@@ -46,23 +46,43 @@
           "groups": [
             {
               "id": "BROWSER",
-              "label": "🌐 Browser (SPA)"
+              "label": "🌐 Browser (SPA)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
             },
             {
               "id": "SERVER",
-              "label": "🖥️ Node.js Server (Express 4.18)"
+              "label": "🖥️ Node.js Server (Express 4.18)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 6
             },
             {
               "id": "APIS",
-              "label": "🔌 APIs Externas"
+              "label": "🔌 APIs Externas",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "EXTERNAL",
-              "label": "🔗 Apps Externas"
+              "label": "🔗 Apps Externas",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 19
             },
             {
               "id": "BUILD",
-              "label": "⚙️ Build System"
+              "label": "⚙️ Build System",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 24
             }
           ],
           "nodes": [
@@ -70,163 +90,244 @@
               "id": "ReactApp",
               "label": "React 17 App\\n(src/react/App.js)",
               "type": "component",
-              "group": "🌐 Browser (SPA)"
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Router",
               "label": "React Router v3/v6\\n(src/react/routes/)",
               "type": "component",
-              "group": "🌐 Browser (SPA)"
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Redux",
               "label": "Redux Store\\n(src/react/store.js)",
               "type": "component",
-              "group": "🌐 Browser (SPA)"
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Sagas",
               "label": "Redux-Saga\\n(appSaga.js)",
               "type": "component",
-              "group": "🌐 Browser (SPA)"
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Axios",
               "label": "Axios HTTP\\n(src/react/api/)",
               "type": "component",
-              "group": "🌐 Browser (SPA)"
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Express",
               "label": "Express App\\n(server/index.js)",
               "type": "component",
-              "group": "🖥️ Node.js Server (Express 4.18)"
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "HBS",
               "label": "Handlebars Templates\\n(server/views/)",
               "type": "component",
-              "group": "🖥️ Node.js Server (Express 4.18)"
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "Middlewares",
               "label": "Middlewares\\n(ViewEngine→BodyParser→Compression→Router→Static)",
               "type": "component",
-              "group": "🖥️ Node.js Server (Express 4.18)"
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Routes",
               "label": "Routes\\n(DeepLink | ExternalLogins | Gtres | Health)",
               "type": "component",
-              "group": "🖥️ Node.js Server (Express 4.18)"
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Static",
               "label": "Static Files\\n(dist/ — webpack output)",
               "type": "component",
-              "group": "🖥️ Node.js Server (Express 4.18)"
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "ContentAPI",
               "label": "Content API\\n(VOD / Live)",
               "type": "component",
-              "group": "🔌 APIs Externas"
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "UserAPI",
               "label": "User API\\n(Auth / Profiles)",
               "type": "component",
-              "group": "🔌 APIs Externas"
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "EPGAPI",
               "label": "EPG API\\n(Guide)",
               "type": "component",
-              "group": "🔌 APIs Externas"
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "PaywayAPI",
               "label": "Payway API\\n(Payments)",
               "type": "component",
-              "group": "🔌 APIs Externas"
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "MetricsAPI",
               "label": "Metrics API\\n(Analytics)",
               "type": "component",
-              "group": "🔌 APIs Externas"
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "NavAPI",
               "label": "Nav API\\n(Menus / Carousels)",
               "type": "component",
-              "group": "🔌 APIs Externas"
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "ESPN",
               "label": "ESPN Login\\n(src/espn/)",
               "type": "component",
-              "group": "🔗 Apps Externas"
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "HBO",
               "label": "HBO Login\\n(src/hbo/)",
               "type": "component",
-              "group": "🔗 Apps Externas"
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "Facebook",
               "label": "Facebook OAuth",
               "type": "component",
-              "group": "🔗 Apps Externas"
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "Apple",
               "label": "Apple Sign In",
               "type": "component",
-              "group": "🔗 Apps Externas"
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Webpack",
               "label": "Webpack 5.98\\n(config/webpack..js)",
               "type": "component",
-              "group": "⚙️ Build System"
+              "group": "⚙️ Build System",
+              "groupId": "BUILD",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "Babel",
               "label": "Babel 7\\n(babel.config.js)",
               "type": "component",
-              "group": "⚙️ Build System"
+              "group": "⚙️ Build System",
+              "groupId": "BUILD",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "DotEnv",
               "label": ".env.development\\n.env.production",
               "type": "component",
-              "group": "⚙️ Build System"
+              "group": "⚙️ Build System",
+              "groupId": "BUILD",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "Browser",
               "label": "Browser",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 48
             },
             {
               "id": "SERVER",
               "label": "SERVER",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 49
             },
             {
               "id": "BUILD",
               "label": "BUILD",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 62
             },
             {
               "id": "BROWSER",
               "label": "BROWSER",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 63
             }
           ],
           "edges": [
@@ -417,27 +518,51 @@
           "groups": [
             {
               "id": "AppRoot",
-              "label": "App Root"
+              "label": "App Root",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "Routing",
-              "label": "Routing Layer"
+              "label": "Routing Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
             },
             {
               "id": "Containers",
-              "label": "Containers (50+)"
+              "label": "Containers (50+)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "LR",
+              "order": 8
             },
             {
               "id": "State",
-              "label": "Estado Redux"
+              "label": "Estado Redux",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 20
             },
             {
               "id": "API",
-              "label": "API Layer"
+              "label": "API Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 25
             },
             {
               "id": "ExternalMods",
-              "label": "Módulos Externos"
+              "label": "Módulos Externos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 29
             }
           ],
           "nodes": [
@@ -445,187 +570,280 @@
               "id": "Entry",
               "label": "src/index.js\\n(Entry Point Webpack)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "App",
               "label": "App.js\\n(Class Component — Legado)",
               "type": "component",
-              "group": "App Root"
+              "group": "App Root",
+              "groupId": "AppRoot",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Store",
               "label": "store.js\\n(Redux + Saga + Persist)",
               "type": "component",
-              "group": "App Root"
+              "group": "App Root",
+              "groupId": "AppRoot",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Provider",
               "label": "UserContext Provider\\n(providers/user.provider.js)",
               "type": "component",
-              "group": "App Root"
+              "group": "App Root",
+              "groupId": "AppRoot",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Routes",
               "label": "routes/routes.js",
               "type": "component",
-              "group": "Routing Layer"
+              "group": "Routing Layer",
+              "groupId": "Routing",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "RouteConst",
               "label": "routes/RouteConstants.js\\n(/:country/...)",
               "type": "component",
-              "group": "Routing Layer"
+              "group": "Routing Layer",
+              "groupId": "Routing",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Header",
               "label": "Header",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Player",
               "label": "Player / VodPlayer / LivePlayer",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Login",
               "label": "Login / Register",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "EPG",
               "label": "EPG",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "Music",
               "label": "MusicPage",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "Payment",
               "label": "Payment / Checkout",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Profile",
               "label": "Profiles / NewProfiles",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "Search",
               "label": "SearchPage / NewSearch",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "Detail",
               "label": "DetailPage / Vcard",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "Account",
               "label": "MyAccount",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "Other",
               "label": "...otros 40+",
               "type": "component",
-              "group": "Containers (50+)"
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "Reducers",
               "label": "reducers/",
               "type": "component",
-              "group": "Estado Redux"
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "Actions",
               "label": "actions/ + action-creators/",
               "type": "component",
-              "group": "Estado Redux"
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "Selectors",
               "label": "selectors/ (Reselect)",
               "type": "component",
-              "group": "Estado Redux"
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "AppSaga",
               "label": "appSaga.js\\n→ musicSaga\\n→ headerSaga",
               "type": "component",
-              "group": "Estado Redux"
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "ApiIndex",
               "label": "api/index.js\\n(Axios instance)",
               "type": "component",
-              "group": "API Layer"
+              "group": "API Layer",
+              "groupId": "API",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "ApiInterceptors",
               "label": "api/interceptors/",
               "type": "component",
-              "group": "API Layer"
+              "group": "API Layer",
+              "groupId": "API",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "ApiServices",
               "label": "api/services/\\ncampaign | content | epg\\nmetrics | nav | payway\\nplan | player | user",
               "type": "component",
-              "group": "API Layer"
+              "group": "API Layer",
+              "groupId": "API",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "ESPN",
               "label": "src/espn/",
               "type": "component",
-              "group": "Módulos Externos"
+              "group": "Módulos Externos",
+              "groupId": "ExternalMods",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "HBO",
               "label": "src/hbo/",
               "type": "component",
-              "group": "Módulos Externos"
+              "group": "Módulos Externos",
+              "groupId": "ExternalMods",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "ExternalLogin",
               "label": "src/ExternalLoginApps/",
               "type": "component",
-              "group": "Módulos Externos"
+              "group": "Módulos Externos",
+              "groupId": "ExternalMods",
+              "groupPath": [],
+              "order": 32
             },
             {
               "id": "Containers",
               "label": "Containers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 44
             },
             {
               "id": "State",
               "label": "State",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 46
             },
             {
               "id": "API",
               "label": "API",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 50
             },
             {
               "id": "ExternalMods",
               "label": "ExternalMods",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 58
             }
           ],
           "edges": [
@@ -1801,19 +2019,35 @@
           "groups": [
             {
               "id": "Sources",
-              "label": "📁 Fuentes"
+              "label": "📁 Fuentes",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Loaders",
-              "label": "⚙️ Webpack Loaders"
+              "label": "⚙️ Webpack Loaders",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 8
             },
             {
               "id": "Plugins",
-              "label": "🔌 Webpack Plugins"
+              "label": "🔌 Webpack Plugins",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 15
             },
             {
               "id": "Output",
-              "label": "📦 Output (dist/)"
+              "label": "📦 Output (dist/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 22
             }
           ],
           "nodes": [
@@ -1821,223 +2055,334 @@
               "id": "JS",
               "label": "src//.js\\n(React + ES6+)",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "SCSS",
               "label": "src//.scss\\n(+ .css)",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "LESS",
               "label": "src//.less\\n(Legado)",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "SVG",
               "label": ".svg",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "IMG",
               "label": ".jpg/.png/.gif",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Fonts",
               "label": ".ttf/.woff",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "HTML",
               "label": "public/index.html",
               "type": "component",
-              "group": "📁 Fuentes"
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Babel",
               "label": "babel-loader\\n(JS → ES5)",
               "type": "component",
-              "group": "⚙️ Webpack Loaders"
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "SassLoader",
               "label": "sass-loader + postcss-loader\\n+ css-loader + style-loader",
               "type": "component",
-              "group": "⚙️ Webpack Loaders"
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "LessLoader",
               "label": "less-loader + css-loader\\n+ style-loader",
               "type": "component",
-              "group": "⚙️ Webpack Loaders"
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "SvgLoader",
               "label": "svg-url-loader\\n(base64 inline)",
               "type": "component",
-              "group": "⚙️ Webpack Loaders"
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "UrlLoader",
               "label": "url-loader + image-webpack-loader\\n(< 10KB → base64)",
               "type": "component",
-              "group": "⚙️ Webpack Loaders"
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "FontLoader",
               "label": "asset/resource\\n(copia a dist/)",
               "type": "component",
-              "group": "⚙️ Webpack Loaders"
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "MiniCSS",
               "label": "MiniCssExtractPlugin\\n([name].[contenthash].css)",
               "type": "component",
-              "group": "🔌 Webpack Plugins"
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "HtmlPlugin",
               "label": "HtmlWebpackPlugin\\n(inject scripts en index.html)",
               "type": "component",
-              "group": "🔌 Webpack Plugins"
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "CopyPlugin",
               "label": "CopyPlugin\\n(public/ → dist/)",
               "type": "component",
-              "group": "🔌 Webpack Plugins"
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "Define",
               "label": "DefinePlugin\\n(__VERSION__, process.env.)",
               "type": "component",
-              "group": "🔌 Webpack Plugins"
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "Compress",
               "label": "CompressionPlugin\\n(gzip — SOLO PROD)",
               "type": "component",
-              "group": "🔌 Webpack Plugins"
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "Refresh",
               "label": "ReactRefreshPlugin\\n(HMR — SOLO DEV)",
               "type": "component",
-              "group": "🔌 Webpack Plugins"
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "MainJS",
               "label": "[name].[contenthash].js",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Chunks",
               "label": "chunks/[name].[contenthash].chunk.js",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "MainCSS",
               "label": "[name].[contenthash].css",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "ChunkCSS",
               "label": "chunks/[id].[contenthash].chunk.css",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "RuntimeJS",
               "label": "runtime.[contenthash].js\\n(SOLO PROD)",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "GZFiles",
               "label": ".gz\\n(SOLO PROD)",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "Static",
               "label": "public assets\\n(ads.txt, images, etc.)",
               "type": "component",
-              "group": "📦 Output (dist/)"
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "Babel-MainJS",
               "label": "Babel --> MainJS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "Babel-Chunks",
               "label": "Babel --> Chunks",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "SassLoader-MiniCSS-MainCSS",
               "label": "SassLoader --> MiniCSS --> MainCSS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "SassLoader-MiniCSS-ChunkCSS",
               "label": "SassLoader --> MiniCSS --> ChunkCSS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "LessLoader-MiniCSS",
               "label": "LessLoader --> MiniCSS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 39
             },
             {
               "id": "SvgLoader-MainJS",
               "label": "SvgLoader --> MainJS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 41
             },
             {
               "id": "UrlLoader-MainJS",
               "label": "UrlLoader --> MainJS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 43
             },
             {
               "id": "FontLoader-Static",
               "label": "FontLoader --> Static",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 45
             },
             {
               "id": "HtmlPlugin-Static",
               "label": "HtmlPlugin --> Static",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 47
             },
             {
               "id": "Plugins",
               "label": "Plugins",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 48
             },
             {
               "id": "Output",
               "label": "Output",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 49
             }
           ],
           "edges": [
@@ -2164,27 +2509,51 @@
           "groups": [
             {
               "id": "BranchCreation",
-              "label": "Branch Creation"
+              "label": "Branch Creation",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "PushTrigger",
-              "label": "Push / PR Trigger"
+              "label": "Push / PR Trigger",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 3
             },
             {
               "id": "CI",
-              "label": "CI Pipeline (ci.yml)"
+              "label": "CI Pipeline (ci.yml)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
             },
             {
               "id": "PRFlow",
-              "label": "PR Flow"
+              "label": "PR Flow",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 7
             },
             {
               "id": "Branches",
-              "label": "Branch Hierarchy"
+              "label": "Branch Hierarchy",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 10
             },
             {
               "id": "Cleanup",
-              "label": "Cleanup"
+              "label": "Cleanup",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 14
             }
           ],
           "nodes": [
@@ -2192,73 +2561,109 @@
               "id": "Dev",
               "label": "👨‍💻 Developer\\nlocal development",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "BF",
               "label": "Branch Factory Workflow\\n(workflow_dispatch)\\nfeature/TICKET-slug\\nfix/TICKET-slug\\nhotfix/TICKET-slug",
               "type": "component",
-              "group": "Branch Creation"
+              "group": "Branch Creation",
+              "groupId": "BranchCreation",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Push",
               "label": "git push\\nbranches:\\n• main\\n• release/\\n• feature/\\n• bugfix/\\n• support/\\n• hotfix/",
               "type": "component",
-              "group": "Push / PR Trigger"
+              "group": "Push / PR Trigger",
+              "groupId": "PushTrigger",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "CIRun",
               "label": "GitHub Actions\\nubuntu-latest",
               "type": "component",
-              "group": "CI Pipeline (ci.yml)"
+              "group": "CI Pipeline (ci.yml)",
+              "groupId": "CI",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "OpenPRFeat",
               "label": "open-pr-feature-to-release\\n(Manual)",
               "type": "component",
-              "group": "PR Flow"
+              "group": "PR Flow",
+              "groupId": "PRFlow",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "OpenPRRel",
               "label": "open-pr-release-to-main\\n(Manual)",
               "type": "component",
-              "group": "PR Flow"
+              "group": "PR Flow",
+              "groupId": "PRFlow",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Feature",
               "label": "feature/TICKET-slug",
               "type": "component",
-              "group": "Branch Hierarchy"
+              "group": "Branch Hierarchy",
+              "groupId": "Branches",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "Release",
               "label": "release/X.Y.Z",
               "type": "component",
-              "group": "Branch Hierarchy"
+              "group": "Branch Hierarchy",
+              "groupId": "Branches",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "Main",
               "label": "main",
               "type": "component",
-              "group": "Branch Hierarchy"
+              "group": "Branch Hierarchy",
+              "groupId": "Branches",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "RemoveFeature",
               "label": "remove-feature-from-integration\\n(Manual)",
               "type": "component",
-              "group": "Cleanup"
+              "group": "Cleanup",
+              "groupId": "Cleanup",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "TechHistory",
               "label": "technical-history-branch\\n(Manual)",
               "type": "component",
-              "group": "Cleanup"
+              "group": "Cleanup",
+              "groupId": "Cleanup",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "CI",
               "label": "CI",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             }
           ],
           "edges": [
@@ -2369,19 +2774,35 @@
           "groups": [
             {
               "id": "ExpressApp",
-              "label": "Express App (server/index.js)"
+              "label": "Express App (server/index.js)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 1
             },
             {
               "id": "RouterModule",
-              "label": "Router (server/router/)"
+              "label": "Router (server/router/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 7
             },
             {
               "id": "Views",
-              "label": "Views (Handlebars)"
+              "label": "Views (Handlebars)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "StaticFiles",
-              "label": "Static Files"
+              "label": "Static Files",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 15
             }
           ],
           "nodes": [
@@ -2389,85 +2810,127 @@
               "id": "Client",
               "label": "🌐 Browser Request",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "M1",
               "label": "1. configureViewEngine\\n(Handlebars — views/)",
               "type": "component",
-              "group": "Express App (server/index.js)"
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "M2",
               "label": "2. configureBodyParser\\n(JSON + URL-encoded)",
               "type": "component",
-              "group": "Express App (server/index.js)"
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "M3",
               "label": "3. configureCompression\\n(gzip)",
               "type": "component",
-              "group": "Express App (server/index.js)"
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "M4",
               "label": "4. configureRouter\\n(server/router/index.js)",
               "type": "component",
-              "group": "Express App (server/index.js)"
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "M5",
               "label": "5. configureStaticOutputPath\\n(sirve dist/)",
               "type": "component",
-              "group": "Express App (server/index.js)"
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Health",
               "label": "GET /health\\n(Health Check)",
               "type": "component",
-              "group": "Router (server/router/)"
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "DeepLink",
               "label": "DeepLink Handler\\n(móvil → web redirect)",
               "type": "component",
-              "group": "Router (server/router/)"
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "ExtLogin",
               "label": "External Logins\\n(ESPN / HBO SSR)",
               "type": "component",
-              "group": "Router (server/router/)"
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "Gtres",
               "label": "Gtres\\n(Getty Images)",
               "type": "component",
-              "group": "Router (server/router/)"
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "HBSTemplate",
               "label": "server/views/hbo.handlebars\\n(HTML shell + React hydration)",
               "type": "component",
-              "group": "Views (Handlebars)"
+              "group": "Views (Handlebars)",
+              "groupId": "Views",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "Layout",
               "label": "server/views/layouts/\\n(layout base)",
               "type": "component",
-              "group": "Views (Handlebars)"
+              "group": "Views (Handlebars)",
+              "groupId": "Views",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Dist",
               "label": "dist/\\n(webpack output)",
               "type": "component",
-              "group": "Static Files"
+              "group": "Static Files",
+              "groupId": "StaticFiles",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "Public",
               "label": "public/\\n(ads.txt, app-ads.txt)",
               "type": "component",
-              "group": "Static Files"
+              "group": "Static Files",
+              "groupId": "StaticFiles",
+              "groupPath": [],
+              "order": 17
             }
           ],
           "edges": [
@@ -2602,19 +3065,35 @@
           "groups": [
             {
               "id": "PlayerContainers",
-              "label": "Containers de Reproducción"
+              "label": "Containers de Reproducción",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "ShakaLayer",
-              "label": "Shaka Player 3.1.1"
+              "label": "Shaka Player 3.1.1",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "YouboraLayer",
-              "label": "YOUBORA Analytics 6.8.1"
+              "label": "YOUBORA Analytics 6.8.1",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 8
             },
             {
               "id": "APIPlayer",
-              "label": "API Player Layer"
+              "label": "API Player Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
             }
           ],
           "nodes": [
@@ -2622,67 +3101,100 @@
               "id": "VodPlayer",
               "label": "VodPlayer\\n(VOD)",
               "type": "component",
-              "group": "Containers de Reproducción"
+              "group": "Containers de Reproducción",
+              "groupId": "PlayerContainers",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "LivePlayer",
               "label": "LivePlayer\\n(En Vivo)",
               "type": "component",
-              "group": "Containers de Reproducción"
+              "group": "Containers de Reproducción",
+              "groupId": "PlayerContainers",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Player",
               "label": "Player\\n(General)",
               "type": "component",
-              "group": "Containers de Reproducción"
+              "group": "Containers de Reproducción",
+              "groupId": "PlayerContainers",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "ShakaCore",
               "label": "shaka.Player\\n(HLS / DASH)",
               "type": "component",
-              "group": "Shaka Player 3.1.1"
+              "group": "Shaka Player 3.1.1",
+              "groupId": "ShakaLayer",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "DRM",
               "label": "DRM Manager\\n(Widevine / PlayReady / FairPlay)",
               "type": "component",
-              "group": "Shaka Player 3.1.1"
+              "group": "Shaka Player 3.1.1",
+              "groupId": "ShakaLayer",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Adaptive",
               "label": "Adaptive Streaming\\n(ABR)",
               "type": "component",
-              "group": "Shaka Player 3.1.1"
+              "group": "Shaka Player 3.1.1",
+              "groupId": "ShakaLayer",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "YouboraLib",
               "label": "youboralib\\n(Core)",
               "type": "component",
-              "group": "YOUBORA Analytics 6.8.1"
+              "group": "YOUBORA Analytics 6.8.1",
+              "groupId": "YouboraLayer",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "ShakaAdapter",
               "label": "youbora-adapter-shaka\\n(Shaka integration)",
               "type": "component",
-              "group": "YOUBORA Analytics 6.8.1"
+              "group": "YOUBORA Analytics 6.8.1",
+              "groupId": "YouboraLayer",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "HTML5Adapter",
               "label": "youbora-adapter-html5\\n(Fallback)",
               "type": "component",
-              "group": "YOUBORA Analytics 6.8.1"
+              "group": "YOUBORA Analytics 6.8.1",
+              "groupId": "YouboraLayer",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "PlayerAPI",
               "label": "api/services/player/\\n(stream URLs, licencias DRM)",
               "type": "component",
-              "group": "API Player Layer"
+              "group": "API Player Layer",
+              "groupId": "APIPlayer",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "MetricsAPI",
               "label": "api/services/metrics/\\n(analytics events)",
               "type": "component",
-              "group": "API Player Layer"
+              "group": "API Player Layer",
+              "groupId": "APIPlayer",
+              "groupPath": [],
+              "order": 14
             }
           ],
           "edges": [

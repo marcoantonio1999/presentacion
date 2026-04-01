@@ -46,27 +46,51 @@
           "groups": [
             {
               "id": "Presentation",
-              "label": "Presentation"
+              "label": "Presentation",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Application",
-              "label": "Application"
+              "label": "Application",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 6
             },
             {
               "id": "Services",
-              "label": "Services"
+              "label": "Services",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 9
             },
             {
               "id": "Data",
-              "label": "Data"
+              "label": "Data",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
             },
             {
               "id": "Domain",
-              "label": "Domain"
+              "label": "Domain",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 18
             },
             {
               "id": "CrossCutting",
-              "label": "CrossCutting"
+              "label": "CrossCutting",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 22
             }
           ],
           "nodes": [
@@ -74,145 +98,217 @@
               "id": "AppShell",
               "label": "AppShellNewExp.xaml.cs",
               "type": "component",
-              "group": "Presentation"
+              "group": "Presentation",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "LoginPage",
               "label": "LoginNewFlow.xaml.cs",
               "type": "component",
-              "group": "Presentation"
+              "group": "Presentation",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "PlayerPage",
               "label": "PlayerTVNewFlowPage.xaml.cs",
               "type": "component",
-              "group": "Presentation"
+              "group": "Presentation",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "LoginVM",
               "label": "LoginNewFlowViewModel",
               "type": "component",
-              "group": "Presentation"
+              "group": "Presentation",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "PlayerVM",
               "label": "PlayerTVNewFlowViewModel",
               "type": "component",
-              "group": "Presentation"
+              "group": "Presentation",
+              "groupId": "Presentation",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "BL",
               "label": "BusinessLayer",
               "type": "component",
-              "group": "Application"
+              "group": "Application",
+              "groupId": "Application",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Nav",
               "label": "ServiceNavigation / INavigationManager",
               "type": "component",
-              "group": "Application"
+              "group": "Application",
+              "groupId": "Application",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "LoginSvc",
               "label": "LoginService",
               "type": "component",
-              "group": "Services"
+              "group": "Services",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "PlayerSvc",
               "label": "PlayerService",
               "type": "component",
-              "group": "Services"
+              "group": "Services",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "LoginRepo",
               "label": "LoginWebRepository",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "PlayerRepo",
               "label": "PlayerWebRepository",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "Client",
               "label": "IClaroVideoClient.NewPost",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "TLogin",
               "label": "Template.Login_CL",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "TMedia",
               "label": "Template.PlayerGetMedia_CL",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "UserEntity",
               "label": "UserEntity",
               "type": "component",
-              "group": "Domain"
+              "group": "Domain",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "PlayerEntity",
               "label": "PlayerMediaEntity",
               "type": "component",
-              "group": "Domain"
+              "group": "Domain",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "Result",
               "label": "CommandResult",
               "type": "component",
-              "group": "Domain"
+              "group": "Domain",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "DI",
               "label": "AutofacConfig + ServiceLocator",
               "type": "component",
-              "group": "CrossCutting"
+              "group": "CrossCutting",
+              "groupId": "CrossCutting",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "Obs",
               "label": "NewRelic + Youbora + GA4",
               "type": "component",
-              "group": "CrossCutting"
+              "group": "CrossCutting",
+              "groupId": "CrossCutting",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "DI-resuelve-dependencias-LoginVM",
               "label": "DI -.resuelve dependencias.-> LoginVM",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 57
             },
             {
               "id": "DI-resuelve-dependencias-PlayerVM",
               "label": "DI -.resuelve dependencias.-> PlayerVM",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 58
             },
             {
               "id": "DI-resuelve-dependencias-BL",
               "label": "DI -.resuelve dependencias.-> BL",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 59
             },
             {
               "id": "Obs-telemetria-eventos-LoginVM",
               "label": "Obs -.telemetria/eventos.-> LoginVM",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 60
             },
             {
               "id": "Obs-telemetria-eventos-PlayerVM",
               "label": "Obs -.telemetria/eventos.-> PlayerVM",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 61
             }
           ],
           "edges": [
@@ -1323,15 +1419,27 @@
           "groups": [
             {
               "id": "UWP",
-              "label": "UWP"
+              "label": "UWP",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Win81",
-              "label": "Win81"
+              "label": "Win81",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
             },
             {
               "id": "WP8",
-              "label": "WP8"
+              "label": "WP8",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 9
             }
           ],
           "nodes": [
@@ -1339,49 +1447,73 @@
               "id": "UOnLaunch",
               "label": "App.OnLaunched",
               "type": "component",
-              "group": "UWP"
+              "group": "UWP",
+              "groupId": "UWP",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "UOnActivated",
               "label": "App.OnActivated",
               "type": "component",
-              "group": "UWP"
+              "group": "UWP",
+              "groupId": "UWP",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "UProtocol",
               "label": "Protocolos: setregion / dlaapk",
               "type": "component",
-              "group": "UWP"
+              "group": "UWP",
+              "groupId": "UWP",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "UBg",
               "label": "BackgroundTask: ClaroVideoLiveTileService.Run",
               "type": "component",
-              "group": "UWP"
+              "group": "UWP",
+              "groupId": "UWP",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "WOnLaunch",
               "label": "App.OnLaunched",
               "type": "component",
-              "group": "Win81"
+              "group": "Win81",
+              "groupId": "Win81",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "WOnActivated",
               "label": "App.OnActivated",
               "type": "component",
-              "group": "Win81"
+              "group": "Win81",
+              "groupId": "Win81",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "WProtocol",
               "label": "Protocolo: clarovideo",
               "type": "component",
-              "group": "Win81"
+              "group": "Win81",
+              "groupId": "Win81",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PLaunch",
               "label": "Application_Launching",
               "type": "component",
-              "group": "WP8"
+              "group": "WP8",
+              "groupId": "WP8",
+              "groupPath": [],
+              "order": 10
             }
           ],
           "edges": [
@@ -1455,61 +1587,91 @@
               "id": "Config",
               "label": "AutofacConfig.ConfigContainer",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Scope",
               "label": "AutofacConfig.Scope (static)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Locator",
               "label": "ServiceLocator.Current.GetInstance",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "AppScope",
               "label": "ApplicationScope",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "UserScope",
               "label": "UserScope.GetChildScope",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "VMs",
               "label": "ViewModels",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "CodeBehind",
               "label": "AppShellNewExp.xaml.cs",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "Named",
               "label": "Named/ResolveNamed services",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "ExtNav",
               "label": "ExternalNavigationCommand (home/special/deeplink)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "PlayerNamed",
               "label": "IPlayerService \"playerservice\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 27
             }
           ],
           "edges": [
@@ -1623,55 +1785,82 @@
               "id": "AppUWP",
               "label": "DLA.ClaroVideo (UWP)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Negocio",
               "label": "DLA.ClaroVideo.Negocio",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Service",
               "label": "DLA.ClaroVideo.Service.Providers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Client",
               "label": "DLA.ClaroVideo.Client",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Domain",
               "label": "DLA.ClaroVideo.Domain",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "Framework",
               "label": "DLA.ClaroVideo.Framework",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Logging",
               "label": "DLA.ClaroVideo.Logging",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "LiveTile",
               "label": "DLA.ClaroVideo.LiveTileService",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "Tests",
               "label": "ClaroVideoTest",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             }
           ],
           "edges": [
@@ -1873,85 +2062,127 @@
               "id": "H1",
               "label": "Hotspot: PlayerTVNewFlowViewModel 6284 LOC",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "H2",
               "label": "Hotspot: ItemDetailPage.xaml.cs 5678 LOC",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "H3",
               "label": "Hotspot: AppShellViewModel 4160 LOC",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "H4",
               "label": "Hotspot: BusinessLayer 3664 LOC",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "H5",
               "label": "Resolve runtime en UI/VM",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "H6",
               "label": "ServiceLocator.Current.GetInstance 55 usos",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "H7",
               "label": "HTTP hardcodeado WP8 Proxy 42 ocurrencias",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "R1",
               "label": "Regresiones de funcionalidad de player",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "R2",
               "label": "Dificultad para testear UI legacy",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "R3",
               "label": "Acoplamiento de shell/navegacion",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "R4",
               "label": "Orquestacion monolitica",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "R5",
               "label": "Dependencias ocultas y fragilidad",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "R6",
               "label": "Estado global no determinista",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "R7",
               "label": "Riesgo de seguridad/compliance",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
             }
           ],
           "edges": [
@@ -2041,31 +2272,46 @@
               "id": "App",
               "label": "App/ViewModels",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "GA4",
               "label": "GoogleAnalytics4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "NR",
               "label": "NewRelic",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "YB",
               "label": "Youbora",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Logger",
               "label": "ILogger / FileLogger",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             }
           ],
           "edges": [

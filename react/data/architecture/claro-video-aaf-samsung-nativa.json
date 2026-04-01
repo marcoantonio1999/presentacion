@@ -43,15 +43,27 @@
           "groups": [
             {
               "id": "TIZEN",
-              "label": "Samsung Tizen Smart TV (Dispositivo)"
+              "label": "Samsung Tizen Smart TV (Dispositivo)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "NATIVE",
-              "label": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "label": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "parentId": "TIZEN",
+              "depth": 1,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "EXTERNAL",
-              "label": "Servicios Externos"
+              "label": "Servicios Externos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 34
             }
           ],
           "nodes": [
@@ -59,79 +71,118 @@
               "id": "HTML",
               "label": "index.html\\n(Entry Point WGT)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "CNTS",
               "label": "cnts.js\\n(Constantes & Config)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "MAIN",
               "label": "main.js\\n(Orquestador)",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "NR",
               "label": "nr.js\\n(New Relic)",
               "type": "component",
-              "group": "shared"
+              "group": "shared",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "MODAL",
               "label": "nativeModal.js\\n(UI Modal Error)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "BGCTRL",
               "label": "backgroundController.js\\n(BG/FG Lifecycle)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "APPMGR",
               "label": "appManager.js\\n(Preflight Check)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "REQ",
               "label": "req.js\\n(XHR Wrapper)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "LS",
               "label": "localStorage\\n(CVIDEO_AAF_LAUNCH_TIMEMARK)",
               "type": "component",
-              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa"
+              "group": "Shell Nativo WGT — claro-video-aaf-samsung-nativa",
+              "groupId": "NATIVE",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "WEBAPIS",
               "label": "Samsung WebAPI\\n(webapis.network\\nwebapis.productinfo\\ntizen.application)",
               "type": "component",
-              "group": "Samsung Tizen Smart TV (Dispositivo)"
+              "group": "Samsung Tizen Smart TV (Dispositivo)",
+              "groupId": "TIZEN",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "AAF",
               "label": "AAF Web App\\nhttps://aaf-cvideo-tv.clarovideo.net/\\n(App React hosteada)",
               "type": "component",
-              "group": "Servicios Externos"
+              "group": "Servicios Externos",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "NEWRELIC",
               "label": "New Relic Insights\\nhttps://insights-collector.newrelic.com\\n(Monitoreo & Eventos)",
               "type": "component",
-              "group": "Servicios Externos"
+              "group": "Servicios Externos",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 36
             },
             {
               "id": "FONTS",
               "label": "Google Fonts\\n(Roboto CDN)",
               "type": "component",
-              "group": "Servicios Externos"
+              "group": "Servicios Externos",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 37
             }
           ],
           "edges": [
@@ -1235,43 +1286,64 @@
               "id": "CNTS",
               "label": "cnts.js\\n(Globals: AAF_url, WGT_version\\nTimers, i18n, Flags)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "REQ",
               "label": "req.js\\n(XHR Wrapper)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "MAIN",
               "label": "main.js\\n(Orquestador)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "NR",
               "label": "nr.js\\n(New Relic)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "MODAL",
               "label": "nativeModal.js\\n(UI Modal)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "BGCTRL",
               "label": "backgroundController.js\\n(BG Lifecycle)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "APPMGR",
               "label": "appManager.js\\n(AAF Preflight)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             }
           ],
           "edges": [
@@ -1390,15 +1462,27 @@
           "groups": [
             {
               "id": "PROD",
-              "label": "package_prod.sh"
+              "label": "package_prod.sh",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "DEV",
-              "label": "package_dev.sh"
+              "label": "package_dev.sh",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "HTTP",
-              "label": "package_http.sh"
+              "label": "package_http.sh",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 7
             }
           ],
           "nodes": [
@@ -1406,85 +1490,127 @@
               "id": "SRC",
               "label": "Clarovideo/\\n(código fuente)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "B1",
               "label": "tizen build-web\\n--optimize",
               "type": "component",
-              "group": "package_prod.sh"
+              "group": "package_prod.sh",
+              "groupId": "PROD",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "P1",
               "label": "tizen package\\n-t wgt -s AMX",
               "type": "component",
-              "group": "package_prod.sh"
+              "group": "package_prod.sh",
+              "groupId": "PROD",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "B2",
               "label": "tizen build-web",
               "type": "component",
-              "group": "package_dev.sh"
+              "group": "package_dev.sh",
+              "groupId": "DEV",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "P2",
               "label": "tizen package\\n-t wgt",
               "type": "component",
-              "group": "package_dev.sh"
+              "group": "package_dev.sh",
+              "groupId": "DEV",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "B3",
               "label": "tizen build-web\\n(http protocol)",
               "type": "component",
-              "group": "package_http.sh"
+              "group": "package_http.sh",
+              "groupId": "HTTP",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "P3",
               "label": "tizen package\\n-t wgt",
               "type": "component",
-              "group": "package_http.sh"
+              "group": "package_http.sh",
+              "groupId": "HTTP",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "PROD",
               "label": "PROD",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "DEV",
               "label": "DEV",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "HTTP",
               "label": "HTTP",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "R1",
               "label": "release/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "R2",
               "label": "release/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "R3",
               "label": "release/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "TV",
               "label": "Samsung TV",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             }
           ],
           "edges": [
@@ -1614,109 +1740,163 @@
               "id": "START",
               "label": "Startup",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CHK-Conectado-a-Gateway",
               "label": "CHK{¿Conectado a Gateway?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "CHK",
               "label": "CHK",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "ERR_NET",
               "label": "onErrorConnection()\\nnativeModal: error red\\n(NativeModalNetworkTexts)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "CHK_AAF-GET-AAF-index-html",
               "label": "CHK_AAF{GET AAF index.html}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "CHK_AAF",
               "label": "CHK_AAF",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "ERR_AAF",
               "label": "showAppError()\\nnr.sendErrorMetric(TYPE=2)\\nAAF URL no disponible",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "CHK_HASH-Hash-JS-en-HTML",
               "label": "CHK_HASH{¿Hash JS en HTML?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "CHK_HASH",
               "label": "CHK_HASH",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "ERR_HASH",
               "label": "showAppError()\\nnr.sendErrorMetric(TYPE=3)\\nHash no en index.html",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "CHK_JS-GET-react-hash-js",
               "label": "CHK_JS{\"GET react.[hash].js\"}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "CHK_JS",
               "label": "CHK_JS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "ERR_JS",
               "label": "showAppError()\\nnr.sendErrorMetric(TYPE=4)\\nJS no disponible",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "REDIRECT",
               "label": "redirectAAF()\\nwindow.location.replace(AAF_url) ✅",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "NR_NET",
               "label": "nr → New Relic:\\nType=1 (próx. conexión)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "NR_AAF",
               "label": "nr → New Relic:\\nType=2",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "NR_HASH",
               "label": "nr → New Relic:\\nType=3",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "NR_JS",
               "label": "nr → New Relic:\\nType=4",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
             }
           ],
           "edges": [

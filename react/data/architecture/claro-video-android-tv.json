@@ -45,151 +45,226 @@
               "id": "subgraph-PRESENTATION-LAYER",
               "label": "subgraph \"PRESENTATION LAYER\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "A",
               "label": "MainActivity · FragmentActivity",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "B",
               "label": "NavigationActivity · Hub Principal",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "C",
               "label": "TVPlayerActivity · TV en Vivo",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "D",
               "label": "PlaybackActivity · VOD",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "E",
               "label": "Composables · navigation/ui navigation/onboarding",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "subgraph-VIEWMODEL-LAYER",
               "label": "subgraph \"VIEWMODEL LAYER\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "F",
               "label": "TVPlayerVM",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "G",
               "label": "EPGViewModel",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "H",
               "label": "Navigation ViewModels",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "I",
               "label": "Other Feature VMs",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "subgraph-DOMAIN-LAYER",
               "label": "subgraph \"DOMAIN LAYER\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "J",
               "label": "Use Cases · core/di/UseCaseModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "K",
               "label": "Business Logic · tv/domain navigation/domain",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "L",
               "label": "Repository Interfaces · TvRepository UserRepository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "subgraph-DATA-LAYER",
               "label": "subgraph \"DATA LAYER\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "M",
               "label": "Repository Implementations · TvRepositoryImp UserRepositoryImp",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "N",
               "label": "Remote Data Sources · TvDataSource TvApi via Retrofit",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "O",
               "label": "Local Data Sources · DataStore Preferences SessionRepository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "P",
               "label": "(API Server · Retrofit + OkHttp)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "subgraph-DI-HILT",
               "label": "subgraph \"DI - HILT\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "Q",
               "label": "RepositoriesModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "R",
               "label": "UseCaseModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "S",
               "label": "DataSourceModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "T",
               "label": "CoroutinesModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             }
           ],
           "edges": [
@@ -1362,103 +1437,154 @@
               "id": "subgraph-Source-Control",
               "label": "subgraph \"Source Control\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CODE",
               "label": "Git Push / PR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "subgraph-GitHub-Actions-12-workflows",
               "label": "subgraph \"GitHub Actions (12 workflows)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "CI",
               "label": "ci.yml · CI general",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "ADT",
               "label": "workflow-build-adt.yml · Build Android TV",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "FTV",
               "label": "workflow-build-ftv.yml · Build Fire TV",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "SMKADT",
               "label": "cv-adt-smoke.yml · Smoke Tests ADT",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "SMKFTV",
               "label": "cv-ftv-smoke.yml · Smoke Tests FTV",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "PRFT",
               "label": "open-pr-feature-to-release.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PRRM",
               "label": "open-pr-release-to-main.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "subgraph-Azure-DevOps-3-pipelines",
               "label": "subgraph \"Azure DevOps (3 pipelines)\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "ADTCI",
               "label": "pipeline-build-adtv.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "FTVCI",
               "label": "pipeline-build-ftv.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "ANA",
               "label": "pipeline-analysis.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "subgraph-Artifacts",
               "label": "subgraph \"Artifacts\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "APK1",
               "label": "cv_fecha_hash_androidTVprod_.apk",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "APK2",
               "label": "cv_fecha_hash_fireTVprod_.apk",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
             }
           ],
           "edges": [
@@ -1572,91 +1698,136 @@
               "id": "subgraph-UI-Presentation-Layer",
               "label": "subgraph \"UI — Presentation Layer\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "UI",
               "label": "Composable / Fragment · collectAsState / observe",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "subgraph-ViewModel-Layer",
               "label": "subgraph \"ViewModel Layer\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "VM",
               "label": "ViewModel · viewModelScope.launch",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "SF",
               "label": "StateFlow / LiveData · _uiState.value = ...",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "subgraph-Domain-Layer",
               "label": "subgraph \"Domain Layer\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "UC",
               "label": "Use Case · core/di/UseCaseModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "RI",
               "label": "Repository Interface · TvRepository / UserRepository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "subgraph-Data-Layer",
               "label": "subgraph \"Data Layer\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "REPO",
               "label": "Repository Impl · TvRepositoryImp / UserRepositoryImp",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "RDS",
               "label": "Remote DataSource · TvDataSource → TvApi via Retrofit",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "LDS",
               "label": "Local DataSource · SessionRepository / DataStore Preferences",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "subgraph-Infraestructura",
               "label": "subgraph \"Infraestructura\"",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "API",
               "label": "(API REST · Retrofit + OkHttp)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "DS",
               "label": "(DataStore · LocalSettings)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
             }
           ],
           "edges": [

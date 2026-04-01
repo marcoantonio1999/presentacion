@@ -41,43 +41,83 @@
           "groups": [
             {
               "id": "Bootstrap",
-              "label": "Bootstrap Layer"
+              "label": "Bootstrap Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Store",
-              "label": "Redux Store (src/store.js)"
+              "label": "Redux Store (src/store.js)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
             },
             {
               "id": "Containers",
-              "label": "Containers Layer (src/containers/)"
+              "label": "Containers Layer (src/containers/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 8
             },
             {
               "id": "Components",
-              "label": "Presentational Components (src/components/)"
+              "label": "Presentational Components (src/components/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 18
             },
             {
               "id": "Actions",
-              "label": "Actions (src/actions/)"
+              "label": "Actions (src/actions/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 26
             },
             {
               "id": "AAFModule",
-              "label": "AAF Framework (src/AAF/)"
+              "label": "AAF Framework (src/AAF/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 32
             },
             {
               "id": "AAFPlayerModule",
-              "label": "AAFPlayer (src/AAFPlayer/)"
+              "label": "AAFPlayer (src/AAFPlayer/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 39
             },
             {
               "id": "Requests",
-              "label": "API Layer (src/requests/)"
+              "label": "API Layer (src/requests/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 41
             },
             {
               "id": "Devices",
-              "label": "Device Abstraction (src/devices/)"
+              "label": "Device Abstraction (src/devices/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 45
             },
             {
               "id": "Payments",
-              "label": "Payments (src/payments/)"
+              "label": "Payments (src/payments/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 48
             }
           ],
           "nodes": [
@@ -85,307 +125,460 @@
               "id": "IndexJS",
               "label": "src/index.js\\n(ReactDOM.render)",
               "type": "component",
-              "group": "Bootstrap Layer"
+              "group": "Bootstrap Layer",
+              "groupId": "Bootstrap",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "AppLoader",
               "label": "applicationLoader.js\\n(APIs iniciales)",
               "type": "component",
-              "group": "Bootstrap Layer"
+              "group": "Bootstrap Layer",
+              "groupId": "Bootstrap",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "Worker",
               "label": "app.worker.js\\n(Service Worker)",
               "type": "component",
-              "group": "Bootstrap Layer"
+              "group": "Bootstrap Layer",
+              "groupId": "Bootstrap",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Server",
               "label": "server.js\\n(Express)",
               "type": "component",
-              "group": "Bootstrap Layer"
+              "group": "Bootstrap Layer",
+              "groupId": "Bootstrap",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "RootReducer",
               "label": "rootReducer\\n(23 reducers combinados)",
               "type": "component",
-              "group": "Redux Store (src/store.js)"
+              "group": "Redux Store (src/store.js)",
+              "groupId": "Store",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "ThunkMW",
               "label": "redux-thunk",
               "type": "component",
-              "group": "Redux Store (src/store.js)"
+              "group": "Redux Store (src/store.js)",
+              "groupId": "Store",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "AppContainer",
               "label": "App/index.jsx\\n(React Router)",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "HomeContainer",
               "label": "Home/",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 10
             },
             {
               "id": "VideoContainer",
               "label": "VideoContainer",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "TvContainer",
               "label": "Tv/",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "EpgContainer",
               "label": "Epg/",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "SearchContainer",
               "label": "Search/",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "ProfileContainer",
               "label": "Profile/",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "MyContentContainer",
               "label": "MyContentContainer",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "MusicContainer",
               "label": "Music/",
               "type": "component",
-              "group": "Containers Layer (src/containers/)"
+              "group": "Containers Layer (src/containers/)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "HeaderComp",
               "label": "Header/",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "RibbonComp",
               "label": "Ribbon/ Grid/",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "VideoComp",
               "label": "Video/ PlayerControls/",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "EpgComp",
               "label": "Epg/",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "AuthComp",
               "label": "AuthComp",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "PaymentComp",
               "label": "Payment/",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "ModalComp",
               "label": "Modal/",
               "type": "component",
-              "group": "Presentational Components (src/components/)"
+              "group": "Presentational Components (src/components/)",
+              "groupId": "Components",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "UserActions",
               "label": "user.js",
               "type": "component",
-              "group": "Actions (src/actions/)"
+              "group": "Actions (src/actions/)",
+              "groupId": "Actions",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "PlaymediaActions",
               "label": "playmedia.js",
               "type": "component",
-              "group": "Actions (src/actions/)"
+              "group": "Actions (src/actions/)",
+              "groupId": "Actions",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "EpgActions",
               "label": "epg.js",
               "type": "component",
-              "group": "Actions (src/actions/)"
+              "group": "Actions (src/actions/)",
+              "groupId": "Actions",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "ModalActions",
               "label": "modal.js",
               "type": "component",
-              "group": "Actions (src/actions/)"
+              "group": "Actions (src/actions/)",
+              "groupId": "Actions",
+              "groupPath": [],
+              "order": 30
             },
             {
               "id": "MetricsActions",
               "label": "metrics.js",
               "type": "component",
-              "group": "Actions (src/actions/)"
+              "group": "Actions (src/actions/)",
+              "groupId": "Actions",
+              "groupPath": [],
+              "order": 31
             },
             {
               "id": "AAFAuth",
               "label": "AAFAuth",
               "type": "component",
-              "group": "AAF Framework (src/AAF/)"
+              "group": "AAF Framework (src/AAF/)",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 33
             },
             {
               "id": "AAFPin",
               "label": "Pin",
               "type": "component",
-              "group": "AAF Framework (src/AAF/)"
+              "group": "AAF Framework (src/AAF/)",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 34
             },
             {
               "id": "AAFTimeshift",
               "label": "Timeshift",
               "type": "component",
-              "group": "AAF Framework (src/AAF/)"
+              "group": "AAF Framework (src/AAF/)",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 35
             },
             {
               "id": "AAFResilence",
               "label": "AAFResilence",
               "type": "component",
-              "group": "AAF Framework (src/AAF/)"
+              "group": "AAF Framework (src/AAF/)",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 36
             },
             {
               "id": "AAFDatabase",
               "label": "AAFDatabase",
               "type": "component",
-              "group": "AAF Framework (src/AAF/)"
+              "group": "AAF Framework (src/AAF/)",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 37
             },
             {
               "id": "AAFSilo",
               "label": "Silo",
               "type": "component",
-              "group": "AAF Framework (src/AAF/)"
+              "group": "AAF Framework (src/AAF/)",
+              "groupId": "AAFModule",
+              "groupPath": [],
+              "order": 38
             },
             {
               "id": "AAFPlayerMain",
               "label": "AAFPlayer.js\\n(Shaka Player wrapper)",
               "type": "component",
-              "group": "AAFPlayer (src/AAFPlayer/)"
+              "group": "AAFPlayer (src/AAFPlayer/)",
+              "groupId": "AAFPlayerModule",
+              "groupPath": [],
+              "order": 40
             },
             {
               "id": "RequestMgr",
               "label": "RequestManager.js\\n(retry + refresh token)",
               "type": "component",
-              "group": "API Layer (src/requests/)"
+              "group": "API Layer (src/requests/)",
+              "groupId": "Requests",
+              "groupPath": [],
+              "order": 42
             },
             {
               "id": "ApaLayer",
               "label": "apa/ (Metadata, Asset,\\nLauncher, Translator)",
               "type": "component",
-              "group": "API Layer (src/requests/)"
+              "group": "API Layer (src/requests/)",
+              "groupId": "Requests",
+              "groupPath": [],
+              "order": 43
             },
             {
               "id": "Tasks",
               "label": "tasks/ (CMS tasks)",
               "type": "component",
-              "group": "API Layer (src/requests/)"
+              "group": "API Layer (src/requests/)",
+              "groupId": "Requests",
+              "groupPath": [],
+              "order": 44
             },
             {
               "id": "DeviceJS",
               "label": "device.js\\n(getPlatform)",
               "type": "component",
-              "group": "Device Abstraction (src/devices/)"
+              "group": "Device Abstraction (src/devices/)",
+              "groupId": "Devices",
+              "groupPath": [],
+              "order": 46
             },
             {
               "id": "Platforms",
               "label": "Tizen / WebOS / Nagra /\\nArris / AndroidTV / web...",
               "type": "component",
-              "group": "Device Abstraction (src/devices/)"
+              "group": "Device Abstraction (src/devices/)",
+              "groupId": "Devices",
+              "groupPath": [],
+              "order": 47
             },
             {
               "id": "Checkout",
               "label": "Checkout/",
               "type": "component",
-              "group": "Payments (src/payments/)"
+              "group": "Payments (src/payments/)",
+              "groupId": "Payments",
+              "groupPath": [],
+              "order": 49
             },
             {
               "id": "PlanSel",
               "label": "PlanSelector/",
               "type": "component",
-              "group": "Payments (src/payments/)"
+              "group": "Payments (src/payments/)",
+              "groupId": "Payments",
+              "groupPath": [],
+              "order": 50
             },
             {
               "id": "Gateways",
               "label": "HubGate/ ClaroColombiaGate/\\nTelmexMexicoGate/...",
               "type": "component",
-              "group": "Payments (src/payments/)"
+              "group": "Payments (src/payments/)",
+              "groupId": "Payments",
+              "groupPath": [],
+              "order": 51
             },
             {
               "id": "Store",
               "label": "Store",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 55
             },
             {
               "id": "Requests",
               "label": "Requests",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 59
             },
             {
               "id": "Containers",
               "label": "Containers",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 65
             },
             {
               "id": "Components",
               "label": "Components",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 67
             },
             {
               "id": "Actions",
               "label": "Actions",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 69
             },
             {
               "id": "AAFModule",
               "label": "AAFModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 72
             },
             {
               "id": "AAFPlayerModule",
               "label": "AAFPlayerModule",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 78
             },
             {
               "id": "Devices",
               "label": "Devices",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 89
             },
             {
               "id": "Payments",
               "label": "Payments",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 95
             }
           ],
           "edges": [
@@ -1889,55 +2082,82 @@
               "id": "User",
               "label": "👤 Usuario",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Component",
               "label": "React Component\\ncontainers/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Dispatch",
               "label": "dispatch(action)",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "ActionCreator",
               "label": "Action Creator\\nsrc/actions/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Middleware",
               "label": "redux-thunk\\nMiddleware",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "API",
               "label": "API Request\\nsrc/requests/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "Reducer",
               "label": "Reducer\\nsrc/reducers/",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "Store",
               "label": "Redux Store\\nsrc/store.js",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "View",
               "label": "📺 Vista Actualizada",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             }
           ],
           "edges": [
@@ -2051,91 +2271,136 @@
               "id": "Dev",
               "label": "Desarrollador",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "Push",
               "label": "Push / PR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "Branch-Tipo-de-branch",
               "label": "Branch{Tipo de branch?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "Branch",
               "label": "Branch",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "CI",
               "label": "ci.yml",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "Sonar",
               "label": "workflow-analysis.yml\\nSonarQube",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "SonarScan",
               "label": "Análisis SonarQube\\nsrc/ JS/JSX/SCSS",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "QualityGate-Quality-Gate",
               "label": "QualityGate{Quality Gate}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "QualityGate",
               "label": "QualityGate",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "MergeOK",
               "label": "✅ Allow Merge",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "MergeFail",
               "label": "❌ Block Merge",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "BranchFactory",
               "label": "branch-factory.yml\\nCrear rama estándar",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "OpenPR",
               "label": "open-pr-release-to-main.yml\\nAbrir PR release→main",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "RemoveFeat",
               "label": "remove-feature-from-integration.yml\\nLimpiar branches",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "Transfer",
               "label": "transfer-branch-bitbucket.yml\\nSync Bitbucket",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
             }
           ],
           "edges": [

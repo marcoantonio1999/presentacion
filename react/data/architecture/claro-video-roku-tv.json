@@ -42,19 +42,35 @@
           "groups": [
             {
               "id": "UI",
-              "label": "UI"
+              "label": "UI",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "Domain",
-              "label": "Domain"
+              "label": "Domain",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
             },
             {
               "id": "Data",
-              "label": "Data"
+              "label": "Data",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 6
             },
             {
               "id": "Infra",
-              "label": "Infra"
+              "label": "Infra",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 10
             }
           ],
           "nodes": [
@@ -62,55 +78,82 @@
               "id": "A",
               "label": "Activities",
               "type": "component",
-              "group": "UI"
+              "group": "UI",
+              "groupId": "UI",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "F",
               "label": "Fragments",
               "type": "component",
-              "group": "UI"
+              "group": "UI",
+              "groupId": "UI",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "VM",
               "label": "ViewModels",
               "type": "component",
-              "group": "UI"
+              "group": "UI",
+              "groupId": "UI",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "UC",
               "label": "UseCases",
               "type": "component",
-              "group": "Domain"
+              "group": "Domain",
+              "groupId": "Domain",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "R",
               "label": "Repositories",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "M",
               "label": "Managers/Tasks Legacy",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "DS",
               "label": "DataSources",
               "type": "component",
-              "group": "Data"
+              "group": "Data",
+              "groupId": "Data",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "NET",
               "label": "Retrofit/OkHttp",
               "type": "component",
-              "group": "Infra"
+              "group": "Infra",
+              "groupId": "Infra",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "EXT",
               "label": "Firebase/NewRelic",
               "type": "component",
-              "group": "Infra"
+              "group": "Infra",
+              "groupId": "Infra",
+              "groupPath": [],
+              "order": 12
             }
           ],
           "edges": [
@@ -785,37 +828,55 @@
               "id": "GIT",
               "label": "Push/PR",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "CI",
               "label": "Workflow Build",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "B1",
               "label": ":app:assembleCoshipProdQA",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "B2",
               "label": "Opciones gradle incl. -x test",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "ART",
               "label": "Artifact Build",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "WARN",
               "label": "Riesgo: tests omitidos en algunos flujos",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             }
           ],
           "edges": [
@@ -889,55 +950,82 @@
               "id": "UI2",
               "label": "UI Event",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "VM2",
               "label": "ViewModel",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "MOD",
               "label": "Modern Path",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "LEG",
               "label": "Legacy Path",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "UC2",
               "label": "UseCase",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "REPO",
               "label": "Repository",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "DS2",
               "label": "DataSource/API",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "MGR",
               "label": "Manager/Task",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "RESP",
               "label": "Response",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             }
           ],
           "edges": [

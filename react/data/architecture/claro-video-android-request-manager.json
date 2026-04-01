@@ -42,31 +42,59 @@
           "groups": [
             {
               "id": "AmcoLibs",
-              "label": "AmcoLibs"
+              "label": "AmcoLibs",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
             },
             {
               "id": "requestmanager",
-              "label": "requestmanager v1.5.0"
+              "label": "requestmanager v1.5.0",
+              "parentId": "AmcoLibs",
+              "depth": 1,
+              "direction": "",
+              "order": 1
             },
             {
               "id": "imagemanager",
-              "label": "imagemanager v1.3.0"
+              "label": "imagemanager v1.3.0",
+              "parentId": "AmcoLibs",
+              "depth": 1,
+              "direction": "",
+              "order": 10
             },
             {
               "id": "contracts",
-              "label": "contracts/ (15 classes)"
+              "label": "contracts/ (15 classes)",
+              "parentId": "imagemanager",
+              "depth": 2,
+              "direction": "",
+              "order": 15
             },
             {
               "id": "interfaces",
-              "label": "interfaces/ (6)"
+              "label": "interfaces/ (6)",
+              "parentId": "imagemanager",
+              "depth": 2,
+              "direction": "",
+              "order": 20
             },
             {
               "id": "external",
-              "label": "External Dependencies"
+              "label": "External Dependencies",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 24
             },
             {
               "id": "consumer",
-              "label": "App Consumidora"
+              "label": "App Consumidora",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 28
             }
           ],
           "nodes": [
@@ -74,145 +102,217 @@
               "id": "RM",
               "label": "RequestManager\\nabstract singleton",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "VRM",
               "label": "VolleyRequestManager\\nconcrete impl",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "VRQM",
               "label": "VolleyRequestQueueManager\\nqueue variant",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "RT",
               "label": "RequestTask<F,E,T>\\nabstract template",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "VRT",
               "label": "VolleyRequestTask\\ninternal request",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "PHS",
               "label": "ProxiedHurlStack\\nHTTP proxy debug",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "RI",
               "label": "RequestInterface\\nbase interface",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "RMI",
               "label": "RequestManagerInterface\\nmanager interface",
               "type": "component",
-              "group": "requestmanager v1.5.0"
+              "group": "requestmanager v1.5.0",
+              "groupId": "requestmanager",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "IM",
               "label": "ImageManager\\nabstract singleton",
               "type": "component",
-              "group": "imagemanager v1.3.0"
+              "group": "imagemanager v1.3.0",
+              "groupId": "imagemanager",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "PILM",
               "label": "PicassoImageLoaderManager\\nconcrete impl",
               "type": "component",
-              "group": "imagemanager v1.3.0"
+              "group": "imagemanager v1.3.0",
+              "groupId": "imagemanager",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "CT",
               "label": "CircleTransform\\nPicasso transform",
               "type": "component",
-              "group": "imagemanager v1.3.0"
+              "group": "imagemanager v1.3.0",
+              "groupId": "imagemanager",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "FU",
               "label": "FileUtils\\ndisk cache utils",
               "type": "component",
-              "group": "imagemanager v1.3.0"
+              "group": "imagemanager v1.3.0",
+              "groupId": "imagemanager",
+              "groupPath": [],
+              "order": 14
             },
             {
               "id": "AIC",
               "label": "AbstractImageContract",
               "type": "component",
-              "group": "contracts/ (15 classes)"
+              "group": "contracts/ (15 classes)",
+              "groupId": "contracts",
+              "groupPath": [],
+              "order": 16
             },
             {
               "id": "GIC",
               "label": "GenericImageContract",
               "type": "component",
-              "group": "contracts/ (15 classes)"
+              "group": "contracts/ (15 classes)",
+              "groupId": "contracts",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "BIC",
               "label": "BackgroundImageContract",
               "type": "component",
-              "group": "contracts/ (15 classes)"
+              "group": "contracts/ (15 classes)",
+              "groupId": "contracts",
+              "groupPath": [],
+              "order": 18
             },
             {
               "id": "OTHERS",
               "label": "...12 more contracts",
               "type": "component",
-              "group": "contracts/ (15 classes)"
+              "group": "contracts/ (15 classes)",
+              "groupId": "contracts",
+              "groupPath": [],
+              "order": 19
             },
             {
               "id": "IC",
               "label": "ImageContract",
               "type": "component",
-              "group": "interfaces/ (6)"
+              "group": "interfaces/ (6)",
+              "groupId": "interfaces",
+              "groupPath": [],
+              "order": 21
             },
             {
               "id": "VIC",
               "label": "ViewImageContract",
               "type": "component",
-              "group": "interfaces/ (6)"
+              "group": "interfaces/ (6)",
+              "groupId": "interfaces",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "NVIC",
               "label": "NoViewImageContract",
               "type": "component",
-              "group": "interfaces/ (6)"
+              "group": "interfaces/ (6)",
+              "groupId": "interfaces",
+              "groupPath": [],
+              "order": 23
             },
             {
               "id": "VOLLEY",
               "label": "Volley 1.2.1\\nGoogle HTTP",
               "type": "component",
-              "group": "External Dependencies"
+              "group": "External Dependencies",
+              "groupId": "external",
+              "groupPath": [],
+              "order": 25
             },
             {
               "id": "PICASSO",
               "label": "Picasso 2.71828\\nSquare",
               "type": "component",
-              "group": "External Dependencies"
+              "group": "External Dependencies",
+              "groupId": "external",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "OKHTTP",
               "label": "OkHttp 3.10.0\\nSquare",
               "type": "component",
-              "group": "External Dependencies"
+              "group": "External Dependencies",
+              "groupId": "external",
+              "groupPath": [],
+              "order": 27
             },
             {
               "id": "APP",
               "label": "Android App\\ne.g. Claro Video",
               "type": "component",
-              "group": "App Consumidora"
+              "group": "App Consumidora",
+              "groupId": "consumer",
+              "groupPath": [],
+              "order": 29
             },
             {
               "id": "contracts",
               "label": "contracts",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 55
             }
           ],
           "edges": [
@@ -1628,7 +1728,11 @@
           "groups": [
             {
               "id": "PARALLEL",
-              "label": "PARALLEL"
+              "label": "PARALLEL",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 10
             }
           ],
           "nodes": [
@@ -1636,97 +1740,145 @@
               "id": "PR",
               "label": "Pull Request abierto",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
             },
             {
               "id": "TRIGGER",
               "label": "GitHub Actions\\nworkflow disparado",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "CHECKOUT",
               "label": "Checkout código",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
             },
             {
               "id": "JAVA",
               "label": "Setup JDK 17",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "DEPS",
               "label": "Resolve dependencies\\n./gradlew dependencies",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
             },
             {
               "id": "PARALLEL",
               "label": "PARALLEL",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "CS",
               "label": "./gradlew checkstyle\\nCode style gate",
               "type": "component",
-              "group": "PARALLEL"
+              "group": "PARALLEL",
+              "groupId": "PARALLEL",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "LINT",
               "label": "./gradlew lint\\nAndroid lint gate",
               "type": "component",
-              "group": "PARALLEL"
+              "group": "PARALLEL",
+              "groupId": "PARALLEL",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "TEST",
               "label": "./gradlew test\\nUnit tests + JaCoCo",
               "type": "component",
-              "group": "PARALLEL"
+              "group": "PARALLEL",
+              "groupId": "PARALLEL",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "COVERAGE_GATE",
               "label": "COVERAGE_GATE",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "COVERAGE_GATE-Coverage-60",
               "label": "COVERAGE_GATE{Coverage ≥ 60%?}",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
             },
             {
               "id": "FAIL",
               "label": "❌ Build FAILED\\nPR bloqueado",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
             },
             {
               "id": "BUILD",
               "label": "./gradlew\\nassembleRelease",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
             },
             {
               "id": "AAR",
               "label": "Publish .aar artifacts\\nrequestmanager.aar\\nimagemanager.aar",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 26
             },
             {
               "id": "BADGE",
               "label": "Update CI badge\\nen README.md",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 28
             },
             {
               "id": "SUCCESS",
               "label": "✅ Build PASSED\\nPR listo para review",
               "type": "component",
-              "group": ""
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
             }
           ],
           "edges": [
@@ -1861,11 +2013,19 @@
           "groups": [
             {
               "id": "requestmanager_data",
-              "label": "requestmanager — Flujo de datos"
+              "label": "requestmanager — Flujo de datos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
             },
             {
               "id": "imagemanager_data",
-              "label": "imagemanager — Flujo de datos"
+              "label": "imagemanager — Flujo de datos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 7
             }
           ],
           "nodes": [
@@ -1873,79 +2033,118 @@
               "id": "IN1",
               "label": "Parámetros de entrada\\nurl: String\\nmethod: int\\nbody: Map",
               "type": "component",
-              "group": "requestmanager — Flujo de datos"
+              "group": "requestmanager — Flujo de datos",
+              "groupId": "requestmanager_data",
+              "groupPath": [],
+              "order": 1
             },
             {
               "id": "RT_process",
               "label": "RequestTask.processResponse()\\nabstract — implementado por el SDK consumer",
               "type": "component",
-              "group": "requestmanager — Flujo de datos"
+              "group": "requestmanager — Flujo de datos",
+              "groupId": "requestmanager_data",
+              "groupPath": [],
+              "order": 2
             },
             {
               "id": "OUT1",
               "label": "Objeto T\\ntipo definido por el consumer",
               "type": "component",
-              "group": "requestmanager — Flujo de datos"
+              "group": "requestmanager — Flujo de datos",
+              "groupId": "requestmanager_data",
+              "groupPath": [],
+              "order": 4
             },
             {
               "id": "ERR1",
               "label": "VolleyError\\nNetworkError / ServerError / TimeoutError",
               "type": "component",
-              "group": "requestmanager — Flujo de datos"
+              "group": "requestmanager — Flujo de datos",
+              "groupId": "requestmanager_data",
+              "groupPath": [],
+              "order": 5
             },
             {
               "id": "RT_fail",
               "label": "RequestTask.onFailed()\\ncallback de error",
               "type": "component",
-              "group": "requestmanager — Flujo de datos"
+              "group": "requestmanager — Flujo de datos",
+              "groupId": "requestmanager_data",
+              "groupPath": [],
+              "order": 6
             },
             {
               "id": "IN2",
               "label": "ImageContract\\nurl: String\\nimageView: ImageView\\nplaceholder: int",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 8
             },
             {
               "id": "PILM_load",
               "label": "PicassoImageLoaderManager\\n.load(url).into(imageView)",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 9
             },
             {
               "id": "CACHE-Cache-hit",
               "label": "CACHE{\"¿Cache hit?\"}",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 11
             },
             {
               "id": "CACHE",
               "label": "CACHE",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 12
             },
             {
               "id": "OUT2",
               "label": "Bitmap renderizado\\nen ImageView",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 13
             },
             {
               "id": "DOWNLOAD",
               "label": "OkHttpClient\\nHTTP GET bytes",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 15
             },
             {
               "id": "TRANSFORM",
               "label": "Picasso decode\\n+ CircleTransform\\n(si aplica)",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 17
             },
             {
               "id": "ERR2",
               "label": "onError()\\nplaceholder de error",
               "type": "component",
-              "group": "imagemanager — Flujo de datos"
+              "group": "imagemanager — Flujo de datos",
+              "groupId": "imagemanager_data",
+              "groupPath": [],
+              "order": 21
             }
           ],
           "edges": [

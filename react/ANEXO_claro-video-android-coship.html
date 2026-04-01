@@ -1939,184 +1939,27 @@ Documentaci&#243;n fundamental del proyecto generada autom&#225;ticamente.
 
 **Compliance Score:** 100% ✅</pre>
             </details>
-            <details class="doc-item">
+            <details class="doc-item architecture-doc-item">
               <summary><span class="doc-name">ARCHITECTURE_DIAGRAMS.md</span><span class="doc-path">.github\docs\diagrams\ARCHITECTURE_DIAGRAMS.md</span></summary>
-              <pre class="doc-pre">&gt; &#128204; **Evidencia:** Este documento fue generado a partir de evidencia directa del repositorio. Ningun dato ha sido asumido sin verificacion.
-
-# &#127912; Diagramas Arquitect&#243;nicos - Claro Video Android (Coship)
-
-## &#127963;️ Diagrama de Componentes
-
-&lt;img src=&quot;img/DiagramaDeComponentes.svg&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart LR
-  subgraph UI[UI Layer]
-    A[Activities]
-    F[Fragments]
-    VM[ViewModels]
-  end
-
-  subgraph Domain[Domain Layer]
-    UC[UseCases]
-  end
-
-  subgraph Data[Data Layer]
-    R[Repositories]
-    M[Managers/Tasks Legacy]
-    DS[DataSources]
-  end
-
-  subgraph Infra[Infra]
-    NET[Retrofit/OkHttp]
-    EXT[Firebase/NewRelic]
-  end
-
-  A --&gt; VM
-  F --&gt; VM
-  VM --&gt; UC
-  UC --&gt; R
-  R --&gt; DS
-  VM --&gt; M
-  DS --&gt; NET
-  NET --&gt; EXT
-```
-
-## &#128260; Diagramas de Flujos de Procesos
-### Flujo Principal 1: Flujo Moderno (UI → UseCase → Repository)
-
-&lt;img src=&quot;img/DiagramaDeFlujoDeProcesos1.svg&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-sequenceDiagram
-  participant U as User
-  participant UI as UI
-  participant VM as ViewModel
-  participant UC as UseCase
-  participant R as Repository
-  participant DS as DataSource
-
-  U-&gt;&gt;UI: Acci&#243;n
-  UI-&gt;&gt;VM: Evento
-  VM-&gt;&gt;UC: Ejecutar caso de uso
-  UC-&gt;&gt;R: Solicitud dominio
-  R-&gt;&gt;DS: Request data
-  DS--&gt;&gt;R: Response
-  R--&gt;&gt;VM: Resultado
-  VM--&gt;&gt;UI: Estado actualizado
-```
-
-### Flujo Principal 2: Flujo Legacy (UI → Manager/Task)
-
-&lt;img src=&quot;img/DiagramaDeFlujoDeProcesos2.svg&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-sequenceDiagram
-  participant U as User
-  participant UI as UI
-  participant VM as ViewModel
-  participant L as LegacyManagerTask
-
-  U-&gt;&gt;UI: Acci&#243;n
-  UI-&gt;&gt;VM: Evento
-  VM-&gt;&gt;L: Request manager/task
-  L--&gt;&gt;VM: Resultado
-  VM--&gt;&gt;UI: Estado actualizado
-```
-
-## &#128640; Diagrama de CI/CD Pipeline
-
-&lt;img src=&quot;img/DiagramaDeCICD.svg&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart TD
-  GIT[Push/PR] --&gt; CI[Workflow Build]
-  CI --&gt; B1[:app:assembleCoshipProdQA]
-  CI --&gt; B2[Opciones gradle incl. -x test]
-  B1 --&gt; ART[Artifact Build]
-  B2 --&gt; WARN[Riesgo: tests omitidos en algunos flujos]
-```
-
-## &#128202; Diagrama de Datos
-
-&lt;img src=&quot;img/DiagramaDeDatos.svg&quot; width=&quot;%&quot;/&gt;
-
-```mermaid
-flowchart LR
-  UI2[UI Event] --&gt; VM2[ViewModel]
-  VM2 --&gt; MOD[Modern Path]
-  VM2 --&gt; LEG[Legacy Path]
-  MOD --&gt; UC2[UseCase]
-  UC2 --&gt; REPO[Repository]
-  REPO --&gt; DS2[DataSource/API]
-  LEG --&gt; MGR[Manager/Task]
-  DS2 --&gt; RESP[Response]
-  MGR --&gt; RESP
-  RESP --&gt; VM2
-  VM2 --&gt; UI2
-```
-
-## &#128295; Notas de Implementaci&#243;n
-### Convenciones de Diagramas
-- Se documenta arquitectura h&#237;brida con coexistencia de patrones modernos y legacy.
-- Los diagramas separan expl&#237;citamente rutas modernas y rutas legacy para evitar ambig&#252;edad.
-- Se usa nomenclatura por capa (`UI`, `Domain`, `Data`, `Infra`) para consistencia transversal.
-
-### Herramientas de Visualizaci&#243;n
-- Formato utilizado: Mermaid en Markdown.
-- Render objetivo: visor Markdown compatible con Mermaid en repositorio/editor.
-- ⚠️ Dato no disponible en el repositorio: pipeline automatizado para validaci&#243;n de sintaxis Mermaid en CI.
-
-### Mantenimiento de Diagramas
-- Actualizar diagramas cuando cambie el flujo real en capas cr&#237;ticas (`ViewModel`, `UseCase`, `Repository`, `DataSource`).
-- Sincronizar este documento con cambios de build/pipeline y pr&#225;cticas de pruebas.
-- Mantener trazabilidad hacia outputs de sesi&#243;n en secci&#243;n de fuentes.
-
-## ⚠️ Limitaciones del An&#225;lisis
-**Datos no disponibles en el repositorio:**
-- ⚠️ Dato no disponible en el repositorio: diagrama oficial TO-BE validado por arquitectura.
-- ⚠️ Dato no disponible en el repositorio: mapa detallado de ownership por dominio para anotar owners en diagramas.
-- ⚠️ Dato no disponible en el repositorio: m&#233;tricas productivas de performance para anotar umbrales en diagramas de flujo.
-
-**Recomendaciones para completar an&#225;lisis:**
-- Definir y versionar diagrama TO-BE aprobado por Tech Lead/Arquitectura.
-- Incorporar ownership t&#233;cnico por componente/capa en un artefacto formal.
-- Integrar validaci&#243;n de diagramas Mermaid en CI para detectar errores de render/sintaxis.
-
-## Sources &amp; Evidence (session outputs)
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/42_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/43_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/44_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/45_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/46_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/56_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/58_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/60_output.md`
-- `techdeb-runner/sessions/session_20260223_124222/copilot_outputs/76_output.md`
-
-## ✅ Compliance Check - Fase 1
-**Fecha:** 2026-02-23  
-**Stack:** android  
-**Fase:** diagrams  
-**Prompt ejecutado:** `99K_doc_ARCHITECTURE_DIAGRAMS.md`  
-**Documento:** `ARCHITECTURE_DIAGRAMS.md`
-
-### Validaci&#243;n de Reglas
-| # | Regla | Estado | Detalle | Evidencia |
-|---|---|---|---|---|
-| 1 | `mandatory_phrase` | ✅ Pas&#243; | Frase de evidencia en formato blockquote al inicio | L&#237;nea 1: `&gt; &#128204; **Evidencia:** ...` |
-| 2 | `title_required` | ✅ Pas&#243; | T&#237;tulo en formato requerido para documento de diagramas | `# &#127912; Diagramas Arquitect&#243;nicos - Claro Video Android (Coship)` |
-| 3 | `components_heading_required` | ✅ Pas&#243; | Secci&#243;n de componentes con encabezado normado | `## &#127963;️ Diagrama de Componentes` |
-| 4 | `process_flows_required` | ✅ Pas&#243; | Secci&#243;n de flujos con dos flujos principales documentados | `## &#128260;...`, `### Flujo Principal 1`, `### Flujo Principal 2` |
-| 5 | `cicd_heading_required` | ✅ Pas&#243; | Secci&#243;n CI/CD con encabezado normado | `## &#128640; Diagrama de CI/CD Pipeline` |
-| 6 | `data_diagram_heading_required` | ✅ Pas&#243; | Secci&#243;n de datos con encabezado normado | `## &#128202; Diagrama de Datos` |
-| 7 | `implementation_notes_structure` | ✅ Pas&#243; | Notas de implementaci&#243;n con 3 subsecciones obligatorias | `Convenciones`, `Herramientas`, `Mantenimiento` |
-| 8 | `limitations_structure` | ✅ Pas&#243; | Limitaciones con bloques de datos no disponibles y recomendaciones | Encabezados en `## ⚠️ Limitaciones del An&#225;lisis` |
-| 9 | `evidence_sources_present` | ✅ Pas&#243; | Fuentes de sesi&#243;n incluidas para trazabilidad | `## Sources &amp; Evidence (session outputs)` |
-| 10 | `compliance_last_section` | ✅ Pas&#243; | Compliance ubicado como &#250;ltima secci&#243;n H2 del documento | &#218;ltimo encabezado `## ✅ Compliance Check - Fase 1` |
-
-**Compliance Score:** 100% ✅
-</pre>
+              <div class="vss-detail-body">
+                <p>Este documento se consulta ahora desde una vista interactiva por repositorio, sin exponer el markdown crudo dentro del anexo ejecutivo.</p>
+                <div class="card-grid">
+                  <article class="mini-card">
+                    <h4>Vista interactiva</h4>
+                    <p>Los diagramas del documento original quedan disponibles con navegación individual, zoom nativo y lectura visual por flujo.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Lectura ejecutiva</h4>
+                    <p>La arquitectura se presenta por componentes, procesos, datos y secuencias, conservando el orden del archivo base.</p>
+                  </article>
+                  <article class="mini-card">
+                    <h4>Repositorio actual</h4>
+                    <p><strong>Android Coship</strong> ya tiene su mapa dedicado de arquitectura dentro de FASE 1.</p>
+                  </article>
+                </div>
+                <p class="vss-footnote">La consulta principal de diagramas ya se realiza en el visor interactivo; el contenido documental sigue disponible como respaldo del paquete base.</p>
+                <p><a href="index.html#/fase-1/architecture/claro-video-android-coship">Abrir mapa de arquitectura interactivo</a></p>
+              </div>
             </details>
           </article>
       </section>
