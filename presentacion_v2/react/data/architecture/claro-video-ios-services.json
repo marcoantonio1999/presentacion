@@ -1,0 +1,2881 @@
+{
+  "repo": "claro-video-ios-services",
+  "title": "iOS Services",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-ios-services",
+    "annex": "ANEXO_claro-video-ios-services.html",
+    "vssRoute": "#/fase-1/vss/claro-video-ios-services"
+  },
+  "source": {
+    "docPath": "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 9,
+    "flowchartCount": 7,
+    "sequenceCount": 2,
+    "totalNodes": 185,
+    "totalEdges": 96,
+    "sections": [
+      "️ Diagrama de Componentes",
+      "Diagramas de Flujos de Procesos",
+      "Diagrama de CI/CD Pipeline",
+      "Diagrama de Datos"
+    ]
+  },
+  "diagrams": {
+    "total": 9,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "Módulos SPM y Dependencias",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "CVServices",
+              "label": "📦 CVServices · (80 archivos) · Networking + Managers + QueryBuilder",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "CVModel",
+              "label": "📦 CVModel · (218 archivos) · Modelos + Parsers",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "CVExtension",
+              "label": "📦 CVExtension · (43 archivos) · Extensiones Swift/UIKit",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "CVLocalizable",
+              "label": "📦 CVLocalizable · (6 archivos) · Localización",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "CVCommonViews",
+              "label": "📦 CVCommonViews · (26 archivos) · Vistas SwiftUI",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            }
+          ],
+          "edges": [
+            {
+              "id": "CVServices=>CVExtension=>=>solid",
+              "source": "CVServices",
+              "target": "CVExtension",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVServices=>CVModel=>=>solid",
+              "source": "CVServices",
+              "target": "CVModel",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVServices=>CVCommonViews=>=>solid",
+              "source": "CVServices",
+              "target": "CVCommonViews",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVModel=>CVLocalizable=>=>solid",
+              "source": "CVModel",
+              "target": "CVLocalizable",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVModel=>CVExtension=>=>solid",
+              "source": "CVModel",
+              "target": "CVExtension",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVLocalizable=>CVExtension=>=>solid",
+              "source": "CVLocalizable",
+              "target": "CVExtension",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVCommonViews=>CVExtension=>=>solid",
+              "source": "CVCommonViews",
+              "target": "CVExtension",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVCommonViews=>CVLocalizable=>=>solid",
+              "source": "CVCommonViews",
+              "target": "CVLocalizable",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CVCommonViews=>CVModel=>=>solid",
+              "source": "CVCommonViews",
+              "target": "CVModel",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 5,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Arquitectura de Capas (CVServices interno)",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-App-Consumer",
+              "label": "subgraph \"📱 App Consumer\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "App",
+              "label": "iOS/tvOS App",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "subgraph-CVServices-Module",
+              "label": "subgraph \"🏗️ CVServices Module\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "subgraph-Facade-Layer-CVManagers",
+              "label": "subgraph \"Facade Layer — CVManagers/\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Manager",
+              "label": "ServicesManager · static methods · (19 managers)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "subgraph-Service-Layer-ClaroVideoServices-Service",
+              "label": "subgraph \"Service Layer — ClaroVideoServices/Service/\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Service",
+              "label": "Services · CVServiceProtocol · (22 services)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "subgraph-Request-Layer-ClaroVideoServices-Request",
+              "label": "subgraph \"Request Layer — ClaroVideoServices/Request/\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Request",
+              "label": "Request · RequestProtocol · (20 request files)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "subgraph-Network-Layer-ClaroVideoNetworking",
+              "label": "subgraph \"Network Layer — ClaroVideoNetworking/\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Dispatcher",
+              "label": "NetworkDispatcher · DispatcherProtocol",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "subgraph-Configuration-QueryBuilder",
+              "label": "subgraph \"Configuration — QueryBuilder/\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "QB",
+              "label": "QueryBuilder.shared · Singleton (893 LOC)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "QBDevice",
+              "label": "QBDeviceData",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "QBLocal",
+              "label": "QBLocalData",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "QBUser",
+              "label": "QBUserData",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "QBEndpoints",
+              "label": "QBEndpoints",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "subgraph-External",
+              "label": "subgraph \"🌐 External\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
+            },
+            {
+              "id": "API",
+              "label": "Claro Video REST APIs",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
+            }
+          ],
+          "edges": [
+            {
+              "id": "App=>Manager=>=>solid",
+              "source": "App",
+              "target": "Manager",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Manager=>QB=>=>solid",
+              "source": "Manager",
+              "target": "QB",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>Service=>=>solid",
+              "source": "QB",
+              "target": "Service",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Service=>Request=>=>solid",
+              "source": "Service",
+              "target": "Request",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Service=>Dispatcher=>=>solid",
+              "source": "Service",
+              "target": "Dispatcher",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Dispatcher=>API=>=>solid",
+              "source": "Dispatcher",
+              "target": "API",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBDevice=>=>solid",
+              "source": "QB",
+              "target": "QBDevice",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBLocal=>=>solid",
+              "source": "QB",
+              "target": "QBLocal",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBUser=>=>solid",
+              "source": "QB",
+              "target": "QBUser",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBEndpoints=>=>solid",
+              "source": "QB",
+              "target": "QBEndpoints",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 8
+        },
+        "metrics": {
+          "nodeCount": 19,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 8
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Soporte Multi-Plataforma",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-CVServices-SDK",
+              "label": "subgraph \"📦 CVServices SDK\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "subgraph-Shared-Code-sin-if-os",
+              "label": "subgraph \"Shared Code — sin #if os\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Core",
+              "label": "CVServices · CVModel · CVExtension · CVLocalizable",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "subgraph-if-os-iOS",
+              "label": "subgraph \"#if os(iOS)\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "iOSViews",
+              "label": "CVCommonViews · Constants iOS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "iOSExt",
+              "label": "UIKit Extensions · (IS_IPAD checks)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "subgraph-if-os-tvOS",
+              "label": "subgraph \"#if os(tvOS)\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "tvOSViews",
+              "label": "CVCommonViews · Constants tvOS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "tvOSParams",
+              "label": "QueryBuilder · device_model: aapl · device_manufacturer: aapl · device_category: tablet",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            }
+          ],
+          "edges": [
+            {
+              "id": "Core=>iOSViews=>=>solid",
+              "source": "Core",
+              "target": "iOSViews",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Core=>tvOSViews=>=>solid",
+              "source": "Core",
+              "target": "tvOSViews",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Core=>iOSExt=>=>solid",
+              "source": "Core",
+              "target": "iOSExt",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Core=>tvOSParams=>=>solid",
+              "source": "Core",
+              "target": "tvOSParams",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 4
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 4
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Flujo Principal 1: Request de Servicio (Caso exitoso y error)",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "App",
+              "label": "📱 App"
+            },
+            {
+              "id": "Manager",
+              "label": "ServicesManager"
+            },
+            {
+              "id": "QB",
+              "label": "QueryBuilder.shared"
+            },
+            {
+              "id": "Service",
+              "label": "Services"
+            },
+            {
+              "id": "Request",
+              "label": "Request"
+            },
+            {
+              "id": "Dispatcher",
+              "label": "NetworkDispatcher"
+            },
+            {
+              "id": "API",
+              "label": "🌐 Claro Video API"
+            },
+            {
+              "id": "Parser",
+              "label": "Model Parser"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "Manager-",
+              "label": "Manager-"
+            },
+            {
+              "id": "QB--",
+              "label": "QB--"
+            },
+            {
+              "id": "Service-",
+              "label": "Service-"
+            },
+            {
+              "id": "Dispatcher-",
+              "label": "Dispatcher-"
+            },
+            {
+              "id": "Request--",
+              "label": "Request--"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "Dispatcher--",
+              "label": "Dispatcher--"
+            },
+            {
+              "id": "Service--",
+              "label": "Service--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-App",
+              "label": "📱 App",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Manager",
+              "label": "ServicesManager",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-QB",
+              "label": "QueryBuilder.shared",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-Service",
+              "label": "Services",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Request",
+              "label": "Request",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-Dispatcher",
+              "label": "NetworkDispatcher",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "🌐 Claro Video API",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-Parser",
+              "label": "Model Parser",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-Manager-",
+              "label": "Manager-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-QB--",
+              "label": "QB--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-Service-",
+              "label": "Service-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-Dispatcher-",
+              "label": "Dispatcher-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Request--",
+              "label": "Request--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-Dispatcher--",
+              "label": "Dispatcher--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-Service--",
+              "label": "Service--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "getStartHeaderInfo(completion:)",
+              "subtitle": "App- → ServicesManager",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "getService(for: .startHeaderInfo)",
+              "subtitle": "Manager- → QueryBuilder.shared",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "InitialServices (configured with Environment + Params)",
+              "subtitle": "QB-- → ServicesManager",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1540,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "getStartHeaderInfo(completion:)",
+              "subtitle": "Manager- → Services",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1680,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "fetch(request:, baseParams:)",
+              "subtitle": "Service- → NetworkDispatcher",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2240,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "getUrlParameters() / getBodyParameters()",
+              "subtitle": "Dispatcher- → Request",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2240,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "ServiceParameters",
+              "subtitle": "Request-- → NetworkDispatcher",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2520,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "URLSession.dataTask(with: urlRequest)",
+              "subtitle": "Dispatcher- → 🌐 Claro Video API",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2520,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "ALT",
+              "subtitle": "✅ Caso exitoso (HTTP 200)",
+              "type": "control",
+              "group": "control",
+              "stat": "9",
+              "x": 2240,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "Data + HTTPURLResponse (200)",
+              "subtitle": "API-- → NetworkDispatcher",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2660,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "Result .success",
+              "subtitle": "Dispatcher-- → Services",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2520,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "parseObject(dictionary:) o JSONDecoder.decode()",
+              "subtitle": "Service- → Model Parser",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 2520,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "ALT",
+              "subtitle": "Parsing exitoso",
+              "type": "control",
+              "group": "control",
+              "stat": "13",
+              "x": 2240,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "PAR",
+              "subtitle": "ser-->>Service: Result .success",
+              "type": "control",
+              "group": "control",
+              "stat": "14",
+              "x": 2240,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "completion(.success(model))",
+              "subtitle": "Service-- → 📱 App",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 2240,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "ELSE",
+              "subtitle": "⚠️ Error de parsing",
+              "type": "control",
+              "group": "control",
+              "stat": "16",
+              "x": 2240,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "PAR",
+              "subtitle": "ser-->>Service: Result .failure(.parseError)",
+              "type": "control",
+              "group": "control",
+              "stat": "17",
+              "x": 2240,
+              "y": 2664
+            },
+            {
+              "id": "step-18",
+              "label": "completion(.failure(.parseError))",
+              "subtitle": "Service-- → 📱 App",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "18",
+              "x": 2240,
+              "y": 2820
+            },
+            {
+              "id": "step-19",
+              "label": "ELSE",
+              "subtitle": "❌ Error de red",
+              "type": "control",
+              "group": "control",
+              "stat": "19",
+              "x": 2240,
+              "y": 2976
+            },
+            {
+              "id": "step-20",
+              "label": "Error / nil Data",
+              "subtitle": "API-- → NetworkDispatcher",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "20",
+              "x": 2660,
+              "y": 3132
+            },
+            {
+              "id": "step-21",
+              "label": "Result .failure(.networkError)",
+              "subtitle": "Dispatcher-- → Services",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "21",
+              "x": 2520,
+              "y": 3288
+            },
+            {
+              "id": "step-22",
+              "label": "completion(.failure(.networkError))",
+              "subtitle": "Service-- → 📱 App",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "22",
+              "x": 2240,
+              "y": 3444
+            },
+            {
+              "id": "step-23",
+              "label": "ELSE",
+              "subtitle": "🔑 Token expirado (HTTP 401/403)",
+              "type": "control",
+              "group": "control",
+              "stat": "23",
+              "x": 2240,
+              "y": 3600
+            },
+            {
+              "id": "step-24",
+              "label": "HTTPURLResponse (401/403)",
+              "subtitle": "API-- → NetworkDispatcher",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "24",
+              "x": 2660,
+              "y": 3756
+            },
+            {
+              "id": "step-25",
+              "label": "isTokenExpired.send(true)",
+              "subtitle": "Dispatcher- → NetworkDispatcher",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "25",
+              "x": 2380,
+              "y": 3912
+            },
+            {
+              "id": "step-26",
+              "label": "Nota",
+              "subtitle": "Dispatcher · Combine PassthroughSubject notifica a la app",
+              "type": "note",
+              "group": "note",
+              "stat": "26",
+              "x": 2240,
+              "y": 4068
+            },
+            {
+              "id": "step-27",
+              "label": "Result .failure(.tokenExpired)",
+              "subtitle": "Dispatcher-- → Services",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "27",
+              "x": 2520,
+              "y": 4224
+            },
+            {
+              "id": "step-28",
+              "label": "completion(.failure(.tokenExpired))",
+              "subtitle": "Service-- → 📱 App",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "28",
+              "x": 2240,
+              "y": 4380
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-17=>step-18",
+              "source": "step-17",
+              "target": "step-18",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-18=>step-19",
+              "source": "step-18",
+              "target": "step-19",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-19=>step-20",
+              "source": "step-19",
+              "target": "step-20",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-20=>step-21",
+              "source": "step-20",
+              "target": "step-21",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-21=>step-22",
+              "source": "step-21",
+              "target": "step-22",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-22=>step-23",
+              "source": "step-22",
+              "target": "step-23",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-23=>step-24",
+              "source": "step-23",
+              "target": "step-24",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-24=>step-25",
+              "source": "step-24",
+              "target": "step-25",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-25=>step-26",
+              "source": "step-25",
+              "target": "step-26",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-26=>step-27",
+              "source": "step-26",
+              "target": "step-27",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-27=>step-28",
+              "source": "step-27",
+              "target": "step-28",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 17,
+          "participantCount": 17
+        },
+        "metrics": {
+          "nodeCount": 45,
+          "edgeCount": 27,
+          "groupCount": 17,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Flujo Principal 2: Configuración de QueryBuilder e Inicialización",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "App",
+              "label": "📱 App (AppDelegate/SceneDelegate)"
+            },
+            {
+              "id": "QB",
+              "label": "QueryBuilder.shared"
+            },
+            {
+              "id": "Device",
+              "label": "QBDeviceData"
+            },
+            {
+              "id": "Local",
+              "label": "QBLocalData"
+            },
+            {
+              "id": "User",
+              "label": "QBUserData"
+            },
+            {
+              "id": "Endpoints",
+              "label": "QBEndpoints"
+            },
+            {
+              "id": "Manager",
+              "label": "ServicesManager"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "Manager-",
+              "label": "Manager-"
+            },
+            {
+              "id": "QB-",
+              "label": "QB-"
+            },
+            {
+              "id": "QB--",
+              "label": "QB--"
+            },
+            {
+              "id": "Manager--",
+              "label": "Manager--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-App",
+              "label": "📱 App (AppDelegate/SceneDelegate)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-QB",
+              "label": "QueryBuilder.shared",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-Device",
+              "label": "QBDeviceData",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-Local",
+              "label": "QBLocalData",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-User",
+              "label": "QBUserData",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-Endpoints",
+              "label": "QBEndpoints",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Manager",
+              "label": "ServicesManager",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Manager-",
+              "label": "Manager-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-QB-",
+              "label": "QB-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-QB--",
+              "label": "QB--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-Manager--",
+              "label": "Manager--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Nota",
+              "subtitle": "App,Endpoints · FASE 1: Configuración inicial (antes de cualquier request)",
+              "type": "note",
+              "group": "note",
+              "stat": "1",
+              "x": 1540,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "QueryBuilder.shared (acceso al singleton)",
+              "subtitle": "App- → QueryBuilder.shared",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1120,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "deviceData.manufacturer = \"Apple\"",
+              "subtitle": "App- → QBDeviceData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1260,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "deviceData.model = UIDevice.current.model",
+              "subtitle": "App- → QBDeviceData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1260,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "deviceData.osVersion = UIDevice.current.systemVersion",
+              "subtitle": "App- → QBDeviceData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1260,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "localData.region = \"mexico\"",
+              "subtitle": "App- → QBLocalData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1400,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "localData.hks = { return currentHKS }",
+              "subtitle": "App- → QBLocalData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1400,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "localData.sessionKey = { return currentSessionKey }",
+              "subtitle": "App- → QBLocalData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 1400,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "userData.user = { return currentUser }",
+              "subtitle": "App- → QBUserData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 1540,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "userData.userToken = { return currentToken }",
+              "subtitle": "App- → QBUserData",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1540,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "endpoints.musicBaseUrl = \"https://...\"",
+              "subtitle": "App- → QBEndpoints",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 1680,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "endpoints.launcherBaseUrl = \"https://...\"",
+              "subtitle": "App- → QBEndpoints",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 1680,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "Nota",
+              "subtitle": "App,Endpoints · FASE 2: Uso de servicios (post-configuración)",
+              "type": "note",
+              "group": "note",
+              "stat": "13",
+              "x": 1540,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "InitialServicesManager.getStartHeaderInfo(completion:)",
+              "subtitle": "App- → ServicesManager",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 1820,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "getService(for: .startHeaderInfo)",
+              "subtitle": "Manager- → QueryBuilder.shared",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 1260,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "getDefaultParams(for: .startHeaderInfo)",
+              "subtitle": "QB- → QueryBuilder.shared",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 1400,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "Nota",
+              "subtitle": "QB · Construye Environment con device, local, user, endpoints",
+              "type": "note",
+              "group": "note",
+              "stat": "17",
+              "x": 1540,
+              "y": 2664
+            },
+            {
+              "id": "step-18",
+              "label": "InitialServices (configurado con Environment + ServiceParameters)",
+              "subtitle": "QB-- → ServicesManager",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "18",
+              "x": 2240,
+              "y": 2820
+            },
+            {
+              "id": "step-19",
+              "label": "Servicio listo para ejecutar request",
+              "subtitle": "Manager-- → 📱 App (AppDelegate/SceneDelegate)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "19",
+              "x": 1540,
+              "y": 2976
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-17=>step-18",
+              "source": "step-17",
+              "target": "step-18",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-18=>step-19",
+              "source": "step-18",
+              "target": "step-19",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 12,
+          "participantCount": 12
+        },
+        "metrics": {
+          "nodeCount": 31,
+          "edgeCount": 18,
+          "groupCount": 12,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "architecture-6",
+        "order": 6,
+        "title": "Diagrama de CI/CD Pipeline",
+        "kind": "flowchart",
+        "section": "Diagrama de CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-Developer-Local",
+              "label": "subgraph \"🔧 Developer Local\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "Dev",
+              "label": "Developer",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Build",
+              "label": "swift build",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "Test",
+              "label": "swift test",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Build-Test",
+              "label": "Build --> Test",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "subgraph-Source-Control",
+              "label": "subgraph \"📦 Source Control\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "Repo",
+              "label": "Bitbucket / GitHub · claro-video-ios-services",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "subgraph-Azure-DevOps-Pipeline",
+              "label": "subgraph \"🔄 Azure DevOps Pipeline\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "Trigger",
+              "label": "Pipeline Trigger · (ci/pipeline-analysis.yml)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "subgraph-Stage-Analysis",
+              "label": "subgraph \"Stage: Analysis\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Checkout",
+              "label": "Checkout Code",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "Resources",
+              "label": "Resource: cv-auto-devops",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "Variables",
+              "label": "Load Variables · (ci/variables/variables-analysis.yml)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "SonarScan",
+              "label": "SonarCloud Scan · org: clarovideo · key: cv-ios-services",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "subgraph-SonarCloud",
+              "label": "subgraph \"📊 SonarCloud\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
+            },
+            {
+              "id": "Quality",
+              "label": "Quality Gate",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
+            },
+            {
+              "id": "Report",
+              "label": "Analysis Report · - Code Smells · - Bugs · - Vulnerabilities · - Duplications",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 25
+            },
+            {
+              "id": "subgraph-No-detectado-en-repo",
+              "label": "subgraph \"⚠️ No detectado en repo\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
+            },
+            {
+              "id": "Deploy",
+              "label": "Deployment / Release · ⚠️ Dato no disponible",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
+            },
+            {
+              "id": "Rollback",
+              "label": "Rollback Strategy · ⚠️ Dato no disponible",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 36
+            }
+          ],
+          "edges": [
+            {
+              "id": "Dev=>Build-Test=>=>solid",
+              "source": "Dev",
+              "target": "Build-Test",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Trigger=>Checkout=>=>solid",
+              "source": "Trigger",
+              "target": "Checkout",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Checkout=>Resources=>=>solid",
+              "source": "Checkout",
+              "target": "Resources",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Resources=>Variables=>=>solid",
+              "source": "Resources",
+              "target": "Variables",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Variables=>SonarScan=>=>solid",
+              "source": "Variables",
+              "target": "SonarScan",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SonarScan=>Quality=>=>solid",
+              "source": "SonarScan",
+              "target": "Quality",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Quality=>Report=>=>solid",
+              "source": "Quality",
+              "target": "Report",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Test=>Repo=>=>solid",
+              "source": "Test",
+              "target": "Repo",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Repo=>Trigger=>=>solid",
+              "source": "Repo",
+              "target": "Trigger",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 9
+        },
+        "metrics": {
+          "nodeCount": 20,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "architecture-7",
+        "order": 7,
+        "title": "Flujo de datos entre componentes",
+        "kind": "flowchart",
+        "section": "Diagrama de Datos",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-App",
+              "label": "subgraph \"📱 App\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "AppConfig",
+              "label": "Configuración · (tokens, region, device)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "AppUI",
+              "label": "UI Layer · (SwiftUI / UIKit)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "subgraph-CVServices",
+              "label": "subgraph \"🏗️ CVServices\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "QB",
+              "label": "QueryBuilder.shared",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "subgraph-Datos-de-configuraci-n",
+              "label": "subgraph \"Datos de configuración\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "QBDevice",
+              "label": "QBDeviceData · manufacturer, model, · category, osVersion",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "QBLocal",
+              "label": "QBLocalData · hks(), region, · sessionKey(), appVersion",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "QBUser",
+              "label": "QBUserData · user(), userToken(), · cmAccessToken()",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "QBEndpoints",
+              "label": "QBEndpoints · musicBaseUrl, · launcherBaseUrl, pushBaseUrl",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Params",
+              "label": "ServiceParameters · (Dictionary [String: String])",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Env",
+              "label": "Environment · (baseUrl, httpProtocol)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "NetReq",
+              "label": "URLRequest · (URL + headers + body)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "subgraph-CVModel",
+              "label": "subgraph \"📦 CVModel\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "subgraph-Parsing-Moderno",
+              "label": "subgraph \"Parsing Moderno\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "JSONData",
+              "label": "JSON Data · (from API response)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "Decoder",
+              "label": "JSONDecoder",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "CodableModel",
+              "label": "Codable Model · (struct/class)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
+            },
+            {
+              "id": "subgraph-Parsing-Legacy",
+              "label": "subgraph \"Parsing Legacy\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
+            },
+            {
+              "id": "DictData",
+              "label": "[String: AnyObject] · (from JSONSerialization)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 19
+            },
+            {
+              "id": "ManualParse",
+              "label": "parseObject(dictionary:)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
+            },
+            {
+              "id": "LegacyModel",
+              "label": "Legacy Model",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 21
+            },
+            {
+              "id": "subgraph-API",
+              "label": "subgraph \"🌐 API\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
+            },
+            {
+              "id": "Request",
+              "label": "HTTP Request · GET/POST",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 23
+            },
+            {
+              "id": "Response",
+              "label": "HTTP Response · JSON payload",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
+            },
+            {
+              "id": "Decoder-CodableModel",
+              "label": "Decoder --> CodableModel",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 50
+            },
+            {
+              "id": "ManualParse-LegacyModel",
+              "label": "ManualParse --> LegacyModel",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 52
+            }
+          ],
+          "edges": [
+            {
+              "id": "AppConfig=>QB=>=>solid",
+              "source": "AppConfig",
+              "target": "QB",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBDevice=>=>solid",
+              "source": "QB",
+              "target": "QBDevice",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBLocal=>=>solid",
+              "source": "QB",
+              "target": "QBLocal",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBUser=>=>solid",
+              "source": "QB",
+              "target": "QBUser",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>QBEndpoints=>=>solid",
+              "source": "QB",
+              "target": "QBEndpoints",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>Params=>=>solid",
+              "source": "QB",
+              "target": "Params",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "QB=>Env=>=>solid",
+              "source": "QB",
+              "target": "Env",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Params=>NetReq=>=>solid",
+              "source": "Params",
+              "target": "NetReq",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Env=>NetReq=>=>solid",
+              "source": "Env",
+              "target": "NetReq",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "NetReq=>Request=>=>solid",
+              "source": "NetReq",
+              "target": "Request",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Response=>JSONData=>=>solid",
+              "source": "Response",
+              "target": "JSONData",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Response=>DictData=>=>solid",
+              "source": "Response",
+              "target": "DictData",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "JSONData=>Decoder-CodableModel=>=>solid",
+              "source": "JSONData",
+              "target": "Decoder-CodableModel",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DictData=>ManualParse-LegacyModel=>=>solid",
+              "source": "DictData",
+              "target": "ManualParse-LegacyModel",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CodableModel=>AppUI=>=>solid",
+              "source": "CodableModel",
+              "target": "AppUI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LegacyModel=>AppUI=>=>solid",
+              "source": "LegacyModel",
+              "target": "AppUI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 9
+        },
+        "metrics": {
+          "nodeCount": 27,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "architecture-8",
+        "order": 8,
+        "title": "Estructura de CVModel — Dominios de Negocio",
+        "kind": "flowchart",
+        "section": "Diagrama de Datos",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-CVModel-218-archivos",
+              "label": "subgraph \"📦 CVModel (218 archivos)\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "subgraph-Dominios-Principales",
+              "label": "subgraph \"Dominios Principales\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Initial",
+              "label": "🚀 Initial · Launcher, StartHeaderInfo, · Asset, Metadata, Navigation",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "EPG",
+              "label": "📺 EPG · EPGChannel, EPGMenu, · EPGProgram",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Player",
+              "label": "▶️ PlayerMedia · Quality, UserMedia, · Tracklist, AudioSubtitle",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "User",
+              "label": "👤 User · Profiles, Authentication",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Content",
+              "label": "📋 Content · CVGroup, Search, · Favorited, Reminder",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "subgraph-Dominios-Secundarios",
+              "label": "subgraph \"Dominios Secundarios\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Music",
+              "label": "🎵 Music · MusicItem, MusicMedia, · MusicMetadata",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "Payment",
+              "label": "💳 Payway · PlanOffer, Campaign",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Recording",
+              "label": "📹 Recording · NPVR, SeriesRecording",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Soccer",
+              "label": "⚽ Soccer",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "CMS",
+              "label": "📝 CMS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "subgraph-C-digo-Legacy",
+              "label": "subgraph \"⚠️ Código Legacy\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "OldModels",
+              "label": "OldModels/ · OldSearch/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "subgraph-Infraestructura",
+              "label": "subgraph \"Infraestructura\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "Common",
+              "label": "Common · ErrorCodes, Network",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "Parser",
+              "label": "Parser/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
+            }
+          ],
+          "edges": [],
+          "isolatedCount": 18
+        },
+        "metrics": {
+          "nodeCount": 18,
+          "edgeCount": 0,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "architecture-9",
+        "order": 9,
+        "title": "Patrones de Parsing (Coexistencia)",
+        "kind": "flowchart",
+        "section": "Diagrama de Datos",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-ios-services\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "subgraph-Estado-Actual",
+              "label": "subgraph \"📸 Estado Actual\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "subgraph-Moderno-Codable-60-archivos",
+              "label": "subgraph \"✅ Moderno — Codable (60 archivos)\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "CodableModel",
+              "label": "struct Model: Codable",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "JSONDecoder",
+              "label": "JSONDecoder()",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "subgraph-Legacy-Manual-28-archivos",
+              "label": "subgraph \"⚠️ Legacy — Manual (28 archivos)\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "ManualModel",
+              "label": "Model + Parceable extension",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "ManualParse",
+              "label": "parseObject(dictionary:) · [String: AnyObject]",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "ForceUnwrap",
+              "label": "as! [String: AnyObject] · ⚠️ 14 force unwraps",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "subgraph-Estado-Objetivo",
+              "label": "subgraph \"🎯 Estado Objetivo\"",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "AllCodable",
+              "label": "Todos los modelos: Codable/Decodable",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "SafeParsing",
+              "label": "Safe parsing sin force unwraps",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
+            }
+          ],
+          "edges": [
+            {
+              "id": "CodableModel=>JSONDecoder=>=>solid",
+              "source": "CodableModel",
+              "target": "JSONDecoder",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ManualModel=>ManualParse=>=>solid",
+              "source": "ManualModel",
+              "target": "ManualParse",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ManualParse=>ForceUnwrap=>=>solid",
+              "source": "ManualParse",
+              "target": "ForceUnwrap",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 6
+        },
+        "metrics": {
+          "nodeCount": 11,
+          "edgeCount": 3,
+          "groupCount": 0,
+          "isolatedCount": 6
+        }
+      }
+    ]
+  }
+}

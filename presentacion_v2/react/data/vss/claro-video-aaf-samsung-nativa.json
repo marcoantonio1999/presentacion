@@ -1,0 +1,5109 @@
+{
+  "repo": "claro-video-aaf-samsung-nativa",
+  "title": "AAF Samsung Nativa",
+  "sourceLabel": "analysis",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-aaf-samsung-nativa",
+    "annex": "ANEXO_claro-video-aaf-samsung-nativa.html",
+    "legacyViewer": "ANEXO_claro-video-aaf-samsung-nativa-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-aaf-samsung-nativa.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-samsung-nativa\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-samsung-nativa\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-samsung-nativa\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-samsung-nativa\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_onedrive_20260312_extract_v2\\claro-video-aaf-samsung-nativa\\analysis\\diagrama_global_claro-video-aaf-samsung-nativa.mmd"
+  },
+  "summary": {
+    "totalNodes": 196,
+    "totalEdges": 87,
+    "rawEdges": 176,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "MUSIC",
+      "RECORDED",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "TIMESHIFT",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "consulta datos de clientes en sistemas AMX/Telcel",
+      "APM",
+      "1. API ConsultarDatosClientes",
+      "tricas actuales",
+      "App/index.jsx",
+      "src/",
+      "dashboard APM",
+      "valor actual",
+      "src/components/GridNew/",
+      "src/components/CardNew/",
+      "Superhighlight",
+      "Card",
+      "GridNew",
+      "CardNew",
+      "Home",
+      "Grid",
+      "SongList",
+      "Radios",
+      "b",
+      "src/components/Radios/",
+      "src/components/SongList/",
+      "solicita lista",
+      "action creators para guardar y recuperar seenlast",
+      "notificaci",
+      "src/AAFPlayer/",
+      "reproduce stream grabado",
+      "1. API Seenlast",
+      "2. src/actions/resume.js",
+      "Evidencia",
+      "opciones m",
+      "2. GET /services/payway/multipurchasebuttoninfo",
+      "confirmaci",
+      "BuyConfirm",
+      "3. POST /services/payway/buyconfirm",
+      "src/components/PlanSelector/",
+      "informaci",
+      "1. GET /services/payway/purchasebuttoninfo",
+      "informacion no encontrada en MCP Server",
+      "control de buffer",
+      "Actualizar versi",
+      "Obtiene versi",
+      "evento PAUSE detectado",
+      "4. POST /services/payway/buyconfirm"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 3,
+      "edgeCount": 0,
+      "evidenceCount": 5,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "src/containers/Profile/",
+        "src/components/Profile/",
+        "src/profile/"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 45,
+      "edgeCount": 20,
+      "evidenceCount": 310,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 45
+        }
+      ],
+      "sampleNodes": [
+        "Frecuencia",
+        "Estado",
+        "Evidencia primaria",
+        "informacion no encontrada en el repositorio",
+        "Canales"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 3,
+      "edgeCount": 0,
+      "evidenceCount": 3,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "Ribbon",
+        "RibbonNew",
+        "src/components/RibbonNew/"
+      ]
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 8,
+      "edgeCount": 4,
+      "evidenceCount": 14,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 8
+        }
+      ],
+      "sampleNodes": [
+        "src/containers/Epg/",
+        "src/containers/Tv/",
+        "GET /v1/epgversion",
+        "POST /v1/epgversion",
+        "2. API v1_epgversion"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 7,
+      "edgeCount": 0,
+      "evidenceCount": 7,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 7
+        }
+      ],
+      "sampleNodes": [
+        "src/containers/Music/",
+        "src/components/Playlist/",
+        "Playlist",
+        "Playlists",
+        "MusicGrid"
+      ]
+    },
+    {
+      "id": "RECORDED",
+      "label": "Recorded DVR",
+      "short": "RECORDED",
+      "summary": "Grabaciones, reminder flow y NPVR legado.",
+      "nodeCount": 5,
+      "edgeCount": 3,
+      "evidenceCount": 6,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 5
+        }
+      ],
+      "sampleNodes": [
+        "<informacion no encontrada en el repositorio: container de Grabaciones -> verificar src/containers/Recordings/ o src/containers/MyContent/>",
+        "src/AAF/Npvr/",
+        "historial de contenido visto con puntos de reproducci",
+        "src/utils/RemindersNotifications.js",
+        "<informacion no encontrada en el repositorio: UI específica de Timeshift/NPVR -> inspeccionar src/components/>"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 31,
+      "edgeCount": 16,
+      "evidenceCount": 76,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 29
+        },
+        {
+          "type": "contract_api",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "IaC",
+        "equipo HITSS",
+        "Jira/Confluence",
+        "Technical Lead",
+        "Product Owner"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 4,
+      "edgeCount": 0,
+      "evidenceCount": 6,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 4
+        }
+      ],
+      "sampleNodes": [
+        "src/payments/PlanSelector/",
+        "src/components/Payment/",
+        "src/payments/HubGate/",
+        "src/payments/Checkout/"
+      ]
+    },
+    {
+      "id": "TIMESHIFT",
+      "label": "Timeshift",
+      "short": "TIMESHIFT",
+      "summary": "Buffer, replay y grabación NPVR programada.",
+      "nodeCount": 2,
+      "edgeCount": 3,
+      "evidenceCount": 6,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "Verificar SwaggerHub directo o src/AAF/Timeshift/ para URLs hardcodeadas",
+        "src/AAF/Timeshift/"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 45,
+      "edgeCount": 42,
+      "evidenceCount": 195,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 45
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "carga datos del perfil del usuario desde el backend",
+        "carga dispositivos vinculados",
+        "POST /services/user/v1/link-devices",
+        "PRD/BRF"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 43,
+      "edgeCount": 20,
+      "evidenceCount": 58,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 42
+        },
+        {
+          "type": "client",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "consulta datos de clientes en sistemas AMX/Telcel",
+        "APM",
+        "1. API ConsultarDatosClientes",
+        "tricas actuales",
+        "App/index.jsx"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-1",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 101,
+      "files": [
+        "evidencia_codigo.txt",
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "journeys.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "contracts.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "root",
+        "1. Metadata & Governance",
+        "KPIs relevantes",
+        "4.1 Sequence — Editar Perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-2",
+      "name": "carga datos del perfil del usuario desde el backend",
+      "label": "carga datos del perfil del usuario desde el backend",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "root"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-3",
+      "name": "carga dispositivos vinculados",
+      "label": "carga dispositivos vinculados",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "root"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-4",
+      "name": "POST /services/user/v1/link-devices",
+      "label": "POST /services/user/v1/link-devices",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Vincular Dispositivo"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-5",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 33,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "journeys.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-6",
+      "name": "PRD/BRF",
+      "label": "PRD/BRF",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-7",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 32,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-8",
+      "name": "backend metrics",
+      "label": "backend metrics",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-9",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 32,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-10",
+      "name": "consulta datos de clientes en sistemas AMX/Telcel",
+      "label": "consulta datos de clientes en sistemas AMX/Telcel",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-11",
+      "name": "APM",
+      "label": "APM",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio ACNTMGMT",
+        "KPIs del Dominio AUTH",
+        "KPIs del Dominio CARROUSEL",
+        "KPIs del Dominio LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-12",
+      "name": "src/containers/Profile/",
+      "label": "src/containers/Profile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-13",
+      "name": "IaC",
+      "label": "IaC",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-14",
+      "name": "informacion no encontrada en el repositorio",
+      "label": "informacion no encontrada en el repositorio",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio ACNTMGMT",
+        "KPIs del Dominio CARROUSEL",
+        "KPIs del Dominio LIVESTREAMING",
+        "KPIs del Dominio MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-15",
+      "name": "src/components/Profile/",
+      "label": "src/components/Profile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Components",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-16",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 35,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "journeys.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-17",
+      "name": "equipo HITSS",
+      "label": "equipo HITSS",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-18",
+      "name": "src/profile/",
+      "label": "src/profile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "journeys.md"
+      ],
+      "sections": [
+        "5.1 UI Components",
+        "Journey Maps — Dominio ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-19",
+      "name": "guarda cambios de perfil",
+      "label": "guarda cambios de perfil",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "sections": [
+        "root"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-20",
+      "name": "1. API ConsultarDatosClientes",
+      "label": "1. API ConsultarDatosClientes",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-21",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 35,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "journeys.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-22",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 35,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "journeys.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-23",
+      "name": "GET /services/user/profile",
+      "label": "GET /services/user/profile",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Editar Perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-24",
+      "name": "POST /services/user/wsgu/modify",
+      "label": "POST /services/user/wsgu/modify",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Editar Perfil"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-25",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 33,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "journeys.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y Editar Perfil de Usuario",
+        "3.2 Journey: Gestión de Dispositivos Vinculados",
+        "3.3 Journey: Hub de Cuenta",
+        "3.4 Journey: Consulta de Datos de Operadora (AMX)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-26",
+      "name": "Jira/Confluence",
+      "label": "Jira/Confluence",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-27",
+      "name": "Kubernetes/Cloud",
+      "label": "Kubernetes/Cloud",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-28",
+      "name": "Technical Lead",
+      "label": "Technical Lead",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-29",
+      "name": "Product Owner",
+      "label": "Product Owner",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-30",
+      "name": "analytics",
+      "label": "analytics",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 17,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "metricas.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes",
+        "KPIs del Dominio RECORDED",
+        "KPIs del Dominio SUBSCRIPTION",
+        "KPIs del Dominio TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-31",
+      "name": "tricas actuales",
+      "label": "tricas actuales",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-32",
+      "name": "Auth/",
+      "label": "Auth/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Containers / Componentes UI Auth"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-33",
+      "name": "App/index.jsx",
+      "label": "App/index.jsx",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Containers / Componentes UI Auth"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-34",
+      "name": "src/",
+      "label": "src/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes — Dominio AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-35",
+      "name": "src/authentication/AuthDevice/",
+      "label": "src/authentication/AuthDevice/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-36",
+      "name": "src/authentication/Register/",
+      "label": "src/authentication/Register/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-37",
+      "name": "README del repositorio",
+      "label": "README del repositorio",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-38",
+      "name": "n",
+      "label": "n",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-39",
+      "name": "a de infra",
+      "label": "a de infra",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-40",
+      "name": "NewRelic/APM",
+      "label": "NewRelic/APM",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-41",
+      "name": "RUM/Analytics dashboard",
+      "label": "RUM/Analytics dashboard",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-42",
+      "name": "200 OK",
+      "label": "200 OK",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-43",
+      "name": "src/authentication/PasswordReminder/",
+      "label": "src/authentication/PasswordReminder/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-44",
+      "name": "dashboard APM",
+      "label": "dashboard APM",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-45",
+      "name": "ticas",
+      "label": "ticas",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-46",
+      "name": "Kubernetes/Cloud config",
+      "label": "Kubernetes/Cloud config",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-47",
+      "name": "nuevo token",
+      "label": "nuevo token",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Refresh Token Automático"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-48",
+      "name": "API Request",
+      "label": "API Request",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Refresh Token Automático"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-49",
+      "name": "Jira/Confluence/Atlassian",
+      "label": "Jira/Confluence/Atlassian",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-50",
+      "name": "APM/NewRelic",
+      "label": "APM/NewRelic",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-51",
+      "name": "App.jsx Router",
+      "label": "App.jsx Router",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-52",
+      "name": "tricas de retry",
+      "label": "tricas de retry",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-53",
+      "name": "IaaS deployment",
+      "label": "IaaS deployment",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-54",
+      "name": "Backend SSO",
+      "label": "Backend SSO",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Refresh Token Automático"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-55",
+      "name": "diagramas de infraestructura/IaC",
+      "label": "diagramas de infraestructura/IaC",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-56",
+      "name": "401 Unauthorized",
+      "label": "401 Unauthorized",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Refresh Token Automático"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-57",
+      "name": "src/authentication/",
+      "label": "src/authentication/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey Maps — Dominio AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-58",
+      "name": "redirect /home",
+      "label": "redirect /home",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-59",
+      "name": "APM/logs",
+      "label": "APM/logs",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-60",
+      "name": "src/authentication/Ptv/",
+      "label": "src/authentication/Ptv/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-61",
+      "name": "src/components/Auth/",
+      "label": "src/components/Auth/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-62",
+      "name": "nombre del Product Owner",
+      "label": "nombre del Product Owner",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-63",
+      "name": "middleware/video/newrelic.js",
+      "label": "middleware/video/newrelic.js",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-64",
+      "name": "valor actual",
+      "label": "valor actual",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio AUTH",
+        "KPIs del Dominio VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-65",
+      "name": "nombre del Technical Lead",
+      "label": "nombre del Technical Lead",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-66",
+      "name": "src/authentication/Login/",
+      "label": "src/authentication/Login/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-67",
+      "name": "src/components/ResendCodeButton2FA/",
+      "label": "src/components/ResendCodeButton2FA/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-68",
+      "name": "src/authentication/LoginCM/",
+      "label": "src/authentication/LoginCM/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-69",
+      "name": "GET /services/cms/superhighlight",
+      "label": "GET /services/cms/superhighlight",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-70",
+      "name": "src/components/GridNew/",
+      "label": "src/components/GridNew/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components — Carruseles"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-71",
+      "name": "src/components/CardNew/",
+      "label": "src/components/CardNew/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components — Carruseles"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-72",
+      "name": "Superhighlight",
+      "label": "Superhighlight",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-73",
+      "name": "analytics RUM",
+      "label": "analytics RUM",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-74",
+      "name": "src/components/Ribbon/",
+      "label": "src/components/Ribbon/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Components — Carruseles",
+        "Componentes Presentacionales (components/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-75",
+      "name": "src/components/Grid/",
+      "label": "src/components/Grid/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Components — Carruseles",
+        "Componentes Presentacionales (components/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-76",
+      "name": "Card",
+      "label": "Card",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-77",
+      "name": "GridNew",
+      "label": "GridNew",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-78",
+      "name": "Ribbon",
+      "label": "Ribbon",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-79",
+      "name": "RibbonNew",
+      "label": "RibbonNew",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-80",
+      "name": "src/components/Card/",
+      "label": "src/components/Card/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Components — Carruseles",
+        "Componentes Presentacionales (components/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-81",
+      "name": "GET /services/cms/carrousel",
+      "label": "GET /services/cms/carrousel",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-82",
+      "name": "src/components/RibbonNew/",
+      "label": "src/components/RibbonNew/",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components — Carruseles"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-83",
+      "name": "GET /services/nav/v1/data",
+      "label": "GET /services/nav/v1/data",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Carga de Home"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-84",
+      "name": "CardNew",
+      "label": "CardNew",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-85",
+      "name": "src/containers/Home/",
+      "label": "src/containers/Home/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md",
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Journey Maps — Dominio CARROUSEL / CMS",
+        "Componentes UI (containers/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-86",
+      "name": "Home",
+      "label": "Home",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-87",
+      "name": "Grid",
+      "label": "Grid",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-88",
+      "name": "src/containers/Epg/",
+      "label": "src/containers/Epg/",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-89",
+      "name": "GET /v1/livechannel",
+      "label": "GET /v1/livechannel",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Canal en Vivo Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-90",
+      "name": "GET /services/epg/menu",
+      "label": "GET /services/epg/menu",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Canal en Vivo Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-91",
+      "name": "GET /services/epg/channelevents",
+      "label": "GET /services/epg/channelevents",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Canal en Vivo Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-92",
+      "name": "Shaka Player load",
+      "label": "Shaka Player load",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Canal en Vivo Happy Path",
+        "4.1 Sequence — Reproducción VOD Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-93",
+      "name": "src/containers/Video/",
+      "label": "src/containers/Video/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md",
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md",
+        "journeys.md"
+      ],
+      "sections": [
+        "5.1 UI Components",
+        "Componentes UI (containers/)",
+        "Journey Maps — Dominio VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-94",
+      "name": "src/containers/Tv/",
+      "label": "src/containers/Tv/",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md",
+        "journeys.md",
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "5.1 UI Components",
+        "Journey Maps — Dominio LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-95",
+      "name": "backend SLA",
+      "label": "backend SLA",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-96",
+      "name": "lineup personalizado",
+      "label": "lineup personalizado",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-97",
+      "name": "src/AAFPlayer/AAFPlayer.js",
+      "label": "src/AAFPlayer/AAFPlayer.js",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Canal en Vivo Happy Path",
+        "4.1 Sequence — Reproducción VOD Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-98",
+      "name": "business intelligence",
+      "label": "business intelligence",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-99",
+      "name": "search",
+      "label": "search",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.5 Services / Repository"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-100",
+      "name": "src/containers/Music/",
+      "label": "src/containers/Music/",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey Maps — Dominio MUSIC (Claro Música)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-101",
+      "name": "src/components/Playlist/",
+      "label": "src/components/Playlist/",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-102",
+      "name": "Playlist",
+      "label": "Playlist",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-103",
+      "name": "Playlists",
+      "label": "Playlists",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-104",
+      "name": "MusicGrid",
+      "label": "MusicGrid",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-105",
+      "name": "src/components/MusicGrid/",
+      "label": "src/components/MusicGrid/",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-106",
+      "name": "datos del artista",
+      "label": "datos del artista",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-107",
+      "name": "Analytics spec",
+      "label": "Analytics spec",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-108",
+      "name": "SongList",
+      "label": "SongList",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-109",
+      "name": "LoginCM",
+      "label": "LoginCM",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-110",
+      "name": "POST /artist",
+      "label": "POST /artist",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Reproducir Música"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-111",
+      "name": "Music",
+      "label": "Music",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-112",
+      "name": "Radios",
+      "label": "Radios",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-113",
+      "name": "b",
+      "label": "b",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "sections": [
+        "5.5 Services / Repository"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-114",
+      "name": "src/components/Radios/",
+      "label": "src/components/Radios/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-115",
+      "name": "src/components/SongList/",
+      "label": "src/components/SongList/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-116",
+      "name": "solicita lista",
+      "label": "solicita lista",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Grabaciones NPVR"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-117",
+      "name": "action creators para guardar y recuperar seenlast",
+      "label": "action creators para guardar y recuperar seenlast",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-118",
+      "name": "GET /recordings/v3/light-list",
+      "label": "GET /recordings/v3/light-list",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Grabaciones NPVR"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-119",
+      "name": "<informacion no encontrada en el repositorio: container de Grabaciones -> verificar src/containers/Recordings/ o src/containers/MyContent/>",
+      "label": "<informacion no encontrada en el repositorio: container de Grabaciones -> verificar src/containers/Recordings/ o src/containers/MyContent/>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-120",
+      "name": "src/AAF/Npvr/",
+      "label": "src/AAF/Npvr/",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md",
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "Journey Maps — Dominio RECORDED",
+        "4.1 Sequence — Ver Grabaciones NPVR"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-121",
+      "name": "POST /services/user/v1/reminder/create",
+      "label": "POST /services/user/v1/reminder/create",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Recordatorio"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-122",
+      "name": "historial de contenido visto con puntos de reproducci",
+      "label": "historial de contenido visto con puntos de reproducci",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-123",
+      "name": "notificaci",
+      "label": "notificaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Recordatorio"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-124",
+      "name": "src/AAFPlayer/",
+      "label": "src/AAFPlayer/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Grabaciones NPVR"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-125",
+      "name": "src/utils/RemindersNotifications.js",
+      "label": "src/utils/RemindersNotifications.js",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Recordatorio"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-126",
+      "name": "reproduce stream grabado",
+      "label": "reproduce stream grabado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Ver Grabaciones NPVR"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-127",
+      "name": "1. API Seenlast",
+      "label": "1. API Seenlast",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-128",
+      "name": "notification service",
+      "label": "notification service",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-129",
+      "name": "2. src/actions/resume.js",
+      "label": "2. src/actions/resume.js",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-130",
+      "name": "Verificar SwaggerHub directo",
+      "label": "Verificar SwaggerHub directo",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.5 Services / Repository"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-131",
+      "name": "src/containers/Search/",
+      "label": "src/containers/Search/",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-132",
+      "name": "ComponentsSearch",
+      "label": "ComponentsSearch",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-133",
+      "name": "src/requests/tasks/search/predictiveSearchTask.js",
+      "label": "src/requests/tasks/search/predictiveSearchTask.js",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Búsqueda Completa (Core)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-134",
+      "name": "SEARCH_Verticallookup",
+      "label": "SEARCH_Verticallookup",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.5 Services / Repository"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-135",
+      "name": "UtilsSearch",
+      "label": "UtilsSearch",
+      "type": "contract_api",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-136",
+      "name": "ObserversSearch",
+      "label": "ObserversSearch",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-137",
+      "name": "ChooseSearcher",
+      "label": "ChooseSearcher",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-138",
+      "name": "dashboard",
+      "label": "dashboard",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del Dominio SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-139",
+      "name": "PRD/BRFRE",
+      "label": "PRD/BRFRE",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-140",
+      "name": "<informacion no encontrada en el repositorio: componentes presentacionales de search -> inventario de componentes>",
+      "label": "<informacion no encontrada en el repositorio: componentes presentacionales de search -> inventario de componentes>",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-141",
+      "name": "diagramas de infra",
+      "label": "diagramas de infra",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-142",
+      "name": "SearchFlag",
+      "label": "SearchFlag",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-143",
+      "name": "Evidencia",
+      "label": "Evidencia",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 1: Búsqueda Predictiva (Core)",
+        "Journey 3: Búsquedas Populares (Supporting)",
+        "Journey 6: Sincronización de Grabaciones (Exceptional)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-144",
+      "name": "GET /services/search/v1/predictive",
+      "label": "GET /services/search/v1/predictive",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Búsqueda Predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-145",
+      "name": "GET /services/search/vertical",
+      "label": "GET /services/search/vertical",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Búsqueda Vertical por Categoría (Supporting)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-146",
+      "name": "src/requests/tasks/search/MultiContentSearchTask.js",
+      "label": "src/requests/tasks/search/MultiContentSearchTask.js",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Validación de Visibilidad de Contenido en Búsqueda (Supporting)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-147",
+      "name": "RequestManager.js",
+      "label": "RequestManager.js",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Búsqueda Predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-148",
+      "name": "Backend Search Service",
+      "label": "Backend Search Service",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Búsqueda Predictiva"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-149",
+      "name": "analytics dashboard",
+      "label": "analytics dashboard",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-150",
+      "name": "GET /services/search/generic",
+      "label": "GET /services/search/generic",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 2: Búsqueda Completa (Core)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-151",
+      "name": "Search` (index.jsx)",
+      "label": "Search` (index.jsx)",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-152",
+      "name": "src/requests/tasks/search/VerticalTask.js",
+      "label": "src/requests/tasks/search/VerticalTask.js",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 4: Búsqueda Vertical por Categoría (Supporting)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-153",
+      "name": "SearchContent",
+      "label": "SearchContent",
+      "type": "contract_api",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-154",
+      "name": "POST /services/payway/paymentservice/multicontentsearch",
+      "label": "POST /services/payway/paymentservice/multicontentsearch",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Journey 5: Validación de Visibilidad de Contenido en Búsqueda (Supporting)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-155",
+      "name": "v1_multicontentsearch",
+      "label": "v1_multicontentsearch",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.5 Services / Repository"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-156",
+      "name": "ChunkerSearch",
+      "label": "ChunkerSearch",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "1. Componentes UI (React — `src/containers/Search/`)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-157",
+      "name": "opciones m",
+      "label": "opciones m",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-158",
+      "name": "src/payments/PlanSelector/",
+      "label": "src/payments/PlanSelector/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "journeys.md"
+      ],
+      "sections": [
+        "5.1 UI Components",
+        "Journey Maps — Dominio SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-159",
+      "name": "src/components/Payment/",
+      "label": "src/components/Payment/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "Components",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-160",
+      "name": "2. GET /services/payway/multipurchasebuttoninfo",
+      "label": "2. GET /services/payway/multipurchasebuttoninfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-161",
+      "name": "confirmaci",
+      "label": "confirmaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-162",
+      "name": "GET /services/payway/planselector",
+      "label": "GET /services/payway/planselector",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Suscripción (Compra)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-163",
+      "name": "BuyConfirm",
+      "label": "BuyConfirm",
+      "type": "client",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-164",
+      "name": "src/payments/HubGate/",
+      "label": "src/payments/HubGate/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-165",
+      "name": "src/payments/Checkout/",
+      "label": "src/payments/Checkout/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-166",
+      "name": "3. POST /services/payway/buyconfirm",
+      "label": "3. POST /services/payway/buyconfirm",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-167",
+      "name": "CRM",
+      "label": "CRM",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-168",
+      "name": "POST /services/payway/buyconfirm",
+      "label": "POST /services/payway/buyconfirm",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Suscripción (Compra)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-169",
+      "name": "src/components/PlanSelector/",
+      "label": "src/components/PlanSelector/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "Components",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-170",
+      "name": "informaci",
+      "label": "informaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-171",
+      "name": "1. GET /services/payway/purchasebuttoninfo",
+      "label": "1. GET /services/payway/purchasebuttoninfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-172",
+      "name": "analytics funnel",
+      "label": "analytics funnel",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-173",
+      "name": "informacion no encontrada en MCP Server",
+      "label": "informacion no encontrada en MCP Server",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs — Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-174",
+      "name": "control de buffer",
+      "label": "control de buffer",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Timeshift Pause/Resume"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-175",
+      "name": "Actualizar versi",
+      "label": "Actualizar versi",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "v1_epgversion v1.0.0 (compartido con LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-176",
+      "name": "Verificar SwaggerHub directo o src/AAF/Timeshift/ para URLs hardcodeadas",
+      "label": "Verificar SwaggerHub directo o src/AAF/Timeshift/ para URLs hardcodeadas",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs — Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-177",
+      "name": "<informacion no encontrada en el repositorio: UI específica de Timeshift/NPVR -> inspeccionar src/components/>",
+      "label": "<informacion no encontrada en el repositorio: UI específica de Timeshift/NPVR -> inspeccionar src/components/>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-178",
+      "name": "GET  /v1/epgversion",
+      "label": "GET /v1/epgversion",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "v1_epgversion v1.0.0 (compartido con LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-179",
+      "name": "POST /v1/epgversion",
+      "label": "POST /v1/epgversion",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "v1_epgversion v1.0.0 (compartido con LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-180",
+      "name": "2. API v1_epgversion",
+      "label": "2. API v1_epgversion",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-181",
+      "name": "src/AAF/Timeshift/",
+      "label": "src/AAF/Timeshift/",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 5,
+      "files": [
+        "journeys.md",
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "Journey Maps — Dominio TIMESHIFT",
+        "4.1 Sequence — Timeshift Pause/Resume"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-182",
+      "name": "analytics/APM",
+      "label": "analytics/APM",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-183",
+      "name": "EPG por Network Number",
+      "label": "EPG por Network Number",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "v1_epgversion v1.0.0 (compartido con LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-184",
+      "name": "Obtiene versi",
+      "label": "Obtiene versi",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "v1_epgversion v1.0.0 (compartido con LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-185",
+      "name": "src/utils/EpgVersionStatus.js",
+      "label": "src/utils/EpgVersionStatus.js",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Timeshift Pause/Resume"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-186",
+      "name": "GET /epgversion/v",
+      "label": "GET /epgversion/v",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-187",
+      "name": "evento PAUSE detectado",
+      "label": "evento PAUSE detectado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Timeshift Pause/Resume"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-188",
+      "name": "GET /v1/epgversion",
+      "label": "GET /v1/epgversion",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Timeshift Pause/Resume"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-189",
+      "name": "src/containers/MyContent/",
+      "label": "src/containers/MyContent/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes UI (containers/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-190",
+      "name": "src/components/Video/",
+      "label": "src/components/Video/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes Presentacionales (components/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-191",
+      "name": "4. POST /services/payway/buyconfirm",
+      "label": "4. POST /services/payway/buyconfirm",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "Flujo Observado desde Código"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-192",
+      "name": "src/containers/Ficha/",
+      "label": "src/containers/Ficha/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes UI (containers/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-193",
+      "name": "src/playerDomain/components/",
+      "label": "src/playerDomain/components/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-194",
+      "name": "src/components/PlayerControls/",
+      "label": "src/components/PlayerControls/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes Presentacionales (components/)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-195",
+      "name": "GET /services/content/v1/data",
+      "label": "GET /services/content/v1/data",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Reproducción VOD Happy Path"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-node-196",
+      "name": "GET /services/content/playback",
+      "label": "GET /services/content/playback",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Reproducción VOD Happy Path"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-1",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-2",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-2",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-19",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-3",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-3",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "evidencia_codigo.txt"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-4",
+      "source": "claro-video-aaf-samsung-nativa-node-20",
+      "target": "claro-video-aaf-samsung-nativa-node-10",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-5",
+      "source": "claro-video-aaf-samsung-nativa-node-14",
+      "target": "claro-video-aaf-samsung-nativa-node-11",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-6",
+      "source": "claro-video-aaf-samsung-nativa-node-29",
+      "target": "claro-video-aaf-samsung-nativa-node-26",
+      "type": "calls",
+      "occurrences": 9,
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-7",
+      "source": "claro-video-aaf-samsung-nativa-node-28",
+      "target": "claro-video-aaf-samsung-nativa-node-17",
+      "type": "calls",
+      "occurrences": 9,
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-8",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-13",
+      "type": "calls",
+      "occurrences": 9,
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-9",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-27",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-10",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-6",
+      "type": "calls",
+      "occurrences": 7,
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-11",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-30",
+      "type": "calls",
+      "occurrences": 13,
+      "evidenceCount": 13,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CLARO_MUSICA.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-12",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-8",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+        "SPEC_RECORDINGS_REMINDERS.md",
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-13",
+      "source": "claro-video-aaf-samsung-nativa-node-23",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-14",
+      "source": "claro-video-aaf-samsung-nativa-node-24",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-15",
+      "source": "claro-video-aaf-samsung-nativa-node-4",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-16",
+      "source": "claro-video-aaf-samsung-nativa-node-64",
+      "target": "claro-video-aaf-samsung-nativa-node-44",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-17",
+      "source": "claro-video-aaf-samsung-nativa-node-31",
+      "target": "claro-video-aaf-samsung-nativa-node-11",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-18",
+      "source": "claro-video-aaf-samsung-nativa-node-62",
+      "target": "claro-video-aaf-samsung-nativa-node-37",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-19",
+      "source": "claro-video-aaf-samsung-nativa-node-65",
+      "target": "claro-video-aaf-samsung-nativa-node-37",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-20",
+      "source": "claro-video-aaf-samsung-nativa-node-39",
+      "target": "claro-video-aaf-samsung-nativa-node-55",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-21",
+      "source": "claro-video-aaf-samsung-nativa-node-53",
+      "target": "claro-video-aaf-samsung-nativa-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-22",
+      "source": "claro-video-aaf-samsung-nativa-node-38",
+      "target": "claro-video-aaf-samsung-nativa-node-49",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-23",
+      "source": "claro-video-aaf-samsung-nativa-node-45",
+      "target": "claro-video-aaf-samsung-nativa-node-40",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-24",
+      "source": "claro-video-aaf-samsung-nativa-node-50",
+      "target": "claro-video-aaf-samsung-nativa-node-63",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-25",
+      "source": "claro-video-aaf-samsung-nativa-node-52",
+      "target": "claro-video-aaf-samsung-nativa-node-59",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-26",
+      "source": "claro-video-aaf-samsung-nativa-node-30",
+      "target": "claro-video-aaf-samsung-nativa-node-41",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-27",
+      "source": "claro-video-aaf-samsung-nativa-node-42",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-28",
+      "source": "claro-video-aaf-samsung-nativa-node-51",
+      "target": "claro-video-aaf-samsung-nativa-node-58",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-29",
+      "source": "claro-video-aaf-samsung-nativa-node-48",
+      "target": "claro-video-aaf-samsung-nativa-node-56",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-30",
+      "source": "claro-video-aaf-samsung-nativa-node-54",
+      "target": "claro-video-aaf-samsung-nativa-node-47",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-31",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-73",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-32",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-50",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md",
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-33",
+      "source": "claro-video-aaf-samsung-nativa-node-83",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-34",
+      "source": "claro-video-aaf-samsung-nativa-node-81",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-35",
+      "source": "claro-video-aaf-samsung-nativa-node-69",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CMS_HOME_NAVIGATION.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-36",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-96",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-37",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-63",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-38",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-95",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-39",
+      "source": "claro-video-aaf-samsung-nativa-node-90",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-40",
+      "source": "claro-video-aaf-samsung-nativa-node-91",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-41",
+      "source": "claro-video-aaf-samsung-nativa-node-89",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-42",
+      "source": "claro-video-aaf-samsung-nativa-node-97",
+      "target": "claro-video-aaf-samsung-nativa-node-92",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LIVE_TV_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-43",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-106",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-44",
+      "source": "claro-video-aaf-samsung-nativa-node-14",
+      "target": "claro-video-aaf-samsung-nativa-node-107",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-45",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-98",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-46",
+      "source": "claro-video-aaf-samsung-nativa-node-110",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-47",
+      "source": "claro-video-aaf-samsung-nativa-node-99",
+      "target": "claro-video-aaf-samsung-nativa-node-113",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CLARO_MUSICA.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-48",
+      "source": "claro-video-aaf-samsung-nativa-node-127",
+      "target": "claro-video-aaf-samsung-nativa-node-122",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-49",
+      "source": "claro-video-aaf-samsung-nativa-node-129",
+      "target": "claro-video-aaf-samsung-nativa-node-117",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-50",
+      "source": "claro-video-aaf-samsung-nativa-node-14",
+      "target": "claro-video-aaf-samsung-nativa-node-30",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-51",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-128",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-52",
+      "source": "claro-video-aaf-samsung-nativa-node-120",
+      "target": "claro-video-aaf-samsung-nativa-node-116",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-53",
+      "source": "claro-video-aaf-samsung-nativa-node-118",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-54",
+      "source": "claro-video-aaf-samsung-nativa-node-124",
+      "target": "claro-video-aaf-samsung-nativa-node-126",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-55",
+      "source": "claro-video-aaf-samsung-nativa-node-121",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-56",
+      "source": "claro-video-aaf-samsung-nativa-node-125",
+      "target": "claro-video-aaf-samsung-nativa-node-123",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDINGS_REMINDERS.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-57",
+      "source": "claro-video-aaf-samsung-nativa-node-133",
+      "target": "claro-video-aaf-samsung-nativa-node-150",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-58",
+      "source": "claro-video-aaf-samsung-nativa-node-152",
+      "target": "claro-video-aaf-samsung-nativa-node-145",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-59",
+      "source": "claro-video-aaf-samsung-nativa-node-146",
+      "target": "claro-video-aaf-samsung-nativa-node-154",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-60",
+      "source": "claro-video-aaf-samsung-nativa-node-14",
+      "target": "claro-video-aaf-samsung-nativa-node-138",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-61",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-141",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-62",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-139",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-63",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-149",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-64",
+      "source": "claro-video-aaf-samsung-nativa-node-147",
+      "target": "claro-video-aaf-samsung-nativa-node-144",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-65",
+      "source": "claro-video-aaf-samsung-nativa-node-148",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-66",
+      "source": "claro-video-aaf-samsung-nativa-node-134",
+      "target": "claro-video-aaf-samsung-nativa-node-130",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-67",
+      "source": "claro-video-aaf-samsung-nativa-node-155",
+      "target": "claro-video-aaf-samsung-nativa-node-130",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-68",
+      "source": "claro-video-aaf-samsung-nativa-node-171",
+      "target": "claro-video-aaf-samsung-nativa-node-170",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-69",
+      "source": "claro-video-aaf-samsung-nativa-node-160",
+      "target": "claro-video-aaf-samsung-nativa-node-157",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-70",
+      "source": "claro-video-aaf-samsung-nativa-node-166",
+      "target": "claro-video-aaf-samsung-nativa-node-161",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-71",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-172",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-72",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-167",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-73",
+      "source": "claro-video-aaf-samsung-nativa-node-162",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-74",
+      "source": "claro-video-aaf-samsung-nativa-node-168",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_PAYMENTS_SUBSCRIPTIONS.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-75",
+      "source": "claro-video-aaf-samsung-nativa-node-173",
+      "target": "claro-video-aaf-samsung-nativa-node-176",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-76",
+      "source": "claro-video-aaf-samsung-nativa-node-178",
+      "target": "claro-video-aaf-samsung-nativa-node-184",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-77",
+      "source": "claro-video-aaf-samsung-nativa-node-179",
+      "target": "claro-video-aaf-samsung-nativa-node-175",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-78",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-183",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-79",
+      "source": "claro-video-aaf-samsung-nativa-node-180",
+      "target": "claro-video-aaf-samsung-nativa-node-186",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-80",
+      "source": "claro-video-aaf-samsung-nativa-node-1",
+      "target": "claro-video-aaf-samsung-nativa-node-182",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-81",
+      "source": "claro-video-aaf-samsung-nativa-node-181",
+      "target": "claro-video-aaf-samsung-nativa-node-187",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-82",
+      "source": "claro-video-aaf-samsung-nativa-node-185",
+      "target": "claro-video-aaf-samsung-nativa-node-188",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-83",
+      "source": "claro-video-aaf-samsung-nativa-node-181",
+      "target": "claro-video-aaf-samsung-nativa-node-174",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_NPVR.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-84",
+      "source": "claro-video-aaf-samsung-nativa-node-191",
+      "target": "claro-video-aaf-samsung-nativa-node-161",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-85",
+      "source": "claro-video-aaf-samsung-nativa-node-64",
+      "target": "claro-video-aaf-samsung-nativa-node-11",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-86",
+      "source": "claro-video-aaf-samsung-nativa-node-195",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-aaf-samsung-nativa-edge-87",
+      "source": "claro-video-aaf-samsung-nativa-node-196",
+      "target": "claro-video-aaf-samsung-nativa-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:55.004Z",
+    "nodeTypes": [
+      "component",
+      "contract_api",
+      "client"
+    ],
+    "topFiles": [
+      "evidencia_codigo.txt",
+      "SPEC_ACCOUNT_PROFILE_MANAGEMENT.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "SPEC_CMS_HOME_NAVIGATION.md",
+      "journeys.md",
+      "SPEC_LIVE_TV_EPG.md",
+      "SPEC_CLARO_MUSICA.md",
+      "SPEC_RECORDINGS_REMINDERS.md",
+      "SPEC_CONTENT_DISCOVERY.md",
+      "SPEC_PAYMENTS_SUBSCRIPTIONS.md",
+      "contracts.md",
+      "SPEC_TIMESHIFT_NPVR.md",
+      "SPEC_VOD_PLAYBACK.md",
+      "metricas.md",
+      "componentes.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 23,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-aaf-samsung-nativa",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-aaf-samsung-nativa.md",
+          "analysis\\diagrama_global_claro-video-aaf-samsung-nativa.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 195,
+          "edgeCount": 87,
+          "groupCount": 10,
+          "isolatedCount": 76
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-aaf-samsung-nativa",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-aaf-samsung-nativa.md"
+        ],
+        "metrics": {
+          "nodeCount": 12,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 48,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 48,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 38,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 38,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 11,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 35,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 35,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-RECORDED-vss",
+        "order": 13,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/RECORDED",
+        "kind": "domain_vss",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 8
+        }
+      },
+      {
+        "id": "domain-RECORDED-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/RECORDED",
+        "kind": "domain_impact",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 8
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 15,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 43,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 43,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 17,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 18,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-vss",
+        "order": 19,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/TIMESHIFT",
+        "kind": "domain_vss",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 17,
+          "groupCount": 0,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-impact",
+        "order": 20,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/TIMESHIFT",
+        "kind": "domain_impact",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 17,
+          "groupCount": 0,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 21,
+        "title": "Diagrama VSS claro-video-aaf-samsung-nativa/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-aaf-samsung-nativa_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 39,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 22,
+        "title": "Diagrama Impacto VSS claro-video-aaf-samsung-nativa/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-aaf-samsung-nativa_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 39,
+          "edgeCount": 15,
+          "groupCount": 0,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 23,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 196,
+          "edgeCount": 87,
+          "groupCount": 0,
+          "isolatedCount": 76
+        }
+      }
+    ]
+  }
+}

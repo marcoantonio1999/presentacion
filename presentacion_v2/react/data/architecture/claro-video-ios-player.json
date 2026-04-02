@@ -1,0 +1,941 @@
+{
+  "repo": "claro-video-ios-player",
+  "title": "iOS Player",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-ios-player",
+    "annex": "ANEXO_claro-video-ios-player.html",
+    "vssRoute": "#/fase-1/vss/claro-video-ios-player"
+  },
+  "source": {
+    "docPath": "claro-video-ios-player\\claro-video-ios-player\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2,
+    "totalNodes": 51,
+    "totalEdges": 30,
+    "sections": [
+      "️ Diagrama de Componentes",
+      "Diagramas de Flujos de Procesos",
+      "Diagrama de CI/CD Pipeline",
+      "Diagrama de Datos"
+    ]
+  },
+  "diagrams": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "️ Diagrama de Componentes",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-ios-player\\claro-video-ios-player\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "A",
+              "label": "CVPlayer iOS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "C",
+              "label": "CVPlayerCommon",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "B",
+              "label": "CVPlayerTVOS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "T",
+              "label": "TestApp",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "D",
+              "label": "BitmovinPlayer",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "E",
+              "label": "NpawPluginBitmovinAdapter",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "F",
+              "label": "BitmovinCollector",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "G",
+              "label": "FairPlay",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "H",
+              "label": "Observers",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 17
+            }
+          ],
+          "edges": [
+            {
+              "id": "A=>C=>=>solid",
+              "source": "A",
+              "target": "C",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "B=>C=>=>solid",
+              "source": "B",
+              "target": "C",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "T=>A=>=>solid",
+              "source": "T",
+              "target": "A",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "T=>B=>=>solid",
+              "source": "T",
+              "target": "B",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>D=>=>solid",
+              "source": "C",
+              "target": "D",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>E=>=>solid",
+              "source": "C",
+              "target": "E",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>F=>=>solid",
+              "source": "C",
+              "target": "F",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>G=>=>solid",
+              "source": "C",
+              "target": "G",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "C=>H=>=>solid",
+              "source": "C",
+              "target": "H",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Flujo Principal 1: Inicialización de Player",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-ios-player\\claro-video-ios-player\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "App",
+              "label": "App"
+            },
+            {
+              "id": "Builder",
+              "label": "Builder"
+            },
+            {
+              "id": "Core",
+              "label": "CVPlayerCommon"
+            },
+            {
+              "id": "DRM",
+              "label": "FairPlay"
+            },
+            {
+              "id": "Engine",
+              "label": "BitmovinPlayer"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "Builder-",
+              "label": "Builder-"
+            },
+            {
+              "id": "Core-",
+              "label": "Core-"
+            },
+            {
+              "id": "Engine--",
+              "label": "Engine--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-App",
+              "label": "App",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Builder",
+              "label": "Builder",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-Core",
+              "label": "CVPlayerCommon",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-DRM",
+              "label": "FairPlay",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Engine",
+              "label": "BitmovinPlayer",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Builder-",
+              "label": "Builder-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-Core-",
+              "label": "Core-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Engine--",
+              "label": "Engine--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Solicita view controller",
+              "subtitle": "App- → Builder",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 840,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Resuelve dependencias",
+              "subtitle": "Builder- → CVPlayerCommon",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1120,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "Configura DRM",
+              "subtitle": "Core- → FairPlay",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1400,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "Inicializa player",
+              "subtitle": "Core- → BitmovinPlayer",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1540,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Reproductor listo / error",
+              "subtitle": "Engine-- → App",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1120,
+              "y": 792
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 9,
+          "participantCount": 9
+        },
+        "metrics": {
+          "nodeCount": 14,
+          "edgeCount": 4,
+          "groupCount": 9,
+          "isolatedCount": 9
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Flujo Principal 2: Eventos de Reproducción",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-ios-player\\claro-video-ios-player\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "Engine",
+              "label": "BitmovinPlayer"
+            },
+            {
+              "id": "Obs",
+              "label": "Observers"
+            },
+            {
+              "id": "Del",
+              "label": "Delegates"
+            },
+            {
+              "id": "Analytics",
+              "label": "NPAW/Collector"
+            },
+            {
+              "id": "Engine-",
+              "label": "Engine-"
+            },
+            {
+              "id": "Obs-",
+              "label": "Obs-"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-Engine",
+              "label": "BitmovinPlayer",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Obs",
+              "label": "Observers",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-Del",
+              "label": "Delegates",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-Analytics",
+              "label": "NPAW/Collector",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Engine-",
+              "label": "Engine-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-Obs-",
+              "label": "Obs-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Evento playback",
+              "subtitle": "Engine- → Observers",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 700,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "Notifica app cliente",
+              "subtitle": "Obs- → Delegates",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 980,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "Envía tracking",
+              "subtitle": "Obs- → NPAW/Collector",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1120,
+              "y": 480
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 6,
+          "participantCount": 6
+        },
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 2,
+          "groupCount": 6,
+          "isolatedCount": 6
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Diagrama de CI/CD Pipeline",
+        "kind": "flowchart",
+        "section": "Diagrama de CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-ios-player\\claro-video-ios-player\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "PR",
+              "label": "Push/PR",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "CI",
+              "label": "ci.yml",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Build",
+              "label": "Build",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Gate-Quality-Gate",
+              "label": "Gate{Quality Gate}",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Gate",
+              "label": "Gate",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "Test",
+              "label": "Tests",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Block",
+              "label": "Block",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Merge",
+              "label": "Merge",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "Rollback",
+              "label": "Rollback to previous tag",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "Manual",
+              "label": "workflow_dispatch",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "BranchFactory",
+              "label": "branch-factory.yml",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 15
+            }
+          ],
+          "edges": [
+            {
+              "id": "PR=>CI=>=>solid",
+              "source": "PR",
+              "target": "CI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CI=>Build=>=>solid",
+              "source": "CI",
+              "target": "Build",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Build=>Gate-Quality-Gate=>=>solid",
+              "source": "Build",
+              "target": "Gate-Quality-Gate",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Gate=>Test=>Pass=>solid",
+              "source": "Gate",
+              "target": "Test",
+              "label": "Pass",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Gate=>Block=>Fail=>solid",
+              "source": "Gate",
+              "target": "Block",
+              "label": "Fail",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Test=>Merge=>OK=>solid",
+              "source": "Test",
+              "target": "Merge",
+              "label": "OK",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Test=>Rollback=>Fail=>solid",
+              "source": "Test",
+              "target": "Rollback",
+              "label": "Fail",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Manual=>BranchFactory=>=>solid",
+              "source": "Manual",
+              "target": "BranchFactory",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 11,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Diagrama de Datos",
+        "kind": "flowchart",
+        "section": "Diagrama de Datos",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-ios-player\\claro-video-ios-player\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "Config",
+              "label": "Playback Config",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "Builder",
+              "label": "Builder",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Core",
+              "label": "Core",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Player",
+              "label": "Player",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Events",
+              "label": "Events",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Observers",
+              "label": "Observers",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Delegates",
+              "label": "Delegates",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "Analytics",
+              "label": "Analytics",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 13
+            }
+          ],
+          "edges": [
+            {
+              "id": "Config=>Builder=>=>solid",
+              "source": "Config",
+              "target": "Builder",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Builder=>Core=>=>solid",
+              "source": "Builder",
+              "target": "Core",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Core=>Player=>=>solid",
+              "source": "Core",
+              "target": "Player",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Player=>Events=>=>solid",
+              "source": "Player",
+              "target": "Events",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Events=>Observers=>=>solid",
+              "source": "Events",
+              "target": "Observers",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Observers=>Delegates=>=>solid",
+              "source": "Observers",
+              "target": "Delegates",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Observers=>Analytics=>=>solid",
+              "source": "Observers",
+              "target": "Analytics",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 8,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

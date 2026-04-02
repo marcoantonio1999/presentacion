@@ -1,0 +1,3628 @@
+{
+  "repo": "claro-video-android-tv",
+  "title": "Android TV",
+  "sourceLabel": "analysis",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-android-tv",
+    "annex": "ANEXO_claro-video-android-tv.html",
+    "legacyViewer": "ANEXO_claro-video-android-tv-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-android-tv.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-tv\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-tv\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-tv\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-tv\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-tv\\analysis\\diagrama_global_claro-video-android-tv.mmd"
+  },
+  "summary": {
+    "totalNodes": 127,
+    "totalEdges": 70,
+    "rawEdges": 145,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "paths exactos",
+      "PIN validado",
+      "flujo exacto",
+      "MCP get_api_endpoints Controlpin_1.0.0",
+      "schema Firebase",
+      "Firebase Console",
+      "<informacion no encontrada en el repositorio: infra de CMS -> IaC>",
+      "navigation/ui/",
+      "CDN: Broadpeak SmartLib para imágenes de carruseles",
+      "PROD o viceversa",
+      "MainFragment.kt",
+      "n UAT",
+      "MainActivity.kt",
+      "CMS servidores en infraestructura Claro Video",
+      "Endpoint",
+      "Latencia observada",
+      "Response",
+      "Campo",
+      "API Source",
+      "Params",
+      "premium",
+      "proveedor ThreatMetrix/LexisNexis",
+      "Payway webhook docs",
+      "usuario ingresa c",
+      "digo",
+      "n freemium",
+      "endpoint exacto"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 28,
+      "edgeCount": 37,
+      "evidenceCount": 177,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 28
+        }
+      ],
+      "sampleNodes": [
+        "n runtime",
+        "profile/ui/",
+        "PM tool",
+        "IaaS",
+        "vcard/ui/ContentViewModel"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 20,
+      "edgeCount": 28,
+      "evidenceCount": 66,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 20
+        }
+      ],
+      "sampleNodes": [
+        "analytics spec",
+        "SLA docs",
+        "Firebase Analytics",
+        "ficas",
+        "OKRs"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 0,
+      "edgeCount": 0,
+      "evidenceCount": 0,
+      "typeCounts": [],
+      "sampleNodes": []
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 22,
+      "edgeCount": 18,
+      "evidenceCount": 31,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 22
+        }
+      ],
+      "sampleNodes": [
+        "SLO docs",
+        "ficos",
+        "tv/ui/",
+        "Firebase Analytics / Youbora",
+        "configuraci"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 4,
+      "edgeCount": 3,
+      "evidenceCount": 5,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 3
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "debounce/throttle configuration",
+        "search/ui/",
+        "qro-microfwk-silo-tv",
+        "c"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 11,
+      "edgeCount": 7,
+      "evidenceCount": 14,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 11
+        }
+      ],
+      "sampleNodes": [
+        "SLA Payway",
+        "Payway dashboards",
+        "Payway/CRM",
+        "Payway/New Relic",
+        "app/libs/"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 14,
+      "edgeCount": 9,
+      "evidenceCount": 14,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 14
+        }
+      ],
+      "sampleNodes": [
+        "docs TrustDefender",
+        "Monitoreo: Youbora 6.8.+, New Relic 7.6.2",
+        "CDN: Broadpeak SmartLib 05.02.01",
+        "Youbora/Firebase",
+        "escaneo de player_vod/data/"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 27,
+      "edgeCount": 10,
+      "evidenceCount": 30,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 21
+        },
+        {
+          "type": "event_technical",
+          "count": 6
+        }
+      ],
+      "sampleNodes": [
+        "paths exactos",
+        "PIN validado",
+        "flujo exacto",
+        "MCP get_api_endpoints Controlpin_1.0.0",
+        "schema Firebase"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-android-tv-node-1",
+      "name": "n runtime",
+      "label": "n runtime",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-2",
+      "name": "profile/ui/",
+      "label": "profile/ui/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-3",
+      "name": "PM tool",
+      "label": "PM tool",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-4",
+      "name": "IaaS",
+      "label": "IaaS",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-5",
+      "name": "vcard/ui/ContentViewModel",
+      "label": "vcard/ui/ContentViewModel",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-6",
+      "name": "paths exactos",
+      "label": "paths exactos",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C2-C14: Controlpin API (13 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-7",
+      "name": "Firebase",
+      "label": "Firebase",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-8",
+      "name": "controlpin/ui/",
+      "label": "controlpin/ui/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-9",
+      "name": "vcard/ui/",
+      "label": "vcard/ui/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-10",
+      "name": "PIN validado",
+      "label": "PIN validado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "J3: Solicitud de PIN Durante Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-11",
+      "name": "BRFRE/PRD",
+      "label": "BRFRE/PRD",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-12",
+      "name": "analytics spec",
+      "label": "analytics spec",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-13",
+      "name": "docs de producto",
+      "label": "docs de producto",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-14",
+      "name": "diagramas de infraestructura/IaC",
+      "label": "diagramas de infraestructura/IaC",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-15",
+      "name": "eventos completos",
+      "label": "eventos completos",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-16",
+      "name": "valor",
+      "label": "valor",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 24,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes",
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-17",
+      "name": "glosario completo",
+      "label": "glosario completo",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "12. Glosario"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-18",
+      "name": "Distribuido como APK en 4 flavors",
+      "label": "Distribuido como APK en 4 flavors",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-19",
+      "name": "IaC/configuraci",
+      "label": "IaC/configuraci",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-20",
+      "name": "docs funcionales",
+      "label": "docs funcionales",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "12. Glosario"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-21",
+      "name": "spec owner",
+      "label": "spec owner",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-22",
+      "name": "flujo exacto",
+      "label": "flujo exacto",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "J5: Cambio de Contraseña / Datos de Cuenta",
+        "J3: Renovación de Suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-23",
+      "name": "Jira",
+      "label": "Jira",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-24",
+      "name": "escaneo de profile/ui/",
+      "label": "escaneo de profile/ui/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "J5: Cambio de Contraseña / Datos de Cuenta"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-25",
+      "name": "CODEOWNERS",
+      "label": "CODEOWNERS",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 13,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-26",
+      "name": "technical owner",
+      "label": "technical owner",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-27",
+      "name": "MCP get_api_endpoints Controlpin_1.0.0",
+      "label": "MCP get_api_endpoints Controlpin_1.0.0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C2-C14: Controlpin API (13 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-28",
+      "name": "Analytics",
+      "label": "Analytics",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 16,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes",
+        "3.1 Journey: Configuración de Control Parental (PIN)",
+        "3.2 Journey: Visualización y Edición de Perfil",
+        "3.3 Journey: Gestión de Favoritos (vcard)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-29",
+      "name": "frecuencia",
+      "label": "frecuencia",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 16,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Configuración de Control Parental (PIN)",
+        "3.2 Journey: Visualización y Edición de Perfil",
+        "3.3 Journey: Gestión de Favoritos (vcard)",
+        "3.1 Journey: Login con credenciales (OTT)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-30",
+      "name": "schema Firebase",
+      "label": "schema Firebase",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Firebase (vcard)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-31",
+      "name": "reproducci",
+      "label": "reproducci",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "J3: Solicitud de PIN Durante Reproducción"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-32",
+      "name": "New Relic",
+      "label": "New Relic",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "contracts.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)",
+        "1. Metadata & Governance",
+        "KPIs relevantes",
+        "C1: Search Predictive"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-33",
+      "name": "Firebase Console",
+      "label": "Firebase Console",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Firebase (vcard)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-34",
+      "name": "infra",
+      "label": "infra",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-35",
+      "name": "SLA docs",
+      "label": "SLA docs",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-36",
+      "name": "Firebase Analytics",
+      "label": "Firebase Analytics",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes",
+        "3.1 Journey: Login con credenciales (OTT)",
+        "3.1 Journey: Reproducción de Película/Episodio VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-37",
+      "name": "ficas",
+      "label": "ficas",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-38",
+      "name": "OKRs",
+      "label": "OKRs",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-39",
+      "name": "Analytics backend",
+      "label": "Analytics backend",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-40",
+      "name": "androidTVbeta",
+      "label": "androidTVbeta",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-41",
+      "name": "fireTVbeta",
+      "label": "fireTVbeta",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-42",
+      "name": "fico",
+      "label": "fico",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-43",
+      "name": "Jira/GitHub Issues",
+      "label": "Jira/GitHub Issues",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-44",
+      "name": "SLO docs",
+      "label": "SLO docs",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-45",
+      "name": "trazas de ejecuci",
+      "label": "trazas de ejecuci",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-46",
+      "name": "documentaci",
+      "label": "documentaci",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance",
+        "12. Glosario"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-47",
+      "name": "valor actual",
+      "label": "valor actual",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-48",
+      "name": "target",
+      "label": "target",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 10,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-49",
+      "name": "onboarding/ui/",
+      "label": "onboarding/ui/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-50",
+      "name": "README del equipo",
+      "label": "README del equipo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-51",
+      "name": "PM tool del equipo",
+      "label": "PM tool del equipo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-52",
+      "name": "Firebase Analytics / New Relic",
+      "label": "Firebase Analytics / New Relic",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-53",
+      "name": "New Relic APM",
+      "label": "New Relic APM",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "KPIs relevantes",
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-54",
+      "name": "onboarding/",
+      "label": "onboarding/",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-55",
+      "name": "<informacion no encontrada en el repositorio: infra de CMS -> IaC>",
+      "label": "<informacion no encontrada en el repositorio: infra de CMS -> IaC>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-56",
+      "name": "navigation/ui/",
+      "label": "navigation/ui/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-57",
+      "name": "CDN: Broadpeak SmartLib para imágenes de carruseles",
+      "label": "CDN: Broadpeak SmartLib para imágenes de carruseles",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-58",
+      "name": "PROD o viceversa",
+      "label": "PROD o viceversa",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C7: CMS Rotation Clone (Nav + Layout)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-59",
+      "name": "MainFragment.kt",
+      "label": "MainFragment.kt",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-60",
+      "name": "n UAT",
+      "label": "n UAT",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C7: CMS Rotation Clone (Nav + Layout)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-61",
+      "name": "MainActivity.kt",
+      "label": "MainActivity.kt",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-62",
+      "name": "CMS servidores en infraestructura Claro Video",
+      "label": "CMS servidores en infraestructura Claro Video",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-63",
+      "name": "CMS admin",
+      "label": "CMS admin",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-64",
+      "name": "Endpoint",
+      "label": "Endpoint",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Canal Events (EPG)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-65",
+      "name": "ficos",
+      "label": "ficos",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-66",
+      "name": "tv/ui/",
+      "label": "tv/ui/",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-67",
+      "name": "Firebase Analytics / Youbora",
+      "label": "Firebase Analytics / Youbora",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "3.1 Journey: Reproducción de Canal TV en Vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-68",
+      "name": "Latencia observada",
+      "label": "Latencia observada",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Canal Events (EPG)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-69",
+      "name": "configuraci",
+      "label": "configuraci",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-70",
+      "name": "escaneo de TvApi.kt",
+      "label": "escaneo de TvApi.kt",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-71",
+      "name": "Response",
+      "label": "Response",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Canal Events (EPG)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-72",
+      "name": "trazas APM",
+      "label": "trazas APM",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-73",
+      "name": "Youbora SDK docs",
+      "label": "Youbora SDK docs",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-74",
+      "name": "Campo",
+      "label": "Campo",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Canal Events (EPG)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-75",
+      "name": "Youbora",
+      "label": "Youbora",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance",
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-76",
+      "name": "Youbora/Media3",
+      "label": "Youbora/Media3",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-77",
+      "name": "API Source",
+      "label": "API Source",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Canal Events (EPG)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-78",
+      "name": "endpoint de URL de stream",
+      "label": "endpoint de URL de stream",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-79",
+      "name": "Youbora/New Relic",
+      "label": "Youbora/New Relic",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-80",
+      "name": "TVPlayerActivity",
+      "label": "TVPlayerActivity",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-81",
+      "name": "CDN: Broadpeak SmartLib 05.02.01 para streaming adaptativo (ABR)",
+      "label": "CDN: Broadpeak SmartLib 05.02.01 para streaming adaptativo (ABR)",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-82",
+      "name": "tv/ui/components/",
+      "label": "tv/ui/components/",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-83",
+      "name": "Youbora Analytics",
+      "label": "Youbora Analytics",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-84",
+      "name": "app/build.gradle",
+      "label": "app/build.gradle",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-85",
+      "name": "Params",
+      "label": "Params",
+      "type": "event_technical",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Canal Events (EPG)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-86",
+      "name": "TVPlayerFragment",
+      "label": "TVPlayerFragment",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-87",
+      "name": "Monitoreo: Youbora 6.8.+ para calidad de reproducción, New Relic 7.6.2 para APM",
+      "label": "Monitoreo: Youbora 6.8.+ para calidad de reproducción, New Relic 7.6.2 para APM",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-88",
+      "name": "glosario completo del dominio",
+      "label": "glosario completo del dominio",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "12. Glosario"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-89",
+      "name": "IaC/CDN config",
+      "label": "IaC/CDN config",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-90",
+      "name": "P95/P99",
+      "label": "P95/P99",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-91",
+      "name": "debounce/throttle configuration",
+      "label": "debounce/throttle configuration",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-92",
+      "name": "search/ui/",
+      "label": "search/ui/",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-93",
+      "name": "SLA",
+      "label": "SLA",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C1: Search Predictive"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-94",
+      "name": "qro-microfwk-silo-tv",
+      "label": "qro-microfwk-silo-tv",
+      "type": "contract_api",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-95",
+      "name": "c",
+      "label": "c",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-96",
+      "name": "SLA Payway",
+      "label": "SLA Payway",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-97",
+      "name": "Payway dashboards",
+      "label": "Payway dashboards",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-98",
+      "name": "Payway/CRM",
+      "label": "Payway/CRM",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-99",
+      "name": "Payway/New Relic",
+      "label": "Payway/New Relic",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-100",
+      "name": "app/libs/",
+      "label": "app/libs/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-101",
+      "name": "premium",
+      "label": "premium",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del dominio",
+        "Datos no disponibles"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-102",
+      "name": "<informacion no encontrada en el repositorio: infra de Payway -> IaC, docs de integración>",
+      "label": "<informacion no encontrada en el repositorio: infra de Payway -> IaC, docs de integración>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-103",
+      "name": "proveedor ThreatMetrix/LexisNexis",
+      "label": "proveedor ThreatMetrix/LexisNexis",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "TrustDefender (local AAR)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-104",
+      "name": "Integración con Payway como pasarela de pagos",
+      "label": "Integración con Payway como pasarela de pagos",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-105",
+      "name": "payment/ui/",
+      "label": "payment/ui/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-106",
+      "name": "Payway webhook docs",
+      "label": "Payway webhook docs",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "sections": [
+        "J3: Renovación de Suscripción"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-107",
+      "name": "usuario ingresa c",
+      "label": "usuario ingresa c",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C3: 2FA Pagos"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-108",
+      "name": "digo",
+      "label": "digo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C3: 2FA Pagos"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-109",
+      "name": "Analytics/Payway",
+      "label": "Analytics/Payway",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "KPIs relevantes",
+        "3.1 Journey: Suscripción a Plan Premium (Conversión)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-110",
+      "name": "freemium/ui/",
+      "label": "freemium/ui/",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-111",
+      "name": "docs TrustDefender",
+      "label": "docs TrustDefender",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "TrustDefender (local AAR)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-112",
+      "name": "n freemium",
+      "label": "n freemium",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "sections": [
+        "KPIs del dominio",
+        "Datos no disponibles"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-113",
+      "name": "Payway",
+      "label": "Payway",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-114",
+      "name": "Monitoreo: Youbora 6.8.+, New Relic 7.6.2",
+      "label": "Monitoreo: Youbora 6.8.+, New Relic 7.6.2",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-115",
+      "name": "CDN: Broadpeak SmartLib 05.02.01",
+      "label": "CDN: Broadpeak SmartLib 05.02.01",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-116",
+      "name": "Youbora/Firebase",
+      "label": "Youbora/Firebase",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-117",
+      "name": "escaneo de player_vod/data/",
+      "label": "escaneo de player_vod/data/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C5: Stream URL (endpoint no identificado)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-118",
+      "name": "APM/trazas",
+      "label": "APM/trazas",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-119",
+      "name": "endpoint",
+      "label": "endpoint",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-120",
+      "name": "player/ui/",
+      "label": "player/ui/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-121",
+      "name": "endpoint exacto",
+      "label": "endpoint exacto",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "C5: Stream URL (endpoint no identificado)"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-122",
+      "name": "PlaybackActivity",
+      "label": "PlaybackActivity",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-123",
+      "name": "DetailsActivity",
+      "label": "DetailsActivity",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-124",
+      "name": "player/ui/ContinuePlaybackDialog",
+      "label": "player/ui/ContinuePlaybackDialog",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-125",
+      "name": "IaC/CDN",
+      "label": "IaC/CDN",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-126",
+      "name": "secuencia completa",
+      "label": "secuencia completa",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Representacion"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-node-127",
+      "name": "escaneo de player_vod/",
+      "label": "escaneo de player_vod/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "6.2 Contratos consumidos"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-android-tv-edge-1",
+      "source": "claro-video-android-tv-node-6",
+      "target": "claro-video-android-tv-node-27",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-2",
+      "source": "claro-video-android-tv-node-30",
+      "target": "claro-video-android-tv-node-33",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-3",
+      "source": "claro-video-android-tv-node-10",
+      "target": "claro-video-android-tv-node-31",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-4",
+      "source": "claro-video-android-tv-node-22",
+      "target": "claro-video-android-tv-node-24",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-5",
+      "source": "claro-video-android-tv-node-21",
+      "target": "claro-video-android-tv-node-25",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-6",
+      "source": "claro-video-android-tv-node-26",
+      "target": "claro-video-android-tv-node-25",
+      "type": "calls",
+      "occurrences": 7,
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-7",
+      "source": "claro-video-android-tv-node-1",
+      "target": "claro-video-android-tv-node-7",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-8",
+      "source": "claro-video-android-tv-node-34",
+      "target": "claro-video-android-tv-node-14",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-9",
+      "source": "claro-video-android-tv-node-4",
+      "target": "claro-video-android-tv-node-19",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-10",
+      "source": "claro-video-android-tv-node-11",
+      "target": "claro-video-android-tv-node-13",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-11",
+      "source": "claro-video-android-tv-node-23",
+      "target": "claro-video-android-tv-node-3",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-12",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-28",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-13",
+      "source": "claro-video-android-tv-node-29",
+      "target": "claro-video-android-tv-node-28",
+      "type": "calls",
+      "occurrences": 12,
+      "evidenceCount": 12,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-14",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-32",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-15",
+      "source": "claro-video-android-tv-node-15",
+      "target": "claro-video-android-tv-node-12",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-16",
+      "source": "claro-video-android-tv-node-17",
+      "target": "claro-video-android-tv-node-20",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-17",
+      "source": "claro-video-android-tv-node-21",
+      "target": "claro-video-android-tv-node-50",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-18",
+      "source": "claro-video-android-tv-node-1",
+      "target": "claro-video-android-tv-node-32",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-19",
+      "source": "claro-video-android-tv-node-11",
+      "target": "claro-video-android-tv-node-46",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-20",
+      "source": "claro-video-android-tv-node-43",
+      "target": "claro-video-android-tv-node-51",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-21",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-52",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-22",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-53",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-23",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-36",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-24",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-39",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-25",
+      "source": "claro-video-android-tv-node-29",
+      "target": "claro-video-android-tv-node-36",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-26",
+      "source": "claro-video-android-tv-node-37",
+      "target": "claro-video-android-tv-node-45",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-27",
+      "source": "claro-video-android-tv-node-48",
+      "target": "claro-video-android-tv-node-44",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-28",
+      "source": "claro-video-android-tv-node-48",
+      "target": "claro-video-android-tv-node-35",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-29",
+      "source": "claro-video-android-tv-node-48",
+      "target": "claro-video-android-tv-node-38",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-30",
+      "source": "claro-video-android-tv-node-42",
+      "target": "claro-video-android-tv-node-12",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-31",
+      "source": "claro-video-android-tv-node-17",
+      "target": "claro-video-android-tv-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-32",
+      "source": "claro-video-android-tv-node-60",
+      "target": "claro-video-android-tv-node-58",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-33",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-36",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "ACNTMGMT",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-34",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-63",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_NAVIGATION.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-35",
+      "source": "claro-video-android-tv-node-1",
+      "target": "claro-video-android-tv-node-75",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-36",
+      "source": "claro-video-android-tv-node-34",
+      "target": "claro-video-android-tv-node-89",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-37",
+      "source": "claro-video-android-tv-node-4",
+      "target": "claro-video-android-tv-node-69",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-38",
+      "source": "claro-video-android-tv-node-43",
+      "target": "claro-video-android-tv-node-3",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-39",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-83",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-40",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-79",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-41",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-75",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-42",
+      "source": "claro-video-android-tv-node-47",
+      "target": "claro-video-android-tv-node-76",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-43",
+      "source": "claro-video-android-tv-node-29",
+      "target": "claro-video-android-tv-node-67",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-44",
+      "source": "claro-video-android-tv-node-37",
+      "target": "claro-video-android-tv-node-72",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-45",
+      "source": "claro-video-android-tv-node-78",
+      "target": "claro-video-android-tv-node-70",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-46",
+      "source": "claro-video-android-tv-node-90",
+      "target": "claro-video-android-tv-node-53",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-47",
+      "source": "claro-video-android-tv-node-65",
+      "target": "claro-video-android-tv-node-73",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-48",
+      "source": "claro-video-android-tv-node-88",
+      "target": "claro-video-android-tv-node-46",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-49",
+      "source": "claro-video-android-tv-node-93",
+      "target": "claro-video-android-tv-node-32",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-50",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-53",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "ACNTMGMT",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-51",
+      "source": "claro-video-android-tv-node-91",
+      "target": "claro-video-android-tv-node-95",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-52",
+      "source": "claro-video-android-tv-node-108",
+      "target": "claro-video-android-tv-node-107",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-53",
+      "source": "claro-video-android-tv-node-111",
+      "target": "claro-video-android-tv-node-103",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-54",
+      "source": "claro-video-android-tv-node-22",
+      "target": "claro-video-android-tv-node-106",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "journeys.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-55",
+      "source": "claro-video-android-tv-node-112",
+      "target": "claro-video-android-tv-node-101",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "metricas.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-56",
+      "source": "claro-video-android-tv-node-1",
+      "target": "claro-video-android-tv-node-113",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-57",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-109",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-58",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-97",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-59",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-98",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-60",
+      "source": "claro-video-android-tv-node-29",
+      "target": "claro-video-android-tv-node-109",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-61",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-99",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-62",
+      "source": "claro-video-android-tv-node-48",
+      "target": "claro-video-android-tv-node-96",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-63",
+      "source": "claro-video-android-tv-node-121",
+      "target": "claro-video-android-tv-node-117",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-64",
+      "source": "claro-video-android-tv-node-34",
+      "target": "claro-video-android-tv-node-125",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-65",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-75",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "ACNTMGMT",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-66",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-116",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-67",
+      "source": "claro-video-android-tv-node-16",
+      "target": "claro-video-android-tv-node-79",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "ACNTMGMT",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-68",
+      "source": "claro-video-android-tv-node-126",
+      "target": "claro-video-android-tv-node-118",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-69",
+      "source": "claro-video-android-tv-node-119",
+      "target": "claro-video-android-tv-node-127",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-tv-edge-70",
+      "source": "claro-video-android-tv-node-65",
+      "target": "claro-video-android-tv-node-12",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "LIVESTREAMING",
+        "AUTH"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:53.193Z",
+    "nodeTypes": [
+      "component",
+      "event_technical",
+      "contract_api"
+    ],
+    "topFiles": [
+      "SPEC_ACCOUNT_MANAGEMENT.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "SPEC_CONTENT_NAVIGATION.md",
+      "SPEC_LIVE_BROADCAST.md",
+      "SPEC_CONTENT_DISCOVERY.md",
+      "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+      "SPEC_VOD_PLAYBACK.md",
+      "contracts.md",
+      "journeys.md",
+      "metricas.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 17,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-android-tv",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-android-tv.md",
+          "analysis\\diagrama_global_claro-video-android-tv.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 126,
+          "edgeCount": 70,
+          "groupCount": 7,
+          "isolatedCount": 40
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-android-tv",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-android-tv.md"
+        ],
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-android-tv/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-android-tv_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-android-tv_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 5
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-android-tv_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-android-tv_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 5
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS claro-video-android-tv/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-android-tv_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-android-tv_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 19,
+          "groupCount": 0,
+          "isolatedCount": 4
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-android-tv_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-android-tv_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 19,
+          "groupCount": 0,
+          "isolatedCount": 4
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS claro-video-android-tv/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-android-tv_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-android-tv_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 14,
+          "groupCount": 0,
+          "isolatedCount": 7
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-android-tv_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-android-tv_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 14,
+          "groupCount": 0,
+          "isolatedCount": 7
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS claro-video-android-tv/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-android-tv_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-android-tv_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 48,
+          "edgeCount": 21,
+          "groupCount": 0,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-android-tv_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-android-tv_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 48,
+          "edgeCount": 21,
+          "groupCount": 0,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 11,
+        "title": "Diagrama VSS claro-video-android-tv/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-android-tv_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-android-tv_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 17,
+          "groupCount": 0,
+          "isolatedCount": 3
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-android-tv_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-android-tv_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 17,
+          "groupCount": 0,
+          "isolatedCount": 3
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 13,
+        "title": "Diagrama VSS claro-video-android-tv/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-android-tv_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-android-tv_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 40,
+          "edgeCount": 20,
+          "groupCount": 0,
+          "isolatedCount": 6
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-android-tv_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-android-tv_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 40,
+          "edgeCount": 20,
+          "groupCount": 0,
+          "isolatedCount": 6
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 15,
+        "title": "Diagrama VSS claro-video-android-tv/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-android-tv_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-android-tv_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 39,
+          "edgeCount": 20,
+          "groupCount": 0,
+          "isolatedCount": 7
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS claro-video-android-tv/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-android-tv_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-android-tv_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 39,
+          "edgeCount": 20,
+          "groupCount": 0,
+          "isolatedCount": 7
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 17,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 127,
+          "edgeCount": 70,
+          "groupCount": 0,
+          "isolatedCount": 41
+        }
+      }
+    ]
+  }
+}

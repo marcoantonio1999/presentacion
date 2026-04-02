@@ -1,0 +1,6665 @@
+{
+  "repo": "claro-video-android-request-manager",
+  "title": "Android Request Manager",
+  "sourceLabel": "analysis",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-android-request-manager",
+    "annex": "ANEXO_claro-video-android-request-manager.html",
+    "legacyViewer": "ANEXO_claro-video-android-request-manager-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-android-request-manager.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-request-manager\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-request-manager\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-request-manager\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-request-manager\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\claro-video-android-request-manager\\analysis\\diagrama_global_claro-video-android-request-manager.mmd"
+  },
+  "summary": {
+    "totalNodes": 266,
+    "totalEdges": 122,
+    "rawEdges": 285,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "MUSIC",
+      "RECORDED",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "TIMESHIFT",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "<AccountRepository>",
+      "<ParentalControlActivity>",
+      "<SessionManagementActivity>",
+      "RequestInterface",
+      "Verificar SwaggerHub directo o solicitar actualizaci",
+      "regiones",
+      "Verificar SwaggerHub directo: fan_in=3, fan_out=0",
+      "README del repositorio: fan_in=1, fan_out=0",
+      "c",
+      "Verificar SwaggerHub: fan_in=2, fan_out=0",
+      "Terraform/IaC del backend",
+      "logo MCP: fan_in=0, fan_out=6",
+      "Verificar SwaggerHub",
+      "Verificar SwaggerHub directo",
+      "documentaci: fan_in=1, fan_out=0",
+      "platform",
+      "get_api_spec CMS_Rotation",
+      "<informacion no encontrada: NavMenuFragment>",
+      "get_api_spec Startheaderinfo",
+      "<informacion no encontrada: CMSRotationManager>",
+      "GET /user/v1/startheaderinfo",
+      "get_api_spec CMS_Rotation POST",
+      "schema completo",
+      "get_api_spec Like_Grupo_SuperGrupo",
+      "colecciones especiales",
+      "get_api_spec CMS_Superhighlight",
+      "GET /services/cms/special",
+      "schema rotation",
+      "GET /services/cms/v1/rotation/nav/status",
+      "nav items schema",
+      "carruseles editoriales",
+      "<informacion no encontrada: SpecialSectionFragment>",
+      "Gap ID",
+      "datos de cabecera del usuario",
+      "GET /services/nav/v1/data",
+      "request body",
+      "get_api_spec NAVDATA",
+      "estado rotaci",
+      "estructura de men",
+      "build.gradle app",
+      "Player SDK",
+      "version",
+      "pin",
+      "query params",
+      "build.gradle",
+      "date_to",
+      "spec Lineup",
+      "<informacion no encontrada: ChannelListAdapter>",
+      "spec Channels_Delete",
+      "spec channelevents",
+      "entitlement params",
+      "Recordatorios (CRUD)",
+      "tap reproducir",
+      "series_id",
+      "<informacion no encontrada: HistoryFragment>",
+      "pagination",
+      "<informacion no encontrada: ContinueWatchingWidget>",
+      "spec Seenlast",
+      "spec Seendel",
+      "content_id",
+      "eliminar recordatorio",
+      "listar recordatorios activos",
+      "Grabaciones (lista + delete serie)",
+      "start_time",
+      "<informacion no encontrada: RecordedViewModel>",
+      "Historial de visto",
+      "crear nuevo recordatorio",
+      "<PlanSelectorViewModel>",
+      "estado pausa",
+      "MCP Server",
+      "Reporte versi"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 24,
+      "edgeCount": 18,
+      "evidenceCount": 178,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 24
+        }
+      ],
+      "sampleNodes": [
+        "User Service",
+        "RequestTask",
+        "<AccountViewModel>",
+        "AMX Service",
+        "ProxiedHurlStack"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 37,
+      "edgeCount": 23,
+      "evidenceCount": 61,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 34
+        },
+        {
+          "type": "client",
+          "count": 2
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "token",
+        "spec owner",
+        "GAP-AUTH-003",
+        "<informacion no encontrada en el repositorio: topología cloud, balanceo, regiones -> Terraform/IaC del backend>",
+        "GAP-AUTH-006"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 17,
+      "edgeCount": 6,
+      "evidenceCount": 45,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 17
+        }
+      ],
+      "sampleNodes": [
+        "quitar like",
+        "—",
+        "<informacion no encontrada: NavMenuComponent>",
+        "DELETE /likes/v1/like",
+        "<informacion no encontrada: LikeButton>"
+      ]
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 43,
+      "edgeCount": 36,
+      "evidenceCount": 242,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 40
+        },
+        {
+          "type": "contract_api",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "n_apm-rum-dashboards",
+        "n_gap-auth-006",
+        "n_gap-auth-004",
+        "n_documentaci"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 8,
+      "edgeCount": 0,
+      "evidenceCount": 12,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 8
+        }
+      ],
+      "sampleNodes": [
+        "<MusicRepository>",
+        "<MusicViewModel>",
+        "<AlbumActivity>",
+        "<PlaylistActivity>",
+        "<MusicHomeActivity/Fragment>"
+      ]
+    },
+    {
+      "id": "RECORDED",
+      "label": "Recorded DVR",
+      "short": "RECORDED",
+      "summary": "Grabaciones, reminder flow y NPVR legado.",
+      "nodeCount": 10,
+      "edgeCount": 6,
+      "evidenceCount": 14,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 10
+        }
+      ],
+      "sampleNodes": [
+        "GET /services/user/v1/reminder/create",
+        "spec Recording_Series_Delete",
+        "<informacion no encontrada: RecordingsFragment>",
+        "GET /services/user/v1/reminder/list",
+        "<informacion no encontrada: RecordingsActivity/Fragment>"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 5,
+      "edgeCount": 2,
+      "evidenceCount": 6,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 4
+        },
+        {
+          "type": "client",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "<informacion no encontrada: topología cloud -> IaC/Terraform>",
+        "squeda",
+        "README",
+        "reproducci",
+        "<informacion no encontrada: SearchActivity/Fragment -> código app cliente>"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 19,
+      "edgeCount": 3,
+      "evidenceCount": 202,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 18
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "Trigger",
+        "Evidencia primaria",
+        "Resultado",
+        "Estado",
+        "Frecuencia"
+      ]
+    },
+    {
+      "id": "TIMESHIFT",
+      "label": "Timeshift",
+      "short": "TIMESHIFT",
+      "summary": "Buffer, replay y grabación NPVR programada.",
+      "nodeCount": 18,
+      "edgeCount": 10,
+      "evidenceCount": 34,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 16
+        },
+        {
+          "type": "contract_api",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "offset",
+        "stream URL diferida",
+        "<informacion no encontrada: EPGSyncManager>",
+        "stream timeshift URL",
+        "catch-up URL"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 14,
+      "edgeCount": 8,
+      "evidenceCount": 35,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 11
+        },
+        {
+          "type": "client",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "PicassoImageLoaderManager",
+        "flujo VOD",
+        "asumir via Getmedia/VSS-VOD GAP-VOD-001",
+        "carga poster/backdrop",
+        "Journey 3.2"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 71,
+      "edgeCount": 39,
+      "evidenceCount": 123,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 71
+        }
+      ],
+      "sampleNodes": [
+        "<AccountRepository>",
+        "<ParentalControlActivity>",
+        "<SessionManagementActivity>",
+        "RequestInterface",
+        "Verificar SwaggerHub directo o solicitar actualizaci"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-android-request-manager-node-1",
+      "name": "User Service",
+      "label": "User Service",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 13,
+      "files": [
+        "sequences.md"
+      ],
+      "sections": [
+        "Sequence — Ver perfil de usuario",
+        "Sequence — Editar perfil de usuario",
+        "Sequence — Consultar origen de usuario",
+        "Sequence — Gestionar dispositivos vinculados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-2",
+      "name": "PicassoImageLoaderManager",
+      "label": "PicassoImageLoaderManager",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 17,
+      "files": [
+        "componentes.md",
+        "sequences.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes del SDK — AmcoLibs (Confirmados por análisis de código)",
+        "Sequence — Ver perfil de usuario",
+        "7. Deployment View",
+        "Componentes del SDK (AmcoLibs) — Código confirmado"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-3",
+      "name": "<AccountRepository>",
+      "label": "<AccountRepository>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-4",
+      "name": "RequestTask",
+      "label": "RequestTask",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes del SDK — AmcoLibs (Confirmados por análisis de código)",
+        "5.1 SDK Components (AmcoLibs) — Confirmados en código",
+        "Componentes del SDK (AmcoLibs) — Código confirmado"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-5",
+      "name": "<AccountViewModel>",
+      "label": "<AccountViewModel>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-6",
+      "name": "<ParentalControlActivity>",
+      "label": "<ParentalControlActivity>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-7",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 30,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y editar perfil",
+        "3.2 Journey: Gestionar dispositivos vinculados",
+        "3.3 Journey: Cerrar sesiones remotas",
+        "3.4 Journey: Configurar control parental"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-8",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 30,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y editar perfil",
+        "3.2 Journey: Gestionar dispositivos vinculados",
+        "3.3 Journey: Cerrar sesiones remotas",
+        "3.4 Journey: Configurar control parental"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-9",
+      "name": "<SessionManagementActivity>",
+      "label": "<SessionManagementActivity>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-10",
+      "name": "AMX Service",
+      "label": "AMX Service",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "sections": [
+        "Sequence — Consultar datos cliente AMX"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-11",
+      "name": "ProxiedHurlStack",
+      "label": "ProxiedHurlStack",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes del SDK — AmcoLibs (Confirmados por análisis de código)",
+        "5.1 SDK Components (AmcoLibs) — Confirmados en código",
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-12",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 30,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y editar perfil",
+        "3.2 Journey: Gestionar dispositivos vinculados",
+        "3.3 Journey: Cerrar sesiones remotas",
+        "3.4 Journey: Configurar control parental"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-13",
+      "name": "Android App",
+      "label": "Android App",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 25,
+      "files": [
+        "sequences.md",
+        "componentes.md"
+      ],
+      "sections": [
+        "Sequence — Ver perfil de usuario",
+        "Sequence — Editar perfil de usuario",
+        "Sequence — Consultar origen de usuario",
+        "Sequence — Consultar datos cliente AMX"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-14",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 30,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y editar perfil",
+        "3.2 Journey: Gestionar dispositivos vinculados",
+        "3.3 Journey: Cerrar sesiones remotas",
+        "3.4 Journey: Configurar control parental"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-15",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 30,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y editar perfil",
+        "3.2 Journey: Gestionar dispositivos vinculados",
+        "3.3 Journey: Cerrar sesiones remotas",
+        "3.4 Journey: Configurar control parental"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-16",
+      "name": "RequestInterface",
+      "label": "RequestInterface",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes del SDK — AmcoLibs (Confirmados por análisis de código)",
+        "Componentes del SDK (AmcoLibs) — Código confirmado"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-17",
+      "name": "<DeviceManagementActivity>",
+      "label": "<DeviceManagementActivity>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-18",
+      "name": "RequestInterface.getUrl()",
+      "label": "RequestInterface.getUrl()",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 SDK Components (AmcoLibs) — Confirmados en código"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-19",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 30,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Ver y editar perfil",
+        "3.2 Journey: Gestionar dispositivos vinculados",
+        "3.3 Journey: Cerrar sesiones remotas",
+        "3.4 Journey: Configurar control parental"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-20",
+      "name": "VolleyRequestManager",
+      "label": "VolleyRequestManager",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 72,
+      "files": [
+        "componentes.md",
+        "sequences.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes del SDK — AmcoLibs (Confirmados por análisis de código)",
+        "Sequence — Ver perfil de usuario",
+        "Sequence — Editar perfil de usuario",
+        "Sequence — Consultar origen de usuario"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-21",
+      "name": "PicassoImageLoaderManager.displayImage()",
+      "label": "PicassoImageLoaderManager.displayImage()",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 9,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 SDK Components (AmcoLibs) — Confirmados en código",
+        "Componentes del SDK (AmcoLibs) — Código confirmado",
+        "Componentes del SDK (AmcoLibs)",
+        "5.1 SDK Components (AmcoLibs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-22",
+      "name": "<HubProfilesActivity>",
+      "label": "<HubProfilesActivity>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-23",
+      "name": "<ProfileActivity>",
+      "label": "<ProfileActivity>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-24",
+      "name": "Payway Service",
+      "label": "Payway Service",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "sections": [
+        "Sequence — Ver perfil de usuario"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-25",
+      "name": "<ProfileActivity/Fragment>",
+      "label": "<ProfileActivity/Fragment>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-26",
+      "name": "VolleyRequestManager.addRequest()",
+      "label": "VolleyRequestManager.addRequest()",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 12,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_MUSIC_STREAMING.md",
+        "SPEC_RECORDED_CONTENT.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 SDK Components (AmcoLibs) — Confirmados en código",
+        "CARROUSEL — Evidence: Components",
+        "Componentes del SDK (AmcoLibs) — Código confirmado",
+        "Componentes del SDK (AmcoLibs)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-27",
+      "name": "<EditProfileActivity>",
+      "label": "<EditProfileActivity>",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-28",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 116,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md",
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH",
+        "Flujo de Componentes (LIVESTREAMING)",
+        "4.2 Sequence — Seleccionar canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-29",
+      "name": "n_apm-rum-dashboards",
+      "label": "n_apm-rum-dashboards",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-30",
+      "name": "n_gap-auth-006",
+      "label": "n_gap-auth-006",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-31",
+      "name": "n_gap-auth-004",
+      "label": "n_gap-auth-004",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-32",
+      "name": "token",
+      "label": "token",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-33",
+      "name": "n_documentaci",
+      "label": "n_documentaci",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-34",
+      "name": "spec owner",
+      "label": "spec owner",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-35",
+      "name": "Verificar SwaggerHub directo o solicitar actualizaci",
+      "label": "Verificar SwaggerHub directo o solicitar actualizaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "APIs No Encontradas en MCP"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-36",
+      "name": "GAP-AUTH-003",
+      "label": "GAP-AUTH-003",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-37",
+      "name": "<informacion no encontrada en el repositorio: topología cloud, balanceo, regiones -> Terraform/IaC del backend>",
+      "label": "<informacion no encontrada en el repositorio: topología cloud, balanceo, regiones -> Terraform/IaC del backend>",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-38",
+      "name": "GAP-AUTH-006",
+      "label": "GAP-AUTH-006",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-39",
+      "name": "n_aws-azure-topology",
+      "label": "n_aws-azure-topology",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-40",
+      "name": "User_oauth_callback_login",
+      "label": "User_oauth_callback_login",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva (OBLIGATORIA)",
+        "APIs No Encontradas en MCP"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-41",
+      "name": "Activity/Fragment de login",
+      "label": "Activity/Fragment de login",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 5,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md",
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH",
+        "Impacto directo e indirecto por nodo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-42",
+      "name": "<informacion no encontrada en el repositorio: Activity/Fragment de login -> código de la app cliente que consume el SDK>",
+      "label": "<informacion no encontrada en el repositorio: Activity/Fragment de login -> código de la app cliente que consume el SDK>",
+      "type": "client",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-43",
+      "name": "USR-SmartCardLogin: fan_in=0, fan_out=2",
+      "label": "USR-SmartCardLogin: fan_in=0, fan_out=2",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-44",
+      "name": "USR-SmartCardLogin",
+      "label": "USR-SmartCardLogin",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva (OBLIGATORIA)",
+        "APIs No Encontradas en MCP"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-45",
+      "name": "n_verificar-swaggerhub",
+      "label": "n_verificar-swaggerhub",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-46",
+      "name": "logo MCP",
+      "label": "logo MCP",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-47",
+      "name": "n_verificar-swaggerhub-directo-o-solicitar-actualizaci",
+      "label": "n_verificar-swaggerhub-directo-o-solicitar-actualizaci",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-48",
+      "name": "regiones",
+      "label": "regiones",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md",
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH",
+        "Impacto directo e indirecto por nodo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-49",
+      "name": "n_gap-auth-001",
+      "label": "n_gap-auth-001",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-50",
+      "name": "n_readme-del-repositorio",
+      "label": "n_readme-del-repositorio",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-51",
+      "name": "infra validation",
+      "label": "infra validation",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-52",
+      "name": "RegisterCV: fan_in=0, fan_out=2",
+      "label": "RegisterCV: fan_in=0, fan_out=2",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-53",
+      "name": "mfwkweb-api.clarovideo.net",
+      "label": "mfwkweb-api.clarovideo.net",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_NAVIGATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-54",
+      "name": "GAP-AUTH-002",
+      "label": "GAP-AUTH-002",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-55",
+      "name": "GAP-AUTH-004",
+      "label": "GAP-AUTH-004",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-56",
+      "name": "Verificar SwaggerHub directo: fan_in=3, fan_out=0",
+      "label": "Verificar SwaggerHub directo: fan_in=3, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-57",
+      "name": "runtime validation",
+      "label": "runtime validation",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-58",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login de usuario OTT",
+        "3.2 Journey: Validación de sesión activa",
+        "3.3 Journey: Registro de nuevo usuario",
+        "3.1 Journey: Búsqueda de contenido por usuario"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-59",
+      "name": "Architecture Decision Records",
+      "label": "Architecture Decision Records",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-60",
+      "name": "README del repositorio: fan_in=1, fan_out=0",
+      "label": "README del repositorio: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-61",
+      "name": "n_architecture-decision-records",
+      "label": "n_architecture-decision-records",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-62",
+      "name": "n_006",
+      "label": "n_006",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-63",
+      "name": "Terraform/K8s config",
+      "label": "Terraform/K8s config",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-64",
+      "name": "c",
+      "label": "c",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md",
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH",
+        "Impacto directo e indirecto por nodo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-65",
+      "name": "IaaS",
+      "label": "IaaS",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-66",
+      "name": "n_terraform-k8s-config",
+      "label": "n_terraform-k8s-config",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-67",
+      "name": "documentaci",
+      "label": "documentaci",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-68",
+      "name": "n_gap-auth-005",
+      "label": "n_gap-auth-005",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-69",
+      "name": "BRFRE/PRD",
+      "label": "BRFRE/PRD",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-70",
+      "name": "AWS/Azure topology",
+      "label": "AWS/Azure topology",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-71",
+      "name": "n_token",
+      "label": "n_token",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-72",
+      "name": "006",
+      "label": "006",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "11. Change History"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-73",
+      "name": "Verificar SwaggerHub: fan_in=2, fan_out=0",
+      "label": "Verificar SwaggerHub: fan_in=2, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-74",
+      "name": "GAP-AUTH-001",
+      "label": "GAP-AUTH-001",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)",
+        "11. Change History"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-75",
+      "name": "Latencia promedio del flujo login",
+      "label": "Latencia promedio del flujo login",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-76",
+      "name": "User_oauth_callback_login: fan_in=0, fan_out=2",
+      "label": "User_oauth_callback_login: fan_in=0, fan_out=2",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-77",
+      "name": "GAP-AUTH-001: fan_in=1, fan_out=1",
+      "label": "GAP-AUTH-001: fan_in=1, fan_out=1",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-78",
+      "name": "GAP-AUTH-005",
+      "label": "GAP-AUTH-005",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos — Audit MCP (2026-03-11)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-79",
+      "name": "Terraform/IaC del backend",
+      "label": "Terraform/IaC del backend",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md",
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH",
+        "Impacto directo e indirecto por nodo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-80",
+      "name": "logo MCP: fan_in=0, fan_out=6",
+      "label": "logo MCP: fan_in=0, fan_out=6",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-81",
+      "name": "n_gap-auth-003",
+      "label": "n_gap-auth-003",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-82",
+      "name": "RegisterCV",
+      "label": "RegisterCV",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva (OBLIGATORIA)",
+        "APIs No Encontradas en MCP"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-83",
+      "name": "Verificar SwaggerHub",
+      "label": "Verificar SwaggerHub",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva (OBLIGATORIA)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-84",
+      "name": "README del repositorio",
+      "label": "README del repositorio",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-85",
+      "name": "APM/RUM dashboards",
+      "label": "APM/RUM dashboards",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-86",
+      "name": "Verificar SwaggerHub directo",
+      "label": "Verificar SwaggerHub directo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 4,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Mapeo de APIs – Búsqueda Exhaustiva (OBLIGATORIA)",
+        "APIs No Encontradas en MCP",
+        "⚠️ GAP CRÍTICO — Getmedia / content-playback"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-87",
+      "name": "GAP-AUTH-002: fan_in=1, fan_out=0",
+      "label": "GAP-AUTH-002: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-88",
+      "name": "AmcoLibs/requestmanager/",
+      "label": "AmcoLibs/requestmanager/",
+      "type": "client",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-89",
+      "name": "ADR",
+      "label": "ADR",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-90",
+      "name": "n_verificar-swaggerhub-directo",
+      "label": "n_verificar-swaggerhub-directo",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 12,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-91",
+      "name": "n_gap-auth-002",
+      "label": "n_gap-auth-002",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+        "diagrama_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "sections": [
+        "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "Diagrama VSS claro-video-android-request-manager/AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-92",
+      "name": "documentaci: fan_in=1, fan_out=0",
+      "label": "documentaci: fan_in=1, fan_out=0",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "impact_analysis.md"
+      ],
+      "sections": [
+        "Componentes mas conectados"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-93",
+      "name": "quitar like",
+      "label": "quitar like",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)",
+        "4.3 Sequence — Like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-94",
+      "name": "platform",
+      "label": "platform",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/cms/carrousel"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-95",
+      "name": "get_api_spec CMS_Rotation",
+      "label": "get_api_spec CMS_Rotation",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/cms/v1/rotation/nav/status"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-96",
+      "name": "—",
+      "label": "—",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 6,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Gaps de Componentes",
+        "4.2 Sequence — Rotación de navegación"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-97",
+      "name": "<informacion no encontrada: NavMenuComponent>",
+      "label": "<informacion no encontrada: NavMenuComponent>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos — código de app no en este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-98",
+      "name": "DELETE /likes/v1/like",
+      "label": "DELETE /likes/v1/like",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)",
+        "4.3 Sequence — Like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-99",
+      "name": "<informacion no encontrada: NavMenuFragment>",
+      "label": "<informacion no encontrada: NavMenuFragment>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-100",
+      "name": "<informacion no encontrada: LikeButton>",
+      "label": "<informacion no encontrada: LikeButton>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos — código de app no en este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-101",
+      "name": "get_api_spec Startheaderinfo",
+      "label": "get_api_spec Startheaderinfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /user/v1/startheaderinfo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-102",
+      "name": "<informacion no encontrada: CMSRotationManager>",
+      "label": "<informacion no encontrada: CMSRotationManager>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-103",
+      "name": "<informacion no encontrada: HomeActivity/Fragment>",
+      "label": "<informacion no encontrada: HomeActivity/Fragment>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos — código de app no en este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-104",
+      "name": "GET /user/v1/startheaderinfo",
+      "label": "GET /user/v1/startheaderinfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-105",
+      "name": "get_api_spec CMS_Rotation POST",
+      "label": "get_api_spec CMS_Rotation POST",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 2: POST /services/cms/v1/rotation/clone/config"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-106",
+      "name": "schema completo",
+      "label": "schema completo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 6,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/cms/superhighlight",
+        "Contrato 1: GET /user/v1/startheaderinfo",
+        "Contrato 2: POST /likes/v1/like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-107",
+      "name": "verificar estado actual",
+      "label": "verificar estado actual",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "4.3 Sequence — Like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-108",
+      "name": "POST /likes/v1/like",
+      "label": "POST /likes/v1/like",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)",
+        "4.3 Sequence — Like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-109",
+      "name": "get_api_spec Like_Grupo_SuperGrupo",
+      "label": "get_api_spec Like_Grupo_SuperGrupo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 2: POST /likes/v1/like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-110",
+      "name": "colecciones especiales",
+      "label": "colecciones especiales",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-111",
+      "name": "get_api_spec CMS_Superhighlight",
+      "label": "get_api_spec CMS_Superhighlight",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/cms/superhighlight"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-112",
+      "name": "GET /services/cms/special",
+      "label": "GET /services/cms/special",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-113",
+      "name": "GET /services/cms/carrousel",
+      "label": "GET /services/cms/carrousel",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-114",
+      "name": "schema rotation",
+      "label": "schema rotation",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/cms/v1/rotation/nav/status"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-115",
+      "name": "get_api_spec cms_carrousel",
+      "label": "get_api_spec cms_carrousel",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/cms/carrousel"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-116",
+      "name": "GET /services/cms/v1/rotation/nav/status",
+      "label": "GET /services/cms/v1/rotation/nav/status",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-117",
+      "name": "GET /likes/v1/like",
+      "label": "GET /likes/v1/like",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)",
+        "4.3 Sequence — Like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-118",
+      "name": "<informacion no encontrada: CarrouselAdapter>",
+      "label": "<informacion no encontrada: CarrouselAdapter>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos — código de app no en este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-119",
+      "name": "nav items schema",
+      "label": "nav items schema",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/nav/v1/data"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-120",
+      "name": "obtener estado actual de likes",
+      "label": "obtener estado actual de likes",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-121",
+      "name": "carruseles editoriales",
+      "label": "carruseles editoriales",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-122",
+      "name": "<informacion no encontrada: HomeViewModel>",
+      "label": "<informacion no encontrada: HomeViewModel>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos — código de app no en este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-123",
+      "name": "<informacion no encontrada: SpecialSectionFragment>",
+      "label": "<informacion no encontrada: SpecialSectionFragment>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-124",
+      "name": "<informacion no encontrada: SuperhighlightBanner>",
+      "label": "<informacion no encontrada: SuperhighlightBanner>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos — código de app no en este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-125",
+      "name": "Gap ID",
+      "label": "Gap ID",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 3,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Gaps de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-126",
+      "name": "datos de cabecera del usuario",
+      "label": "datos de cabecera del usuario",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-127",
+      "name": "GET /services/nav/v1/data",
+      "label": "GET /services/nav/v1/data",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-128",
+      "name": "request body",
+      "label": "request body",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 2: POST /services/cms/v1/rotation/clone/config"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-129",
+      "name": "get_api_spec NAVDATA",
+      "label": "get_api_spec NAVDATA",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: GET /services/nav/v1/data"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-130",
+      "name": "estado rotaci",
+      "label": "estado rotaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-131",
+      "name": "agregar like",
+      "label": "agregar like",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)",
+        "4.3 Sequence — Like"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-132",
+      "name": "<informacion no encontrada: CDN de imágenes URL base -> configuración de infra>",
+      "label": "<informacion no encontrada: CDN de imágenes URL base -> configuración de infra>",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-133",
+      "name": "estructura de men",
+      "label": "estructura de men",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (CARROUSEL)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-134",
+      "name": "build.gradle app",
+      "label": "build.gradle app",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Dependencias Externas"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-135",
+      "name": "/services/epg/channelevents",
+      "label": "/services/epg/channelevents",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-136",
+      "name": "<informacion no encontrada: EPGViewModel>",
+      "label": "<informacion no encontrada: EPGViewModel>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-137",
+      "name": "stream URL source",
+      "label": "stream URL source",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-138",
+      "name": "Player SDK",
+      "label": "Player SDK",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Dependencias Externas"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-139",
+      "name": "version",
+      "label": "version",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Dependencias Externas"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-140",
+      "name": "spec EPG_Menu",
+      "label": "spec EPG_Menu",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "EPG_Menu — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-141",
+      "name": "GET stream URL",
+      "label": "GET stream URL",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Seleccionar canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-142",
+      "name": "pin",
+      "label": "pin",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Channels_Delete — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-143",
+      "name": "spec TrackLivechannel",
+      "label": "spec TrackLivechannel",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "TrackLivechannel — V1"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-144",
+      "name": "<informacion no encontrada: EPGGuideFragment>",
+      "label": "<informacion no encontrada: EPGGuideFragment>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-145",
+      "name": "query params",
+      "label": "query params",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "TrackLivechannel — V1"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-146",
+      "name": "Backends: mfwkweb-api.clarovideo.net + controlpin service",
+      "label": "Backends: mfwkweb-api.clarovideo.net + controlpin service",
+      "type": "contract_api",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-147",
+      "name": "build.gradle",
+      "label": "build.gradle",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Dependencias Externas"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-148",
+      "name": "<informacion no encontrada: LivePlayerActivity>",
+      "label": "<informacion no encontrada: LivePlayerActivity>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-149",
+      "name": "GAP-LIVE-001",
+      "label": "GAP-LIVE-001",
+      "type": "contract_api",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 6,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Gaps de Componentes",
+        "Flujo de Componentes (LIVESTREAMING)",
+        "3.2 Journey: Ver canal en vivo",
+        "4.2 Sequence — Seleccionar canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-150",
+      "name": "<informacion no encontrada: LiveTVActivity>",
+      "label": "<informacion no encontrada: LiveTVActivity>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-151",
+      "name": "/services/epg/menu",
+      "label": "/services/epg/menu",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-152",
+      "name": "<informacion no encontrada: CDN/servidor streams HLS/DASH -> GAP-LIVE-001>",
+      "label": "<informacion no encontrada: CDN/servidor streams HLS/DASH -> GAP-LIVE-001>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-153",
+      "name": "header auth params",
+      "label": "header auth params",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "EPG_Menu — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-154",
+      "name": "date_to",
+      "label": "date_to",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "channelevents — v4.1.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-155",
+      "name": "spec Lineup",
+      "label": "spec Lineup",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Lineup — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-156",
+      "name": "<informacion no encontrada: ChannelListAdapter>",
+      "label": "<informacion no encontrada: ChannelListAdapter>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-157",
+      "name": "Pantalla de ingreso PIN",
+      "label": "Pantalla de ingreso PIN",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Seleccionar canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-158",
+      "name": "<informacion no encontrada: LivePlayerFragment>",
+      "label": "<informacion no encontrada: LivePlayerFragment>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-159",
+      "name": "Reproductor inicia stream",
+      "label": "Reproductor inicia stream",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Seleccionar canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-160",
+      "name": "spec Channels_Delete",
+      "label": "spec Channels_Delete",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Channels_Delete — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-161",
+      "name": "/v1/livechannel",
+      "label": "/v1/livechannel",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-162",
+      "name": "GAP-LIVE-002",
+      "label": "GAP-LIVE-002",
+      "type": "contract_api",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Gaps de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-163",
+      "name": "stream URL",
+      "label": "stream URL",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "sections": [
+        "3.2 Journey: Ver canal en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-164",
+      "name": "/services/epg/v1/lineup",
+      "label": "/services/epg/v1/lineup",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes (LIVESTREAMING)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-165",
+      "name": "spec channelevents",
+      "label": "spec channelevents",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "channelevents — v4.1.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-166",
+      "name": "entitlement params",
+      "label": "entitlement params",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Lineup — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-167",
+      "name": "<MusicRepository>",
+      "label": "<MusicRepository>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-168",
+      "name": "<MusicViewModel>",
+      "label": "<MusicViewModel>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-169",
+      "name": "<AlbumActivity>",
+      "label": "<AlbumActivity>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-170",
+      "name": "Content Manager",
+      "label": "Content Manager",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "sequences.md"
+      ],
+      "sections": [
+        "Sequence — Ver perfil de artista (DOCUMENTADO)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-171",
+      "name": "<PlaylistActivity>",
+      "label": "<PlaylistActivity>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-172",
+      "name": "Music Service",
+      "label": "Music Service",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 4,
+      "files": [
+        "sequences.md"
+      ],
+      "sections": [
+        "Sequence — Navegar album (GAP-MUSIC-001)",
+        "Sequence — Reproducir pista (GAP-MUSIC-002)",
+        "Sequence — Gestionar playlist (GAP-MUSIC-003)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-173",
+      "name": "<MusicHomeActivity/Fragment>",
+      "label": "<MusicHomeActivity/Fragment>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-174",
+      "name": "<PlayerActivity>",
+      "label": "<PlayerActivity>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-175",
+      "name": "<ArtistDetailActivity>",
+      "label": "<ArtistDetailActivity>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-176",
+      "name": "<informacion no encontrada — GAPs activos>",
+      "label": "<informacion no encontrada — GAPs activos>",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC_STREAMING.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-177",
+      "name": "GET /services/user/v1/reminder/create",
+      "label": "GET /services/user/v1/reminder/create",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-178",
+      "name": "offset",
+      "label": "offset",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Seenlast — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-179",
+      "name": "Recordatorios (CRUD)",
+      "label": "Recordatorios (CRUD)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Cobertura de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-180",
+      "name": "spec Recording_Series_Delete",
+      "label": "spec Recording_Series_Delete",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Recording_Series_Delete — v3.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-181",
+      "name": "tap reproducir",
+      "label": "tap reproducir",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Grabaciones DVR"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-182",
+      "name": "series_id",
+      "label": "series_id",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Recording_Series_Delete — v3.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-183",
+      "name": "<informacion no encontrada: HistoryFragment>",
+      "label": "<informacion no encontrada: HistoryFragment>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-184",
+      "name": "pagination",
+      "label": "pagination",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "RecordingsLightList — v3.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-185",
+      "name": "<informacion no encontrada: RecordingsFragment>",
+      "label": "<informacion no encontrada: RecordingsFragment>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-186",
+      "name": "<informacion no encontrada: ContinueWatchingWidget>",
+      "label": "<informacion no encontrada: ContinueWatchingWidget>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-187",
+      "name": "spec Seenlast",
+      "label": "spec Seenlast",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Seenlast — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-188",
+      "name": "spec Seendel",
+      "label": "spec Seendel",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Seendel — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-189",
+      "name": "GET /services/user/v1/reminder/list",
+      "label": "GET /services/user/v1/reminder/list",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-190",
+      "name": "<informacion no encontrada: RecordingsActivity/Fragment>",
+      "label": "<informacion no encontrada: RecordingsActivity/Fragment>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-191",
+      "name": "content_id",
+      "label": "content_id",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Seendel — v1.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-192",
+      "name": "eliminar recordatorio",
+      "label": "eliminar recordatorio",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-193",
+      "name": "listar recordatorios activos",
+      "label": "listar recordatorios activos",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-194",
+      "name": "Grabaciones (lista + delete serie)",
+      "label": "Grabaciones (lista + delete serie)",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Cobertura de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-195",
+      "name": "spec RecordingsLightList",
+      "label": "spec RecordingsLightList",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "RecordingsLightList — v3.0.0"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-196",
+      "name": "start_time",
+      "label": "start_time",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-197",
+      "name": "<informacion no encontrada: RemindersFragment>",
+      "label": "<informacion no encontrada: RemindersFragment>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-198",
+      "name": "GET /services/user/v1/seenlast",
+      "label": "GET /services/user/v1/seenlast",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-199",
+      "name": "GET /services/user/v1/reminder/delete",
+      "label": "GET /services/user/v1/reminder/delete",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-200",
+      "name": "flujo VOD",
+      "label": "flujo VOD",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Grabaciones DVR"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-201",
+      "name": "<informacion no encontrada: RecordedViewModel>",
+      "label": "<informacion no encontrada: RecordedViewModel>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-202",
+      "name": "Historial de visto",
+      "label": "Historial de visto",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Cobertura de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-203",
+      "name": "spec Reminder",
+      "label": "spec Reminder",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-204",
+      "name": "<informacion no encontrada: RecordingsViewModel>",
+      "label": "<informacion no encontrada: RecordingsViewModel>",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-205",
+      "name": "crear nuevo recordatorio",
+      "label": "crear nuevo recordatorio",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Reminder — v1.0.0 (3 endpoints)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-206",
+      "name": "GET /search/v1/linealpredictive",
+      "label": "GET /search/v1/linealpredictive",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-207",
+      "name": "<informacion no encontrada: topología cloud -> IaC/Terraform>",
+      "label": "<informacion no encontrada: topología cloud -> IaC/Terraform>",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-208",
+      "name": "squeda",
+      "label": "squeda",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-209",
+      "name": "README",
+      "label": "README",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-210",
+      "name": "reproducci",
+      "label": "reproducci",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-211",
+      "name": "<informacion no encontrada: SearchActivity/Fragment -> código app cliente>",
+      "label": "<informacion no encontrada: SearchActivity/Fragment -> código app cliente>",
+      "type": "client",
+      "domain": "SEARCH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-212",
+      "name": "suscripci",
+      "label": "suscripci",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Suscripción (flujo principal)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-213",
+      "name": "NO",
+      "label": "NO",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Suscripción (flujo principal)",
+        "4.1 Sequence — Sincronización EPG"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-214",
+      "name": "YES",
+      "label": "YES",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Suscripción (flujo principal)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-215",
+      "name": "<SubscriptionViewModel>",
+      "label": "<SubscriptionViewModel>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-216",
+      "name": "<ManageSubscriptionActivity>",
+      "label": "<ManageSubscriptionActivity>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-217",
+      "name": "<PlanSelectorViewModel>",
+      "label": "<PlanSelectorViewModel>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-218",
+      "name": "<informacion no encontrada: URL base Payway -> configuración de infra>",
+      "label": "<informacion no encontrada: URL base Payway -> configuración de infra>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-219",
+      "name": "<SubscriptionActivity/Fragment>",
+      "label": "<SubscriptionActivity/Fragment>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-220",
+      "name": "<PaymentViewModel>",
+      "label": "<PaymentViewModel>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-221",
+      "name": "error de pago",
+      "label": "error de pago",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Suscripción (flujo principal)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-222",
+      "name": "POST /services/payway/paymentservice/v1/contractsbyuser",
+      "label": "POST /services/payway/paymentservice/v1/contractsbyuser",
+      "type": "contract_api",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Contrato 1: Obtener contratos del usuario (POST /services/payway/paymentservice/v1/contractsbyuser)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-223",
+      "name": "<CheckoutActivity/Fragment>",
+      "label": "<CheckoutActivity/Fragment>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-224",
+      "name": "<SubscriptionRepository>",
+      "label": "<SubscriptionRepository>",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes App (Inferidos — código fuera de este repo)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-225",
+      "name": "Carrier Billing: integración con operadoras móviles (buyconfirmhc)",
+      "label": "Carrier Billing: integración con operadoras móviles (buyconfirmhc)",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-226",
+      "name": "asumir via Getmedia/VSS-VOD GAP-VOD-001",
+      "label": "asumir via Getmedia/VSS-VOD GAP-VOD-001",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Cobertura y Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-227",
+      "name": "POST /v1/epgversion",
+      "label": "POST /v1/epgversion",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-228",
+      "name": "estado pausa",
+      "label": "estado pausa",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Cobertura y Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-229",
+      "name": "stream URL diferida",
+      "label": "stream URL diferida",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "Flujo de Componentes",
+        "4.2 Sequence — Timeshift Playback"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-230",
+      "name": "<informacion no encontrada: EPGSyncManager>",
+      "label": "<informacion no encontrada: EPGSyncManager>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)",
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-231",
+      "name": "stream timeshift URL",
+      "label": "stream timeshift URL",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Cobertura y Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-232",
+      "name": "catch-up URL",
+      "label": "catch-up URL",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Catch-up / Ver desde inicio"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-233",
+      "name": "GAP-TIMESHIFT-002",
+      "label": "GAP-TIMESHIFT-002",
+      "type": "contract_api",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Gaps de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-234",
+      "name": "<informacion no encontrada: CatchUpViewModel>",
+      "label": "<informacion no encontrada: CatchUpViewModel>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-235",
+      "name": "<informacion no encontrada: TimeshiftViewModel>",
+      "label": "<informacion no encontrada: TimeshiftViewModel>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-236",
+      "name": "<informacion no encontrada: CDN/servidor streams timeshift -> GAP-TIMESHIFT-001>",
+      "label": "<informacion no encontrada: CDN/servidor streams timeshift -> GAP-TIMESHIFT-001>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-237",
+      "name": "GET /v1/epgversion",
+      "label": "GET /v1/epgversion",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-238",
+      "name": "EPG actualizado",
+      "label": "EPG actualizado",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Sincronización EPG"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-239",
+      "name": "MCP Server",
+      "label": "MCP Server",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Cobertura y Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-240",
+      "name": "Descarga EPG delta",
+      "label": "Descarga EPG delta",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Sincronización EPG"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-241",
+      "name": "GAP-TIMESHIFT-001",
+      "label": "GAP-TIMESHIFT-001",
+      "type": "contract_api",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 9,
+      "files": [
+        "componentes.md",
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "Gaps de Componentes",
+        "Flujo de Componentes",
+        "3.2 Journey: Pausar y retomar TV en vivo",
+        "3.3 Journey: Catch-up / Ver desde inicio"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-242",
+      "name": "Reporte versi",
+      "label": "Reporte versi",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-243",
+      "name": "<informacion no encontrada: TimeshiftPlayer>",
+      "label": "<informacion no encontrada: TimeshiftPlayer>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.2 App Components (Inferidos)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-244",
+      "name": "<informacion no encontrada: TimeshiftPlayerActivity>",
+      "label": "<informacion no encontrada: TimeshiftPlayerActivity>",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Componentes de la App cliente (INFERIDOS)"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-245",
+      "name": "Pause request",
+      "label": "Pause request",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Timeshift Playback"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-246",
+      "name": "Versi",
+      "label": "Versi",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Componentes"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-247",
+      "name": "segmentos timeshift",
+      "label": "segmentos timeshift",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "Cobertura y Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-248",
+      "name": "stream timeshift",
+      "label": "stream timeshift",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.2 Journey: Pausar y retomar TV en vivo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-249",
+      "name": "retorna",
+      "label": "retorna",
+      "type": "component",
+      "domain": "TIMESHIFT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Sincronización EPG"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-250",
+      "name": "carga poster/backdrop",
+      "label": "carga poster/backdrop",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-251",
+      "name": "Journey 3.2",
+      "label": "Journey 3.2",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Cargar catálogo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-252",
+      "name": "GET .../purchasebuttoninfo",
+      "label": "GET .../purchasebuttoninfo",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-253",
+      "name": "GET /services/content/list",
+      "label": "GET /services/content/list",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-254",
+      "name": "<informacion no encontrada: CDN de imágenes, servidor DRM -> infraestructura backend>",
+      "label": "<informacion no encontrada: CDN de imágenes, servidor DRM -> infraestructura backend>",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-255",
+      "name": "GAP-VOD-001",
+      "label": "GAP-VOD-001",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Reproducción de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-256",
+      "name": "<informacion no encontrada: CatalogActivity/Fragment -> código app cliente>",
+      "label": "<informacion no encontrada: CatalogActivity/Fragment -> código app cliente>",
+      "type": "client",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-257",
+      "name": "<informacion no encontrada: ContentDetailActivity -> código app cliente>",
+      "label": "<informacion no encontrada: ContentDetailActivity -> código app cliente>",
+      "type": "client",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-258",
+      "name": "backdrop",
+      "label": "backdrop",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Ver ficha de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-259",
+      "name": "Cat",
+      "label": "Cat",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-260",
+      "name": "Getmedia / content-playback",
+      "label": "Getmedia / content-playback",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "sections": [
+        "⚠️ GAP CRÍTICO — Getmedia / content-playback"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-261",
+      "name": "Getmedia/content-playback",
+      "label": "Getmedia/content-playback",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Reproducción de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-262",
+      "name": "GET /services/content/v1/data",
+      "label": "GET /services/content/v1/data",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-263",
+      "name": "usuario toca contenido",
+      "label": "usuario toca contenido",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "4.1 Sequence — Cargar catálogo"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-264",
+      "name": "<informacion no encontrada: VideoPlayerActivity -> código app cliente>",
+      "label": "<informacion no encontrada: VideoPlayerActivity -> código app cliente>",
+      "type": "client",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-265",
+      "name": "GET /services/content/filters",
+      "label": "GET /services/content/filters",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-node-266",
+      "name": "GET /content/guid/v1/data",
+      "label": "GET /content/guid/v1/data",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "sections": [
+        "Flujo de Dependencias VOD"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-android-request-manager-edge-1",
+      "source": "claro-video-android-request-manager-node-13",
+      "target": "claro-video-android-request-manager-node-20",
+      "type": "reads",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-2",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-1",
+      "type": "reads",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-3",
+      "source": "claro-video-android-request-manager-node-13",
+      "target": "claro-video-android-request-manager-node-20",
+      "type": "calls",
+      "occurrences": 18,
+      "evidenceCount": 18,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-4",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-24",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-5",
+      "source": "claro-video-android-request-manager-node-13",
+      "target": "claro-video-android-request-manager-node-2",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-6",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-1",
+      "type": "calls",
+      "occurrences": 12,
+      "evidenceCount": 12,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-7",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-10",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-8",
+      "source": "claro-video-android-request-manager-node-41",
+      "target": "claro-video-android-request-manager-node-64",
+      "type": "consumes",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-9",
+      "source": "claro-video-android-request-manager-node-48",
+      "target": "claro-video-android-request-manager-node-79",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-10",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-90",
+      "type": "calls",
+      "occurrences": 12,
+      "evidenceCount": 12,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-11",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-45",
+      "type": "calls",
+      "occurrences": 8,
+      "evidenceCount": 8,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-12",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-47",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-13",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-50",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-14",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-29",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-15",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-66",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-16",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-39",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-17",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-33",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-18",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-61",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-19",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-71",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-20",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-49",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-21",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-91",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-22",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-81",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-23",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-31",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-24",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-68",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-25",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-30",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-26",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-62",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "diagrama_impacto_vss_claro-video-android-request-manager_auth.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-27",
+      "source": "claro-video-android-request-manager-node-82",
+      "target": "claro-video-android-request-manager-node-86",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-28",
+      "source": "claro-video-android-request-manager-node-40",
+      "target": "claro-video-android-request-manager-node-83",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-29",
+      "source": "claro-video-android-request-manager-node-44",
+      "target": "claro-video-android-request-manager-node-83",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-30",
+      "source": "claro-video-android-request-manager-node-82",
+      "target": "claro-video-android-request-manager-node-35",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-31",
+      "source": "claro-video-android-request-manager-node-40",
+      "target": "claro-video-android-request-manager-node-86",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-32",
+      "source": "claro-video-android-request-manager-node-44",
+      "target": "claro-video-android-request-manager-node-86",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-33",
+      "source": "claro-video-android-request-manager-node-34",
+      "target": "claro-video-android-request-manager-node-84",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-34",
+      "source": "claro-video-android-request-manager-node-57",
+      "target": "claro-video-android-request-manager-node-85",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-35",
+      "source": "claro-video-android-request-manager-node-51",
+      "target": "claro-video-android-request-manager-node-63",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-36",
+      "source": "claro-video-android-request-manager-node-65",
+      "target": "claro-video-android-request-manager-node-70",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-37",
+      "source": "claro-video-android-request-manager-node-69",
+      "target": "claro-video-android-request-manager-node-67",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-38",
+      "source": "claro-video-android-request-manager-node-89",
+      "target": "claro-video-android-request-manager-node-59",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-39",
+      "source": "claro-video-android-request-manager-node-75",
+      "target": "claro-video-android-request-manager-node-32",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-40",
+      "source": "claro-video-android-request-manager-node-46",
+      "target": "claro-video-android-request-manager-node-74",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-41",
+      "source": "claro-video-android-request-manager-node-46",
+      "target": "claro-video-android-request-manager-node-54",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-42",
+      "source": "claro-video-android-request-manager-node-46",
+      "target": "claro-video-android-request-manager-node-36",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-43",
+      "source": "claro-video-android-request-manager-node-46",
+      "target": "claro-video-android-request-manager-node-55",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-44",
+      "source": "claro-video-android-request-manager-node-46",
+      "target": "claro-video-android-request-manager-node-78",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-45",
+      "source": "claro-video-android-request-manager-node-46",
+      "target": "claro-video-android-request-manager-node-38",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-46",
+      "source": "claro-video-android-request-manager-node-74",
+      "target": "claro-video-android-request-manager-node-72",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-47",
+      "source": "claro-video-android-request-manager-node-104",
+      "target": "claro-video-android-request-manager-node-126",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-48",
+      "source": "claro-video-android-request-manager-node-127",
+      "target": "claro-video-android-request-manager-node-133",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-49",
+      "source": "claro-video-android-request-manager-node-113",
+      "target": "claro-video-android-request-manager-node-121",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-50",
+      "source": "claro-video-android-request-manager-node-112",
+      "target": "claro-video-android-request-manager-node-110",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-51",
+      "source": "claro-video-android-request-manager-node-116",
+      "target": "claro-video-android-request-manager-node-130",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-52",
+      "source": "claro-video-android-request-manager-node-117",
+      "target": "claro-video-android-request-manager-node-120",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-53",
+      "source": "claro-video-android-request-manager-node-108",
+      "target": "claro-video-android-request-manager-node-131",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-54",
+      "source": "claro-video-android-request-manager-node-98",
+      "target": "claro-video-android-request-manager-node-93",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-55",
+      "source": "claro-video-android-request-manager-node-114",
+      "target": "claro-video-android-request-manager-node-95",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-56",
+      "source": "claro-video-android-request-manager-node-128",
+      "target": "claro-video-android-request-manager-node-105",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-57",
+      "source": "claro-video-android-request-manager-node-119",
+      "target": "claro-video-android-request-manager-node-129",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-58",
+      "source": "claro-video-android-request-manager-node-94",
+      "target": "claro-video-android-request-manager-node-115",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-59",
+      "source": "claro-video-android-request-manager-node-106",
+      "target": "claro-video-android-request-manager-node-111",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-60",
+      "source": "claro-video-android-request-manager-node-106",
+      "target": "claro-video-android-request-manager-node-101",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-61",
+      "source": "claro-video-android-request-manager-node-106",
+      "target": "claro-video-android-request-manager-node-109",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-62",
+      "source": "claro-video-android-request-manager-node-117",
+      "target": "claro-video-android-request-manager-node-107",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CARROUSEL_NAVIGATION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-63",
+      "source": "claro-video-android-request-manager-node-139",
+      "target": "claro-video-android-request-manager-node-134",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-64",
+      "source": "claro-video-android-request-manager-node-138",
+      "target": "claro-video-android-request-manager-node-147",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-65",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-151",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-66",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-164",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-67",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-135",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-68",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-161",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-69",
+      "source": "claro-video-android-request-manager-node-137",
+      "target": "claro-video-android-request-manager-node-149",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-70",
+      "source": "claro-video-android-request-manager-node-153",
+      "target": "claro-video-android-request-manager-node-140",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-71",
+      "source": "claro-video-android-request-manager-node-145",
+      "target": "claro-video-android-request-manager-node-143",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-72",
+      "source": "claro-video-android-request-manager-node-154",
+      "target": "claro-video-android-request-manager-node-165",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-73",
+      "source": "claro-video-android-request-manager-node-166",
+      "target": "claro-video-android-request-manager-node-155",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-74",
+      "source": "claro-video-android-request-manager-node-142",
+      "target": "claro-video-android-request-manager-node-160",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-75",
+      "source": "claro-video-android-request-manager-node-163",
+      "target": "claro-video-android-request-manager-node-149",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-76",
+      "source": "claro-video-android-request-manager-node-141",
+      "target": "claro-video-android-request-manager-node-149",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-77",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-159",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-78",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-157",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LIVE_BROADCAST.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-79",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-170",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-80",
+      "source": "claro-video-android-request-manager-node-170",
+      "target": "claro-video-android-request-manager-node-20",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-81",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-13",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-82",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-172",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "sequences.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-83",
+      "source": "claro-video-android-request-manager-node-198",
+      "target": "claro-video-android-request-manager-node-28",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-84",
+      "source": "claro-video-android-request-manager-node-184",
+      "target": "claro-video-android-request-manager-node-195",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-85",
+      "source": "claro-video-android-request-manager-node-182",
+      "target": "claro-video-android-request-manager-node-180",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-86",
+      "source": "claro-video-android-request-manager-node-178",
+      "target": "claro-video-android-request-manager-node-187",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-87",
+      "source": "claro-video-android-request-manager-node-191",
+      "target": "claro-video-android-request-manager-node-188",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-88",
+      "source": "claro-video-android-request-manager-node-189",
+      "target": "claro-video-android-request-manager-node-193",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-89",
+      "source": "claro-video-android-request-manager-node-177",
+      "target": "claro-video-android-request-manager-node-205",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-90",
+      "source": "claro-video-android-request-manager-node-199",
+      "target": "claro-video-android-request-manager-node-192",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-91",
+      "source": "claro-video-android-request-manager-node-196",
+      "target": "claro-video-android-request-manager-node-203",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-92",
+      "source": "claro-video-android-request-manager-node-181",
+      "target": "claro-video-android-request-manager-node-200",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED_CONTENT.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-93",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-20",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-94",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-206",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-95",
+      "source": "claro-video-android-request-manager-node-34",
+      "target": "claro-video-android-request-manager-node-209",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-96",
+      "source": "claro-video-android-request-manager-node-208",
+      "target": "claro-video-android-request-manager-node-210",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CONTENT_DISCOVERY.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-97",
+      "source": "claro-video-android-request-manager-node-214",
+      "target": "claro-video-android-request-manager-node-212",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-98",
+      "source": "claro-video-android-request-manager-node-213",
+      "target": "claro-video-android-request-manager-node-221",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION_MANAGEMENT.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-99",
+      "source": "claro-video-android-request-manager-node-237",
+      "target": "claro-video-android-request-manager-node-28",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-100",
+      "source": "claro-video-android-request-manager-node-227",
+      "target": "claro-video-android-request-manager-node-242",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-101",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-246",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-102",
+      "source": "claro-video-android-request-manager-node-229",
+      "target": "claro-video-android-request-manager-node-241",
+      "type": "calls",
+      "occurrences": 4,
+      "evidenceCount": 4,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-103",
+      "source": "claro-video-android-request-manager-node-231",
+      "target": "claro-video-android-request-manager-node-226",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-104",
+      "source": "claro-video-android-request-manager-node-247",
+      "target": "claro-video-android-request-manager-node-239",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-105",
+      "source": "claro-video-android-request-manager-node-228",
+      "target": "claro-video-android-request-manager-node-239",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-106",
+      "source": "claro-video-android-request-manager-node-248",
+      "target": "claro-video-android-request-manager-node-241",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-107",
+      "source": "claro-video-android-request-manager-node-232",
+      "target": "claro-video-android-request-manager-node-241",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-108",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-249",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-109",
+      "source": "claro-video-android-request-manager-node-213",
+      "target": "claro-video-android-request-manager-node-238",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-110",
+      "source": "claro-video-android-request-manager-node-28",
+      "target": "claro-video-android-request-manager-node-240",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-111",
+      "source": "claro-video-android-request-manager-node-245",
+      "target": "claro-video-android-request-manager-node-241",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_TIMESHIFT_PLAYBACK.md"
+      ],
+      "primaryDomain": "TIMESHIFT",
+      "domains": [
+        "TIMESHIFT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-112",
+      "source": "claro-video-android-request-manager-node-13",
+      "target": "claro-video-android-request-manager-node-259",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-113",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-253",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-114",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-265",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-115",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-262",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-116",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-266",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-117",
+      "source": "claro-video-android-request-manager-node-20",
+      "target": "claro-video-android-request-manager-node-252",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-118",
+      "source": "claro-video-android-request-manager-node-2",
+      "target": "claro-video-android-request-manager-node-250",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "componentes.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-119",
+      "source": "claro-video-android-request-manager-node-260",
+      "target": "claro-video-android-request-manager-node-86",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "contracts.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-120",
+      "source": "claro-video-android-request-manager-node-261",
+      "target": "claro-video-android-request-manager-node-255",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-121",
+      "source": "claro-video-android-request-manager-node-263",
+      "target": "claro-video-android-request-manager-node-251",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-android-request-manager-edge-122",
+      "source": "claro-video-android-request-manager-node-2",
+      "target": "claro-video-android-request-manager-node-258",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:52.898Z",
+    "nodeTypes": [
+      "component",
+      "client",
+      "contract_api"
+    ],
+    "topFiles": [
+      "sequences.md",
+      "componentes.md",
+      "SPEC_ACCOUNT_MANAGEMENT.md",
+      "SPEC_CARROUSEL_NAVIGATION.md",
+      "SPEC_LIVE_BROADCAST.md",
+      "SPEC_MUSIC_STREAMING.md",
+      "SPEC_RECORDED_CONTENT.md",
+      "SPEC_VOD_PLAYBACK.md",
+      "SPEC_SUBSCRIPTION_MANAGEMENT.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "SPEC_CONTENT_DISCOVERY.md",
+      "SPEC_TIMESHIFT_PLAYBACK.md",
+      "diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+      "diagrama_vss_claro-video-android-request-manager_auth.md",
+      "contracts.md",
+      "impact_analysis.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 23,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global claro-video-android-request-manager",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_claro-video-android-request-manager.md",
+          "analysis\\diagrama_global_claro-video-android-request-manager.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 264,
+          "edgeCount": 122,
+          "groupCount": 10,
+          "isolatedCount": 97
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global claro-video-android-request-manager",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_claro-video-android-request-manager.md"
+        ],
+        "metrics": {
+          "nodeCount": 12,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS claro-video-android-request-manager/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-android-request-manager_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_claro-video-android-request-manager_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 27,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 21
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 27,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 21
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS claro-video-android-request-manager/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-android-request-manager_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_claro-video-android-request-manager_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 71,
+          "edgeCount": 39,
+          "groupCount": 0,
+          "isolatedCount": 21
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 71,
+          "edgeCount": 39,
+          "groupCount": 0,
+          "isolatedCount": 21
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS claro-video-android-request-manager/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-android-request-manager_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_claro-video-android-request-manager_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 55,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 26
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 55,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 26
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS claro-video-android-request-manager/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-android-request-manager_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_claro-video-android-request-manager_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 45,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 20
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 45,
+          "edgeCount": 16,
+          "groupCount": 0,
+          "isolatedCount": 20
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 11,
+        "title": "Diagrama VSS claro-video-android-request-manager/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-android-request-manager_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_claro-video-android-request-manager_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 24,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 24,
+          "edgeCount": 6,
+          "groupCount": 0,
+          "isolatedCount": 19
+        }
+      },
+      {
+        "id": "domain-RECORDED-vss",
+        "order": 13,
+        "title": "Diagrama VSS claro-video-android-request-manager/RECORDED",
+        "kind": "domain_vss",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-android-request-manager_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_claro-video-android-request-manager_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 40,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 20
+        }
+      },
+      {
+        "id": "domain-RECORDED-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/RECORDED",
+        "kind": "domain_impact",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 40,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 20
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 15,
+        "title": "Diagrama VSS claro-video-android-request-manager/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-android-request-manager_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_claro-video-android-request-manager_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 17,
+          "edgeCount": 4,
+          "groupCount": 0,
+          "isolatedCount": 10
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 17,
+        "title": "Diagrama VSS claro-video-android-request-manager/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-android-request-manager_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_claro-video-android-request-manager_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 26,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 18,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 26,
+          "edgeCount": 2,
+          "groupCount": 0,
+          "isolatedCount": 22
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-vss",
+        "order": 19,
+        "title": "Diagrama VSS claro-video-android-request-manager/TIMESHIFT",
+        "kind": "domain_vss",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-android-request-manager_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_vss_claro-video-android-request-manager_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 37,
+          "edgeCount": 13,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "domain-TIMESHIFT-impact",
+        "order": 20,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/TIMESHIFT",
+        "kind": "domain_impact",
+        "scope": "TIMESHIFT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_timeshift.md",
+          "VSS\\GENERATED\\TIMESHIFT\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_timeshift.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 37,
+          "edgeCount": 13,
+          "groupCount": 0,
+          "isolatedCount": 18
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 21,
+        "title": "Diagrama VSS claro-video-android-request-manager/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-android-request-manager_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_claro-video-android-request-manager_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 31,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 22,
+        "title": "Diagrama Impacto VSS claro-video-android-request-manager/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_claro-video-android-request-manager_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 31,
+          "edgeCount": 12,
+          "groupCount": 0,
+          "isolatedCount": 13
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 23,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 266,
+          "edgeCount": 122,
+          "groupCount": 0,
+          "isolatedCount": 98
+        }
+      }
+    ]
+  }
+}

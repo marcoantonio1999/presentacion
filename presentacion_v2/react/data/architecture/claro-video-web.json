@@ -1,0 +1,3309 @@
+{
+  "repo": "claro-video-web",
+  "title": "Web",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-web",
+    "annex": "ANEXO_claro-video-web.html",
+    "vssRoute": "#/fase-1/vss/claro-video-web"
+  },
+  "source": {
+    "docPath": "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 8,
+    "flowchartCount": 6,
+    "sequenceCount": 2,
+    "totalNodes": 196,
+    "totalEdges": 111,
+    "sections": [
+      "DIAGRAMA 1: Arquitectura General del Sistema",
+      "DIAGRAMA 2: Estructura de Módulos React",
+      "DIAGRAMA 3: Flujo de Datos Redux + Saga",
+      "DIAGRAMA 4: Flujo de Autenticación",
+      "DIAGRAMA 5: Pipeline Build Webpack",
+      "DIAGRAMA 6: CI/CD Pipeline",
+      "DIAGRAMA 7: Arquitectura del Servidor Express",
+      "DIAGRAMA 8: Mapa de Dependencias de Reproducción de Video"
+    ]
+  },
+  "diagrams": {
+    "total": 8,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "Arquitectura General del Sistema",
+        "kind": "flowchart",
+        "section": "DIAGRAMA 1: Arquitectura General del Sistema",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "BROWSER",
+              "label": "🌐 Browser (SPA)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
+            },
+            {
+              "id": "SERVER",
+              "label": "🖥️ Node.js Server (Express 4.18)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 6
+            },
+            {
+              "id": "APIS",
+              "label": "🔌 APIs Externas",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
+            },
+            {
+              "id": "EXTERNAL",
+              "label": "🔗 Apps Externas",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 19
+            },
+            {
+              "id": "BUILD",
+              "label": "⚙️ Build System",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 24
+            }
+          ],
+          "nodes": [
+            {
+              "id": "ReactApp",
+              "label": "React 17 App\\n(src/react/App.js)",
+              "type": "component",
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Router",
+              "label": "React Router v3/v6\\n(src/react/routes/)",
+              "type": "component",
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "Redux",
+              "label": "Redux Store\\n(src/react/store.js)",
+              "type": "component",
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Sagas",
+              "label": "Redux-Saga\\n(appSaga.js)",
+              "type": "component",
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "Axios",
+              "label": "Axios HTTP\\n(src/react/api/)",
+              "type": "component",
+              "group": "🌐 Browser (SPA)",
+              "groupId": "BROWSER",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Express",
+              "label": "Express App\\n(server/index.js)",
+              "type": "component",
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "HBS",
+              "label": "Handlebars Templates\\n(server/views/)",
+              "type": "component",
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "Middlewares",
+              "label": "Middlewares\\n(ViewEngine→BodyParser→Compression→Router→Static)",
+              "type": "component",
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Routes",
+              "label": "Routes\\n(DeepLink | ExternalLogins | Gtres | Health)",
+              "type": "component",
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Static",
+              "label": "Static Files\\n(dist/ — webpack output)",
+              "type": "component",
+              "group": "🖥️ Node.js Server (Express 4.18)",
+              "groupId": "SERVER",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "ContentAPI",
+              "label": "Content API\\n(VOD / Live)",
+              "type": "component",
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "UserAPI",
+              "label": "User API\\n(Auth / Profiles)",
+              "type": "component",
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "EPGAPI",
+              "label": "EPG API\\n(Guide)",
+              "type": "component",
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "PaywayAPI",
+              "label": "Payway API\\n(Payments)",
+              "type": "component",
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "MetricsAPI",
+              "label": "Metrics API\\n(Analytics)",
+              "type": "component",
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 17
+            },
+            {
+              "id": "NavAPI",
+              "label": "Nav API\\n(Menus / Carousels)",
+              "type": "component",
+              "group": "🔌 APIs Externas",
+              "groupId": "APIS",
+              "groupPath": [],
+              "order": 18
+            },
+            {
+              "id": "ESPN",
+              "label": "ESPN Login\\n(src/espn/)",
+              "type": "component",
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 20
+            },
+            {
+              "id": "HBO",
+              "label": "HBO Login\\n(src/hbo/)",
+              "type": "component",
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 21
+            },
+            {
+              "id": "Facebook",
+              "label": "Facebook OAuth",
+              "type": "component",
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 22
+            },
+            {
+              "id": "Apple",
+              "label": "Apple Sign In",
+              "type": "component",
+              "group": "🔗 Apps Externas",
+              "groupId": "EXTERNAL",
+              "groupPath": [],
+              "order": 23
+            },
+            {
+              "id": "Webpack",
+              "label": "Webpack 5.98\\n(config/webpack..js)",
+              "type": "component",
+              "group": "⚙️ Build System",
+              "groupId": "BUILD",
+              "groupPath": [],
+              "order": 25
+            },
+            {
+              "id": "Babel",
+              "label": "Babel 7\\n(babel.config.js)",
+              "type": "component",
+              "group": "⚙️ Build System",
+              "groupId": "BUILD",
+              "groupPath": [],
+              "order": 26
+            },
+            {
+              "id": "DotEnv",
+              "label": ".env.development\\n.env.production",
+              "type": "component",
+              "group": "⚙️ Build System",
+              "groupId": "BUILD",
+              "groupPath": [],
+              "order": 27
+            },
+            {
+              "id": "Browser",
+              "label": "Browser",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 48
+            },
+            {
+              "id": "SERVER",
+              "label": "SERVER",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 49
+            },
+            {
+              "id": "BUILD",
+              "label": "BUILD",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 62
+            },
+            {
+              "id": "BROWSER",
+              "label": "BROWSER",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 63
+            }
+          ],
+          "edges": [
+            {
+              "id": "ReactApp=>Router=>=>solid",
+              "source": "ReactApp",
+              "target": "Router",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ReactApp=>Redux=>=>solid",
+              "source": "ReactApp",
+              "target": "Redux",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Redux=>Sagas=>=>solid",
+              "source": "Redux",
+              "target": "Sagas",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Sagas=>Axios=>=>solid",
+              "source": "Sagas",
+              "target": "Axios",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Axios=>ContentAPI=>=>solid",
+              "source": "Axios",
+              "target": "ContentAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Axios=>UserAPI=>=>solid",
+              "source": "Axios",
+              "target": "UserAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Axios=>EPGAPI=>=>solid",
+              "source": "Axios",
+              "target": "EPGAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Axios=>PaywayAPI=>=>solid",
+              "source": "Axios",
+              "target": "PaywayAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Axios=>MetricsAPI=>=>solid",
+              "source": "Axios",
+              "target": "MetricsAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Axios=>NavAPI=>=>solid",
+              "source": "Axios",
+              "target": "NavAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Browser=>SERVER=>=>solid",
+              "source": "Browser",
+              "target": "SERVER",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SERVER=>Static=>=>solid",
+              "source": "SERVER",
+              "target": "Static",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SERVER=>Routes=>=>solid",
+              "source": "SERVER",
+              "target": "Routes",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ReactApp=>ESPN=>=>dashed",
+              "source": "ReactApp",
+              "target": "ESPN",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "ReactApp=>HBO=>=>dashed",
+              "source": "ReactApp",
+              "target": "HBO",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "ReactApp=>Facebook=>=>dashed",
+              "source": "ReactApp",
+              "target": "Facebook",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "ReactApp=>Apple=>=>dashed",
+              "source": "ReactApp",
+              "target": "Apple",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "BUILD=>BROWSER=>=>solid",
+              "source": "BUILD",
+              "target": "BROWSER",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Webpack=>Babel=>=>solid",
+              "source": "Webpack",
+              "target": "Babel",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "DotEnv=>Webpack=>=>solid",
+              "source": "DotEnv",
+              "target": "Webpack",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 3
+        },
+        "metrics": {
+          "nodeCount": 27,
+          "edgeCount": 20,
+          "groupCount": 5,
+          "isolatedCount": 3
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "Estructura de Módulos React",
+        "kind": "flowchart",
+        "section": "DIAGRAMA 2: Estructura de Módulos React",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [
+            {
+              "id": "AppRoot",
+              "label": "App Root",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
+            },
+            {
+              "id": "Routing",
+              "label": "Routing Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
+            },
+            {
+              "id": "Containers",
+              "label": "Containers (50+)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "LR",
+              "order": 8
+            },
+            {
+              "id": "State",
+              "label": "Estado Redux",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 20
+            },
+            {
+              "id": "API",
+              "label": "API Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 25
+            },
+            {
+              "id": "ExternalMods",
+              "label": "Módulos Externos",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 29
+            }
+          ],
+          "nodes": [
+            {
+              "id": "Entry",
+              "label": "src/index.js\\n(Entry Point Webpack)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "App",
+              "label": "App.js\\n(Class Component — Legado)",
+              "type": "component",
+              "group": "App Root",
+              "groupId": "AppRoot",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "Store",
+              "label": "store.js\\n(Redux + Saga + Persist)",
+              "type": "component",
+              "group": "App Root",
+              "groupId": "AppRoot",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Provider",
+              "label": "UserContext Provider\\n(providers/user.provider.js)",
+              "type": "component",
+              "group": "App Root",
+              "groupId": "AppRoot",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "Routes",
+              "label": "routes/routes.js",
+              "type": "component",
+              "group": "Routing Layer",
+              "groupId": "Routing",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "RouteConst",
+              "label": "routes/RouteConstants.js\\n(/:country/...)",
+              "type": "component",
+              "group": "Routing Layer",
+              "groupId": "Routing",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Header",
+              "label": "Header",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Player",
+              "label": "Player / VodPlayer / LivePlayer",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Login",
+              "label": "Login / Register",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "EPG",
+              "label": "EPG",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "Music",
+              "label": "MusicPage",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "Payment",
+              "label": "Payment / Checkout",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "Profile",
+              "label": "Profiles / NewProfiles",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "Search",
+              "label": "SearchPage / NewSearch",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "Detail",
+              "label": "DetailPage / Vcard",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 17
+            },
+            {
+              "id": "Account",
+              "label": "MyAccount",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 18
+            },
+            {
+              "id": "Other",
+              "label": "...otros 40+",
+              "type": "component",
+              "group": "Containers (50+)",
+              "groupId": "Containers",
+              "groupPath": [],
+              "order": 19
+            },
+            {
+              "id": "Reducers",
+              "label": "reducers/",
+              "type": "component",
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 21
+            },
+            {
+              "id": "Actions",
+              "label": "actions/ + action-creators/",
+              "type": "component",
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 22
+            },
+            {
+              "id": "Selectors",
+              "label": "selectors/ (Reselect)",
+              "type": "component",
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 23
+            },
+            {
+              "id": "AppSaga",
+              "label": "appSaga.js\\n→ musicSaga\\n→ headerSaga",
+              "type": "component",
+              "group": "Estado Redux",
+              "groupId": "State",
+              "groupPath": [],
+              "order": 24
+            },
+            {
+              "id": "ApiIndex",
+              "label": "api/index.js\\n(Axios instance)",
+              "type": "component",
+              "group": "API Layer",
+              "groupId": "API",
+              "groupPath": [],
+              "order": 26
+            },
+            {
+              "id": "ApiInterceptors",
+              "label": "api/interceptors/",
+              "type": "component",
+              "group": "API Layer",
+              "groupId": "API",
+              "groupPath": [],
+              "order": 27
+            },
+            {
+              "id": "ApiServices",
+              "label": "api/services/\\ncampaign | content | epg\\nmetrics | nav | payway\\nplan | player | user",
+              "type": "component",
+              "group": "API Layer",
+              "groupId": "API",
+              "groupPath": [],
+              "order": 28
+            },
+            {
+              "id": "ESPN",
+              "label": "src/espn/",
+              "type": "component",
+              "group": "Módulos Externos",
+              "groupId": "ExternalMods",
+              "groupPath": [],
+              "order": 30
+            },
+            {
+              "id": "HBO",
+              "label": "src/hbo/",
+              "type": "component",
+              "group": "Módulos Externos",
+              "groupId": "ExternalMods",
+              "groupPath": [],
+              "order": 31
+            },
+            {
+              "id": "ExternalLogin",
+              "label": "src/ExternalLoginApps/",
+              "type": "component",
+              "group": "Módulos Externos",
+              "groupId": "ExternalMods",
+              "groupPath": [],
+              "order": 32
+            },
+            {
+              "id": "Containers",
+              "label": "Containers",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 44
+            },
+            {
+              "id": "State",
+              "label": "State",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 46
+            },
+            {
+              "id": "API",
+              "label": "API",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 50
+            },
+            {
+              "id": "ExternalMods",
+              "label": "ExternalMods",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 58
+            }
+          ],
+          "edges": [
+            {
+              "id": "Entry=>App=>=>solid",
+              "source": "Entry",
+              "target": "App",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>Store=>=>solid",
+              "source": "App",
+              "target": "Store",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>Provider=>=>solid",
+              "source": "App",
+              "target": "Provider",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>Routes=>=>solid",
+              "source": "App",
+              "target": "Routes",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Routes=>RouteConst=>=>solid",
+              "source": "Routes",
+              "target": "RouteConst",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Routes=>Containers=>=>solid",
+              "source": "Routes",
+              "target": "Containers",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Containers=>State=>=>solid",
+              "source": "Containers",
+              "target": "State",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "State=>AppSaga=>=>solid",
+              "source": "State",
+              "target": "AppSaga",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "AppSaga=>API=>=>solid",
+              "source": "AppSaga",
+              "target": "API",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "API=>ApiIndex=>=>solid",
+              "source": "API",
+              "target": "ApiIndex",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ApiIndex=>ApiInterceptors=>=>solid",
+              "source": "ApiIndex",
+              "target": "ApiInterceptors",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ApiIndex=>ApiServices=>=>solid",
+              "source": "ApiIndex",
+              "target": "ApiServices",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "App=>ExternalMods=>=>dashed",
+              "source": "App",
+              "target": "ExternalMods",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 17
+        },
+        "metrics": {
+          "nodeCount": 31,
+          "edgeCount": 13,
+          "groupCount": 6,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Flujo de Datos Redux + Saga",
+        "kind": "sequence",
+        "section": "DIAGRAMA 3: Flujo de Datos Redux + Saga",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "U",
+              "label": "👤 Usuario"
+            },
+            {
+              "id": "C",
+              "label": "Container/Hook"
+            },
+            {
+              "id": "A",
+              "label": "Action Creator"
+            },
+            {
+              "id": "S",
+              "label": "Redux Store"
+            },
+            {
+              "id": "Saga",
+              "label": "Redux-Saga"
+            },
+            {
+              "id": "API",
+              "label": "API Service (Axios)"
+            },
+            {
+              "id": "R",
+              "label": "Reducer"
+            },
+            {
+              "id": "Sel",
+              "label": "Selector (Reselect)"
+            },
+            {
+              "id": "U-",
+              "label": "U-"
+            },
+            {
+              "id": "C-",
+              "label": "C-"
+            },
+            {
+              "id": "A-",
+              "label": "A-"
+            },
+            {
+              "id": "S-",
+              "label": "S-"
+            },
+            {
+              "id": "Saga-",
+              "label": "Saga-"
+            },
+            {
+              "id": "API--",
+              "label": "API--"
+            },
+            {
+              "id": "R--",
+              "label": "R--"
+            },
+            {
+              "id": "Sel--",
+              "label": "Sel--"
+            },
+            {
+              "id": "C--",
+              "label": "C--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-U",
+              "label": "👤 Usuario",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-C",
+              "label": "Container/Hook",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-A",
+              "label": "Action Creator",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-S",
+              "label": "Redux Store",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-Saga",
+              "label": "Redux-Saga",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-API",
+              "label": "API Service (Axios)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-R",
+              "label": "Reducer",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-Sel",
+              "label": "Selector (Reselect)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-U-",
+              "label": "U-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-C-",
+              "label": "C-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-A-",
+              "label": "A-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-S-",
+              "label": "S-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-Saga-",
+              "label": "Saga-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-API--",
+              "label": "API--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-R--",
+              "label": "R--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "participant-Sel--",
+              "label": "Sel--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4200,
+              "y": 0
+            },
+            {
+              "id": "participant-C--",
+              "label": "C--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 4480,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Interacción (click, mount, etc.)",
+              "subtitle": "U- → Container/Hook",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "dispatch(action.REQUEST)",
+              "subtitle": "C- → Action Creator",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "action { type: X_REQUEST, payload }",
+              "subtitle": "A- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1820,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "takeLatest(X_REQUEST, handler)",
+              "subtitle": "S- → Redux-Saga",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 2100,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "call(apiService, params)",
+              "subtitle": "Saga- → API Service (Axios)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 2380,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "response.data",
+              "subtitle": "API-- → Redux-Saga",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 2380,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "put({ type: X_SUCCESS, payload: data })",
+              "subtitle": "Saga- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2100,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "reducer(state, X_SUCCESS)",
+              "subtitle": "S- → Reducer",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2380,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "newState",
+              "subtitle": "R-- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 2380,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "selector(newState)",
+              "subtitle": "S- → Selector (Reselect)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 2520,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "useSelector(mySelector) → processedData",
+              "subtitle": "Sel-- → Container/Hook",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 2240,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "Re-render con nuevos datos",
+              "subtitle": "C-- → 👤 Usuario",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 2240,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "Nota",
+              "subtitle": "Saga,API · Error path",
+              "type": "note",
+              "group": "note",
+              "stat": "13",
+              "x": 2240,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "Error / Network failure",
+              "subtitle": "API-- → Redux-Saga",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 2380,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "put({ type: X_FAILURE, error })",
+              "subtitle": "Saga- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 2100,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "reducer(state, X_FAILURE)",
+              "subtitle": "S- → Reducer",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 2380,
+              "y": 2508
+            },
+            {
+              "id": "step-17",
+              "label": "errorState",
+              "subtitle": "R-- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "17",
+              "x": 2380,
+              "y": 2664
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-16=>step-17",
+              "source": "step-16",
+              "target": "step-17",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 17,
+          "participantCount": 17
+        },
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 16,
+          "groupCount": 17,
+          "isolatedCount": 17
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Flujo de Autenticación",
+        "kind": "sequence",
+        "section": "DIAGRAMA 4: Flujo de Autenticación",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "U",
+              "label": "👤 Usuario"
+            },
+            {
+              "id": "Login",
+              "label": "Login Container"
+            },
+            {
+              "id": "Redux",
+              "label": "Redux Store"
+            },
+            {
+              "id": "LegacySaga",
+              "label": "Login Saga"
+            },
+            {
+              "id": "UserAPI",
+              "label": "API /user"
+            },
+            {
+              "id": "Cookie",
+              "label": "js-cookie middleware"
+            },
+            {
+              "id": "Context",
+              "label": "UserContext"
+            },
+            {
+              "id": "U-",
+              "label": "U-"
+            },
+            {
+              "id": "Login-",
+              "label": "Login-"
+            },
+            {
+              "id": "Redux-",
+              "label": "Redux-"
+            },
+            {
+              "id": "LegacySaga-",
+              "label": "LegacySaga-"
+            },
+            {
+              "id": "UserAPI--",
+              "label": "UserAPI--"
+            },
+            {
+              "id": "Redux--",
+              "label": "Redux--"
+            },
+            {
+              "id": "Login--",
+              "label": "Login--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-U",
+              "label": "👤 Usuario",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-Login",
+              "label": "Login Container",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-Redux",
+              "label": "Redux Store",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-LegacySaga",
+              "label": "Login Saga",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-UserAPI",
+              "label": "API /user",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-Cookie",
+              "label": "js-cookie middleware",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-Context",
+              "label": "UserContext",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-U-",
+              "label": "U-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-Login-",
+              "label": "Login-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-Redux-",
+              "label": "Redux-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-LegacySaga-",
+              "label": "LegacySaga-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-UserAPI--",
+              "label": "UserAPI--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-Redux--",
+              "label": "Redux--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-Login--",
+              "label": "Login--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Ingresa credenciales / OAuth (FB/Apple/ESPN/HBO)",
+              "subtitle": "U- → Login Container",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1120,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "dispatch(loginRequest(credentials))",
+              "subtitle": "Login- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1400,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "takeLatest(LOGIN_REQUEST)",
+              "subtitle": "Redux- → Login Saga",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1680,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "call(userApiService.login, credentials)",
+              "subtitle": "LegacySaga- → API /user",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1960,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "{ token, user_data }",
+              "subtitle": "UserAPI-- → Login Saga",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1960,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "put(loginSuccess({ token, user }))",
+              "subtitle": "LegacySaga- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1680,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "createCookieMiddleware → persiste token",
+              "subtitle": "Redux- → js-cookie middleware",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1960,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "UserContext se actualiza (user_id, acceptTerms)",
+              "subtitle": "Redux- → UserContext",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 2100,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "Nota",
+              "subtitle": "Context,Login · Profiles check",
+              "type": "note",
+              "group": "note",
+              "stat": "9",
+              "x": 1820,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "App.componentDidMount()",
+              "subtitle": "Login- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1400,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "profiles_config via window.utils.getMeta.metadata",
+              "subtitle": "Redux- → Login Container",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "11",
+              "x": 1400,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "ALT",
+              "subtitle": "Perfil habilitado",
+              "type": "control",
+              "group": "control",
+              "stat": "12",
+              "x": 1820,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "dispatch(showModalProfiles)",
+              "subtitle": "Login- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 1400,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "dispatch(setScreen({ modal: 'select' }))",
+              "subtitle": "Login- → Redux Store",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 1400,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "Estado actualizado → re-render",
+              "subtitle": "Redux-- → Login Container",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 1820,
+              "y": 2352
+            },
+            {
+              "id": "step-16",
+              "label": "Redirige a /:country/home",
+              "subtitle": "Login-- → 👤 Usuario",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "16",
+              "x": 1820,
+              "y": 2508
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-15=>step-16",
+              "source": "step-15",
+              "target": "step-16",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 14,
+          "participantCount": 14
+        },
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 15,
+          "groupCount": 14,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Pipeline Build Webpack",
+        "kind": "flowchart",
+        "section": "DIAGRAMA 5: Pipeline Build Webpack",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [
+            {
+              "id": "Sources",
+              "label": "📁 Fuentes",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
+            },
+            {
+              "id": "Loaders",
+              "label": "⚙️ Webpack Loaders",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 8
+            },
+            {
+              "id": "Plugins",
+              "label": "🔌 Webpack Plugins",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 15
+            },
+            {
+              "id": "Output",
+              "label": "📦 Output (dist/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 22
+            }
+          ],
+          "nodes": [
+            {
+              "id": "JS",
+              "label": "src//.js\\n(React + ES6+)",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "SCSS",
+              "label": "src//.scss\\n(+ .css)",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "LESS",
+              "label": "src//.less\\n(Legado)",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "SVG",
+              "label": ".svg",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "IMG",
+              "label": ".jpg/.png/.gif",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Fonts",
+              "label": ".ttf/.woff",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "HTML",
+              "label": "public/index.html",
+              "type": "component",
+              "group": "📁 Fuentes",
+              "groupId": "Sources",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Babel",
+              "label": "babel-loader\\n(JS → ES5)",
+              "type": "component",
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "SassLoader",
+              "label": "sass-loader + postcss-loader\\n+ css-loader + style-loader",
+              "type": "component",
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "LessLoader",
+              "label": "less-loader + css-loader\\n+ style-loader",
+              "type": "component",
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "SvgLoader",
+              "label": "svg-url-loader\\n(base64 inline)",
+              "type": "component",
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "UrlLoader",
+              "label": "url-loader + image-webpack-loader\\n(< 10KB → base64)",
+              "type": "component",
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "FontLoader",
+              "label": "asset/resource\\n(copia a dist/)",
+              "type": "component",
+              "group": "⚙️ Webpack Loaders",
+              "groupId": "Loaders",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "MiniCSS",
+              "label": "MiniCssExtractPlugin\\n([name].[contenthash].css)",
+              "type": "component",
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "HtmlPlugin",
+              "label": "HtmlWebpackPlugin\\n(inject scripts en index.html)",
+              "type": "component",
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 17
+            },
+            {
+              "id": "CopyPlugin",
+              "label": "CopyPlugin\\n(public/ → dist/)",
+              "type": "component",
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 18
+            },
+            {
+              "id": "Define",
+              "label": "DefinePlugin\\n(__VERSION__, process.env.)",
+              "type": "component",
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 19
+            },
+            {
+              "id": "Compress",
+              "label": "CompressionPlugin\\n(gzip — SOLO PROD)",
+              "type": "component",
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 20
+            },
+            {
+              "id": "Refresh",
+              "label": "ReactRefreshPlugin\\n(HMR — SOLO DEV)",
+              "type": "component",
+              "group": "🔌 Webpack Plugins",
+              "groupId": "Plugins",
+              "groupPath": [],
+              "order": 21
+            },
+            {
+              "id": "MainJS",
+              "label": "[name].[contenthash].js",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 23
+            },
+            {
+              "id": "Chunks",
+              "label": "chunks/[name].[contenthash].chunk.js",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 24
+            },
+            {
+              "id": "MainCSS",
+              "label": "[name].[contenthash].css",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 25
+            },
+            {
+              "id": "ChunkCSS",
+              "label": "chunks/[id].[contenthash].chunk.css",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 26
+            },
+            {
+              "id": "RuntimeJS",
+              "label": "runtime.[contenthash].js\\n(SOLO PROD)",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 27
+            },
+            {
+              "id": "GZFiles",
+              "label": ".gz\\n(SOLO PROD)",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 28
+            },
+            {
+              "id": "Static",
+              "label": "public assets\\n(ads.txt, images, etc.)",
+              "type": "component",
+              "group": "📦 Output (dist/)",
+              "groupId": "Output",
+              "groupPath": [],
+              "order": 29
+            },
+            {
+              "id": "Babel-MainJS",
+              "label": "Babel --> MainJS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 31
+            },
+            {
+              "id": "Babel-Chunks",
+              "label": "Babel --> Chunks",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 33
+            },
+            {
+              "id": "SassLoader-MiniCSS-MainCSS",
+              "label": "SassLoader --> MiniCSS --> MainCSS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
+            },
+            {
+              "id": "SassLoader-MiniCSS-ChunkCSS",
+              "label": "SassLoader --> MiniCSS --> ChunkCSS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 37
+            },
+            {
+              "id": "LessLoader-MiniCSS",
+              "label": "LessLoader --> MiniCSS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 39
+            },
+            {
+              "id": "SvgLoader-MainJS",
+              "label": "SvgLoader --> MainJS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 41
+            },
+            {
+              "id": "UrlLoader-MainJS",
+              "label": "UrlLoader --> MainJS",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 43
+            },
+            {
+              "id": "FontLoader-Static",
+              "label": "FontLoader --> Static",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 45
+            },
+            {
+              "id": "HtmlPlugin-Static",
+              "label": "HtmlPlugin --> Static",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 47
+            },
+            {
+              "id": "Plugins",
+              "label": "Plugins",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 48
+            },
+            {
+              "id": "Output",
+              "label": "Output",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 49
+            }
+          ],
+          "edges": [
+            {
+              "id": "JS=>Babel-MainJS=>=>solid",
+              "source": "JS",
+              "target": "Babel-MainJS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "JS=>Babel-Chunks=>=>solid",
+              "source": "JS",
+              "target": "Babel-Chunks",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SCSS=>SassLoader-MiniCSS-MainCSS=>=>solid",
+              "source": "SCSS",
+              "target": "SassLoader-MiniCSS-MainCSS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SCSS=>SassLoader-MiniCSS-ChunkCSS=>=>solid",
+              "source": "SCSS",
+              "target": "SassLoader-MiniCSS-ChunkCSS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LESS=>LessLoader-MiniCSS=>=>solid",
+              "source": "LESS",
+              "target": "LessLoader-MiniCSS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SVG=>SvgLoader-MainJS=>=>solid",
+              "source": "SVG",
+              "target": "SvgLoader-MainJS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "IMG=>UrlLoader-MainJS=>=>solid",
+              "source": "IMG",
+              "target": "UrlLoader-MainJS",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Fonts=>FontLoader-Static=>=>solid",
+              "source": "Fonts",
+              "target": "FontLoader-Static",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HTML=>HtmlPlugin-Static=>=>solid",
+              "source": "HTML",
+              "target": "HtmlPlugin-Static",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Plugins=>Output=>=>solid",
+              "source": "Plugins",
+              "target": "Output",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Compress=>GZFiles=>=>dashed",
+              "source": "Compress",
+              "target": "GZFiles",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            },
+            {
+              "id": "Define=>MainJS=>=>dashed",
+              "source": "Define",
+              "target": "MainJS",
+              "label": "",
+              "style": "dashed",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 15
+        },
+        "metrics": {
+          "nodeCount": 37,
+          "edgeCount": 12,
+          "groupCount": 4,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "architecture-6",
+        "order": 6,
+        "title": "CI/CD Pipeline",
+        "kind": "flowchart",
+        "section": "DIAGRAMA 6: CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [
+            {
+              "id": "BranchCreation",
+              "label": "Branch Creation",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 1
+            },
+            {
+              "id": "PushTrigger",
+              "label": "Push / PR Trigger",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 3
+            },
+            {
+              "id": "CI",
+              "label": "CI Pipeline (ci.yml)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 5
+            },
+            {
+              "id": "PRFlow",
+              "label": "PR Flow",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 7
+            },
+            {
+              "id": "Branches",
+              "label": "Branch Hierarchy",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 10
+            },
+            {
+              "id": "Cleanup",
+              "label": "Cleanup",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 14
+            }
+          ],
+          "nodes": [
+            {
+              "id": "Dev",
+              "label": "👨‍💻 Developer\\nlocal development",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "BF",
+              "label": "Branch Factory Workflow\\n(workflow_dispatch)\\nfeature/TICKET-slug\\nfix/TICKET-slug\\nhotfix/TICKET-slug",
+              "type": "component",
+              "group": "Branch Creation",
+              "groupId": "BranchCreation",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "Push",
+              "label": "git push\\nbranches:\\n• main\\n• release/\\n• feature/\\n• bugfix/\\n• support/\\n• hotfix/",
+              "type": "component",
+              "group": "Push / PR Trigger",
+              "groupId": "PushTrigger",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "CIRun",
+              "label": "GitHub Actions\\nubuntu-latest",
+              "type": "component",
+              "group": "CI Pipeline (ci.yml)",
+              "groupId": "CI",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "OpenPRFeat",
+              "label": "open-pr-feature-to-release\\n(Manual)",
+              "type": "component",
+              "group": "PR Flow",
+              "groupId": "PRFlow",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "OpenPRRel",
+              "label": "open-pr-release-to-main\\n(Manual)",
+              "type": "component",
+              "group": "PR Flow",
+              "groupId": "PRFlow",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Feature",
+              "label": "feature/TICKET-slug",
+              "type": "component",
+              "group": "Branch Hierarchy",
+              "groupId": "Branches",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "Release",
+              "label": "release/X.Y.Z",
+              "type": "component",
+              "group": "Branch Hierarchy",
+              "groupId": "Branches",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "Main",
+              "label": "main",
+              "type": "component",
+              "group": "Branch Hierarchy",
+              "groupId": "Branches",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "RemoveFeature",
+              "label": "remove-feature-from-integration\\n(Manual)",
+              "type": "component",
+              "group": "Cleanup",
+              "groupId": "Cleanup",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "TechHistory",
+              "label": "technical-history-branch\\n(Manual)",
+              "type": "component",
+              "group": "Cleanup",
+              "groupId": "Cleanup",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "CI",
+              "label": "CI",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
+            }
+          ],
+          "edges": [
+            {
+              "id": "Dev=>BF=>=>solid",
+              "source": "Dev",
+              "target": "BF",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "BF=>Feature=>=>solid",
+              "source": "BF",
+              "target": "Feature",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Feature=>Push=>=>solid",
+              "source": "Feature",
+              "target": "Push",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Push=>CI=>=>solid",
+              "source": "Push",
+              "target": "CI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Feature=>OpenPRFeat=>=>solid",
+              "source": "Feature",
+              "target": "OpenPRFeat",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "OpenPRFeat=>Release=>=>solid",
+              "source": "OpenPRFeat",
+              "target": "Release",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Release=>OpenPRRel=>=>solid",
+              "source": "Release",
+              "target": "OpenPRRel",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "OpenPRRel=>Main=>=>solid",
+              "source": "OpenPRRel",
+              "target": "Main",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Release=>RemoveFeature=>=>solid",
+              "source": "Release",
+              "target": "RemoveFeature",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Main=>TechHistory=>=>solid",
+              "source": "Main",
+              "target": "TechHistory",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 1
+        },
+        "metrics": {
+          "nodeCount": 12,
+          "edgeCount": 10,
+          "groupCount": 6,
+          "isolatedCount": 1
+        }
+      },
+      {
+        "id": "architecture-7",
+        "order": 7,
+        "title": "Arquitectura del Servidor Express",
+        "kind": "flowchart",
+        "section": "DIAGRAMA 7: Arquitectura del Servidor Express",
+        "sectionKind": "general",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "ExpressApp",
+              "label": "Express App (server/index.js)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 1
+            },
+            {
+              "id": "RouterModule",
+              "label": "Router (server/router/)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 7
+            },
+            {
+              "id": "Views",
+              "label": "Views (Handlebars)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
+            },
+            {
+              "id": "StaticFiles",
+              "label": "Static Files",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 15
+            }
+          ],
+          "nodes": [
+            {
+              "id": "Client",
+              "label": "🌐 Browser Request",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "M1",
+              "label": "1. configureViewEngine\\n(Handlebars — views/)",
+              "type": "component",
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "M2",
+              "label": "2. configureBodyParser\\n(JSON + URL-encoded)",
+              "type": "component",
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "M3",
+              "label": "3. configureCompression\\n(gzip)",
+              "type": "component",
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "M4",
+              "label": "4. configureRouter\\n(server/router/index.js)",
+              "type": "component",
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "M5",
+              "label": "5. configureStaticOutputPath\\n(sirve dist/)",
+              "type": "component",
+              "group": "Express App (server/index.js)",
+              "groupId": "ExpressApp",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "Health",
+              "label": "GET /health\\n(Health Check)",
+              "type": "component",
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "DeepLink",
+              "label": "DeepLink Handler\\n(móvil → web redirect)",
+              "type": "component",
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "ExtLogin",
+              "label": "External Logins\\n(ESPN / HBO SSR)",
+              "type": "component",
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Gtres",
+              "label": "Gtres\\n(Getty Images)",
+              "type": "component",
+              "group": "Router (server/router/)",
+              "groupId": "RouterModule",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "HBSTemplate",
+              "label": "server/views/hbo.handlebars\\n(HTML shell + React hydration)",
+              "type": "component",
+              "group": "Views (Handlebars)",
+              "groupId": "Views",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "Layout",
+              "label": "server/views/layouts/\\n(layout base)",
+              "type": "component",
+              "group": "Views (Handlebars)",
+              "groupId": "Views",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "Dist",
+              "label": "dist/\\n(webpack output)",
+              "type": "component",
+              "group": "Static Files",
+              "groupId": "StaticFiles",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "Public",
+              "label": "public/\\n(ads.txt, app-ads.txt)",
+              "type": "component",
+              "group": "Static Files",
+              "groupId": "StaticFiles",
+              "groupPath": [],
+              "order": 17
+            }
+          ],
+          "edges": [
+            {
+              "id": "Client=>M1=>=>solid",
+              "source": "Client",
+              "target": "M1",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M1=>M2=>=>solid",
+              "source": "M1",
+              "target": "M2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M2=>M3=>=>solid",
+              "source": "M2",
+              "target": "M3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M3=>M4=>=>solid",
+              "source": "M3",
+              "target": "M4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M4=>Health=>=>solid",
+              "source": "M4",
+              "target": "Health",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M4=>DeepLink=>=>solid",
+              "source": "M4",
+              "target": "DeepLink",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M4=>ExtLogin=>=>solid",
+              "source": "M4",
+              "target": "ExtLogin",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M4=>Gtres=>=>solid",
+              "source": "M4",
+              "target": "Gtres",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ExtLogin=>HBSTemplate=>=>solid",
+              "source": "ExtLogin",
+              "target": "HBSTemplate",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HBSTemplate=>Layout=>=>solid",
+              "source": "HBSTemplate",
+              "target": "Layout",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M4=>M5=>=>solid",
+              "source": "M4",
+              "target": "M5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M5=>Dist=>=>solid",
+              "source": "M5",
+              "target": "Dist",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "M5=>Public=>=>solid",
+              "source": "M5",
+              "target": "Public",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 14,
+          "edgeCount": 13,
+          "groupCount": 4,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-8",
+        "order": 8,
+        "title": "Mapa de Dependencias de Reproducción de Video",
+        "kind": "flowchart",
+        "section": "DIAGRAMA 8: Mapa de Dependencias de Reproducción de Video",
+        "sectionKind": "datos",
+        "sourceFiles": [
+          "claro-video-web\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [
+            {
+              "id": "PlayerContainers",
+              "label": "Containers de Reproducción",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
+            },
+            {
+              "id": "ShakaLayer",
+              "label": "Shaka Player 3.1.1",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
+            },
+            {
+              "id": "YouboraLayer",
+              "label": "YOUBORA Analytics 6.8.1",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 8
+            },
+            {
+              "id": "APIPlayer",
+              "label": "API Player Layer",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 12
+            }
+          ],
+          "nodes": [
+            {
+              "id": "VodPlayer",
+              "label": "VodPlayer\\n(VOD)",
+              "type": "component",
+              "group": "Containers de Reproducción",
+              "groupId": "PlayerContainers",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "LivePlayer",
+              "label": "LivePlayer\\n(En Vivo)",
+              "type": "component",
+              "group": "Containers de Reproducción",
+              "groupId": "PlayerContainers",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "Player",
+              "label": "Player\\n(General)",
+              "type": "component",
+              "group": "Containers de Reproducción",
+              "groupId": "PlayerContainers",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "ShakaCore",
+              "label": "shaka.Player\\n(HLS / DASH)",
+              "type": "component",
+              "group": "Shaka Player 3.1.1",
+              "groupId": "ShakaLayer",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "DRM",
+              "label": "DRM Manager\\n(Widevine / PlayReady / FairPlay)",
+              "type": "component",
+              "group": "Shaka Player 3.1.1",
+              "groupId": "ShakaLayer",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "Adaptive",
+              "label": "Adaptive Streaming\\n(ABR)",
+              "type": "component",
+              "group": "Shaka Player 3.1.1",
+              "groupId": "ShakaLayer",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "YouboraLib",
+              "label": "youboralib\\n(Core)",
+              "type": "component",
+              "group": "YOUBORA Analytics 6.8.1",
+              "groupId": "YouboraLayer",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "ShakaAdapter",
+              "label": "youbora-adapter-shaka\\n(Shaka integration)",
+              "type": "component",
+              "group": "YOUBORA Analytics 6.8.1",
+              "groupId": "YouboraLayer",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "HTML5Adapter",
+              "label": "youbora-adapter-html5\\n(Fallback)",
+              "type": "component",
+              "group": "YOUBORA Analytics 6.8.1",
+              "groupId": "YouboraLayer",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "PlayerAPI",
+              "label": "api/services/player/\\n(stream URLs, licencias DRM)",
+              "type": "component",
+              "group": "API Player Layer",
+              "groupId": "APIPlayer",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "MetricsAPI",
+              "label": "api/services/metrics/\\n(analytics events)",
+              "type": "component",
+              "group": "API Player Layer",
+              "groupId": "APIPlayer",
+              "groupPath": [],
+              "order": 14
+            }
+          ],
+          "edges": [
+            {
+              "id": "VodPlayer=>ShakaCore=>=>solid",
+              "source": "VodPlayer",
+              "target": "ShakaCore",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LivePlayer=>ShakaCore=>=>solid",
+              "source": "LivePlayer",
+              "target": "ShakaCore",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Player=>ShakaCore=>=>solid",
+              "source": "Player",
+              "target": "ShakaCore",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ShakaCore=>DRM=>=>solid",
+              "source": "ShakaCore",
+              "target": "DRM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ShakaCore=>Adaptive=>=>solid",
+              "source": "ShakaCore",
+              "target": "Adaptive",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ShakaCore=>ShakaAdapter=>=>solid",
+              "source": "ShakaCore",
+              "target": "ShakaAdapter",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "ShakaAdapter=>YouboraLib=>=>solid",
+              "source": "ShakaAdapter",
+              "target": "YouboraLib",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HTML5Adapter=>YouboraLib=>=>solid",
+              "source": "HTML5Adapter",
+              "target": "YouboraLib",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "YouboraLib=>MetricsAPI=>=>solid",
+              "source": "YouboraLib",
+              "target": "MetricsAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "VodPlayer=>PlayerAPI=>=>solid",
+              "source": "VodPlayer",
+              "target": "PlayerAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "LivePlayer=>PlayerAPI=>=>solid",
+              "source": "LivePlayer",
+              "target": "PlayerAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Player=>PlayerAPI=>=>solid",
+              "source": "Player",
+              "target": "PlayerAPI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 11,
+          "edgeCount": 12,
+          "groupCount": 4,
+          "isolatedCount": 0
+        }
+      }
+    ]
+  }
+}

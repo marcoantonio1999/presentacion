@@ -1,0 +1,1877 @@
+{
+  "repo": "claro-video-ios-tvos",
+  "title": "tvOS",
+  "links": {
+    "route": "#/fase-1/architecture/claro-video-ios-tvos",
+    "annex": "ANEXO_claro-video-ios-tvos.html",
+    "vssRoute": "#/fase-1/vss/claro-video-ios-tvos"
+  },
+  "source": {
+    "docPath": "claro-video-ios-tvos\\claro-video-ios-tvos\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+  },
+  "summary": {
+    "diagramCount": 5,
+    "flowchartCount": 3,
+    "sequenceCount": 2,
+    "totalNodes": 120,
+    "totalEdges": 56,
+    "sections": [
+      "️ Diagrama de Componentes",
+      "Diagramas de Flujos de Procesos",
+      "Diagrama de CI/CD Pipeline"
+    ]
+  },
+  "diagrams": {
+    "total": 5,
+    "entries": [
+      {
+        "id": "architecture-1",
+        "order": 1,
+        "title": "️ Diagrama de Componentes",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-ios-tvos\\claro-video-ios-tvos\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [],
+          "nodes": [
+            {
+              "id": "AppDelegate",
+              "label": "AppDelegate.swift · @UIApplicationMain",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 0
+            },
+            {
+              "id": "RootCoordinator",
+              "label": "RootCoordinator.shared · Modules/Root/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "Home",
+              "label": "Home Module",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "User",
+              "label": "User Module",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "Search",
+              "label": "Search Module",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "Purchase",
+              "label": "Purchase Module",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Profiles",
+              "label": "Profiles Module",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "Landing",
+              "label": "Landing Module",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "OtherModules",
+              "label": "... 13 módulos más",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "HomeCoord",
+              "label": "Coordinator",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 18
+            },
+            {
+              "id": "HomeVM",
+              "label": "ViewModel",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 20
+            },
+            {
+              "id": "HomeView",
+              "label": "Views (UIKit)",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 22
+            },
+            {
+              "id": "HomeRepo",
+              "label": "Repository",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 24
+            },
+            {
+              "id": "Services",
+              "label": "Services Layer",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 26
+            },
+            {
+              "id": "Keychain",
+              "label": "Keychain/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 28
+            },
+            {
+              "id": "PlayerTV",
+              "label": "PlayerTV/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 30
+            },
+            {
+              "id": "PurchaseManager",
+              "label": "PurchaseManager/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 32
+            },
+            {
+              "id": "Repository",
+              "label": "Repository/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
+            },
+            {
+              "id": "UserDefaultsSvc",
+              "label": "UserDefaults/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 36
+            },
+            {
+              "id": "Scrubber",
+              "label": "ScrubberManager/",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 38
+            }
+          ],
+          "edges": [
+            {
+              "id": "AppDelegate=>RootCoordinator=>=>solid",
+              "source": "AppDelegate",
+              "target": "RootCoordinator",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>Home=>=>solid",
+              "source": "RootCoordinator",
+              "target": "Home",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>User=>=>solid",
+              "source": "RootCoordinator",
+              "target": "User",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>Search=>=>solid",
+              "source": "RootCoordinator",
+              "target": "Search",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>Purchase=>=>solid",
+              "source": "RootCoordinator",
+              "target": "Purchase",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>Profiles=>=>solid",
+              "source": "RootCoordinator",
+              "target": "Profiles",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>Landing=>=>solid",
+              "source": "RootCoordinator",
+              "target": "Landing",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "RootCoordinator=>OtherModules=>=>solid",
+              "source": "RootCoordinator",
+              "target": "OtherModules",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Home=>HomeCoord=>=>solid",
+              "source": "Home",
+              "target": "HomeCoord",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Home=>HomeVM=>=>solid",
+              "source": "Home",
+              "target": "HomeVM",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Home=>HomeView=>=>solid",
+              "source": "Home",
+              "target": "HomeView",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Home=>HomeRepo=>=>solid",
+              "source": "Home",
+              "target": "HomeRepo",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "HomeVM=>Services=>=>solid",
+              "source": "HomeVM",
+              "target": "Services",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Services=>Keychain=>=>solid",
+              "source": "Services",
+              "target": "Keychain",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Services=>PlayerTV=>=>solid",
+              "source": "Services",
+              "target": "PlayerTV",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Services=>PurchaseManager=>=>solid",
+              "source": "Services",
+              "target": "PurchaseManager",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Services=>Repository=>=>solid",
+              "source": "Services",
+              "target": "Repository",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Services=>UserDefaultsSvc=>=>solid",
+              "source": "Services",
+              "target": "UserDefaultsSvc",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Services=>Scrubber=>=>solid",
+              "source": "Services",
+              "target": "Scrubber",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 0
+        },
+        "metrics": {
+          "nodeCount": 20,
+          "edgeCount": 19,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "architecture-2",
+        "order": 2,
+        "title": "️ Diagrama de Componentes",
+        "kind": "flowchart",
+        "section": "️ Diagrama de Componentes",
+        "sectionKind": "componentes",
+        "sourceFiles": [
+          "claro-video-ios-tvos\\claro-video-ios-tvos\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "LR",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "LR",
+          "groups": [
+            {
+              "id": "Modules",
+              "label": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 0
+            },
+            {
+              "id": "Common",
+              "label": "ClarovideoTVOS/Common/",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 20
+            },
+            {
+              "id": "Services",
+              "label": "ClarovideoTVOS/Services/",
+              "parentId": "",
+              "depth": 0,
+              "direction": "TB",
+              "order": 27
+            }
+          ],
+          "nodes": [
+            {
+              "id": "AccountSuspended",
+              "label": "AccountSuspended",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "Home",
+              "label": "Home",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "InfiniteLayout",
+              "label": "InfiniteLayout",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "Initial",
+              "label": "Initial",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 4
+            },
+            {
+              "id": "KeepWatching",
+              "label": "KeepWatching",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "Landing",
+              "label": "Landing",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "Layout",
+              "label": "Layout",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Music",
+              "label": "Music",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "ParentalControl",
+              "label": "ParentalControl",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "PasswordRecovery",
+              "label": "PasswordRecovery",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "Profiles",
+              "label": "Profiles",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 11
+            },
+            {
+              "id": "Purchase",
+              "label": "Purchase",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 12
+            },
+            {
+              "id": "RecordingSeries",
+              "label": "RecordingSeries",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 13
+            },
+            {
+              "id": "Root",
+              "label": "Root",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 14
+            },
+            {
+              "id": "Search",
+              "label": "Search",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 15
+            },
+            {
+              "id": "Terms",
+              "label": "Terms",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 16
+            },
+            {
+              "id": "Transactions",
+              "label": "Transactions",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 17
+            },
+            {
+              "id": "User",
+              "label": "User",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 18
+            },
+            {
+              "id": "VCards",
+              "label": "VCards",
+              "type": "component",
+              "group": "ClarovideoTVOS/Modules/ (19 módulos)",
+              "groupId": "Modules",
+              "groupPath": [],
+              "order": 19
+            },
+            {
+              "id": "Coordinator",
+              "label": "Coordinator/\\nCoordinatorProtocol",
+              "type": "component",
+              "group": "ClarovideoTVOS/Common/",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 21
+            },
+            {
+              "id": "Protocols",
+              "label": "Protocols/\\n7 contratos",
+              "type": "component",
+              "group": "ClarovideoTVOS/Common/",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 22
+            },
+            {
+              "id": "ViewModels",
+              "label": "ViewModels/\\nAppBehaviourViewModel",
+              "type": "component",
+              "group": "ClarovideoTVOS/Common/",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 23
+            },
+            {
+              "id": "Analytics",
+              "label": "Analytics/\\nCVAnalytics",
+              "type": "component",
+              "group": "ClarovideoTVOS/Common/",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 24
+            },
+            {
+              "id": "TVMLModule",
+              "label": "TVMLModule/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Common/",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 25
+            },
+            {
+              "id": "TopShelfComm",
+              "label": "TopShelfCommunication/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Common/",
+              "groupId": "Common",
+              "groupPath": [],
+              "order": 26
+            },
+            {
+              "id": "Keychain_s",
+              "label": "Keychain/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Services/",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 28
+            },
+            {
+              "id": "PlayerTV_s",
+              "label": "PlayerTV/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Services/",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 29
+            },
+            {
+              "id": "PurchaseManager_s",
+              "label": "PurchaseManager/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Services/",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 30
+            },
+            {
+              "id": "Repository_s",
+              "label": "Repository/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Services/",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 31
+            },
+            {
+              "id": "ScrubberManager_s",
+              "label": "ScrubberManager/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Services/",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 32
+            },
+            {
+              "id": "UserDefaults_s",
+              "label": "UserDefaults/",
+              "type": "component",
+              "group": "ClarovideoTVOS/Services/",
+              "groupId": "Services",
+              "groupPath": [],
+              "order": 33
+            },
+            {
+              "id": "Modules",
+              "label": "Modules",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 34
+            },
+            {
+              "id": "Common",
+              "label": "Common",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 35
+            },
+            {
+              "id": "Services",
+              "label": "Services",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 37
+            }
+          ],
+          "edges": [
+            {
+              "id": "Modules=>Common=>usa=>solid",
+              "source": "Modules",
+              "target": "Common",
+              "label": "usa",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Modules=>Services=>usa=>solid",
+              "source": "Modules",
+              "target": "Services",
+              "label": "usa",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "Common=>Modules=>NO debe usar=>solid",
+              "source": "Common",
+              "target": "Modules",
+              "label": "NO debe usar",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 31
+        },
+        "metrics": {
+          "nodeCount": 34,
+          "edgeCount": 3,
+          "groupCount": 3,
+          "isolatedCount": 31
+        }
+      },
+      {
+        "id": "architecture-3",
+        "order": 3,
+        "title": "Flujo Principal 1: Inicialización de la App",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-ios-tvos\\claro-video-ios-tvos\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "OS",
+              "label": "iOS/tvOS OS"
+            },
+            {
+              "id": "AD",
+              "label": "AppDelegate"
+            },
+            {
+              "id": "NR",
+              "label": "NewRelic SDK"
+            },
+            {
+              "id": "TVML",
+              "label": "TVMLModule"
+            },
+            {
+              "id": "CVA",
+              "label": "CVAnalytics"
+            },
+            {
+              "id": "PM",
+              "label": "PurchaseManager"
+            },
+            {
+              "id": "FB",
+              "label": "Firebase"
+            },
+            {
+              "id": "RC",
+              "label": "RootCoordinator"
+            },
+            {
+              "id": "OS-",
+              "label": "OS-"
+            },
+            {
+              "id": "AD-",
+              "label": "AD-"
+            },
+            {
+              "id": "AD--",
+              "label": "AD--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-OS",
+              "label": "iOS/tvOS OS",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-AD",
+              "label": "AppDelegate",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-NR",
+              "label": "NewRelic SDK",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-TVML",
+              "label": "TVMLModule",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-CVA",
+              "label": "CVAnalytics",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-PM",
+              "label": "PurchaseManager",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-FB",
+              "label": "Firebase",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-RC",
+              "label": "RootCoordinator",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-OS-",
+              "label": "OS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-AD-",
+              "label": "AD-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-AD--",
+              "label": "AD--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "didFinishLaunchingWithOptions",
+              "subtitle": "OS- → AppDelegate",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1260,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "start(withApplicationToken:) ⚠️ Token hardcodeado",
+              "subtitle": "AD- → NewRelic SDK",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1540,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "shared.setup()",
+              "subtitle": "AD- → TVMLModule",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1680,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "trackingSetup(uuid:)",
+              "subtitle": "AD- → CVAnalytics",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1820,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "startObserverCompletion()",
+              "subtitle": "AD- → CVAnalytics",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1820,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "sharedPurchaser (instancia)",
+              "subtitle": "AD- → PurchaseManager",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "6",
+              "x": 1960,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "FirebaseApp.configure()",
+              "subtitle": "AD- → Firebase",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 2100,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "UIWindow setup",
+              "subtitle": "AD- → AppDelegate",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 1400,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "UserDefaults flags",
+              "subtitle": "AD- → AppDelegate",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 1400,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "UNUserNotificationCenter",
+              "subtitle": "AD- → AppDelegate",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1400,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "Nota",
+              "subtitle": "AD,RC · RootCoordinator.shared se inicializa · en SceneDelegate o posteriormente",
+              "type": "note",
+              "group": "note",
+              "stat": "11",
+              "x": 1400,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "ALT",
+              "subtitle": "Éxito",
+              "type": "control",
+              "group": "control",
+              "stat": "12",
+              "x": 1400,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "true (lanzamiento exitoso)",
+              "subtitle": "AD-- → iOS/tvOS OS",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 1400,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "ELSE",
+              "subtitle": "Error de configuración",
+              "type": "control",
+              "group": "control",
+              "stat": "14",
+              "x": 1400,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "false (lanzamiento fallido)",
+              "subtitle": "AD-- → iOS/tvOS OS",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 1400,
+              "y": 2352
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 11,
+          "participantCount": 11
+        },
+        "metrics": {
+          "nodeCount": 26,
+          "edgeCount": 14,
+          "groupCount": 11,
+          "isolatedCount": 11
+        }
+      },
+      {
+        "id": "architecture-4",
+        "order": 4,
+        "title": "Flujo Principal 2: Comunicación Top Shelf",
+        "kind": "sequence",
+        "section": "Diagramas de Flujos de Procesos",
+        "sectionKind": "procesos",
+        "sourceFiles": [
+          "claro-video-ios-tvos\\claro-video-ios-tvos\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TB",
+        "graph": {
+          "layoutMode": "manual",
+          "direction": "TB",
+          "groups": [
+            {
+              "id": "tvOS",
+              "label": "tvOS OS"
+            },
+            {
+              "id": "CP",
+              "label": "ContentProvider"
+            },
+            {
+              "id": "VM",
+              "label": "ViewModel"
+            },
+            {
+              "id": "Repo",
+              "label": "Repository"
+            },
+            {
+              "id": "SC",
+              "label": "Shared Container (App Group)"
+            },
+            {
+              "id": "App",
+              "label": "App Principal"
+            },
+            {
+              "id": "App-",
+              "label": "App-"
+            },
+            {
+              "id": "tvOS-",
+              "label": "tvOS-"
+            },
+            {
+              "id": "CP-",
+              "label": "CP-"
+            },
+            {
+              "id": "VM-",
+              "label": "VM-"
+            },
+            {
+              "id": "Repo-",
+              "label": "Repo-"
+            },
+            {
+              "id": "SC--",
+              "label": "SC--"
+            },
+            {
+              "id": "Repo--",
+              "label": "Repo--"
+            },
+            {
+              "id": "VM--",
+              "label": "VM--"
+            },
+            {
+              "id": "CP--",
+              "label": "CP--"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "participant-tvOS",
+              "label": "tvOS OS",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "id": "participant-CP",
+              "label": "ContentProvider",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 280,
+              "y": 0
+            },
+            {
+              "id": "participant-VM",
+              "label": "ViewModel",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 560,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo",
+              "label": "Repository",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 840,
+              "y": 0
+            },
+            {
+              "id": "participant-SC",
+              "label": "Shared Container (App Group)",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1120,
+              "y": 0
+            },
+            {
+              "id": "participant-App",
+              "label": "App Principal",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1400,
+              "y": 0
+            },
+            {
+              "id": "participant-App-",
+              "label": "App-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1680,
+              "y": 0
+            },
+            {
+              "id": "participant-tvOS-",
+              "label": "tvOS-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 1960,
+              "y": 0
+            },
+            {
+              "id": "participant-CP-",
+              "label": "CP-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2240,
+              "y": 0
+            },
+            {
+              "id": "participant-VM-",
+              "label": "VM-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2520,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo-",
+              "label": "Repo-",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 2800,
+              "y": 0
+            },
+            {
+              "id": "participant-SC--",
+              "label": "SC--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3080,
+              "y": 0
+            },
+            {
+              "id": "participant-Repo--",
+              "label": "Repo--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3360,
+              "y": 0
+            },
+            {
+              "id": "participant-VM--",
+              "label": "VM--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3640,
+              "y": 0
+            },
+            {
+              "id": "participant-CP--",
+              "label": "CP--",
+              "subtitle": "Participante",
+              "type": "participant",
+              "group": "sequence",
+              "x": 3920,
+              "y": 0
+            },
+            {
+              "id": "step-1",
+              "label": "Escribe datos de contenido featured",
+              "subtitle": "App- → Shared Container (App Group)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "1",
+              "x": 1400,
+              "y": 168
+            },
+            {
+              "id": "step-2",
+              "label": "loadTopShelfContent()",
+              "subtitle": "tvOS- → ContentProvider",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "2",
+              "x": 1120,
+              "y": 324
+            },
+            {
+              "id": "step-3",
+              "label": "fetchContent()",
+              "subtitle": "CP- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "3",
+              "x": 1400,
+              "y": 480
+            },
+            {
+              "id": "step-4",
+              "label": "requestFeaturedContent()",
+              "subtitle": "VM- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "4",
+              "x": 1680,
+              "y": 636
+            },
+            {
+              "id": "step-5",
+              "label": "Lee datos compartidos",
+              "subtitle": "Repo- → Shared Container (App Group)",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "5",
+              "x": 1960,
+              "y": 792
+            },
+            {
+              "id": "step-6",
+              "label": "ALT",
+              "subtitle": "Datos disponibles",
+              "type": "control",
+              "group": "control",
+              "stat": "6",
+              "x": 1960,
+              "y": 948
+            },
+            {
+              "id": "step-7",
+              "label": "contenido válido",
+              "subtitle": "SC-- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "7",
+              "x": 1960,
+              "y": 1104
+            },
+            {
+              "id": "step-8",
+              "label": "items[]",
+              "subtitle": "Repo-- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "8",
+              "x": 1960,
+              "y": 1260
+            },
+            {
+              "id": "step-9",
+              "label": "TVTopShelfContent",
+              "subtitle": "VM-- → ContentProvider",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "9",
+              "x": 1960,
+              "y": 1416
+            },
+            {
+              "id": "step-10",
+              "label": "content (éxito)",
+              "subtitle": "CP-- → tvOS OS",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "10",
+              "x": 1960,
+              "y": 1572
+            },
+            {
+              "id": "step-11",
+              "label": "ELSE",
+              "subtitle": "Datos no disponibles o expirados",
+              "type": "control",
+              "group": "control",
+              "stat": "11",
+              "x": 1960,
+              "y": 1728
+            },
+            {
+              "id": "step-12",
+              "label": "nil / vacío",
+              "subtitle": "SC-- → Repository",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "12",
+              "x": 1960,
+              "y": 1884
+            },
+            {
+              "id": "step-13",
+              "label": "[]",
+              "subtitle": "Repo-- → ViewModel",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "13",
+              "x": 1960,
+              "y": 2040
+            },
+            {
+              "id": "step-14",
+              "label": "TVTopShelfContent vacío",
+              "subtitle": "VM-- → ContentProvider",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "14",
+              "x": 1960,
+              "y": 2196
+            },
+            {
+              "id": "step-15",
+              "label": "content vacío (degradado)",
+              "subtitle": "CP-- → tvOS OS",
+              "type": "sequence_step",
+              "group": "message",
+              "stat": "15",
+              "x": 1960,
+              "y": 2352
+            }
+          ],
+          "edges": [
+            {
+              "id": "step-1=>step-2",
+              "source": "step-1",
+              "target": "step-2",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-2=>step-3",
+              "source": "step-2",
+              "target": "step-3",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-3=>step-4",
+              "source": "step-3",
+              "target": "step-4",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-4=>step-5",
+              "source": "step-4",
+              "target": "step-5",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-5=>step-6",
+              "source": "step-5",
+              "target": "step-6",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-6=>step-7",
+              "source": "step-6",
+              "target": "step-7",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-7=>step-8",
+              "source": "step-7",
+              "target": "step-8",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-8=>step-9",
+              "source": "step-8",
+              "target": "step-9",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-9=>step-10",
+              "source": "step-9",
+              "target": "step-10",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-10=>step-11",
+              "source": "step-10",
+              "target": "step-11",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-11=>step-12",
+              "source": "step-11",
+              "target": "step-12",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-12=>step-13",
+              "source": "step-12",
+              "target": "step-13",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-13=>step-14",
+              "source": "step-13",
+              "target": "step-14",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "step-14=>step-15",
+              "source": "step-14",
+              "target": "step-15",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 15,
+          "participantCount": 15
+        },
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 14,
+          "groupCount": 15,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "architecture-5",
+        "order": 5,
+        "title": "Diagrama de CI/CD Pipeline",
+        "kind": "flowchart",
+        "section": "Diagrama de CI/CD Pipeline",
+        "sectionKind": "ci_cd",
+        "sourceFiles": [
+          "claro-video-ios-tvos\\claro-video-ios-tvos\\.github\\docs\\diagrams\\ARCHITECTURE_DIAGRAMS.md"
+        ],
+        "layoutDirection": "TD",
+        "graph": {
+          "layoutMode": "dagre",
+          "direction": "TD",
+          "groups": [
+            {
+              "id": "AzurePipelines",
+              "label": "Azure Pipelines (Pipelines Primarios)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 0
+            },
+            {
+              "id": "GitHubActions",
+              "label": "GitHub Actions (Complementarios)",
+              "parentId": "",
+              "depth": 0,
+              "direction": "",
+              "order": 4
+            }
+          ],
+          "nodes": [
+            {
+              "id": "TriggerAzure",
+              "label": "Trigger: develop/release/hotfix",
+              "type": "component",
+              "group": "Azure Pipelines (Pipelines Primarios)",
+              "groupId": "AzurePipelines",
+              "groupPath": [],
+              "order": 1
+            },
+            {
+              "id": "BuildStep",
+              "label": "template-build-publish.yml",
+              "type": "component",
+              "group": "Azure Pipelines (Pipelines Primarios)",
+              "groupId": "AzurePipelines",
+              "groupPath": [],
+              "order": 2
+            },
+            {
+              "id": "ArtifactPublish",
+              "label": "Publicar artefacto",
+              "type": "component",
+              "group": "Azure Pipelines (Pipelines Primarios)",
+              "groupId": "AzurePipelines",
+              "groupPath": [],
+              "order": 3
+            },
+            {
+              "id": "TriggerGH",
+              "label": "Push/PR trigger",
+              "type": "component",
+              "group": "GitHub Actions (Complementarios)",
+              "groupId": "GitHubActions",
+              "groupPath": [],
+              "order": 5
+            },
+            {
+              "id": "CI",
+              "label": "ci.yml",
+              "type": "component",
+              "group": "GitHub Actions (Complementarios)",
+              "groupId": "GitHubActions",
+              "groupPath": [],
+              "order": 6
+            },
+            {
+              "id": "BuildGH",
+              "label": "workflow-build.yml",
+              "type": "component",
+              "group": "GitHub Actions (Complementarios)",
+              "groupId": "GitHubActions",
+              "groupPath": [],
+              "order": 7
+            },
+            {
+              "id": "Analysis",
+              "label": "workflow-analysis.yml",
+              "type": "component",
+              "group": "GitHub Actions (Complementarios)",
+              "groupId": "GitHubActions",
+              "groupPath": [],
+              "order": 8
+            },
+            {
+              "id": "SmokeTests",
+              "label": "artifact-smoke.yml",
+              "type": "component",
+              "group": "GitHub Actions (Complementarios)",
+              "groupId": "GitHubActions",
+              "groupPath": [],
+              "order": 9
+            },
+            {
+              "id": "Deploy",
+              "label": "reusable-deploy.yml",
+              "type": "component",
+              "group": "GitHub Actions (Complementarios)",
+              "groupId": "GitHubActions",
+              "groupPath": [],
+              "order": 10
+            },
+            {
+              "id": "BuildStep-ArtifactPublish",
+              "label": "BuildStep --> ArtifactPublish",
+              "type": "component",
+              "group": "",
+              "groupId": "",
+              "groupPath": [],
+              "order": 12
+            }
+          ],
+          "edges": [
+            {
+              "id": "TriggerAzure=>BuildStep-ArtifactPublish=>=>solid",
+              "source": "TriggerAzure",
+              "target": "BuildStep-ArtifactPublish",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "TriggerGH=>CI=>=>solid",
+              "source": "TriggerGH",
+              "target": "CI",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CI=>BuildGH=>=>solid",
+              "source": "CI",
+              "target": "BuildGH",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "CI=>Analysis=>=>solid",
+              "source": "CI",
+              "target": "Analysis",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "BuildGH=>SmokeTests=>=>solid",
+              "source": "BuildGH",
+              "target": "SmokeTests",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            },
+            {
+              "id": "SmokeTests=>Deploy=>=>solid",
+              "source": "SmokeTests",
+              "target": "Deploy",
+              "label": "",
+              "style": "solid",
+              "count": 1
+            }
+          ],
+          "isolatedCount": 2
+        },
+        "metrics": {
+          "nodeCount": 10,
+          "edgeCount": 6,
+          "groupCount": 2,
+          "isolatedCount": 2
+        }
+      }
+    ]
+  }
+}

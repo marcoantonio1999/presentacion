@@ -1,0 +1,4188 @@
+{
+  "repo": "claro-video-ios-services",
+  "title": "iOS Services",
+  "sourceLabel": "analysis",
+  "links": {
+    "route": "#/fase-1/vss/claro-video-ios-services",
+    "annex": "ANEXO_claro-video-ios-services.html",
+    "legacyViewer": "ANEXO_claro-video-ios-services-diagramas-vss-viewer.html",
+    "diagrams": "claro-video-ios-services.diagrams.json"
+  },
+  "source": {
+    "root": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_ios_services_vss_extract\\claro-video-ios-services\\analysis",
+    "graphPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_ios_services_vss_extract\\claro-video-ios-services\\analysis\\repo_graph.json",
+    "evidencePath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_ios_services_vss_extract\\claro-video-ios-services\\analysis\\repo_evidence_map.json",
+    "summaryPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_ios_services_vss_extract\\claro-video-ios-services\\analysis\\repo_summary.json",
+    "mmdPath": "C:\\Users\\ordunama\\Documents\\Hitss\\verify_docs\\tmp_ios_services_vss_extract\\claro-video-ios-services\\analysis\\diagrama_global_docs.mmd"
+  },
+  "summary": {
+    "totalNodes": 152,
+    "totalEdges": 80,
+    "rawEdges": 206,
+    "vssIncluded": [
+      "ACNTMGMT",
+      "AUTH",
+      "CARROUSEL",
+      "LIVESTREAMING",
+      "MUSIC",
+      "RECORDED",
+      "SEARCH",
+      "SUBSCRIPTION",
+      "VOD"
+    ],
+    "unresolvedNodes": [
+      "CMS Rotation: APIs de administración",
+      "NewToolbar/",
+      "LaunchLoaderView.swift",
+      "WhatIncludesImages/",
+      "https://api.clarovideo.com/apa",
+      "PlanSelector/",
+      "back-end",
+      "/services/user/",
+      "https://cms-filters.lab.eastus2.azr.int.claromexico.com/",
+      "TTL/cache",
+      "Consumidor del SDK",
+      "QueryBuilder",
+      "RECORDED",
+      "http://aws-west-microfwk-silo-tv.clarovideo.net",
+      "<informacion no encontrada en el repositorio: UIViewController/SwiftUI View de búsqueda -> app consumidora>",
+      ".ranking",
+      "Potencial: resultados mostrados en carruseles genéricos de CVCommonViews",
+      "continuar flujo normal",
+      "token expirado",
+      "false",
+      "n detectada",
+      "UserExperience",
+      "en paralelo",
+      "redirigir a pantalla de reactivaci",
+      "MultiPurchaseButtonInfo",
+      "200 OK",
+      "PurchaseButtonInfo",
+      "redirigir a flujo de reactivaci",
+      "json",
+      "true",
+      "GET v2/purchasebuttoninfo",
+      "DispatchGroup",
+      "UI muestra bot"
+    ]
+  },
+  "domains": [
+    {
+      "id": "ACNTMGMT",
+      "label": "Account Management",
+      "short": "ACNTMGMT",
+      "summary": "Perfiles, favoritos y gestión de cuenta.",
+      "nodeCount": 23,
+      "edgeCount": 18,
+      "evidenceCount": 85,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 23
+        }
+      ],
+      "sampleNodes": [
+        "API GET /services/user/v2/profile/read",
+        "product docs",
+        "DevOps",
+        "APM/logs",
+        "arquitectura de backend"
+      ]
+    },
+    {
+      "id": "AUTH",
+      "label": "Authentication",
+      "short": "AUTH",
+      "summary": "Login, registro, recuperación y federación.",
+      "nodeCount": 59,
+      "edgeCount": 46,
+      "evidenceCount": 270,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 56
+        },
+        {
+          "type": "contract_api",
+          "count": 3
+        }
+      ],
+      "sampleNodes": [
+        "Punto de entrada / trigger",
+        "nombre del product owner",
+        "riesgo de stack overflow si el error persiste",
+        "n",
+        "analytics/RUM"
+      ]
+    },
+    {
+      "id": "CARROUSEL",
+      "label": "Carrousel",
+      "short": "CARROUSEL",
+      "summary": "Home, ribbons y navegación principal.",
+      "nodeCount": 1,
+      "edgeCount": 3,
+      "evidenceCount": 4,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "CARROUSEL"
+      ]
+    },
+    {
+      "id": "LIVESTREAMING",
+      "label": "Live Broadcasting",
+      "short": "LIVESTREAMING",
+      "summary": "TV en vivo, EPG y recordatorios.",
+      "nodeCount": 4,
+      "edgeCount": 2,
+      "evidenceCount": 5,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 4
+        }
+      ],
+      "sampleNodes": [
+        "<informacion no encontrada en el repositorio: EPGViewController/SwiftUI View -> app consumidora>",
+        "Potencial: grilla de EPG renderizada con componentes custom por la app",
+        "MFWK Pool: Mismo pool multi-región que el resto de servicios (QRO, AWS East/West, Azure East US 2) para EPG Menu, Lineup y Channel Events",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "MUSIC",
+      "label": "Music Streaming",
+      "short": "MUSIC",
+      "summary": "Música, playlists y reproducción asociada.",
+      "nodeCount": 1,
+      "edgeCount": 3,
+      "evidenceCount": 3,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "RECORDED",
+      "label": "Recorded DVR",
+      "short": "RECORDED",
+      "summary": "Grabaciones, reminder flow y NPVR legado.",
+      "nodeCount": 8,
+      "edgeCount": 4,
+      "evidenceCount": 8,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 8
+        }
+      ],
+      "sampleNodes": [
+        "RecordingRequest",
+        "ReminderServices",
+        "ClaroVideoServices/Service/ReminderServices.swift",
+        "ClaroVideoServices/Service/RecordingServices.swift",
+        "ClaroVideoServices/Request/ReminderRequest.swift"
+      ]
+    },
+    {
+      "id": "SEARCH",
+      "label": "Content Discovery",
+      "short": "SEARCH",
+      "summary": "Búsqueda, resultados y modelos de discovery.",
+      "nodeCount": 1,
+      "edgeCount": 1,
+      "evidenceCount": 2,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "SearchServices"
+      ]
+    },
+    {
+      "id": "SUBSCRIPTION",
+      "label": "Subscription",
+      "short": "SUBSCRIPTION",
+      "summary": "Pagos, PPV, suscripciones y 2FA.",
+      "nodeCount": 1,
+      "edgeCount": 4,
+      "evidenceCount": 5,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "VOD",
+      "label": "VOD Playback",
+      "short": "VOD",
+      "summary": "Playback, getMedia, DRM y continue playback.",
+      "nodeCount": 21,
+      "edgeCount": 7,
+      "evidenceCount": 102,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 18
+        },
+        {
+          "type": "event_technical",
+          "count": 2
+        },
+        {
+          "type": "contract_api",
+          "count": 1
+        }
+      ],
+      "sampleNodes": [
+        "APM",
+        "Estado",
+        "Trigger",
+        "Canales",
+        "Evidencia primaria"
+      ]
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared Context",
+      "short": "SHARED",
+      "summary": "Artefactos reutilizados o ambiguos entre dominios.",
+      "nodeCount": 33,
+      "edgeCount": 17,
+      "evidenceCount": 55,
+      "typeCounts": [
+        {
+          "type": "component",
+          "count": 31
+        },
+        {
+          "type": "contract_api",
+          "count": 2
+        }
+      ],
+      "sampleNodes": [
+        "CMS Rotation: APIs de administración",
+        "NewToolbar/",
+        "LaunchLoaderView.swift",
+        "WhatIncludesImages/",
+        "https://api.clarovideo.com/apa"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "claro-video-ios-services-node-1",
+      "name": "",
+      "label": "Punto de entrada / trigger",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 121,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_MUSIC.md",
+        "SPEC_RECORDED.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_SUBSCRIPTION.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Selección de perfil al iniciar sesión",
+        "3.1 Journey: Login con email y contraseña",
+        "6.1 Contratos expuestos (API pública Swift — CVServices SDK)",
+        "3.4 Journey: Navegación por sección especial (Colecciones temáticas)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-2",
+      "name": "API GET /services/user/v2/profile/read",
+      "label": "API GET /services/user/v2/profile/read",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "3.1 Journey: Selección de perfil al iniciar sesión"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-3",
+      "name": "product docs",
+      "label": "product docs",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-4",
+      "name": "DevOps",
+      "label": "DevOps",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-5",
+      "name": "APM/logs",
+      "label": "APM/logs",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-6",
+      "name": "arquitectura de backend",
+      "label": "arquitectura de backend",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-7",
+      "name": "APM",
+      "label": "APM",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)",
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-8",
+      "name": "n en runtime",
+      "label": "n en runtime",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-9",
+      "name": "backlog",
+      "label": "backlog",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-10",
+      "name": "monitoreo",
+      "label": "monitoreo",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-11",
+      "name": "DeleteProfile/DeleteProfileView.swift",
+      "label": "DeleteProfile/DeleteProfileView.swift",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-12",
+      "name": "Jira/GitHub",
+      "label": "Jira/GitHub",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-13",
+      "name": "BRFRE",
+      "label": "BRFRE",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-14",
+      "name": "analytics",
+      "label": "analytics",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "3.2 Journey: Crear nuevo perfil familiar",
+        "3.3 Journey: Eliminar perfil",
+        "3.4 Journey: Configurar control parental (PIN)",
+        "3.5 Journey: Vinculación de dispositivo (TV + Móvil vía QR)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-15",
+      "name": "a",
+      "label": "a",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-16",
+      "name": "eventos de analytics",
+      "label": "eventos de analytics",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-17",
+      "name": "SelectProfile/",
+      "label": "SelectProfile/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-18",
+      "name": "QRLinkView/",
+      "label": "QRLinkView/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-19",
+      "name": "SLO",
+      "label": "SLO",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-20",
+      "name": "frecuencia",
+      "label": "frecuencia",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 8,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.2 Journey: Crear nuevo perfil familiar",
+        "3.3 Journey: Eliminar perfil",
+        "3.4 Journey: Configurar control parental (PIN)",
+        "3.5 Journey: Vinculación de dispositivo (TV + Móvil vía QR)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-21",
+      "name": "Firebase/analytics spec",
+      "label": "Firebase/analytics spec",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-22",
+      "name": "product owner",
+      "label": "product owner",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-23",
+      "name": "NoticePrivacy/NoticePrvacyView.swift",
+      "label": "NoticePrivacy/NoticePrvacyView.swift",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-24",
+      "name": "AccountSuspended/",
+      "label": "AccountSuspended/",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-25",
+      "name": "n de infra",
+      "label": "n de infra",
+      "type": "component",
+      "domain": "ACNTMGMT",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-26",
+      "name": "nombre del product owner",
+      "label": "nombre del product owner",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-27",
+      "name": "riesgo de stack overflow si el error persiste",
+      "label": "riesgo de stack overflow si el error persiste",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "10.1 Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-28",
+      "name": "n",
+      "label": "n",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-29",
+      "name": "analytics/RUM",
+      "label": "analytics/RUM",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con email y contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-30",
+      "name": "observabilidad",
+      "label": "observabilidad",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-31",
+      "name": "a de infra",
+      "label": "a de infra",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-32",
+      "name": "UserServices.loginEmail",
+      "label": "UserServices.loginEmail",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con email y contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-33",
+      "name": "Servidores confirmados en specs OpenAPI:",
+      "label": "Servidores confirmados en specs OpenAPI:",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-34",
+      "name": "Estado",
+      "label": "Estado",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-35",
+      "name": "Result",
+      "label": "Result",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos (API pública Swift — CVServices SDK)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-36",
+      "name": "Firebase/Youbora analytics spec",
+      "label": "Firebase/Youbora analytics spec",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-37",
+      "name": "Trigger",
+      "label": "Trigger",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-38",
+      "name": "Void",
+      "label": "Void",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 72,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_MUSIC.md",
+        "SPEC_RECORDED.md",
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos (API pública Swift — CVServices SDK)",
+        "4.1 Verificación de Login en Middleware",
+        "4.2 Nivel CMS de Música (Editorial Home)",
+        "4.3 Ribbon CMS de Música"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-39",
+      "name": "Canales",
+      "label": "Canales",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-40",
+      "name": "referencia BRFRE",
+      "label": "referencia BRFRE",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-41",
+      "name": "Firebase/Sentry",
+      "label": "Firebase/Sentry",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-42",
+      "name": "http://aws-east-microfwk-silo-tv.clarovideo.net",
+      "label": "http://aws-east-microfwk-silo-tv.clarovideo.net",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-43",
+      "name": "LandingView.swift",
+      "label": "LandingView.swift",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)",
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-44",
+      "name": "APM/analytics",
+      "label": "APM/analytics",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.5 Journey: Refresh de token de sesión"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-45",
+      "name": "observabilidad/dashboards",
+      "label": "observabilidad/dashboards",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-46",
+      "name": "Evidencia primaria",
+      "label": "Evidencia primaria",
+      "type": "contract_api",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-47",
+      "name": "tricas de performance",
+      "label": "tricas de performance",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-48",
+      "name": "async",
+      "label": "async",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "6.1 Contratos expuestos (API pública Swift — CVServices SDK)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-49",
+      "name": "Resultado",
+      "label": "Resultado",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-50",
+      "name": "Frecuencia",
+      "label": "Frecuencia",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-51",
+      "name": "backlog de producto",
+      "label": "backlog de producto",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-52",
+      "name": "QueryBuilder.shared",
+      "label": "QueryBuilder.shared",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-53",
+      "name": "mite",
+      "label": "mite",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "10.1 Gaps"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-54",
+      "name": "SLO definido",
+      "label": "SLO definido",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-55",
+      "name": "DevOps/arquitectura",
+      "label": "DevOps/arquitectura",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-56",
+      "name": "frecuencia real",
+      "label": "frecuencia real",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "3.1 Journey: Login con email y contraseña"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-57",
+      "name": "http://qro-microfwk-silo-tv.clarovideo.net",
+      "label": "http://qro-microfwk-silo-tv.clarovideo.net",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-58",
+      "name": "Jira/GitHub issue",
+      "label": "Jira/GitHub issue",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-59",
+      "name": "<informacion no encontrada en el repositorio: pantalla de login completa -> código de app consumidora>",
+      "label": "<informacion no encontrada en el repositorio: pantalla de login completa -> código de app consumidora>",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "5.1 UI Components (CVCommonViews)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-60",
+      "name": "http://azr-eastus2-cmex-cvideo-mfw-stb.kb06.pool.clarovideo.net",
+      "label": "http://azr-eastus2-cmex-cvideo-mfw-stb.kb06.pool.clarovideo.net",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-61",
+      "name": "logs/analytics",
+      "label": "logs/analytics",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-62",
+      "name": "Criticidad",
+      "label": "Criticidad",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 11,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Verificación de sesión activa (isLoggedIn)",
+        "3.1 Journey: Inicialización de la app (App Launch)",
+        "3.2 Journey: Carga del Home Screen (carruseles editoriales)",
+        "3.3 Journey: Home Screen personalizado (usuario autenticado)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-63",
+      "name": "SRE/PagerDuty",
+      "label": "SRE/PagerDuty",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-64",
+      "name": "https://mfwkweb-api.clarovideo.net",
+      "label": "https://mfwkweb-api.clarovideo.net",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-65",
+      "name": "IaC",
+      "label": "IaC",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "1. Metadata & Governance"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-66",
+      "name": "APM/dashboards de monitoreo",
+      "label": "APM/dashboards de monitoreo",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "sections": [
+        "KPIs relevantes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-67",
+      "name": "CMS Rotation: APIs de administración",
+      "label": "CMS Rotation: APIs de administración",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-68",
+      "name": "NewToolbar/",
+      "label": "NewToolbar/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-69",
+      "name": "MFWK Pool: CMS APIs en pool multi-región (mismo que AUTH/VOD)",
+      "label": "MFWK Pool: CMS APIs en pool multi-región (mismo que AUTH/VOD)",
+      "type": "contract_api",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-70",
+      "name": "GET /services/cms/special",
+      "label": "GET /services/cms/special",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "3.4 Journey: Navegación por sección especial (Colecciones temáticas)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-71",
+      "name": "LaunchLoaderView.swift",
+      "label": "LaunchLoaderView.swift",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-72",
+      "name": "WhatIncludesImages/",
+      "label": "WhatIncludesImages/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-73",
+      "name": "Firebase spec",
+      "label": "Firebase spec",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-74",
+      "name": "https://api.clarovideo.com/apa",
+      "label": "https://api.clarovideo.com/apa",
+      "type": "contract_api",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-75",
+      "name": "PlanSelector/",
+      "label": "PlanSelector/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-76",
+      "name": "back-end",
+      "label": "back-end",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-77",
+      "name": "analytics events",
+      "label": "analytics events",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "9. Event Taxonomy"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-78",
+      "name": "<informacion no encontrada en el repositorio: EPGViewController/SwiftUI View -> app consumidora>",
+      "label": "<informacion no encontrada en el repositorio: EPGViewController/SwiftUI View -> app consumidora>",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-79",
+      "name": "Potencial: grilla de EPG renderizada con componentes custom por la app",
+      "label": "Potencial: grilla de EPG renderizada con componentes custom por la app",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-80",
+      "name": "MFWK Pool: Mismo pool multi-región que el resto de servicios (QRO, AWS East/West, Azure East US 2) para EPG Menu, Lineup y Channel Events",
+      "label": "MFWK Pool: Mismo pool multi-región que el resto de servicios (QRO, AWS East/West, Azure East US 2) para EPG Menu, Lineup y Channel Events",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-81",
+      "name": "API GET /services/epg/channelevents",
+      "label": "API GET /services/epg/channelevents",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "3.2 Journey: Ver programación de un canal específico (EPG schedule)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-82",
+      "name": "/services/user/",
+      "label": "/services/user/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-83",
+      "name": "https://cms-filters.lab.eastus2.azr.int.claromexico.com/",
+      "label": "https://cms-filters.lab.eastus2.azr.int.claromexico.com/",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-84",
+      "name": "TTL/cache",
+      "label": "TTL/cache",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "sections": [
+        "8. Non-Functional Reality (SLOs)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-85",
+      "name": "MusicComponent.deserializeResponse",
+      "label": "MusicComponent.deserializeResponse",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "sections": [
+        "4.2 Nivel CMS de Música (Editorial Home)",
+        "4.3 Ribbon CMS de Música"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-86",
+      "name": "Consumidor del SDK",
+      "label": "Consumidor del SDK",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "sections": [
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-87",
+      "name": "Bool",
+      "label": "Bool",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "sections": [
+        "4.7 Track Event (Heartbeat / Progress Tracking)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-88",
+      "name": "MUSIC",
+      "label": "MUSIC",
+      "type": "component",
+      "domain": "MUSIC",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "sections": [
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-89",
+      "name": "QueryBuilder",
+      "label": "QueryBuilder",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC.md",
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-90",
+      "name": "MusicMedia.parseObject",
+      "label": "MusicMedia.parseObject",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "sections": [
+        "4.6 Get Media de Pista (Reproducción)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-91",
+      "name": "AUTH/QueryBuilder",
+      "label": "AUTH/QueryBuilder",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "sections": [
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-92",
+      "name": "LIVESTREAMING",
+      "label": "LIVESTREAMING",
+      "type": "component",
+      "domain": "LIVESTREAMING",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "12. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-93",
+      "name": "Recording",
+      "label": "Recording",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "Journey 4: Reproducir una Grabación"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-94",
+      "name": "POST /services/recordings/data",
+      "label": "POST /services/recordings/data",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "Journey 4: Reproducir una Grabación"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-95",
+      "name": "RecordingRequest",
+      "label": "RecordingRequest",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-96",
+      "name": "SUBSCRIPTION",
+      "label": "SUBSCRIPTION",
+      "type": "component",
+      "domain": "SUBSCRIPTION",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_RECORDED.md",
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "12. Dependencias Cross-Domain",
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-97",
+      "name": "ReminderServices",
+      "label": "ReminderServices",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-98",
+      "name": "AUTH",
+      "label": "AUTH",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_RECORDED.md",
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "12. Dependencias Cross-Domain",
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-99",
+      "name": "ClaroVideoServices/Service/ReminderServices.swift",
+      "label": "ClaroVideoServices/Service/ReminderServices.swift",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-100",
+      "name": "ClaroVideoServices/Service/RecordingServices.swift",
+      "label": "ClaroVideoServices/Service/RecordingServices.swift",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-101",
+      "name": "ClaroVideoServices/Request/ReminderRequest.swift",
+      "label": "ClaroVideoServices/Request/ReminderRequest.swift",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-102",
+      "name": "ClaroVideoServices/Request/RecordingRequest.swift",
+      "label": "ClaroVideoServices/Request/RecordingRequest.swift",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-103",
+      "name": "RECORDED",
+      "label": "RECORDED",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "12. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-104",
+      "name": "ReminderRequest",
+      "label": "ReminderRequest",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-105",
+      "name": "NpvrServicesManager.getRecordingData",
+      "label": "NpvrServicesManager.getRecordingData",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "Journey 4: Reproducir una Grabación"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-106",
+      "name": "RecordingService",
+      "label": "RecordingService",
+      "type": "component",
+      "domain": "RECORDED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "sections": [
+        "2. Inventario de Managers"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-107",
+      "name": "CARROUSEL",
+      "label": "CARROUSEL",
+      "type": "component",
+      "domain": "CARROUSEL",
+      "evidenceCount": 4,
+      "files": [
+        "SPEC_RECORDED.md",
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "12. Dependencias Cross-Domain",
+        "11. Dependencias Cross-Domain"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-108",
+      "name": "SearchServices",
+      "label": "SearchServices",
+      "type": "component",
+      "domain": "SEARCH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Ranking (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-109",
+      "name": "API GET /services/search/v1/linealpredictive",
+      "label": "API GET /services/search/v1/linealpredictive",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "3.1 Journey: Búsqueda predictiva en tiempo real (mientras el usuario escribe)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-110",
+      "name": "http://aws-west-microfwk-silo-tv.clarovideo.net",
+      "label": "http://aws-west-microfwk-silo-tv.clarovideo.net",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-111",
+      "name": "API GET /services/search/vertical",
+      "label": "API GET /services/search/vertical",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "3.3 Journey: Búsqueda vertical (por actor/director/género)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-112",
+      "name": "<informacion no encontrada en el repositorio: UIViewController/SwiftUI View de búsqueda -> app consumidora>",
+      "label": "<informacion no encontrada en el repositorio: UIViewController/SwiftUI View de búsqueda -> app consumidora>",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-113",
+      "name": ".ranking",
+      "label": ".ranking",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "4.2 Sequence — Ranking (Happy Path)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-114",
+      "name": "CVRequestType.ranking",
+      "label": "CVRequestType.ranking",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "3.2 Journey: Visualizar ranking editorial de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-115",
+      "name": "Potencial: resultados mostrados en carruseles genéricos de CVCommonViews",
+      "label": "Potencial: resultados mostrados en carruseles genéricos de CVCommonViews",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-116",
+      "name": "continuar flujo normal",
+      "label": "continuar flujo normal",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 6: Verificación de Suspensión de Cuenta"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-117",
+      "name": "GET /services/plans/v2/offers",
+      "label": "GET /services/plans/v2/offers",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 2: Offer Cards con Estado de CTA (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-118",
+      "name": "token expirado",
+      "label": "token expirado",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 5: Experiencia Post-Login"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-119",
+      "name": "PaywayRequest.workflowstart",
+      "label": "PaywayRequest.workflowstart",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 3: Flujo de Compra iTunes IAP"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-120",
+      "name": "false",
+      "label": "false",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 6: Verificación de Suspensión de Cuenta"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-121",
+      "name": "n detectada",
+      "label": "n detectada",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 5: Experiencia Post-Login"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-122",
+      "name": "UserExperience",
+      "label": "UserExperience",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 5: Experiencia Post-Login"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-123",
+      "name": "retry con nuevo token",
+      "label": "retry con nuevo token",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "4.8 Experiencia de Usuario Post-Login",
+        "4.9 Purchase Node ID"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-124",
+      "name": "fetchPurchaseButton",
+      "label": "fetchPurchaseButton",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "3.2 Obtener Offer Cards con Purchase Button (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-125",
+      "name": "en paralelo",
+      "label": "en paralelo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 2: Offer Cards con Estado de CTA (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-126",
+      "name": "redirigir a pantalla de reactivaci",
+      "label": "redirigir a pantalla de reactivaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 5: Experiencia Post-Login"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-127",
+      "name": "MultiPurchaseButtonInfo",
+      "label": "MultiPurchaseButtonInfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 4: Verificación de Contenido Premium (Batch)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-128",
+      "name": "validateIfNeedCallAgain",
+      "label": "validateIfNeedCallAgain",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 1: Descubrimiento de Planes"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-129",
+      "name": "200 OK",
+      "label": "200 OK",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 5: Experiencia Post-Login"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-130",
+      "name": "Obtiene ticket de StoreKit",
+      "label": "Obtiene ticket de StoreKit",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 3: Flujo de Compra iTunes IAP"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-131",
+      "name": "getOfferCards",
+      "label": "getOfferCards",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "3.2 Obtener Offer Cards con Purchase Button (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-132",
+      "name": "PurchaseButtonInfo",
+      "label": "PurchaseButtonInfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 2: Offer Cards con Estado de CTA (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-133",
+      "name": "GET",
+      "label": "GET",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 3: Flujo de Compra iTunes IAP"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-134",
+      "name": "redirigir a flujo de reactivaci",
+      "label": "redirigir a flujo de reactivaci",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 6: Verificación de Suspensión de Cuenta"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-135",
+      "name": "PlanOfferRequest.getPlanOffer",
+      "label": "PlanOfferRequest.getPlanOffer",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "3.2 Obtener Offer Cards con Purchase Button (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-136",
+      "name": "json",
+      "label": "json",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 5: Experiencia Post-Login"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-137",
+      "name": "true",
+      "label": "true",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 6: Verificación de Suspensión de Cuenta"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-138",
+      "name": "GET v2/purchasebuttoninfo",
+      "label": "GET v2/purchasebuttoninfo",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 2: Offer Cards con Estado de CTA (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-139",
+      "name": "DispatchGroup",
+      "label": "DispatchGroup",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 2: Offer Cards con Estado de CTA (isForAdvertising)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-140",
+      "name": "UI muestra bot",
+      "label": "UI muestra bot",
+      "type": "component",
+      "domain": "SHARED",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 4: Verificación de Contenido Premium (Batch)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-141",
+      "name": "PaywayServicesManager.startBuyTransaction",
+      "label": "PaywayServicesManager.startBuyTransaction",
+      "type": "component",
+      "domain": "AUTH",
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "sections": [
+        "Journey 3: Flujo de Compra iTunes IAP"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-142",
+      "name": "HireChannel*",
+      "label": "HireChannel*",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-143",
+      "name": "getmedia",
+      "label": "getmedia",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-144",
+      "name": "CVRequestType.contentSerie",
+      "label": "CVRequestType.contentSerie",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.2 Journey: Navegar temporadas y episodios de serie"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-145",
+      "name": "Tipo",
+      "label": "Tipo",
+      "type": "event_technical",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.5 Journey: Tracking de reproducción (eventos server-driven)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-146",
+      "name": "NodePremium/",
+      "label": "NodePremium/",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-147",
+      "name": "ContinuePlaybackModalAlertView.swift",
+      "label": "ContinuePlaybackModalAlertView.swift",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-148",
+      "name": "KeepWatchingUIView.swift",
+      "label": "KeepWatchingUIView.swift",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "5.1 UI Components"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-149",
+      "name": "API GET /services/content/v1/data",
+      "label": "API GET /services/content/v1/data",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.1 Journey: Navegar catálogo y llegar al detalle de contenido"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-150",
+      "name": "getContentListTopShelf()",
+      "label": "getContentListTopShelf()",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "7. Deployment View"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-151",
+      "name": "Campo",
+      "label": "Campo",
+      "type": "event_technical",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.5 Journey: Tracking de reproducción (eventos server-driven)"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-node-152",
+      "name": "CVRequestType.getMedia",
+      "label": "CVRequestType.getMedia",
+      "type": "component",
+      "domain": "VOD",
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "sections": [
+        "3.3 Journey: Iniciar reproducción de contenido VOD"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "claro-video-ios-services-edge-1",
+      "source": "claro-video-ios-services-node-22",
+      "target": "claro-video-ios-services-node-13",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-2",
+      "source": "claro-video-ios-services-node-8",
+      "target": "claro-video-ios-services-node-5",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-3",
+      "source": "claro-video-ios-services-node-25",
+      "target": "claro-video-ios-services-node-4",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-4",
+      "source": "claro-video-ios-services-node-15",
+      "target": "claro-video-ios-services-node-6",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-5",
+      "source": "claro-video-ios-services-node-13",
+      "target": "claro-video-ios-services-node-3",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-6",
+      "source": "claro-video-ios-services-node-12",
+      "target": "claro-video-ios-services-node-9",
+      "type": "calls",
+      "occurrences": 5,
+      "evidenceCount": 5,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-7",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-2",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-8",
+      "source": "claro-video-ios-services-node-20",
+      "target": "claro-video-ios-services-node-14",
+      "type": "calls",
+      "occurrences": 7,
+      "evidenceCount": 7,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-9",
+      "source": "claro-video-ios-services-node-19",
+      "target": "claro-video-ios-services-node-7",
+      "type": "calls",
+      "occurrences": 6,
+      "evidenceCount": 6,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md",
+        "SPEC_CARROUSEL_CMS.md",
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-10",
+      "source": "claro-video-ios-services-node-19",
+      "target": "claro-video-ios-services-node-10",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-11",
+      "source": "claro-video-ios-services-node-16",
+      "target": "claro-video-ios-services-node-21",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_ACCOUNT_MANAGEMENT.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-12",
+      "source": "claro-video-ios-services-node-26",
+      "target": "claro-video-ios-services-node-13",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-13",
+      "source": "claro-video-ios-services-node-25",
+      "target": "claro-video-ios-services-node-65",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-14",
+      "source": "claro-video-ios-services-node-31",
+      "target": "claro-video-ios-services-node-55",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-15",
+      "source": "claro-video-ios-services-node-40",
+      "target": "claro-video-ios-services-node-3",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-16",
+      "source": "claro-video-ios-services-node-58",
+      "target": "claro-video-ios-services-node-51",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-17",
+      "source": "claro-video-ios-services-node-66",
+      "target": "claro-video-ios-services-node-41",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-18",
+      "source": "claro-video-ios-services-node-47",
+      "target": "claro-video-ios-services-node-7",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-19",
+      "source": "claro-video-ios-services-node-28",
+      "target": "claro-video-ios-services-node-61",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-20",
+      "source": "claro-video-ios-services-node-56",
+      "target": "claro-video-ios-services-node-29",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-21",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-32",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-22",
+      "source": "claro-video-ios-services-node-20",
+      "target": "claro-video-ios-services-node-44",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-23",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-38",
+      "type": "calls",
+      "occurrences": 72,
+      "evidenceCount": 72,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md",
+        "SPEC_MUSIC.md",
+        "SPEC_RECORDED.md",
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-24",
+      "source": "claro-video-ios-services-node-48",
+      "target": "claro-video-ios-services-node-35",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-25",
+      "source": "claro-video-ios-services-node-54",
+      "target": "claro-video-ios-services-node-45",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-26",
+      "source": "claro-video-ios-services-node-54",
+      "target": "claro-video-ios-services-node-63",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-27",
+      "source": "claro-video-ios-services-node-19",
+      "target": "claro-video-ios-services-node-30",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-28",
+      "source": "claro-video-ios-services-node-16",
+      "target": "claro-video-ios-services-node-36",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "ACNTMGMT"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-29",
+      "source": "claro-video-ios-services-node-53",
+      "target": "claro-video-ios-services-node-27",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LOGIN_AUTHENTICATION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-30",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-70",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-31",
+      "source": "claro-video-ios-services-node-14",
+      "target": "claro-video-ios-services-node-73",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_CARROUSEL_CMS.md"
+      ],
+      "primaryDomain": "ACNTMGMT",
+      "domains": [
+        "ACNTMGMT",
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-32",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-81",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-33",
+      "source": "claro-video-ios-services-node-84",
+      "target": "claro-video-ios-services-node-76",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-34",
+      "source": "claro-video-ios-services-node-77",
+      "target": "claro-video-ios-services-node-73",
+      "type": "calls",
+      "occurrences": 3,
+      "evidenceCount": 3,
+      "files": [
+        "SPEC_LIVESTREAMING_EPG.md",
+        "SPEC_SEARCH_CONTENT.md",
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-35",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-85",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-36",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-90",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-37",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-87",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-38",
+      "source": "claro-video-ios-services-node-91",
+      "target": "claro-video-ios-services-node-88",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "MUSIC"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-39",
+      "source": "claro-video-ios-services-node-86",
+      "target": "claro-video-ios-services-node-88",
+      "type": "depends_on",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-40",
+      "source": "claro-video-ios-services-node-89",
+      "target": "claro-video-ios-services-node-88",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_MUSIC.md"
+      ],
+      "primaryDomain": "MUSIC",
+      "domains": [
+        "MUSIC",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-41",
+      "source": "claro-video-ios-services-node-106",
+      "target": "claro-video-ios-services-node-100",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-42",
+      "source": "claro-video-ios-services-node-97",
+      "target": "claro-video-ios-services-node-99",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-43",
+      "source": "claro-video-ios-services-node-95",
+      "target": "claro-video-ios-services-node-102",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-44",
+      "source": "claro-video-ios-services-node-104",
+      "target": "claro-video-ios-services-node-101",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "RECORDED",
+      "domains": [
+        "RECORDED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-45",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-105",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-46",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-94",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-47",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-93",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-48",
+      "source": "claro-video-ios-services-node-92",
+      "target": "claro-video-ios-services-node-103",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "LIVESTREAMING",
+      "domains": [
+        "LIVESTREAMING",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-49",
+      "source": "claro-video-ios-services-node-107",
+      "target": "claro-video-ios-services-node-103",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-50",
+      "source": "claro-video-ios-services-node-107",
+      "target": "claro-video-ios-services-node-92",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "LIVESTREAMING"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-51",
+      "source": "claro-video-ios-services-node-98",
+      "target": "claro-video-ios-services-node-103",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-52",
+      "source": "claro-video-ios-services-node-96",
+      "target": "claro-video-ios-services-node-103",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_RECORDED.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-53",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-109",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-54",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-114",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-55",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-111",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-56",
+      "source": "claro-video-ios-services-node-113",
+      "target": "claro-video-ios-services-node-108",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SEARCH_CONTENT.md"
+      ],
+      "primaryDomain": "SEARCH",
+      "domains": [
+        "SEARCH",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-57",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-135",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-58",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-124",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-59",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-131",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-60",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-123",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-61",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-128",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-62",
+      "source": "claro-video-ios-services-node-139",
+      "target": "claro-video-ios-services-node-125",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-63",
+      "source": "claro-video-ios-services-node-117",
+      "target": "claro-video-ios-services-node-1",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-64",
+      "source": "claro-video-ios-services-node-138",
+      "target": "claro-video-ios-services-node-132",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-65",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-141",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-66",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-119",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-67",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-133",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-68",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-130",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-69",
+      "source": "claro-video-ios-services-node-127",
+      "target": "claro-video-ios-services-node-140",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-70",
+      "source": "claro-video-ios-services-node-129",
+      "target": "claro-video-ios-services-node-122",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-71",
+      "source": "claro-video-ios-services-node-118",
+      "target": "claro-video-ios-services-node-136",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-72",
+      "source": "claro-video-ios-services-node-121",
+      "target": "claro-video-ios-services-node-126",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-73",
+      "source": "claro-video-ios-services-node-137",
+      "target": "claro-video-ios-services-node-134",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-74",
+      "source": "claro-video-ios-services-node-120",
+      "target": "claro-video-ios-services-node-116",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SHARED",
+      "domains": [
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-75",
+      "source": "claro-video-ios-services-node-107",
+      "target": "claro-video-ios-services-node-96",
+      "type": "calls",
+      "occurrences": 2,
+      "evidenceCount": 2,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "CARROUSEL",
+      "domains": [
+        "CARROUSEL",
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-76",
+      "source": "claro-video-ios-services-node-98",
+      "target": "claro-video-ios-services-node-96",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "AUTH",
+      "domains": [
+        "AUTH",
+        "SUBSCRIPTION"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-77",
+      "source": "claro-video-ios-services-node-89",
+      "target": "claro-video-ios-services-node-96",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_SUBSCRIPTION.md"
+      ],
+      "primaryDomain": "SUBSCRIPTION",
+      "domains": [
+        "SUBSCRIPTION",
+        "SHARED"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-78",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-149",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-79",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-144",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "AUTH"
+      ]
+    },
+    {
+      "id": "claro-video-ios-services-edge-80",
+      "source": "claro-video-ios-services-node-1",
+      "target": "claro-video-ios-services-node-152",
+      "type": "calls",
+      "occurrences": 1,
+      "evidenceCount": 1,
+      "files": [
+        "SPEC_VOD_PLAYBACK.md"
+      ],
+      "primaryDomain": "VOD",
+      "domains": [
+        "VOD",
+        "AUTH"
+      ]
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-03-27T16:28:54.145Z",
+    "nodeTypes": [
+      "component",
+      "contract_api",
+      "event_technical"
+    ],
+    "topFiles": [
+      "SPEC_ACCOUNT_MANAGEMENT.md",
+      "SPEC_LOGIN_AUTHENTICATION.md",
+      "SPEC_CARROUSEL_CMS.md",
+      "SPEC_LIVESTREAMING_EPG.md",
+      "SPEC_MUSIC.md",
+      "SPEC_RECORDED.md",
+      "SPEC_SEARCH_CONTENT.md",
+      "SPEC_SUBSCRIPTION.md",
+      "SPEC_VOD_PLAYBACK.md"
+    ]
+  },
+  "diagramCatalog": {
+    "total": 21,
+    "entries": [
+      {
+        "id": "global-vss",
+        "order": 1,
+        "title": "Diagrama Global docs",
+        "kind": "global_vss",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\diagrama_global_docs.md",
+          "analysis\\diagrama_global_docs.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 151,
+          "edgeCount": 80,
+          "groupCount": 9,
+          "isolatedCount": 42
+        }
+      },
+      {
+        "id": "global-impact",
+        "order": 2,
+        "title": "Impacto Global docs",
+        "kind": "global_impact",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\impacto_global_docs.md"
+        ],
+        "metrics": {
+          "nodeCount": 11,
+          "edgeCount": 10,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-vss",
+        "order": 3,
+        "title": "Diagrama VSS docs/ACNTMGMT",
+        "kind": "domain_vss",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_docs_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_vss_docs_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 25,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 5
+        }
+      },
+      {
+        "id": "domain-ACNTMGMT-impact",
+        "order": 4,
+        "title": "Diagrama Impacto VSS docs/ACNTMGMT",
+        "kind": "domain_impact",
+        "scope": "ACNTMGMT",
+        "sourceFiles": [
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_docs_acntmgmt.md",
+          "VSS\\GENERATED\\ACNTMGMT\\analysis\\diagrama_impacto_vss_docs_acntmgmt.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 25,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 5
+        }
+      },
+      {
+        "id": "domain-AUTH-vss",
+        "order": 5,
+        "title": "Diagrama VSS docs/AUTH",
+        "kind": "domain_vss",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_docs_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_vss_docs_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 51,
+          "edgeCount": 20,
+          "groupCount": 0,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "domain-AUTH-impact",
+        "order": 6,
+        "title": "Diagrama Impacto VSS docs/AUTH",
+        "kind": "domain_impact",
+        "scope": "AUTH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_docs_auth.md",
+          "VSS\\GENERATED\\AUTH\\analysis\\diagrama_impacto_vss_docs_auth.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 51,
+          "edgeCount": 20,
+          "groupCount": 0,
+          "isolatedCount": 14
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-vss",
+        "order": 7,
+        "title": "Diagrama VSS docs/CARROUSEL",
+        "kind": "domain_vss",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_docs_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_vss_docs_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 28,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-CARROUSEL-impact",
+        "order": 8,
+        "title": "Diagrama Impacto VSS docs/CARROUSEL",
+        "kind": "domain_impact",
+        "scope": "CARROUSEL",
+        "sourceFiles": [
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_docs_carrousel.md",
+          "VSS\\GENERATED\\CARROUSEL\\analysis\\diagrama_impacto_vss_docs_carrousel.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 28,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-vss",
+        "order": 9,
+        "title": "Diagrama VSS docs/LIVESTREAMING",
+        "kind": "domain_vss",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_docs_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_vss_docs_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 27,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-LIVESTREAMING-impact",
+        "order": 10,
+        "title": "Diagrama Impacto VSS docs/LIVESTREAMING",
+        "kind": "domain_impact",
+        "scope": "LIVESTREAMING",
+        "sourceFiles": [
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_docs_livestreaming.md",
+          "VSS\\GENERATED\\LIVESTREAMING\\analysis\\diagrama_impacto_vss_docs_livestreaming.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 27,
+          "edgeCount": 8,
+          "groupCount": 0,
+          "isolatedCount": 12
+        }
+      },
+      {
+        "id": "domain-MUSIC-vss",
+        "order": 11,
+        "title": "Diagrama VSS docs/MUSIC",
+        "kind": "domain_vss",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_docs_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_vss_docs_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-MUSIC-impact",
+        "order": 12,
+        "title": "Diagrama Impacto VSS docs/MUSIC",
+        "kind": "domain_impact",
+        "scope": "MUSIC",
+        "sourceFiles": [
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_docs_music.md",
+          "VSS\\GENERATED\\MUSIC\\analysis\\diagrama_impacto_vss_docs_music.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 9,
+          "edgeCount": 7,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-RECORDED-vss",
+        "order": 13,
+        "title": "Diagrama VSS docs/RECORDED",
+        "kind": "domain_vss",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_docs_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_vss_docs_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 18,
+          "edgeCount": 13,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-RECORDED-impact",
+        "order": 14,
+        "title": "Diagrama Impacto VSS docs/RECORDED",
+        "kind": "domain_impact",
+        "scope": "RECORDED",
+        "sourceFiles": [
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_docs_recorded.md",
+          "VSS\\GENERATED\\RECORDED\\analysis\\diagrama_impacto_vss_docs_recorded.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 18,
+          "edgeCount": 13,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-SEARCH-vss",
+        "order": 15,
+        "title": "Diagrama VSS docs/SEARCH",
+        "kind": "domain_vss",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_docs_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_vss_docs_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 25,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 6
+        }
+      },
+      {
+        "id": "domain-SEARCH-impact",
+        "order": 16,
+        "title": "Diagrama Impacto VSS docs/SEARCH",
+        "kind": "domain_impact",
+        "scope": "SEARCH",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_docs_search.md",
+          "VSS\\GENERATED\\SEARCH\\analysis\\diagrama_impacto_vss_docs_search.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 25,
+          "edgeCount": 11,
+          "groupCount": 0,
+          "isolatedCount": 6
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-vss",
+        "order": 17,
+        "title": "Diagrama VSS docs/SUBSCRIPTION",
+        "kind": "domain_vss",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_docs_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_vss_docs_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 22,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-SUBSCRIPTION-impact",
+        "order": 18,
+        "title": "Diagrama Impacto VSS docs/SUBSCRIPTION",
+        "kind": "domain_impact",
+        "scope": "SUBSCRIPTION",
+        "sourceFiles": [
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_docs_subscription.md",
+          "VSS\\GENERATED\\SUBSCRIPTION\\analysis\\diagrama_impacto_vss_docs_subscription.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 32,
+          "edgeCount": 22,
+          "groupCount": 0,
+          "isolatedCount": 0
+        }
+      },
+      {
+        "id": "domain-VOD-vss",
+        "order": 19,
+        "title": "Diagrama VSS docs/VOD",
+        "kind": "domain_vss",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_docs_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_vss_docs_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "domain-VOD-impact",
+        "order": 20,
+        "title": "Diagrama Impacto VSS docs/VOD",
+        "kind": "domain_impact",
+        "scope": "VOD",
+        "sourceFiles": [
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_docs_vod.md",
+          "VSS\\GENERATED\\VOD\\analysis\\diagrama_impacto_vss_docs_vod.mmd"
+        ],
+        "metrics": {
+          "nodeCount": 30,
+          "edgeCount": 9,
+          "groupCount": 0,
+          "isolatedCount": 15
+        }
+      },
+      {
+        "id": "technical-graph",
+        "order": 21,
+        "title": "Render técnico repo_graph.graphml",
+        "kind": "technical_graph",
+        "scope": "GLOBAL",
+        "sourceFiles": [
+          "analysis\\repo_graph.graphml"
+        ],
+        "metrics": {
+          "nodeCount": 152,
+          "edgeCount": 80,
+          "groupCount": 0,
+          "isolatedCount": 43
+        }
+      }
+    ]
+  }
+}
