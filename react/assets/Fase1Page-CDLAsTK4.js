@@ -1,4 +1,4 @@
-import{r as e,s as t,t as n}from"./jsx-runtime-BJfjsNBJ.js";import{t as r}from"./cpu-DFpUbXGH.js";import{t as i}from"./globe-Cwwhniji.js";import{t as a}from"./layers-CUyooN9h.js";import{c as o,d as s,i as c,s as l}from"./index-DAH8Qfhm.js";var u=t(e(),1),d=`<header class="hero reveal">\r
+import{r as e,s as t,t as n}from"./jsx-runtime-BJfjsNBJ.js";import{t as r}from"./cpu-DFpUbXGH.js";import{t as i}from"./globe-Cwwhniji.js";import{t as a}from"./layers-CUyooN9h.js";import{c as o,d as s,i as c,s as l}from"./index-BjJ1JsRH.js";var u=t(e(),1),d=`<header class="hero reveal">\r
       <div class="hero-copy">\r
         <div class="hero-top">\r
           \r
