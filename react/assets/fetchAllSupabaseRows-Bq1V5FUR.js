@@ -1,0 +1,1 @@
+var e=1e3;async function t(t,n){let r=[],i=0;for(;;){let{data:a,error:o}=await t.from(n).select(`*`).order(`id`,{ascending:!0}).range(i,i+e-1);if(o)throw o;if(r.push(...a||[]),!a||a.length<e)break;i+=e}return r}export{t};
